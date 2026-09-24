@@ -1,0 +1,6 @@
+# Composio toolkit research - 100 apps
+Machine-readable outputs of the research agent:
+- /data/apps.json      one record per app: auth_methods, primary_auth, access, api_styles, api_breadth, mcp, verdict, blocker, evidence[] (url+quote), provenance per field
+- /data/patterns.json  aggregated clusters (auth, access, blockers, MCP, per-category) and headline findings
+- /data/accuracy.json  human spot-check: per-field accuracy of first pass vs verified pass
+Enum definitions are in the page section "Definitions" and in agent/schema.py (RUBRIC) of the source repo.
