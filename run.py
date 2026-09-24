@@ -1,11 +1,11 @@
 """Composio toolkit-research pipeline.
 
-    python run.py research  [--ids 1,2,3] [--workers 6] [--force]   # pass 1: Gemini Flash + Search + URL context
+    python run.py research  [--ids 1,2,3] [--workers 6] [--force]   # pass 1: discover (2.5 Flash) -> validate URLs -> crawl -> research (3 Flash + Search) -> extract
     python run.py evidence  --pass 1                                 # loop 1: fetch every cited URL, check quotes, lint
-    python run.py verify    [--ids ...]                              # loop 2: Gemini Pro adversarial verifier
+    python run.py verify    [--ids ...]                              # loop 2: Gemini 2.5 Pro adversarial verifier
     python run.py evidence  --pass 2                                 # re-check citations of the verified records
-    python run.py judge                                              # loop 2b: evidence judge where pass1 and pass2 disagree
-    python run.py merge                                              # pass2 + human corrections -> data/final.json
+    python run.py judge                                              # optional, experimental: evidence judge where pass1 and pass2 disagree (not in `all`)
+    python run.py merge                                              # pass2 + sample corrections -> data/final.json
     python run.py review                                             # build review/review.html for the human sample
     python run.py disputes                                           # blind Claude check vs Gemini -> review/disputes.html
     python run.py resolve                                            # agreed values + human dispute picks -> review/human_labels.json
@@ -158,7 +158,7 @@ def cmd_page(args):
 
 
 def cmd_all(args):
-    for step in (cmd_research, cmd_evidence_1, cmd_verify, cmd_evidence_2, cmd_judge, cmd_merge, cmd_analyze, cmd_page):
+    for step in (cmd_research, cmd_evidence_1, cmd_verify, cmd_evidence_2, cmd_merge, cmd_analyze, cmd_page):
         step(args)
 
 

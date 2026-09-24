@@ -65,4 +65,4 @@ def merge(data: Path, apps, load):
         })
     (data / "final.json").write_text(json.dumps(out, indent=1, ensure_ascii=False), encoding="utf-8")
     print(f"final.json: {len(out)} apps, {sum(1 for r in out if r.get('missing'))} missing, "
-          f"{sum(1 for r in out if r.get('human_reviewed'))} human-reviewed")
+          f"{sum(1 for r in out if r.get('human_reviewed'))} in the verification sample")

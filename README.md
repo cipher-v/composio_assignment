@@ -32,18 +32,33 @@ rubric is given to the researcher and the verifier.
 
 ## Run it
 
-Needs Python 3.12 and a Google Cloud project with the Vertex AI API enabled.
+Needs Python 3.12, the gcloud CLI, and a Google Cloud project with billing and the Vertex AI API enabled
+(`gcloud services enable aiplatform.googleapis.com --project <your-project>`).
 
 ```bash
 gcloud auth application-default login
 uv venv && uv pip install -r requirements.txt       # or: python -m venv .venv && pip install -r requirements.txt
-export COMPOSIO_RESEARCH_GCP_PROJECT=<your-project> # billing/quota is pinned to this project explicitly
+export COMPOSIO_RESEARCH_GCP_PROJECT=<your-project> # PowerShell: $env:COMPOSIO_RESEARCH_GCP_PROJECT="<your-project>"
 
-python run.py research --ids 4,31        # try two apps first (Attio, Google Ads)
-python run.py all                        # research → evidence → verify → evidence → merge → analyze → page
-python run.py review --per-category 2    # open review/review.html, fill in, click Export → save as review/human_labels.json
-python run.py merge && python run.py score && python run.py analyze && python run.py page
+python run.py research --ids 4,31        # try two apps first (Attio, Google Ads), ~1-2 min
+python run.py all                        # all 100: research → evidence → verify → evidence → merge → analyze → page
+                                         # (~30-60 min depending on Vertex quota; failed apps: just re-run, finished apps are cached)
 ```
+
+Open `site/index.html` to see the result. The repo already contains the full outputs of our run under `data/`, so
+`python run.py merge && python run.py analyze && python run.py page` rebuilds the page offline without any API calls.
+
+### Verification on a sample (how the accuracy numbers were produced)
+
+1. `python run.py review --per-category 2` picks a stratified random sample (seed 7) → `review/sample.json`.
+2. Blind cross-check: each sampled app was re-researched by Claude sub-agents that got only the app name and the rubric
+   (never Gemini's answers) → `review/claude_check_*.json`. This step was run from Claude Code, not from `run.py`.
+3. `python run.py disputes` compares Claude vs Gemini pass 1 vs verifier → `review/disputes.html` (only the disagreements).
+4. Decide each dispute against the vendor page → `review/dispute_decisions.json` (in our run these were decided by Claude
+   with a quote per decision; a human can instead use `disputes.html` and click Export).
+5. `python run.py resolve && python run.py score` → `review/human_labels.json`, `data/accuracy.json`, then `merge / analyze / page`.
+
+Alternative manual path: `review/review.html` is a per-field right/wrong sheet for a human reviewer (Export → `review/human_labels.json`).
 
 Every stage caches per-app JSON, so reruns only process missing apps (`--force` redoes them; `--ids` restricts to
 specific apps). Models can be overridden with `RESEARCH_MODEL`, `LIGHT_MODEL` and `VERIFY_MODEL`.
