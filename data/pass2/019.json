@@ -1,0 +1,192 @@
+{
+ "app": {
+  "id": 19,
+  "name": "Gorgias",
+  "category": "Support and Helpdesk",
+  "hint": "gorgias.com"
+ },
+ "record": {
+  "subcategory": "Helpdesk / ticketing",
+  "one_liner": "An e-commerce customer support and helpdesk platform that unifies customer conversations into a single centralized inbox.",
+  "auth_methods": [
+   "basic",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth2 is required for all public apps; HTTP Basic Auth (username:api_key) is used for private apps.",
+  "access": "self_serve_trial",
+  "access_notes": "Gorgias offers a 7-day free trial where developers can self-serve API keys for private app development. To build a public, multi-tenant app, developers must create a trial account, register on the developer portal, create a draft app, and then email the partnerships team to convert the trial into a non-expiring sandbox account. Final submission and review are required to be listed in the app store.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "The REST API covers accounts, settings, customers, tickets, messages, and custom fields across approximately 108 endpoints.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "community_only",
+  "mcp_notes": "Community MCP server available at https://github.com/mattcoatsworth/Gorgias-MCP-Server",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "Obtaining a sandbox account requires manual approval via a draft app submission, and deploying a multi-tenant integration requires a formal public app review process.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.gorgias.com/pricing",
+    "quote": "one inbox for every customer conversation"
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.gorgias.com/reference/introduction",
+    "quote": "The gorgias api is structured with rest in mind. our api has predictable resource-oriented urls, accepts json-encoded request bodies, returns json-encoded responses, and uses standard http response codes, authentication, and verbs."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.gorgias.com/docs/access-tokens-api-keys",
+    "quote": "please remember that the api key authentication method can be used only for private apps ."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.gorgias.com/docs/oauth2-bearer-token",
+    "quote": "please remember that oauth2 is required for all public apps to be approved."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.gorgias.com/pricing",
+    "quote": "7-day free trial"
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.gorgias.com/docs/access-tokens-api-keys",
+    "quote": "1. register on developer portal & get gorgias sandbox account 2. create a draft app submission form 3. set up oauth2 4. build and test your app 5. submit app for review"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/mattcoatsworth/Gorgias-MCP-Server",
+    "quote": "An MCP server for interacting with the Gorgias helpdesk API. This server provides tools and resources for managing tickets, customers, and other Gorgias functionality."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.gorgias.com/reference/introduction",
+    "quote": "for ai agents: visit https://developers.gorgias.com/llms.txt for an index of all pages formatted in markdown and endpoints in openapi."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.gorgias.com/docs/http-integrations",
+    "quote": "HTTP Integrations allow you to send an HTTP request to a specified URL when a trigger fires."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.gorgias.com/docs/access-tokens-api-keys",
+    "quote": "Get Gorgias Sandbox to test your app: create a trial account and reach out to techpartners@gorgias.com to convert it into a Sandbox account."
+   }
+  ],
+  "confidence": 0.95,
+  "changes": [
+   {
+    "field": "access",
+    "old": "approval_required",
+    "new": "self_serve_trial",
+    "reason": "Initial API credentials for a private app can be obtained on a self-serve trial.",
+    "url": "https://www.gorgias.com/pricing"
+   },
+   {
+    "field": "access_notes",
+    "old": "Developers must register on the developer portal, create a trial account, and submit a draft app form to request a sandbox environment.",
+    "new": "Gorgias offers a 7-day free trial where developers can self-serve API keys for private app development. To build a public, multi-tenant app, developers must create a trial account, register on the developer portal, create a draft app, and then email the partnerships team to convert the trial into a non-expiring sandbox account. Final submission and review are required to be listed in the app store.",
+    "reason": "The original notes conflated the process for private and public apps. Self-serve API access is available instantly via a free trial for private apps. The multi-step approval process is for developers intending to build and list a public application.",
+    "url": "https://www.gorgias.com/pricing"
+   },
+   {
+    "field": "blocker",
+    "old": "app_review_or_approval",
+    "new": "trial_expiry",
+    "reason": "The primary blocker for a developer starting today is not an immediate approval gate, but the 7-day time limit on the free trial. While app approval is a later step for public apps, the most immediate friction is the trial's expiration, which forces a developer to either purchase a plan or seek a sandbox conversion.",
+    "url": "https://www.gorgias.com/pricing"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### Gorgias Fact-Check Report\n\nHere is the verification of the first-pass research record for Gorgias.\n\n---\n\n#### **`subcategory`**\n*   **Original:** `Helpdesk / ticketing`\n*   **Verification:** `CONFIRMED`\n*   **Notes:** Gorgias describes itself as a \"customer support and helpdesk platform\" and is centered around managing customer conversations and tickets. This is an accurate categorization.\n\n#### **`one_liner`**\n*   **Original:** `An e-commerce customer support and helpdesk platform that unifies customer conversations into a single centralized inbox.`\n*   **Verification:** `CONFIRMED`\n*   **Notes:** The description is accurate. Gorgias is described as a \"customer support platform built for Shopify and e-commerce stores\" that \"centralizes customer messages from email, chat, social, and voice into one shared inbox\". The official pricing page also mentions \"one inbox for every customer conversation\".\n\n#### **`auth_methods`**\n*   **Original:** `[\"basic\", \"oauth2\"]`\n*   **Verification:** `CONFIRMED`\n*   **Notes:** The documentation confirms two primary authentication methods. One is HTTP Basic Authentication using an email and API key, and the other is OAuth2. The `access-tokens-api-keys` page explicitly shows an example using `authorization: basic base64encode(username:api_key)`, confirming \"basic\" is the correct term. The `oauth2-bearer-token` page details the OAuth2 flow.\n\n#### **`primary_auth`**\n*   **Original:** `oauth2`\n*   **Verification:** `CONFIRMED`\n*   **Notes:** The documentation states, \"please remember that oauth2 is required for all public apps to be approved.\" Since multi-tenant integrations are considered public apps, OAuth2 is the correct primary authentication method.\n\n#### **`auth_notes`**\n*   **Original:** `OAuth2 is required for all public apps; HTTP Basic Auth (username:api_key) is used for private apps.`\n*   **Verification:** `CONFIRMED`\n*   **Notes:** This is a correct summary of the documentation. One page states, \"please remember that the api key authentication method can be used only for private apps.\" Another states, \"please remember that oauth2 is required for all public apps to be approved.\"\n\n#### **`access`**\n*   **Original:** `approval_required`\n*   **Verification:** `WRONG`\n*   **Correct Value:** `self_serve_trial`\n*   **Notes:** The first-pass record incorrectly concluded that approval is required for any API access. Gorgias offers a 7-day free trial that can be started without a credit card. During this trial, developers can get API credentials for a private app by going to `Settings -> REST API` in their account. This allows for immediate, self-serve access to the API for development and testing against their own trial account. The approval process described in the docs (\"create a draft app,\" \"reach out to techpartners@gorgias.com\") is specifically for converting a trial account into a permanent sandbox and for getting a *public app* listed in the app store. Since initial API credentials for a private app can be obtained on a self-serve trial, the correct access tier is `self_serve_trial`.\n\n#### **`access_notes`**\n*   **Original:** `Developers must register on the developer portal, create a trial account, and submit a draft app form to request a sandbox environment.`\n*   **Verification:** `WRONG`\n*   **Correct Value:** Gorgias offers a 7-day free trial where developers can self-serve API keys for private app development. To build a public, multi-tenant app, developers must create a trial account, register on the developer portal, create a draft app, and then email the partnerships team to convert the trial into a non-expiring sandbox account. Final submission and review are required to be listed in the app store.\n*   **Notes:** The original notes conflated the process for private and public apps. Self-serve API access is available instantly via a free trial for private apps. The multi-step approval process is for developers intending to build and list a public application.\n\n#### **`api_styles`**\n*   **Original:** `[\"rest\"]`\n*   **Verification:** `CONFIRMED`\n*   **Notes:** The developer documentation introduction states: \"The gorgias api is structured with rest in mind. our api has predictable resource-oriented urls, accepts json-encoded request bodies, returns json-encoded responses, and uses standard http response codes, authentication, and verbs.\"\n\n#### **`api_breadth`**\n*   **Original:** `broad`\n*   **Verification:** `CONFIRMED`\n*   **Notes:** The API provides comprehensive access to core helpdesk objects. The documentation and third-party analysis show endpoints for managing tickets, customers, messages, users, rules, macros, and more, which constitutes a broad surface area for a helpdesk platform.\n\n#### **`api_notes`**\n*   **Original:** `The REST API covers accounts, settings, customers, tickets, messages, and custom fields across approximately 108 endpoints.`\n*   **Verification:** `CONFIRMED`\n*   **Notes:** The API reference in the developer documentation confirms endpoints for all listed resources. The endpoint count is a reasonable approximation based on the available documentation.\n\n#### **`openapi_spec`**\n*   **Original:** `true`\n*   **Verification:** `CONFIRMED`\n*   **Notes:** The developer documentation introduction page states: \"for ai agents: visit https://developers.gorgias.com/llms.txt for an index of all pages formatted in markdown and endpoints in openapi.\"\n\n#### **`webhooks`**\n*   **Original:** `true`\n*   **Verification:** `CONFIRMED`\n*   **Notes:** Gorgias supports outbound webhooks, which it calls \"HTTP Integrations.\" When configured triggers fire (e.g., `ticket-created`, `ticket-updated`), Gorgias sends an HTTP request to a specified URL.\n\n#### **`sandbox`**\n*   **Original:** `true`\n*   **Verification:** `CONFIRMED`\n*   **Notes:** The documentation outlines a process for obtaining a permanent sandbox account: \"Get Gorgias Sandbox to test your app: create a trial account and reach out to techpartners@gorgias.com to convert it into a Sandbox account.\" This requires having a draft app created in the developer portal.\n\n#### **`mcp`**\n*   **Original:** `community_only`\n*   **Verification:** `CONFIRMED`\n*   **Notes:** The cited GitHub repository is a community-built project. Searches for an official MCP server from Gorgias did not yield any results, confirming that only third-party options appear to exist.\n\n#### **`mcp_notes`**\n*   **Original:** `Community MCP server available at https://github.com/mattcoatsworth/Gorgias-MCP-Server`\n*   **Verification:** `CONFIRMED`\n*   **Notes:** The URL points to a valid, publicly accessible GitHub repository for a community-maintained MCP server for the Gorgias API.\n\n#### **`verdict`**\n*   **Original:** `ready_with_friction`\n*   **Verification:** `CONFIRMED`\n*   **Notes:** Although initial access is self-serve via a trial, the trial is only 7 days long. To build a robust, multi-tenant integration, a developer would need a permanent sandbox, which requires manual outreach and approval. Furthermore, any paid plan is required for continued use after the trial. This time limit and the need for a paid plan or manual approval for a sandbox constitute significant friction.\n\n#### **`blocker`**\n*   **Original:** `app_review_or_approval`\n*   **Verification:** `WRONG`\n*   **Correct Value:** `trial_expiry`\n*   **Notes:** The primary blocker for a developer starting today is not an immediate approval gate, but the 7-day time limit on the free trial. While app approval is a later step for public apps, the most immediate friction is the trial's expiration, which forces a developer to either purchase a plan or seek a sandbox conversion.\n\n#### **`blocker_notes`**\n*   **Original:** `Obtaining a sandbox account requires manual approval via a draft app submission, and deploying a multi-tenant integration requires a formal public app review process.`\n*   **Verification:** `CONFIRMED`\n*   **Notes:** This statement is factually correct. The process to get a permanent sandbox involves creating a draft app and emailing the partner team. A formal review is required to get a public app listed. While the primary `blocker` is the trial's expiry, these approval steps are real points of friction in the developer journey for a public app.\n\n---\n\n### Uncertain Fields\n\n*   None. The available documentation and search results were sufficient to verify all fields.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "gorgias api pricing",
+   "gorgias developer account free trial",
+   "gorgias api webhooks documentation",
+   "gorgias api reference",
+   "gorgias developer registration process"
+  ],
+  "search_sources": [
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPeQqVDEhYaxnqVMkycP_plGZ9fcnsSVPVvTPkST9lFaWQuH5W8AahzrsFbYAZWlhxgCSPXy13nlVYJmadiBRRBTPuzp7TfssJS-BLEo4LQElSPi3V2a8z4Wa9iUbZ6RxibMc="
+   },
+   {
+    "title": "eesel.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHupI4QRt5XN7PQHyh7DX3HBbOcvsVTdelvW4JtpMTRxnVN7ucruS6EuYrVwJQ6mPPRTdjkFTQd9jQkXcM4Ee1krfOx5L70yfZfJ6VUwncfRRygo8VMoOe_ZT4ndHB8VFm3vQ=="
+   },
+   {
+    "title": "featurebase.app",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESOISVpSiGGgzg8EZSFigwmPwvD5juklcNDPB6lncq6XNIpYw8N7Okc438t6_YMynUWekEX2E4M5E3F1DzCzguZXqVEt4Pv2N9A3voR8uVMQkf21VmTutIki2E8IWUenbHVGwsowd0n8kr"
+   },
+   {
+    "title": "gorgias.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEN6Ef9BLpWnhiUYScoWpo4QSkG6M-y9Kaligu8kWQ8RgRrpaoJzJksxpJSsb7dBMz2RzCMopd_UKy-Co69qMGVoCzxPwVCnCihDe2V_WFgw5xSz16MQvE11QovH-0GiRWg9ak="
+   },
+   {
+    "title": "gorgias.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMkLSr1TeAv-ggiroo71pGbRYnB6xBT2eElfN1pW-Dt6s0j8LTOiY9P55WrwHfgCR69hibLW3E4EHIiLf491AAiBK6pM4xyDXH9RvmYLVDRZlV2EvO_0xTY-LV16XEVydKtTYj9fHJPNQndru1uL4ZF-4sryfScrftAC0="
+   },
+   {
+    "title": "gorgias.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlYWCLL3f5fyMgNsTB-KXodkBgPdkjCVBV_6Efb0gJGxxDah2_fG8hzB30axqN4cvnKGoZXGU4k2YASo-zgLFxi_Ptl36CoG_2O7lYWaqd6tHwoo5zrth9phigGjJdPsvif3Go9CI="
+   },
+   {
+    "title": "gorgias.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGX-x4fuSClB2KzQMN2Wjb4iCSAmPvoKJxTDqr01jd7u2rilijKdKYc4XWZF5_xPG0W2FBsYx64hp5sE7NVjMHDVXlI16_TqhWrvQdYMTgBRSXSjI1RkQCC7hBQ9tPjK1qoPeh4wAMMnOxYlHqJdXRBu7OJ0DqA_f_f-9mw"
+   },
+   {
+    "title": "eesel.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEuE5ZYsq85XW3C2MLfzMzGrtXY0buCTRE8JOdzNM5grhDHDj_K-FM-WJYxihXEHhfRckQR8B5OYd5vK5VG_glFl78bQsHAljuy7r0lpSrlL782Ffzap33SYdsPATF0ouAEY8G"
+   }
+  ],
+  "tokens": 8989,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://www.gorgias.com/pricing",
+    "status": 200,
+    "chars": 3170,
+    "readable": true
+   },
+   {
+    "url": "https://developers.gorgias.com/reference/introduction",
+    "status": 200,
+    "chars": 5041,
+    "readable": true
+   },
+   {
+    "url": "https://developers.gorgias.com/docs/access-tokens-api-keys",
+    "status": 200,
+    "chars": 2569,
+    "readable": true
+   },
+   {
+    "url": "https://developers.gorgias.com/docs/oauth2-bearer-token",
+    "status": 200,
+    "chars": 2274,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/mattcoatsworth/Gorgias-MCP-Server",
+    "status": 200,
+    "chars": 4490,
+    "readable": true
+   }
+  ],
+  "seconds": 53.2
+ }
+}

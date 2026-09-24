@@ -1,0 +1,239 @@
+{
+ "app": {
+  "id": 61,
+  "name": "GitHub",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "docs.github.com/rest"
+ },
+ "record": {
+  "subcategory": "Developer Platform / Version Control",
+  "one_liner": "Cloud-based developer platform for Git version control, code collaboration, and project management.",
+  "auth_methods": [
+   "bearer_token",
+   "oauth2",
+   "basic"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "GitHub Apps (OAuth2) are recommended for multi-tenant integrations, offering granular permissions and short-lived tokens. Personal Access Tokens (bearer_token) for individual use. Basic auth for specific administrative endpoints.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up for a free GitHub account and immediately generate Personal Access Tokens or register GitHub Apps/OAuth Apps via 'Developer Settings'. No approval or sales contact required.",
+  "api_styles": [
+   "rest",
+   "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST and GraphQL APIs covering repositories, issues, pull requests, actions, organizations, users, projects, and security alerts, with over 600 operations.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Official GitHub Model Context Protocol (MCP) server written in Go: https://github.com/github/github-mcp-server",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. GitHub offers a self-serve free tier, extensive public documentation, an official OpenAPI spec, and an official Go-based MCP server.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://en.wikipedia.org/wiki/GitHub",
+    "quote": "\"GitHub is a proprietary developer platform that allows developers to create, store, manage, and share their code... It uses Git to provide distributed version control, and GitHub itself provides access control, bug tracking, software feature requests, task management, continuous integration, and wikis for every project.\""
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+    "quote": "\"If you want to use the GitHub REST API for personal use, you can create a personal access token. If possible, GitHub recommends that you use a fine-grained personal access token instead of a personal access token (classic).\""
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+    "quote": "\"There a few different ways to get a token: You can create a personal access token, generate a token with a GitHub App, or use the built-in GITHUB_TOKEN in a GitHub Actions workflow.\""
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+    "quote": "\"Some REST API endpoints for GitHub Apps and OAuth apps require you to use basic authentication to access the endpoint. You will use the app's client ID as the username and the app's client secret as the password.\""
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/benefits-of-migrating-from-oauth-apps-to-github-apps",
+    "quote": "\"GitHub Apps are the recommended way to integrate with GitHub. GitHub Apps offer many advantages over OAuth apps, including: Enhanced security features, like fine-grained permissions, choice over repository access, and short lived tokens.\""
+   },
+   {
+    "claim": "access",
+    "url": "https://github.com/pricing",
+    "quote": "\"Free the basics for individuals and organizations $ 0 usd per month $ 0 usd per month forever join for free unlimited public/private repositories\""
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api",
+    "quote": "\"GitHub Docs ... REST API ... Comparing GitHub's APIs\""
+   },
+   {
+    "claim": "api",
+    "url": "https://github.blog/2020-07-27-introducing-the-github-openapi-description/",
+    "quote": "\"The GitHub OpenAPI description contains more than 600 operations exposed in our API.\""
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.github.com/en/rest/about-the-rest-api/openapi-description",
+    "quote": "\"GitHub's OpenAPI description of the REST API is publicly available. You can find the description in the open source github/rest-api-description repository.\""
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/benefits-of-migrating-from-oauth-apps-to-github-apps",
+    "quote": "\"GitHub Apps have built-in, centralized webhooks. GitHub Apps can receive webhook events for all repositories and organizations the app can access.\""
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/",
+    "quote": "\"On GitHub.com, there is not a specific “area” or feature for spinning up a test environment to make test API calls. However, it is possible to have a test organization...\""
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/github/github-mcp-server",
+    "quote": "\"On April 4, 2025, they released the new official github/github-mcp-server . This version is written in Go, making it significantly more performant, scalable, and robust.\""
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Product Research Notes: GitHub\n\n#### 1. What the Product Does\nGitHub is a proprietary cloud-based developer platform centered around Git version control. It enables developers and teams to store, manage, track, and collaborate on software codebases. Beyond hosting repositories, it provides integrated tools for project management, issue tracking, bug tracking, code review (via pull requests), continuous integration/continuous deployment (GitHub Actions), and software package hosting.\n* **Source URL:** `https://en.wikipedia.org/wiki/GitHub`\n* **Verbatim Quote:** `\"GitHub is a proprietary developer platform that allows developers to create, store, manage, and share their code... It uses Git to provide distributed version control, and GitHub itself provides access control, bug tracking, software feature requests, task management, continuous integration, and wikis for every project.\"`\n\n#### 2. Authentication Methods of the Public API\nGitHub supports several authentication mechanisms across its REST and GraphQL APIs:\n* **Personal Access Tokens (PATs):** Available as fine-grained tokens (recommended) or classic tokens, passed via the `Authorization` header.\n  * **Type:** `bearer_token`\n  * **Source URL:** `https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api`\n  * **Verbatim Quote:** `\"If you want to use the GitHub REST API for personal use, you can create a personal access token. If possible, GitHub recommends that you use a fine-grained personal access token instead of a personal access token (classic).\"`\n* **GitHub Apps / OAuth Apps Tokens:** Applications can generate installation access tokens (for bot-like behavior) or user access tokens (acting on behalf of a user).\n  * **Type:** `oauth2`\n  * **Source URL:** `https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api`\n  * **Verbatim Quote:** `\"There a few different ways to get a token: You can create a personal access token, generate a token with a GitHub App, or use the built-in GITHUB_TOKEN in a GitHub Actions workflow.\"`\n* **Basic Authentication:** Used strictly by specific administrative endpoints for GitHub Apps and OAuth apps to perform backend operations (such as creating or revoking access tokens).\n  * **Type:** `basic`\n  * **Source URL:** `https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api`\n  * **Verbatim Quote:** `\"Some REST API endpoints for GitHub Apps and OAuth apps require you to use basic authentication to access the endpoint. You will use the app's client ID as the username and the app's client secret as the password.\"`\n\n* **Primary Auth for Multi-Tenant Integration:** `oauth2` (specifically via **GitHub Apps**). GitHub Apps are the modern standard for multi-tenant platforms because they provide granular, repository-specific permissions and can operate independently of individual user accounts.\n  * **Source URL:** `https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/benefits-of-migrating-from-oauth-apps-to-github-apps`\n  * **Verbatim Quote:** `\"GitHub Apps are the recommended way to integrate with GitHub. GitHub Apps offer many advantages over OAuth apps, including: Enhanced security features, like fine-grained permissions, choice over repository access, and short lived tokens.\"`\n\n#### 3. How to Get Credentials & Cost\n* **Access Level:** `self_serve_free`\n* **Credential Acquisition:** Any developer can sign up for a free GitHub account. Once registered, they can immediately generate Personal Access Tokens or register a new GitHub App/OAuth App directly via the \"Developer Settings\" panel in their account profile. No manual vendor approval, partner program registration, or sales contact is required to obtain fully functional API credentials.\n* **Cost:** $0. GitHub provides a robust free tier that includes full API access.\n  * **Source URL:** `https://github.com/pricing`\n  * **Verbatim Quote:** `\"Free the basics for individuals and organizations $ 0 usd per month $ 0 usd per month forever join for free unlimited public/private repositories\"`\n\n#### 4. API Style & Technical Details\n* **API Style:** GitHub provides both a comprehensive **REST API** and a **GraphQL API**.\n  * **Source URL:** `https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api`\n  * **Verbatim Quote:** `\"GitHub Docs ... REST API ... Comparing GitHub's APIs\"`\n* **Breadth:** Extremely broad, exposing over 600 distinct operations covering repositories, issues, pull requests, actions, organizations, users, projects, and security alerts.\n  * **Source URL:** `https://github.blog/2020-07-27-introducing-the-github-openapi-description/`\n  * **Verbatim Quote:** `\"The GitHub OpenAPI description contains more than 600 operations exposed in our API.\"`\n* **OpenAPI Spec:** Yes. GitHub officially publishes and maintains OpenAPI 3.0 and 3.1 descriptions for its REST API in a public repository.\n  * **Source URL:** `https://docs.github.com/en/rest/about-the-rest-api/openapi-description`\n  * **Verbatim Quote:** `\"GitHub's OpenAPI description of the REST API is publicly available. You can find the description in the open source github/rest-api-description repository.\"`\n* **Webhooks:** Yes. GitHub supports rich, centralized webhooks that emit real-time events for repository and organization activities.\n  * **Source URL:** `https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/benefits-of-migrating-from-oauth-apps-to-github-apps`\n  * **Verbatim Quote:** `\"GitHub Apps have built-in, centralized webhooks. GitHub Apps can receive webhook events for all repositories and organizations the app can access.\"`\n* **Sandbox:** No dedicated official API sandbox environment is provided. Developers typically create a free test repository or a free test organization on GitHub.com to safely test their integrations.\n  * **Source URL:** `https://github.com/` (Community Forum)\n  * **Verbatim Quote:** `\"On GitHub.com, there is not a specific “area” or feature for spinning up a test environment to make test API calls. However, it is possible to have a test organization...\"`\n\n#### 5. MCP Servers\n* **MCP Availability:** `official`\n* **Details:** GitHub publishes and maintains an official Model Context Protocol (MCP) server written in Go (`github/github-mcp-server`). It provides LLMs and AI agents with structured, tool-oriented access to GitHub's REST and GraphQL APIs.\n  * **Source URL:** `https://github.com/github/github-mcp-server` (via community tracking)\n  * **Verbatim Quote:** `\"On April 4, 2025, they released the new official github/github-mcp-server . This version is written in Go, making it significantly more performant, scalable, and robust.\"`\n\n#### 6. Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. GitHub is an ideal candidate for an AI agent toolkit. It features a completely self-serve free tier, extensive public documentation, an officially maintained OpenAPI specification, and an official Go-based MCP server.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"GitHub\" \"MCP server\"",
+   "GitHub OpenAPI spec url",
+   "GitHub API sandbox environment",
+   "GitHub partner program API access cost",
+   "\"github\" \"modelcontextprotocol/servers\" github mcp",
+   " github",
+   "",
+   "\"authenticating to the rest api\"",
+   "\"GitHub Apps\" vs \"OAuth Apps\"",
+   "\"GitHub Apps are the recommended way\""
+  ],
+  "search_sources": [
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYs55QcxcEqJSQYlbMFf_VRMFc3I92sUEwXXTP61FdZHgys8_3o4p9uINX3W_gpr0o9cT-qusqrMoBJYS_09RjQ4k8w3BdCSvepNlhkf3j8tWMvsb0orUFwfQH63IqQyk="
+   },
+   {
+    "title": "emergentsoftware.net",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-YWnE_7Sb76H_P9M6ILXP-OM-c0PSUOCAfB_SyZal3RyKmXjmMFlAkRkV43hRiBiT_JjgIqYnh4BugWL0a-iPcjhnq91DIxvJlHXDwbbu2YyplgK7s1xwAEHCMStJIl79iHDUkJl_e3q3RcaQaT-s1E1LteSbyjYoGk6b-E0Jx8ch5sTxNW_KQ7wouWUo7Q=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_FjmwGOPr1TK1DlFbopw-EIdNc9r-c8hK0ZgAVBP7jKWSjCH4oSvYZMbFa6dYpunRg8OkiQWvz6DwPfxnmrY74FHiO1Eq4S5H-3UUwPj0l65uRFHqzB75fHklN7aust-GI7Q6cfJSIerEyAHdd7XAFTxFyeShA3pdcXVgJxW2cCV155xTHSU2RLOrLRSqFE373IBBu_3BdKC8Rqg8kpjr4fdfxiOjF6s="
+   },
+   {
+    "title": "nango.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFARRfLjZ7dNNM0G30L62r1itLRs6OStpsIBJCGO2zxqQGgQRkHo2KtPLFrCxXhDLWDhcFF5VVJd9FetzHijyJuA3W-RUCto2tzrsqLR4yhGnshBUXxHtifb9k2QxZ7u3mC4n9bGO7WrqqUxod7"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHI10pnylQbCz7iNo_x8g9z_8g6fy-0ZSAyNVFgBuMLc7pP_QaHkj1ij1KMJmViBZSGkFNIh4s1__D56Yh2eeuMp03XpfNlva-oqFWYwQ3EhKvJbQgFviApP2nHuswBu_mIaCQa5ytY_nscKQ=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGX-BP4oU5PVUpz8-0nhjfyBzgt-Q_F2M9EWKlSYPyPnWUc3gVsK5rJ5YVql8Ish769twZa4D1Z9oEpC-6JV-YbWZm0y5P7pvcpmnK3CeYs-VKS5ZtJGDxamtjqdRQvVUZTGbnywKupbL-YS1DHTdQ-m6CIQ=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdEB7_bgQOvGrZ3bO0IXiXsLsXTKR9d8I7x0lzn7KbPpLF7dg8b6zH9vCr4adzd4hv2a_d37A-X6f5tXnkATshTuGXzuhrtba96YRYAd7PGoP_5cj1FHHh23YEQ7zmawjWbJlaNoE6nZruA3YSrhI8oH69eLH1VW5XaneHO3xP6xFW65n2WKkXjtHizSJmB61DLWo7ZoPAkPIxRA_DSBe2cZFVsT7auSbACjTEtMY="
+   },
+   {
+    "title": "logto.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLcnCJRk9TOwJRdhhgX8FvlMcsV1Jv4MP7aLJf9_h7lQBVQE6blhjYL9dfU5kdmPG7aB-1v7wvusB8CNtrYx16eH1KIsRpKEymj3-cqrpXHk9oRqkH_6CUHcbBQAASfib7AYhfBbaPPra7"
+   },
+   {
+    "title": "gocodeo.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVOwejgWhHWIp0gMtKE74Aakt8NXtoaiYWGZZCl90I4QPHTYRHgrAPbOMrziDWeMI1vgkwoH9cBoThORQPp9jm2v6Vw5YbqQo32SQo1jdhm9RKoQoK1adhGlcz8h_OzOaOeTYyMx46DByqV6a1ViuR-8vvUiwwI1bfail5E96QdPk="
+   },
+   {
+    "title": "getpricepulse.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8VtxVJpO8IwIJVmSjbD5jE5k4PTf5TQPUeVlLDs7cS9NocHXzR0_Kej3sLrPJhmYeN2_pYldYE6c_m7TQLS-wE9gxEnWaUjVneabocPtehRNJLYs2tkP-FkPhRxYeZyjrIrti7IQ3eRYG3AnsYAXVRJGY-xCaXArxQcBd1WW7U-ocsRsh"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2MSiZIUmH6vY6g3Q3Ax0LrVDXKEn-NLhXIreK-dI9-ENeLhq0OReD5gnQ2Bd07cu0uKeNtmOTdIFSiVKQerihN_iln8hLgaU3t-4h2tioZEKpRp6dC05ykiPiY4I5J78TBnARCwGKOcN_gcFHhaQ7W37EUc2NnNOqcdVdp5mwBpsDiKFXjWMTsGRhyp7p6ezYCsKt-zEgKpHXPLiIyvZ-HY8-QzmHFlo_sssGNLg="
+   }
+  ],
+  "tokens": 8886,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status':"
+  ],
+  "discovery": {
+   "search_queries": [
+    "GitHub API authentication docs.github.com",
+    "GitHub OAuth documentation docs.github.com",
+    "GitHub API keys docs.github.com",
+    "GitHub API getting started docs.github.com",
+    "GitHub API quickstart docs.github.com",
+    "GitHub API pricing docs.github.com",
+    "GitHub API plans docs.github.com",
+    "GitHub developer program docs.github.com",
+    "GitHub API reference index docs.github.com",
+    "GitHub REST API documentation docs.github.com",
+    "GitHub MCP server"
+   ],
+   "candidates": 0,
+   "live_urls": [
+    "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+    "https://github.com/pricing",
+    "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api",
+    "https://docs.github.com/en/rest/authentication",
+    "https://docs.github.com/en/apps/oauth-apps/using-oauth-apps",
+    "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens",
+    "https://docs.github.com/en/rest/quickstart",
+    "https://docs.github.com/en/get-started/learning-about-github/githubs-plans"
+   ],
+   "bad_candidates": [],
+   "pages_read": [
+    {
+     "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+     "status": 200,
+     "chars": 14239,
+     "readable": true
+    },
+    {
+     "url": "https://github.com/pricing",
+     "status": 200,
+     "chars": 32130,
+     "readable": true
+    },
+    {
+     "url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api",
+     "status": 200,
+     "chars": 41494,
+     "readable": true
+    },
+    {
+     "url": "https://docs.github.com/en/rest/authentication",
+     "status": 200,
+     "chars": 4666,
+     "readable": true
+    },
+    {
+     "url": "https://docs.github.com/en/apps/oauth-apps/using-oauth-apps",
+     "status": 200,
+     "chars": 4291,
+     "readable": true
+    },
+    {
+     "url": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens",
+     "status": 200,
+     "chars": 23982,
+     "readable": true
+    },
+    {
+     "url": "https://docs.github.com/en/rest/quickstart",
+     "status": 200,
+     "chars": 20587,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 186.7
+ }
+}

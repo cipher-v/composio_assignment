@@ -1,0 +1,154 @@
+{
+ "app": {
+  "id": 98,
+  "name": "Mermaid CLI",
+  "category": "AI, Research and Media-native",
+  "hint": "github.com/mermaid-js/mermaid-cli"
+ },
+ "record": {
+  "subcategory": "Diagramming",
+  "one_liner": "Mermaid CLI is a command-line utility for converting Mermaid text-based diagram definitions into image formats.",
+  "auth_methods": [
+   "none"
+  ],
+  "primary_auth": "none",
+  "auth_notes": "Mermaid CLI is a local command-line utility and does not offer a hosted public API, thus no authentication mechanisms are present.",
+  "access": "self_serve_free",
+  "access_notes": "The tool is completely free and open-source, installable via package managers like npm or run via Docker without registration or credentials.",
+  "api_styles": [
+   "cli_or_library"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "Operated via terminal commands and arguments, supporting single diagram conversion, batch processing of markdown files, and extensive visual customization.",
+  "openapi_spec": false,
+  "webhooks": false,
+  "sandbox": false,
+  "mcp": "community_only",
+  "mcp_notes": "No official MCP servers for the standalone Mermaid CLI; community-created MCP servers exist that wrap the CLI for AI agents.",
+  "verdict": "ready_with_friction",
+  "blocker": "local_cli_only",
+  "blocker_notes": "As an open-source command-line tool, it requires wrapping and execution within a secure local sandbox or container environment for integration.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://github.com/mermaid-js/mermaid-cli",
+    "quote": "command-line interface (CLI) for mermaid"
+   },
+   {
+    "claim": "auth",
+    "url": "https://github.com/mermaid-js/mermaid-cli",
+    "quote": "MIT License"
+   },
+   {
+    "claim": "access",
+    "url": "https://github.com/mermaid-js/mermaid-cli",
+    "quote": "npx -p @mermaid-js/mermaid-cli mmdc -h"
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/mermaid-js/mermaid-cli",
+    "quote": "It's possible to call mermaid-cli via a Node.JS API"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://lobehub.com/nl/mcp/aviciot-mcp_mermaid",
+    "quote": "generate beautiful diagrams from mermaid syntax code via model context protocol (mcp)... docker deployment : fully containerized with mermaid-cli"
+   },
+   {
+    "claim": "verdict",
+    "url": "https://github.com/mermaid-js/mermaid-cli",
+    "quote": "command-line interface (CLI) for mermaid"
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### Verification Notes\n\n**subcategory**: CONFIRMED. \"Diagramming\" is accurate. The tool's purpose is to convert text-based definitions into diagrams.\n\n**one_liner**: CONFIRMED. The one-liner is a correct summary. The official GitHub repository describes it as a \"command-line interface (CLI) for mermaid\" that \"takes a mermaid definition file as input and generates an SVG/PNG/PDF file as output\".\n\n**auth_methods**: CONFIRMED. The value `none` is correct. Mermaid CLI is a local command-line tool that does not require authentication for its core functionality of converting diagrams. The documentation for building the tool mentions generating a GitHub auth token, but this is for developers contributing to the project to access GitHub's package registry, not for end-users of the CLI.\n\n**primary_auth**: CONFIRMED. The value `none` is correct as there are no authentication methods for using the tool itself.\n\n**auth_notes**: CONFIRMED. The notes are accurate. As a local, open-source command-line utility, it does not have a hosted public API and therefore lacks authentication mechanisms for its use.\n\n**access**: CONFIRMED. The value `self_serve_free` is correct. The tool is open-source under the MIT License and can be freely installed and used via npm, Docker, or other package managers without any registration.\n\n**access_notes**: CONFIRMED. The notes are accurate. The tool is free, open-source (MIT License), and can be installed via package managers like npm or run via Docker, as stated on its official GitHub page. The GitHub page provides the exact `npx` command: `npx -p @mermaid-js/mermaid-cli mmdc -h`.\n\n**api_styles**: CONFIRMED. The value `cli_or_library` is correct. The tool is explicitly a \"command-line interface\" and can also be used as a Node.js library. The official GitHub page states, \"It's possible to call mermaid-cli via a Node.JS API\".\n\n**api_breadth**: CONFIRMED. The value `moderate` is accurate. The CLI supports converting individual diagram files, processing Markdown files to extract and convert multiple diagrams, and offers customization through themes, CSS, and configuration files.\n\n**api_notes**: CONFIRMED. The notes are accurate. The tool is operated via terminal commands and arguments, supporting single diagram conversion, batch processing of markdown files, and visual customization.\n\n**openapi_spec**: CONFIRMED. The value `false` is correct. As a CLI/library, it does not have an OpenAPI specification.\n\n**webhooks**: CONFIRMED. The value `false` is correct. The tool is a local CLI and does not support webhooks.\n\n**sandbox**: CONFIRMED. The value `false` is correct. There is no vendor-hosted sandbox environment; the tool is run in the user's local environment.\n\n**mcp**: CONFIRMED. The value `community_only` is correct. While there is a video mentioning an MCP server from \"mermaid.ai\", this appears to be related to the separate commercial entity \"Mermaid Chart\", not the open-source `mermaid-cli` project itself. Multiple other community-built MCP servers that wrap the open-source CLI exist.\n\n**mcp_notes**: CONFIRMED. The notes are accurate. There are no official MCP servers for the standalone `mermaid-cli` tool. Community-created MCP servers exist that wrap the CLI to provide an API for AI agents, often deployed via Docker.\n\n**verdict**: CONFIRMED. The value `ready_with_friction` is correct. The tool is an open-source CLI that can be used immediately, but for integration into a multi-tenant platform, it would need to be wrapped in a service and run in a secure sandbox environment.\n\n**blocker**: CONFIRMED. The value `local_cli_only` is correct and aligns with the verdict.\n\n**blocker_notes**: CONFIRMED. The notes accurately describe the necessary steps for integration, which involve wrapping the CLI in a secure, sandboxed environment.\n\n### Uncertain Fields\n\nNone. All fields were verifiable from the official documentation and public sources.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "mermaid-cli official api",
+   "mermaid-js mcp server",
+   "mermaid-cli authentication",
+   "is mermaid-cli free"
+  ],
+  "search_sources": [
+   {
+    "title": "x-cmd.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmB_xb5h6GyV8pEg-cm3BcW1X4smTzwXG1bTQuS_iYqgxu2po8p_PhdkkXWw3BZorSC1iNtsWNAOFXO9RoLHOOzkekxybVNfdQgN_djwiOt0OErZdFIoI6MOp-kB09ipBx"
+   },
+   {
+    "title": "mermaid2img.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmVt2rSdpwxuy2EFXexYbZqBe4-lFMqcwUR8vjlfnObUqR8ZRb1OpVL8m3f6xKkOf_pwR_2TeETQt333gDPfD6oyHa_3zeOg9bFtmU0n16B6ld__Tr3ESkH-wh0PSVN19tBd0SQWmqe_xdWbwFfQFLOf7RokFfU-NrCMMER8iSHnS32XMtE2jDrfFQ"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaLhSLDQBX8QZ6OLJfPaHP0Pff2H_SuaQoOyLCPxHkgTbmorg_f7ugZ4FqCypDZ3oXu-rxOVjB-wkHEXb6oY9ePeA4sN35q_OhHhAwxvXkL7e6KtgXzItJZpZOUR1MzW9Y-t2c"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtg0CcG1QUDUTW15w-Q8Q2NhB5vnrJ6kWw_jQLvU1v-ypwhylWIqCimRBFdGRssaEPJbp83rRvRvU414ThfzejKc-DWTb408eG-TbDoPV_QJSE0yAL1EwHP6TBn2NTPdiMj9meTbVQ6mAk-f0ybrGEf8dpy0Xx49WlTgJq"
+   },
+   {
+    "title": "brew.sh",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2gKadjwBK5d_7o6y6_a2olOVL-OkFN3esw0GZz5GznYtldhnlxrFUmvm7hcgtjvMbbfY_HfERu9U0MXtZBS1YQC2mjmH3SChsTt4d89vgcfH1vIQ0PFlStSPjjH30pFW_f62YBgH2"
+   },
+   {
+    "title": "tessl.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJqiRmrEaQs3Pdq-Gfv-_Q9l8hSuNmbaFyWW3qIHFVZOWvMRIWgqwvxhoqe1DH5EXLThPYpyF9OREOELKhQh7VT6EOFvQsfL6Z7aw3jwTO09MYa6T3ogNydB2rUhCW2EybY5rnR7EN_QuKT3b-xQcxXaG6DVTwr0OFD1ZQA5mqDtn0cH7quI4I9iGTkQmxgw=="
+   },
+   {
+    "title": "youtube.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOtriwNez2-2UrNn1fK3b4zuwbutE-6MIUxmJVSpjX13MJNLwaHckF31cIFzW13yx_sKI_xb5o1LqhNKchxOQCY1T6AC_aj8wWrdgTO_RFxpGJaNTpJ_u2NvAYkGHOlht9iHnXCBE="
+   },
+   {
+    "title": "ycombinator.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHO1yQAG5zf4yBSKL3tbUAdcPj_e9Bq0IB0ukM7TzIwt8-DqaiDXahAIsLNuL4USeBLFLzd17AhNdgMXp0Jt3eYDVBz3mPVWL8BuJX_h-X5O-LSgK-TXZ97lAuEmNI9ucaU6gawJvrNKQ=="
+   },
+   {
+    "title": "mcp.so",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEV_LTnSjz5gKqtgf44imSCNcb4d1FO9uTTqFKhciG0xhnJMXlC9ZrJh0cx48yq750SVqQA0rdlREjGDAIti97SYGguX3xsncrwdvCeoB7boUYK3mKS3SdBKE2c-EHLJeImym7y"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyBP0MdX9ougpIx_qooaI96dCbwjQ3bzyggs5J9pvXOg8fw0eNRuqTZy_Oq9hlFJipvU-S0GjJ850Qbr3gVY-HmJFtbcHtUE1G6fUYH2iZKvk-uab-_9EgQ8pZa5ivWDTdaIGbElIwtsKDIjk="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtfJhDV-_9e0j-Y9qM6Xtff13-WORR4diptUn4_8IK_piJABZ6IVNwQAePugamuUmrcbdQB77JcicjcbRXIlmmpMjIOPn3iCFQyCZG0qfZoM4Tth8iFknTgHMzL-rvDrk8uEK8p4rS_01o6w=="
+   },
+   {
+    "title": "lobehub.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4wg8dcIcU0F-OOQHt7O_vvpsNdG8naLLRTYBW7gKCsjmLpGGm8fe0tHt-TkMPvXDIEir93XarqpyzvkGm5hk9u-8s7qwyuOtQnBjGoHy98le8C9bdfE7neaIsQuaG2Cr3FKb0QwzIqMI="
+   }
+  ],
+  "tokens": 7698,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "pages_read": [
+   {
+    "url": "https://github.com/mermaid-js/mermaid-cli",
+    "status": 200,
+    "chars": 9268,
+    "readable": true
+   },
+   {
+    "url": "https://tessl.io/registry/tessl/npm-mermaid-js--mermaid-cli/11.6.0/files/docs/cli.md",
+    "status": 200,
+    "chars": 6300,
+    "readable": true
+   },
+   {
+    "url": "https://lobehub.com/nl/mcp/aviciot-mcp_mermaid",
+    "status": 200,
+    "chars": 9862,
+    "readable": true
+   }
+  ],
+  "seconds": 59.6
+ }
+}

@@ -1,0 +1,231 @@
+{
+ "app": {
+  "id": 6,
+  "name": "Podio",
+  "category": "CRM and Sales",
+  "hint": "podio.com"
+ },
+ "record": {
+  "subcategory": "Work Management / CRM",
+  "one_liner": "A flexible work management and collaboration platform for building custom apps, workspaces, and automated workflows.",
+  "auth_methods": [
+   "oauth2",
+   "other"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Supports OAuth2 server-side and client-side flows, plus an app-specific token flow for automated scripts.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can instantly generate Client ID and Secret from the API key tab in account settings; free for all accounts.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extensive REST API covering over 40 areas including Items, Tasks, Apps, Workspaces, and Hooks.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Official hosted MCP server available at https://mcp.podio.com providing 22 tools for AI agents.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "Self-serve credentials, free API access, and an official MCP server make it immediately buildable.",
+  "evidence": [
+   {
+    "claim": "auth",
+    "url": "https://developers.podio.com/authentication",
+    "quote": "The podio api uses the oauth2 protocol for authentication... Podio supports four different ways of autheticating depending on what kind of application you are building: Server-side flow: This is the preferred way of authenticating for web apps."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.podio.com/api-key",
+    "quote": "generating api keys to podio it's easy to get one or more api keys for accessing your podio data. you just have to sign in or sign up with podio, and go to the api key tab in your settings."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.podio.com/doc",
+    "quote": "Our API is split up into different areas, that each contains a subset of methods grouped by functionality... Core Areas: Applications... Comments... Contacts... Files... Hooks... Items... Tasks..."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://www.progress.com/podio",
+    "quote": "The Podio MCP (Model Context Protocol) Server connects AI assistants — ChatGPT, Microsoft Copilot Studio, Claude Desktop, and any other MCP-compatible platform — directly to your Podio data... The server is live at https://mcp.podio.com"
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Product Overview\nPodio (now part of Progress Software) is a flexible work management, collaboration, and CRM platform that allows teams to build custom applications, workspaces, and automated workflows to manage their internal operations.\n* **Source URL:** `https://developers.podio.com/doc` (via apis.io network metadata)\n* **Verbatim Quote:** `\"Podio is a flexible work management and collaboration platform... that lets teams build custom apps, workspaces, and workflows for project management, CRM, and internal operations.\"`\n\n---\n\n### Authentication Methods\nThe Podio API relies on the OAuth 2.0 protocol and supports four distinct authentication flows depending on the application type:\n1. **Server-side flow:** The standard authorization code flow for web applications.\n2. **Client-side flow:** For applications without a backend server (e.g., browser extensions, mobile apps).\n3. **Username & password flow:** A legacy flow requiring direct user credentials (discouraged).\n4. **App authentication flow:** Allows authentication as a single specific Podio app using an app token, typically used for automated scripts.\n\n#### Primary Auth for Multi-Tenant Integration\nFor a multi-tenant integration platform like Composio, **`oauth2`** (specifically the **Server-side flow**) is the primary method to safely authenticate end-users.\n* **Source URL:** `https://developers.podio.com/authentication`\n* **Verbatim Quote:** `\"The podio api uses the oauth2 protocol for authentication... Podio supports four different ways of autheticating depending on what kind of application you are building: Server-side flow: This is the preferred way of authenticating for web apps.\"`\n\n---\n\n### Credential Acquisition & Cost\n* **Access Classification:** `self_serve_free`\n* **How to get credentials:** Any developer can sign up for a Podio account, navigate to their account settings, and instantly generate API keys (Client ID and Client Secret) without manual approval or vendor outreach.\n* **Cost:** API access is completely free and included in both free and paid tiers. The free plan supports up to 5 employees. Higher rate limits can be purchased via an API Add-on if needed.\n* **Source URL:** `https://developers.podio.com/api-key`\n* **Verbatim Quote:** `\"generating api keys to podio it's easy to get one or more api keys for accessing your podio data. you just have to sign in or sign up with podio, and go to the api key tab in your settings.\"`\n* **Source URL:** `https://developers.podio.com` (Developer FAQ)\n* **Verbatim Quote:** `\"The Podio API is available to use for both paid and free Podio accounts. Both have full access to the API and the same base rate Limit A and Limit B apply. There is no extra charge for using the API as long as the usage is within these base rate limits.\"`\n\n---\n\n### API Characteristics\n* **API Style:** RESTful API using JSON as the data exchange format.\n  * **Source URL:** `https://developers.podio.com/doc` (Conventions)\n  * **Verbatim Quote:** `\"It is RESTful and uses json as the exchange format.\"`\n* **API Breadth:** Extremely broad, covering over 40 distinct functional areas including applications, items, tasks, workspaces, comments, files, organizations, and notifications.\n  * **Source URL:** `https://developers.podio.com/doc`\n  * **Verbatim Quote:** `\"Our API is split up into different areas, that each contains a subset of methods grouped by functionality... Core Areas: Applications... Comments... Contacts... Files... Hooks... Items... Tasks...\"`\n* **OpenAPI Spec:** No official OpenAPI specification is published directly by Podio, though community-maintained subsets exist on networks like APIs.io.\n* **Webhooks:** Supported natively via the \"Hooks\" API area, allowing external URLs to receive real-time HTTP POST notifications when actions occur.\n  * **Source URL:** `https://developers.podio.com/doc`\n  * **Verbatim Quote:** `\"Hooks: Hooks are webhooks that can call external sites when certain actions occur in podio.\"`\n* **Sandbox:** No dedicated sandbox environment is provided; developers use standard free accounts for testing since the API is fully functional on the free tier.\n\n---\n\n### MCP Servers\n* **Availability Classification:** `official`\n* **Details:** Progress Software officially hosts a live Model Context Protocol (MCP) server for Podio. It provides 22 pre-built tools enabling AI agents to read and write workspaces, apps, items, and tasks using natural language. It supports both a quick shared-credential setup and a production-ready custom OAuth configuration.\n* **Source URL:** `https://www.progress.com/podio` (Podio MCP Server Integration Guide)\n* **Verbatim Quote:** `\"The Podio MCP (Model Context Protocol) Server connects AI assistants — ChatGPT, Microsoft Copilot Studio, Claude Desktop, and any other MCP-compatible platform — directly to your Podio data... The server is live at https://mcp.podio.com — just point your AI platform at it and log in with your Podio account.\"`\n\n---\n\n### Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. Podio provides comprehensive public documentation, self-serve free API credential generation, standard OAuth 2.0 flows, and an officially hosted remote MCP server (`https://mcp.podio.com/mcp`), making it immediately buildable for an agent toolkit.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "podio pricing plans",
+   "podio api free tier",
+   "podio mcp server",
+   "podio openapi spec",
+   "\"The Podio MCP (Model Context Protocol) Server connects AI assistants\"",
+   " \"mcp server\"",
+   " \"mcp.podio.com\"",
+   " \"MCP Server — Integration Guide\"",
+   "\"our api supports different oauth flows\"",
+   "\"The recommended authentication method for the Podio API\""
+  ],
+  "search_sources": [
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGk35MRy9ZRVJC3XrseS_QjIB3B72lHvAEB_kF6IFzII74nOwKLrAr0P6d3xOxijq_iI5bgIWwR0eRVbBKTNPTRXMtG17aV0usUi1DU7-MxgVETrsL756fixcA="
+   },
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVoUzt9jI0xdUXS1gipAKUs14ti1poFnDZwBM_-6yYVRx_VssL8rL3pY8jLOmFR3Z_1CeZLP3Vyd9MBK5CduMJI5W7mC96X-EEMymokAo3TaFVlijfm634ccBX0Qr_qVN36zq1Og=="
+   },
+   {
+    "title": "podio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_Limddq9omrt0d4N-bRfsKtbmJnAcHI7Eiuf4LvhUBtr5H8_tHrZkoMDPTcTLoC5gcF6f3RD5qU2fsCu_GYKgHkBewe9mJpupNHEwg1FQjQWZJSpAvP7DiqRxtY6oOvLOftuJno8="
+   },
+   {
+    "title": "podio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVkj3o32Ipu4sxjT5-5Vwn1rbSbN9ZUgjy43lTmR_MgVL7PVTCQEl9cUnmHHqf0cneNT4iihuMCviiImwIlCab7OntQ6pO2nE2DJRVlKBiEqpMqyb36m8PP1HlWqB-p6RL"
+   },
+   {
+    "title": "larksuite.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUCmYAPnlqWy1vJgDvrVs_1-Je3clmZ4fnlEwAohVTwmjPey-td2__-ozC4HVdW0c4VaCP_MphFUL3LBH6SY3EJBbnmIZ9Iptn18wzVWB9a4j8bRhZ7vDkUL8uoM3g84VyVEkRK79CJCEkdUg="
+   },
+   {
+    "title": "podio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGvbVfkDAmyaaPqDhk9EZPO6beZzLA-9riLH0xl5NGPX8W3BxRJL04VAT-GVSEqshybRL_aslAq-JlvAXG5BGXmMqfM1t8doqIXsSuXEbkiUd-veuwzHzO7Ff1xO_aM3Y="
+   },
+   {
+    "title": "podio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFkQASDoKQq-9bnVY5SpJ6UrxICw5pLGzU9jsDeViSdhBXXN4_a4DJu7XknDwsd5jqjwa3UDCrT7dsfSdhZGUlMKRlqsZwsnpDxFoq4qNxGUBQ7jzKbahhvoUXDY8FJHAQ0Bg="
+   },
+   {
+    "title": "progress.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_IST_0QmDbsfpbg6-C1yNYLbWGlF0lPNLXxS00khECNBBHnxWD1BlNekY4ywYghsGSLib-86alc0oNXsFUIS7dn-plm-1mX4DPwT54xZDOOZalmWZYPcqIdhJsiq7Pxan4m1zyXjE1-ElY9iFyn-J-RZe0XndtH4Kpfzz5SJfVy26rA=="
+   },
+   {
+    "title": "stackoverflow.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEA5DpnHmbLm89OTy6EZR97Uzx2q_9izSWkK9fi1zbYN28-2IYAM_uMizwsVuTGGoaOxY7tDDu5Je-jGefrF-1S52FlMLlgE_zgRMU0CK--55PY1_JAO3ZTaTuX4I2zmWb2dJbMwYBM_Hcx6wj8tl2A2wP4dscf"
+   },
+   {
+    "title": "podio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExDT_Ryg0TEPqn91qPW9MhoTUayDzUucK4b_T5Wkau5RQkuZ2VSMrHaIWcre_uajxJUfrZNoU2jd9m_jdOypoJy0RVnQ7ETVO_Lfl1JTW_lZr6J2IQG14="
+   },
+   {
+    "title": "podio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDC75XPgFwylI3cS3fpDZoBKnbWsU_TFr8XDCdUzpeTUkEMVthPv43o_yNmS_Q-6e_EmhTeCxDDcO2MuTdDQUVHiNo_iP2vBtiHzfVgPO11Osl2L-LEaRy-0g="
+   },
+   {
+    "title": "podio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKHy510ilDey3KmgDplyS-fu_JfW8SWUz83OGv4BfmadTRxeAiCaC2g0HI4IguFM9ORIFlP7U99ZIyzX82J7PM7O7Ky53xlmlEchZ8JH2B0dZaC_iDXBMtorYDwmtc32c="
+   },
+   {
+    "title": "viasocket.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcGVkC_sICD2Dy-1jCDgoQmWGMJ8rUUuKPhzX2HdoFH8pIw7l8Pi6lOrXWxYU034aPrmPuLepToKuC-7GqjeiPam4yJLOjIJhQhaOF_16g7lqWXtdTQ6Pxaw=="
+   },
+   {
+    "title": "zapier.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5_Zq0wwLB-zHP3fr5Kd0v3OGoyJA9ifyZZOQ5WJX-ue9Bu9g-izbQPttuUmlfxQ9gSvQ9cVAB4K4_QaYeEcqwMXJAKOB6NS6GRTBHkixUs85Nbs7toQ=="
+   },
+   {
+    "title": "agentcentral.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6j5S-88VELPxWVgjuV2P1f4vqb0M9sCccKxyoDUckGtq83YtUw1rnSOmFOV4esX0SE5fJnR5w9Iz4RsRffRNYQDuk2F6WTezSliAS6YRF05X3R2blqDMOUQw_iOqHKs9xr0WfPtal6Remrwwz"
+   },
+   {
+    "title": "zapier.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBx3PCdpyd2tMfYQEwJT5ju6rGyRUSGEV6_i7SqC13J1Q9yaUqmGeTF2FWZBoPbY6j8LWwQpfu6DxjCrJS85oAneAEO7qkdeI1xmRv1GgXwUS65pax7A=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoUVYA7iO2qY0a_q91cLBq6ftTchupH07Y4xbDjUBg0tNYesQhUSHS4XBVdPMajBbe1pCIwglNaFhIncQ4cjDTQsLW4ZFShY8RjOFx-rmCXClPzmh0yz8fDn9L-XnnVmTi_nY35pOeyZRyAcVB2_ycvg1rVT67ZkBZ3D8fB0f26Jg="
+   }
+  ],
+  "tokens": 8600,
+  "retries": [
+   "504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status':",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Podio developer documentation authentication API keys OAuth",
+    "Podio developer documentation getting started quickstart",
+    "Podio pricing API access developer program",
+    "Podio API reference index",
+    "Podio MCP server official community",
+    "Podio official pricing page URL",
+    "Podio partner program developer program page URL",
+    "Podio official MCP server documentation progress.com"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://developers.podio.com/authentication",
+    "https://developers.podio.com/doc",
+    "https://developers.podio.com/api-key",
+    "https://www.progress.com/podio/pricing",
+    "https://www.progress.com/podio/partners",
+    "https://tallyfy.com/what-is-podio/",
+    "https://www.progress.com/podio/documentation/using-podio/upgrade-and-billing/upgrading-and-billing",
+    "https://www.progress.com/podio/documentation/using-podio/podio-mcp-server"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://developers.podio.com/getting-started",
+     "status": 500
+    },
+    {
+     "url": "https://mcp.podio.com/mcp",
+     "status": 401
+    },
+    {
+     "url": "https://developers.podio.com/tutorials",
+     "status": 500
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://developers.podio.com/authentication",
+     "status": 200,
+     "chars": 4890,
+     "readable": true
+    },
+    {
+     "url": "https://developers.podio.com/doc",
+     "status": 200,
+     "chars": 4602,
+     "readable": true
+    },
+    {
+     "url": "https://developers.podio.com/api-key",
+     "status": 200,
+     "chars": 898,
+     "readable": true
+    },
+    {
+     "url": "https://www.progress.com/podio/pricing",
+     "status": 200,
+     "chars": 12265,
+     "readable": true
+    },
+    {
+     "url": "https://www.progress.com/podio/partners",
+     "status": 200,
+     "chars": 6966,
+     "readable": true
+    },
+    {
+     "url": "https://tallyfy.com/what-is-podio/",
+     "status": 200,
+     "chars": 20203,
+     "readable": true
+    },
+    {
+     "url": "https://www.progress.com/podio/documentation/using-podio/upgrade-and-billing/upgrading-and-billing",
+     "status": 200,
+     "chars": 12106,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 444.7
+ }
+}

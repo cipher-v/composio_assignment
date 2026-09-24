@@ -1,0 +1,244 @@
+{
+ "app": {
+  "id": 79,
+  "name": "Smartsheet",
+  "category": "Productivity and Project Management",
+  "hint": "smartsheet.com/developers"
+ },
+ "record": {
+  "subcategory": "Work Management / Collaboration",
+  "one_liner": "Smartsheet is an enterprise work management and collaboration platform.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 for third-party applications; Bearer Tokens (Personal Access Tokens) for direct API access; Service Token-based Authentication for Resource Management API.",
+  "access": "paid_plan",
+  "access_notes": "API access (generating personal access tokens) requires a Business or Enterprise plan. Registering for Developer Tools to create OAuth apps also requires the user's email to belong to a licensed account on a Business plan or higher. A 30-day free trial of the Business plan is available, which provides temporary API access. There is no separate, persistent free developer sandbox environment.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive CRUD coverage across sheets, rows, columns, cells, reports, workspaces, folders, users, groups, attachments, discussions, automation rules, and webhooks.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Smartsheet officially hosts and publishes its own Model Context Protocol (MCP) server.",
+  "verdict": "ready_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "A developer cannot obtain credentials or register an OAuth application without an active paid subscription (Business plan or higher).",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.smartsheet.com/pricing",
+    "quote": "...manage projects, automate workflows, and build solutions at scale with smartsheet."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.smartsheet.com/api/smartsheet/guides/advanced-topics/oauth",
+    "quote": "OAuth 2.0 (OAuth) provides a way for your app users to grant limited access to their smartsheet resources. Here, we demonstrate registering apps to use OAuth and implementing an OAuth flow with your apps."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.smartsheet.com/api/smartsheet/guides/advanced-topics/oauth",
+    "quote": "Connect your Smartsheet account to any MCP-compliant AI client via OAuth 2.0 or personal access token for custom agent integrations."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.smartsheet.com/api/resource_management/getting-started",
+    "quote": "The api uses service token-based authentication, which can be provided either in an http header or as a url query parameter named auth ."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.smartsheet.com/api/smartsheet/openapi",
+    "quote": "Important: The Smartsheet API is restricted to users on Business and Enterprise plans."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.smartsheet.com/",
+    "quote": "The email address used to register for Developer Tools must belong to an existing licensed Smartsheet user on a Business plan or higher."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.smartsheet.com/api/resource_management/getting-started",
+    "quote": "We assume that you are familiar with basic restful api concepts."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.smartsheet.com/api/smartsheet/guides/advanced-topics/oauth",
+    "quote": "...sheets, rows, columns, and cells... reports users webhooks updating code limitations deprecation process additional resources event types webhook event types error codes changelog openapi reference alternate email addresses attachments automation rules..."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.smartsheet.com/api/smartsheet/openapi",
+    "quote": "Welcome to the OpenAPI reference documentation for the Smartsheet API!"
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.smartsheet.com/api/smartsheet/guides/advanced-topics/oauth",
+    "quote": "...reports users webhooks updating code..."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.smartsheet.com/api/advanced-topics/oauth",
+    "quote": "Since the Developer account is signed up with a different email address than the one you use for your main Smartsheet account it is a completely separate environment. But, it still acts like any other Smartsheet account."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://developers.smartsheet.com/",
+    "quote": "Explore api docs, connect to our mcp server, develop faster on sdks, and join a thriving community building on smartsheet."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://developers.smartsheet.com/",
+    "quote": "The Smartsheet Model Context Protocol (MCP) Server enables you to manage projects and Smartsheet data from within Smart Assist and AI assistants, such as Claude, ChatGPT, Microsoft 365 Copilot, Gemini Enterprise Plus, Cursor, and others."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://developers.smartsheet.com/",
+    "quote": "The email address used to register for Developer Tools must belong to an existing licensed Smartsheet user on a Business plan or higher."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": "[\"oauth2\", \"bearer_token\", \"other\"]",
+    "new": "[\"oauth2\", \"bearer_token\"]",
+    "reason": "The 'other' method (Service Token-based Authentication) is specific to the Resource Management API, which is a separate product, not the main Smartsheet API.",
+    "url": "https://developers.smartsheet.com/api/resource_management/getting-started"
+   },
+   {
+    "field": "access_notes",
+    "old": "API access and Developer Tools are restricted to users on Business and Enterprise paid plans. No free developer tier or sandbox with API access.",
+    "new": "API access (generating personal access tokens) requires a Business or Enterprise plan. Registering for Developer Tools to create OAuth apps also requires the user's email to belong to a licensed account on a Business plan or higher. A 30-day free trial of the Business plan is available, which provides temporary API access. There is no separate, persistent free developer sandbox environment.",
+    "reason": "The original notes were mostly correct but missed the nuance of the free trial. API access token generation requires a Business or Enterprise plan. Registering for Developer Tools (for OAuth apps) has the same requirement: 'The email address used to register for Developer Tools must belong to an existing licensed Smartsheet user on a Business plan or higher.' A free 30-day trial of the Business plan is offered, which would grant temporary API access. An older blog post from 2019 mentions creating a 'sandbox Smartsheet account' via developer registration, but current documentation does not support the existence of a persistent, free sandbox.",
+    "url": "https://developers.smartsheet.com/"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### **Verification Notes**\n\n**subcategory**: `Work Management / Collaboration`\n*   **Result**: CONFIRMED\n*   **Evidence**: The search results describe Smartsheet as a \"cloud-based platform for work management and collaboration.\" This aligns with the provided subcategory.\n\n**one_liner**: `Smartsheet is an enterprise work management and collaboration platform.`\n*   **Result**: CONFIRMED\n*   **Evidence**: The Smartsheet API is described as enabling programmatic access to \"a popular cloud-based platform for work management and collaboration.\" The pricing page also mentions managing projects and automating workflows. This confirms the one-liner is accurate.\n\n**auth_methods**: `[\"oauth2\", \"bearer_token\", \"other\"]`\n*   **Result**: WRONG\n*   **Correct Value**: `[\"oauth2\", \"bearer_token\"]`\n*   **Evidence**:\n    *   **OAuth 2.0**: Confirmed. The documentation states, \"The Smartsheet API utilizes OAuth 2.0 for authentication and authorization.\" It is the preferred method for integrations involving user consent.\n    *   **Bearer Token**: Confirmed. The API authenticates using access tokens, which are passed as a Bearer token in the authorization header. These are also referred to as \"API keys\" or \"personal access tokens\" and can be generated directly in the user's account settings for direct API access.\n    *   **Other (Service Token)**: This is incorrect for the main Smartsheet API. The first-pass record correctly identified that \"service token-based authentication\" is for the *Resource Management API*, which is a separate product from the main Smartsheet API, as indicated by the distinct sections on the developer portal. It should not be listed as an auth method for the primary Smartsheet platform.\n\n**primary_auth**: `oauth2`\n*   **Result**: CONFIRMED\n*   **Evidence**: The documentation explicitly recommends using OAuth for scenarios with user interaction and consent, which is the standard for multi-tenant platforms. Direct token access is suggested for machine-to-machine scenarios.\n\n**auth_notes**: `OAuth 2.0 for third-party applications; Bearer Tokens (Personal Access Tokens) for direct API access; Service Token-based Authentication for Resource Management API.`\n*   **Result**: CONFIRMED\n*   **Evidence**: The notes accurately summarize the authentication methods. OAuth 2.0 is for apps requiring user consent. Bearer tokens (personal access tokens) are for direct, machine-to-machine API calls. The service token is correctly attributed to the separate Resource Management API.\n\n**access**: `paid_plan`\n*   **Result**: CONFIRMED\n*   **Evidence**: API access is explicitly tied to paid plans. The documentation states that generating an API access token requires a \"Business, Enterprise, or Advanced Work Management\" plan. Third-party sources corroborate this, stating, \"To access Smartsheet API, subscribe to the Smartsheet Business or Enterprise plan.\" While a 30-day free trial of the Business plan is available, which would include API access, it expires, and API access is not available on the legacy free plan. Therefore, sustained API access requires a paid plan.\n\n**access_notes**: `API access and Developer Tools are restricted to users on Business and Enterprise paid plans. No free developer tier or sandbox with API access.`\n*   **Result**: WRONG\n*   **Correct Value**: API access (generating personal access tokens) requires a Business or Enterprise plan. Registering for Developer Tools to create OAuth apps also requires the user's email to belong to a licensed account on a Business plan or higher. A 30-day free trial of the Business plan is available, which provides temporary API access. There is no separate, persistent free developer sandbox environment.\n*   **Evidence**: The original notes were mostly correct but missed the nuance of the free trial. API access token generation requires a Business or Enterprise plan. Registering for Developer Tools (for OAuth apps) has the same requirement: \"The email address used to register for Developer Tools must belong to an existing licensed Smartsheet user on a Business plan or higher.\" A free 30-day trial of the Business plan is offered, which would grant temporary API access. An older blog post from 2019 mentions creating a \"sandbox Smartsheet account\" via developer registration, but current documentation does not support the existence of a persistent, free sandbox.\n\n**api_styles**: `[\"rest\"]`\n*   **Result**: CONFIRMED\n*   **Evidence**: The API uses a base URL structure of `https://api.smartsheet.com/2.0`, authenticates via HTTP headers, and returns JSON, all of which are characteristic of a RESTful API.\n\n**api_breadth**: `broad`\n*   **Result**: CONFIRMED\n*   **Evidence**: The API reference documentation and introductions show a wide range of accessible resources, including \"Sheets, Folders, Users,\" \"workspaces,\" \"reports,\" \"cells,\" and more, confirming broad coverage of the platform's features.\n\n**api_notes**: `Comprehensive CRUD coverage across sheets, rows, columns, cells, reports, workspaces, folders, users, groups, attachments, discussions, automation rules, and webhooks.`\n*   **Result**: CONFIRMED\n*   **Evidence**: The API documentation lists endpoints and objects for the vast majority of these resources, such as sheets, cells, folders, users, reports, and webhooks, indicating comprehensive management capabilities.\n\n**openapi_spec**: `true`\n*   **Result**: CONFIRMED\n*   **Evidence**: The developer portal has a section titled \"Smartsheet OpenAPI Reference,\" and the documentation mentions an OpenAPI specification.\n\n**webhooks**: `true`\n*   **Result**: CONFIRMED\n*   **Evidence**: \"Webhooks\" are listed as a resource in the API documentation navigation.\n\n**sandbox**: `false`\n*   **Result**: CONFIRMED\n*   **Evidence**: While an old 2019 article mentions a sandbox, current official documentation and community discussions from 2023 do not indicate the availability of a dedicated, persistent sandbox environment separate from a production account. Development must be done on a live account (either a trial or a paid plan), though using a separate \"service account\" user is recommended.\n\n**mcp**: `official`\n*   **Result**: CONFIRMED\n*   **Evidence**: The official Smartsheet developer portal homepage explicitly invites users to \"connect to our mcp server.\" The API introduction also highlights the \"Smartsheet MCP server\" as a feature for connecting to AI clients. The Business pricing plan also lists \"Connect Smartsheet to external AI tools through MCP-enabled integrations\" as a feature.\n\n**mcp_notes**: `Smartsheet officially hosts and publishes its own Model Context Protocol (MCP) server.`\n*   **Result**: CONFIRMED\n*   **Evidence**: The developer homepage states, \"Explore API docs, connect to our mcp server, develop faster on SDKs...\" This confirms that the MCP server is an official offering from Smartsheet.\n\n**verdict**: `ready_with_friction`\n*   **Result**: CONFIRMED\n*   **Evidence**: A developer can build an integration, but it is not \"ready_now\" because API access is blocked by a paid plan. The availability of a 30-day trial for the Business plan allows for development and testing, but sustained use requires payment.\n\n**blocker**: `paid_plan`\n*   **Result**: CONFIRMED\n*   **Evidence**: Sustained API access, for both personal tokens and OAuth app creation, requires a paid Business or Enterprise plan.\n\n**blocker_notes**: `A developer cannot obtain credentials or register an OAuth application without an active paid subscription (Business plan or higher).`\n*   **Result**: CONFIRMED\n*   **Evidence**: To generate a personal access token, a user needs a Business or Enterprise plan. To register an OAuth application via Developer Tools, the associated email must belong to a licensed user on a Business plan or higher.\n\n### **Uncertain Fields**\n\nAll fields were verified with high confidence based on the available documentation. There are no fields that remain uncertain.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Smartsheet API access requirements",
+   "Smartsheet developer account free trial",
+   "Smartsheet API personal access token",
+   "Smartsheet API pricing",
+   "Smartsheet developer tools registration requirements",
+   "Smartsheet API sandbox"
+  ],
+  "search_sources": [
+   {
+    "title": "apidog.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXNuD1LKrpgZw7Sy_yFruVYlD3zNYBBKooYvpYDHfdsDJ7Eu8bekmJfNSMYO6yP_awCVsnz6VKFnFQBZ62chxjCz4NmESulySzW4vy6fPfPcKHM9eHq7mnKRZ9y6hYEH77Cbn130MHjw=="
+   },
+   {
+    "title": "smartsheet.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlk5zYFYj9pR5pK_-hAYEsESpgTsldaMdCmcK06XiVgRip3hgKmRVQHlz6UZgVu9W-65wGycpOJvimNLNBaz6WfNmrfKNpPNJ0Q9vGP_d7-l_2OBwGFED6K1MQ-2-n0--q8GOm9JYAFPT3cItlrKbk3wRI"
+   },
+   {
+    "title": "smartsheet.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExMtoFuXWNFTOpmJXHl9YzqZOEQGPmBzQN3igLVTDOFyp9EUbRIi-3zJ8DW6FlqnF5PH_vSSy1wd8dmOWtHX-GaX4O93l-XijHxpAu-3DcRT3CLaqAnREdKkqOiYPxSb5q6sH5pwPZlvaNb25VrQCQI5KvkVlNbY58aQ=="
+   },
+   {
+    "title": "smartsheet.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlxShS4k4_Xx58NAcv9nf9WP6OHM1UkfDT3SZClCL1OQ4Y39Y9KZp6Z3O2fOyBL5BGgkmWQSI3h0AtksT1ueMG3zGFaOxpO9Iq4KQSqMY5NkJ2d9rXZkIG6RQIW8jOWAkcDhror9cRYE9ZrHghqKxHpLbdwtWcCN9O7pEFtpETPSAQibY7hfcg"
+   },
+   {
+    "title": "postman.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlYfuyKPhscFTDLxtZMKj4EUIPBlbiEIefDsrOOGYBfJBtcPEw6iINNgYTH18XGRyBz--4PujNgUvdpU8mg6vgxTAh4CsTQNUB-ZoovNSqGYpMp3WvyLKGIfgp_EqZJrMqCdvciyvTmeDpqlzo1ff56nhmf6Gwk5VxoS6wpPHcA0aMfbpbyD2dH6d_m0HnL-d7FFd4ahVXkroUSZIUzKI="
+   },
+   {
+    "title": "smartsheet.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGixqv-UMzRoVjJe1zLxm25q3ZvFCc2QA_SYLDu4cMup7tsI4_xkBpPatFPX-NIuubpfjbkPZQQL7N-NCoh-hk3YjJmKPRExUyYhedwDtu-SjxwLW_XszghoudNQmtZtmIkfp9Klns9jiRPKy8JVkFnf1YYMvqlUYg747DuWna5KteH"
+   },
+   {
+    "title": "smartsheet.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEM34IenAMojC3JiqKrRR5uSVdVlW-VG18lkoOYod27giL6YwvnHvFOnxleljfulqMX9kyRSOLc_xZEDZ1UGfA2p58GTCSPrWo07YWFf14IZlpgvdJHVpVfahwffzqMcE4o8pq6z149K4xJDmeaqyIP5iBXDh3AVPU="
+   },
+   {
+    "title": "smartsheet.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBlbDKNQJLc5Yb7PPPxmygkKR83qyAaLgpjKUBa4Fl_2abSuzEI-KSEHkmOVM5uEDBketxAHfLM1z67Un9iqi1XCYhzm2DI5HwYst2MhiqEfAufMe_dCu_d3Z_Blg="
+   },
+   {
+    "title": "smartsheet.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiEw6wDWaTWj51qggUaEY_4HLl2yhYRa3mInPpuRXJM5BbNNMGOKxB9Kk2crmpH4PmERVY-App4cC12BXv6GxVYPZxx7K_y_hYmMjmyzihGu2dIzDgZsm8ZQh0AgY4sIkY_CvCQxfEhcCaF21bnaag13QC28nkJtebVkwIW0q9kIaHYXCi3kI0"
+   },
+   {
+    "title": "smartsheet.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXSNjwundz0lbIlxSCFewy9zsoH7rueBdZEkUXnFu1USNzJzsAEhQD_I9Z7vmF4gjPNwOE9CqatbkSQupQnxlPv03obClzfrUWc4ejb5vR6mpjFj4i41iPEJ8EsdQlk3dDpwKNxzen50tC8TlvnFYPfoyxLOp8TR8O8aTvx6ieAp0="
+   },
+   {
+    "title": "smartsheet.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwkBMACY9-yE4VS1yVW-APBQXug5xXP42GfgTSX2lRr1mSYxPWFth6ChoxGGdUq4YuvEsBVT-RR3P2NEJdYlc8zr32rcdhRcdT8k1rS7A2S9pp8-gPGCS_A9SX-nukw5DKCUQB_MimVvgocZ_CAald1A=="
+   },
+   {
+    "title": "smartsheet.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzeS4Av-vLbxxNJq57igmaTc9hpW3dVZRvXFSEun71HV5Evzp6Pr8J2dRkRL-wHtGo-y0CQYqo9cZ-oM5Dr9_r0CQUU1HJd3AIynAMQRzd2eOQj9eijKa8zWED8dE7_LoOS5DHBg=="
+   },
+   {
+    "title": "smartsheet.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1CmszaH9BlRRDvvyp1ygA9nf9alkrC_57OtpxMAI7nlEu5Y0UiU8yEC8W4VXxpeIYNp8J9qdcrAxN-Q4rsT_WxJQG70NMTSLODjHxG4Io5XsEdGYd5ueKDI9GkSRoufCHcGKin6c-UnMKd0nD6jbmiWNjkpjoJ-APQHB7nPmsy6JVsYNuUoSr9TZfvkLjeMllCHY="
+   },
+   {
+    "title": "smartsheet.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwUYWKSNz6yZx8OFW7Gi3EF0trDnTYS3xZm4znyBWj1dmwQYwsFtnveLK2nHqF0GVxlLXpSP6cGmqc8D5tQl1fs2WNfXq61nb4Le2Bq3pJ108SRaafuVl5R27JbS0rymVsthigDap2dRHXDWl8HZoB6gNqrp8d-p5QFx5U"
+   },
+   {
+    "title": "smartsheet.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGS_dMQP_TLaw7kMKMGPjjK_T1dDmFk_G5b0JmmlcgsUJlXR2s-3hhiBh4ZF7CkA-tz3y-QoyUIspzGGFGYShM0nC-phWNaf_K3SjMrQ1OV1TFY68yyqCWn5KqARBBtIbVXl8pXsIXZAFsoJFa0n3rVOTFibZfj9W0="
+   },
+   {
+    "title": "smartsheet.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxeD638tU2dok0uzOUs4EwLGbZnls8JY6H24hJnUvnYele1BpLJswfWAyf4_tn5DfZca90wVpw5ipn1sYSDQ4-gNTU9ujhowFpAXx4pENb-YGf6YqC3DVJlZNLTYo="
+   }
+  ],
+  "tokens": 9374,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://www.smartsheet.com/pricing",
+    "status": 200,
+    "chars": 18614,
+    "readable": true
+   },
+   {
+    "url": "https://developers.smartsheet.com/api/smartsheet/guides/advanced-topics/oauth",
+    "status": 200,
+    "chars": 13268,
+    "readable": true
+   },
+   {
+    "url": "https://developers.smartsheet.com/api/resource_management/getting-started",
+    "status": 200,
+    "chars": 3606,
+    "readable": true
+   },
+   {
+    "url": "https://developers.smartsheet.com/api/smartsheet/openapi",
+    "status": 200,
+    "chars": 30,
+    "readable": false
+   },
+   {
+    "url": "https://developers.smartsheet.com/",
+    "status": 200,
+    "chars": 1648,
+    "readable": true
+   },
+   {
+    "url": "https://developers.smartsheet.com/api/advanced-topics/oauth",
+    "status": 404,
+    "chars": 595,
+    "readable": false
+   }
+  ],
+  "seconds": 69.0
+ }
+}

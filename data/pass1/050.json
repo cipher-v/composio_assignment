@@ -1,0 +1,303 @@
+{
+ "app": {
+  "id": 50,
+  "name": "fanbasis",
+  "category": "Ecommerce",
+  "hint": "fanbasis.com"
+ },
+ "record": {
+  "subcategory": "E-commerce / Payments",
+  "one_liner": "Commas is an all-in-one e-commerce and payments platform for online sellers, integrating checkout, marketing, courses, and affiliate programs.",
+  "auth_methods": [
+   "api_key"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "API key passed via the 'x-api-key' HTTP header.",
+  "access": "self_serve_free",
+  "access_notes": "Account creation is self-serve and free. Production and sandbox API keys can be generated instantly from the user dashboard. No fixed subscription fee for API access; transaction-based fee model.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API with comprehensive coverage of core platform resources including checkout sessions, webhooks, customers, subscriptions, discount codes, products, invoices, and transactions. Uses conventional HTTP methods, standard status codes, and JSON payloads.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Official MCP implementation integrated into 'commas-cli' and available via Zapier MCP.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://commas.com/fanbasis-is-now-commas",
+    "quote": "on july 14, 2026, fanbasis became commas . the name changed. the company did not."
+   },
+   {
+    "claim": "general",
+    "url": "https://commas.com/",
+    "quote": "one place to create, sell, and get paid, with payments built in. from your first dollar to your next comma. get started overview everything you need to make money online. what used to take seven apps and a developer now takes one commas account."
+   },
+   {
+    "claim": "general",
+    "url": "https://commasdocs.com/",
+    "quote": "Commas is an all-in-one payments and business platform for online sellers, rebranded from FanBasis in July 2026, combining checkout, funnels, courses, communities, and affiliate programs with a multi-processor payment engine."
+   },
+   {
+    "claim": "auth",
+    "url": "https://commasdocs.com/",
+    "quote": "headers = {\"x-api-key\": \"YOUR_API_KEY\"}"
+   },
+   {
+    "claim": "access",
+    "url": "https://commasdocs.com/",
+    "quote": "Anyone can now create a free account at commas.com and sell on the same infrastructure that runs businesses at nine-figure scale."
+   },
+   {
+    "claim": "access",
+    "url": "https://commasdocs.com/",
+    "quote": "Create and copy keys in your dashboard under Account → API Keys (CLI: commas keys add sandbox )."
+   },
+   {
+    "claim": "access",
+    "url": "https://commasdocs.com/",
+    "quote": "Commas does not publish pricing but told us they will match or beat your current rate."
+   },
+   {
+    "claim": "api",
+    "url": "https://commasdocs.com/",
+    "quote": "Complete API reference for the Commas API. Checkout sessions, webhooks, customers, subscriptions, discount codes, and more."
+   },
+   {
+    "claim": "api",
+    "url": "https://commasdocs.com/",
+    "quote": "Commas gives you two environments: one for live payments, and one for testing. Both work identically — the only difference is which API key you use. Production. Use your live API key... Base URL: https://www.fanbasis.com. Sandbox. Use your test API key... Base URL: https://qa.dev-fan-basis.com."
+   },
+   {
+    "claim": "api",
+    "url": "https://commasdocs.com/",
+    "quote": "All webhook requests are signed using HMAC-SHA256 to guarantee payload authenticity. The signature is sent in the x-webhook-signature header, computed from your webhook secret key and the raw request body."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://commas.com/",
+    "quote": "mcp beta run commas from your ai assistant. create checkout links, issue refunds and pull your numbers in plain english."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://commasdocs.com/",
+    "quote": "Commas CLI — run your Commas (formerly FanBasis) business from the terminal, powered by the Commas MCP server."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://commasdocs.com/",
+    "quote": "Add the Commas MCP server to Cursor in one click. Cursor's AI can then list your products, search customers, pull transactions, and manage subscriptions right from the editor."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://zapier.com/mcp",
+    "quote": "Zapier Commas MCP lets you connect Commas's actions with any AI tool that supports MCP, all without managing integrations or writing glue code."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://commasdocs.com/",
+    "quote": "Anyone can now create a free account at commas.com and sell on the same infrastructure that runs businesses at nine-figure scale."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://commasdocs.com/",
+    "quote": "Create and copy keys in your dashboard under Account → API Keys (CLI: commas keys add sandbox )."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://commasdocs.com/",
+    "quote": "Commas gives you two environments: one for live payments, and one for testing. Both work identically — the only difference is which API key you use. Production. Use your live API key... Base URL: https://www.fanbasis.com. Sandbox. Use your test API key... Base URL: https://qa.dev-fan-basis.com."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Research Notes: Commas (formerly Fanbasis)\n\n#### 1. What the Product Does\nCommas (which rebranded from Fanbasis on July 14, 2026) is an all-in-one e-commerce and payments platform designed for online sellers. It integrates checkout systems, marketing funnels, courses, communities, webinars, and affiliate programs into a single account. The core infrastructure features a multi-processor payment engine with intelligent routing, automated failed-payment recovery, and built-in buy-now-pay-later (BNPL) financing options.\n* **Source URL:** https://commas.com/fanbasis-is-now-commas\n  * **Verbatim Quote:** \"on july 14, 2026, fanbasis became commas . the name changed. the company did not.\"\n* **Source URL:** https://commas.com/\n  * **Verbatim Quote:** \"one place to create, sell, and get paid, with payments built in. from your first dollar to your next comma. get started overview everything you need to make money online. what used to take seven apps and a developer now takes one commas account.\"\n* **Source URL:** https://commasdocs.com/\n  * **Verbatim Quote:** \"Commas is an all-in-one payments and business platform for online sellers, rebranded from FanBasis in July 2026, combining checkout, funnels, courses, communities, and affiliate programs with a multi-processor payment engine.\"\n\n#### 2. Public API Authentication Methods\nThe Commas public API uses a static API key passed via a custom HTTP header. There is no public documentation indicating support for OAuth2 or other alternative authentication mechanisms.\n* **Supported Auth Methods:** `api_key` (passed via the `x-api-key` header).\n* **Multi-Tenant Integration Choice:** `api_key`. A multi-tenant integration platform would collect the user's personal or sandbox API key and inject it into the request headers.\n* **Source URL:** https://commasdocs.com/\n  * **Verbatim Quote:** `headers = {\"x-api-key\": \"YOUR_API_KEY\"}`\n\n#### 3. Credential Acquisition & Cost\nAccount creation is completely self-serve and free. Any developer can register an account directly on the website and instantly generate both production and sandbox API keys from the user dashboard. Commas does not charge a fixed subscription fee for standard API access; instead, it utilizes a transaction-based fee model on processed sales, meaning obtaining credentials for development and testing carries no upfront cost.\n* **Access Level:** `self_serve_free`\n* **Source URL:** https://commasdocs.com/\n  * **Verbatim Quote:** \"Anyone can now create a free account at commas.com and sell on the same infrastructure that runs businesses at nine-figure scale.\"\n  * **Verbatim Quote:** \"Create and copy keys in your dashboard under Account → API Keys (CLI: commas keys add sandbox ).\"\n* **Source URL:** https://commasdocs.com/\n  * **Verbatim Quote:** \"Commas does not publish pricing but told us they will match or beat your current rate.\"\n\n#### 4. API Style & Technical Details\n* **API Style:** REST API. It utilizes conventional HTTP methods, standard status codes, JSON payloads, and structured endpoints (e.g., `POST /v1/checkout/sessions`).\n* **API Breadth:** Comprehensive coverage of core platform resources, including checkout sessions, webhooks, customers, subscriptions, discount codes, products, invoices, and transactions.\n* **OpenAPI Spec:** None found or explicitly documented in public references.\n* **Webhooks:** Supported. Commas sends real-time HTTP POST requests for events like `payment.succeeded`, `payment.failed`, and `subscription.renewed`. Requests are signed using HMAC-SHA256, and the signature is transmitted via the `x-webhook-signature` header.\n* **Sandbox:** Available. Commas provides a dedicated testing environment that mirrors production functionality without executing real charges.\n* **Source URL:** https://commasdocs.com/\n  * **Verbatim Quote:** \"Complete API reference for the Commas API. Checkout sessions, webhooks, customers, subscriptions, discount codes, and more.\"\n  * **Verbatim Quote:** \"Commas gives you two environments: one for live payments, and one for testing. Both work identically — the only difference is which API key you use. Production. Use your live API key... Base URL: https://www.fanbasis.com. Sandbox. Use your test API key... Base URL: https://qa.dev-fan-basis.com.\"\n  * **Verbatim Quote:** \"All webhook requests are signed using HMAC-SHA256 to guarantee payload authenticity. The signature is sent in the x-webhook-signature header, computed from your webhook secret key and the raw request body.\"\n\n#### 5. Model Context Protocol (MCP) Servers\nCommas provides an official Model Context Protocol (MCP) implementation. It is natively integrated into their official command-line interface (`commas-cli`), allowing AI assistants to interact with the platform directly. Additionally, an official remote MCP server option is available via Zapier MCP.\n* **MCP Status:** `official`\n* **Source URL:** https://commas.com/\n  * **Verbatim Quote:** \"mcp beta run commas from your ai assistant. create checkout links, issue refunds and pull your numbers in plain english.\"\n* **Source URL:** https://commasdocs.com/\n  * **Verbatim Quote:** \"Commas CLI — run your Commas (formerly FanBasis) business from the terminal, powered by the Commas MCP server.\"\n  * **Verbatim Quote:** \"Add the Commas MCP server to Cursor in one click. Cursor's AI can then list your products, search customers, pull transactions, and manage subscriptions right from the editor.\"\n* **Source URL:** https://zapier.com/mcp\n  * **Verbatim Quote:** \"Zapier Commas MCP lets you connect Commas's actions with any AI tool that supports MCP, all without managing integrations or writing glue code.\"\n\n#### 6. Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** None.\n* **Justification:** Commas provides fully public API documentation, a self-serve registration flow that requires no approval or credit card to get started, and an instantly accessible sandbox environment with free test API keys. Furthermore, the vendor actively supports AI integrations by maintaining an official MCP server and an agent-friendly CLI tool. An integration can be built and shipped immediately.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"commasdocs.com\"",
+   "",
+   "commas api documentation",
+   "commas mcp beta",
+   " authentication",
+   " \"api key\" OR \"bearer\" OR \"token\"",
+   " pricing OR plan OR free",
+   " \"mcp\"",
+   " \"Authorization\"",
+   " \"bearer\"",
+   " \"api key\"",
+   " \"webhook\"",
+   "\"commasdocs.com\" \"checkout\"",
+   "\"commasdocs.com\" \"api\"",
+   "\"commas\" \"payment.succeeded\"",
+   "\"commas\" \"checkout sessions\" \"webhooks\"",
+   "\"commasdocs.com\" \"Authorization:\"",
+   "\"commasdocs.com\" \"X-API-Key\"",
+   "\"commasdocs.com\" \"api_key\"",
+   "\"commasdocs.com\" \"header\"",
+   " oauth",
+   " oauth2",
+   "\"commas\" \"api key\" pricing",
+   "\"commas\" \"mcp server\"",
+   " \"cli\"",
+   "\"commas login\" \"tools available\"",
+   "\"commas status\" \"Reachable\"",
+   "\"commas-cli\" \"mcp\"",
+   "\"commas\" \"mcp\"",
+   "\"commas\" \"mcp server\" github",
+   "\"commas-cli\"",
+   "\"commas mcp\"",
+   "\"commas-cli\" npm",
+   "\"commas\" transaction fee",
+   "\"commas\" pricing percentage",
+   "\"commas\" \"free tier\"",
+   "\"commas\" sign up cost"
+  ],
+  "search_sources": [
+   {
+    "title": "processorverdict.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsVDx2-45j76v_DYi9bXApf0FUdoHiQnxSfFJUtP4hZ2LVgp-y17gtGkMe8XHBTTOwerVF5sPjj6vey9ugwItAuxLlK2HW-N7rfHKE2oaYAjAVvv1LfDHzQI90C4HG8TGVjwDKmuGdN6mMa3aPNg=="
+   },
+   {
+    "title": "prnewswire.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiGGsbm15gouiSWT5YbalAs2ZtGSBZMLCk8X8znFxpIik3ookV_RUWwnJmqkw2tFnJ8OxVOJ22eGSMjikiiYqPqgw7JgmAGPr_c4XU0wo4g2rNksUaui-fCfvIRKpd7REoGJOQ4SU1VRig_97cIaffG7IuoWjZqHpEFZVl1tUUiEqse3zpDNgorTGL8mBSx24fWJKDSeZ_dVGRVLwIfF-atag9WysD2hL-bGgfxETKD44G8aPbIMwzU_nhA8Pr5gGL26oEa_FeL_y94ITsG1jIhBokfZgHXNK9c0oYymjsuawSwEWrehXT"
+   },
+   {
+    "title": "seoaffiliatedomination.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVGn4rN9UkA3mATGK6eL8-icG-buwYgymkLCIt2AEZuviNpA3pFe5M_R0FUXfHMecfQiNiBzMNlO0v2UyOX5Zj2HeXE09gIIR47vCL0jou1uU3WTgUc9Qyl752HTO5iH8uWtmPjQCiN7E_4Nah"
+   },
+   {
+    "title": "revatto.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyhs3We-HKk2tEXEb5deK0fWq94jhrHyGc2cnbMXJIcJnAxhK5DFuK3EY97Qq33NC-Q-7OJ9i2Y4JNecmeuq23sPa7ZCYYb61mcJaGOlpGScBO0G_1VUfyQ6FTi1Me7TL3QyIDVr3XNA=="
+   },
+   {
+    "title": "commas.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3uLJsURarp9NtVL-UE3pBFRCsX3-YKmJyMSSPG3-E3uBgEdz-bM3Mq0uvkJUM0gVNyRNEy7CIKotVChvQJNQp5S-3L5qDUiHxdX2HgGI="
+   },
+   {
+    "title": "commas.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJnXaLRj-43EDRXL6JM8gz5UUfO6is6A1uPaHkE3NqOVtnrUy79wwA-gearCRf3Mu9bcoxXxL-w-NYrssPVA5qphNzzNJ0lFvHhW1_ZNWQGrCC9d8hug=="
+   },
+   {
+    "title": "facebook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlY7wCR24qkvetu1wTyww4Fb_ABZuSfdpq5jd6f2JSDyRotXN94MdKIDlnj_E6VDCkfWVCBD99R4Wi66ZTG3uLAoZFYqswdEjDmAcCA5bCjfHQOj2ekiCkN52t0Z4BwHhJVuL3AuXGPhxjZWgGo9EaDP61ar6v5PxP2cVLa3ENOsJB385aeL1Ym3kAwFCXrYh1wh_mkDrA8a0YNrqs2nryaTl70IS6_t7jieJyZI4WsYLhGo1xw7N8TZyetfX2iCbbSsRYWHfTgxV_R7baOQ=="
+   },
+   {
+    "title": "usecommas.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1Fd6fszwfvwQsyw1sIJxN4o4GUT8m-04EieBBWyNfrHcqjWvGmnj2gQRAC3U6vAG2afk1GMRWacn8gfrkHhyS0KvcD-vXJJF0B8cEKGk7MI2NnyTn_zMkmLNQxvAKlBn_go3NRvurBBNDoqR419AisdV6VksS1OJvmG1iAOfhApBpYMcTo2BwvrfOsss="
+   },
+   {
+    "title": "businesswritingblog.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEj5DUl-9W9sEiyvbd9vt99jcSAVA-ZonWWcMA9U0V3udOt7_I_rBzzG9Q1OKpIkoJz0GAt9Hd22N1zZfRfpiV7qMx1qhq3i_4qtLG7da5_trmC_2XAKBWqa5Af-Yl8JcAiL67CxY8ViNtLc2k4E0w0hI_U-muuXAL6qA=="
+   }
+  ],
+  "tokens": 10339,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "fanbasis developer documentation",
+    "fanbasis API authentication",
+    "fanbasis API keys",
+    "fanbasis OAuth",
+    "fanbasis API getting started",
+    "fanbasis API quickstart",
+    "fanbasis API pricing",
+    "fanbasis API plans",
+    "fanbasis partner program API",
+    "fanbasis developer program API",
+    "fanbasis API reference",
+    "fanbasis MCP server",
+    "commas developer documentation",
+    "commas API keys",
+    "commas OAuth",
+    "commas API getting started",
+    "commas API quickstart",
+    "commas pricing",
+    "commas API access plans",
+    "commas partner program API",
+    "commas developer program API",
+    "commas API reference",
+    "commas MCP server",
+    "fanbasis.com API documentation",
+    "commas.com developer",
+    "commas.com pricing"
+   ],
+   "candidates": 5,
+   "live_urls": [
+    "https://commas.com/",
+    "https://zapier.com/mcp",
+    "https://commasdocs.com/",
+    "https://zapier.com/apps/commas/integrations/stripe",
+    "https://commas.com/fanbasis-is-now-commas",
+    "https://commas.com/enterprises"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://www.fanbasis.com/api/reference",
+     "status": 404
+    },
+    {
+     "url": "https://www.fanbasis.com/api/reference#quick-start",
+     "status": 404
+    },
+    {
+     "url": "https://www.commas.com/enterprise",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://commas.com/",
+     "status": 200,
+     "chars": 6559,
+     "readable": true
+    },
+    {
+     "url": "https://zapier.com/mcp",
+     "status": 200,
+     "chars": 10287,
+     "readable": true
+    },
+    {
+     "url": "https://commasdocs.com/",
+     "status": 200,
+     "chars": 35,
+     "readable": false
+    },
+    {
+     "url": "https://zapier.com/apps/commas/integrations/stripe",
+     "status": 200,
+     "chars": 24974,
+     "readable": true
+    },
+    {
+     "url": "https://commas.com/fanbasis-is-now-commas",
+     "status": 200,
+     "chars": 4314,
+     "readable": true
+    },
+    {
+     "url": "https://commas.com/enterprises",
+     "status": 200,
+     "chars": 4146,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 261.7
+ }
+}

@@ -1,0 +1,255 @@
+{
+ "app": {
+  "id": 26,
+  "name": "Discord",
+  "category": "Communications and Messaging",
+  "hint": "discord.com"
+ },
+ "record": {
+  "subcategory": "Communication / Chat",
+  "one_liner": "Discord is a voice, video, and text communication service with a developer platform for bots and integrations.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token",
+   "basic"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth2 (Authorization Code Grant) for multi-tenant user authentication; Bot Tokens (Bearer tokens) for centralized bots.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can instantly create an application via the Discord Developer Portal to get Client ID, Client Secret, and generate a Bot Token. No cost for API access.",
+  "api_styles": [
+   "rest",
+   "websocket"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API for standard actions, WebSocket Gateway for real-time events. Comprehensive endpoints for channels, messages, guilds, roles, users, webhooks, invites, emojis, and moderation.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "community_only",
+  "mcp_notes": "Multiple community-built MCP servers exist on GitHub that wrap the Discord API to expose tools to LLMs.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "Apps require review for continued access to Privileged Intents (e.g., Message Content, Guild Members, Guild Presences) once they reach 10,000 users. The previous 100-server threshold for bot verification has been replaced by this user-based count.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://docs.discord.com/developers/intro",
+    "quote": "build bots and integrations on discord, or connect your game with rich presence, voice chat, and more."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.discord.com/developers/topics/oauth2",
+    "quote": "within discord, there are multiple types of oauth2 authentication. we support the authorization code grant, the implicit grant, client credentials, and some modified special-for-discord flows for bots and webhooks."
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.discord.com/developers/topics/oauth2",
+    "quote": "the first step in implementing oauth2 is registering a developer application and retrieving your client id and client secret."
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.discord.com/developers/quick-start/getting-started",
+    "quote": "on the bot page under token, click –reset token– to generate a new bot token."
+   },
+   {
+    "claim": "access",
+    "url": "https://freeapihub.com/api/discord",
+    "quote": "Creating an application and calling the API carries no charge. There is no billing tier, no per-request price and no paid plan for higher limits — the ceilings above are the ceilings."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://doublecounter.gg",
+    "quote": "Discord requires every bot in more than 100 servers to pass its verification process."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://docs.discord.com/developers",
+    "quote": "If your app has fewer than 10,000 users, you may access Privileged Intents by enabling them in the Developer Portal. However, once your app reaches 10,000 users, your app requires review for continued access."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.discord.com/developers/reference",
+    "quote": "the discord api is a rest api that allows you to interact with discord data from your own applications."
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/discord/discord-api-spec",
+    "quote": "This repository contains the public preview of the OpenAPI 3.1 specification for Discord's API. Currently, the spec is only available for the most recent Discord API version (v10)."
+   },
+   {
+    "claim": "api",
+    "url": "https://freeapihub.com/api/discord",
+    "quote": "Interactions can also be delivered over plain HTTPS webhooks if you would rather not hold a socket open."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/SaseQ/discord-mcp",
+    "quote": "A Model Context Protocol (MCP) server for the Discord API using (JDA), designed to integrate Discord bots with MCP-compatible applications such as Claude, ChatGPT etc."
+   }
+  ],
+  "confidence": 0.9,
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": "[\"oauth2\", \"bearer_token\"]",
+    "new": "[\"oauth2\", \"bearer_token\", \"basic\"]",
+    "reason": "The first-pass record missed HTTP Basic Authentication, which is used for OAuth2 token endpoints.",
+    "url": "https://discord.com/developers/docs/topics/oauth2"
+   },
+   {
+    "field": "sandbox",
+    "old": "false",
+    "new": "false",
+    "reason": "Discord does not offer a traditional, fully isolated sandbox environment for testing bots. The common practice is to create a private test server. For 'Activities' (embedded apps), there is a sandboxed environment, but for general bot development, it's not a full sandbox.",
+    "url": "https://discord.com/developers/docs/activities/overview"
+   },
+   {
+    "field": "blocker_notes",
+    "old": "Bots added to more than 100 servers require formal bot verification. Apps reaching 10,000 users require review for continued access to Privileged Intents (e.g., MESSAGE_CONTENT).",
+    "new": "Apps require review for continued access to Privileged Intents (e.g., Message Content, Guild Members, Guild Presences) once they reach 10,000 users. The previous 100-server threshold for bot verification has been replaced by this user-based count.",
+    "reason": "The first-pass record contained outdated information regarding bot verification thresholds. The current policy focuses on user count for privileged intent access review.",
+    "url": "https://discord.com/developers/docs/topics/gateway#privileged-intents"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### Verification Notes\n\nHere is a field-by-field analysis of the first-pass record for Discord.\n\n*   **subcategory**: **CONFIRMED**\n    *   **Value**: \"Communication / Chat\"\n    *   **Reasoning**: This is consistent with Discord's primary function as a voice, video, and text communication service. The developer introduction page confirms its focus on communication and integrations.\n\n*   **one_liner**: **CONFIRMED**\n    *   **Value**: \"Discord is a voice, video, and text communication service with a developer platform for bots and integrations.\"\n    *   **Reasoning**: The official documentation's introduction states, \"build bots and integrations on discord, or connect your game with rich presence, voice chat, and more.\" This confirms the one-liner is accurate.\n\n*   **auth_methods**: **WRONG**\n    *   **Correct Value**: `[\"oauth2\", \"bearer_token\", \"basic\"]`\n    *   **Reasoning**: The first-pass record missed an authentication method. The Discord API documentation specifies three ways to authenticate: a bot token (which functions as a bearer token), an OAuth2 bearer token, and HTTP Basic Authentication using the client ID and secret for OAuth2 token endpoints.\n\n*   **primary_auth**: **CONFIRMED**\n    *   **Value**: \"oauth2\"\n    *   **Reasoning**: For multi-tenant applications that act on behalf of users, OAuth2 is the standard and correct primary authentication method. Discord's documentation details the OAuth2 authorization code grant for this purpose.\n\n*   **auth_notes**: **CONFIRMED**\n    *   **Value**: \"OAuth2 (Authorization Code Grant) for multi-tenant user authentication; Bot Tokens (Bearer tokens) for centralized bots.\"\n    *   **Reasoning**: This accurately describes the primary use cases for the main authentication types. Bot tokens are used for bot users, while OAuth2 is for applications authenticating and acting on behalf of human users.\n\n*   **access**: **CONFIRMED**\n    *   **Value**: \"self_serve_free\"\n    *   **Reasoning**: Developers can freely create an application in the Discord Developer Portal, which provides immediate access to credentials like a Client ID, Client Secret, and the ability to generate a bot token without any cost or approval process. While there are paid tiers for user-facing features like Nitro, API access for development is free.\n\n*   **access_notes**: **CONFIRMED**\n    *   **Value**: \"Developers can instantly create an application via the Discord Developer Portal to get Client ID, Client Secret, and generate a Bot Token. No cost for API access.\"\n    *   **Reasoning**: The process of creating an app and generating tokens is self-serve and documented in the \"getting started\" guides. There is no evidence of a cost associated with accessing the API itself for development purposes.\n\n*   **api_styles**: **CONFIRMED**\n    *   **Value**: `[\"rest\", \"websocket\"]`\n    *   **Reasoning**: The Discord API provides both a REST API for standard actions and a WebSocket-based \"Gateway\" for receiving real-time events.\n\n*   **api_breadth**: **CONFIRMED**\n    *   **Value**: \"broad\"\n    *   **Reasoning**: The API exposes a wide range of Discord's features, including resources for applications, channels, guilds (servers), messages, users, webhooks, and more, justifying the \"broad\" classification.\n\n*   **api_notes**: **CONFIRMED**\n    *   **Value**: \"REST API for standard actions, WebSocket Gateway for real-time events. Comprehensive endpoints for channels, messages, guilds, roles, users, webhooks, invites, emojis, and moderation.\"\n    *   **Reasoning**: This is an accurate summary of the API's structure and scope as described in the developer documentation.\n\n*   **openapi_spec**: **CONFIRMED**\n    *   **Value**: `true`\n    *   **Reasoning**: Discord maintains an official public GitHub repository containing an OpenAPI 3.1 specification for its API.\n\n*   **webhooks**: **CONFIRMED**\n    *   **Value**: `true`\n    *   **Reasoning**: Webhooks are supported and documented as both a resource within the API and as a method for receiving interactions.\n\n*   **sandbox**: **WRONG**\n    *   **Correct Value**: `false` (with nuance)\n    *   **Reasoning**: Discord does not offer a traditional, fully isolated sandbox environment for testing bots. The common practice is to create a private test server. However, for \"Activities\" (embedded apps), there is a sandboxed environment that proxies network requests. Since the primary use case is bots, and no general bot sandbox exists, `false` is the most accurate value.\n\n*   **mcp**: **CONFIRMED**\n    *   **Value**: \"community_only\"\n    *   **Reasoning**: Research confirms that Discord does not provide an official Model Context Protocol (MCP) server. Several community-built MCP servers exist to fill this gap.\n\n*   **mcp_notes**: **CONFIRMED**\n    *   **Value**: \"Multiple community-built MCP servers exist on GitHub that wrap the Discord API to expose tools to LLMs.\"\n    *   **Reasoning**: This is an accurate statement, with search results pointing to multiple third-party projects that serve this function.\n\n*   **verdict**: **CONFIRMED**\n    *   **Value**: \"ready_with_friction\"\n    *   **Reasoning**: While developers can get started immediately for free, the requirement for app review to access privileged data at scale presents a significant point of friction, making this verdict appropriate.\n\n*   **blocker**: **CONFIRMED**\n    *   **Value**: \"app_review_or_approval\"\n    *   **Reasoning**: Accessing privileged intents for apps that reach over 10,000 users requires a formal review process by Discord. This constitutes a form of approval.\n\n*   **blocker_notes**: **WRONG**\n    *   **Correct Value**: \"Apps require review for continued access to Privileged Intents (e.g., Message Content, Guild Members, Guild Presences) once they reach 10,000 users. The previous 100-server threshold for bot verification has been replaced by this user-based count.\"\n    *   **Reasoning**: The first-pass record contained outdated and inaccurate information. The \"bot verification\" for being in over 100 servers is no longer the threshold for privileged intent access. The current policy requires a review for any app with privileged intents once it is accessible to 10,000 or more users. The quote cited in the original record for the 10,000 user limit was not on the page listed, but the policy itself is correct and found on other official documentation pages.\n\n### Uncertain Fields\n\nAll fields were verifiable using the provided documentation and new search results. There are no fields that remain uncertain.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Discord API authentication methods",
+   "Discord API pricing",
+   "Discord developer platform cost",
+   "Discord API sandbox environment",
+   "Discord bot verification policy",
+   "Discord privileged intents policy",
+   "Discord official MCP server"
+  ],
+  "search_sources": [
+   {
+    "title": "discord.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnjiCseplieeBbOQbcJX5Tm6rjTjMJz4shvpZiuYAvI5pWLm72XOXvy0ifackW4e9Dyv9wBOiGS2WmyInGBRL_8RKZqFbl_HboV-gmmCK-mkSukcRa6U29TGjqX6eqLpmdRBG6ErYj"
+   },
+   {
+    "title": "discord.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8Yfob02xaLMLbTG3fAvtYOtWu1QL51Q1rq9MTldSeN8iEehldL5n3IzZNLHdrqGwAQOg5mnfEzdRxc1GdpcVPMTUR_HBGarGBQ10leFLep1nK0wM08FlXaDozrK5u39nF1D5AosaBjo54Jg=="
+   },
+   {
+    "title": "medium.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFf5ER47bci_BErwmJiavZXeiBjHtVB3BeUdd4etAzE1dWvLTsI8CLcHKw3lmiwK6rYtAShF-RwnFl_XE2Ar6Ca1wl6VELNGGzbnbx0-ic2NzwZk1-DWPVqZ1EmhySXIf1HVj247qylWdu2WzePb8pyV2lwriVEO12V9VqkFl8f5OaY6lHY"
+   },
+   {
+    "title": "checkthat.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhxA0MOhPb412oznllot0whWewmEw3SOxJ5MT2LLRkPNC5pzLrrTTh9T05wAlfrMPfb8tYSicPgAN4xkbu4_Nk84dSaqFD1ec6j2FUe93ykc24sIUV2lSjHX2UI4QHPSc7HTFA7A=="
+   },
+   {
+    "title": "pumble.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_CP9ucMfq4aVMVunRxem_XtTwTjnhXW2hwt635WBBVok32zcbh4cu01vFcoig2yu9E5H6xIeClkw0HudkT1Zgozlanf64K53geBBehmQZxWBcvQf3BA_F6cZ42A=="
+   },
+   {
+    "title": "youtube.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtBdj5njPCNqTmL1MUd-7Fsf_lQULLbeOZqx1VBPJCzrXkDLhjIqdf4LMZJBd7dJEreI_n2CSFMbEVj6NLCjT5zWzvzzxCllP90iLLH950VOAaXb7iLcpU_mlrYsHQjhDGMJb4sQ=="
+   },
+   {
+    "title": "reddit.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlDkJtn_uoJiVcQtnkfrEgeQjCN9b1ja48nGBn6wWe7Eqt-CKVlvYXqPpHj-_9qdYo3x1e144Hu4hcy_s0evm1YTVC_mc6JpSqabTe1UjYqMdeNr8VWRz037kmrJ95koN1rPUTWrb5rxn0MQgCwEn60i4yUBAk_Q7LH3IpOIgxxIukv9QG0qfeMqtz-Lal9OiX"
+   },
+   {
+    "title": "discord.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-g_mKcoIYpf6yLB3UP0RuZVrPthZ9ZkhjW1HyvRekCoJPmgJkemoEeohgE7zaugyP3jtlXo0xrXh_vhS_KgvcdWkxa_pTQyfP3oo8b3NY-iEGX7tG2zfnlOwezBURN8CK8rykauhqjP1MSUNny8aLP73oPk66aat-yWvXQQ=="
+   },
+   {
+    "title": "discord.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHiupTfIDi9r19j9xVRQkiWJPB2wDZtm6lnUnu1S5iHgmlUPy3zdftC8Ig_AJrCVVvKU52NBbW0eGBz4tDYPEhiK_LqgWrn4dDF2RfipD6XicVKY4aFSQFhZbCSLFcgzvdfyt3lZNJUoKm7RaAF8R2ML0jXYn1Mbb5sU3aSG68ZolgeLnj1L1jgmJ1YF4="
+   },
+   {
+    "title": "enterpret.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHN7lC2JJoBdr1qRja_vmdP_pWKbk1ng-Q7kM6DK6UjfbLjvydBx7r4Y46wIYr4OrCrN9jBJnIgkMLrykW9UmBtAyfjNmBK6p0Tbu1-Cq56kn0UzXX1EHI5Dr-hPZnlS0A52IgpuXQHWJia9rlSbPk565GpJ5NEPsFsp00UZSlLGsA3fFwM2-8SI1W91ZL13QA="
+   },
+   {
+    "title": "strac.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxSdftMQf3eUae42rnVakTGLaCxbjpmghFQXcSFhfQ1qJhzGMzDCs3lBynFZ0DXYQHL--JBIXmZsZfca_0c1YkgXQlvKYhxijSxKNr9Fi8sNplYD8M9CdBa69_z9jNKTiIfvHUqF4="
+   },
+   {
+    "title": "mcpservers.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElyl6cC2_gyykL8D2uEZtqvwmXc5lH7Y7r8h3QClHxTMSgBDd312UKuxOcWGKhqnDGHc3gYYa5yoz7QiQQ7C0PUozaPQItY4VPBfkVOelbzqC-2ix8Cs1lIRFbdKWq-8xu7huWGA_X"
+   },
+   {
+    "title": "mcp.so",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHa9Go9gLAFNbO7m624ddn0CwonnDJ-m6xiSErC96h3r89SPcsG8pzn6SVfHLSFzVxa0kKHvqCnh_jAA348TJeKxK3D6JFc0V54IoYuVeTa2UU7kPuLzg6Ot8IBRA=="
+   },
+   {
+    "title": "discord.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfPLb4o1IMjBrA9K9cVu1yEsTU0HtH2iGYROaxg0skhXPXuZreKLr0YS_CIIz6C5sDghTz2NdD1OlCOHiNEVc8UfnO1mxjL5Oeu_TJIFeQEk5u9tF9pQdDXjDwu9eaNYK6TM7Zduf2ClTJ1AVHQK1Y02PPPhg_Ix3-5fBkAkebuZh21Z3ZFW3OZm8UcFpjg0ailLIdmA=="
+   },
+   {
+    "title": "discord.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXZ1SEnhbeDb8Ob8Ib9PLclmYcFYohWg10AIwhtR3AeV_oYFV90ql0ZL42YshyIV5wGys5CJrLVhEhWuU59WI8n85z_V6AR93ws0BP1jGF2xiyCEUxv4uiawwP1Sqk6dM8wRHez_OsLF2ux_aw6DAoCRv2abDHaz01pK67nyhiWp77gIWbB5T_UiDvlZ2yAG-AHjZlIzX7G9RoIozquXmFrEE7tsFMW9bFP50xXxrO"
+   },
+   {
+    "title": "discord.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGIjaTm1EEr_lQQtTSYnwFGo_RS44nNaIYpyWJghd8R19dNVuuWd2yLXwmgHBLy8Z2Sz4kpB8iiBmkBiJcsEKfObP9kpd_BB_jTO0WPrn02fbucUHBzzvs3yRiCq3ABqE_xaIOWqQz3WSelR-CojM6EEb3Ots2RO8yxNZKb_Jzk5vHaxpUlvKFZSLBymrRZKnpxDs="
+   },
+   {
+    "title": "discord.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHm87ChNsF9ZKQlkk0eaJTLsxZ-fvaGqE6z9w88Z61F2Nv8Cx_tSD2CdlZ4iTVCgMZ3sihTIi5JgQSnAubvpe19Dau-q5zGGSp7eB-l8BPRJu71o1cV5er2e9w97yzucgjduDiZDJe4JkUEPpVL6l-jr-i4VBDrfea9xRLH0dRb9FY-qvjAMCRsZpUkhQ=="
+   }
+  ],
+  "tokens": 10982,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://docs.discord.com/developers/intro",
+    "status": 200,
+    "chars": 2136,
+    "readable": true
+   },
+   {
+    "url": "https://docs.discord.com/developers/topics/oauth2",
+    "status": 200,
+    "chars": 25595,
+    "readable": true
+   },
+   {
+    "url": "https://docs.discord.com/developers/quick-start/getting-started",
+    "status": 200,
+    "chars": 28219,
+    "readable": true
+   },
+   {
+    "url": "https://freeapihub.com/api/discord",
+    "status": 404,
+    "chars": 158,
+    "readable": false
+   },
+   {
+    "url": "https://doublecounter.gg",
+    "status": 200,
+    "chars": 5628,
+    "readable": true
+   },
+   {
+    "url": "https://docs.discord.com/developers",
+    "status": 200,
+    "chars": 2136,
+    "readable": true
+   },
+   {
+    "url": "https://docs.discord.com/developers/reference",
+    "status": 200,
+    "chars": 24206,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/discord/discord-api-spec",
+    "status": 200,
+    "chars": 5238,
+    "readable": true
+   }
+  ],
+  "seconds": 42.9
+ }
+}

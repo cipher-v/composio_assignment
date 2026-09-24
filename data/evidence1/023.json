@@ -1,0 +1,141 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.zoho.com/cliq/pricing.html",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.zoho.com/cliq/help/restapi/v2/registerclient/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.zoho.com/cliq/help/restapi/v2/registerclient/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.zoho.com/cliq/help/restapi/v2/registerclient/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.63
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.zoho.com/cliq/pricing.html",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.zoho.com/cliq/help/restapi/v2/registerclient/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.zoho.com/cliq/help/restapi/v2/registerclient/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.zoho.com/cliq/help/restapi/v2/registerclient/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.zoho.com/cliq/help/restapi/v2/registerclient/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://www.zoho.com/cliq/help/platform/zoho-cliq-mcp.html",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.83
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://www.zoho.com/cliq/help/platform/configure-zoho-cliq-mcp.html",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.8
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://www.zoho.com/cliq/help/restapi/v2/registerclient/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.63
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "bearer_token": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://www.zoho.com/cliq/pricing.html', 'https://www.zoho.com/cliq/help/restapi/v2/registerclient/', 'https://www.zoho.com/cliq/help/restapi/v2/registerclient/', 'https://www.zoho.com/cliq/pricing.html', 'https://www.zoho.com/cliq/help/restapi/v2/registerclient/', 'https://www.zoho.com/cliq/help/restapi/v2/registerclient/', 'https://www.zoho.com/cliq/help/restapi/v2/registerclient/', 'https://www.zoho.com/cliq/help/restapi/v2/registerclient/']",
+ "metrics": {
+  "n_evidence": 12,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 1.0,
+  "readable": 12,
+  "quote_supported_rate": 0.3333333333333333,
+  "lint_issues": 0,
+  "flag_count": 1
+ }
+}

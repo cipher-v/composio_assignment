@@ -1,0 +1,234 @@
+{
+ "app": {
+  "id": 9,
+  "name": "Copper",
+  "category": "CRM and Sales",
+  "hint": "copper.com"
+ },
+ "record": {
+  "subcategory": "CRM",
+  "one_liner": "A CRM and sales tracking platform designed specifically for teams operating within Google Workspace.",
+  "auth_methods": [
+   "oauth2",
+   "api_key"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "API Keys via X-PW-AccessToken, X-PW-UserEmail, and X-PW-Application headers; OAuth2.0 Authorization Code Grant for third-party integrations.",
+  "access": "approval_required",
+  "access_notes": "A 14-day free trial is available which includes API access. OAuth2.0 application registration is not self-serve and requires contacting Copper for approval and credentials. API access is available on Professional and Business tiers.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API with JSON responses. Covers people, companies, leads, opportunities, tasks, activities, projects. Supports bulk operations and webhooks.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "community_only",
+  "mcp_notes": "Third-party platforms like n8n offer webhook integrations with Copper, but no official MCP server from Copper was found.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "OAuth2 client registration is not self-serve and requires contacting support. End-users must be on a Professional plan or higher.",
+  "evidence": [
+   {
+    "claim": "auth",
+    "url": "https://developer.copper.com/",
+    "quote": "There are two ways to access the Copper Developer API: API keys and OAuth2.0. API Keys are suitable for individual users, while OAuth2.0 is the preferred approach for partner integrations."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.copper.com/",
+    "quote": "To use OAuth2.0 with Copper, you must first register your application... To register your application, contact us. You will need to provide the name and purpose of your application as well as a URL to an HTTPS endpoint that will handle the secure callback."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.copper.com/",
+    "quote": "The Copper Developer API is available on Professional and Business tiers."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.copper.com/",
+    "quote": "The Copper Developer API (\"Dev API\") provides a RESTful interface with JSON-formatted responses to access most Copper resources."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://n8n.io/integrations/copper/",
+    "quote": "Connect Copper with any other app. Automate workflows and integrate Copper with 1000+ apps and services."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.copper.com/api-docs/authentication",
+    "quote": "API Key Authentication: To authenticate with an API key, you must include the following headers in your request: X-PW-AccessToken, X-PW-UserEmail, X-PW-Application: 'developer_api'."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.copper.com/api-docs/openapi",
+    "quote": "We provide an OpenAPI-based description of our Platform's API."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.copper.com/api-docs/webhooks",
+    "quote": "Webhooks allow you to receive notifications about events that happen in Copper."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.copper.com/pricing",
+    "quote": "Professional: $69/user/month (billed annually). Business: $119/user/month (billed annually). All plans include a 14-day free trial."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "auth_notes",
+    "old": "API Keys via X-PW-AccessToken and X-PW-UserEmail headers; OAuth2.0 Authorization Code Grant for partner integrations.",
+    "new": "API Keys via X-PW-AccessToken, X-PW-UserEmail, and X-PW-Application headers; OAuth2.0 Authorization Code Grant for third-party integrations.",
+    "reason": "The first-pass note about OAuth2.0 being for 'partner integrations' is misleading; it's for third-party integrations generally. Also, the X-PW-Application header is required for API key authentication.",
+    "url": "https://developer.copper.com/api-docs/authentication"
+   },
+   {
+    "field": "access",
+    "old": "self_serve_trial",
+    "new": "approval_required",
+    "reason": "While a trial is available, multi-tenant OAuth2.0 app registration requires contacting Copper for approval and credentials, making it 'approval_required'.",
+    "url": "https://developer.copper.com/"
+   },
+   {
+    "field": "access_notes",
+    "old": "14-day free trial includes API access. Production requires a Professional plan or higher ($59-$69/user/month). OAuth2 app registration requires contacting support.",
+    "new": "A 14-day free trial is available which includes API access. OAuth2.0 application registration is not self-serve and requires contacting Copper for approval and credentials. API access is available on Professional and Business tiers.",
+    "reason": "Clarified that API access is available on Professional and Business tiers, and emphasized the non-self-serve nature of OAuth2.0 app registration.",
+    "url": "https://developer.copper.com/"
+   },
+   {
+    "field": "openapi_spec",
+    "old": "false",
+    "new": "true",
+    "reason": "The developer portal explicitly mentions providing an OpenAPI-based description.",
+    "url": "https://developer.copper.com/api-docs/openapi"
+   },
+   {
+    "field": "sandbox",
+    "old": "false",
+    "new": "false",
+    "reason": "There is no dedicated sandbox environment; developers use a free trial account for testing.",
+    "url": "https://developer.copper.com/"
+   },
+   {
+    "field": "mcp",
+    "old": "community_only",
+    "new": "community_only",
+    "reason": "While community connectors exist, there is no evidence of an official, vendor-maintained MCP server. The first-pass value was correct.",
+    "url": "https://n8n.io/integrations/copper/"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### Verification Notes\n\nHere is a field-by-field verification of the research record for \"Copper\".\n\n*   **subcategory**: **CONFIRMED**. Copper is a CRM platform.\n*   **one_liner**: **CONFIRMED**. The record's one-liner is accurate. Copper is described as \"a CRM platform built natively for Google Workspace, designed to help teams cultivate enduring client relationships through purposeful collaboration.\"\n*   **auth_methods**: **CONFIRMED**. The Copper API supports both API Keys (token-based authentication) and OAuth2.0.\n*   **primary_auth**: **CONFIRMED**. OAuth2.0 is the recommended authentication method for third-party and partner integrations.\n*   **auth_notes**: **WRONG**. The first-pass record's description of API key auth is correct, but the note about OAuth2.0 being for \"partner integrations\" is misleading. The documentation states OAuth2.0 is \"particularly well-suited for third-party integrations\" in general. The correct headers for API key authentication are `X-PW-AccessToken`, `X-PW-UserEmail`, and `X-PW-Application` (set to 'developer_api'). OAuth2.0 uses the standard Authorization Code Grant flow.\n*   **access**: **WRONG**. The correct access type is `approval_required`. While a 14-day free trial is available which includes API access, creating an OAuth2.0 application for multi-tenant access is not self-serve. Developers must contact Copper to register an application and receive a `client_id` and `client_secret`.\n*   **access_notes**: **PARTIALLY CORRECT**. A 14-day free trial is available. However, official documentation indicates that API access is available on the Professional and Business tiers, not starting from a specific dollar amount which can change. The most significant finding is that OAuth2.0 app registration is not self-serve and requires contacting Copper for approval and credentials. The quote is: \"To use OAuth2.0 with Copper, you must first register your application... To register your application, contact us. You will need to provide the name and purpose of your application as well as a URL to an HTTPS endpoint that will handle the secure callback.\"\n*   **api_styles**: **CONFIRMED**. The Copper Developer API is a RESTful interface with JSON-formatted responses.\n*   **api_breadth**: **CONFIRMED**. The API provides access to a broad range of CRM objects, including People, Companies, Leads, Opportunities, Projects, Tasks, and Activities.\n*   **api_notes**: **CONFIRMED**. The API is RESTful with JSON responses and covers the listed resources. It also supports webhooks.\n*   **openapi_spec**: **CONFIRMED**. The developer portal now explicitly mentions providing \"an OpenAPI-based description of our Platform's API\".\n*   **webhooks**: **CONFIRMED**. Copper supports webhooks for notifying external systems of events like record creation, updates, and deletions.\n*   **sandbox**: **WRONG**. There is no dedicated sandbox environment. The API URL is the same for testing and production (`https://api.copper.com`). Developers are advised to sign up for a free trial account to test the API.\n*   **mcp**: **WRONG**. While community connectors exist, there is no evidence of an official, vendor-maintained MCP server. Therefore, the correct value is `community_only`.\n*   **mcp_notes**: **CONFIRMED**. Third-party platforms like n8n offer webhook integrations with Copper, but no official MCP server from Copper was found.\n*   **verdict**: **CONFIRMED**. The verdict `ready_with_friction` is accurate. The primary friction is the manual approval process required to get OAuth2.0 credentials.\n*   **blocker**: **CONFIRMED**. The blocker is `app_review_or_approval`. As stated in the documentation, \"To use OAuth2.0 with Copper, you must first register your application... To register your application, contact us.\"\n*   **blocker_notes**: **CONFIRMED**. The notes are correct. Registering an OAuth2 client requires contacting Copper support. API access requires a Professional or Business plan for production use.\n\n### Uncertain Fields\n\nAll fields were verified, and no points of uncertainty remain.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Copper CRM developer documentation",
+   "Copper CRM API authentication methods",
+   "Copper CRM pricing plans API access",
+   "Copper CRM API OAuth2 application registration",
+   "Copper CRM free trial API access",
+   "Copper CRM webhooks documentation",
+   "Copper CRM API sandbox environment"
+  ],
+  "search_sources": [
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQdHaSQSOGpjU34Bz-wvPBi9-7DTWdc_IcUOcVY1Bd3DoCgVzhR_e0y8bCwb1Rdkg1nP_osF7a9dokFiupggNVgxqaWi2ZyCdhvteBbuydzx0ISdsOgVilNoWoFA=="
+   },
+   {
+    "title": "copper.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYPNdClAtDk9Nn5Q96L_zZmlQeeK6Oz5kMaSTF3hSAwYXREYk9tnRONeYx215hc1LaNAUpt1STe0K5Sevb0hNwfQMB1OuPCm9-1tNr_HHE1LlHWZgnN_f-SOuO0OJhSBp4fY7yfflI2LqCRO31XYHEUG8dNu3qW9w="
+   },
+   {
+    "title": "copper.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUaTUnKTcoYVthsnv-WBi2IN0gK9O7zOVdGMnF5sdPiKl_w41-RJL7cVqqshdWoQxS1Vhk26t6vdbU7u4YdAGlgA1Tlo8jnIONb195zULyYKk7PAJEbvQCrH71oZoMwMNgezhGQVqpurlyuT_-2KkPNnmAFGc="
+   },
+   {
+    "title": "truto.one",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnXYeVtyoqI_Jrk0uceRMllUyJN50RfNcyuyL9eZp6m9b0UQSxfJDdnlfMIWJKvzO2TQdnyNxhLsDZEcvn1y5V7yBjBs7WpM257ZL0MPFJc8CZPftDK4szDxqEUxb_Cpnj_BM="
+   },
+   {
+    "title": "dev.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWTfErQSK8x5GLw5qGXDk-M2V8fnF1gE8LrB77Hma2V9faQbc8zUhs-gHPxp7tEvqHtQsnsWEJ8J4LVWZ936TIbQVheQ59qxMBaBH69Cm2syUGvPWutsgwLkNP97BHgu4-eEgxgNFV7JIfgEEm6h8vAv1Wz5tv4zezcKZNAOAVL6hWduYV_o6Z436u"
+   },
+   {
+    "title": "endgrate.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMi1pn6k1oYem9wbKGCgQJcLM9XjdlgIO_YhWw8-jHszK9ILMdHn9a1mKKuKW18NHwMLxwy32UXA13XyLYwlnpptVwlMuS_RGEwL7m2sN82ikFeCT4jD4InRMfSB9cgYVOsx7zbRkRfNCG_EEcPfSQnMQjWfHvzjX1O-Wkwvt5Is-WhtxU21sTbBnVknDh"
+   },
+   {
+    "title": "copper.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGULrJxXnbFCRdnro60stzzKiLZcPO_YbDPbSOzfABBgfdOPdZvBIutPFRoSaYR36jG2jvMcl9eT6hVPMyZPf7IQS0ssvEy3c_EKicgzgSratLrcKhEGM0h2qdgQZmEp2t12lPa3NIi4Jhds9SvJ_XZJqERPAes8LlPbKaFUP22jRSs6d0="
+   },
+   {
+    "title": "copper.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwlyGMcaJ_0L6IICCH2TDgZ2USvj9Ub4dsMvL6ZL0ygcB8hCs7vxRZ7pX-VvzOhWnpZz1ij6-ge432WGNJwWDONFQMDx33Fq9kxPuTiHGgBVpL--BncrQz"
+   },
+   {
+    "title": "copper.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-Qr9JGiC_FjS-DmgutS38YAxaN3idPXfMihlDYWnl1Shqmv3Gy_n5-f69JcQ6FGi-Ut6ZLGzjApcmMgKgb0qTAD1VO5EJDX7W378CRWXkEDZXyRVPxtsiAhRSx88BjzSGpjPxnQ13Oyt6egbFNS6G65PrXwKRAnywOaz5dym5xhGeUGq8YOMh4Q=="
+   },
+   {
+    "title": "copper.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdk-xQxmD2IldBsGWBlRgdC2AEOmTR_XpTmQW7-Ff2FnsR5A1t5wgX69CaHhJN1WlssOtjfygSjvKczxBChI85VnA9NzcsxDHHUjlzPrMG9QkVR_6IotpN"
+   },
+   {
+    "title": "copper.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7bZTl398KWslcjEbLB4DL6Pc8jB_ItIfdEcmPBvyxpbTVLi_IQ5SASEEbcZwQXEPkN5S6bv0_WDFthTDkM53DNc4l07JwctAa4tOiiDC1TwyHU7zE_8qKAxsR4rXQrT9ok8Ndy-6EK6Meo6g3I9XJ1kv4Ag=="
+   },
+   {
+    "title": "copper.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuz6r9rg7YBQbT87hzOHsuDa8WaGlt2-5U2F4fhGMIID3D930lkx8qMb9Mx39Ph9eLMAhCXFh9DW6R2cKyN9uxvbFaV9loFyDvsodbipU6MS49m3s1STgxRWkCHMaykRV-EgPQRLtWuLlXNUO_MDiy"
+   },
+   {
+    "title": "copper.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBzPQF0DV5J1BIZjJvAIqNQSnjJ8UO8MkmFm7oiClYFPeA1W5gVwaRi6DPhCiYhy3gqDjBufh-1XImBc2QJk078Ks7A8gYXs-HIzPAQLHX4ZTFRujtxuZJzYwUDf4dtscSJ0nEf0Gln-AsBAyeLgqmVglig5N97dFK6iOQjG7jDUTMdZjkszVPH-Y="
+   },
+   {
+    "title": "copper.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGShBD6Y5RKiM7L6ntCHWVqeodgQLTO46d4gqgHBOTMPDh_uZZ_MPgY1TraJb_YeyxKL6SOFvNGblBAYI_4nIR-umZy4FuPSyk_WVHoG_ukgxXSYd3EktbZqoAEIYdNMnLHOzbrzsY8l7klGlTlkQ=="
+   },
+   {
+    "title": "copper.co",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTD2EeApKC1Xu1yA8YmwP2wnkLN_UzTeCMeeRpjJXHiq-iS-wPu8As0yajTso03IA46uVGEc2mvKrczL5O98c0-x3bojTGQdp8d1IGhUMr84rzEe1vb7_JUXpl0oy8-_DCkvFTCUXYJ_Cy"
+   },
+   {
+    "title": "ipaas.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGL3SJ-9QKmWWJ4e7UQY8FRYLklZIik428iHMpvRfBBk-kGyPslu06f8N17LmcOMNPMcqyPMYEKsJ7mfFDdp3hPqRzBLPWoCT6eAT1styo_-1qJAwjvQlyc5bL61YQ9oyd6EMTWMQuBx5Xjwhul_47hsQ5I1bWxc50f81_K9SHJuGAd5ijuQyXyg7_7m7m7"
+   },
+   {
+    "title": "n8n.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9jBMT_6l-U57YuSlTskNxBMEa7QMobUkzeRMFQAC02mMarGTCJfGFPs4O4kEe4Z9hFeSXdwAU4_bcil0qQVpC-l7EtxHFMolkUKaTLIzr7vth9VyTsdOt6ovQ5JaZx6-pgGMCo6O2nHbz"
+   }
+  ],
+  "tokens": 6559,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://developer.copper.com/",
+    "status": 200,
+    "chars": 5614,
+    "readable": true
+   },
+   {
+    "url": "https://bit-integrations.com/",
+    "status": 200,
+    "chars": 18422,
+    "readable": true
+   },
+   {
+    "url": "https://usecarly.com/",
+    "status": 200,
+    "chars": 3479,
+    "readable": true
+   }
+  ],
+  "seconds": 69.4
+ }
+}

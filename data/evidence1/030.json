@@ -1,0 +1,141 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://developer.vonage.com/en/getting-started/overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://apis.io/vonage",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developer.vonage.com/en/getting-started/concepts/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.58
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developer.vonage.com/en/getting-started/overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.7
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developer.vonage.com/en/getting-started/overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.79
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developer.vonage.com/en/getting-started/overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.vonage.com/blog/api-pricing-models/",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.vonage.com/en/getting-started/concepts/openapi",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.73
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.vonage.com/en/getting-started/overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.67
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.vonage.com/en/messages/concepts/messages-api-sandbox",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.84
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://documentation-mcp.vonage.dev/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://developer.vonage.com/en/blog/introducing-the-vonage-documentation-mcp-server",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.02
+  }
+ ],
+ "auth_support": {
+  "api_key": true,
+  "jwt": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://apis.io/vonage', 'https://www.vonage.com/blog/api-pricing-models/']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://developer.vonage.com/en/blog/introducing-the-vonage-documentation-mcp-server']",
+ "metrics": {
+  "n_evidence": 12,
+  "alive_rate": 0.8333333333333334,
+  "dead_rate": 0.16666666666666666,
+  "blocked_rate": 0.0,
+  "official_rate": 0.9166666666666666,
+  "readable": 10,
+  "quote_supported_rate": 0.9,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

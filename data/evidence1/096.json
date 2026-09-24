@@ -1,0 +1,110 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://docs.devin.ai/cli",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.62
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.devin.ai/api-reference/overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.64
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.devin.ai/api-reference/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.43
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.devin.ai/admin/billing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.6
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.devin.ai/admin/billing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.devin.ai/work-with-devin/devin-mcp",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.77
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.devin.ai/api-reference/overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.52
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.devin.ai/api-reference/overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://docs.devin.ai/work-with-devin/devin-mcp",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.64
+  }
+ ],
+ "auth_support": {
+  "bearer_token": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://docs.devin.ai/api-reference/authentication', 'https://docs.devin.ai/admin/billing', 'https://docs.devin.ai/api-reference/overview']",
+ "metrics": {
+  "n_evidence": 9,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 1.0,
+  "readable": 9,
+  "quote_supported_rate": 0.6666666666666666,
+  "lint_issues": 0,
+  "flag_count": 1
+ }
+}

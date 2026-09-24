@@ -1,0 +1,212 @@
+{
+ "app": {
+  "id": 56,
+  "name": "Firecrawl",
+  "category": "Data, SEO and Scraping",
+  "hint": "firecrawl.dev"
+ },
+ "record": {
+  "subcategory": "Web Scraping / Data Extraction",
+  "one_liner": "Firecrawl helps AI systems search, scrape, crawl, and interact with the web, converting content into LLM-ready markdown or JSON.",
+  "auth_methods": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "Standard API access uses an API key passed via a Bearer token. Partner Integration API uses a partner key. MCP clients can use browser-based OAuth sign-in.",
+  "access": "self_serve_free",
+  "access_notes": "Firecrawl offers a free tier with 1,000 credits/month, no credit card required. Paid plans are self-serve. A partner program is available via email application.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API with broad coverage for scraping, crawling, mapping, searching, asynchronous batch jobs, browser sandboxing, and scheduled monitoring.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Firecrawl publishes and hosts an official MCP server at https://mcp.firecrawl.dev/v2/mcp-oauth, supporting keyless, API key, or OAuth sign-in.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "none",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://docs.firecrawl.dev/api-reference/introduction",
+    "quote": "scrape extract content from any webpage in markdown or json format. crawl crawl entire websites, extract their content and metadata. map get a complete list of urls from any website quickly and reliably. search search the web and get full page content in any format."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.firecrawl.dev/api-reference/introduction",
+    "quote": "for authentication, it’s required to include an authorization header. the header should contain bearer fc-123456789 , where fc-123456789 represents your api key."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.firecrawl.dev/mcp-server",
+    "quote": "point your client at the oauth server url. your client opens a browser window where you sign in to firecrawl and approve a team: { \"mcpservers\" : { \"firecrawl\" : { \"type\" : \"http\" , \"url\" : \"https://mcp.firecrawl.dev/v2/mcp-oauth\" } } }"
+   },
+   {
+    "claim": "access",
+    "url": "https://www.firecrawl.dev/pricing",
+    "quote": "free plan a lightweight way to get started. no cost, no card, no hassle. 1,000 credits / month $ 0 /month get started"
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.firecrawl.dev/api-reference/introduction",
+    "quote": "firecrawl employs conventional http status codes to signify the outcome of your requests. typically, 2xx http status codes denote success"
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.firecrawl.dev/api-reference/introduction",
+    "quote": "scrape endpoints... crawl endpoints... map endpoints... search endpoints... interact / browser sandbox endpoints... monitor endpoints... agent endpoints... partner api"
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.firecrawl.dev/quickstart",
+    "quote": "add api endpoints implement your openapi spec and enable api user interaction."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.firecrawl.dev/mcp-server",
+    "quote": "set up firecrawl mcp with keyless access, account sign-in, or an api key."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Product Overview\nFirecrawl is a platform designed to help AI systems search, scrape, crawl, and interact with the web, converting web content into clean, LLM-ready markdown or structured JSON.\n* **Core Capabilities:** It allows users to scrape single pages, crawl entire websites, map out URLs, search the web, and extract structured data.\n  * *Source:* `https://docs.firecrawl.dev/api-reference/introduction`\n  * *Quote:* \"scrape extract content from any webpage in markdown or json format. crawl crawl entire websites, extract their content and metadata. map get a complete list of urls from any website quickly and reliably. search search the web and get full page content in any format.\"\n* **Agentic Features:** It includes advanced features such as an autonomous agent endpoint and a browser sandbox for executing code and interacting with dynamic web pages.\n  * *Source:* `https://docs.firecrawl.dev/api-reference/introduction`\n  * *Quote:* \"interact / browser sandbox endpoints post create interact session post execute code in a session get list interact sessions del delete interact session post interact with a scraped page del stop interacting\"\n\n### Authentication Methods\nFirecrawl offers multiple authentication mechanisms depending on the integration type:\n* **Standard API Key (`api_key`):** The primary method for standard API access uses an API key passed via a Bearer token in the authorization header.\n  * *Source:* `https://docs.firecrawl.dev/api-reference/introduction`\n  * *Quote:* \"for authentication, it’s required to include an authorization header. the header should contain bearer fc-123456789 , where fc-123456789 represents your api key.\"\n* **Partner Integration API:** Approved platforms can use a dedicated partner key to programmatically provision and manage Firecrawl API keys for their users.\n  * *Source:* Official Firecrawl Partner Documentation\n  * *Quote:* \"The Firecrawl Partner Integration API allows approved partners to create and manage Firecrawl API keys for their users directly from within their own platform... All Partner Integration API requests require an Authorization header with your partner key: Authorization: Bearer <partner key>.\"\n* **MCP OAuth Server:** For Model Context Protocol (MCP) clients, Firecrawl supports a browser-based OAuth sign-in flow.\n  * *Source:* `https://docs.firecrawl.dev/mcp-server`\n  * *Quote:* \"point your client at the oauth server url. your client opens a browser window where you sign in to firecrawl and approve a team: { \"mcpservers\" : { \"firecrawl\" : { \"type\" : \"http\" , \"url\" : \"https://mcp.firecrawl.dev/v2/mcp-oauth\" } } }\"\n* **Multi-Tenant Integration Choice:** For a multi-tenant integration platform like Composio, the primary authentication method is **`api_key`**, where end-users provide their own Firecrawl API keys to authenticate requests.\n\n### Credentials Acquisition & Cost\n* **Access Type:** `self_serve_free`\n* **Free Tier:** Firecrawl provides a completely free tier that requires no credit card and grants 1,000 credits per month.\n  * *Source:* `https://www.firecrawl.dev/pricing`\n  * *Quote:* \"free plan a lightweight way to get started. no cost, no card, no hassle. 1,000 credits / month $ 0 /month get started\"\n* **Paid Plans:** Self-serve paid plans scale up based on usage requirements, starting with the Hobby plan at $16/month (billed annually) for 5,000 credits.\n  * *Source:* `https://www.firecrawl.dev/pricing`\n  * *Quote:* \"hobby great for side projects and small tools. fast, simple, no overkill. 5,000 credits / month $ 16 /month billed yearly save $38 subscribe\"\n* **Partner Program:** Platforms looking to deeply embed Firecrawl can apply for the partner program via email.\n  * *Source:* Official Firecrawl Partner Documentation\n  * *Quote:* \"Become a Partner. Firecrawl's partner program is available to approved platforms. If you're interested in integrating Firecrawl into your platform and offering credits to your users, contact us at partnerships@firecrawl.dev to learn more and request a partner API key.\"\n\n### API Technical Details\n* **API Style:** REST API using standard HTTP methods and status codes.\n  * *Source:* `https://docs.firecrawl.dev/api-reference/introduction`\n  * *Quote:* \"firecrawl employs conventional http status codes to signify the outcome of your requests. typically, 2xx http status codes denote success\"\n* **API Breadth:** Broad coverage across scraping, crawling, mapping, searching, asynchronous batch jobs, browser sandboxing, and scheduled monitoring.\n  * *Source:* `https://docs.firecrawl.dev/api-reference/introduction`\n  * *Quote:* \"scrape endpoints... crawl endpoints... map endpoints... search endpoints... interact / browser sandbox endpoints... monitor endpoints... agent endpoints... partner api\"\n* **OpenAPI Spec:** Firecrawl maintains an official OpenAPI specification used to generate its SDKs.\n  * *Source:* `https://docs.firecrawl.dev/quickstart` & Community SDK Registries\n  * *Quote:* \"add api endpoints implement your openapi spec and enable api user interaction.\" / \"Fully generated C# SDK based on official Firecrawl OpenAPI specification using AutoSDK\"\n* **Webhooks:** Firecrawl supports real-time webhook events for tracking job lifecycles, complete with HMAC-SHA256 signature verification.\n  * *Source:* Official Firecrawl Webhooks Documentation\n  * *Quote:* \"Firecrawl sends webhook events at each stage of a job's lifecycle, so you can track progress, capture results, and handle failures in real time without polling.\" and \"Verify that every webhook request actually came from Firecrawl by checking its HMAC-SHA256 signature.\"\n* **Sandbox:** Firecrawl provides a fully managed, isolated remote browser sandbox environment pre-loaded with automation tools.\n  * *Source:* Official Firecrawl Product Announcements\n  * *Quote:* \"Firecrawl Browser Sandbox is a browser environment your agents can control - no local setup, no infrastructure to maintain.\"\n\n### MCP Server Support\n* **MCP Classification:** `official`\n* **Details:** Firecrawl publishes and hosts an official MCP server that supports keyless access, API keys, or browser-based OAuth sign-in.\n  * *Source:* `https://docs.firecrawl.dev/mcp-server`\n  * *Quote:* \"set up firecrawl mcp with keyless access, account sign-in, or an api key.\"\n\n### Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. Firecrawl provides comprehensive public documentation, an official OpenAPI specification, an official MCP server, and a self-serve free tier that allows developers to immediately obtain API credentials and begin building integrations.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"firecrawl\" openapi spec",
+   "\"firecrawl\" webhooks",
+   "\"firecrawl\" sandbox",
+   "\"firecrawl\" partner program"
+  ],
+  "search_sources": [
+   {
+    "title": "firecrawl.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPiXNCxlY3RDbk8dCjda8e9u3caE-LGhBLizBgNm5HjNpGh2KaKHhvSql_9EIfcMBbZptrU5k1LCDIzrk_M0xncXuyjSaAyAdPbhlsFjstSGnEP-U="
+   },
+   {
+    "title": "pypi.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-I86ob-by3YumxeJGq4BvaJr24Q1ucnaVIBjATQgx1Yy-eRyjudxRMSff5kGPhNd_vXwxAV8WO_9_9jflMCGJCy1H1LldX5VSpDGGluaUy01ClXLx2gYK3J2yZXWZ2w=="
+   },
+   {
+    "title": "firecrawl.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQGf7Y6aISILUHzjL_QK7-fxkaZKw-kE0nm2Ijs0leVfu2T_qXSW1R6ocSdgOa1TqzxiLHEpeFW0H9I_9XX5BpySm_9ep39Bbfyya0MQ9I3nvSGwroYfQfEMCAmHhx_gJMbl_I_1CAEBTnTh67aIP1QA=="
+   },
+   {
+    "title": "firecrawl.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWgBBoq-5vxlmHmPaOQPvt2pnJXAQ2kz5WpDq4aVr5fUbwSvO3vj-sRzeyGrqPE81_eA-qcw_0ztXemqjCHt6cXXGw3duwGeAsjawJXHkQpHusJYf2xw9ID2rglNxCiPPIrkQcptV_UA=="
+   },
+   {
+    "title": "firecrawl.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1lMmLB4bZ6fieEWisxegm7FkyRQfNgJLrWWyJeXePAWbLXlqDhPuw55ws6ad5ph0oO7MHpzG2a5ZbGa523b1p0tDDvQR0hjNC63n-6OVruIu07f_in7B7_8lnPts8"
+   },
+   {
+    "title": "firecrawl.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtfoO1Zv3OwB3ssPENqFs1BzJ1DTjwAtA8YT7M4X0hrKiZ976zTIfIv0bRv_m6iPVbb4RSN47-RGgf5fXedK6wbyMK5A8mWTQv9vEU6UUvarXxB8w6ptdI7MW_4gx9MA=="
+   },
+   {
+    "title": "firecrawl.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8PTwkbb4QKyfk-SbcbAVwQ41Zgg2zAf1BW5_RYQWdOT6DRP7v9RHqqNW2SRAAK4bx1TIe37WMqJsL26X5uFpJgSFt8k6yLEpFyGyUdF_r6a7EbjOiHR-GKagk80WbuNl3jPMlbhQi1AQ0bdGGn6zw7jFFfg=="
+   },
+   {
+    "title": "firecrawl.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_2kcmT3gEuGbjdJc6Kwy6tBou2DE5XyDqrymUBXGhIHBIlai6tS0pUK-XzMIEqjZfri1RjRnO6bQhY3oz0teOo_5639g_13LOdqBAyYHSbC2jdK9-xakz0wYh3T3XxmXs28kAtm1yRCjObQyOZw34UvjSvhs5wmWNIA-y"
+   },
+   {
+    "title": "firecrawl.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYuiIFm_te0ycuSZoZStEMSBuveHPY_ZHRGf2GOHuJNWKtM2IObeCqtBgEi_cUA93oZu7-Xx2TzAGF9pOdzCrx8F-oBdmzE5MAmXoHS0efSXe8WtpkYoL6tUI62GHFbUDNWKbgfw=="
+   }
+  ],
+  "tokens": 9700,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Firecrawl API authentication",
+    "Firecrawl API keys",
+    "Firecrawl OAuth",
+    "Firecrawl getting started",
+    "Firecrawl quickstart",
+    "Firecrawl documentation",
+    "Firecrawl pricing",
+    "Firecrawl API plans",
+    "Firecrawl developer program",
+    "Firecrawl API reference",
+    "Firecrawl MCP server"
+   ],
+   "candidates": 5,
+   "live_urls": [
+    "https://docs.firecrawl.dev/api-reference/introduction",
+    "https://docs.firecrawl.dev/quickstart",
+    "https://www.firecrawl.dev/pricing",
+    "https://docs.firecrawl.dev/api-reference/v2-introduction",
+    "https://docs.firecrawl.dev/mcp-server",
+    "https://docs.firecrawl.dev/v0/introduction",
+    "https://www.eesel.ai/blog/firecrawl-pricing",
+    "https://scrapegraphai.com/blog/firecrawl-pricing",
+    "https://mcp.so/servers/firecrawl-mcp-server"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://mcp.firecrawl.dev/v2/mcp",
+     "status": 405
+    },
+    {
+     "url": "https://mcp.firecrawl.dev/v2/mcp-oauth",
+     "status": 405
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://docs.firecrawl.dev/api-reference/introduction",
+     "status": 200,
+     "chars": 5087,
+     "readable": true
+    },
+    {
+     "url": "https://docs.firecrawl.dev/quickstart",
+     "status": 200,
+     "chars": 3240,
+     "readable": true
+    },
+    {
+     "url": "https://www.firecrawl.dev/pricing",
+     "status": 200,
+     "chars": 15189,
+     "readable": true
+    },
+    {
+     "url": "https://docs.firecrawl.dev/api-reference/v2-introduction",
+     "status": 200,
+     "chars": 4591,
+     "readable": true
+    },
+    {
+     "url": "https://docs.firecrawl.dev/mcp-server",
+     "status": 200,
+     "chars": 2697,
+     "readable": true
+    },
+    {
+     "url": "https://docs.firecrawl.dev/v0/introduction",
+     "status": 200,
+     "chars": 13009,
+     "readable": true
+    },
+    {
+     "url": "https://www.eesel.ai/blog/firecrawl-pricing",
+     "status": 200,
+     "chars": 21087,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 79.1
+ }
+}

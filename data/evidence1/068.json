@@ -1,0 +1,113 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.79
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.75
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.mongodb.com/docs/atlas/api/api-authentication/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.mongodb.com/docs/atlas/atlas-ui/triggers/functions/api/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://www.mongodb.com/docs/mcp-server/overview/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.76
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "api_key": true
+ },
+ "lint": [
+  "primary_auth not in auth_methods"
+ ],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://www.mongodb.com/docs/atlas/api/api-authentication/', 'https://www.mongodb.com/docs/atlas/atlas-ui/triggers/functions/api/']\n- Consistency: primary_auth not in auth_methods",
+ "metrics": {
+  "n_evidence": 9,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 1.0,
+  "readable": 9,
+  "quote_supported_rate": 0.7777777777777778,
+  "lint_issues": 1,
+  "flag_count": 2
+ }
+}

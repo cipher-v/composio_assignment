@@ -1,0 +1,326 @@
+{
+ "app": {
+  "id": 62,
+  "name": "Vercel",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "vercel.com/docs/rest-api"
+ },
+ "record": {
+  "subcategory": "Cloud Platform / Web Hosting",
+  "one_liner": "Vercel is a cloud platform for deploying and scaling web applications, frontend projects, and serverless/edge functions.",
+  "auth_methods": [
+   "bearer_token",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Personal Access Tokens (bearer_token) for individual use; OAuth 2.0 ('Sign in with Vercel') for third-party applications; Vercel Integrations API for marketplace integrations.",
+  "access": "paid_plan",
+  "access_notes": "The free \"Hobby\" plan provides API access for personal, non-commercial use only. Any commercial use requires upgrading to a paid \"Pro\" plan. A developer can create a Vercel account, generate personal access tokens, and create OAuth 2.0 applications for \"Sign in with Vercel\" under any plan.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API over HTTPS with over 25 categories of endpoints including deployments, projects, domains, DNS, environment variables, sandboxes, and webhooks.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Vercel provides an official remote MCP server for AI assistants to search documentation, manage projects, and analyze logs, available across all plans.",
+  "verdict": "ready_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "While API credentials can be obtained on the free tier, any commercial use of the API is prohibited by Vercel's terms of service for the \"Hobby\" plan, requiring an upgrade to a paid \"Pro\" plan.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://vercel.com/pricing",
+    "quote": "\"Hobby $0 /mo. the perfect starting place for your web app or personal project. import your repo, deploy in seconds automatic ci/cd web application firewall global, automated cdn fluid compute ddos mitigation traffic & performance insights\""
+   },
+   {
+    "claim": "general",
+    "url": "https://vercel.com/docs/rest-api",
+    "quote": "\"Vercel Sandbox — Run untrusted or agent-generated code in isolated Linux microVMs with Vercel Sandbox.\""
+   },
+   {
+    "claim": "auth",
+    "url": "https://vercel.com/docs/rest-api",
+    "quote": "\"Vercel access tokens are required to authenticate and use the vercel api. include the token in the authorization header: authorization: bearer <token>\""
+   },
+   {
+    "claim": "auth",
+    "url": "https://vercel.com/docs/sign-in-with-vercel",
+    "quote": "\"Sign in with Vercel is based on the OAuth 2.0 authorization framework, which allows your application to request access to user data from Vercel's Identity Provider (IdP).\""
+   },
+   {
+    "claim": "auth",
+    "url": "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations",
+    "quote": "\"You receive this token during the installation process when you call the Upsert Installation API. The response includes a credentials object with an access_token that you use as a bearer token for subsequent API calls.\""
+   },
+   {
+    "claim": "access",
+    "url": "https://vercel.com/pricing",
+    "quote": "\"Hobby $0 /mo. the perfect starting place for your web app or personal project.\""
+   },
+   {
+    "claim": "access",
+    "url": "https://vercel.com/docs/rest-api",
+    "quote": "\"create and manage access tokens in your account settings .\""
+   },
+   {
+    "claim": "access",
+    "url": "https://vercel.com/docs/sign-in-with-vercel",
+    "quote": "\"You can create an app, configure its scopes, and start setting up sign-in directly from the Vercel dashboard, without having to manage users or sign-in methods yourself.\""
+   },
+   {
+    "claim": "api",
+    "url": "https://vercel.com/docs/rest-api",
+    "quote": "\"All endpoints live under the url https://api.vercel.com and follow the rest architecture.\""
+   },
+   {
+    "claim": "api",
+    "url": "https://vercel.com/docs/rest-api",
+    "quote": "\"Browse all available rest api endpoints grouped by category... Deployments 10 endpoint s... DNS 4 endpoint s... Domains 9 endpoint s... Projects 32 endpoint s... Sandboxes 30 endpoint s... Webhooks 4 endpoint s\""
+   },
+   {
+    "claim": "api",
+    "url": "https://vercel.com/docs/rest-api/getting-started",
+    "quote": "\"https://vercel.com/openapi.json, The OpenAPI 3.0 description of the Vercel REST API.\""
+   },
+   {
+    "claim": "api",
+    "url": "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations",
+    "quote": "\"Webhooks allow you to get notified through a defined HTTP endpoint about certain deployment or project events that happened on the Vercel platform. Webhooks are now available for all Pro and Enterprise customers.\""
+   },
+   {
+    "claim": "api",
+    "url": "https://vercel.com/docs/rest-api",
+    "quote": "\"Vercel Sandbox — Run untrusted or agent-generated code in isolated Linux microVMs with Vercel Sandbox.\""
+   },
+   {
+    "claim": "mcp",
+    "url": "https://vercel.com/docs/rest-api",
+    "quote": "\"Introducing Vercel MCP: Connect Vercel to your AI tools.\" and \"Vercel MCP is available in Beta on all plans and your use is subject to Vercel's Public Beta Agreement and AI Product Terms.\""
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "access",
+    "old": "self_serve_free",
+    "new": "paid_plan",
+    "reason": "The free \"Hobby\" plan is strictly for \"personal, non-commercial use\". Any commercial activity, including hosting a business site or a site with ads, requires a paid \"Pro\" plan. While a developer can obtain API credentials on the free plan to build an integration, using that integration for any commercial purpose would violate the terms of service. Therefore, practical use requires a paid plan, which constitutes friction.",
+    "url": "https://vercel.com/pricing"
+   },
+   {
+    "field": "access_notes",
+    "old": "Free Hobby plan allows creation of Vercel accounts, access to REST API, generation of personal access tokens, and creation of OAuth applications.",
+    "new": "The free \"Hobby\" plan provides API access for personal, non-commercial use only. Any commercial use requires upgrading to a paid \"Pro\" plan. A developer can create a Vercel account, generate personal access tokens, and create OAuth 2.0 applications for \"Sign in with Vercel\" under any plan.",
+    "reason": "The Hobby plan is explicitly for non-commercial use. A blog post confirms that using the API on the Hobby plan is possible for deployment automation. The ability to create OAuth apps is available from the Vercel dashboard without mention of being a paid feature.",
+    "url": "https://vercel.com/pricing"
+   },
+   {
+    "field": "api_notes",
+    "old": "REST API over HTTPS with over 40 categories of endpoints including deployments, projects, domains, DNS, environment variables, sandboxes, and webhooks.",
+    "new": "REST API over HTTPS with over 25 categories of endpoints including deployments, projects, domains, DNS, environment variables, sandboxes, and webhooks.",
+    "reason": "A manual count of the endpoint categories on the main API reference page shows more than 25 distinct categories, not over 40.",
+    "url": "https://vercel.com/docs/rest-api"
+   },
+   {
+    "field": "webhooks",
+    "old": "true",
+    "new": "true",
+    "reason": "Webhooks are available, but configurable account-level webhooks are a feature of paid \"Pro\" and \"Enterprise\" teams.",
+    "url": "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations"
+   },
+   {
+    "field": "verdict",
+    "old": "ready_now",
+    "new": "ready_with_friction",
+    "reason": "The primary blocker is that the free \"Hobby\" plan is restricted to non-commercial use. Any integration intended for a commercial application would require the end-user to have a paid \"Pro\" plan, which constitutes significant friction. Additionally, configurable account-level webhooks are a paid feature.",
+    "url": "https://vercel.com/pricing"
+   },
+   {
+    "field": "blocker",
+    "old": "none",
+    "new": "paid_plan",
+    "reason": "The free tier is for non-commercial use only.",
+    "url": "https://vercel.com/pricing"
+   },
+   {
+    "field": "blocker_notes",
+    "old": "None. Comprehensive REST documentation, official OpenAPI spec, self-serve free tier for credentials, and robust OAuth 2.0 framework.",
+    "new": "While API credentials can be obtained on the free tier, any commercial use of the API is prohibited by Vercel's terms of service for the \"Hobby\" plan, requiring an upgrade to a paid \"Pro\" plan.",
+    "reason": "The free tier is for non-commercial use only.",
+    "url": "https://vercel.com/pricing"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### Vercel Fact-Checking Report\n\nHere is the verification of the first-pass research record for \"Vercel\".\n\n---\n\n#### **`subcategory`**\n*   **Original:** `Cloud Platform / Web Hosting`\n*   **Verification:** `CONFIRMED`\n*   **Correction:** None.\n*   **Evidence:** Vercel is consistently described as a platform for deploying and hosting web applications and frontend projects.\n\n---\n\n#### **`one_liner`**\n*   **Original:** `Vercel is a cloud platform for deploying and scaling web applications, frontend projects, and serverless/edge functions.`\n*   **Verification:** `CONFIRMED`\n*   **Correction:** None.\n*   **Evidence:** Vercel's documentation and public information describe it as a platform for frontend developers to deploy, preview, and scale web apps, with features like serverless functions.\n\n---\n\n#### **`auth_methods`**\n*   **Original:** `[ \"bearer_token\", \"oauth2\" ]`\n*   **Verification:** `CONFIRMED`\n*   **Correction:** None.\n*   **Evidence:**\n    *   **bearer_token:** The API documentation explicitly states that \"Vercel Access Tokens are required to authenticate and use the Vercel API\" and provides the header format `Authorization: Bearer <token>`. The API includes endpoints to create and manage these tokens.\n    *   **oauth2:** Vercel offers \"Sign in with Vercel,\" which is based on the OAuth 2.0 framework and also supports OpenID Connect (OIDC). This is designed for third-party applications to authenticate users and call the API on their behalf.\n\n---\n\n#### **`primary_auth`**\n*   **Original:** `oauth2`\n*   **Verification:** `CONFIRMED`\n*   **Correction:** None.\n*   **Evidence:** For a multi-tenant integration platform, OAuth 2.0 is the appropriate method for users to grant third-party applications access to their accounts. Vercel's \"Sign in with Vercel\" provides this exact functionality.\n\n---\n\n#### **`auth_notes`**\n*   **Original:** `Personal Access Tokens (bearer_token) for individual use; OAuth 2.0 ('Sign in with Vercel') for third-party applications; Vercel Integrations API for marketplace integrations.`\n*   **Verification:** `CONFIRMED`\n*   **Correction:** None.\n*   **Evidence:** The documentation confirms that Personal Access Tokens are for individual programmatic use. \"Sign in with Vercel\" is the OAuth 2.0 implementation for third-party apps to let users log in with their Vercel account. Vercel also has a separate flow for Marketplace Integrations.\n\n---\n\n#### **`access`**\n*   **Original:** `self_serve_free`\n*   **Verification:** `WRONG`\n*   **Correction:** `ready_with_friction`\n*   **Evidence:** The free \"Hobby\" plan is strictly for \"personal, non-commercial use\". Any commercial activity, including hosting a business site or a site with ads, requires a paid \"Pro\" plan. While a developer can obtain API credentials on the free plan to build an integration, using that integration for any commercial purpose would violate the terms of service. Therefore, practical use requires a paid plan, which constitutes friction.\n\n---\n\n#### **`access_notes`**\n*   **Original:** `Free Hobby plan allows creation of Vercel accounts, access to REST API, generation of personal access tokens, and creation of OAuth applications.`\n*   **Verification:** `WRONG`\n*   **Correction:** The free \"Hobby\" plan provides API access for personal, non-commercial use only. Any commercial use requires upgrading to a paid \"Pro\" plan. A developer can create a Vercel account, generate personal access tokens, and create OAuth 2.0 applications for \"Sign in with Vercel\" under any plan.\n*   **Evidence:** The Hobby plan is explicitly for non-commercial use. A blog post confirms that using the API on the Hobby plan is possible for deployment automation. The ability to create OAuth apps is available from the Vercel dashboard without mention of being a paid feature.\n\n---\n\n#### **`api_styles`**\n*   **Original:** `[ \"rest\" ]`\n*   **Verification:** `CONFIRMED`\n*   **Correction:** None.\n*   **Evidence:** The API is explicitly called the \"Vercel REST API\" and its endpoints are hosted at `https://api.vercel.com`, following REST architecture.\n\n---\n\n#### **`api_breadth`**\n*   **Original:** `broad`\n*   **Verification:** `CONFIRMED`\n*   **Correction:** None.\n*   **Evidence:** The REST API reference page lists over 25 categories of endpoints, including deployments, projects, domains, DNS, environment variables, webhooks, and sandboxes, indicating broad control over the platform.\n\n---\n\n#### **`api_notes`**\n*   **Original:** `REST API over HTTPS with over 40 categories of endpoints including deployments, projects, domains, DNS, environment variables, sandboxes, and webhooks.`\n*   **Verification:** `WRONG`\n*   **Correction:** REST API over HTTPS with over 25 categories of endpoints including deployments, projects, domains, DNS, environment variables, sandboxes, and webhooks.\n*   **Evidence:** The API is served over HTTPS and follows REST architecture. A manual count of the endpoint categories on the main API reference page shows more than 25 distinct categories, not over 40.\n\n---\n\n#### **`openapi_spec`**\n*   **Original:** `true`\n*   **Verification:** `CONFIRMED`\n*   **Correction:** None.\n*   **Evidence:** While the originally cited URL was incorrect, Vercel does use an OpenAPI specification to automatically generate its API documentation. The Vercel CLI also has a command `vercel api` which can fetch the OpenAPI specification for interactive use.\n\n---\n\n#### **`webhooks`**\n*   **Original:** `true`\n*   **Verification:** `WRONG`\n*   **Correction:** Webhooks are available, but configurable account-level webhooks are a feature of paid \"Pro\" and \"Enterprise\" teams.\n*   **Evidence:** The documentation states, \"Pro and Enterprise teams will be able to configure these webhooks at the account level.\" While the API has endpoints for managing webhooks, their availability for self-serve configuration is tied to paid plans, which adds friction.\n\n---\n\n#### **`sandbox`**\n*   **Original:** `true`\n*   **Verification:** `CONFIRMED`\n*   **Correction:** None.\n*   **Evidence:** Vercel offers \"Vercel Sandbox,\" a service for running untrusted or user-generated code in isolated Linux micro-VMs. It is accessible via an SDK and CLI.\n\n---\n\n#### **`mcp`**\n*   **Original:** `official`\n*   **Verification:** `CONFIRMED`\n*   **Correction:** None.\n*   **Evidence:** Vercel provides an official Model Context Protocol (MCP) server, launched in public beta. It is explicitly referred to as the \"official Vercel MCP server\". MCP is an open standard that lets AI assistants interact with external tools like Vercel.\n\n---\n\n#### **`mcp_notes`**\n*   **Original:** `Vercel provides an official remote MCP server for AI assistants to search documentation, manage projects, and analyze logs, available across all plans.`\n*   **Verification:** `CONFIRMED`\n*   **Correction:** None.\n*   **Evidence:** The official Vercel MCP server allows AI clients to perform actions like searching documentation, retrieving deployment logs, and managing projects. The service was launched in Public Beta and is available at `https://mcp.vercel.com`.\n\n---\n\n#### **`verdict`**\n*   **Original:** `ready_now`\n*   **Verification:** `WRONG`\n*   **Correction:** `ready_with_friction`\n*   **Evidence:** The primary blocker is that the free \"Hobby\" plan is restricted to non-commercial use. Any integration intended for a commercial application would require the end-user to have a paid \"Pro\" plan, which constitutes significant friction. Additionally, configurable account-level webhooks are a paid feature.\n\n---\n\n#### **`blocker`**\n*   **Original:** `none`\n*   **Verification:** `WRONG`\n*   **Correction:** `paid_plan`\n*   **Evidence:** The free tier is for non-commercial use only.\n\n---\n\n#### **`blocker_notes`**\n*   **Original:** `None. Comprehensive REST documentation, official OpenAPI spec, self-serve free tier for credentials, and robust OAuth 2.0 framework.`\n*   **Verification:** `WRONG`\n*   **Correction:** While API credentials can be obtained on the free tier, any commercial use of the API is prohibited by Vercel's terms of service for the \"Hobby\" plan, requiring an upgrade to a paid \"Pro\" plan.\n\n---\n### Uncertain Fields\n\nNone. The available documentation was sufficient to verify all fields.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Vercel REST API authentication",
+   "Vercel \"Sign in with Vercel\" OAuth 2.0",
+   "Vercel API access free Hobby plan",
+   "Vercel API webhooks documentation",
+   "Vercel OpenAPI spec",
+   "Vercel Sandbox API",
+   "Vercel MCP official"
+  ],
+  "search_sources": [
+   {
+    "title": "resourify.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPzYJhrM9k1EpkOTdO1g0w4zICGaPsw57T8kl4a6rmZ55B_IuswewW27aaZvU2BOnw1WttizWJ-mWYP1oweQqzUeZbV_kylDaTjFXUAudiu1doLL0e4bVkq5UVCcSnGxx1C-vh69ACaRnt-_ycF_T-WKXLIyceiuo="
+   },
+   {
+    "title": "fencode.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbHmNJ2tdx50s1X6z9-v5_bOQovHd155lCTK5hlXjbJ6NBghufnx1ONFPS4lk88NteWEBDqHyde2TVHnF2i6hWJFfnfPPu8JhNzbfu_tzZ1-UBckvgs3wLgy-zgOhOUXgGsr6oTMT29yONih7uI7StTHNOj8hdfVuPKZbqakWwGjGr0gJYTGpklQ=="
+   },
+   {
+    "title": "creatorstoolbox.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKkuwx8_LqFZ356_3E_YNFjkTWw4d0WZ9LyqEAoM9j-jj6_3pjq9nkvNngHrz9X0gehu2WHrLgiUBw63Te7nGyt70Pb1RZcF-xUrnATZT7023hukuKQsCz37RibKQOHMIjc9zTsLlcebuZA-4OANizvZU0rEtJAD02zvg4cP-cfbLTRFqEdlYqgU7AxqI="
+   },
+   {
+    "title": "dev.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGJYzigLk81nO4ybU9Ej-0zHPYjqdYk18TnEOUsxpCFpATt6Fa_tfCVaYmZ6tFLXoN8Su5fMiwpoQwRle-GIx8L4C7zf5EaUTRySuE1saXEOaGZkUxA1DWceLbzmNyIRpTZ53FEW1jah5WB9J-gE3KYG19HdbOU_68gBY6HRsl8k6w29Ca7Ef8TORihj5GjWH21miblJB3kb0="
+   },
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4NEAO81m3QXHEWTBCecxUPZz3cJXhHZn4B8BOlVtlo6Ux8EeMGFtY_jGBAEgVgpVCUTHVESj00RMih2a7Gr5Qv6jKwhjztgU_j_u-4SGBagisxcDR3e3bW2s="
+   },
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkrWVXwtO095DgmtRK704qKDEsRWFl3EIFXpUbjIY33Iu6wL-RNPVgGUOPBGrBdAnnkqTDL9Ig9NVT3vmU-jH05yZI2VO54rxmGdHORE9ZZeSfzCUS_bYYrn66lb01giHENdjrUot1se8EM4FQWDijXXfjA0yWvpwni8fz"
+   },
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDKUtgQqPA0ZcFEPXpWEv9mp0VHBeUaLDcB1TGJN1XyhRBlPz9QAb-I_JLFa7jWFCsAEehYeVdPH0YoW28iYOjG2zalJV6aYjM_xGQfeQtT9KwPntNSUptsSWAz4PeuDR60LK6XXy3J8K2XqLy8v3OKbUEsF5jtQ3uh0C2qsw="
+   },
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCz1z1Cxpc_kTYrRt-5TKpqYMl6hG080oZtvqWpqKi_tY-tF7Jlfoa1671aU9CD2IZnPfVR5Cu2fr1wPuukgHncnwWEC_DMMUt_2CIrfSAInn6B00a5cfdV7BUcEq0xPHVwkF3SbJPr87mt4bHgsQG-fpQo3L9X8mUCA=="
+   },
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7IYvZn3JBoszvu3hRuY-GCgKod6Flxhmjl5jUdgZu3-EOmyrKDI3gNF_1YDsJPpkIL7Rls6eQWTgMoG10z-ZlaIsTzYonQ26iSRYl6eiupxmvcIw_R4yhGoWUczMrXxQ5klCuSg=="
+   },
+   {
+    "title": "nhimg.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExWMX85HNvbphSkqgfjXPYPF41nJFDm8k221YQ222DiYYIz6yrbK4aB73s2-hV6kE9KSiaxYdXcJSYOIfG5VgsGPrAbiRmnoLtwxXW8r8QW3Rr2zuOA-cIu4mqUr4HTnxJ7Yr-XG4Yngek-czEENadSG5WKVxMm22IJdHLmmaDAZCpc82ODWypSJO97c1aB0247oE="
+   },
+   {
+    "title": "auth0.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5vGORco-2s584fQyO1BwyN04zus9k_d5OFEwdW1QsraDU3U-oF_8dDe0IGdNyKzV3KujvGqs2tmJBx6q-tiXpUQ1XuZ_1giDU2aKPXr7NqRznn3GnNulUSPB7jDG2bwgE_l_F9wqkgmfp"
+   },
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQkczNtjCxbmaMnbzf-rJtilqcmnRrczMaj_GsuB6nXdGJdKr6Xk7UKvg9-RqRnVIcctLuxL1DJ4-DIeZ6aDokrZ1vkMHyZ6fDLOHL1YpBvO3DTySVXzF2pPpXuMQGQLzu8i1sMgOLyl1XoKD9BOLy_lp3IvHGRGVQ6U7M6sA="
+   },
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF13bnVfISETXtziBQrYaYyNJnsIgXDrwUG06ZrgjYspR_0BlxRhXBw5_XpE-HQNvJJ9WehUVCrKzCpMkueTP7y0NdGsYoY-tNJLWlRZ3vZTWD4ZRquj3zr91w0F06PdlhSVL7uXXfS"
+   },
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqZtC6Oid3Lll3XWgE-EC2fOCa8l5aAlEB6GPscOpQhW4kNrIgN4eRxi_FGjmtB3AJw3QCkySBuESKf592PmIKWyTAemrV1VKNW0x_138TBCO3CgVDZTFBb1-7SYo="
+   },
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUZtbc-g-yvo1HcL4IN6SthccO9gXhF0pkxt1czx-rPY8C__I_rWuW_bgejWduu-Bg2diWWXiqmYsMbIq4KfCUzXCLWl97NWuKhu6STMgRePPW1eQypAB7eDC_9bBubQGnbWT8Ctu4v6ItM85iMFY-jeDZzBxgCxSYFm6qspDy_DZtXQg="
+   },
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEh_kTXgRZE3feYQ1XWJgR9FU3R3ytPXcMSDHLC4a83dJJOHihHN-mezsYLnQ31X9nkb3MIIqf5RV3nYThtwXyZbFpusJxqN_AO0YbhEXg3V932eJ4i3h7k2A=="
+   },
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTNcNrBqYPsdwoVWAVYEQJ6FYM7dJD5ylPE7bbrLoy1-WkzqVyNgwgHsK67DC85ADV6Ee6agxkDf5c-xNGIlPsDgYRlnotwExraG82D8JgTuZy3NHAIMaYGh4="
+   },
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPIQF8UpO5bc3YsW9R4akkjJvFU23iPRH3lA1-SCQoZegu5XWOaePalIMkJHjWNiQwdNORwk1N-SJuL-hzOm2ZsuKbb8n1RZXwttR-CPkj01MRX3FeGZCt5AquNd0djy6jCO2maz4TF-c-bY3ghmbGUieueTU="
+   },
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKSOYU4K5JMdIc2N4aaQowNwoz1mRq0S_ode8SA5sd9QT6lKu8lnc-0RpCaXSnEE1SRAlHmk6s1Z-N4cJpcDTYLOax-qfU6ZwwyJRt64lChgNtkqST2JkuORTpSFjHIdUh4VnPnJKC79t6fW-WuWBW_w=="
+   },
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfy4QKRMSJgXzQa0RU9fIWoJHWEdoi0X7jrFa8AiRUeWidAiLRwgmpyyjigGkVUiXdWgaOo01czkeM_QW8Efe6I_2aoVnjTWon8GfN15AlWEGIlQopJGSsrae9HJUXaCan2Y65MR1EiQB0LjPMYNrmkCWKjSQlUUGlWA=="
+   },
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8RRYPblm0bZSkuVJ3MZEN6aAmTB5KyObdtP19JklSfhXW_lHUG0ViLL_-bQvnueW_Ctgjqvqj2rYXFlRtXk8gxpg6g57NMd3AOIckQ-GwUqzX1aw0OTbnAQ=="
+   },
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdPbS9CVFIe-RJYxzIsuxK3xkeJtMjE1gEV9dOWpHrjOambUjjOMEcatLpaFc-tM6vox1TD958y6v1ctKHIWv_xgNhZvkCcK0bfuntBtLrrrANCwgP8saha618sg6jePHvOVfogosrDV8OefUbp-W2YcLEX5beU5FHh1s="
+   },
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeDXdT2szYHOet58eIRP_DIj8JMjDSeng3pWe1FgQcUkBdEk4QHpSn2WUqMnqTx6mj8sGq2ub0FdH21R194IqTCQmpM_req9wFXUe7e521HUDT5LVwU_M_z1B4M9n5"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0R8_HclP2PbLc3si8W2c2SQRrjrPXpzEEGLciz-Dot-ntLv8OOURhb2NVTl0icHGEcOfebTmDBCj9GuJMRBp3qCgRmkRNbX_xbu5jzkDDW6IzqjwE3DWBBbLN"
+   },
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcCCy3h1S7hRpaR26zlxEvLtn4hdXbcnWDfLKpMNqfrAWIo83H5Zxh7kOLv-EDcoL8sruk2uDilK-eABtcTbbt_tcUE4O5sY6fJs5IxjLyUAYab3389Pj18l9W4VSm1gOnVWFgQNdYJiUOwFrikunuX047PAJ3fO3chDUUBlqW408dlNQDwlMv"
+   },
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFTBDaQQe7vsDqvIiQmj8GPYJepyaNthb5aqC23sgq1Eig5l61O99Amz1kqTTJbml9dVck5PG3zO5GK2lMt1cVHJKEEMwK6msHluovzaC0pFhVmGCZskjCdKicHNz7MXPbO7ioy72nRVooTX4="
+   },
+   {
+    "title": "speakeasy.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_BWGduYgNzwP7jN3F7rCmds6Hi5poxPL-a-97ZvayIs2Z6zXm1EqySGHjvv_lMviiIKB1TqSRXlqVXrKwT8_jcqmSAEJa1KjLqGdTjkDnpXp1aEM6rxQ2wG7cqk08FzQTE1oftPW_0YSYnHEtC0q-BFULTAbD"
+   },
+   {
+    "title": "stacklok.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHK-j6xu7KTBo0RoMg9fT9VyWePdovFDg1-t2SAGdyARSHoVAGr1qyGmiAo1Ludy0WuWwG4wC-WJOfkcE82SLU1Pqos8jxk7Y2ta0U-ci8MvU3_EC9hc2GBI1tbaKYCA=="
+   },
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1mhKKaChW3VqW0orSK7YUNo34BW2gZoIGnwXxk1Huu9A4hBnLngyddDEmAqSg2oYcWWy3Qyw7h1JFkZ8R7iMn0N-RMVmsh92KEkWmCrI7Z3-kvyYA"
+   }
+  ],
+  "tokens": 8647,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://vercel.com/pricing",
+    "status": 200,
+    "chars": 14851,
+    "readable": true
+   },
+   {
+    "url": "https://vercel.com/docs/rest-api",
+    "status": 200,
+    "chars": 116726,
+    "readable": true
+   },
+   {
+    "url": "https://vercel.com/docs/sign-in-with-vercel",
+    "status": 200,
+    "chars": 9175,
+    "readable": true
+   },
+   {
+    "url": "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations",
+    "status": 200,
+    "chars": 18970,
+    "readable": true
+   },
+   {
+    "url": "https://vercel.com/docs/rest-api/getting-started",
+    "status": 200,
+    "chars": 10294,
+    "readable": true
+   }
+  ],
+  "seconds": 62.9
+ }
+}

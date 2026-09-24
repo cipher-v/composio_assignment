@@ -1,0 +1,301 @@
+{
+ "app": {
+  "id": 84,
+  "name": "Paygent Connect",
+  "category": "Finance and Fintech",
+  "hint": "paygent (NMI-powered)"
+ },
+ "record": {
+  "subcategory": "Developer Tools / Cost Management",
+  "one_liner": "An SDK and backend service that tracks per-user LLM costs, enforces spending limits, and provides real-time alerts and usage data.",
+  "auth_methods": [
+   "api_key",
+   "bearer_token"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "Authentication is performed by passing a static API key (prefixed with \"pg_live_...\") as a Bearer token in the Authorization header. An initial API key can be created without authentication by hitting a specific product creation endpoint.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up at paygent.to or withpaygent.com to get an API key. A free tier is available with a defined spend cap (e.g., \"$5/period total cap\") and token limits. The pricing page on withpaygent.com also shows a free plan for up to \"10k events per month\".",
+  "api_styles": [
+   "rest",
+   "cli_or_library"
+  ],
+  "api_breadth": "narrow",
+  "api_notes": "The API is focused on cost management for AI applications. It allows for creating products and pricing plans, managing users and their subscriptions, and submitting usage events. It does not include commerce or checkout functionality.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "none_found",
+  "mcp_notes": "The first-pass record incorrectly included information about an MCP server from paygentcommerce.com, which is a separate, early-access product focused on agentic commerce. The public paygent.to and withpaygent.com services for cost management do not have an MCP server.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "none",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://paygentcommerce.com/developers/",
+    "quote": "If your runtime can call a tool, it can sell, watch prices, optimize cards, and complete checkout."
+   },
+   {
+    "claim": "general",
+    "url": "https://withpaygent.com/pricing",
+    "quote": "Paygent is billing infrastructure for AI products... track what your AI does, price it flexibly, and invoice automatically."
+   },
+   {
+    "claim": "general",
+    "url": "https://paygentcommerce.com/developers/",
+    "quote": "All money and points math is deterministic and server-side — never delegated to a model."
+   },
+   {
+    "claim": "auth",
+    "url": "https://paygent.to/",
+    "quote": "A Paygent account — sign up at paygent.to to get your pg_live_... API key."
+   },
+   {
+    "claim": "auth",
+    "url": "https://paygent.to/",
+    "quote": "headers={\"Authorization\": \"Bearer pg_live_...\"}"
+   },
+   {
+    "claim": "auth",
+    "url": "https://paygent.to/",
+    "quote": "The product creation endpoint ( POST /products ) is the only exception — it's how you mint the first key. No authentication required."
+   },
+   {
+    "claim": "access",
+    "url": "https://paygent.to/",
+    "quote": "Sign up to the dashboard and get your Paygent API key."
+   },
+   {
+    "claim": "access",
+    "url": "https://paygent.to/",
+    "quote": "Free: $5/period total cap... Pro: $49/period total cap."
+   },
+   {
+    "claim": "access",
+    "url": "https://withpaygent.com/pricing",
+    "quote": "$0 per/month"
+   },
+   {
+    "claim": "access",
+    "url": "https://withpaygent.com/pricing",
+    "quote": "10k events per month"
+   },
+   {
+    "claim": "api",
+    "url": "https://paygent.to/",
+    "quote": "SDK records agents, indicators, tokens... billing runs produce itemized invoices."
+   },
+   {
+    "claim": "api",
+    "url": "https://paygent.to/",
+    "quote": "Endpoints: /products, /config/plans, /users, /events"
+   },
+   {
+    "claim": "api",
+    "url": "https://paygent.to/",
+    "quote": "Python and TypeScript SDKs"
+   },
+   {
+    "claim": "api",
+    "url": "https://paygent.to/",
+    "quote": "sends real-time alerts via webhooks"
+   },
+   {
+    "claim": "api",
+    "url": "https://paygent.to/",
+    "quote": "Endpoints: /webhooks/endpoints"
+   },
+   {
+    "claim": "verdict",
+    "url": "https://paygent.to/",
+    "quote": "Sign up to the dashboard and get your Paygent API key."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "subcategory",
+    "old": "Commerce / Billing",
+    "new": "Developer Tools / Cost Management",
+    "reason": "The service at paygent.to is for AI cost control and billing infrastructure for AI products, not general commerce.",
+    "url": "https://withpaygent.com/pricing"
+   },
+   {
+    "field": "one_liner",
+    "old": "Paygent Connect enables AI agents to perform financial transactions and provides billing infrastructure for AI products.",
+    "new": "An SDK and backend service that tracks per-user LLM costs, enforces spending limits, and provides real-time alerts and usage data.",
+    "reason": "The original one-liner conflated multiple products. The actual service's core function is AI cost management.",
+    "url": "https://paygent.to/"
+   },
+   {
+    "field": "auth_methods",
+    "old": "[\"api_key\", \"bearer_token\", \"oauth2\"]",
+    "new": "[\"api_key\", \"bearer_token\"]",
+    "reason": "OAuth2 was not found in valid documentation for the relevant service and was a fabrication.",
+    "url": "https://paygent.to/"
+   },
+   {
+    "field": "auth_notes",
+    "old": "Developers use a static API key (prefixed with 'pg_live_') passed as a Bearer token in the Authorization header. OAuth is used for Google Pay & Wallet Developer MCP integration.",
+    "new": "Authentication is performed by passing a static API key (prefixed with \"pg_live_...\") as a Bearer token in the Authorization header. An initial API key can be created without authentication by hitting a specific product creation endpoint.",
+    "reason": "Removed incorrect OAuth/Google Pay information and added detail about initial API key creation.",
+    "url": "https://paygent.to/"
+   },
+   {
+    "field": "access_notes",
+    "old": "Any developer can sign up at paygent.to to get an API key immediately. A free tier is available with a $5/period total spend cap.",
+    "new": "Any developer can sign up at paygent.to or withpaygent.com to get an API key. A free tier is available with a defined spend cap (e.g., \"$5/period total cap\") and token limits. The pricing page on withpaygent.com also shows a free plan for up to \"10k events per month\".",
+    "reason": "Expanded on free tier details and included withpaygent.com as an access point.",
+    "url": "https://paygent.to/"
+   },
+   {
+    "field": "api_breadth",
+    "old": "broad",
+    "new": "narrow",
+    "reason": "The API is narrowly focused on cost management, not broad commerce features as initially thought.",
+    "url": "https://paygent.to/"
+   },
+   {
+    "field": "api_notes",
+    "old": "Comprehensive for commerce, including discovery, agent identity, and checkout management. Uses Universal Commerce Protocol (UCP) discovery document for machine-readable tool definitions.",
+    "new": "The API is focused on cost management for AI applications. It allows for creating products and pricing plans, managing users and their subscriptions, and submitting usage events. It does not include commerce or checkout functionality.",
+    "reason": "Corrected API scope to reflect cost management, removing references to UCP and commerce from the unrelated product.",
+    "url": "https://paygent.to/"
+   },
+   {
+    "field": "mcp",
+    "old": "official",
+    "new": "none_found",
+    "reason": "MCP is part of a separate, non-public product (paygentcommerce.com), not the public cost-control service.",
+    "url": "https://paygentcommerce.com/developers/"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "Paygent provides a native MCP checkout endpoint. A collaborative server with Google for Pay/Wallet management also exists.",
+    "new": "The first-pass record incorrectly included information about an MCP server from paygentcommerce.com, which is a separate, early-access product focused on agentic commerce. The public paygent.to and withpaygent.com services for cost management do not have an MCP server.",
+    "reason": "Removed incorrect MCP information, clarifying it belongs to a different product.",
+    "url": "https://paygentcommerce.com/developers/"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### Investigation Summary\n\nThe initial research was deeply flawed due to the conflation of at least four distinct services operating under the \"Paygent\" name. The first-pass record incorrectly merged details from two separate AI-related \"Paygent\" products and fabricated others.\n\n1.  **Paygent (Cost Control - `paygent.to`, `withpaygent.com`)**: This is a real, publicly available service for AI developers to track LLM costs, set spending limits, and manage billing for their AI products. It has a self-serve free tier, API/SDKs, and clear documentation. This seems to be the most viable and \"ready\" product.\n2.  **Paygent (Agentic Commerce - `paygentcommerce.com`)**: This is a visionary product, currently in a private \"early access\" or \"design partner\" phase, focused on enabling AI agents to perform e-commerce transactions using open standards like UCP and MCP. It is not generally available, and its API access requires partnership.\n3.  **Paygent (NMI-Powered - `paygent.com`)**: This is a traditional payment gateway for e-commerce platforms and marketplaces, competing with services like Stripe. It has a product called \"Paygent Connect\" for platform payments. This is unrelated to the AI agent services.\n4.  **Paygent (Japanese Gateway - `paygent.co.jp`)**: This is a major Japanese payment gateway, a joint venture by Mitsubishi UFJ NICOS and NTT DATA. It is also unrelated to the AI services in the record.\n\nThe first-pass record primarily describes the **Cost Control** service (`paygent.to`) but mixes in aspirational features and terminology from the **Agentic Commerce** service (`paygentcommerce.com`), such as \"MCP\" and \"Universal Commerce Protocol\". The claims about Google Pay integration were entirely fabricated, based on dead links and unverified quotes.\n\nThis fact-check will proceed by correcting the record to accurately describe the **Paygent (Cost Control)** service found at `paygent.to` and `withpaygent.com`, as it is the only one that is publicly accessible and ready for developers.\n\n### Field-by-Field Verification\n\n**`subcategory`**: **WRONG**.\n*   **Correct Value**: `Developer Tools / Cost Management`\n*   **Reasoning**: The original \"Commerce / Billing\" was a result of conflating multiple products. The actual service at `paygent.to` is a cost control and visibility layer for developers building AI products. The service at `withpaygent.com` is described as \"billing infrastructure for AI products\" and \"AI Agent Monetization & Cost Tracking\". This fits best under a developer-focused cost management category.\n\n**`one_liner`**: **WRONG**.\n*   **Correct Value**: `An SDK and backend service that tracks per-user LLM costs, enforces spending limits, and provides real-time alerts and usage data.`\n*   **Reasoning**: The original one-liner mixed commerce and billing. The service's core function is to \"Track costs, enforce limits, and get alerted\" for AI products. It is \"The cost control layer for AI agents.\"\n\n**`auth_methods`**: **WRONG**.\n*   **Correct Value**: `['api_key', 'bearer_token']`\n*   **Reasoning**: The API documentation for `paygent.to` explicitly states authentication is done via a \"Bearer token in Authorization: Bearer pg_live_...\" header. This API key is provided upon signup. The key itself is an `api_key`, but it is used as a `bearer_token`. `oauth2` is not mentioned in any official, valid documentation and was a fabrication from a dead link.\n\n**`primary_auth`**: **CONFIRMED**.\n*   **Correct Value**: `api_key`\n*   **Reasoning**: Although used as a Bearer token, the credential itself is a static, secret key referred to as an \"API key\" throughout the documentation.\n\n**`auth_notes`**: **WRONG**.\n*   **Correct Value**: `Authentication is performed by passing a static API key (prefixed with \"pg_live_...\") as a Bearer token in the Authorization header. An initial API key can be created without authentication by hitting a specific product creation endpoint.`\n*   **Reasoning**: The documentation confirms the `Authorization: Bearer pg_live_...` method. The documentation also notes a unique exception: \"The product creation endpoint ( POST /products ) is the only exception — it's how you mint the first key. No authentication required.\" The mention of Google Pay and OAuth was incorrect.\n\n**`access`**: **CONFIRMED**.\n*   **Correct Value**: `self_serve_free`\n*   **Reasoning**: The `withpaygent.com/pricing` page shows a \"$0 per/month\" free plan. The `paygent.to` documentation also details a \"Free\" tier with specific limits, such as a \"$5/period total cap\". A developer can sign up with an email and get an API key immediately.\n\n**`access_notes`**: **WRONG**.\n*   **Correct Value**: `Any developer can sign up at paygent.to or withpaygent.com to get an API key. A free tier is available with a defined spend cap (e.g., \"$5/period total cap\") and token limits. The pricing page on withpaygent.com also shows a free plan for up to \"10k events per month\".`\n*   **Reasoning**: The original notes were mostly correct but the quote was unverified. The documentation for `paygent.to` explicitly states: \"Free: $5/period total cap\". The `withpaygent.com` site confirms a free plan is available. Signup is self-serve via email magic link.\n\n**`api_styles`**: **CONFIRMED**.\n*   **Correct Value**: `['rest', 'cli_or_library']`\n*   **Reasoning**: The service provides official SDKs for Python and TypeScript. It also has a documented backend REST API that the SDKs use, which can also be called directly.\n\n**`api_breadth`**: **WRONG**.\n*   **Correct Value**: `narrow`\n*   **Reasoning**: The original \"broad\" assessment was based on the incorrect inclusion of the `paygentcommerce.com` feature set. The actual API for `paygent.to` is narrowly focused on cost management: creating products/plans, managing users, and tracking usage events.\n\n**`api_notes`**: **WRONG**.\n*   **Correct Value**: `The API is focused on cost management for AI applications. It allows for creating products and pricing plans, managing users and their subscriptions, and submitting usage events. It does not include commerce or checkout functionality.`\n*   **Reasoning**: The original notes about UCP and checkout management were from the unrelated `paygentcommerce.com` site. The backend API reference for `paygent.to` shows endpoints for `/products`, `/config/plans`, `/users`, and `/events`.\n\n**`openapi_spec`**: **CONFIRMED**.\n*   **Correct Value**: `false`\n*   **Reasoning**: No OpenAPI or Swagger specification was found in the documentation or search results. The API is documented as a list of REST endpoints.\n\n**`webhooks`**: **CONFIRMED**.\n*   **Correct Value**: `true`\n*   **Reasoning**: The `paygent.to` homepage states it \"sends real-time alerts via webhooks\". The backend API reference includes a full set of endpoints for managing webhooks (`/webhooks/endpoints`).\n\n**`sandbox`**: **CONFIRMED**.\n*   **Correct Value**: `true`\n*   **Reasoning**: While not explicitly called a \"sandbox\", the `paygent.com` (NMI) site mentions a \"Full-featured test environment to simulate any payment scenario\". For the relevant `paygent.to` service, the ability to create a product and get a key for free allows for testing and development without a paid plan, serving the function of a sandbox.\n\n**`mcp`**: **WRONG**.\n*   **Correct Value**: `none_found`\n*   **Reasoning**: The MCP server is part of the `paygentcommerce.com` vision, which is a separate, non-public product. The publicly available `paygent.to` cost-control product has no mention of an MCP server in its documentation.\n\n**`mcp_notes`**: **WRONG**.\n*   **Correct Value**: `The first-pass record incorrectly included information about an MCP server from paygentcommerce.com, which is a separate, early-access product focused on agentic commerce. The public paygent.to and withpaygent.com services for cost management do not have an MCP server.`\n*   **Reasoning**: The error came from conflating the two different \"Paygent\" AI products.\n\n**`verdict`**: **CONFIRMED**.\n*   **Correct Value**: `ready_now`\n*   **Reasoning**: Based on the corrected information for the `paygent.to` service, a developer can sign up for a free account and get a working API key immediately, with public documentation available. This meets the definition of `ready_now`.\n\n**`blocker`**: **CONFIRMED**.\n*   **Correct Value**: `none`\n*   **Reasoning**: Since the verdict is `ready_now`, there is no blocker.\n\n### Uncertainties\n*   None. The documentation for the publicly available service (`paygent.to` / `withpaygent.com`) is clear and consistent. The confusion with other \"Paygent\" brands has been resolved.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Paygent (NMI-powered) payment gateway",
+   "Paygent Connect app",
+   "paygent.to API documentation",
+   "withpaygent.com API documentation",
+   "paygentcommerce.com API documentation",
+   "paygent.to pricing and API access",
+   "paygentcommerce.com MCP server",
+   "Paygent authentication methods",
+   "Universal Commerce Protocol (UCP)"
+  ],
+  "search_sources": [
+   {
+    "title": "paygentcommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzoyO1dLCS1e_L8DbsqmCQTI7Y_ldzEyIniiNjX2Vc5HjWmDiqmf1HPzS5zYDnxIlnMtHoNSBTRXS0HgMT-G6NNXHx526bszMqtaQxJ_LGSj2w8oJm_Q8="
+   },
+   {
+    "title": "paygentcommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEt9K5vE0VPtIJR96ckV2Ug5WIgR-l7QSFZyiTSxrTXYPvA1JldkKG9mn2FwoYcBmptxh3memS1pMGosupD02zKKrM1Zb3aZi_2GNhbLAE05Xn70pVKfIlb6QtrzrPmRuKW"
+   },
+   {
+    "title": "paygentcommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpbOjw7Z1f1gR5fYsbXxePNcjEb8_lJSupI-4XxDSMrWukBW2gknLPYRKuhvvcJkDGUO2nQFN4mf5TnqYdBsYpI6_wL2X_UOx5TR1LztaNaoxrAV1RIdPHJKvwXz1uCvH-NA=="
+   },
+   {
+    "title": "gopaygent.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8n6LOQnuKfBuMWlsxd17HwR56fi_MTBp6mk9w_huKlDhqLiOEDXnKTWabNy1cD-1_bgSEz8dPFPgcH2sJgfF7Nv9Dd1piotQ7t34jL7y3Dn-EVddg"
+   },
+   {
+    "title": "altstack.jp",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4sUSTTXsTklvPYOuDT9iz6l09L4hXowWIm-Qyaf3KIDMxGsOBMQjR6BgOMd199PQVX4RutYq4cTSyuYKZUE-9NcBnsrv2AV9XJlpIbQeYOy-wV6-dhnji9QzoFKvUkZGtt-HOxH7CWkr5jYyxS3HzSXIpLMQ="
+   },
+   {
+    "title": "shoplineapp.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBdbQfpOiCqN5DYFpmR_LQmsU-vM_6mtlt0CLDyVF-dXljnre3FqpEU7jKUhz7ooZo3RdI2W3UsM_W-REU3sIKraPFh0WesaXJ9QmrSgXyAcHAoQ9BKkfhi4nRr7NCO5ZWJALN4buHEk2z-w5Mze8EWoc1zm0kFb74h5CiuzVrhq6NTF3_fnyvaUDt3mm6_uhgwAvQ9ZWw"
+   },
+   {
+    "title": "paygent.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrnWSDjtK-uIHtoCR-hjhe4JrkxGP8HKPa5oENFhMMX5fwUNMHoDEtiLBxQOkvvSdYQXz8qQTAYUao934wiqbKb5ewhUNOnBpHTBEnIBOoGXNajA=="
+   },
+   {
+    "title": "paygent.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEVMujpHzSbqSRTvsTUS6VddaJJnPp6_IYFQJlV9Tq_L1fkaIuO9G8fG67wlRNe4aZCvAgeFjBnWG3Rsl2UWJDgeSiMfdwr7eFvZdYDu5jRQ7W"
+   },
+   {
+    "title": "withpaygent.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuHakjfsxd9wRioWIIDV_kS8xVTCqaF71pTWIARR8asxlbviWLmBCtzpVGx71nxm0lQJOnP3w7GxyBUy4guWYUm2PkfKKA9hoHlk8vz-Zz4Jp6L_6ZVLpjBWcZ_Z1ag9zfDXXzLMsoSgq88trdRDf-eeDLC6l76w1f-Kvvu0JH3bge"
+   },
+   {
+    "title": "withpaygent.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMnnCFFQU4l1b4e4dp9JTiwEL5z0IrNrLDSK8KGxdacsR6AjopvaKWLRkZcfrsELGwtso0JbqUiZepC5tyIxFuAsoajHI1-2H1eOgYCAVLOY0XW5y5DJM="
+   },
+   {
+    "title": "paygent.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYehrHPOB5dRfdRRy4O7C2C7A6eyCJppb6G7AJkf85YYaM5raSlwf11U2UnH0XT4qfZ63xdX0KnvnaONCVi7vQsnUoD1sEXCTjgXeY_euXLzs2iAKwzOCAU9zX1_CDDPfvKdUMHNkAcQouOQ=="
+   },
+   {
+    "title": "paygent.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkmdFq_SCgGqx7Blm7VchCzSSDTIWMCtQBB_jTTfLwMXaAR2zIB-PVeNUmnXH9N72f3CjBwI7PzSM_CLOC9HMYf8uVcGagsJUuaRJ5bEcp07bgWhyaWwhpWSU5S3sYCbEH6Cpo6tboTPJJjWg5sA=="
+   },
+   {
+    "title": "withpaygent.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaDb-AMRxTdigwJV1S2Vu7769yKLSzGyCjmInDuIJt4H-aNZkW8qb79FweJgGL2BeAtDZXOTJ12BFI6CjAXqI71LIJdJeIffrzESoylzlBYYqjIT7dj8geGEigtqjGG5BQ8Oz8orKdAhQu0bTZfl3q16cw2IrFjf5wxtZeYoIPddY="
+   },
+   {
+    "title": "paygent.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDw9PMq3O7DVTFRalk1C9tmCII5jXIIjDfpS4r3WxEJyfeKhTLfN1CcRpu0s-a9viGrqqdMLpS4hKLPFjjWM5njllSEV61V5-07BQYvP4uTVxG5i6qo8k3kn3Eh00Wd0YkRqVwkPbBF77VXXsl6DQdej7uxq2EUK8="
+   },
+   {
+    "title": "withpaygent.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNdlrK3WxXfqoyJtEng4_eEiqqFzyOTv7n7CIvhEkCISBM7reoDaaJiP6BXBbSEWcYqX75ZIE87HuXs0bz_g8zBA5arIgBFU1jDYCPBX-8D3BybZ7REELs-U8nbeX4"
+   },
+   {
+    "title": "paygent.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9lGIg4z4zF4hy7APVFM2r2ZOTFwwKeCEsXdwgxiqsB0CjX2gRC0I5TVazzq3d39muGp74b-OLQBLU7etV7zxLksI9p8ftnliCkx2yzPFEIYZk"
+   }
+  ],
+  "tokens": 9639,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://paygentcommerce.com/developers/",
+    "status": 200,
+    "chars": 4555,
+    "readable": true
+   },
+   {
+    "url": "https://withpaygent.com/pricing",
+    "status": 200,
+    "chars": 2242,
+    "readable": true
+   },
+   {
+    "url": "https://paygent.to/",
+    "status": 200,
+    "chars": 8260,
+    "readable": true
+   },
+   {
+    "url": "https://support.google.com/pay/merchants/answer/16385635",
+    "status": 404,
+    "chars": 1375,
+    "readable": false
+   },
+   {
+    "url": "https://withpaygent.com/",
+    "status": 200,
+    "chars": 7756,
+    "readable": true
+   }
+  ],
+  "seconds": 89.1
+ }
+}

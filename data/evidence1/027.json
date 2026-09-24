@@ -1,0 +1,210 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://core.telegram.org/api/obtaining_api_id",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://core.telegram.org/api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.89
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://core.telegram.org/bots/api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.83
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://core.telegram.org/api/obtaining_api_id",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://core.telegram.org/api/auth",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.75
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://core.telegram.org/bots/telegram-login",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.83
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://core.telegram.org/api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.81
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://composio.dev/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://core.telegram.org/bots/telegram-login",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.67
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://core.telegram.org/api/obtaining_api_id",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.35
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://core.telegram.org/api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://core.telegram.org/api/obtaining_api_id",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.65
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://core.telegram.org/bots/api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://core.telegram.org/bots/api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.67
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://core.telegram.org/bots/api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.83
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://core.telegram.org/api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.67
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/chigwell/telegram-mcp",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://core.telegram.org/bots/api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  }
+ ],
+ "auth_support": {
+  "bearer_token": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://composio.dev/', 'https://core.telegram.org/api/obtaining_api_id', 'https://github.com/', 'https://github.com/chigwell/telegram-mcp']\n- Non-vendor sources (prefer official docs): ['https://composio.dev/', 'https://github.com/', 'https://github.com/chigwell/telegram-mcp']",
+ "metrics": {
+  "n_evidence": 19,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.8421052631578947,
+  "readable": 19,
+  "quote_supported_rate": 0.7894736842105263,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

@@ -1,0 +1,249 @@
+{
+ "app": {
+  "id": 82,
+  "name": "Plaid",
+  "category": "Finance and Fintech",
+  "hint": "plaid.com/docs"
+ },
+ "record": {
+  "subcategory": "Financial Data Aggregation",
+  "one_liner": "Plaid is a financial technology platform that connects applications to users' bank accounts and financial institutions.",
+  "auth_methods": [
+   "api_key"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "Plaid's public API requires a combination of a client_id and a secret (API keys) for authentication, passed either in the request body or via custom HTTP headers (PLAID-CLIENT-ID and PLAID-SECRET). End-users authenticate with their financial institutions via Plaid Link.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can sign up instantly via the Plaid Dashboard to obtain API keys for the Sandbox environment. For new US/CA teams (created on or after April 15, 2026), a free Trial plan is available, which is auto-approved for most developers and supports up to 10 Production Items (real bank connections). The old \"Limited Production\" mode is no longer available for new US/CA signups after that date. Moving to a full paid plan for unlimited usage requires submitting an application for Production access.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "The Plaid API is JSON over HTTP, using POST requests for almost all endpoints. It is extremely broad, spanning Auth, Balance, Identity, Signal, Transactions, Investments, Liabilities, Assets, Income, Statements, Enrich, and Identity Verification (KYC/AML).",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Plaid officially provides two Model Context Protocol (MCP) servers: a remote Dashboard MCP server (https://api.dashboard.plaid.com/mcp/) for production diagnostics and analytics, and a local, open-source Sandbox MCP server included in the Plaid AI coding toolkit for development.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "A developer can sign up for a free Sandbox instantly and also get auto-approved for a \"Trial plan\" that allows connecting up to 10 real bank accounts at no cost. This provides a clear path to begin building and testing with live data without a mandatory manual review or payment.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://plaid.com/docs/auth/",
+    "quote": "auth makes it easy for end users to fund an account with your app, cash out to their bank account, or make purchases via pay-by-bank."
+   },
+   {
+    "claim": "general",
+    "url": "https://plaid.com/pricing/",
+    "quote": "auth verified account and routing numbers identity bank account-holder information balance real-time balance checks signal ach payment risk platform transfer ach, rtp, and fednow payment processing investments move streamline asset transfers."
+   },
+   {
+    "claim": "auth",
+    "url": "https://plaid.com/docs/quickstart/",
+    "quote": "You'll need api keys, which you can receive by signing up in the dashboard . you'll have two different api keys, and there are two different plaid environments... client_id private identifier for your team secret private key, one for each of the two environments"
+   },
+   {
+    "claim": "auth",
+    "url": "https://plaid.com/docs/api/",
+    "quote": "The Plaid API is JSON over HTTP. Requests are POST requests, and responses are JSON... Almost all Plaid API endpoints require a client_id and secret . These may be sent either in the request body or in the headers PLAID-CLIENT-ID and PLAID-SECRET ."
+   },
+   {
+    "claim": "access",
+    "url": "https://plaid.com/docs/quickstart/",
+    "quote": "For developers, Plaid is free to use in the Sandbox environment, allowing you to discover the product, become familiar with our APIs and endpoints, and learn how the platform works."
+   },
+   {
+    "claim": "access",
+    "url": "https://plaid.com/docs/account/billing/",
+    "quote": "For new teams in the US/Canada, Plaid offers a free Trial plan, which lets you use Plaid with real production data at no cost. Trial plans support up to 10 Production Items... Trial plans are auto-approved for most developers."
+   },
+   {
+    "claim": "access",
+    "url": "https://plaid.com/docs/api/",
+    "quote": "Production — Full access, real users, real money. Requires Plaid approval and a review of your use case, compliance posture, and data handling practices."
+   },
+   {
+    "claim": "api",
+    "url": "https://plaid.com/docs/api/",
+    "quote": "The Plaid API is JSON over HTTP. Requests are POST requests, and responses are JSON... The Plaid API is specified in our Plaid OpenAPI GitHub repo."
+   },
+   {
+    "claim": "api",
+    "url": "https://plaid.com/pricing/",
+    "quote": "auth... balance... identity... investments... assets... income... statements... enrich... transactions... liabilities... identity verification"
+   },
+   {
+    "claim": "api",
+    "url": "https://plaid.com/docs/api/",
+    "quote": "Plaid uses webhooks to notify your system of transaction updates, errors, and consent changes. Properly handling webhook events requires a reliable, always-available endpoint on your backend."
+   },
+   {
+    "claim": "api",
+    "url": "https://plaid.com/docs/quickstart/",
+    "quote": "environment sandbox get started with test credentials and life-like data"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://plaid.com/docs/dashboard/mcp/",
+    "quote": "Plaid offers two Model Context Protocol (MCP) servers: The Dashboard MCP server is a remote MCP server hosted by Plaid... The Plaid AI coding toolkit includes a local MCP server for development."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://plaid.com/docs/quickstart/",
+    "quote": "For developers, Plaid is free to use in the Sandbox environment, allowing you to discover the product, become familiar with our APIs and endpoints, and learn how the platform works."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://plaid.com/docs/account/billing/",
+    "quote": "For new teams in the US/Canada, Plaid offers a free Trial plan, which lets you use Plaid with real production data at no cost. Trial plans support up to 10 Production Items... Trial plans are auto-approved for most developers."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "access",
+    "old": "approval_required",
+    "new": "self_serve_free",
+    "reason": "Developers can instantly sign up for a Sandbox account with API access for testing. For live data, a new \"Trial plan\" is available for US/CA developers, which is auto-approved for most and provides free access to up to 10 real bank connections (\"Items\"). This meets the definition of a free tier that includes API access.",
+    "url": "https://plaid.com/docs/quickstart/"
+   },
+   {
+    "field": "access_notes",
+    "old": "Developers can sign up instantly via the Plaid Dashboard to obtain API keys for the Sandbox environment. A free Trial plan is available for new teams (US/Canada, created on or after April 15, 2026) supporting up to 10 Production Items, or a Limited Production mode allowing up to 200 free API calls with live data. Moving to full production requires submitting an application and undergoing a manual review process by Plaid.",
+    "new": "Developers can sign up instantly via the Plaid Dashboard to obtain API keys for the Sandbox environment. For new US/CA teams (created on or after April 15, 2026), a free Trial plan is available, which is auto-approved for most developers and supports up to 10 Production Items (real bank connections). The old \"Limited Production\" mode is no longer available for new US/CA signups after that date. Moving to a full paid plan for unlimited usage requires submitting an application for Production access.",
+    "reason": "The original notes are partially correct but contain outdated and slightly inaccurate information. The \"Limited Production\" mode is deprecated for new US/CA users as of April 15, 2026, and has been replaced by a \"Trial plan\".",
+    "url": "https://plaid.com/docs/account/billing/"
+   },
+   {
+    "field": "verdict",
+    "old": "ready_with_friction",
+    "new": "ready_now",
+    "reason": "A developer can sign up for a free Sandbox instantly. They can also get auto-approved for a \"Trial plan\" that allows connecting up to 10 real bank accounts at no cost. This provides a clear path to begin building and testing with live data without a mandatory manual review or payment, fitting the `ready_now` definition.",
+    "url": "https://plaid.com/docs/account/billing/"
+   },
+   {
+    "field": "blocker",
+    "old": "app_review_or_approval",
+    "new": "none",
+    "reason": "There is no initial blocker. The blocker should be `none`. A developer can build and test with real data on the free Trial plan. The app review only becomes a blocker when scaling up to a full production paid plan.",
+    "url": "https://plaid.com/docs/account/billing/"
+   },
+   {
+    "field": "blocker_notes",
+    "old": "Full production access requires a manual review and approval process by Plaid, which involves evaluating the developer's business use case, compliance posture, and data handling practices. This introduces a significant hurdle before live financial data can be accessed.",
+    "new": "A developer can sign up for a free Sandbox instantly and also get auto-approved for a \"Trial plan\" that allows connecting up to 10 real bank accounts at no cost. This provides a clear path to begin building and testing with live data without a mandatory manual review or payment.",
+    "reason": "The notes are misleading. While a review is required for *full* production access, it is not a blocker to getting started with live data.",
+    "url": "https://plaid.com/docs/account/billing/"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### **V E R I F I C A T I O N   N O T E S**\n\nHere is a field-by-field fact-check of the provided record for \"Plaid\".\n\n---\n\n**subcategory**: CONFIRMED\n*   **Finding**: The term \"Financial Data Aggregation\" is an accurate description of Plaid's core business.\n*   **Evidence**: Plaid's own materials describe it as a platform that \"connects applications to users' bank accounts and financial institutions.\" The listed API products like Auth, Balance, Transactions, and Investments confirm its role in aggregating financial data.\n\n**one_liner**: CONFIRMED\n*   **Finding**: The one-liner is accurate and reflects Plaid's primary function.\n*   **Evidence**: A third-party guide states, \"Plaid is the financial data infrastructure company that connects applications to bank accounts.\" Plaid's Auth product, for example, \"allows companies to instantly authenticate bank accounts for payments.\"\n\n**auth_methods**: CONFIRMED\n*   **Finding**: The public API uses API keys for authentication.\n*   **Evidence**: The documentation states, \"Almost all Plaid API endpoints require a `client_id` and `secret`.\" These are described as \"API keys\" which can be found in the developer dashboard after signing up.\n\n**primary_auth**: CONFIRMED\n*   **Finding**: `api_key` is the correct primary authentication method for server-to-server API calls.\n*   **Evidence**: API requests are authenticated with a `client_id` and `secret`, which are API keys.\n\n**auth_notes**: CONFIRMED\n*   **Finding**: The notes accurately describe the authentication process.\n*   **Evidence**: The documentation confirms that API calls require a `client_id` and `secret`, which \"may be sent either in the request body or in the headers `PLAID-CLIENT-ID` and `PLAID-SECRET`.\" The end-user authentication happens via Plaid Link, which then provides a token for the developer's backend to use.\n\n**access**: WRONG\n*   **Finding**: The correct access tier is `self_serve_free`. Developers can instantly sign up for a Sandbox account with API access for testing. For live data, a new \"Trial plan\" is available for US/CA developers, which is auto-approved for most and provides free access to up to 10 real bank connections (\"Items\"). This meets the definition of a free tier that includes API access. Full production access with unlimited items requires an application and approval.\n*   **Evidence**: \"For developers, Plaid is free to use in the Sandbox environment, allowing you to discover the product, become familiar with our APIs and endpoints, and learn how the platform works.\" For new teams in the US/Canada, \"Plaid offers a free Trial plan, which lets you use Plaid with real production data at no cost. Trial plans support up to 10 Production Items... Trial plans are auto-approved for most developers\". Requesting full \"Production access\" requires an application and review process that \"takes a couple of business days\".\n\n**access_notes**: WRONG\n*   **Finding**: The original notes are partially correct but contain outdated and slightly inaccurate information. The \"Limited Production\" mode is deprecated for new US/CA users as of April 15, 2026, and has been replaced by a \"Trial plan\".\n*   **Evidence**: Developers can sign up and get Sandbox keys instantly. For new US/CA teams (created on or after April 15, 2026), a \"Trial plan\" is available, which is free, supports up to 10 Production Items, and is \"auto-approved for most developers\". The old \"Limited Production\" mode is no longer available for new US/CA signups after that date. Moving to a full paid plan for unlimited usage requires submitting an application for Production access.\n\n**api_styles**: CONFIRMED\n*   **Finding**: The API follows REST conventions.\n*   **Evidence**: The documentation specifies, \"The Plaid API is JSON over HTTP. Requests are POST requests, and responses are JSON\".\n\n**api_breadth**: CONFIRMED\n*   **Finding**: The API is broad, covering a wide range of financial data products.\n*   **Evidence**: The pricing page lists numerous products, including Auth, Balance, Identity, Investments, Assets, Income, Statements, Enrich, Transactions, and Liabilities, confirming the API's breadth.\n\n**api_notes**: CONFIRMED\n*   **Finding**: The notes accurately summarize the API's protocol and scope.\n*   **Evidence**: The API is \"JSON over HTTP\" with \"POST requests\". The product list from the pricing page (Auth, Balance, Identity, etc.) confirms the breadth of services mentioned.\n\n**openapi_spec**: CONFIRMED\n*   **Finding**: Plaid provides an official OpenAPI specification file.\n*   **Evidence**: The developer resources page states, \"The Plaid OpenAPI file is available on GitHub. This file describes the Plaid API in a standardized way suitable for usage with tools for testing, client library generation, and other purposes that ingest OpenAPI/Swagger definition files.\"\n\n**webhooks**: CONFIRMED\n*   **Finding**: Plaid uses webhooks to send notifications.\n*   **Evidence**: The launch checklist advises developers to \"Make sure Link has been initialized with your URL for receiving webhooks\" and to \"Make sure you can receive webhooks from Plaid's webhook IPs.\"\n\n**sandbox**: CONFIRMED\n*   **Finding**: Plaid provides a free Sandbox environment for development and testing.\n*   **Evidence**: \"The Sandbox is a free environment for application development and testing with mock data. It supports all Plaid functionality, including the Plaid API and Plaid Link.\" API documentation also specifies the Sandbox host at `https://sandbox.plaid.com`.\n\n**mcp**: CONFIRMED\n*   **Finding**: Plaid officially provides and maintains MCP servers.\n*   **Evidence**: The documentation states, \"Plaid offers two Model Context Protocol (MCP) servers: The Dashboard MCP server is a remote MCP server hosted by Plaid... The Plaid AI coding toolkit includes a local MCP server for development.\"\n\n**mcp_notes**: CONFIRMED\n*   **Finding**: The notes accurately describe the two official MCP servers provided by Plaid, although the original evidence URL was dead.\n*   **Evidence**: A valid documentation page confirms Plaid offers a remote \"Dashboard MCP server\" for production diagnostics and a \"local MCP server for development\" included in the \"Plaid AI coding toolkit\". The Dashboard server is available at `https://api.dashboard.plaid.com/mcp/` and is used for production analytics, while the local server provides tools for development like mock data generation and documentation search.\n\n**verdict**: WRONG\n*   **Finding**: The correct verdict is `ready_now`. A developer can sign up for a free Sandbox instantly. They can also get auto-approved for a \"Trial plan\" that allows connecting up to 10 real bank accounts at no cost. This provides a clear path to begin building and testing with live data without a mandatory manual review or payment, fitting the `ready_now` definition.\n*   **Evidence**: Developers can \"Start testing in sandbox for free\". The \"Trial plan\" for new US/CA developers is free, supports up to 10 Production Items, and is \"auto-approved for most developers\". This allows immediate development with both mock and real data.\n\n**blocker**: WRONG\n*   **Finding**: There is no initial blocker. The blocker should be `none`. A developer can build and test with real data on the free Trial plan. The app review only becomes a blocker when scaling up to a full production paid plan.\n*   **Evidence**: The free Trial plan provides access to real production data for up to 10 Items and is auto-approved for most developers, removing any initial approval blocker.\n\n**blocker_notes**: WRONG\n*   **Finding**: The notes are misleading. While a review is required for *full* production access, it is not a blocker to getting started with live data.\n*   **Evidence**: A developer can use the Sandbox and the free Trial plan with live data without undergoing the full manual review process. The review is a requirement for upgrading to a paid plan with unlimited usage, not for initial API access with real data.\n\n---\n\n### **Uncertain Fields**\n\nNone. All fields were verifiable through the provided excerpts and new searches.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Plaid API authentication methods",
+   "Plaid developer access tiers",
+   "Plaid production access approval",
+   "Plaid Model Context Protocol server",
+   "Plaid official MCP server",
+   "Plaid API documentation",
+   "Plaid pricing plans"
+  ],
+  "search_sources": [
+   {
+    "title": "apideck.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWtc_7bM-YLIrNUQyCxl5Lyvqcbdoq1lRPrYOx7hzGIT3w37UPJKtNfCPyVuZN1Z7HGSMrsoosYAHWrd8Bqs9sHiXTmCc8a9JrWsJ5sRMZ35kr5-MJYwsymWpg6nwDVc6_gb-G0w5W5erhHEuPar7QPQezbOM="
+   },
+   {
+    "title": "plaid.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHY7NJeKG4bbPFFoCpCEKZ5n-j8K0Ur-ar_SP9_ZqxWbm-Bb8C3MYhaMAzPs6eOucbg6NVUfQj6JUgBa6IXugNhqhQA83spOwWrDsZrKewn0d9WfqT7"
+   },
+   {
+    "title": "plaid.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPk2dSe5tUKgprze19vqWNjEB5gCFeaSAPzoFjdYtwOp5dRXEZC3Kjfbxy7uqRclqnt0g-s4OTdT_CQtSW3s9pZGWBwB0PCBa1sZ2W-kPDh7wmBxXAV7f2tce0"
+   },
+   {
+    "title": "plaid.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQABd4WRHkJStoGPWVAgnOW6lPbEOLj7RHhNfstUa6aJysi-41ttIfzCKcxxTJVoJEGxlRjH1ntLXeqJs7ZkSUNi1upkyYU9WqY1UWx8yqkPT7Sat7Fw=="
+   },
+   {
+    "title": "postman.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEk3LUSyBhvyRakWRB2eaNlhT_A-I6P_zjx4uRARZiUa5Ypcoq0_Dq3uqTEYNi-mkH1Qvld-7ZdZPiyONHpMnkjWT8KplUOjGbfAgxYo_Xkh7Fzbtgc1ewH2U7AyVH2NTYoz8mq22XRh0Mbi_LulkPCkDz40densK2Cdfm--i1v4ND7-QgB59hkVQ=="
+   },
+   {
+    "title": "plaid.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuwAWY1is7bFpDhVjKSuyCS3gd25un0YekZK_0nxeDJqJN3PeUjjWx8wPmd7B0hGXAVEWb8VEbmaBtOfNRyjccXLtgRyF8chcyK73o_BN7YQh1RLRNfBfTMNhDzBVvh6DYv0ZO8mIwADV2bZWCJqYgwgMPKGnzHKvVYH4vWUfudWkpcmbX_bhnRr1ipgeF"
+   },
+   {
+    "title": "plaid.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJjmcV_VUZ4b4IC9yVsuuL6D4wRpb2ax7hR4PgGL3ZEjZjipJwvgwErDo3jpBGm1zC0etCmtyB-QxCRWpa29yRJhiqL6PQ-bXBw8eNOppujklo_pf_kJAlrcdhe3G5zJaE55JdgNBIFVsxLIMj9Iy_BOxfnR1aTQN4OBh6VjmoAkyJEDyrUGwyf0OkTlZfmB2rf0CfuxiJA6D0_ZReX7Nq1OjRcdVkcvtKrNCYyqNFz_61XULL4ggOYyWuGx4="
+   },
+   {
+    "title": "plaid.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjY6fdXiXQzl6nio7OMWQBm2Ngt5Kaj9Tmk-EA9VgjngOK33CFBJZ65eC3ytMcJu8ao1P-2o8oEoeKukV2esGbA0OgyjjdU3aNhtZi-3YBBBvvEonrzncWcpQHhcxLRB137KkMy6YYUBiC9ZRDlOc811CoUC309t92n7tHxmvsW9Nw9JvO_v5QcsqAMuAtYuwKsERAKivwWl-IYBvxZ7PzlUuTLe_XvEzUUNe1hhMw97ZHnVTC9g=="
+   },
+   {
+    "title": "plaid.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELiQfF14tSnRgIYF8gQbTBl5cukyPaqxaEUazrUDGhsKi_2DzwVDiJVDdd3fHFz_j_35t3AW_XOTwSkVNoogyKz16zKjGhKEm6V_tOEE1yrHn5u8IWwaIYIF0="
+   },
+   {
+    "title": "plaid.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBQAbtMCXXauFnqiR_8y7nVU2o-2mr1wihbUc3dFiGiOmfX6PNvRRW7_uzrMuwNLjGrUd1V7OIZiQHEOm1YxRBiagaeyB22xQgyMwlIfB3cWY6yLjsUk_2gXT7go-JaZobHbc="
+   },
+   {
+    "title": "plaid.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF41viP7u8CrheosurRLPYedXBSUN0hjNwNPzvqToWA43ysBVn-yjqVuHhZwWhaYu-VxALjHH6_p9ZbqNsEv-nOdgtou8bnsTnC3MHoGK9SHdY3bsoYI06AuIVDQg=="
+   },
+   {
+    "title": "plaid.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyXeNlDH8b5h8889fyeVc41hqBrNbaEHQ_4j5SITXl2rXgCzdO0TqzsWhCFY9vlgyS4slQ0006de9jptizmfxQN5LKT08GM6vfh8b5Oi-6bi1b5HinEsaaXHxtKNLb_6U="
+   }
+  ],
+  "tokens": 9789,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://plaid.com/docs/auth/",
+    "status": 200,
+    "chars": 25241,
+    "readable": true
+   },
+   {
+    "url": "https://plaid.com/pricing/",
+    "status": 200,
+    "chars": 7617,
+    "readable": true
+   },
+   {
+    "url": "https://plaid.com/docs/quickstart/",
+    "status": 200,
+    "chars": 13557,
+    "readable": true
+   },
+   {
+    "url": "https://plaid.com/docs/api/",
+    "status": 200,
+    "chars": 6316,
+    "readable": true
+   },
+   {
+    "url": "https://plaid.com/docs/account/billing/",
+    "status": 200,
+    "chars": 26661,
+    "readable": true
+   },
+   {
+    "url": "https://plaid.com/docs/dashboard/mcp/",
+    "status": 404,
+    "chars": 3533,
+    "readable": false
+   }
+  ],
+  "seconds": 91.7
+ }
+}

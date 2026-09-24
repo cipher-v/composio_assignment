@@ -1,0 +1,83 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://developers.facebook.com/docs/whatsapp/cloud-api",
+   "status": 400,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.facebook.com/docs/whatsapp/embedded-signup",
+   "status": 400,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/pricing",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/facebook/meta-openapi",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://developers.facebook.com/docs/whatsapp/mcp",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://whatsappbusiness.com/developers/developer-hub/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.53
+  }
+ ],
+ "auth_support": {
+  "bearer_token": false,
+  "oauth2": false
+ },
+ "lint": [
+  "verdict ready_now but access=approval_required"
+ ],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://developers.facebook.com/docs/whatsapp/cloud-api', 'https://developers.facebook.com/docs/whatsapp/embedded-signup', 'https://developers.facebook.com/docs/whatsapp/cloud-api/pricing', 'https://github.com/facebook/meta-openapi', 'https://developers.facebook.com/docs/whatsapp/mcp']\n- Auth methods not mentioned on any cited page: ['bearer_token', 'oauth2']\n- Consistency: verdict ready_now but access=approval_required",
+ "metrics": {
+  "n_evidence": 6,
+  "alive_rate": 0.16666666666666666,
+  "dead_rate": 0.8333333333333334,
+  "blocked_rate": 0.0,
+  "official_rate": 0.8333333333333334,
+  "readable": 1,
+  "quote_supported_rate": 1.0,
+  "lint_issues": 1,
+  "flag_count": 3
+ }
+}

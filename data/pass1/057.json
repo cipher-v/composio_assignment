@@ -1,0 +1,239 @@
+{
+ "app": {
+  "id": 57,
+  "name": "Bright Data",
+  "category": "Data, SEO and Scraping",
+  "hint": "brightdata.com"
+ },
+ "record": {
+  "subcategory": "Web Scraping / Data Extraction",
+  "one_liner": "Bright Data provides proxy networks, automated scraping APIs, and pre-collected datasets for public web data.",
+  "auth_methods": [
+   "api_key",
+   "basic"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "API Access uses an API key as a Bearer token in the Authorization header. Native Access uses proxy credentials (username/password). Agent API keys are a specialized subset for AI agents and the MCP server.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up for a free account and generate an API key instantly from the control panel (Account Settings -> Users and API keys). A free tier offers 5,000 free requests/credits per month without a credit card.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "RESTful API supporting various services like SERP, Web Unlocker, Scraper, Dataset Marketplace, Browser, and Proxy Manager administrative APIs. Primarily uses POST requests and returns JSON or Markdown.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Bright Data publishes and maintains an official MCP server ('brightdata-mcp') on GitHub and npm, offering 69 tools for web search and scraping. It can be deployed as a hosted remote server or run locally.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. Self-serve credentials, free tier, comprehensive docs, OpenAPI specs, and an official MCP server make it fully buildable.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://docs.brightdata.com/introduction",
+    "quote": "Guides, quickstarts and api references for bright data scraper api, scraper studio, web unlocker api, serp api, proxies, datasets and bright data mcp. ... start building with live web data scrape any site, buy ready-made datasets. thousands of pre-built scrapers, one api key."
+   },
+   {
+    "claim": "general",
+    "url": "https://github.com/brightdata/brightdata-mcp",
+    "quote": "The Bright Data MCP server gives AI agents real-time access to public web data. It exposes 69 tools covering: Web search — Google, Bing, and Yandex results as structured data. Page scraping — any URL as Markdown or HTML, with bot detection, CAPTCHA solving, and proxy rotation handled automatically on every request."
+   },
+   {
+    "claim": "auth",
+    "url": "https://brightdata.com/api-reference/authentication",
+    "quote": "API Access - Authenticate and interact with the Bright Data platform using an API key/token. Native Access - Authenticate and interact with the Bright Data platform using proxy protocol username and password ."
+   },
+   {
+    "claim": "auth",
+    "url": "https://brightdata.com/api-reference/authentication",
+    "quote": "Use your Bright Data API Key as a Bearer token in the Authorization header. ... Format: Authorization: Bearer YOUR_API_KEY."
+   },
+   {
+    "claim": "auth",
+    "url": "https://brightdata.com/api-reference/authentication",
+    "quote": "Agent API keys authenticate the Bright Data MCP server and AI agents. Bright Data lists them in a separate Agent API keys table in Account settings, under Users and API keys, below the regular API keys."
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.brightdata.com/introduction",
+    "quote": "5,000 free credits per month , no credit card required. see the free tier ."
+   },
+   {
+    "claim": "access",
+    "url": "https://brightdata.com/api-reference/authentication",
+    "quote": "Sign in to Bright Data's control panel and go to your Account settings. ... Click the Add API key button in the top right of the API key section. If you don't see the 'API key' section, switch to an admin account. only admins can generate API keys."
+   },
+   {
+    "claim": "api",
+    "url": "https://brightdata.com/api-reference/authentication",
+    "quote": "curl --request POST \\ --url https://api.brightdata.com/request \\ --header \"Authorization: Bearer YOUR_API_KEY\""
+   },
+   {
+    "claim": "api",
+    "url": "https://brightdata.com/api-reference/authentication",
+    "quote": "Discover how Bright Data OpenAPI specifications simplify integration of SERP and Web Unlocker APIs in AI workflows... For each service, you will see the OpenAPI 3.x specification in both YAML and JSON formats"
+   },
+   {
+    "claim": "api",
+    "url": "https://brightdata.com/api-reference/authentication",
+    "quote": "When you trigger an async collection with an endpoint URL, Bright Data sends a POST request to that URL with the scraped data once the job completes. No polling required."
+   },
+   {
+    "claim": "api",
+    "url": "https://brightdata.com/api-reference/authentication",
+    "quote": "Test without risk. All main products include free trial options... Start now with a free plan of 5,000 monthly requests!"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/brightdata/brightdata-mcp",
+    "quote": "A powerful Model Context Protocol (MCP) server that provides an all-in-one solution for public web access. - brightdata/brightdata-mcp. ... Two deployment options: a hosted remote server (one URL, no installation) or a local instance via npx @brightdata/mcp ."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.brightdata.com/products/mcp-server/overview",
+    "quote": "The bright data mcp server gives ai agents and assistants real-time access to public web data through the model context protocol (mcp). ... you can run the server two ways: a fully managed remote server, or a self-hosted local instance."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://docs.brightdata.com/introduction",
+    "quote": "5,000 free credits per month , no credit card required. see the free tier ."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Product Research: Bright Data\n\n#### 1. What the Product Does\nBright Data is a web data platform providing proxy networks, automated scraping APIs, and pre-collected datasets designed to retrieve public web data at scale while bypassing anti-bot mechanisms, geo-restrictions, and CAPTCHAs. It also offers dedicated tools for AI agents, including a command-line interface (CLI) and a Model Context Protocol (MCP) server.\n* **Source URL:** `https://docs.brightdata.com/introduction`\n* **Verbatim Quote:** \"Guides, quickstarts and api references for bright data scraper api, scraper studio, web unlocker api, serp api, proxies, datasets and bright data mcp. ... start building with live web data scrape any site, buy ready-made datasets. thousands of pre-built scrapers, one api key.\"\n* **Source URL:** `https://github.com/brightdata/brightdata-mcp`\n* **Verbatim Quote:** \"The Bright Data MCP server gives AI agents real-time access to public web data. It exposes 69 tools covering: Web search — Google, Bing, and Yandex results as structured data. Page scraping — any URL as Markdown or HTML, with bot detection, CAPTCHA solving, and proxy rotation handled automatically on every request.\"\n\n#### 2. Authentication Methods & Multi-Tenant Integration\nBright Data supports three primary authentication methods:\n1. **API Access (API Key / Token):** Authenticates requests via a static token passed in the `Authorization` header.\n2. **Native Access (Proxy Credentials):** Authenticates proxy protocol traffic using a username and password.\n3. **Agent API Keys:** A specialized subset of API keys specifically designated for authenticating AI agents and the Bright Data MCP server.\n\nFor a multi-tenant integration platform, **`api_key`** is the primary authentication method. Because Bright Data does not offer a public OAuth2 application flow, end-users must generate an API key from their own Bright Data dashboard and provide it to the integration platform.\n* **Source URL:** `https://brightdata.com/api-reference/authentication` (via search results)\n* **Verbatim Quote:** \"API Access - Authenticate and interact with the Bright Data platform using an API key/token. Native Access - Authenticate and interact with the Bright Data platform using proxy protocol username and password .\" and \"Use your Bright Data API Key as a Bearer token in the Authorization header. ... Format: Authorization: Bearer YOUR_API_KEY.\"\n* **Source URL:** `https://brightdata.com/api-reference/authentication` (via search results)\n* **Verbatim Quote:** \"Agent API keys authenticate the Bright Data MCP server and AI agents. Bright Data lists them in a separate Agent API keys table in Account settings, under Users and API keys, below the regular API keys.\"\n\n#### 3. Credential Acquisition & Cost\n* **Access Level:** `self_serve_free`\n* **How to get credentials:** Any developer can sign up for a free account on the Bright Data website. Once logged into the control panel, an admin user can navigate to Account Settings -> Users and API keys to generate an API key instantly without manual approval or sales intervention.\n* **Cost:** Bright Data provides a free tier offering 5,000 free requests/credits per month with no credit card required. Paid plans operate on a pay-as-you-go or subscription basis for higher volumes.\n* **Source URL:** `https://docs.brightdata.com/introduction`\n* **Verbatim Quote:** \"5,000 free credits per month , no credit card required. see the free tier .\"\n* **Source URL:** `https://brightdata.com/api-reference/authentication` (via search results)\n* **Verbatim Quote:** \"Sign in to Bright Data's control panel and go to your Account settings. ... Click the Add API key button in the top right of the API key section. If you don't see the 'API key' section, switch to an admin account. only admins can generate API keys.\"\n\n#### 4. API Characteristics\n* **API Style:** REST. Endpoints accept standard HTTP methods (primarily `POST` requests) and return structured JSON or Markdown data.\n* **API Breadth:** High. It covers the SERP API, Web Unlocker API, Scraper API, Dataset Marketplace API, Browser API, and Proxy Manager administrative APIs.\n* **OpenAPI Specification:** Yes. Bright Data provides official OpenAPI 3.x and 2.0 specifications for its core scraping services to facilitate seamless integration into AI agent toolsets.\n* **Webhooks:** Yes. For asynchronous scraping jobs, Bright Data supports pushing completed data payloads directly to user-configured HTTPS webhook URLs.\n* **Sandbox:** No dedicated isolated sandbox environment is provided; developers use their standard account and the 5,000 free monthly credits to test live requests without financial risk.\n* **Source URL:** `https://brightdata.com/api-reference/authentication` (via search results)\n* **Verbatim Quote:** \"curl --request POST \\ --url https://api.brightdata.com/request \\ --header \"Authorization: Bearer YOUR_API_KEY\"\"\n* **Source URL:** `https://brightdata.com/api-reference/authentication` (via search results)\n* **Verbatim Quote:** \"Discover how Bright Data OpenAPI specifications simplify integration of SERP and Web Unlocker APIs in AI workflows... For each service, you will see the OpenAPI 3.x specification in both YAML and JSON formats\"\n* **Source URL:** `https://brightdata.com/api-reference/authentication` (via search results)\n* **Verbatim Quote:** \"When you trigger an async collection with an endpoint URL, Bright Data sends a POST request to that URL with the scraped data once the job completes. No polling required.\"\n* **Source URL:** `https://brightdata.com/api-reference/authentication` (via search results)\n* **Verbatim Quote:** \"Test without risk. All main products include free trial options... Start now with a free plan of 5,000 monthly requests!\"\n\n#### 5. MCP Servers\n* **MCP Support:** `official`\n* **Details:** Bright Data publishes and maintains an official, production-grade MCP server (`brightdata-mcp`) available on GitHub and npm. It exposes 69 built-in tools for web search, page scraping, structured data extraction, and browser automation. It can be deployed as a fully managed remote cloud server or run locally via `npx`.\n* **Source URL:** `https://github.com/brightdata/brightdata-mcp`\n* **Verbatim Quote:** \"A powerful Model Context Protocol (MCP) server that provides an all-in-one solution for public web access. - brightdata/brightdata-mcp. ... Two deployment options: a hosted remote server (one URL, no installation) or a local instance via npx @brightdata/mcp .\"\n* **Source URL:** `https://docs.brightdata.com/products/mcp-server/overview`\n* **Verbatim Quote:** \"The bright data mcp server gives ai agents and assistants real-time access to public web data through the model context protocol (mcp). ... you can run the server two ways: a fully managed remote server, or a self-hosted local instance.\"\n\n#### 6. Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. Bright Data is fully buildable today. It provides self-serve credentials, a generous free tier that requires no credit card, comprehensive documentation, official OpenAPI specs, and a first-party production-grade MCP server. The only minor friction is that multi-tenant platforms must collect static API keys from users since OAuth2 is not supported, which is standard for `api_key` integrations.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"bright data\" api authentication docs",
+   "\"bright data\" openapi spec swagger",
+   "\"bright data\" webhooks",
+   "\"bright data\" sandbox test environment",
+   "\"brightdata-mcp\" github",
+   " \"mcp server\" pricing"
+  ],
+  "search_sources": [
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFL6uCbPyvJvNeC-r8gnHV3LRiy7ZS6uUrYuUaZuaqzrjXc-azpxP8iFzKqNsQruoZvanPnSd2RWtqcpt6IsJYF-CW-K-WZGjUxZyPT7BH1GWxrc_KhPhxJ"
+   },
+   {
+    "title": "brightdata.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBhCjZP5jD7ric-Lw3yLuZfAyWxg1UOR2OvMCO8nGKqcFq10BYjKmCu9u1-mQB6hKjrZaGi2mhnGn_7w-VQKgr6P4lLJAh008bjBcXidEcNArqTUVKYCWmOGHXatSHIK0J-lyKEGf6TdboeymLaIk="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG81EpVW-ZT-OFNYsWb_N44MmJsbrBRlrKlMI2eqf36uBbyKnlaeuBYjuXh0-Z4UmaUqdcda90pURvAznDCcTyb0pGpIY9klUMB-XBH3rvjmHRZTWNFSGuzPfltguDkzgutXZjp2OPA"
+   },
+   {
+    "title": "brightdata.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-PaWlsXU1_0fwByoCzx92R7HxiEiTzuey7yieosVKyzKAR4SUINcUUQwjIY3GGdEG6q8clLJ8mzuiupHLY7BTB6zI3QYI5yHfCuR7i3s6u5OO9g-RL_vqCAGoHFQPqj_BVKQG"
+   },
+   {
+    "title": "brightdata.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGlsNLz439aU7qh-CtCwwzZwbHC0a3lyfKeI2OHGxR4j7K-kGnH4vZ0wm2vscuPAHaBDILIkyOcGu0LxNtpQGyggqr14y89-v4Z0SgW3iP3HuPHF6nnDDJ63qKv-4yBdqRwf45Z8TZxU7x9GdLofs="
+   },
+   {
+    "title": "augmentcode.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHq05HQDOGTssbc7XLfbfMFoz9OzaH8Y68DtZD0mSRd9slZY_SmsWZEbUoWvvQIoxuyl_wTZFn7oeQEayXziC1ixiDWzPwonBjcCGGzaqqGjJGa-QZETy5r7iDt1Ide2lVQuge--Cka1sE="
+   },
+   {
+    "title": "mlh.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRdBJ9cUPm3xmSRzzn2laavYHXmVdntn60ByC_UEP19HcZB6vfpClZS5MW8xTBoLJQvEOl8I2w1M-ijsBhipjHzhZagxjqgXOjiPmr4xZd11BFArOELR8-slv2aSuwZv2Mixd6stPAktj_zof39MevFDQQamMLtjTSySuE80o="
+   },
+   {
+    "title": "arxiv.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6pnq9PTOFjirt6tfhQIvY8Cyy4OdVvtMO9YD3MSPBesE4kIHW-gEdehkIrAtNx02NXY4DVsDADBQ1JoK4Xe62u0IczP0oYMx6-82PiO8NCqa4VBFsW2irrWNzKzWl"
+   },
+   {
+    "title": "brightdata.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESJTH2u0ozQ9ccl201EZWRbSqi5OQAiZlWSOu4mLvxgIIY7rTSNw_9dzZBaE2g9kj4JpLz3yWlA-ERF4esy4PcVKKtOKfsE0xiNU1n0ccdvHVXVTy0HPhv8Tq7rqtJ6PtAZJ-l0pVPiajcquaTonYQXTM="
+   },
+   {
+    "title": "brightdata.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZbhIze8bdcfJIyZJtxqbiIkdE8CV3K3bsPB-HVuasC_ChkeXGJE5xrUaVu2dlyU9sb_pjJB45EsM8J_WNrk85eezYDEUQxqopgvcVu0_zBYeWRUAFNQlGYMHYSmxGij-ZM1aOSsfLZic9Lo_U3Z8gO-2-oNkyxWOMKMi3LYWlm9LobGXLVsc="
+   }
+  ],
+  "tokens": 9209,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "Bright Data API authentication",
+    "Bright Data API keys",
+    "Bright Data OAuth",
+    "Bright Data getting started API",
+    "Bright Data quickstart API",
+    "Bright Data API pricing",
+    "Bright Data developer program",
+    "Bright Data API plans",
+    "Bright Data API reference",
+    "Bright Data API documentation",
+    "Bright Data MCP server"
+   ],
+   "candidates": 7,
+   "live_urls": [
+    "https://docs.brightdata.com/api-reference/authentication",
+    "https://docs.brightdata.com/introduction",
+    "https://brightdata.com/pricing",
+    "https://docs.brightdata.com/api-reference/SDK",
+    "https://docs.brightdata.com/products/mcp-server/overview",
+    "https://brightdata.com/partners",
+    "https://docs.brightdata.com/api-reference/marketplace-dataset-api/get-dataset-list",
+    "https://docs.brightdata.com/quickstart",
+    "https://brightdata.com/pricing/mcp-server",
+    "https://github.com/brightdata/brightdata-mcp",
+    "https://use-apify.com/blog/bright-data-pricing-guide-2026"
+   ],
+   "bad_candidates": [],
+   "pages_read": [
+    {
+     "url": "https://docs.brightdata.com/api-reference/authentication",
+     "status": 200,
+     "chars": 10398,
+     "readable": true
+    },
+    {
+     "url": "https://docs.brightdata.com/introduction",
+     "status": 200,
+     "chars": 4796,
+     "readable": true
+    },
+    {
+     "url": "https://brightdata.com/pricing",
+     "status": 200,
+     "chars": 6083,
+     "readable": true
+    },
+    {
+     "url": "https://docs.brightdata.com/api-reference/SDK",
+     "status": 200,
+     "chars": 16085,
+     "readable": true
+    },
+    {
+     "url": "https://docs.brightdata.com/products/mcp-server/overview",
+     "status": 200,
+     "chars": 3250,
+     "readable": true
+    },
+    {
+     "url": "https://brightdata.com/partners",
+     "status": 200,
+     "chars": 6182,
+     "readable": true
+    },
+    {
+     "url": "https://docs.brightdata.com/api-reference/marketplace-dataset-api/get-dataset-list",
+     "status": 200,
+     "chars": 6267,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 66.1
+ }
+}

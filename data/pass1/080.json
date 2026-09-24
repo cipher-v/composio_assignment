@@ -1,0 +1,211 @@
+{
+ "app": {
+  "id": 80,
+  "name": "Harvest",
+  "category": "Productivity and Project Management",
+  "hint": "harvestapp.com (help.getharvest.com/api-v2)"
+ },
+ "record": {
+  "subcategory": "Time Tracking / Invoicing",
+  "one_liner": "Harvest is a time tracking, invoicing, and expense management platform for freelancers and teams.",
+  "auth_methods": [
+   "bearer_token",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 for third-party integrations; Personal Access Tokens for scripts. All API requests require a Harvest-Account-Id header and a User-Agent header.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up for a free Harvest account (1 seat, 2 projects) or a 30-day free trial. API access is included across all account tiers at no extra cost. OAuth2 credentials or Personal Access Tokens can be generated via the Harvest ID Developer portal (https://id.getharvest.com/developers).",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API covering clients, contacts, company settings, invoices, estimates, expenses, tasks, time entries, projects, roles, users, and reports.",
+  "openapi_spec": false,
+  "webhooks": false,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Harvest officially hosts and publishes its own remote MCP server endpoint at https://api.harvestapp.com/mcp.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "none",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://help.getharvest.com/api-v2/introduction/overview/general/",
+    "quote": "...the harvest v2 api is a rest api that allows you to interact with your harvest account programmatically. you can track time, log expenses, create projects, and more."
+   },
+   {
+    "claim": "auth",
+    "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+    "quote": "The v2 api requires an access token to authenticate requests. there are two options available to you: a personal access token which is tied directly to you and is the quickest way to start playing around with the api. implementing a full oauth2 authentication flow which allows oth ..."
+   },
+   {
+    "claim": "auth",
+    "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+    "quote": "Implementing a full OAuth2 Authentication flow which allows other people to use your Harvest integrations."
+   },
+   {
+    "claim": "auth",
+    "url": "https://help.getharvest.com/api-v2/introduction/overview/general/",
+    "quote": "curl https://api.harvestapp.com/v2/tasks?page=2&per_page=10 \\ -h \"authorization: bearer $access_token\" \\ -h \"harvest-account-id: $account_id\" \\ -h \"user-agent: myapp ( [email protected] )\""
+   },
+   {
+    "claim": "access",
+    "url": "https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API",
+    "quote": "your harvest subscription includes api access for all accounts (including free and trial accounts) which can be used to manage your harvest account."
+   },
+   {
+    "claim": "access",
+    "url": "https://github.com/globalvisionmedia/oauth2-harvest",
+    "quote": "To get a key you will need to creare an OAuth2 application in the Harvest Developer area: (https://id.getharvest.com/developers). Click the Create new Auth2 application button to create a key."
+   },
+   {
+    "claim": "api",
+    "url": "https://help.getharvest.com/api-v2/introduction/overview/general/",
+    "quote": "the harvest v2 api is a rest api that allows you to interact with your harvest account programmatically."
+   },
+   {
+    "claim": "api",
+    "url": "https://help.getharvest.com/api-v2/",
+    "quote": "clients api client contacts clients see all docs company settings company see all docs invoices api invoice messages invoice payments invoices invoice item categories see all docs estimates api estimate messages estimates estimate item categories see all docs expenses api expenses expense categories see all docs tasks api tasks see all docs timesheets api time entries see all docs projects api project user assignments project task assignments projects see all docs roles api roles see all docs users api user teammates user billable rates user cost rates user project assignments users see all docs reports api expense reports uninvoiced report time reports project budget report see all docs..."
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/jolicode/harvest-openapi-generator",
+    "quote": "[DEPRECATED] Harvestapp swagger generator. ... This project is deprecated and no longer maintained. There will be no further updates, and this repository is archived. The generated OpenAPI file is frozen and will progressively drift from Harvest's documentation."
+   },
+   {
+    "claim": "api",
+    "url": "https://zapier.com/apps/harvest/integrations/webhook",
+    "quote": "Our integration supports several triggers, such as New Timesheet Entry, Updated Project, or New Invoice in Harvest."
+   },
+   {
+    "claim": "api",
+    "url": "https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API",
+    "quote": "your harvest subscription includes api access for all accounts (including free and trial accounts) which can be used to manage your harvest account."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP",
+    "quote": "the harvest mcp (model context protocol) connection lets you work with your harvest data through an ai assistant, using plain language instead of clicking through the app... set the remote mcp server url to: https://api.harvestapp.com/mcp"
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### 1. Product Capabilities and Use Cases\nHarvest is a time tracking, invoicing, and expense management platform designed for freelancers and teams to manage project budgets, track billable hours, and analyze team capacity.\n* **Verbatim Quote:** \"...the harvest v2 api is a rest api that allows you to interact with your harvest account programmatically. you can track time, log expenses, create projects, and more.\"\n* **Source URL:** https://help.getharvest.com/api-v2/introduction/overview/general/\n\n### 2. Authentication Analysis\nThe Harvest API v2 supports two primary authentication methods:\n1. **Personal Access Tokens (bearer_token):** Tied directly to an individual user for scripts or personal automation.\n2. **OAuth 2.0 (oauth2):** Full authorization flow for third-party integrations.\n\n* **Verbatim Quote:** \"The v2 api requires an access token to authenticate requests. there are two options available to you: a personal access token which is tied directly to you and is the quickest way to start playing around with the api. implementing a full oauth2 authentication flow which allows oth ...\"\n* **Source URL:** https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/\n\n**Multi-tenant Integration Choice:** A multi-tenant integration platform would use `oauth2` as the `primary_auth` method.\n* **Verbatim Quote:** \"Implementing a full OAuth2 Authentication flow which allows other people to use your Harvest integrations.\"\n* **Source URL:** https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/\n\n*Note:* All API requests also require a `Harvest-Account-Id` header and a descriptive `User-Agent` header.\n* **Verbatim Quote:** `curl https://api.harvestapp.com/v2/tasks?page=2&per_page=10 \\ -h \"authorization: bearer $access_token\" \\ -h \"harvest-account-id: $account_id\" \\ -h \"user-agent: myapp ( [email protected] )\"`\n* **Source URL:** https://help.getharvest.com/api-v2/introduction/overview/general/\n\n### 3. Developer Credentials & Access Cost\n* **Access Tier:** `self_serve_free`\n* **Credential Acquisition & Cost:** Any developer can sign up for a free Harvest account (which includes 1 seat and 2 projects) or a 30-day free trial. API access is fully included across all account tiers at no extra cost. Developers can instantly generate OAuth2 credentials or Personal Access Tokens by logging into their account and navigating to the Harvest ID Developer portal (`https://id.getharvest.com/developers`).\n* **Verbatim Quote:** \"your harvest subscription includes api access for all accounts (including free and trial accounts) which can be used to manage your harvest account.\"\n* **Source URL:** https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API\n* **Verbatim Quote:** \"To get a key you will need to creare an OAuth2 application in the Harvest Developer area: (https://id.getharvest.com/developers). Click the Create new Auth2 application button to create a key.\"\n* **Source URL:** https://github.com/globalvisionmedia/oauth2-harvest\n\n### 4. API Style & Technical Details\n* **API Style:** REST API.\n  * **Verbatim Quote:** \"the harvest v2 api is a rest api that allows you to interact with your harvest account programmatically.\"\n  * **Source URL:** https://help.getharvest.com/api-v2/introduction/overview/general/\n* **Breadth:** Broad. The API covers clients, contacts, company settings, invoices, estimates, expenses, tasks, time entries, projects, roles, users, and reports.\n  * **Verbatim Quote:** \"clients api client contacts clients see all docs company settings company see all docs invoices api invoice messages invoice payments invoices invoice item categories see all docs estimates api estimate messages estimates estimate item categories see all docs expenses api expenses expense categories see all docs tasks api tasks see all docs timesheets api time entries see all docs projects api project user assignments project task assignments projects see all docs roles api roles see all docs users api user teammates user billable rates user cost rates user project assignments users see all docs reports api expense reports uninvoiced report time reports project budget report see all docs...\"\n  * **Source URL:** https://help.getharvest.com/api-v2/\n* **OpenAPI Spec:** None found officially. Only community-maintained or deprecated specifications exist.\n  * **Verbatim Quote:** \"[DEPRECATED] Harvestapp swagger generator. ... This project is deprecated and no longer maintained. There will be no further updates, and this repository is archived. The generated OpenAPI file is frozen and will progressively drift from Harvest's documentation.\"\n  * **Source URL:** https://github.com/jolicode/harvest-openapi-generator\n* **Webhooks:** None found natively. Harvest does not support native outgoing webhooks in its public API; real-time event integrations rely on third-party polling or middleware platforms like Zapier.\n  * **Verbatim Quote:** \"Our integration supports several triggers, such as New Timesheet Entry, Updated Project, or New Invoice in Harvest.\"\n  * **Source URL:** https://zapier.com/apps/harvest/integrations/webhook\n* **Sandbox:** None found. There is no dedicated sandbox environment; developers use a standard free or trial account for testing.\n  * **Verbatim Quote:** \"your harvest subscription includes api access for all accounts (including free and trial accounts) which can be used to manage your harvest account.\"\n  * **Source URL:** https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API\n\n### 5. Model Context Protocol (MCP) Servers\n* **MCP Availability:** `official`\n* **Details:** Harvest officially hosts and publishes its own remote MCP server endpoint, allowing AI clients to interact directly with Harvest data using plain language.\n* **Verbatim Quote:** \"the harvest mcp (model context protocol) connection lets you work with your harvest data through an ai assistant, using plain language instead of clicking through the app... set the remote mcp server url to: https://api.harvestapp.com/mcp\"\n* **Source URL:** https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP\n\n### 6. Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. The API is fully public, self-serve, and accessible for free via the standard free tier. Furthermore, Harvest provides an official, hosted MCP server endpoint (`https://api.harvestapp.com/mcp`), making it exceptionally easy to integrate with AI agents immediately.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"Harvest\" API webhooks",
+   "\"Harvest\" API sandbox",
+   "\"Harvest\" API OpenAPI spec",
+   "\"Harvest\" create OAuth2 application developer credentials",
+   "\"Harvest\" pricing \"free plan\" OR \"free tier\"",
+   "\"Harvest\" webhooks",
+   "\"Harvest\" OpenAPI",
+   "\"Harvest\" developer account",
+   " \"webhooks\"",
+   " \"openapi\" OR \"swagger\""
+  ],
+  "search_sources": [
+   {
+    "title": "getharvest.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHM2CqEhhKeNS-t7nJ2ObOcZS8hABuQQU5r6a9uhPVClA1a0utRoqcTfAYlTGA8penHs8RHQbSuJiiFmX2oifYlScrU02N7EU0g-7380yRiOYkc7pfgQtRL_IiYd5e6Hhape3RuSkDGEIaXNqYSm5igw-ug91CDVHc="
+   },
+   {
+    "title": "cdata.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFj3IY6g1XHAKzvE_EdBy7MiUmGURKcF15YUKAZfmfp3K-mJRhwriAOBvdCEAxp7VC8nBTj_s3i0pRVzQpA27F7PK1aatRloeUa73Qs1z9c6NgoPIKYUO659cjQmiRkYOgn-83b1UWu1t0-gloirqZW1N73d6PQhF_p-psT9_pxPRwApjbD0Q9xX2KYuBdV-nCvC1THq8WIgAz7DMhTQcLW658="
+   },
+   {
+    "title": "getharvest.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3Ih5gL14eHp3vlFEWttjTcJKt6tnK3oFoBwKUvYdVXOmqlI9dKefympULDJvJLdQ99ysNH3FNvjJ8VlstmLt1Jpc9QmwW9POjSrn6Ml3aIuP0NEOWXqMsdUtrlVeAQ8KUfEQMGpOQJJEypCdD2Yq2YmwYa09Ipr5QjkqlAgNS54b1aoRMgjC1wxuTqVoGaA=="
+   },
+   {
+    "title": "getharvest.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcNYwiVD_vl0Bv5hnKPb4O4KA5cZo0dTUg0DlC2Z5wWx62SMTDuO726GWTcM9XUwzh0KoCrUn6cTqp-VtRnRJELrEHRdtrZ19euXoq3ygIm-K8iYQANi0UlTbrlBNOhWFzYsQjQc6h4-ZMn9oELi2U4HkdVO8dDTjmN7utJ0jO1IYGuZ5fiRLZ"
+   }
+  ],
+  "tokens": 9933,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Harvest API authentication",
+    "Harvest API keys",
+    "Harvest OAuth",
+    "Harvest API getting started",
+    "Harvest API quickstart",
+    "Harvest API pricing",
+    "Harvest API plans",
+    "Harvest developer program",
+    "Harvest API reference",
+    "Harvest API documentation",
+    "Harvest MCP server"
+   ],
+   "candidates": 5,
+   "live_urls": [
+    "https://help.getharvest.com/api-v2/",
+    "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+    "https://help.getharvest.com/api-v2/introduction/overview/general/",
+    "https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API",
+    "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://help.getharvest.com/api-v2/authentication/",
+     "status": 404
+    },
+    {
+     "url": "https://help.getharvest.com/api-v2/overview/",
+     "status": 404
+    },
+    {
+     "url": "https://help.getharvest.com/harvest/integrations/other-integrations/the-harvest-api/",
+     "status": 404
+    },
+    {
+     "url": "https://api.harvestapp.com/mcp",
+     "status": 405
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://help.getharvest.com/api-v2/",
+     "status": 200,
+     "chars": 1499,
+     "readable": true
+    },
+    {
+     "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+     "status": 200,
+     "chars": 9252,
+     "readable": true
+    },
+    {
+     "url": "https://help.getharvest.com/api-v2/introduction/overview/general/",
+     "status": 200,
+     "chars": 6347,
+     "readable": true
+    },
+    {
+     "url": "https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API",
+     "status": 200,
+     "chars": 2051,
+     "readable": true
+    },
+    {
+     "url": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP",
+     "status": 200,
+     "chars": 9230,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 191.5
+ }
+}

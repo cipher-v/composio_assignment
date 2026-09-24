@@ -1,0 +1,191 @@
+{
+ "app": {
+  "id": 90,
+  "name": "PitchBook",
+  "category": "Finance and Fintech",
+  "hint": "pitchbook.com (research API)"
+ },
+ "record": {
+  "subcategory": "Financial Data",
+  "one_liner": "Comprehensive financial data platform for private and public capital markets.",
+  "auth_methods": [
+   "api_key"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "PitchBook Direct API uses a static API key passed in the Authorization header with the format 'PB-Token {API_KEY}'. No OAuth flow.",
+  "access": "partner_or_sales",
+  "access_notes": "API access is a paid, contract-gated add-on to a core PitchBook platform subscription. No self-serve sign-up, public free tier, or standard free trial. Annual contracts typically range from $20,000 to over $100,000, with API access often requiring a custom 'Direct Data' contract.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extremely broad, covering companies, deals, funds, investors, people, and limited partners.",
+  "openapi_spec": false,
+  "webhooks": false,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "PitchBook publishes an official remote (Streamable HTTP) endpoint at https://premium.mcp.pitchbook.com/mcp.",
+  "verdict": "needs_outreach",
+  "blocker": "partnership_or_sales",
+  "blocker_notes": "There is no self-serve way to obtain API credentials. A developer must already be an enterprise client with a specific API add-on contract to access the documentation and keys.",
+  "evidence": [
+   {
+    "claim": "auth",
+    "url": "https://dlthub.com/docs/dlt-ecosystem/verified-sources/pitchbook",
+    "quote": "PitchBook authenticates requests using a static API key passed in the Authorization header with the format 'PB-Token {API_KEY}'."
+   },
+   {
+    "claim": "auth",
+    "url": "https://frontegg.com/integrations/pitchbook",
+    "quote": "PitchBook authenticates with a static API key sent on every request, so there is no OAuth flow."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.startupyeti.com/startup/the-cost-of-pitchbook",
+    "quote": "PitchBook doesn’t publish its pricing publicly. there’s no pricing page, no free tier, and no monthly plan. you have to request a quote, sit through a demo, and negotiate."
+   },
+   {
+    "claim": "access",
+    "url": "https://pitchbook.com/help-center/api",
+    "quote": "The API is a separate offering from the PitchBook platform that requires a standalone contract agreement."
+   },
+   {
+    "claim": "api",
+    "url": "https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview",
+    "quote": "To help developers get comfortable with the PitchBook API, a test 'sandbox' environment has been created... Please reach out to your account manager to request a sandbox key."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://wealthmcp.ai/server/pitchbook",
+    "quote": "PitchBook publishes a remote (Streamable HTTP) endpoint... Endpoint https://premium.mcp.pitchbook.com/mcp."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "PitchBook is a comprehensive financial data platform specializing in private and public capital markets, including venture capital, private equity, and M&A. It provides deep intelligence on company profiles, deal histories, fund performance, and investor portfolios.\n\n### Research Notes\n\n**Auth Method**\nThe PitchBook Direct API uses a static API key for authentication. A multi-tenant integration would use the `api_key` method, requiring each end-user to provide their own provisioned token.\n*   **Source Quote:** \"PitchBook authenticates requests using a static API key passed in the Authorization header with the format 'PB-Token {API_KEY}'.\" ([Source](https://dlthub.com/docs/dlt-ecosystem/verified-sources/pitchbook))\n*   **Source Quote:** \"PitchBook authenticates with a static API key sent on every request, so there is no OAuth flow.\" ([Source](https://frontegg.com/integrations/pitchbook))\n\n**Credential Acquisition & Cost**\nAccess is strictly **partner_or_sales**. There is no self-serve sign-up, no public free tier, and no standard free trial. API access is a paid, contract-gated add-on to a core PitchBook platform subscription.\n*   **Cost:** Annual contracts typically range from $20,000 to over $100,000, with API access often requiring a custom \"Direct Data\" contract.\n*   **Source Quote:** \"PitchBook doesn’t publish its pricing publicly. there’s no pricing page, no free tier, and no monthly plan. you have to request a quote, sit through a demo, and negotiate.\" ([Source](https://www.startupyeti.com/startup/the-cost-of-pitchbook))\n*   **Source Quote:** \"The API is a separate offering from the PitchBook platform that requires a standalone contract agreement.\" ([Source](https://pitchbook.com/help-center/api))\n\n**API Style & Features**\n*   **Style:** RESTful API.\n*   **Breadth:** Extremely broad, covering companies, deals, funds, investors, people, and limited partners.\n*   **Sandbox:** A test sandbox environment is available but must be requested through an account manager.\n*   **Source Quote:** \"To help developers get comfortable with the PitchBook API, a test 'sandbox' environment has been created... Please reach out to your account manager to request a sandbox key.\" ([Source](https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview))\n\n**MCP Servers**\n*   **Official:** PitchBook provides an official remote MCP server for its clients.\n*   **Endpoint:** `https://premium.mcp.pitchbook.com/mcp`\n*   **Source Quote:** \"PitchBook publishes a remote (Streamable HTTP) endpoint... Endpoint https://premium.mcp.pitchbook.com/mcp.\" ([Source](https://wealthmcp.ai/server/pitchbook))\n\n### Buildability Verdict\n**Verdict:** `needs_outreach`\n**Main Blocker:** There is no self-serve way to obtain API credentials. A developer must already be an enterprise client with a specific API add-on contract to access the documentation and keys.\n\n| Feature | Status |\n| :--- | :--- |\n| **Access** | `partner_or_sales` |\n| **Primary Auth** | `api_key` |\n| **API Style** | REST |\n| **MCP** | `official` |\n| **Sandbox** | Yes (Approval required) |\n| **OpenAPI Spec** | Not publicly hosted (Gated) |\n| **Webhooks** | No |",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "PitchBook Direct API documentation auth methods",
+   "PitchBook API pricing free tier trial",
+   "PitchBook API OAuth2 support",
+   "PitchBook API sandbox access",
+   "PitchBook official MCP server documentation"
+  ],
+  "search_sources": [
+   {
+    "title": "multiples.vc",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKhGBtULFR88Q9ymSb1X00Zp9OPB_PD3UC4VNwA5D6GK5gS9xm2kktHOkfB3RJS6fXmz6O-jh8HYGW-7hLCIbbdCE301BXrDRBGdOM7uasY-pXtmXjH4YiKpxVy2JBLxq6PSo6LSsygaH16MOBZ14314U="
+   },
+   {
+    "title": "seeyu.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH01PvxlQO33FB1Sr8zEwOCVZmWWq_WxC8XblWU2gCOkU2ZCTZ4sgc4UXceUlrc6iOMcOvnN0zs8NN8qY2vtIqNYpxmaLE3LKWeFYUbyQCpMLY7DJUfmWXr2Y4F65rageqDwXIxwMNG"
+   },
+   {
+    "title": "pitchbook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELWxNT0cWNu5hpHSkw9ne65UTFCf5t4gVYJcDB1kRBwqxFtEICz9U8VBtu_CWBGzbwe9j-c3CjkM0elJvb5j8LsSL3PRDgYSZHagdDL2QmSlqkEx2pCl_-rtjp6Kmq7wNVmicuRCBVXg47piK4AJUUKjHK-keq26u2AX707AE8aEBS26lNqA=="
+   },
+   {
+    "title": "frontegg.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfBeuKCCVlGXlSyozLnFHCj4A67LBNrwtYkyUAOK2xvinBsC511V0WVPv4gRc4m094QzFkbG8Jstcp_o7OCEuMz0xG8_pcUCtQkbyGRT2ctV-BDPs53FVQFWyjgSOOz8YaLTrIzHML8zv4eNEiM5u3vsTSvSYHuIQWXR35DQ0fGPIbus5BbutsNw=="
+   },
+   {
+    "title": "dlthub.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDQojeN8M3OchObdif_CXIonxt7S3tcnWZmiuxURS8Uwy7td2zKG1_2TZozkLaq1sTFpEz4G-BAhFwZx4tPrV4KmE7QIiV9PRra-fn_2Oj_UDuUOgpZOVnj3BpdGpBuvZJmfMdsShrVvaJ"
+   },
+   {
+    "title": "slidegenius.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTs4JOWBOWFKseTPU9mE-WzTBt1DVxPTXkgjTUHos0jOLBGLqb_E2oyWkjWTUqsYZQdURnHXCgnHf8rE4sbkg3mnPgpAIqbGmWTPU14i93xRl8BfwVBsSxrMoaVMFxS_w622j9GQXJJyNKesmOywyz6VJSMdWtMXqmWL1I0lbbelFGqAM2VB1zgLQ5KNTMkcdBa5kf8gOI_kvhJMwo7YXJwA=="
+   },
+   {
+    "title": "getpostman.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbA4Q6GUVfuFm3Tyqwf0B6muu19bFRRflUFC9HhgtbhMb4ope305yXIdt_fVyeXtpw6onpU78UD_qs5HSAoCyXGAMfPEarayynWh_lGG1kqwkdFcTf7yOOCrk6zZwDD9BFOh1sLKNqOQ7LgIqIeY70xGE="
+   },
+   {
+    "title": "pitchbook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_dqjqRcrHeSOQUjK9R-VfCX_cxh_lVQ5iE0Yl2CddINDj1b8IyF_2caP4DGmWfOMM3Mn0V5YEI96czLHN9p_2B_8GaiVHhqhch8R_7IC35SO9oBNnU93uLUmDHJP3CNHQTxY="
+   },
+   {
+    "title": "apify.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKTc3lkv6RallHR7YZVr2DI9yswJTXPmGiptYIq9XtS2rCpiohyzRoNXlQQ2_I573oPWK5PgezTKfrufn26rCFz-QsK5YEZl77QoMss4cUcQSE3nU8FbwrNkY2enFWYdLw7GEOafb4lxWLyet8-vM2vVH4Pk12tFTFXO0="
+   },
+   {
+    "title": "mcpservers.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBIK1teHSbVlczpTL9X2S4Y4gk8JZq7plIkIQjd1SSwAJS6lOt_OtfyDdbITfjfCbIPOQOL6orG_Ddft3e_DAy4ULfHJtEDmpPWkMxYpaiaesX0cRyN0np2Wu0r7krSp3gdu-vhd82"
+   },
+   {
+    "title": "wealthmcp.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYRAYYibZEZDpSx9DeM63VznPipUMAyGrHFgpvgAv_xcdDUwcDNVqeCPiLrjdTuUkdM2e1MaZQNBp9E-FD4gGcu7PSLDszsrEYWmCJRASz9gVNjJ-dW21mbIp4CMC8-4E="
+   }
+  ],
+  "tokens": 4484,
+  "retries": [
+   "504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status':"
+  ],
+  "discovery": {
+   "search_queries": [
+    "PitchBook API authentication",
+    "PitchBook API keys",
+    "PitchBook OAuth",
+    "PitchBook API getting started",
+    "PitchBook API quickstart",
+    "PitchBook API pricing",
+    "PitchBook API plans",
+    "PitchBook developer program",
+    "PitchBook API reference",
+    "PitchBook API documentation",
+    "PitchBook MCP server",
+    "PitchBook API official page",
+    "PitchBook Help Data Feed API CRM official page",
+    "PitchBook Pricing official page"
+   ],
+   "candidates": 4,
+   "live_urls": [
+    "https://www.startupyeti.com/startup/the-cost-of-pitchbook",
+    "https://wealthmcp.ai/server/pitchbook",
+    "https://www.promptarmor.com/connectors/pitchbook-premium"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://pitchbook.com/solutions/integrations/api",
+     "status": 403
+    },
+    {
+     "url": "https://pitchbook.com/solutions/pricing",
+     "status": 403
+    },
+    {
+     "url": "https://premium.mcp.pitchbook.com/mcp",
+     "status": 401
+    },
+    {
+     "url": "https://help.pitchbook.com/knowledge/data-feed-api-and-crm-direct-data-solutions",
+     "status": 401
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://www.startupyeti.com/startup/the-cost-of-pitchbook",
+     "status": 200,
+     "chars": 13299,
+     "readable": true
+    },
+    {
+     "url": "https://wealthmcp.ai/server/pitchbook",
+     "status": 200,
+     "chars": 4786,
+     "readable": true
+    },
+    {
+     "url": "https://www.promptarmor.com/connectors/pitchbook-premium",
+     "status": 200,
+     "chars": 2374,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 331.1
+ }
+}

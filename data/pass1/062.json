@@ -1,0 +1,230 @@
+{
+ "app": {
+  "id": 62,
+  "name": "Vercel",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "vercel.com/docs/rest-api"
+ },
+ "record": {
+  "subcategory": "Cloud Platform / Web Hosting",
+  "one_liner": "Vercel is a cloud platform for deploying and scaling web applications, frontend projects, and serverless/edge functions.",
+  "auth_methods": [
+   "bearer_token",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Personal Access Tokens (bearer_token) for individual use; OAuth 2.0 ('Sign in with Vercel') for third-party applications; Vercel Integrations API for marketplace integrations.",
+  "access": "self_serve_free",
+  "access_notes": "Free Hobby plan allows creation of Vercel accounts, access to REST API, generation of personal access tokens, and creation of OAuth applications.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API over HTTPS with over 40 categories of endpoints including deployments, projects, domains, DNS, environment variables, sandboxes, and webhooks.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Vercel provides an official remote MCP server for AI assistants to search documentation, manage projects, and analyze logs, available across all plans.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. Comprehensive REST documentation, official OpenAPI spec, self-serve free tier for credentials, and robust OAuth 2.0 framework.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://vercel.com/pricing",
+    "quote": "\"Hobby $0 /mo. the perfect starting place for your web app or personal project. import your repo, deploy in seconds automatic ci/cd web application firewall global, automated cdn fluid compute ddos mitigation traffic & performance insights\""
+   },
+   {
+    "claim": "general",
+    "url": "https://vercel.com/docs/rest-api",
+    "quote": "\"Vercel Sandbox — Run untrusted or agent-generated code in isolated Linux microVMs with Vercel Sandbox.\""
+   },
+   {
+    "claim": "auth",
+    "url": "https://vercel.com/docs/rest-api",
+    "quote": "\"Vercel access tokens are required to authenticate and use the vercel api. include the token in the authorization header: authorization: bearer <token>\""
+   },
+   {
+    "claim": "auth",
+    "url": "https://vercel.com/docs/sign-in-with-vercel",
+    "quote": "\"Sign in with Vercel is based on the OAuth 2.0 authorization framework, which allows your application to request access to user data from Vercel's Identity Provider (IdP).\""
+   },
+   {
+    "claim": "auth",
+    "url": "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations",
+    "quote": "\"You receive this token during the installation process when you call the Upsert Installation API. The response includes a credentials object with an access_token that you use as a bearer token for subsequent API calls.\""
+   },
+   {
+    "claim": "access",
+    "url": "https://vercel.com/pricing",
+    "quote": "\"Hobby $0 /mo. the perfect starting place for your web app or personal project.\""
+   },
+   {
+    "claim": "access",
+    "url": "https://vercel.com/docs/rest-api",
+    "quote": "\"create and manage access tokens in your account settings .\""
+   },
+   {
+    "claim": "access",
+    "url": "https://vercel.com/docs/sign-in-with-vercel",
+    "quote": "\"You can create an app, configure its scopes, and start setting up sign-in directly from the Vercel dashboard, without having to manage users or sign-in methods yourself.\""
+   },
+   {
+    "claim": "api",
+    "url": "https://vercel.com/docs/rest-api",
+    "quote": "\"All endpoints live under the url https://api.vercel.com and follow the rest architecture.\""
+   },
+   {
+    "claim": "api",
+    "url": "https://vercel.com/docs/rest-api",
+    "quote": "\"Browse all available rest api endpoints grouped by category... Deployments 10 endpoint s... DNS 4 endpoint s... Domains 9 endpoint s... Projects 32 endpoint s... Sandboxes 30 endpoint s... Webhooks 4 endpoint s\""
+   },
+   {
+    "claim": "api",
+    "url": "https://vercel.com/docs/rest-api/getting-started",
+    "quote": "\"https://vercel.com/openapi.json, The OpenAPI 3.0 description of the Vercel REST API.\""
+   },
+   {
+    "claim": "api",
+    "url": "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations",
+    "quote": "\"Webhooks allow you to get notified through a defined HTTP endpoint about certain deployment or project events that happened on the Vercel platform. Webhooks are now available for all Pro and Enterprise customers.\""
+   },
+   {
+    "claim": "api",
+    "url": "https://vercel.com/docs/rest-api",
+    "quote": "\"Vercel Sandbox — Run untrusted or agent-generated code in isolated Linux microVMs with Vercel Sandbox.\""
+   },
+   {
+    "claim": "mcp",
+    "url": "https://vercel.com/docs/rest-api",
+    "quote": "\"Introducing Vercel MCP: Connect Vercel to your AI tools.\" and \"Vercel MCP is available in Beta on all plans and your use is subject to Vercel's Public Beta Agreement and AI Product Terms.\""
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### What the Product Does\nVercel is a cloud platform designed for deploying and scaling web applications, frontend projects, and serverless/edge functions. It provides automated CI/CD, a global CDN, a web application firewall, and advanced developer tools like Vercel Sandbox (isolated environments for running agent-generated code) and the Vercel AI SDK.\n* **Source URL:** https://vercel.com/pricing\n* **Verbatim Quote:** `\"Hobby $0 /mo. the perfect starting place for your web app or personal project. import your repo, deploy in seconds automatic ci/cd web application firewall global, automated cdn fluid compute ddos mitigation traffic & performance insights\"`\n* **Source URL:** https://vercel.com/docs/rest-api\n* **Verbatim Quote:** `\"Vercel Sandbox — Run untrusted or agent-generated code in isolated Linux microVMs with Vercel Sandbox.\"`\n\n### Authentication Methods & Primary Auth for Multi-Tenant Integration\nVercel's public API supports three main authentication methods:\n1. **Personal Access Tokens (`bearer_token`):** Static tokens passed via the standard HTTP Authorization header.\n   * **Source URL:** https://vercel.com/docs/rest-api\n   * **Verbatim Quote:** `\"Vercel access tokens are required to authenticate and use the vercel api. include the token in the authorization header: authorization: bearer <token>\"`\n2. **OAuth 2.0 / OpenID Connect (\"Sign in with Vercel\"):** A federated identity and authorization framework allowing third-party applications to obtain access tokens on behalf of users.\n   * **Source URL:** https://vercel.com/docs/sign-in-with-vercel\n   * **Verbatim Quote:** `\"Sign in with Vercel is based on the OAuth 2.0 authorization framework, which allows your application to request access to user data from Vercel's Identity Provider (IdP).\"`\n3. **Vercel Integrations API:** Used for marketplace integrations where tokens are exchanged during installation.\n   * **Source URL:** https://vercel.com/docs/integrations/create-integration/vercel-api-integrations\n   * **Verbatim Quote:** `\"You receive this token during the installation process when you call the Upsert Installation API. The response includes a credentials object with an access_token that you use as a bearer token for subsequent API calls.\"`\n\n**Primary Auth for Multi-Tenant Integration:** `oauth2` (\"Sign in with Vercel\") is the ideal choice for a multi-tenant integration platform like Composio, as it allows users to securely delegate access to their Vercel accounts without sharing static personal tokens.\n\n### Developer Credentials & Cost\n* **Access Tier:** `self_serve_free`\n* **Cost:** Creating a Vercel account, accessing the REST API, generating personal access tokens, and creating OAuth applications (\"Sign in with Vercel\") can all be done entirely for free under the Hobby plan.\n  * **Source URL:** https://vercel.com/pricing\n  * **Verbatim Quote:** `\"Hobby $0 /mo. the perfect starting place for your web app or personal project.\"`\n* **How to get credentials:**\n  * Personal tokens can be generated directly within account settings.\n    * **Source URL:** https://vercel.com/docs/rest-api\n    * **Verbatim Quote:** `\"create and manage access tokens in your account settings .\"`\n  * OAuth apps can be created directly from the dashboard under Team Settings.\n    * **Source URL:** https://vercel.com/docs/sign-in-with-vercel\n    * **Verbatim Quote:** `\"You can create an app, configure its scopes, and start setting up sign-in directly from the Vercel dashboard, without having to manage users or sign-in methods yourself.\"`\n\n### API Style, Breadth, OpenAPI Spec, Webhooks, and Sandbox\n* **API Style:** REST architecture over HTTPS.\n  * **Source URL:** https://vercel.com/docs/rest-api\n  * **Verbatim Quote:** `\"All endpoints live under the url https://api.vercel.com and follow the rest architecture.\"`\n* **Breadth:** Extremely broad, covering over 40 categories of endpoints including deployments, projects, domains, DNS, environment variables, sandboxes, and webhooks.\n  * **Source URL:** https://vercel.com/docs/rest-api\n  * **Verbatim Quote:** `\"Browse all available rest api endpoints grouped by category... Deployments 10 endpoint s... DNS 4 endpoint s... Domains 9 endpoint s... Projects 32 endpoint s... Sandboxes 30 endpoint s... Webhooks 4 endpoint s\"`\n* **OpenAPI Spec:** Yes, Vercel publishes an official OpenAPI 3.0 specification file.\n  * **Source URL:** https://vercel.com/docs/rest-api/getting-started\n  * **Verbatim Quote:** `\"https://vercel.com/openapi.json, The OpenAPI 3.0 description of the Vercel REST API.\"`\n* **Webhooks:** Yes, Vercel supports webhooks for account and project events, though account-level webhooks are restricted to paid plans.\n  * **Source URL:** https://vercel.com/docs/integrations/create-integration/vercel-api-integrations\n  * **Verbatim Quote:** `\"Webhooks allow you to get notified through a defined HTTP endpoint about certain deployment or project events that happened on the Vercel platform. Webhooks are now available for all Pro and Enterprise customers.\"`\n* **Sandbox:** Yes, Vercel provides a dedicated Sandbox feature with 30 REST API endpoints to run untrusted code in isolated microVMs.\n  * **Source URL:** https://vercel.com/docs/rest-api\n  * **Verbatim Quote:** `\"Vercel Sandbox — Run untrusted or agent-generated code in isolated Linux microVMs with Vercel Sandbox.\"`\n\n### Model Context Protocol (MCP) Servers\n* **MCP Status:** `official`\n* Vercel provides an official remote MCP server that allows AI assistants to search documentation, manage projects, and analyze logs. It is available across all plans.\n  * **Source URL:** https://vercel.com/docs/rest-api\n  * **Verbatim Quote:** `\"Introducing Vercel MCP: Connect Vercel to your AI tools.\"` and `\"Vercel MCP is available in Beta on all plans and your use is subject to Vercel's Public Beta Agreement and AI Product Terms.\"`\n\n### Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. Vercel is fully buildable today. It offers comprehensive REST documentation, an official OpenAPI spec, a self-serve free tier for developers to get credentials, and a robust OAuth 2.0 framework (\"Sign in with Vercel\") perfect for multi-tenant integrations. The only minor limitation is that account-level webhooks require a Pro or Enterprise plan, but this does not block building a powerful agent toolkit.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"vercel\" \"sign in with vercel\" oauth",
+   "\"vercel\" \"building integrations with vercel rest api\"",
+   "\"vercel\" openapi spec json yaml",
+   "\"vercel\" mcp server",
+   "\"vercel\" webhooks documentation",
+   "\"vercel\" sandbox api",
+   "\"vercel\" \"openapi.json\"",
+   "\"vercel\" pricing api access"
+  ],
+  "search_sources": [
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmGrsDBF96GZf5vvp1wW8dg4RVW-bofZR4kxIYhNUmQ7AkAkSd5ilI3z6AuaeqhAvSVA9vve7lesXMDNLWPb0lJIOSckFaAIBl42RrKgqEW9B5_ygA"
+   },
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHgCwb2NOqWSPPNg83hbUBByDJdtcea6aBGL5MNZ7mRcJvdBiTFEilj4ofRFASgow30i5lKcWdyH64ONWaG0xmKq1Yck59PJEd1klNImeR7SPBvGnudczDy5t0_dU-CPbOZPLR1ZBuRJhow1iJMm9-wYB6577p"
+   },
+   {
+    "title": "kuberns.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEg6ekbhRfiReaNeNg0DU9N0F7x5OGJlE-5Qz4jEz1X-Jwx2SD7RxIkcyL_gRCCYUL2CvNWd9Mn82CV1ZHCIQ95xpaGJsH5pWPCPEUwRk2GGfQ4xkTHl7pq6hjo8Zw0dOKTU13F"
+   },
+   {
+    "title": "truefoundry.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXKSSCH1tYHwN7eTPvui1R_VWZddYqSY25QL8jSF8JVvDRt5wVPinEid5uREn-XT0_zL00isALz5bC7eS_p79Pyc7IQFJoTconqdxW8mJkc7H8uykKvRbcrouiij4IxM7m6i32coFKVeaE0imk0T6adZqzjJllPsPNCEeFTpqri8Ka-w=="
+   },
+   {
+    "title": "uibakery.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4fYaG6sjcl5dhdjAVjHgUCy59lQCy7tRYr6ihGcZJOQpbF8KMubWuKJALtKIT2jmnL0cM1yAsfn_YB_Jw-YEpVVL4_vsklTJCFW6FkkKZEP9LTXtaVERSel7aLrTfSM9GUXg-3o52ZQC1nZDoiWjPxm1d2JOxwEMt7XzJ24pG2rKiF3R7RtKD3XAB-sjohcQ="
+   },
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF49nP4vXbBYgraaKCEWLEPj6hj3u6Dv7mY-RjxG3LQnln8bWy_mvJXgrK9z4EMQZLAa93mOG8i2Kj16Ar3iGFdnFLDHiYwLDZUwOSRgnTtu7B0hYbBK1pG2HsGub11YZszpdBQcsQkkDClGXQ95jOHbxRYcketAWNx-9fh"
+   },
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElA5_EgwE5ODr-tv7aoPT5WCHo3UWYAvwqIEu8to1EU924RTq0zU1OaZnzr-a7Ktus0pryp6guEf9socMjqvXhmF6H-8koUm18J-YWKV7YAzghrrtd3CEAfjobWDtAaLGOn57mLWdXyJjR3zz8tyr5huM="
+   },
+   {
+    "title": "vercel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAP92oQ3JDbarpLqkwGOO8v6oxURNI-oQq2eEmszxBihFRSNQtUQ7DzchTK3_aZnxBYyXOYvrUTIVQ10eDiwSDUCDn7OFY2hZolUbTQdw3f1tLBdTm6kyokDDc"
+   }
+  ],
+  "tokens": 9086,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "Vercel API authentication",
+    "Vercel API keys",
+    "Vercel OAuth",
+    "Vercel API getting started",
+    "Vercel API quickstart",
+    "Vercel API pricing",
+    "Vercel API plans",
+    "Vercel developer program",
+    "Vercel API reference",
+    "Vercel REST API documentation",
+    "Vercel MCP server"
+   ],
+   "candidates": 0,
+   "live_urls": [
+    "https://vercel.com/pricing",
+    "https://vercel.com/docs/rest-api",
+    "https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token",
+    "https://vercel.com/docs/rest-api/getting-started",
+    "https://vercel.com/docs/sign-in-with-vercel",
+    "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations",
+    "https://vercel.com/connect/api-key",
+    "https://www.speakeasy.com/product/mcp-gateway/catalog/vercel"
+   ],
+   "bad_candidates": [],
+   "pages_read": [
+    {
+     "url": "https://vercel.com/pricing",
+     "status": 200,
+     "chars": 14770,
+     "readable": true
+    },
+    {
+     "url": "https://vercel.com/docs/rest-api",
+     "status": 200,
+     "chars": 116726,
+     "readable": true
+    },
+    {
+     "url": "https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token",
+     "status": 200,
+     "chars": 5104,
+     "readable": true
+    },
+    {
+     "url": "https://vercel.com/docs/rest-api/getting-started",
+     "status": 200,
+     "chars": 10294,
+     "readable": true
+    },
+    {
+     "url": "https://vercel.com/docs/sign-in-with-vercel",
+     "status": 200,
+     "chars": 9175,
+     "readable": true
+    },
+    {
+     "url": "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations",
+     "status": 200,
+     "chars": 18970,
+     "readable": true
+    },
+    {
+     "url": "https://vercel.com/connect/api-key",
+     "status": 200,
+     "chars": 4132,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 62.8
+ }
+}

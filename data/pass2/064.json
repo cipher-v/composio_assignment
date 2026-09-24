@@ -1,0 +1,327 @@
+{
+ "app": {
+  "id": 64,
+  "name": "Cloudflare",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "developers.cloudflare.com/api"
+ },
+ "record": {
+  "subcategory": "Networking / Security / Developer Platform",
+  "one_liner": "Cloudflare provides a global connectivity cloud with networking, security, performance, and developer platform services.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token",
+   "api_key"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Cloudflare supports API Tokens (bearer_token) for scoped access, Global API Key (api_key) as a legacy method requiring X-Auth-Key and X-Auth-Email headers, and OAuth 2.0 (oauth2) for self-managed applications and delegated access.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up for a free Cloudflare account and create an OAuth client from the dashboard. To make the integration multi-tenant, the developer promotes it to public by completing automated DNS TXT verification, without manual vendor approval or partner program registration. Creating API credentials and OAuth apps is free, with a generous free tier for developer platform services.",
+  "api_styles": [
+   "rest",
+   "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Primarily REST, with a dedicated GraphQL API for analytics data. Extremely broad, covering over 2,500 endpoints across all Cloudflare infrastructure and developer products.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Cloudflare officially publishes and hosts its own managed remote MCP servers, including a token-efficient 'Code Mode' MCP server that maps the entire 2,500+ endpoint Cloudflare API using just two tools (search and execute).",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "none",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.cloudflare.com/en-gb/plans/",
+    "quote": "Cloudflare’s connectivity cloud delivers 60+ networking, security, and performance services."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.cloudflare.com/api/getting-started/auth/",
+    "quote": "Cloudflare recommends API Tokens as the preferred way to interact with Cloudflare APIs."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.cloudflare.com/api/getting-started/auth/",
+    "quote": "API keys are unique to each Cloudflare user and used only for authentication... Use the Global API Key for authentication."
+   },
+   {
+    "claim": "auth",
+    "url": "https://www.cloudflare.com/blog/cloudflare-oauth-for-all",
+    "quote": "Today we are launching self-managed OAuth, enabling developers to build third-party applications that integrate with Cloudflare via OAuth. This provides a more secure, user-friendly, and manageable alternative to API tokens."
+   },
+   {
+    "claim": "auth",
+    "url": "https://www.cloudflare.com/blog/cloudflare-oauth-for-all",
+    "quote": "With self-managed OAuth, developers can now offer a standard OAuth flow where customers grant scoped access directly, making it easier to build SaaS integrations, internal developer platforms, and agentic tools..."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.cloudflare.com/plans/developer-platform/",
+    "quote": "Cloudflare always has and always will offer a generous free plan."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.cloudflare.com/fundamentals/oauth/",
+    "quote": "Cloudflare Developers can now create and manage their own OAuth applications to integrate with Cloudflare."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.cloudflare.com/fundamentals/oauth/",
+    "quote": "To make an application available to any Cloudflare user, complete the prerequisites for public visibility."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.cloudflare.com/fundamentals/oauth/",
+    "quote": "Before an application can be made public, you must verify the client domain. Domain verification helps users confirm that the application owner controls the domain shown on the consent page."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.cloudflare.com/api/overview/",
+    "quote": "Interact with Cloudflare services programmatically using the REST and GraphQL APIs."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.cloudflare.com/api/graphql-api/",
+    "quote": "The GraphQL Analytics API provides data regarding HTTP requests passing through Cloudflare's network, as well as data from specific products, such as Firewall or Load Balancing."
+   },
+   {
+    "claim": "api",
+    "url": "https://www.cloudflare.com/blog/introducing-openapi-schemas-cloudflare-api",
+    "quote": "Today, we are announcing the general availability of OpenAPI Schemas for the Cloudflare API. These are published via GitHub and will be updated regularly as Cloudflare adds and updates APIs."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.cloudflare.com/notifications/get-started/webhooks/",
+    "quote": "In the Cloudflare dashboard, go to the Notifications page... Go to Destinations. In the Webhooks card, select Create."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.cloudflare.com/cloudflare-for-platforms/workers-for-platforms/sandbox-sdk/",
+    "quote": "The Sandbox SDK enables you to run untrusted code securely in isolated environments. Built on Containers, Sandbox SDK provides a simple API for executing commands, managing files, running background processes, and exposing services — all from your Workers applications."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.cloudflare.com/cloudflare-for-platforms/workers-for-platforms/sandbox-sdk/",
+    "quote": "Give your AI agents, code interpreters, and developer tools a secure place to execute code, install packages, and interact with the filesystem."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://www.cloudflare.com/blog/cloudflare-mcp-servers",
+    "quote": "Cloudflare runs a catalog of managed remote MCP servers which you can connect to using OAuth on clients like Claude ↗, Windsurf ↗, our own AI Playground ↗ or any SDK that supports MCP ↗."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://www.cloudflare.com/blog/cloudflare-mcp-servers",
+    "quote": "The Cloudflare API MCP server ↗ provides access to the entire Cloudflare API — over 2,500 endpoints across DNS, Workers, R2, Zero Trust, and every other product — through just two tools: search() and execute()."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "auth_notes",
+    "old": "Cloudflare supports API Tokens (bearer_token) for scoped access, Global API Key (api_key) as a legacy method, and OAuth 2.0 (oauth2) for self-managed applications and delegated access.",
+    "new": "Cloudflare supports API Tokens (bearer_token) for scoped access, Global API Key (api_key) as a legacy method requiring X-Auth-Key and X-Auth-Email headers, and OAuth 2.0 (oauth2) for self-managed applications and delegated access.",
+    "reason": "Clarified the requirements for the legacy Global API Key based on checker's notes and OpenAPI schema.",
+    "url": "https://developers.cloudflare.com/api/getting-started/auth/"
+   },
+   {
+    "field": "sandbox",
+    "old": "false",
+    "new": "true",
+    "reason": "Cloudflare offers a 'Sandbox SDK' for running untrusted code in isolated environments, which is a form of sandbox for developer tools.",
+    "url": "https://developers.cloudflare.com/cloudflare-for-platforms/workers-for-platforms/sandbox-sdk/"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### **Subcategory**\n**Verdict:** CONFIRMED\n**Correction:** No correction needed.\n**Evidence:** \"Cloudflare’s connectivity cloud delivers 60+ networking, security, and performance services.\" (https://www.cloudflare.com/en-gb/plans/) The \"Developer Platform\" aspect is also evident from the numerous developer-focused products and documentation.\n\n### **One-liner**\n**Verdict:** CONFIRMED\n**Correction:** No correction needed.\n**Evidence:** The one-liner is a reasonable summary of Cloudflare's offerings, which include networking, security, performance, and a developer platform.\n\n### **Auth Methods & Primary Auth**\n**Verdict:** WRONG\n**Correction:** The primary authentication methods are API Tokens (which function as bearer tokens), the legacy Global API Key (which requires an email header alongside the key), and OAuth 2.0. The initial record correctly identified these but the naming can be clarified. The OpenAPI definition lists `bearerAuth` (HTTP bearer), `apiKeyAuth` (for the `X-Auth-Key` header), and `api_email` (for the `X-Auth-Email` header).\n*   **`bearer_token`**: This corresponds to Cloudflare's modern \"API Tokens\". The documentation recommends these as the preferred method for interacting with the API.\n*   **`api_key`**: This corresponds to the legacy \"Global API Key\", which requires both an `X-Auth-Key` and an `X-Auth-Email` header.\n*   **`oauth2`**: This is supported for third-party applications to access user accounts via a standard authorization code flow.\n\n**Primary Auth:** `oauth2` is the correct choice for multi-tenant applications, as confirmed by the launch of self-managed OAuth 2.0 for all developers.\n**Evidence:**\n*   **API Tokens (bearer_token):** \"Cloudflare recommends API Tokens as the preferred way to interact with Cloudflare APIs.\"\n*   **API Key (api_key):** \"API keys are unique to each Cloudflare user and used only for authentication... Use the Global API Key for authentication.\" The OpenAPI schema shows this requires two headers: `X-Auth-Key` and `X-Auth-Email`.\n*   **OAuth 2.0 (oauth2):** \"Today we are launching self-managed OAuth, enabling developers to build third-party applications that integrate with Cloudflare via OAuth. This provides a more secure, user-friendly, and manageable alternative to API tokens.\"\n*   **Primary Auth:** \"With self-managed OAuth, developers can now offer a standard OAuth flow where customers grant scoped access directly, making it easier to build SaaS integrations, internal developer platforms, and agentic tools...\"\n\n### **Access & Access Notes**\n**Verdict:** CONFIRMED\n**Correction:** No correction needed.\n**Evidence:** API access is available on the free plan. Any developer can sign up for a free account and create an OAuth application. These applications start as private but can be promoted to public, allowing any Cloudflare user to grant consent. This promotion is self-serve and requires automated domain verification, not manual vendor approval. The developer platform also includes a generous free tier for services like Workers and AI Gateway.\n*   **Free Account & API Access:** \"Cloudflare always has and always will offer a generous free plan\". \"Cloudflare's AI Gateway is available on all Cloudflare pricing plans, and core features are free to use.\"\n*   **Self-Serve OAuth:** \"Cloudflare Developers can now create and manage their own OAuth applications to integrate with Cloudflare.\" To create one, a user can go to \"Manage account > OAuth clients in your account on the Cloudflare dashboard.\"\n*   **Public Apps & Verification:** \"Applications start with private visibility... To make an application available to any Cloudflare user, complete the prerequisites for public visibility.\" \"Before an application can be made public, you must verify the client domain. Domain verification helps users confirm that the application owner controls the domain shown on the consent page.\"\n*   **Free Tier for Services:** The pricing page details free tiers for various developer services, including 100,000 Workers requests per day and 10GB of R2 storage per month.\n\n### **API Styles & Breadth**\n**Verdict:** CONFIRMED\n**Correction:** No correction needed.\n**Evidence:** Cloudflare's API is primarily REST but also offers a GraphQL API specifically for analytics. The API breadth is vast, covering the full range of Cloudflare products.\n*   **REST and GraphQL:** The developer documentation states you can \"Interact with Cloudflare services programmatically using the REST and GraphQL APIs.\"\n*   **GraphQL for Analytics:** \"The GraphQL Analytics API provides data regarding HTTP requests passing through Cloudflare's network, as well as data from specific products, such as Firewall or Load Balancing.\"\n*   **Breadth:** The API reference on the developer portal lists a massive number of services and endpoints, confirming the \"broad\" assessment.\n\n### **OpenAPI Spec**\n**Verdict:** CONFIRMED\n**Correction:** No correction needed.\n**Evidence:** Cloudflare officially publishes and maintains OpenAPI 3.0 schemas for its API on GitHub.\n*   \"Today, we are announcing the general availability of OpenAPI Schemas for the Cloudflare API. These are published via GitHub and will be updated regularly as Cloudflare adds and updates APIs.\"\n*   The official repository can be found on GitHub.\n\n### **Webhooks**\n**Verdict:** CONFIRMED\n**Correction:** No correction needed.\n**Evidence:** Cloudflare supports webhooks for various services, including Notifications and Stream. Users can create and manage webhook destinations through the dashboard or API.\n*   \"In the Cloudflare dashboard, go to the Notifications page... Go to Destinations. In the Webhooks card, select Create.\"\n*   The API reference includes endpoints for creating, listing, updating, and deleting webhooks.\n*   Cloudflare Stream signs webhook requests to allow for verification of their authenticity.\n\n### **Sandbox**\n**Verdict:** WRONG\n**Correction:** The initial record incorrectly states `false`. Cloudflare offers a \"Sandbox SDK\" for running untrusted code in isolated environments, built on top of Cloudflare Containers. This is a powerful tool for building AI agents and developer tools that need secure code execution capabilities. It is not a sandbox for the Cloudflare API itself, but rather a product with its own API for creating sandboxed execution environments.\n**Evidence:**\n*   \"The Sandbox SDK enables you to run untrusted code securely in isolated environments. Built on Containers, Sandbox SDK provides a simple API for executing commands, managing files, running background processes, and exposing services — all from your Workers applications.\"\n*   \"Give your AI agents, code interpreters, and developer tools a secure place to execute code, install packages, and interact with the filesystem.\"\n*   The Sandbox SDK has its own comprehensive API for managing the lifecycle of these isolated environments.\n\n### **MCP**\n**Verdict:** CONFIRMED\n**Correction:** No correction needed.\n**Evidence:** Cloudflare officially publishes and hosts its own Managed Context Protocol (MCP) servers. This includes a comprehensive server for the entire Cloudflare API and other specialized servers.\n*   \"Cloudflare runs a catalog of managed remote MCP servers which you can connect to using OAuth on clients like Claude ↗, Windsurf ↗, our own AI Playground ↗ or any SDK that supports MCP ↗.\"\n*   \"The Cloudflare API MCP server ↗ provides access to the entire Cloudflare API — over 2,500 endpoints across DNS, Workers, R2, Zero Trust, and every other product — through just two tools: search() and execute().\"\n*   The source code for these MCP servers is also available on GitHub.\n\n### **Verdict**\n**Verdict:** CONFIRMED\n**Correction:** No correction needed.\n**Evidence:** With self-serve free accounts, public API documentation, self-serve OAuth 2.0, and a free tier for API usage, a developer can start building an integration immediately. This aligns with the `ready_now` verdict.\n\n### **Blocker**\n**Verdict:** CONFIRMED\n**Correction:** No correction needed.\n**Evidence:** There are no significant blockers to development.\n\n### **Uncertain Fields**\nNone. All fields were verifiable through public documentation.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Cloudflare API authentication methods",
+   "Cloudflare API free plan access",
+   "Cloudflare create public OAuth app",
+   "Cloudflare API styles REST GraphQL",
+   "Cloudflare OpenAPI specification",
+   "Cloudflare API webhooks",
+   "Cloudflare API sandbox",
+   "Cloudflare official MCP server"
+  ],
+  "search_sources": [
+   {
+    "title": "cloudflare.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGg8_P_eteQnKiMUTSXoLkpf3NKmMr0rAumT-PWXJJikEUwIIuEuOD0p1ozFdjd1Pk3h2h18sFfVzbLzM-hJiW54HpNw_vMVErWqMRvrIPFCdoHOJ2xQFCFH_VF2o2nIk8RGAYG90mc0XFp0ZYqOw=="
+   },
+   {
+    "title": "cloudflare.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsHvtPD9h7_9-rQ7c70pb5sLL9ocXwdcnr9tcv03r3D-zQdhz5Iv32pgTc8dT2EyI2P7Q5t6jAYhaEW712phOhXxUGp10Z76CvrU_0orIN9MwaMp0fsq0yqbGGNey7BskE"
+   },
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsp9ficRK8rNjEr8QXuieePFCvVyoPZPuj2o4RM5yCGCIx5TdhMqXCIF1Kjq1AhWaY-k7K8tDex0jM1dxp1lL-Yj4lVpVzVWVBRPe637ao7Ac_RFgXm0eIm1lwHIteMDMPuuh893AdNmQsgHmADecnao3xXwZkb6HD"
+   },
+   {
+    "title": "cloudflare.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyTdho1S-C04zxY0p1KpY420wB7-jUHUjH0rD7_wRbtCZqY00xvw3jgVN0qohj8C7BtR1mRCRvGle4Vnr2x-tjiHZNOAWf1w8Ng6bDr5Yy8qKVx4krAdV1IMZtwvRMpFv77csFg8PlMNFFhfiH8HmwDyFP49VHSOy71MkrhyzlrDX1CG_Xatodd_MnVnufyP72Og=="
+   },
+   {
+    "title": "cloudflare.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgirxrYGm_dNQDEZR8lOAVDWd-K7DU8RQJ40Ym1q61-ARfKy63BGHlLT1-h-vI2ft6KanZ8jVtQMlilDcutwNwv7JMxKVkYv2YAoilBgZ2li9JGpnnsD3h3nf-7EPgNZMUB7RwbliLojeLKyfN0XL4afpjAm6Og0cPYW38sLBanN-R"
+   },
+   {
+    "title": "cloudflare.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOso0n1a4R8FtkpR2lbqrzuKGPWQ9m26mRt_dEGCxCyn6shFzGYqsvYtfb_pZyjY9e4BJnwGRzCcvSRyLF0qEQJsTBC662vGYWElKU8xv76traLY4iCT5kLW6-DHK0ZzsP6cT9iPGQyWjxttfioXKktv5ff1qwsLDUHcNsfWzhToX8qjz2NtBXhyapYw=="
+   },
+   {
+    "title": "cloudflare.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpAeMdiu0__3ga5m3uD8FxcPjehgtj5VlUJ_Sp_Vqs_klrIswDlcOVvtorbUwTvIdMUbYi6BfttvBuMUOyMZlM1TGZWz2t9FYb6r5vPJQfigrRoHZPpev6w51lE5RW_y_3vFtR4w=="
+   },
+   {
+    "title": "truefoundry.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUqQDnSb6KC64gr4ixka34OOV4dliRuFawjbxZdrqE8ce0hratpfZnFwWpgtIVog50dl1wvvWxgA-7vKx-4OWvV_xjwDyGKZZIW00V7cBI9P7UTm2p-dAWPXoQviOOh5WVhpdOdrJVhJjiiW5AOVlP3PLz0E0Kbswv"
+   },
+   {
+    "title": "cloudflare.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHx9VNn2qVEEIjM_nlYErTOKcA2jy9hr0sVBPyHX9HEqN04Dpa4kHl9fQo-6PlZ6Qg1g1DmS55rNxhJYGtEA2Y1vLGsFmxCjWAe0UvDJDsLgBDODcJSadNxBlOI2Dn_z9RwAj3UWoeIVob6HSjSggV7"
+   },
+   {
+    "title": "ubitools.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMGxTbPsHCj1T1OiaMfeiEJjBPHcS0OAtgw7f_dhpBP4vkBXoMlO3Xult1bn1HYss2iCR9GaEXeFnnlWB79th5xAGt0lngAri-fzHnP2y4WFMByLarEiy_xWt1YOJ9ju97HTclUE4hZobJaw=="
+   },
+   {
+    "title": "cloudflare.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgdgnyIGxf8qjmsKqgKqKU2JCDbc7H2Rob0-8j5QWVh6nD4k88wvY8Ny7na_THFzJiaYk_7pLCyk5CpV7uNFSomOdji-MCRaaR3lpmXuKCIcc5WcllQ7-CzlFM5w=="
+   },
+   {
+    "title": "cloudflare.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGcw4wQlOupVB0Z6Mz65Zx9Slbufs_GCO-pFyui9_GqN-aSDjBtSRbratRTIdPwCk1s2am2eSbcfUYbaEMfsG6foL3JryHncheam65CYYWqMGgztgd2Izj_tftQn1b6PHaGzh0R_H6_0yXhJx2wOkdmNjZ"
+   },
+   {
+    "title": "cloudflare.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGn_tTmC5bQlmh4kM4MjeWFn6j8rZvQ-X2IDNn6pRCJ5GxFlHeBqJvAZ8UD60K82Avr-wQJxSiAbRxZB8cFDQvAtX3z_T-cUOg12i2KNOKwt6KPJmPha3yZd0XMwPZF0PJnQ31nXz-lWRqsHgrzHulJQkoM4hLEhAcJDanQcB7lzg5PCA=="
+   },
+   {
+    "title": "cloudflare.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkvQJjcGvlZpKWyJwP_BUFgFdmiMau78BfAjhncq5xGyan2pEKXBK-8cL7SO6bRmEwzAe6SQwrJ56Cypxzx7BHcvANRDdRmfdPrek_MzWXGqDWmzutk_ftAiD1m6-vOJ94YX3FYzPTD0CnNQ=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF65EQsBFlAZdUNpnMgbsd7sscZyoEh8VlxBnWwuW-3tRlE2b1c2g-0zcjY0JDNTHr66f-3F1ggnoax0dn-zDnUD-nCEOnacStEOg1gIui1t5a5zOSsFAWruRVCIJQOrWT2SuAN"
+   },
+   {
+    "title": "cloudflare.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyw9nhOE2vkii9kXBKlz6YUE-h3LEoTDUcITkJUgz0H2SX_dl40D0vGS5V63gN8AC9cQ7BP1r229GxF7bV9Zfs_64rB40_IUGxkKaE6sSW8EozI60FoP2p1IN__w9g19Pa"
+   },
+   {
+    "title": "cloudflare.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFl2lq3RStd7xiHBuf1PQ7fKVT8NcZY1LtPMn523bGd6hCQxKldBozWUjzw17gfh6E6BX7YwzGKqjfZj22yVJrOnRGnRXhyQV8eXNOiOYF6ZB4RCUbsN-ozxqJQq3DcPs6MBn1mHr0iuFLcS8Ej3aI8KX5BMwgt45xVLb8t3VBXgrwIBzX91uWjPBA="
+   },
+   {
+    "title": "cloudflare.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_7wtxH9adr_lOMqBKU4DvWBsvBTRks5l1yUFRlvjbosJSkrPl3FaF7TPPxg6p2_KKUTkzzA4a_IqarVOWMDJ-IUSel7NQOfp6wO5TaUvYEl6pGvl8-ic07iWNAvFXRDAssO9MAu1Vc43BVVeVAC5cpWRZbikIANf9imJRLLlZXOpFKSomgqhSahNK0Bcetr8_"
+   },
+   {
+    "title": "cloudflare.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEpTOLWKkE5HgfrFNZJFXXtos73BT1ooTXtpx8OwWy5UgvXgnSPGbOd2rzZkovT0eCFNY5wiMY3YefWAevdsrUeFztruHzRebNkKuMp08ORzcWKhCFGKV-hYfVAjicHwrtBLSV3dMG9iBzK76h6QEJXjchLM4qXftVWuModdW4zBoPmac-6rCw"
+   },
+   {
+    "title": "cloudflare.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4JNeNap1Ok4IVSlZQ7Mhr-amwihRlOE-3rQA2f41i6dPX2gFYE_teVp53f6yqDuJ9VKLFO1e7gH73Qw2K5O5c45o4_SYN5436pJB9Hr6G4Yd9xS7G67urkrpmXfV5aZ7g02xHHA=="
+   },
+   {
+    "title": "cloudflare.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_o9PcQWvzMrN6b1OgtcPvsqnGakci1ZsRqpx9BUGy0BLj6-camLosCIpJMFo6ZWNURByWs-MgBspNiFTRnHFO89AsoUt4wtScileFxtYcd9elIr5SYZtNh34QkjCYtsEPcmpSitTdizQ="
+   },
+   {
+    "title": "cloudflare.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkd_6OPO6XdUF8G91RliekOlJAacaXOSqSN9-3s9OnaFRa-0gjk2V16OAGXWGJIEkhDpfQR4vLY1T-EeH2kOQhKpjItNMTLGewYut4MCO1RiNg40ZeMFVa1ukeFssiKFjy9Rg7M2O90bc="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhk6we9x2JSfGIsKPjx3kQqMubk9PFWHOEAfC6oFZHnWo37KijzHU41BVd7KlkMVWpDtArlpxUayRqgc6WGfVaLpIgPLcVb98zG-S0UxOc5Zdi4y34o1ZD9Ae5BoM8144bmU67"
+   },
+   {
+    "title": "cloudflare.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF769fvFo5II83c2iohZ3SBft7W8wDJeZ8JZwqQ2-fGDb56aMF8pZiKexqvQbjyQRpEKdNtw50m7vM5-d7-LQxO0Psw59hwLWyQ6lhXJRg79ACAn5w7fLjvEos="
+   },
+   {
+    "title": "mcpserver.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhvoOgFcQOfn7lUuWizkAQ2OLC9X9bFf1Dnzm93QLhOOY7umWMrsYI5LGVhwKk-nH2vSOg3HSrvADnf9vh6wf09hUGVdRZK5ZyUfiJId_UfJKl9YyIM2Be7gO_4Aw="
+   },
+   {
+    "title": "cloudflare.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJbpb7-I5G-OLJ5rui8Uvoyk2SbqF0VLsMsOLdPTKhpCXm42q9EbPhYSMBxiqB4cIbOcmT_7wbqwJQGD4X1nc8S-ftUC-IXfh4hKbgdFgGs3f5lyYzEMhqyrRkOoJnsyIZZfZk1_IjptLpexY1IRg6Mp4a_yeiPnzX4_TOYgsCIpcI1jdzAZSz5e5bMobU2sp1LvtDnsYiNk8I6rhu"
+   },
+   {
+    "title": "cloudflare.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVK-DdFz37GTW6zU6tu3U8VpcXGwI8s85_p4WPCz8AzRANLaB_xLTJ0VhOMlOBPe6gNFX6VNp6gh6P9qv-9z57egoP7yKm9FVIQNwYDWq3CxfxuxHdazYUzrmwbA2vW4eGSClyhG5qWX9X13iacRDC209O_kvcRo0tgkVaeUtp6w=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiKB0F11n_kZsGEsI266zbFPCrOP4ok_0m-43Miu4Pyh3py5IsrsrSLrzbUsBPrkjahmDgjyLBSMJ0ik0G0tlMclR_ENbhgFnmAoGau1IhvZSWHvESJ9SgMM3xMouOuRzMpUga1AeroDob-QZUkw=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFrs1fWBuZK8SlnmoOcQHKjNUS34WOQIqCKrV5gpV4pAUV4UYvJNyiitS5PXgoyRkjAROgzaZQMnzaaX9_nNzOWp0gF8ejT7IhmlZV4KQo2MD2jU-HeLt7NOWztw=="
+   }
+  ],
+  "tokens": 10207,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://www.cloudflare.com/en-gb/plans/",
+    "status": 200,
+    "chars": 11192,
+    "readable": true
+   },
+   {
+    "url": "https://developers.cloudflare.com/api/",
+    "status": 200,
+    "chars": 195181,
+    "readable": true
+   },
+   {
+    "url": "https://www.cloudflare.com/blog/cloudflare-oauth-for-all",
+    "status": 200,
+    "chars": 9294,
+    "readable": true
+   },
+   {
+    "url": "https://developers.cloudflare.com/fundamentals/oauth/",
+    "status": 200,
+    "chars": 5062,
+    "readable": true
+   },
+   {
+    "url": "https://www.cloudflare.com/plans/developer-platform/",
+    "status": 200,
+    "chars": 6193,
+    "readable": true
+   },
+   {
+    "url": "https://developers.cloudflare.com/api/overview/",
+    "status": 0,
+    "chars": 0,
+    "readable": false
+   },
+   {
+    "url": "https://www.cloudflare.com/blog/cloudflare-mcp-servers",
+    "status": 200,
+    "chars": 9294,
+    "readable": true
+   },
+   {
+    "url": "https://www.cloudflare.com/blog/introducing-openapi-schemas-cloudflare-api",
+    "status": 200,
+    "chars": 9294,
+    "readable": true
+   }
+  ],
+  "seconds": 48.4
+ }
+}

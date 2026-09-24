@@ -1,0 +1,251 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://withone.ai",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.68
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://integrations.sh",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.67
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://otter.ai/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://usecarly.com",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://integrations.sh",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.55
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://apitracker.io",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.82
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://apitracker.io",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://usecarly.com",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.86
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/bcharleson/otter-cli",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.5
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://usecarly.com",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.67
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://usecarly.com",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.83
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://merge.dev/mcp/otter-ai",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.spokenly.com/blog/otter-ai-pricing/",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.manufact.com/mcp/otter-ai",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://help.otter.ai/hc/en-us/articles/16340013323415-Workspace-Webhooks",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://merge.dev/mcp/otter-ai",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "bearer_token": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://merge.dev/mcp/otter-ai', 'https://www.spokenly.com/blog/otter-ai-pricing/', 'https://www.manufact.com/mcp/otter-ai', 'https://help.otter.ai/hc/en-us/articles/16340013323415-Workspace-Webhooks', 'https://merge.dev/mcp/otter-ai']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://withone.ai', 'https://integrations.sh', 'https://otter.ai/pricing', 'https://usecarly.com', 'https://integrations.sh', 'https://apitracker.io', 'https://apitracker.io', 'https://usecarly.com', 'https://usecarly.com', 'https://usecarly.com']\n- Non-vendor sources (prefer official docs): ['https://withone.ai', 'https://integrations.sh', 'https://usecarly.com', 'https://integrations.sh', 'https://apitracker.io', 'https://apitracker.io', 'https://usecarly.com', 'https://github.com/bcharleson/otter-cli', 'https://usecarly.com', 'https://usecarly.com']",
+ "metrics": {
+  "n_evidence": 23,
+  "alive_rate": 0.782608695652174,
+  "dead_rate": 0.21739130434782608,
+  "blocked_rate": 0.0,
+  "official_rate": 0.391304347826087,
+  "readable": 18,
+  "quote_supported_rate": 0.4444444444444444,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

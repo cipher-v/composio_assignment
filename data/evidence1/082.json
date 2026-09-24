@@ -1,0 +1,160 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://plaid.com/docs/auth/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.75
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://plaid.com/pricing/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.87
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://plaid.com/docs/quickstart/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.65
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://plaid.com/docs/api/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.71
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://plaid.com/docs/quickstart/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.65
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://plaid.com/pricing/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.73
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://plaid.com/docs/account/billing/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.57
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://plaid.com/docs/api/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://plaid.com/docs/api/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.61
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://plaid.com/pricing/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://plaid.com/docs/api/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://plaid.com/docs/quickstart/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://plaid.com/docs/dashboard/mcp/",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://plaid.com/docs/api/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  }
+ ],
+ "auth_support": {
+  "api_key": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://plaid.com/docs/dashboard/mcp/']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://plaid.com/docs/api/', 'https://plaid.com/pricing/', 'https://plaid.com/docs/api/', 'https://plaid.com/docs/api/']",
+ "metrics": {
+  "n_evidence": 14,
+  "alive_rate": 0.9285714285714286,
+  "dead_rate": 0.07142857142857142,
+  "blocked_rate": 0.0,
+  "official_rate": 1.0,
+  "readable": 13,
+  "quote_supported_rate": 0.6923076923076923,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

@@ -1,0 +1,240 @@
+{
+ "app": {
+  "id": 81,
+  "name": "Stripe",
+  "category": "Finance and Fintech",
+  "hint": "stripe.com/docs/api"
+ },
+ "record": {
+  "subcategory": "Payments",
+  "one_liner": "Stripe is a comprehensive financial infrastructure platform for online and in-person payment processing.",
+  "auth_methods": [
+   "api_key",
+   "bearer_token",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "API Keys via HTTP Basic Auth (secret keys or restricted keys) or Bearer Tokens. OAuth 2.0 for multi-tenant integrations via Stripe Connect or Stripe Apps.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up for a free Stripe account and immediately access test mode API keys. Live transactions are pay-as-you-go.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "RESTful API with predictable resource-oriented URLs, JSON-encoded responses, and standard HTTP codes. Covers accounts, balances, charges, customers, disputes, events, invoices, payment intents, payouts, refunds, and subscriptions.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Stripe officially hosts a remote MCP server at https://mcp.stripe.com, allowing secure client access via OAuth.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. Self-serve free developer access, official OpenAPI spec, robust webhooks, and official hosted MCP server.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://stripe.com/in/pricing",
+    "quote": "...payments online payments payment links no-code payments checkout prebuilt payment uis elements flexible ui components payment methods access to 125+ authorization boost acceptance optimisations link accelerated checkout revenue billing recurring revenue metronome usage-based billing subscriptions subscription management invoicing one-time or recurring tax sales tax & vat automation revenue recognition accounting automation stripe sigma custom reports data pipeline data sync money management..."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.stripe.com/api/authentication",
+    "quote": "The Stripe API uses API keys to authenticate requests. You can view and manage your API keys in the Stripe Dashboard... The Stripe API authenticates requests using HTTP Basic Auth. Provide your API key as the basic auth username value. You don't need to provide a password. If you need to authenticate using bearer auth (for example, for a cross-origin request), use -H \"Authorization: Bearer sk_test_...\""
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.stripe.com/stripe-apps/api-authentication/oauth",
+    "quote": "Use the industry standard OAuth 2.0 to authenticate requests to the Stripe API on behalf of your users."
+   },
+   {
+    "claim": "access",
+    "url": "https://stripe.com/in/pricing",
+    "quote": "Stripe is free to join, but not free to use. The Stripe fees associated with transactions and other services are how they make money."
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.stripe.com/api",
+    "quote": "You can use the Stripe API in sandboxes without affecting your live data or interacting with banking networks. The API key that you use to authenticate the request determines whether the request runs in live mode or in a sandbox."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.stripe.com/api",
+    "quote": "The Stripe API is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs."
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/stripe/openapi",
+    "quote": "An OpenAPI specification for the Stripe API. Use these files to generate SDKs or client libraries that support Stripe's API. The specifications include both v1 and v2 endpoints and events, providing complete API coverage in a single file."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.stripe.com/quickstarts",
+    "quote": "set up and deploy a webhook set up and deploy webhooks to listen to stripe events."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.stripe.com/mcp",
+    "quote": "Stripe hosts a remote MCP server at https://mcp.stripe.com . This allows secure MCP client access via OAuth. View the docs here. You can also build autonomous agents with MCP as well."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### 1. Product Overview\nStripe is a comprehensive financial infrastructure platform for the internet. It provides a suite of tools for online and in-person payment processing, subscription management, invoicing, fraud prevention, tax automation, and financial data pipelines.\n* **Source URL:** `https://stripe.com/in/pricing`\n* **Verbatim Quote:** \"...payments online payments payment links no-code payments checkout prebuilt payment uis elements flexible ui components payment methods access to 125+ authorization boost acceptance optimisations link accelerated checkout revenue billing recurring revenue metronome usage-based billing subscriptions subscription management invoicing one-time or recurring tax sales tax & vat automation revenue recognition accounting automation stripe sigma custom reports data pipeline data sync money management...\"\n\n### 2. Authentication Methods & Multi-Tenant Integration\nStripe supports multiple authentication methods for its public API:\n* **API Keys via HTTP Basic Auth:** Secret keys (`sk_test_` / `sk_live_`) or Restricted keys (`rk_test_` / `rk_live_`) passed as the username in HTTP Basic Auth.\n* **Bearer Tokens:** Secret keys passed via the standard `Authorization: Bearer` header.\n* **OAuth 2.0:** Used via Stripe Connect or Stripe Apps to authenticate on behalf of other Stripe accounts.\n\nFor a multi-tenant integration platform, **`oauth2`** is the primary authentication method used to securely interact with the API on behalf of third-party users.\n* **Source URL:** `https://docs.stripe.com/api/authentication`\n* **Verbatim Quote:** \"The Stripe API uses API keys to authenticate requests. You can view and manage your API keys in the Stripe Dashboard... The Stripe API authenticates requests using HTTP Basic Auth. Provide your API key as the basic auth username value. You don't need to provide a password. If you need to authenticate using bearer auth (for example, for a cross-origin request), use -H \\\"Authorization: Bearer sk_test_...\\\"\"\n* **Source URL:** `https://docs.stripe.com/stripe-apps/api-authentication/oauth`\n* **Verbatim Quote:** \"Use the industry standard OAuth 2.0 to authenticate requests to the Stripe API on behalf of your users.\"\n\n### 3. Credential Acquisition & Cost\n* **Access Level:** `self_serve_free`\n* **How to get credentials:** Any developer can sign up for a free Stripe account instantly on the website. Upon registration, they gain immediate access to the Developers section of the Stripe Dashboard, where they can obtain test mode API keys.\n* **Cost:** Creating an account and using the API in test mode (sandbox) is entirely free. Stripe operates on a pay-as-you-go, usage-based model for live transactions.\n* **Source URL:** `https://stripe.com/in/pricing`\n* **Verbatim Quote:** \"Stripe is free to join, but not free to use. The Stripe fees associated with transactions and other services are how they make money.\"\n* **Source URL:** `https://docs.stripe.com/api`\n* **Verbatim Quote:** \"You can use the Stripe API in sandboxes without affecting your live data or interacting with banking networks. The API key that you use to authenticate the request determines whether the request runs in live mode or in a sandbox.\"\n\n### 4. API Style & Technical Characteristics\n* **API Style:** REST\n* **Breadth:** Extremely broad, covering accounts, balances, charges, customers, disputes, events, invoices, payment intents, payouts, refunds, and subscriptions.\n* **OpenAPI Spec:** Yes, officially published and maintained on GitHub.\n* **Webhooks:** Fully supported for real-time event listening.\n* **Sandbox:** Supported via a comprehensive \"Test Mode\" environment.\n* **Source URL:** `https://docs.stripe.com/api`\n* **Verbatim Quote:** \"The Stripe API is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.\"\n* **Source URL:** `https://github.com/stripe/openapi`\n* **Verbatim Quote:** \"An OpenAPI specification for the Stripe API. Use these files to generate SDKs or client libraries that support Stripe's API. The specifications include both v1 and v2 endpoints and events, providing complete API coverage in a single file.\"\n* **Source URL:** `https://docs.stripe.com/quickstarts`\n* **Verbatim Quote:** \"set up and deploy a webhook set up and deploy webhooks to listen to stripe events.\"\n\n### 5. Model Context Protocol (MCP) Support\n* **MCP Server Availability:** `official`\n* **Details:** Stripe officially hosts a remote MCP server at `https://mcp.stripe.com`, allowing AI agents to securely connect via OAuth or API keys to interact with the Stripe API and search documentation.\n* **Source URL:** `https://docs.stripe.com/mcp`\n* **Verbatim Quote:** \"Stripe hosts a remote MCP server at https://mcp.stripe.com . This allows secure MCP client access via OAuth. View the docs here. You can also build autonomous agents with MCP as well.\"\n\n### 6. Buildability Verdict & Blockers\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. Stripe provides fully self-serve free developer access, an official OpenAPI specification, robust webhook support, and an official hosted remote MCP server, making it immediately buildable for an agent toolkit.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"stripe\" \"model context protocol\" OR \"mcp\"",
+   "stripe api authentication oauth connect",
+   "stripe openapi spec github",
+   "stripe pricing free tier developer account",
+   "\"The Stripe API uses API keys to authenticate requests\"",
+   "\"Authenticate your API requests by including your secret key\""
+  ],
+  "search_sources": [
+   {
+    "title": "stripe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0Yy1lpgPtmXww9liN2OTYzGqJ2oGkm0j2w1bz1H4xqzowMmW1kag6Q-4mVUMrP0adg8o8uJcJCcRB05WGWKqSLgVaVrByt0sH5sN4mcbQpk95Yypw"
+   },
+   {
+    "title": "themehigh.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_TN7Ft2ahB6aMXSMR8q8R7_DgBP22uedQG9j0FHwUFX3aDSj66fdNbELaLj1fUiQfMO6_fLp212LEPtuuCfJRmMhVugkoaNH2sKjsxBfUIO4xv_8miqKIfTyjN03fsuNQHJwNplcqliN8zaBcas9FyrfWShaMa3asbrvihfdJ92_KzTR68X9SQrnEOpl5jqfIxzUVdgfeqHdhgdeR95g="
+   },
+   {
+    "title": "webflow.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGw5VHeHYhcmi5n32Lw7wnaaIldmzeVEfEPFd2wkQnTopVFIPXoLxpuENMqj4zYARhJpD4XykbRp4VMv0IeVVKJlF5cpT954E-y2KYC7MOLwO3emd1IirYerKvZ9KvGMEmq9Gwau2c="
+   },
+   {
+    "title": "stripe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEd8LXI_d4whPiOdHEZzevrg8S2E7lNsWYBQcVD4bb70XJ45TgO67LTubzPJjlpKGqqAZgbpV6lDoMgG_gsacKFoRyqwjsJznNaVGlUzRsm5KJYqODRQrlkOrXTbEljI022oTdSlyBfl00Su2grQihtj3CYEhqTI912COIwjs2195-J"
+   },
+   {
+    "title": "websafecode.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGro9k1i9Vq-bl-EJR6V0tEfhjwKfadYzn6Hwv0COlQu6KmnA5o_tMGEQrssy0RgX_fL2zdQIFPQ-C3Bi2uZ6uEVMV1_w0jw4ZlXlqKCRQoJ6oHiQ=="
+   },
+   {
+    "title": "stripe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlvEiT1zVh2cPByI1675bRCpd77qtFvV097Kw8_DVVOqzqSGWqqQqQ3sA0y0EHWYuL3wo4ZFtjyvdA9N9XO275Avrk9Keaa9ppndBsZKiTWxaWiaxpGmWQ41FbixT9kIAwg-POd9sMh2G5d9e8AWnOXxedCJjCSUlBMjHRIK0="
+   },
+   {
+    "title": "hubifi.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDetPDU4oPD3LdpmowrT3wGt0JZRrMN0rgcBllXYpP_XoYxk-YOE2iWUM0f0bY6K4kMBpZPtiN40UE544R22iy5MpUXHW4EhBDnkiBbM8adWyFwwMee-ATycUdfLD78r1giCFl-hbUCpN3sVL-V2EHQOC7rec="
+   },
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcry0qvbRlu47CVFUxNPfS9Ht4R9FNI7TxieagWnAbUgrqft8ax3Nu-xEQYhx0kKk_Wl46dm2e4Ysf1ijqMdjwqQVMe8h3Ezq2yGHk6BcevOEpB2a5-iReLgVjG_uu7xjydDu_ahoiYChgDdOe"
+   },
+   {
+    "title": "withorb.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6LTD11DhnvQXjWlHc5ckGQqOtN7OWj0K1S1OkILIzgaGpFrz3m4vpNpwsDuczFeP0n-z2ttOqB-B1CdlktxoyfRs2j0j0VjNAP03V8yk6FIaLhVHESNsBJnoamL0q36c3nWT50uc="
+   },
+   {
+    "title": "mintmcp.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-PO2F1dhLi3_TkQkAMbtPwClzdyxmR40cXP69J6nTJY9pw9zPiXEMuM3y2VUX5b_iXpaxkSu2cv4SH2jtaIUkBqpmrHVChqAR51ZP3cFaUeEtiJhepjSOTDSW7Yj3g8IYbDiHa1wjBILoThoZ"
+   },
+   {
+    "title": "mcpservers.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2aH3kN9fzii4HGhTnGUq19yNMTp8iLdiGWxKQnhBcNMT1vw1UfUGMNqYc_hJ8-wEmI0bFic_DFbJ3h5qawPMBG0Hm-yRcatF9ofHwBdSBIxCTmtd20Yc6Vpkw-p3XnDezIe3Lv8LKIDfUoQ=="
+   },
+   {
+    "title": "stripe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2WPeeCt5FyBSt_KujJi9mATBDyH5TTNGEKfA_LX0xiJDOquwsETlhDp39d3ufDWr3ZIwVTmIp_NMckuNAS49gHZYLuUFkOMAjuYIe9QchK-0gYb35u5aTt-DCXEi6yg=="
+   }
+  ],
+  "tokens": 7442,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Stripe API authentication URL",
+    "Stripe API keys documentation URL",
+    "Stripe OAuth documentation URL",
+    "Stripe API getting started URL",
+    "Stripe API quickstart URL",
+    "Stripe API pricing URL",
+    "Stripe API plans with API access URL",
+    "Stripe developer program URL",
+    "Stripe API reference index URL",
+    "Stripe MCP server official",
+    "Stripe MCP server community"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://docs.stripe.com/quickstarts",
+    "https://stripe.com/in/pricing",
+    "https://docs.stripe.com/api",
+    "https://docs.stripe.com/mcp",
+    "https://docs.stripe.com/api/authentication",
+    "https://docs.stripe.com/payments/quickstart-payment-intents",
+    "https://docs.stripe.com/keys",
+    "https://docs.stripe.com/api/authentication?api-version=2025-06-30.basil",
+    "https://docs.stripe.com/stripe-apps/api-authentication/managed-api-keys",
+    "https://docs.stripe.com/keys/managed-api-keys",
+    "https://docs.stripe.com/stripe-apps/api-authentication/oauth",
+    "https://docs.stripe.com/connect/oauth-reference",
+    "https://docs.stripe.com/connect/oauth-standard-accounts"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://stripe.com/docs/api-keys",
+     "status": 404
+    },
+    {
+     "url": "https://stripe.com/docs/oauth",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://docs.stripe.com/quickstarts",
+     "status": 200,
+     "chars": 3660,
+     "readable": true
+    },
+    {
+     "url": "https://stripe.com/in/pricing",
+     "status": 200,
+     "chars": 21408,
+     "readable": true
+    },
+    {
+     "url": "https://docs.stripe.com/api",
+     "status": 200,
+     "chars": 9070,
+     "readable": true
+    },
+    {
+     "url": "https://docs.stripe.com/mcp",
+     "status": 200,
+     "chars": 8801,
+     "readable": true
+    },
+    {
+     "url": "https://docs.stripe.com/api/authentication",
+     "status": 200,
+     "chars": 8171,
+     "readable": true
+    },
+    {
+     "url": "https://docs.stripe.com/payments/quickstart-payment-intents",
+     "status": 200,
+     "chars": 1838,
+     "readable": true
+    },
+    {
+     "url": "https://docs.stripe.com/keys",
+     "status": 200,
+     "chars": 22078,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 193.2
+ }
+}

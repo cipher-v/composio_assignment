@@ -1,0 +1,91 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.salesforce.com/in/commerce/pricing/?bc=OTH",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.8
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYQA7Z_WJLy3GiFUHB5_iDusk-a9qBdW0MBvP_zI4lQKpop8RYRCM4wTF6w2H3XMKac2hGYmaJyQ0vmgzaXYaNnQ0K16n3dxMd-9VWTM-TZLptEd8Ys9xyxXH8pNhg7-KzAdZ5GXZLK9Wnfy4CT0XF1KCXAein74_S5jBT8pwDfNBSebtW5kwdY_D1cXp6XbWD4QmyRGCJKGq8A8wQn44=",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJGy4XdRXC8qNxD4vcGkgpSYyxzqNLWdJv32LbQGD7V7e5zHI1VOvHV57N1GWPEayYL1QTC3PcqZnD83k4ErYTWneZpxowGBepidNt428DcVGpiG2sQYJmuQmblQJ3M_dwQagphhGkVov3gYGTgx4bFVCyZHrUJMAtVW1Z4Z5L8hw==",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8MgDs4Bnq5XZu5PfRiSjRaDEtgJnBpze1t5iCLAH5o1dMdr3A0FETfgD-SrQ7g0CU4b2snB7P5TkQI29jkL5Q8r4ORM8weRiuNJAL7AWxO4O4Ko80Fa_Q2tnNJ_WogmVmVCNRgmgr733PAJWKf_tg04f24HJApStq-wS587YSkicxdwbr9Y1LZZb7",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.72
+  },
+  {
+   "blocked": true,
+   "claim": "api",
+   "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHV4tWTwqx7qwvWgR9YSF0nYrA7PZr_VkChhT_2M2Qxo0DFV0rnhjYdkndO6fBnzk88NlxM0nKRObJ3uBt6voFpx-dibnk2gXKFzsDjleM8u6hOePZqvdSQOHJOdu-JjxFNq4ty_AvVRrtOCyrp69R_mD8g_cgvJseLF9OrqvwUx-9J3ndamsFJpdPu0gmZLAe3kJ49jWEdcwltZ6H-vWk=",
+   "status": 403,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/mcp/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.17
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGZxp3XVhu3P1ldIbtG-N0sfxU9jqEif0coxr71LAveWQmziw8fsJKgv4D-SNaLiJwaCBARt5fNSqqFpQpTLQp26r4BD_J7gLVMD2LDHovVnmfaRSrQwhR--nKjSV9dFwBBQtI9BbW9-JPdF7izk2VuO-t3e2E5yxXZ4Q==",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "oauth2": false,
+  "bearer_token": false
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYQA7Z_WJLy3GiFUHB5_iDusk-a9qBdW0MBvP_zI4lQKpop8RYRCM4wTF6w2H3XMKac2hGYmaJyQ0vmgzaXYaNnQ0K16n3dxMd-9VWTM-TZLptEd8Ys9xyxXH8pNhg7-KzAdZ5GXZLK9Wnfy4CT0XF1KCXAein74_S5jBT8pwDfNBSebtW5kwdY_D1cXp6XbWD4QmyRGCJKGq8A8wQn44=', 'https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJGy4XdRXC8qNxD4vcGkgpSYyxzqNLWdJv32LbQGD7V7e5zHI1VOvHV57N1GWPEayYL1QTC3PcqZnD83k4ErYTWneZpxowGBepidNt428DcVGpiG2sQYJmuQmblQJ3M_dwQagphhGkVov3gYGTgx4bFVCyZHrUJMAtVW1Z4Z5L8hw==', 'https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGZxp3XVhu3P1ldIbtG-N0sfxU9jqEif0coxr71LAveWQmziw8fsJKgv4D-SNaLiJwaCBARt5fNSqqFpQpTLQp26r4BD_J7gLVMD2LDHovVnmfaRSrQwhR--nKjSV9dFwBBQtI9BbW9-JPdF7izk2VuO-t3e2E5yxXZ4Q==']\n- Bot-walled / login pages our crawler could not read (verify via search): ['https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHV4tWTwqx7qwvWgR9YSF0nYrA7PZr_VkChhT_2M2Qxo0DFV0rnhjYdkndO6fBnzk88NlxM0nKRObJ3uBt6voFpx-dibnk2gXKFzsDjleM8u6hOePZqvdSQOHJOdu-JjxFNq4ty_AvVRrtOCyrp69R_mD8g_cgvJseLF9OrqvwUx-9J3ndamsFJpdPu0gmZLAe3kJ49jWEdcwltZ6H-vWk=']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://salesforcecommercecloud.github.io/b2c-developer-tooling/mcp/']\n- Auth methods not mentioned on any cited page: ['oauth2', 'bearer_token']",
+ "metrics": {
+  "n_evidence": 7,
+  "alive_rate": 0.42857142857142855,
+  "dead_rate": 0.42857142857142855,
+  "blocked_rate": 0.14285714285714285,
+  "official_rate": 1.0,
+  "readable": 3,
+  "quote_supported_rate": 0.6666666666666666,
+  "lint_issues": 0,
+  "flag_count": 4
+ }
+}

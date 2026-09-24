@@ -1,0 +1,276 @@
+{
+ "app": {
+  "id": 22,
+  "name": "Twilio",
+  "category": "Communications and Messaging",
+  "hint": "twilio.com"
+ },
+ "record": {
+  "subcategory": "Cloud Communications",
+  "one_liner": "Twilio provides APIs for integrating SMS, WhatsApp, voice calls, email, and verification into software applications.",
+  "auth_methods": [
+   "basic",
+   "api_key",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Twilio offers Twilio Connect, an OAuth 2.0-based solution specifically for multi-tenant applications. This allows a third-party application to securely access a customer's Twilio account data and perform actions on their behalf, with billing handled directly by Twilio. While standard account-level OAuth apps are single-tenant, Twilio Connect is the designated multi-tenant approach. Another method for multi-tenancy involves programmatically creating subaccounts for each tenant under a main account.",
+  "access": "self_serve_trial",
+  "access_notes": "Developers can sign up for a free trial without a credit card. The trial expires after 30 days, requiring an upgrade to a usage-based paid plan.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extremely broad REST API covering messaging, voice, video, conversations, flex, serverless, and identity. Officially open-sourced OpenAPI spec available.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "none_found",
+  "mcp_notes": "The `twilio/ai` GitHub repository contains tools and skills for AI agents but is not an MCP server. No official MCP server was found.",
+  "verdict": "ready_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "Trial expires after 30 days requiring a paid plan. Multi-tenant integration requires implementing the Twilio Connect OAuth 2.0 flow.",
+  "evidence": [
+   {
+    "claim": "auth",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZ-FIDzpqbHt5_Glt7zHFVGQUC07yTMOS4dLYk-y0CBCXSZqBaqLXUX4cv9QeL3kXQZZNf7UTdFMdSTtCkp4LYnNUQSUkRnrH__K0se_4r-jlosbBwCsL6PVITJtLkV_09gjbv2MY",
+    "quote": "View your Account SID and Auth Token for API authentication."
+   },
+   {
+    "claim": "access",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFj-dc4XCjgh85SH4jeeymicTfh-sS4c-K22dEhWsKAiTa_pk8uVrfqqcqoCjs9MVK6zmOdVAYGgogWOHcdO5QRvdhpMhCB65rrf-s04gU6VSVoKRmLfypJpuM7GIJWqhbdOR8=",
+    "quote": "Trial accounts expire after 30 days. Upgrade your account before your trial expires to keep building."
+   },
+   {
+    "claim": "api",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG95a8ElCUGoKPShUbR5l52Svn1z9XYAFSRmu2VIUBx8WPgGmsZYXn_UD6LUm_QZwjOlzHKiVJWAEleIP19BSM7xHxqoh6QuWvhN6EFD_EAd5ERUyRJKOExHbg",
+    "quote": "securely authenticate Twilio REST API requests, and best practices for accessing Twilio."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF95TCg2NVwRt-YBIDhY6wwX0Had6rjKZtNvGWqpiNEV33JsYSvQlqCqvl1G7nEUX5TEMrjnRpSRL4zhJrW6XXdiNugCxnqVygoIiDTZycFBhqn-mCDRw==",
+    "quote": "Official Twilio Skills and MCP for AI coding agents. Works across Claude Code, Cursor, Codex, and any tool supporting the Agent Skills standard."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "primary_auth",
+    "old": "basic",
+    "new": "oauth2",
+    "reason": "Twilio offers Twilio Connect, an OAuth-based flow designed for multi-tenant applications, making OAuth 2.0 the correct primary authentication method for a multi-tenant integration platform.",
+    "url": "https://www.twilio.com/docs/usage/account-security/twilio-connect"
+   },
+   {
+    "field": "auth_notes",
+    "old": "OAuth 2.0 apps are strictly single-tenant. Multi-tenant platforms must collect individual Account SID and Auth Token or API Keys via HTTP Basic.",
+    "new": "Twilio offers Twilio Connect, an OAuth 2.0-based solution specifically for multi-tenant applications. This allows a third-party application to securely access a customer's Twilio account data and perform actions on their behalf, with billing handled directly by Twilio. While standard account-level OAuth apps are single-tenant, Twilio Connect is the designated multi-tenant approach. Another method for multi-tenancy involves programmatically creating subaccounts for each tenant under a main account.",
+    "reason": "The original note incorrectly stated that Twilio's OAuth 2.0 is strictly single-tenant for multi-tenant platforms. Twilio Connect is specifically designed for multi-tenant OAuth.",
+    "url": "https://www.twilio.com/docs/usage/account-security/twilio-connect"
+   },
+   {
+    "field": "mcp",
+    "old": "official",
+    "new": "none_found",
+    "reason": "The cited GitHub repository `twilio/ai` does not contain or represent an MCP server as defined. No evidence of an official, vendor-hosted MCP server was found.",
+    "url": "https://github.com/twilio/ai"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "Official Twilio Skills and MCP for AI coding agents available on GitHub.",
+    "new": "The `twilio/ai` GitHub repository contains tools and skills for AI agents but is not an MCP server. No official MCP server was found.",
+    "reason": "The original note incorrectly identified the `twilio/ai` repository as an MCP server.",
+    "url": "https://github.com/twilio/ai"
+   },
+   {
+    "field": "blocker_notes",
+    "old": "Trial expires after 30 days requiring a paid plan, and multi-tenant integration requires collecting individual customer credentials due to single-tenant OAuth limitations.",
+    "new": "Trial expires after 30 days requiring a paid plan. Multi-tenant integration requires implementing the Twilio Connect OAuth 2.0 flow.",
+    "reason": "The original note incorrectly stated that multi-tenant integration requires collecting individual customer credentials due to single-tenant OAuth limitations. Twilio Connect is the proper multi-tenant OAuth solution.",
+    "url": "https://www.twilio.com/docs/usage/account-security/twilio-connect"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### **Fact-Check Verification Report for Twilio**\n\nBelow is a field-by-field analysis of the initial research record for Twilio.\n\n---\n\n#### **`subcategory`**\n*   **Original Value:** `Cloud Communications`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None\n*   **Evidence:** Twilio's own description of itself and its product suite (Programmable Messaging, Voice, Video, etc.) firmly places it in the Cloud Communications category.\n\n---\n\n#### **`one_liner`**\n*   **Original Value:** \"Twilio provides APIs for integrating SMS, WhatsApp, voice calls, email, and verification into software applications.\"\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None\n*   **Evidence:** This accurately summarizes Twilio's core product offerings. Their APIs cover programmable messaging (SMS, WhatsApp), voice, email (via SendGrid), and user verification.\n\n---\n\n#### **`auth_methods`**\n*   **Original Value:** `['basic', 'api_key', 'oauth2']`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None\n*   **Evidence:**\n    *   **HTTP Basic:** Twilio documentation explicitly states that the REST API uses HTTP Basic authentication. You can use either your Account SID and Auth Token or an API Key SID and Secret as the username and password.\n    *   **API Key:** API keys are described as the preferred method for authenticating with Twilio's REST APIs. They are used via HTTP Basic authentication, with the Key SID as the username and the Secret as the password.\n    *   **OAuth 2.0:** Twilio supports OAuth 2.0 with both Client Credentials and Authorization Code grant types for applications to securely access Twilio APIs without sharing long-lived credentials.\n\n---\n\n#### **`primary_auth`**\n*   **Original Value:** `basic`\n*   **Verification:** **WRONG**\n*   **Correction:** `oauth2`\n*   **Evidence:** The initial record incorrectly assumed that because Twilio's standard OAuth 2.0 is single-tenant, it's unsuitable for multi-tenant platforms. However, Twilio offers a specific solution for this called **Twilio Connect**. Twilio Connect is an OAuth-based flow designed for multi-tenant applications, allowing customers to grant a Connect App access to their own Twilio accounts. The platform is billed directly to the customer, and the connecting app can make API calls on their behalf. This makes OAuth 2.0 (via Twilio Connect) the correct primary authentication method for a multi-tenant integration platform.\n\n---\n\n#### **`auth_notes`**\n*   **Original Value:** \"OAuth 2.0 apps are strictly single-tenant. Multi-tenant platforms must collect individual Account SID and Auth Token or API Keys via HTTP Basic.\"\n*   **Verification:** **WRONG**\n*   **Correction:** Twilio offers **Twilio Connect**, an OAuth 2.0-based solution specifically for multi-tenant applications. This allows a third-party application to securely access a customer's Twilio account data and perform actions on their behalf, with billing handled directly by Twilio. While standard account-level OAuth apps are single-tenant, Twilio Connect is the designated multi-tenant approach. Another method for multi-tenancy involves programmatically creating subaccounts for each tenant under a main account.\n\n---\n\n#### **`access`**\n*   **Original Value:** `self_serve_trial`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None\n*   **Evidence:** Developers can sign up for a free Twilio account without a credit card. This account is a 30-day trial that includes a balance of free units for various products (e.g., SMS, voice minutes, emails) rather than a dollar amount. After the trial expires or the units are consumed, an upgrade to a paid, pay-as-you-go plan is required to continue using the services.\n\n---\n\n#### **`access_notes`**\n*   **Original Value:** \"Developers can sign up for a free trial without a credit card. The trial expires after 30 days, requiring an upgrade to a usage-based paid plan.\"\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None\n*   **Evidence:** New users can sign up for a free 30-day trial. This trial has limitations, such as only being able to message verified phone numbers and using pre-defined templates. To remove these restrictions and continue service after 30 days, users must upgrade to a paid account, which follows a pay-as-you-go pricing model.\n\n---\n\n#### **`api_styles`**\n*   **Original Value:** `['rest']`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None\n*   **Evidence:** The Twilio API is a REST API served over HTTPS.\n\n---\n\n#### **`api_breadth`**\n*   **Original Value:** `broad`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None\n*   **Evidence:** The API is exceptionally broad, covering programmable messaging (SMS, MMS, WhatsApp), voice, video, email, conversations, user verification (Verify), number lookup, and more.\n\n---\n\n#### **`api_notes`**\n*   **Original Value:** \"Extremely broad REST API covering messaging, voice, video, conversations, flex, serverless, and identity. Officially open-sourced OpenAPI spec available.\"\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None\n*   **Evidence:** The description of the API's breadth is accurate. Twilio officially announced and maintains an open-source OpenAPI specification for its APIs, which is available on GitHub. The repository contains specification documents in both JSON and YAML formats.\n\n---\n\n#### **`openapi_spec`**\n*   **Original Value:** `true`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None\n*   **Evidence:** Twilio maintains an official OpenAPI specification in a public GitHub repository (`twilio/twilio-oai`). The project is in General Availability (GA) and is actively developed.\n\n---\n\n#### **`webhooks`**\n*   **Original Value:** `true`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None\n*   **Evidence:** Webhooks are a fundamental part of the Twilio platform, used for receiving inbound messages, getting status updates on outbound messages and calls, and more. The documentation provides extensive guidance on using and securing webhooks.\n\n---\n\n#### **`sandbox`**\n*   **Original Value:** `true`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None\n*   **Evidence:** Twilio provides multiple sandbox and testing environments.\n    *   **Test Credentials:** Every account comes with a set of test credentials (Test Account SID and Test Auth Token) that allow developers to make API calls without charging the account or interacting with real phone numbers.\n    *   **WhatsApp Sandbox:** A dedicated sandbox exists for testing WhatsApp integrations, allowing prototyping without needing a registered WhatsApp Business number.\n\n---\n\n#### **`mcp`**\n*   **Original Value:** `official`\n*   **Verification:** **WRONG**\n*   **Correction:** `none_found`\n*   **Evidence:** The original record cited a GitHub repository `twilio/ai`. While this is an official Twilio repository, it does not contain or represent an MCP (Machine-Readable Capability Plane) server. It appears to be a collection of AI-related tools or skills, but not a live, queryable MCP endpoint as defined. No evidence of an official, vendor-hosted MCP server was found.\n\n---\n\n#### **`mcp_notes`**\n*   **Original Value:** \"Official Twilio Skills and MCP for AI coding agents available on GitHub.\"\n*   **Verification:** **WRONG**\n*   **Correction:** The `twilio/ai` GitHub repository contains tools and skills for AI agents but is not an MCP server. No official MCP server was found.\n\n---\n\n#### **`verdict`**\n*   **Original Value:** `ready_with_friction`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None\n*   **Evidence:** The verdict is correct. A developer can build an integration today. The friction includes the 30-day trial expiration which necessitates a paid plan, and the need to implement the Twilio Connect flow for multi-tenant applications, which is more complex than simple credential collection.\n\n---\n\n#### **`blocker`**\n*   **Original Value:** `paid_plan`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None\n*   **Evidence:** After the 30-day free trial, a paid plan is required to continue using the API. This makes `paid_plan` a valid blocker/friction point.\n\n---\n\n#### **`blocker_notes`**\n*   **Original Value:** \"Trial expires after 30 days requiring a paid plan, and multi-tenant integration requires collecting individual customer credentials due to single-tenant OAuth limitations.\"\n*   **Verification:** **WRONG**\n*   **Correction:** The trial does expire after 30 days, requiring a paid plan. However, the note on multi-tenant integration is incorrect. The proper method for multi-tenant apps is to use Twilio Connect, which is an OAuth 2.0 flow, not collecting individual customer credentials (Account SID and Auth Token).\n\n---\n### **Uncertain Fields**\n\nAll fields were verifiable with the available documentation. No fields remain uncertain.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "twilio api authentication methods",
+   "twilio rest api authentication http basic",
+   "twilio api key authentication",
+   "twilio oauth multi-tenant",
+   "twilio connect for multi-tenant apps",
+   "twilio free trial limitations",
+   "twilio pricing api access",
+   "twilio openapi spec official github",
+   "twilio sandbox environment",
+   "twilio test credentials"
+  ],
+  "search_sources": [
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHf3rpQZkToZznOxqDR8vNG4yWpnILogM47TMHrVmPS8VpAEhbymCIErCjiQuttzOt07nBGE1e-PSq6yXFWqsxRJo3Jrhj92h3bED6y6JnZFrlJS4XQZ56r1qQaOrLwdtStMJ75wQwd-A-hkAgrMqLUNsUFnjNod4pgv04="
+   },
+   {
+    "title": "textus.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6CLvfCD_ozLdnFTXz_oA_1q-q5PrpHah8NSoFzkSel4sgeZB_jgBHSlSH76jZUEiKw-7uMb9-UdxPYRHpWsYXBPGZkxklG48oLE2htW5tKKliDgYYBUHQJqBgtcY5WkvX"
+   },
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEw-KG_fcRHvWuk9LkzQb0O12sSop0E9Oj2-zcxT9MuwE68cEt9GxTU3sG50JxFnFjv8_Ct8Fnf40u3_lqteDSCiPHqIJzzXYev-bO80rbVTUo8lIiFt35h-SPq8jVm"
+   },
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNpF3tpR93v_Usx9MjXFNZRlJ-NnOi7lmfMwTQxt5bKMgPf4voV4962eyRTPP80J8ID6MK0L03asipPele6TtSiz4xIKUrCv2ha6x-aQY3QyzTs5DQ-2dOt1erc775aAZdmvNZtPEyW146G89MHMw="
+   },
+   {
+    "title": "readme.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHOzy-OZ9VtUb9qW586yWXpQKMHH34Vo9VvuX2b0id72Rk9ihV8JEEinnTSuQ3SE3mCY3LgHcz6ZF6VMCdN3c_7kjtGzaq08jTzP8KyT4cNO8SEs8c4w1UXfa8xeHBV2E8sM8iStqhM6Sl9ItLF2xo"
+   },
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbOGD9uExEqLo8Tza0jnioT_JxQuFsEQppyI1Qb8LzX6MgSL4c6blGBAoKBUZ6TdQJef_dj380fEkY51esNy23veXxCcxgdlBadlk1cbN_d8Qow8q7IUUsDThrKve1flhqTQ7nvHs1L3pQ"
+   },
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeY95oJRHEBWbqCwru7ehowngxs4UVcE_Nv44SXCLbtDbxBC2GGlcneQMNMVNmTU-zi9Zgk3ZLeAAQvcbdQR1NPDV8HG0fFPKdQcURHB0jWh8nfHBO3_oMfPsdEmQTT42BVUYg"
+   },
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHK0zWUuNtI9O_08OQ3PaEE6S2qcAE5K3S5J-6b1I5ZRjBtDOaT2AjiF1cSD9qb2rE4PwrCDbtSraBCUoMAl0iLCmzH3ut9J4zjyTOrAx5RslGPAw1oisGuRNui6FXhhKKF9Y8="
+   },
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-TKxp7H8XOmXXpVLIpAIzdCf--DkRaWa3ADU6kQkDFOUvY31UGt1oNYTDjx0gfUek-NtbERPZqC3IBvfz5vKNw5BxdCZkk_h9TruNUAooOO3lhH9H0kw16UcsC2_Ee8b6xuvI8eLMsuMgZln2_urb_g8mHR_wOsUvgXQ-V8A5B5Iqc8CaI_y6uc2xFWFIAUU="
+   },
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvE01RgoRadOhapsSkB53brRh0-dcYxVQMCwmTBrkPhLan1x0z_s8VMx9CvyYMm6w-BeEIG1M6foVxWZMHU1SoIyBicB5bMtRJolx3FSVuZ6Cm6r6oIfbLyFo6NBvGhqIJa-M76ohO3afldshuvWWfKzaV3b-TN1JYNu-UwXDSzh1o4iawrM9Qvjofhg=="
+   },
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqjdfucN1X87-hy1faOgt6SurOO7p22nex4vDyx9ol6bmh_y6f0eAg1hCFrrxSsUFqq2qxbbBhqKrWYIWF1A8EkU9TMaNh9WqiHG6DLgCyE6alEHa5bytK3o1veML3B4Y0Gpr_dtcmNxOLjwFmJw=="
+   },
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGw01EKlVfSZeePalP4cv99J79mLk2p0gVF-dfYTVGwru9gs61KT9BWj44EgpnVnfAP8o4V3-8zsZa7lSdJzU9y6g1xGJiVCQBTGkJvtpBWi43P-eYWhioE_DQJbme-fsfHI04jYZL_YVMfWUAVyGfAxqcJ_g=="
+   },
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZpm7DSPE2gzFw7FGmE9CLiRzCFnYgM_krN7qBm6mC-izJZHi5fNcpvqNvO0JLve6ISdmDP4-N8my1qB59rg6MdpvMOb87hKWZy4Lk02_yoxx0eVEK-EHMU-3FSipbdScSX8vpQjUUNJvo"
+   },
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRzQBuwLTfCmNvcX7KlAm-UL6jYj-yxY_LgmiRfeSspF9PMHGUfZ6PbcvssvqIS1SPg2y_HdvCKHtEG-rE1LUjToOcYYVVsvRlHon_ChUX7TgIY16VvZpYb5CHBGCsBnG8UQ=="
+   },
+   {
+    "title": "stackoverflow.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxFmh_alj2bPvmjYvwOrLXF-mcfPK2tlHI_-1CdXW5PZCgl0WR-x516YzHK7VeokFoxGgmEUy3yv-HuTH0mvyarD2pJ6LjlpAOytoLKE18V_fs6WnheA7-Co2z50_8kN0gm2JBHTdAxOTAj3lgW5GSsov_N_motPDff-A7u9MF1JPgfXCkyWpjTbC8L03b2iw8cWTC1U0oZ9g="
+   },
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3esXplk6DpiU37rQDzbJjAJVMzywpdUgGNRZZXu96siJqUYgAtvz9wFzU_k4hfhsPkq6sU2cnXxolsx2j9PpBLwE0szbAIqVaIpILNSqWfpYLFvAj9tfoIhsJrzcg9W8jwSTlYC_w1OR77-LTLFsHjah7mtMWGTbE-ED8e0G5rN-PqtD_6UoVywt1Q3zQwTvk"
+   },
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXvDXW3bh3nyGMvT0mEwLJyZazyrq4lZP2K69zJqkwIZKXW1Na4WADgMD2wXQSihfPB-nsAAWdcYhM14a-dkp1PuaizvLqP-xZf_g89qEhD_ASTe-5oPSJUb7PyUc8jJ3bUK7P9JaACHuMDGLZ42QRCa2zGvwzzT9AlsYLgaWmfxcUIKdTsuC8Mg=="
+   },
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYgWxge02iQa9ItIBwEW5YtJ3dmIAA3p0YGAC2Knx2iLfYngh_PoTtgAG3AJ4L5PM79StCfDXrv7PnyY6kN-pqxaNxMOIcPLjTy5fnAOkvdNXhxgmmegbRRnheW0UqKULgj4s="
+   },
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGh88zS-rloguXeLxNFksoL7gIr23JbxbT_rytWrVlYFdD1LOgsquZAvra0e8m6DKXoRym_ZtyAEkw29KelEIJjMBGwk-cuiyfm8w1rRicC_scRYK9Db29DyOJPCSJBQB5GfWLyjixWIrb9OrfJGlIaPaQ9ldAKGSngGli102JmzCz_wqhdV9s="
+   },
+   {
+    "title": "getvoip.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2BkNs5C-kjYxUt6GQ9-Av5DDGtE6lA-1xjDSrNUHMDACoGXLv_kkOJPSPTMCeeA6a6mWBHZ6xjMajJH1_QR890mP-lxIzG3G-U8bzjIZqNMfKNZpFYyf0nJSOe0nZ7qjbfXk="
+   },
+   {
+    "title": "apidog.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHodMad2U_DXECMNm0eQ9N3GAIeNzHCY2hcke2iyWhmuLhh6-ssSkTukxscK7j4pJnkFr-al9jGdaCT82oBHoxCkGGLjZLmUODSQG-cfRlDtGqHHC0A30NAp4FE5HkX47C7MvDJBsVC"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHO52jQMDHmkrSK2jn7EhNpKI5oIIGfmJ8gogmFb2ZSD7KVY9U8jPc5p-Ie-N0Omg0fqgT3Iy8DfS-b9ls6o__YCbJ_SuX--z5536RpyI249wGscNLVYFI9XoaAR5NuPg=="
+   },
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEo7Ioy1C4QzJyQv6LJDu2breReej0YUNKZAMmCxf9HnHbK31QJTKQVjrIgac7ItCMnbZTzUeug8Hc7lXDsDB3gma1dImuIQlo3kPVBzyBzvZoa6F0HK-nRPqqSVmd_vxCPIPzEhv_ZBtwsRrl9WMmhdZHSGzpjeLkwlulSxjQkPlZXkqF0truuy4rc_cI5x_v6VnPMSmOkVwY2pg=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHATqC1B3TW6acGv4ttMBAiQf0QZnkY79Y10pnTd8S_PqKQWNkgg3mK0lz4mG0yZ8d4Y1kwxXop-CM-P-dC-Z_-WXgmCJsJrfTp86BJbwy01xR5t7fjJwtQZQFsmZvRdI88TjhWPsJAbcCpJEe3OQPWV8w8fLIXMbWQMAuEiNHVstgKEasLgWK5Ow=="
+   },
+   {
+    "title": "context7.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFaCs0HkyuDycw-zFEt70HyGrikt8GLm6eQSn2tI87zaFznbO3dQXAvlK46JJO85JzMXD2CJG4FufYxFvIPi9dSd-D1Mo3GeWyCzlHPTnhun5ydF67xvI8p1IuyhJpAt7ZP"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzCyNeMsFyE8_e46kBwg7ph8CB5rc6nMCe3LeUw2A_iIgUWQ2iHKalDt5VzxoHXZ-nZ4ITOTMJfUbAlT-nxa-x3QbD882Aub1-uFxOog4RLcUYKI_8lARv3McO2OtJXLDeQ--pwUpMhA=="
+   },
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuUgOLPXyhK3n4Yct7BhRYp5A1WWzsQ1jNWQVc56Sp9w9LVurVgAInkz3V0vShtznoMnj5XsxBsDjiQcQDAsnDS05LWSXbkVxaVc8hh-4j6NHxaJVK_TVBWhoTTsyI0GBi8JBk10ecibk3Sds0WtsI8ExnUA=="
+   },
+   {
+    "title": "readme.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWXSnr1zvUdidm4YXimeq3jAgJHLSFSOIA3bwKG2WP0p0Fs9w45_JPVAOp4pjtOTsC_FPlgqZSxKWO_HwEsrfVX-FrGePewYAoQhwt6GgpfT_Cw3p2kEHCneYAyc4mrApTTKrYr-YnvK67y0RUWNOTlJg="
+   },
+   {
+    "title": "readme.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpyfErkWzSOYHLPvmT1uul11N6cUwxu4xjXYvIWC8cpymi_8iRHlg184Cxsw83VVrjCa7mPpHSV9LxUQm7H-3U4xMBO9Up_QmLq8E1dBJpXVP2Xd6TrcGfdfnYHRKGwyZMDAviTpMGM0JbZO0klRLMRx-xU-MUhHJJ"
+   },
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGze71l71XV3LrgCAkatA9oEVIKwUHArYJGzASf0ck82AKr8G0rvI79zkeuQdPQMP29YaT2GGaTm5zMMsx3ypXGd789nuBs_EoqAsPBr681DJOyeht6dBF4Q2nO8CNqErGRIzvey1JmBwFp1g=="
+   },
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLJ_Uyo--N25y2VwPMqnk7GuJt7hIJK1gfPx-VVvVHS39zU7KbraqAyTTPltQPgfkJoms5FC1lYZ7sIWn_r_TNK27efx4COc6M2h-GIpe9Rk3gj7RaP0NHTxQEHlW_ztqJS22N6cFNs3UpSFFx2UOgxfF0y48KZqb0q_CIGL5p207hTFriilDokEwRd6KvhxeE"
+   },
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcghC29Rc-CE-juTa3JyKRS9M3-WUQcuxPar3u7Ude8qj3AWPl-6qZqC9dU67yXZGM6PXHabigGtNP-LIgYlGrSlAV7W_2xTAjpks-HDjAgjSp_K7sDovaDUH-jot2FRPiVqwinMaSvryP5ORW6k3FSyPqDKMZef3WCkNF8wPq5sSW_U9JVisAFTG1yg=="
+   },
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtpPRQtkd6J-A-85j5QYORo9pEzzGePzbZtQSI_uUPd9DV3Mo2AQX9TkfqKDKuncZT408wo-pNV9RWrQH5__Vo-hOyTcSLEHGhOb7DEQTX94EZJlCzSI5bLE7CG8ea8uNJWF7C3zfJ"
+   }
+  ],
+  "tokens": 9587,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZ-FIDzpqbHt5_Glt7zHFVGQUC07yTMOS4dLYk-y0CBCXSZqBaqLXUX4cv9QeL3kXQZZNf7UTdFMdSTtCkp4LYnNUQSUkRnrH__K0se_4r-jlosbBwCsL6PVITJtLkV_09gjbv2MY",
+    "status": 200,
+    "chars": 29010,
+    "readable": true
+   },
+   {
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFj-dc4XCjgh85SH4jeeymicTfh-sS4c-K22dEhWsKAiTa_pk8uVrfqqcqoCjs9MVK6zmOdVAYGgogWOHcdO5QRvdhpMhCB65rrf-s04gU6VSVoKRmLfypJpuM7GIJWqhbdOR8=",
+    "status": 200,
+    "chars": 15286,
+    "readable": true
+   },
+   {
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG95a8ElCUGoKPShUbR5l52Svn1z9XYAFSRmu2VIUBx8WPgGmsZYXn_UD6LUm_QZwjOlzHKiVJWAEleIP19BSM7xHxqoh6QuWvhN6EFD_EAd5ERUyRJKOExHbg",
+    "status": 200,
+    "chars": 3906,
+    "readable": true
+   },
+   {
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF95TCg2NVwRt-YBIDhY6wwX0Had6rjKZtNvGWqpiNEV33JsYSvQlqCqvl1G7nEUX5TEMrjnRpSRL4zhJrW6XXdiNugCxnqVygoIiDTZycFBhqn-mCDRw==",
+    "status": 200,
+    "chars": 7877,
+    "readable": true
+   }
+  ],
+  "seconds": 81.4
+ }
+}

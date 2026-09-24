@@ -1,0 +1,121 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://transcriptapi.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.39
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://transcriptapi.com/docs/api-reference",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://transcriptapi.com/docs/api-reference",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://transcriptapi.com/docs/mcp/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.26
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://transcriptapi.com/blog/youtube-transcript-api-complete-developer-guide",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.36
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://transcriptapi.com/docs/mcp/chatgpt/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.38
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://transcriptapi.com/docs/api-reference",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://transcriptapi.com/docs/api-reference",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://transcriptapi.com/docs/api-reference",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://transcriptapi.com/docs/mcp/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  }
+ ],
+ "auth_support": {
+  "api_key": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://transcriptapi.com/', 'https://transcriptapi.com/docs/api-reference', 'https://transcriptapi.com/docs/api-reference', 'https://transcriptapi.com/docs/mcp/', 'https://transcriptapi.com/blog/youtube-transcript-api-complete-developer-guide', 'https://transcriptapi.com/docs/mcp/chatgpt/', 'https://transcriptapi.com/docs/api-reference', 'https://transcriptapi.com/docs/api-reference', 'https://transcriptapi.com/docs/api-reference']",
+ "metrics": {
+  "n_evidence": 10,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 1.0,
+  "readable": 10,
+  "quote_supported_rate": 0.1,
+  "lint_issues": 0,
+  "flag_count": 1
+ }
+}

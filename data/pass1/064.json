@@ -1,0 +1,229 @@
+{
+ "app": {
+  "id": 64,
+  "name": "Cloudflare",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "developers.cloudflare.com/api"
+ },
+ "record": {
+  "subcategory": "Networking / Security / Developer Platform",
+  "one_liner": "Cloudflare provides a global connectivity cloud with networking, security, performance, and developer platform services.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token",
+   "api_key"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Cloudflare supports API Tokens (bearer_token) for scoped access, Global API Key (api_key) as a legacy method, and OAuth 2.0 (oauth2) for self-managed applications and delegated access.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up for a free Cloudflare account and create an OAuth client from the dashboard. To make the integration multi-tenant, the developer promotes it to public by completing automated DNS TXT verification, without manual vendor approval or partner program registration. Creating API credentials and OAuth apps is free, with a generous free tier for developer platform services.",
+  "api_styles": [
+   "rest",
+   "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Primarily REST, with a dedicated GraphQL API for analytics data. Extremely broad, covering over 2,500 endpoints across all Cloudflare infrastructure and developer products.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Cloudflare officially publishes and hosts its own managed remote MCP servers, including a token-efficient 'Code Mode' MCP server that maps the entire 2,500+ endpoint Cloudflare API using just two tools (search and execute).",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "none",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.cloudflare.com/en-gb/plans/",
+    "quote": "Cloudflare’s connectivity cloud delivers 60+ networking, security, and performance services."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.cloudflare.com/api/",
+    "quote": "Whenever possible, use API tokens to interact with the Cloudflare API. To create an API token, from the Cloudflare dashboard, go to My Profile → API Tokens and select Create Token."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.cloudflare.com/api/",
+    "quote": "The previous authorization scheme for interacting with the Cloudflare API, used in conjunction with a Global API key. Example: X-Auth-Email: user@example.com."
+   },
+   {
+    "claim": "auth",
+    "url": "https://www.cloudflare.com/blog/cloudflare-oauth-for-all",
+    "quote": "Earlier this month, we announced self-managed OAuth, making it easier for customers to create and manage their own OAuth clients for delegated access to the Cloudflare API."
+   },
+   {
+    "claim": "auth",
+    "url": "https://www.cloudflare.com/blog/cloudflare-oauth-for-all",
+    "quote": "With self-managed OAuth, developers can now offer a standard OAuth flow where customers grant scoped access directly, making it easier to build SaaS integrations, internal developer platforms, and agentic tools..."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.cloudflare.com/fundamentals/oauth/",
+    "quote": "Log in to the Cloudflare dashboard. Select your account. Go to Manage Account > OAuth clients. Select Create client."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.cloudflare.com/fundamentals/oauth/",
+    "quote": "To allow any Cloudflare user to authorize your application, promote the client to public. Promotion requires a client name, logo, client URL, scopes, and DNS TXT verification for the client domain. It is permanent."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.cloudflare.com/plans/developer-platform/",
+    "quote": "While Containers require the paid plan, the Workers platform offers an excellent free tier for other services: Core Workers (Free): 100,000 requests per day."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.cloudflare.com/api/overview/",
+    "quote": "The GraphQL Analytics API provides data regarding HTTP requests passing through Cloudflare's network..."
+   },
+   {
+    "claim": "api",
+    "url": "https://www.cloudflare.com/blog/cloudflare-mcp-servers",
+    "quote": "The Cloudflare API MCP server provides access to the entire Cloudflare API — over 2,500 endpoints across DNS, Workers, R2, Zero Trust, and every other product..."
+   },
+   {
+    "claim": "api",
+    "url": "https://www.cloudflare.com/blog/introducing-openapi-schemas-cloudflare-api",
+    "quote": "Today, we are announcing the general availability of OpenAPI Schemas for the Cloudflare API. These are published via GitHub and will be updated regularly as Cloudflare adds and updates APIs."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.cloudflare.com/api/",
+    "quote": "webhooks webhooks list webhooks get a webhook create a webhook update a webhook delete a webhook"
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.cloudflare.com/api/",
+    "quote": "Registrar Sandbox Registrar Sandbox. Search for available domains · Check domain availability"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://www.cloudflare.com/blog/cloudflare-mcp-servers",
+    "quote": "Cloudflare's own MCP servers ... The Cloudflare API MCP server provides access to the entire Cloudflare API — over 2,500 endpoints across DNS, Workers, R2, Zero Trust, and every other product — through just two tools: search() and execute()."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Research Notes: Cloudflare Toolkit Buildability\n\n#### 1. Product Capabilities\nCloudflare operates a global connectivity cloud that provides a wide range of networking, security, performance, and developer platform services.\n* **Source URL:** https://www.cloudflare.com/en-gb/plans/\n* **Verbatim Quote:** `\"Cloudflare’s connectivity cloud delivers 60+ networking, security, and performance services.\"`\n* **Details:** These services include DNS management, Content Delivery Network (CDN), Web Application Firewall (WAF), DDoS protection, serverless computing (Cloudflare Workers, Pages, R2 object storage, Workers AI), and Zero Trust network access.\n\n#### 2. Authentication Methods & Multi-Tenant Integration\nThe Cloudflare API supports multiple authentication methods:\n* **API Tokens (`bearer_token`):** Used for scoped, modern token-based access.\n  * **Source URL:** https://developers.cloudflare.com/api/\n  * **Verbatim Quote:** `\"Whenever possible, use API tokens to interact with the Cloudflare API. To create an API token, from the Cloudflare dashboard, go to My Profile → API Tokens and select Create Token.\"`\n* **Global API Key (`api_key`):** A legacy, less secure method requiring the user's email and global key.\n  * **Source URL:** https://developers.cloudflare.com/api/\n  * **Verbatim Quote:** `\"The previous authorization scheme for interacting with the Cloudflare API, used in conjunction with a Global API key. Example: X-Auth-Email: user@example.com.\"`\n* **OAuth 2.0 (`oauth2`):** Cloudflare supports self-managed OAuth applications, allowing developers to build delegated integrations.\n  * **Source URL:** https://www.cloudflare.com/blog/cloudflare-oauth-for-all (via search index)\n  * **Verbatim Quote:** `\"Earlier this month, we announced self-managed OAuth, making it easier for customers to create and manage their own OAuth clients for delegated access to the Cloudflare API.\"`\n\n**Primary Auth for Multi-Tenant Integration Platform:** `oauth2`\nA multi-tenant platform like Composio would utilize Cloudflare's public OAuth 2.0 applications to allow end-users to securely authorize access to their accounts without sharing long-lived tokens.\n* **Source URL:** https://www.cloudflare.com/blog/cloudflare-oauth-for-all (via search index)\n* **Verbatim Quote:** `\"With self-managed OAuth, developers can now offer a standard OAuth flow where customers grant scoped access directly, making it easier to build SaaS integrations, internal developer platforms, and agentic tools...\"`\n\n#### 3. Credentials Acquisition & Cost\n* **Access Category:** `self_serve_free`\n* **Credential Acquisition Process:** Any developer can sign up for a free Cloudflare account and immediately create an OAuth client from the dashboard.\n  * **Source URL:** https://developers.cloudflare.com/fundamentals/oauth/ (via search index)\n  * **Verbatim Quote:** `\"Log in to the Cloudflare dashboard. Select your account. Go to Manage Account > OAuth clients. Select Create client.\"`\n* **Public Promotion:** Newly created OAuth clients default to private (restricted to the creator's account). To make the integration multi-tenant for any Cloudflare user, the developer promotes it to public by completing automated DNS TXT verification. No manual vendor approval or partner program registration is required.\n  * **Source URL:** https://developers.cloudflare.com/fundamentals/oauth/ (via search index)\n  * **Verbatim Quote:** `\"To allow any Cloudflare user to authorize your application, promote the client to public. Promotion requires a client name, logo, client URL, scopes, and DNS TXT verification for the client domain. It is permanent.\"`\n* **Cost:** Creating API credentials and OAuth apps is completely free. Cloudflare provides a highly generous free tier across its developer platform.\n  * **Source URL:** https://www.cloudflare.com/plans/developer-platform/ (via search index)\n  * **Verbatim Quote:** `\"While Containers require the paid plan, the Workers platform offers an excellent free tier for other services: Core Workers (Free): 100,000 requests per day.\"`\n\n#### 4. API Technical Profile\n* **API Style:** Primarily **REST**, with a dedicated **GraphQL** API for analytics data.\n  * **Source URL:** https://developers.cloudflare.com/api/overview/ (via search index)\n  * **Verbatim Quote:** `\"The GraphQL Analytics API provides data regarding HTTP requests passing through Cloudflare's network...\"`\n* **API Breadth:** Extremely broad, covering over 2,500 endpoints across all Cloudflare infrastructure and developer products.\n  * **Source URL:** https://www.cloudflare.com/blog/cloudflare-mcp-servers (via search index)\n  * **Verbatim Quote:** `\"The Cloudflare API MCP server provides access to the entire Cloudflare API — over 2,500 endpoints across DNS, Workers, R2, Zero Trust, and every other product...\"`\n* **OpenAPI Spec:** Yes, Cloudflare officially publishes and maintains its OpenAPI schemas on GitHub.\n  * **Source URL:** https://www.cloudflare.com/blog/introducing-openapi-schemas-cloudflare-api (via search index)\n  * **Verbatim Quote:** `\"Today, we are announcing the general availability of OpenAPI Schemas for the Cloudflare API. These are published via GitHub and will be updated regularly as Cloudflare adds and updates APIs.\"`\n* **Webhooks:** Yes, Cloudflare supports webhooks for alerts and notifications.\n  * **Source URL:** https://developers.cloudflare.com/api/\n  * **Verbatim Quote:** `\"webhooks webhooks list webhooks get a webhook create a webhook update a webhook delete a webhook\"`\n* **Sandbox:** Cloudflare does not provide a general mock/sandbox environment for testing the entire API suite. However, specific product sandboxes exist (e.g., for domain registration testing), and developers typically test integrations using live, free-tier zones.\n  * **Source URL:** https://developers.cloudflare.com/api/\n  * **Verbatim Quote:** `\"Registrar Sandbox Registrar Sandbox. Search for available domains · Check domain availability\"`\n\n#### 5. Model Context Protocol (MCP) Servers\n* **MCP Status:** `official`\n* **Details:** Cloudflare officially publishes and hosts its own managed remote MCP servers. Notably, they provide a token-efficient \"Code Mode\" MCP server that maps the entire 2,500+ endpoint Cloudflare API using just two tools (`search` and `execute`).\n* **Source URL:** https://www.cloudflare.com/blog/cloudflare-mcp-servers (via search index)\n* **Verbatim Quote:** `\"Cloudflare's own MCP servers ... The Cloudflare API MCP server provides access to the entire Cloudflare API — over 2,500 endpoints across DNS, Workers, R2, Zero Trust, and every other product — through just two tools: search() and execute().\"`\n\n#### 6. Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. Cloudflare provides comprehensive public documentation, an officially maintained OpenAPI spec, a robust self-serve public OAuth 2.0 flow (via automated DNS TXT verification), and a free tier. A developer could build and ship a multi-tenant agent toolkit this week.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"cloudflare\" api authentication oauth",
+   "\"cloudflare\" openapi spec",
+   "\"cloudflare\" mcp server",
+   "",
+   "\"cloudflare\" \"promote the client to public\"",
+   "\"cloudflare\" oauth \"public\" approval",
+   "\"cloudflare\" api webhooks sandbox",
+   "\"cloudflare\" api free tier cost",
+   "\"promote the client to public\" cloudflare review",
+   "\"cloudflare\" oauth \"public\" \"txt verification\"",
+   "\"cloudflare\" graphql api",
+   "\"cloudflare\" api sandbox environment"
+  ],
+  "search_sources": [
+   {
+    "title": "cloudflare.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2QABu6UpaAciYDpkcwPEQ4on-PA6Mj5tH4row7Be0a7kCdMUltk8AMf4u1IVmUaaxrZe_ROculATqiQ5mmfaeWGMAU1CKnmLjTx_QrcEn3QzDMm1LXkaNqOCG28TuOZNLnqXQx4FWw6rdUhYIQypD1ZT2KoXCNBOhB5yUoVEKkxKX32sce1Ev6qJFUwpvKKbMHg=="
+   },
+   {
+    "title": "cloudflare.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpqF0hj_U3Gyaq-Cie0OnkT6E7002xigKkpa2Kis9YeWD_WSj5W1WxeXFcUBnbPSyZLoTX8rwnj6SkhUxndmQXCncNRp6nJmZQ3KOIZu3e0DCsxoCAzTVeKv6RSL8fytaQR3_iQ6rcYiN1MwoN0yEv"
+   }
+  ],
+  "tokens": 10138,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    " Cloudflare API authentication OR API keys OR OAuth",
+    " Cloudflare API getting started OR quickstart",
+    " Cloudflare API pricing OR plans OR developer program",
+    " Cloudflare API reference index",
+    "Cloudflare MCP server"
+   ],
+   "candidates": 7,
+   "live_urls": [
+    "https://developers.cloudflare.com/fundamentals/api/get-started/",
+    "https://developers.cloudflare.com/api/",
+    "https://developers.cloudflare.com/fundamentals/api/",
+    "https://developers.cloudflare.com/fundamentals/oauth/",
+    "https://developers.cloudflare.com/api/overview/",
+    "https://www.cloudflare.com/en-gb/plans/",
+    "https://www.cloudflare.com/plans/developer-platform/",
+    "https://developers.cloudflare.com/api-shield/plans/"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://www.cloudflare.com/plans/pricing/",
+     "status": 404
+    },
+    {
+     "url": "https://developers.cloudflare.com/api-reference/",
+     "status": 404
+    },
+    {
+     "url": "https://developers.cloudflare.com/mcp/",
+     "status": 404
+    },
+    {
+     "url": "https://developers.cloudflare.com/fundamentals/api/oauth/",
+     "status": 404
+    },
+    {
+     "url": "https://www.cloudflare.com/developer-platform/workers-and-pages/pricing/",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://developers.cloudflare.com/fundamentals/api/get-started/",
+     "status": 200,
+     "chars": 5021,
+     "readable": true
+    },
+    {
+     "url": "https://developers.cloudflare.com/api/",
+     "status": 200,
+     "chars": 191974,
+     "readable": true
+    },
+    {
+     "url": "https://developers.cloudflare.com/fundamentals/api/",
+     "status": 200,
+     "chars": 4639,
+     "readable": true
+    },
+    {
+     "url": "https://developers.cloudflare.com/fundamentals/oauth/",
+     "status": 200,
+     "chars": 5062,
+     "readable": true
+    },
+    {
+     "url": "https://developers.cloudflare.com/api/overview/",
+     "status": 200,
+     "chars": 100497,
+     "readable": true
+    },
+    {
+     "url": "https://www.cloudflare.com/en-gb/plans/",
+     "status": 200,
+     "chars": 11192,
+     "readable": true
+    },
+    {
+     "url": "https://www.cloudflare.com/plans/developer-platform/",
+     "status": 200,
+     "chars": 6193,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 65.3
+ }
+}

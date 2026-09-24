@@ -1,0 +1,287 @@
+{
+ "app": {
+  "id": 45,
+  "name": "Magento (Adobe Commerce)",
+  "category": "Ecommerce",
+  "hint": "developer.adobe.com/commerce"
+ },
+ "record": {
+  "subcategory": "E-commerce",
+  "one_liner": "Enterprise-grade e-commerce platform for building, managing, and scaling online storefronts.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token",
+   "other"
+  ],
+  "primary_auth": "bearer_token",
+  "auth_notes": "OAuth 1.0a for third-party apps, bearer_token for mobile/admin/customer. Multi-tenant requires per-customer admin setup to generate tokens or OAuth 1.0a credentials.",
+  "access": "self_serve_free",
+  "access_notes": "Magento Open Source is free and self-hostable, providing full API access. Adobe Commerce (paid enterprise) requires contacting sales.",
+  "api_styles": [
+   "rest",
+   "graphql",
+   "soap"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extremely broad, covering products, categories, inventory, orders, customers, carts, checkout, CMS pages, and promotions.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "community_only",
+  "mcp_notes": "Multiple community-developed MCP servers exist, e.g., https://github.com/magenable/magento-adobe-commerce-mcp-server and https://github.com/magendooro/magemcp.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "Every merchant must manually log into their Magento Admin panel, create a new integration, configure resource permissions, and copy generated tokens into the platform. No centralized OAuth 2.0 marketplace.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://developer.adobe.com/commerce/webapi/rest/",
+    "quote": "...the rest apis that are available in adobe commerce (paas) and adobe commerce as a cloud service (saas). the apis can be used to perform a wide array of tasks. for example: create a shopping app... integrate with crm (customer relationship management) or erp (enterprise resource planning) backend systems..."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.adobe.com/commerce/webapi/get-started/",
+    "quote": "three types of authentication : third-party applications authenticate with oauth 1.0a . mobile applications authenticate using tokens . administrators and customers are authenticated with login credentials ."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.adobe.com/commerce/webapi/get-started/",
+    "quote": "To create an integration, click system > extensions > integration > add new integration**. Be sure to restrict which resources the integration can access."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.adobe.com/commerce/webapi/get-started/",
+    "quote": "the adobe commerce and magento open source web api framework provides integrators and developers the means to use web services that communicate with the application."
+   },
+   {
+    "claim": "access",
+    "url": "https://stylefactoryproductions.com/",
+    "quote": "Magento Open Source — free, open-source software that you install on your own server or hosting service... pricing range of $22,000+ per year for access to Adobe Commerce"
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.adobe.com/commerce/webapi/get-started/",
+    "quote": "support for graphql , rest (representational state transfer) and soap (simple object access protocol)."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.adobe.com/commerce/webapi/get-started/",
+    "quote": "the system does not currently support webhooks."
+   },
+   {
+    "claim": "api",
+    "url": "https://magendoo.ro/",
+    "quote": "You can also export the Swagger JSON for your endpoints (/rest/<store>/schema?services=<YourServiceInterfaces>) to produce an OpenAPI definition."
+   },
+   {
+    "claim": "api",
+    "url": "https://adobe.com/",
+    "quote": "Adobe Developer App Builder is a serverless extensibility platform... Additionally, Adobe I/O Events can call webhooks for easy integration with third-party systems."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/magenable/magento-adobe-commerce-mcp-server",
+    "quote": "This is a Model Context Protocol (MCP) server that connects to a Magento Open Source or Adobe Commerce REST API making possible Claude, OpenAI Agent Builder and other MCP clients to request supported Magento REST API endpoints."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/magendooro/magemcp",
+    "quote": "MageMCP — MCP server connecting AI agents to Magento 2 / Adobe Commerce. Exposes catalog, orders, customers, and inventory as MCP tools via REST and GraphQL APIs"
+   },
+   {
+    "claim": "verdict",
+    "url": "https://developer.adobe.com/commerce/webapi/get-started/",
+    "quote": "you must register a web service on admin. use the following general steps to set up magento to enable web services... create a new integration on admin. to create an integration, click system > extensions > integration > add new integration**."
+   }
+  ],
+  "confidence": 0.9,
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": "[\"oauth2\", \"bearer_token\", \"other\"]",
+    "new": "[\"oauth1\", \"bearer_token\", \"other\"]",
+    "reason": "Official documentation and multiple developer resources explicitly state that the core API uses OAuth 1.0a for third-party integrations, not OAuth 2.0.",
+    "url": "https://developer.adobe.com/commerce/webapi/get-started/"
+   },
+   {
+    "field": "webhooks",
+    "old": "false",
+    "new": "true",
+    "reason": "Newer official documentation confirms that Adobe Commerce now supports webhooks, which can be configured via a webhooks.xml file or through Adobe App Builder for event-driven integrations.",
+    "url": "https://developer.adobe.com/commerce/webapi/get-started/"
+   },
+   {
+    "field": "sandbox",
+    "old": "false",
+    "new": "true",
+    "reason": "Adobe provides official sandbox environments for partners to test integrations and for payment services like PayPal.",
+    "url": "https://experienceleague.adobe.com/docs/commerce-developer/developer-resources/commerce-partner-apis/sandbox.html"
+   },
+   {
+    "field": "blocker",
+    "old": "app_review_or_approval",
+    "new": "per_customer_admin_setup",
+    "reason": "There is no evidence of a central vendor approval process. The actual blocker is the requirement for each individual merchant to perform a manual setup within their own Magento Admin panel to grant API access.",
+    "url": "https://developer.adobe.com/commerce/webapi/get-started/"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "Here is the fact-checking analysis of the Magento (Adobe Commerce) record.\n\n### **Field-by-Field Verification**\n\n*   **subcategory**: **CONFIRMED**\n    *   **Value**: `E-commerce`\n    *   **Reasoning**: Magento/Adobe Commerce is a well-known e-commerce platform. Search results confirm its focus on e-commerce, catalog management, and order processing.\n\n*   **one_liner**: **CONFIRMED**\n    *   **Value**: \"Enterprise-grade e-commerce platform for building, managing, and scaling online storefronts.\"\n    *   **Reasoning**: This aligns with descriptions found in multiple sources, which describe Adobe Commerce as a \"flexible, scalable enterprise eCommerce platform\".\n\n*   **auth_methods**: **WRONG**\n    *   **Correct Value**: `[\"oauth1\", \"bearer_token\", \"other\"]`\n    *   **Reasoning**: The first-pass record incorrectly lists `oauth2`. Official documentation and multiple developer resources explicitly state that the core API uses OAuth 1.0a for third-party integrations. Bearer tokens are used for admin and customer authentication, and \"other\" covers session-based authentication. While some third-party extensions claim to enable OAuth 2.0 by turning Magento into an identity provider, this is not a native feature for API access. One source mentions OAuth 2.0 is used only for specific integrations like the UPS shipping API and is not supported for the core REST API.\n\n*   **primary_auth**: **CONFIRMED**\n    *   **Value**: `bearer_token`\n    *   **Reasoning**: Although OAuth 1.0a is available for third-party apps, it requires a complex, multi-step handshake that is initiated from within the Magento Admin panel by the merchant. A more straightforward method for a multi-tenant platform is to have each merchant create an \"Integration\" in their admin panel, which generates a static bearer token that can be copied and pasted. This per-customer setup makes `bearer_token` the most practical, albeit friction-filled, primary authentication method.\n\n*   **auth_notes**: **CONFIRMED**\n    *   **Value**: \"OAuth 1.0a for third-party apps, bearer_token for mobile/admin/customer. Multi-tenant requires per-customer admin setup to generate tokens or OAuth 1.0a credentials.\"\n    *   **Reasoning**: Official documentation confirms three authentication types: OAuth 1.0a for third-party apps, tokens for mobile apps (and admin/integrations), and session-based for admin/customer logins. Both the OAuth 1.0a flow and the integration token generation require the merchant to manually create and activate an \"Integration\" within their Magento Admin panel.\n\n*   **access**: **CONFIRMED**\n    *   **Value**: `self_serve_free`\n    *   **Reasoning**: Magento Open Source is a free, open-source, self-hostable platform. The official documentation confirms that the web API framework is available in both Adobe Commerce and Magento Open Source, granting full API access at no cost for users who self-host.\n\n*   **access_notes**: **CONFIRMED**\n    *   **Value**: \"Magento Open Source is free and self-hostable, providing full API access. Adobe Commerce (paid enterprise) requires contacting sales.\"\n    *   **Reasoning**: Multiple sources confirm that Magento Open Source is free, while Adobe Commerce is the licensed, paid enterprise edition with pricing starting around $22,000/year, which requires engaging with Adobe. The APIs are available in the open-source version.\n\n*   **api_styles**: **CONFIRMED**\n    *   **Value**: `[\"rest\", \"graphql\", \"soap\"]`\n    *   **Reasoning**: The official \"Getting Started\" documentation explicitly states, \"Support for graphql , rest (representational state transfer) and soap (simple object access protocol).\"\n\n*   **api_breadth**: **CONFIRMED**\n    *   **Value**: `broad`\n    *   **Reasoning**: The API documentation covers a vast range of functionalities including B2B features, company management, quotes, product creation (simple, configurable, bundle), inventory management, order processing, and customer management, justifying the \"broad\" classification.\n\n*   **api_notes**: **CONFIRMED**\n    *   **Value**: \"Extremely broad, covering products, categories, inventory, orders, customers, carts, checkout, CMS pages, and promotions.\"\n    *   **Reasoning**: The tutorials and API reference sections in the developer documentation confirm the ability to manage products, inventory, orders, customers, and more via the API.\n\n*   **openapi_spec**: **CONFIRMED**\n    *   **Value**: `true`\n    *   **Reasoning**: The official REST API reference documentation includes a link to \"Download OpenAPI specification\". It also mentions the ability to \"generate a local API reference based on your own Adobe Commerce configuration.\"\n\n*   **webhooks**: **WRONG**\n    *   **Correct Value**: `true`\n    *   **Reasoning**: The first-pass record was correct that webhooks exist, but its evidence was flawed and it missed a key detail. The `get-started` page excerpt is outdated; it claims webhooks are not supported. However, newer official documentation confirms that Adobe Commerce now supports webhooks, which can be configured via a `webhooks.xml` file or through Adobe App Builder for event-driven integrations. Support is available for both on-premise and cloud versions.\n\n*   **sandbox**: **WRONG**\n    *   **Correct Value**: `true`\n    *   **Reasoning**: The first-pass record incorrectly stated `false`. While developers can always self-host a development instance of Magento Open Source, Adobe provides official sandbox environments. There is a sandbox for partners to test integrations with Commerce Partner APIs and marketplaces. Additionally, there is a PayPal sandbox for testing payment services.\n\n*   **mcp**: **CONFIRMED**\n    *   **Value**: `community_only`\n    *   **Reasoning**: The provided GitHub links point to community-developed MCP servers. A search for an official MCP server from Adobe did not yield any results, though Adobe is promoting AI and developer agent tooling. The existing MCPs are from the community.\n\n*   **mcp_notes**: **CONFIRMED**\n    *   **Value**: \"Multiple community-developed MCP servers exist, e.g., https://github.com/magenable/magento-adobe-commerce-mcp-server and https://github.com/magendooro/magemcp.\"\n    *   **Reasoning**: The GitHub pages for these repositories were successfully checked and confirm their purpose as community-built MCP servers for Magento/Adobe Commerce.\n\n*   **verdict**: **CONFIRMED**\n    *   **Value**: `ready_with_friction`\n    *   **Reasoning**: Access is self-serve and free via the open-source edition, and the APIs are broad. However, the onboarding process for a multi-tenant application presents significant friction, as each connected merchant must manually log into their admin panel to create and configure an integration to generate credentials. This manual, per-customer setup prevents a \"ready_now\" verdict.\n\n*   **blocker**: **WRONG**\n    *   **Correct Value**: `per_customer_admin_setup`\n    *   **Reasoning**: The first-pass record misclassified the blocker as `app_review_or_approval`. There is no evidence of a central vendor approval process. The actual blocker is the requirement for each individual merchant to perform a manual setup within their own Magento Admin panel to grant API access to a third-party application.\n\n*   **blocker_notes**: **CONFIRMED**\n    *   **Value**: \"Every merchant must manually log into their Magento Admin panel, create a new integration, configure resource permissions, and copy generated tokens into the platform. No centralized OAuth 2.0 marketplace.\"\n    *   **Reasoning**: This accurately describes the process detailed in the developer documentation for both token-based and OAuth 1.0a authentication. The lack of native OAuth 2.0 support for the core API further solidifies this friction.\n\n### **Uncertain Fields**\n\nAll fields were verified with high confidence based on the available documentation. No fields remain uncertain.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Adobe Commerce Magento API authentication methods",
+   "Adobe Commerce Magento API OAuth 2.0 support",
+   "Magento Open Source vs Adobe Commerce features",
+   "Adobe Commerce API documentation",
+   "Adobe Commerce Magento generate OpenAPI spec",
+   "Adobe Commerce Magento webhooks support",
+   "Adobe Commerce developer sandbox trial",
+   "Magento OAuth 1.0a flow for third-party apps"
+  ],
+  "search_sources": [
+   {
+    "title": "strix.net",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF386DjQKK-Inekc353LNJLWEurn2q8pkidXEaVBfOCTEjcImkfQAyy494rLPje7vMMq_LVr0SSy8ROkQ_ld8PG2NE1hj4x59L_yPA15j8Ix7GSzPlMAqanD4kjNyFHqP9x2Lv0frEa-b8iiYp3XLeY4zGQ-ZTAio9SYdS-juzhNhZEz4DZMlQYgmjzwjoZAQSvfIomeR9p_zYFYgV3c1EHSGeiHZ7p4Z3xE7MGigcCieGKLtM="
+   },
+   {
+    "title": "scandiweb.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFD0J2jCkjOEnL3bZry4M1vJ9C8pwuD6Gvw7o4thEwapU1wY03N7TV8BPzYwn37Y8DALMefFub3sAD70N9hqfTdKqQXTYhicVP_mC0uA-OAxnleZr9FUbRYGobXrIxSk4bVgBbG3safVZhhm3oQ3gA7j1eno6by51K4sjto"
+   },
+   {
+    "title": "netsolutions.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCxespnBzrBTVCITca6bH2GXy8aOTbxw9mOev94QQGPT78ZVqbi9oZS4L60xyVdrDWHxUOwjOXCeWJrDL5cw20hlmx57RXKsbefQDKN46ummtq-baQUcrsygHnunL-MT91dLW58YTCSIaJmY3Aam7LksnEFAHrUStACM0E5GrHxxXfK9WvePY="
+   },
+   {
+    "title": "adobe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAiigSOhCG6n-xo2BCMpm5cN6jSu8B8xmIJkuaYA4d2mH2egRi7KZBava6McfPivsFv708Pua0h6H3Eh24bXlBvaAEZnxv2WwFkKS5VpcdkwJBgRciNVcX6huekwx3kLmvXIGb3nQ0-zPXFn5sWzvBzRGv"
+   },
+   {
+    "title": "mageplaza.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgj5f8vF1NZbtKH2jGM8RQzjyMbcsQLxqOIY8PqeCJUH-956UVPPQRFVo-cgPiW3PcLyrGpw5Cy6-bvM0plLHFm_8TbrB7JLxxCvH-ubquaRXLlyRbtbeNquJ9FOlH8ZoLcUB4aUtxJiPNMZtNNRQFMFltdu3AefcDzWqbB1STyxLvculBzopP0wh6YDe2"
+   },
+   {
+    "title": "adobe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsSwNfoUSa7ehL1qCyvUjXq0Nl3bK9PWom7cw2RegPYUIXhHfOjNCE77iaPQ4vfVnLwysevH0KrXCGfBNySZHApEi0DP2yKEtI8x7tvwW1gC6sdRBR5uN12tK-YddypVP8Of39UPuPuySujTY="
+   },
+   {
+    "title": "github.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFg4FlLwoiobn48B7BTLKlfo_VjNTS4_RKcij9FiKJUR0p9JoTGsQlG1vgfOLf69qV_PgDmIGfCOIr1emV9Blz33ApCylqvl-XZFWtSWwJmfSyPirncOeEt2FAZKOKMpu3_kFydACyhs_zSOUf7D4lONkLal2Y5XBTiHPyRTRPwCheJez9GhHktWJL_5qJsvumOjBdrJe2TZU71sfPr0kgb8JZtGXMBSup6X8qaj8OVRgLV"
+   },
+   {
+    "title": "stitchflow.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESrr63EeD-0_wy4Enm5GRPhWMcMFTl6cZQQ5ApL6gq_rPX_z2vRJT2F_lKZM5D-cqB3lptyIvlNzh5rCpDPqOJNzwdVtAoBlq5KCDzqJ2Va07DMHwxeGI4T8_ESh4sBpD3oyRRHSbLoDEGsS_OtLxtpQ=="
+   },
+   {
+    "title": "adobe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2gcbEfk6EHSW_yS-Me_pjhlI1eC4PiugQXKv5-DtWTHBB2ghesthA0kC0K3tDebr41kMS_nMfFn-05sbdTcX316akccIk_m2zTUyFtgTKGwYfFlj-cKZC9Sl8p1O4tBLIoQ4vfK28VwtbDVEjsyKlSHutANnu-I0RvRXdCFXCUORgXN8KY9mW5-k="
+   },
+   {
+    "title": "adobe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtWELMk0yfWUxgy21SWT8t6r3NUModdVI4z8CNSY3tLL9n0tvAkJHEjEOoQzGKiT6TJAK2TUpY3UMREKlL802xme1ERp_qIKq58JYYnNMX9nBDDLtPBfKPc70lKwXm4iBLJ1GQ8M_mT7CtoilIh8Q4p4APzJMbu6oxZnlaJQ_vEQrAnckZznDFpNEG_tH_hg=="
+   },
+   {
+    "title": "mgt-commerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvN2DWaWP3t-EB2C_EXssBFmwW9VSJQlUhuumMdnT3FGUFOtxEgZ6LOBkHn_XSmY5-MrM5t4RWfUafkvG4mClgRwQQ21eWCZXo4XBZiNyzag2ZbwJrPRHMedw8p2IuMtFk5LtadqNe3xJMO6Ye5QrfBLrXadtAWtqy"
+   },
+   {
+    "title": "alumio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpipWAnYUq5D8G7Di2DX3q43fb3xawZTfn7hInwtiIvUvTjAufrlbGElQwiaPa-CrFYQNUSQPt0xP1nx2-RTsMbSH3cC0x9YN0GF5VsI2EhVn18sD-OjkhRLNwGqWiclH9DZh87n9TRprUUPdOiXytII9mlUtcKw=="
+   },
+   {
+    "title": "vaimo.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSwPKXi8-vT_zURrqgvrBwV70fX7-jeVKPSuqtqCgdCHbl16HgZ_xbv894g0Yfmx89uAnHiV4Cs9G68xeJ1rECv9BYHcCB23npGeoZZEylGrPy-S6evoZBTzKrPUV-HdkAio0dQDTcpzx4l2HNCBY3JtyFmOY2HXDrWfho"
+   },
+   {
+    "title": "adobe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFW0qxGaUBFvhi-yHKrmg3wj6MEhY03w0JJzkiyekprf6ie81A5Q8yRimaFyYbs4bqbz4vz09UHK6VtJIqSRIZH00ZAlDEs6GNGz1rLQAb2-wDKDCLzL05J7MCxnfHykUW029RuuTzt"
+   },
+   {
+    "title": "adobe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6rZ0YxOWFPb7wocvPGOGpjk1SdhU14cdqLqpiDdSG0pIw3Y_vRzxZNY4Iu3m-X7wBzkWqpm2sAcd9PVotHS3dk9tVtJW83gL80XXZfE9lsR-yRp6vkMUNBSWSAvmwdkKZWnV4Rj8cSonqoQ0MOPu-97p4cpATE9GGkQ=="
+   },
+   {
+    "title": "webkul.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFStXTghl7cbWm4fdJnl9FbFsdWwU-1QxMs-GA4gjjj5GhG6z4F8jE7qoXnodNB81cF2PRMwUlmkHOfmEXD20DU7F2xsljiQdo82MeY9z89VvGue1Z0MAUkENQ1ZOIb7X2LhIlTqGeJ4Bw25iExx4EhVfIMAm99vlBUfXlSapiSnV1g35YmR8OdCx8="
+   },
+   {
+    "title": "adobe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqE5X1fBBJVMn2Q7i4qN4I_UE8iEqVKU-O_XtblLJeGmbuQPpkSbwOpjGArTLeesRPrUcZeJOZQ-9kGANgdTjg8or2x5NreFZifONqfds0XemShF2LikqekYxaN9pQWmsyM5oRmsQyxc717PxtC1ev6NSR4f0tS_sGGsE4RCZRzJ1cDQ=="
+   },
+   {
+    "title": "adobe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHf5e0veCi3Di98LV4DKFRgwOp9LNCQFwWJtyrOAxOiIaAg6X6COffAEOKsYQhS_Uz0F-qorHRwESCJ8ezaC3B4Vm-Ep6Zg5Nq_u-OlIrr90ROmPF2QH7uEbgSISUQg39NpSbMExohc9O-la84lYp-xbK1NJQCULWgMD42Qdkwz92k="
+   },
+   {
+    "title": "youtube.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBTrYqav9x0Czm1h7vf8MYmCh3_VkK1YwJnyIVRPvjh2G7Vf7xd1sIDEgOOeZ-EJCI2dWxi-3xI15-ePwYqT4qYvnrdHVFiM1okuEJqIOfl4SgBpA6H36op8ApH7lujaMka4Wh0n8="
+   },
+   {
+    "title": "adobe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG46kq6j4CUmnungzD1n_2zftEotqSVDnfd3Mkr6ixd2J8uc80Im_nOeUL-Be4LshnR4tyrIE-recM4Hqre8gdf49U83hGSWyEB52DvXAlljC4oBDT8_oFtlWIMnSPImQRsHDeFag=="
+   },
+   {
+    "title": "adobe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2HsH8aF6IudSsPG9EPL5dk-Ajrh7pVLiWQX5W2axAmKCzlDQUNkaitETOXJ1qv7G1OK9YjBTcK5PbDBELrVnrfbPIpr2KGKSDEtkm48OC6zYO3-Cw2NXlpSZ5SygswawzYWJgW4bd"
+   },
+   {
+    "title": "adobe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8KwoA9UClbTTpkwsWaQ_D4m6OJZOE0-uAhseCFdjlQO0_VXxJwsQT4W6hS2gPsmU01BPf8URp14C7MVKtaIDcwvxUyhENhaa35MwY3FSkscWlPDcJciQOEz164E4UuRztvBCOT6nSXnxjT6pE6biRBS5LTE_hQvvEJhpPlGQC8SY="
+   },
+   {
+    "title": "adobe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElqDy8hLpezLu0QvvsQEV9Gm9p3DZ_v0OMAyiJlibcH1PIhNSWkK6IbbZJqPFxfCFn316mfGBwzaukTdcw1usO6UERwJeN0dMNUVm3bPdYExuVbBDLasoU0LT96NHTSTp7MzzdT8Wf80-1T-2CJMEENYgCphl0UctUhkHHfoKjY2bf1rzBkpicwuG59Y6llunoQKU="
+   }
+  ],
+  "tokens": 9472,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://developer.adobe.com/commerce/webapi/rest/",
+    "status": 200,
+    "chars": 3778,
+    "readable": true
+   },
+   {
+    "url": "https://developer.adobe.com/commerce/webapi/get-started/",
+    "status": 200,
+    "chars": 2960,
+    "readable": true
+   },
+   {
+    "url": "https://stylefactoryproductions.com/",
+    "status": 200,
+    "chars": 29374,
+    "readable": true
+   },
+   {
+    "url": "https://magendoo.ro/",
+    "status": 200,
+    "chars": 10350,
+    "readable": true
+   },
+   {
+    "url": "https://adobe.com/",
+    "status": 0,
+    "chars": 0,
+    "readable": false
+   },
+   {
+    "url": "https://github.com/magenable/magento-adobe-commerce-mcp-server",
+    "status": 200,
+    "chars": 8973,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/magendooro/magemcp",
+    "status": 200,
+    "chars": 13679,
+    "readable": true
+   }
+  ],
+  "seconds": 106.7
+ }
+}

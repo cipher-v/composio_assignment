@@ -1,0 +1,217 @@
+{
+ "app": {
+  "id": 78,
+  "name": "Coda",
+  "category": "Productivity and Project Management",
+  "hint": "coda.io/developers"
+ },
+ "record": {
+  "subcategory": "Collaborative Workspace",
+  "one_liner": "Coda is a collaborative workspace platform that combines documents, spreadsheets, and applications into a single interface.",
+  "auth_methods": [
+   "bearer_token",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Coda supports Personal Access Tokens (Bearer Tokens) and OAuth 2.0 Authorization Code flow. A multi-tenant integration platform would use OAuth2.",
+  "access": "self_serve_free",
+  "access_notes": "API access is free for all users across free and paid tiers. Developers can sign up for a free account, access the developer portal, and instantly create an integration for OAuth 2.0 credentials or generate personal access tokens.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "The Coda API is a RESTful API that allows comprehensive programmatic control over documents, pages, tables, rows, formulas, controls, and permissions.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Coda officially provides its own hosted MCP server in Public Beta, enabling direct OAuth-based connections to AI tools.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. Coda offers a fully self-serve, free developer tier with robust OAuth 2.0 support, an official OpenAPI specification, and an official MCP server in public beta.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.postman.com/codaio/coda-workspace/collection/0vy7uxn/coda-api",
+    "quote": "The Coda API is a RESTful API that lets you programmatically interact with Coda docs: List and search Coda docs. Create new docs and copy existing ones. Share and publish docs. Discover pages, tables, formulas, and controls. Read, insert, upsert, update, and delete rows."
+   },
+   {
+    "claim": "auth",
+    "url": "https://dlthub.com/context/source/coda-docs-migration",
+    "quote": "the rest api base url is https://coda.io/apis/v1 and all requests require a bearer token in the authorization header."
+   },
+   {
+    "claim": "auth",
+    "url": "https://rollout.com",
+    "quote": "const authUrl = `https://coda.io/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&response_type=code`;"
+   },
+   {
+    "claim": "access",
+    "url": "https://www.postman.com/codaio/coda-workspace/collection/0vy7uxn/coda-api",
+    "quote": "We make the Coda API available to all of our users free of charge, in both free and paid workspaces."
+   },
+   {
+    "claim": "access",
+    "url": "https://rollout.com",
+    "quote": "A Coda developer account (if you don't have one, go grab it – it's free!) ... Log in to the Coda developer portal; Click on \"Create New Integration\"; Fill in the basic details. Once you've done that, you'll get a client ID and client secret."
+   },
+   {
+    "claim": "api",
+    "url": "https://www.postman.com/codaio/coda-workspace/collection/0vy7uxn/coda-api",
+    "quote": "In an effort to standardize our API and make it accessible, we offer an OpenAPI 3.0 specification: OpenAPI 3.0 spec - YAML OpenAPI 3.0 spec - JSON"
+   },
+   {
+    "claim": "api",
+    "url": "https://pablofelip.online",
+    "quote": "besides time-driven and change-driven rules, we can also use webhook-based automations. This new mechanism allows us to build documents in Coda that react to external events and can receive data from other services and platforms. We can ping a Coda rule with an authenticated POST request to make it run."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://coda.io/updates",
+    "quote": "Coda MCP Public Beta. Connect your workspace to AI tools like ChatGPT, Claude, and Cursor with a single OAuth connection, and start reading, writing, and updating your docs and tables directly from the AI tools you already use."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/orellazri/coda-mcp",
+    "quote": "note this mcp server is not developed or maintained by coda; it's a community-built project."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Research Notes - Coda\n\n#### 1. What the Product Does\nCoda is a collaborative workspace platform that combines documents, spreadsheets, and applications into a single interface, allowing teams to build custom workflow tools and documents.\n* **Source URL:** https://www.postman.com/codaio/coda-workspace/collection/0vy7uxn/coda-api\n* **Verbatim Quote:** \"The Coda API is a RESTful API that lets you programmatically interact with Coda docs: List and search Coda docs. Create new docs and copy existing ones. Share and publish docs. Discover pages, tables, formulas, and controls. Read, insert, upsert, update, and delete rows.\"\n\n#### 2. Authentication Methods\nCoda supports two primary authentication methods for its public API:\n* **Personal Access Tokens (Bearer Tokens):** Users can generate static tokens to authenticate requests via the standard `Authorization: Bearer <token>` header.\n* **OAuth 2.0:** Coda supports the standard OAuth 2.0 Authorization Code flow for public integrations and applications.\n* **Primary Auth Choice:** A multi-tenant integration platform (like Composio) would use **oauth2** to securely connect and manage multiple end-user accounts without handling static user secrets.\n* **Source URL:** https://dlthub.com/context/source/coda-docs-migration\n* **Verbatim Quote:** \"the rest api base url is https://coda.io/apis/v1 and all requests require a bearer token in the authorization header.\"\n* **Source URL:** https://rollout.com (via Google Search)\n* **Verbatim Quote:** \"const authUrl = `https://coda.io/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&response_type=code`;\"\n\n#### 3. Developer Credentials & Cost\n* **Access Tier:** `self_serve_free`\n* **Cost:** Free. Coda provides API access to all users across both free and paid tiers without any additional charge.\n* **Credential Acquisition:** Developers can sign up for a free account, access the developer portal, and instantly create a new integration to obtain a Client ID and Client Secret for OAuth 2.0, or generate personal access tokens directly from their account settings.\n* **Source URL:** https://www.postman.com/codaio/coda-workspace/collection/0vy7uxn/coda-api\n* **Verbatim Quote:** \"We make the Coda API available to all of our users free of charge, in both free and paid workspaces.\"\n* **Source URL:** https://rollout.com (via Google Search)\n* **Verbatim Quote:** \"A Coda developer account (if you don't have one, go grab it – it's free!) ... Log in to the Coda developer portal; Click on \\\"Create New Integration\\\"; Fill in the basic details. Once you've done that, you'll get a client ID and client secret.\"\n\n#### 4. API Technical Details\n* **API Style:** RESTful API.\n* **Breadth:** High. The API allows comprehensive programmatic control over documents, pages, tables, rows, formulas, controls, and permissions.\n* **OpenAPI Spec:** Yes, Coda officially provides an OpenAPI 3.0 specification in both YAML and JSON formats.\n* **Webhooks:** Coda supports inbound webhooks through its automation rules engine, allowing documents to receive external data and trigger reactive workflows. There is also an Admin API for managing organization-level webhooks for enterprise customers.\n* **Sandbox:** No dedicated developer sandbox environment is provided, but since API access is free, any standard free workspace can be utilized as a testing environment.\n* **Source URL:** https://www.postman.com/codaio/coda-workspace/collection/0vy7uxn/coda-api\n* **Verbatim Quote:** \"In an effort to standardize our API and make it accessible, we offer an OpenAPI 3.0 specification: OpenAPI 3.0 spec - YAML OpenAPI 3.0 spec - JSON\"\n* **Source URL:** https://pablofelip.online (via Google Search)\n* **Verbatim Quote:** \"besides time-driven and change-driven rules, we can also use webhook-based automations. This new mechanism allows us to build documents in Coda that react to external events and can receive data from other services and platforms. We can ping a Coda rule with an authenticated POST request to make it run.\"\n\n#### 5. Model Context Protocol (MCP) Servers\n* **MCP Tier:** `official`\n* **Details:** Coda officially provides its own hosted MCP server in Public Beta, enabling direct OAuth-based connections to AI tools (such as ChatGPT, Claude, and Cursor) to read, write, and update workspace content. There are also community-maintained alternatives.\n* **Source URL:** https://coda.io/updates (via Google Search)\n* **Verbatim Quote:** \"Coda MCP Public Beta. Connect your workspace to AI tools like ChatGPT, Claude, and Cursor with a single OAuth connection, and start reading, writing, and updating your docs and tables directly from the AI tools you already use.\"\n* **Source URL:** https://github.com/orellazri/coda-mcp\n* **Verbatim Quote:** \"note this mcp server is not developed or maintained by coda; it's a community-built project.\"\n\n#### 6. Buildability Verdict & Main Blocker\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. Coda offers a fully self-serve, free developer tier with robust OAuth 2.0 support, an official OpenAPI specification, and an official MCP server in public beta, making it immediately buildable for an agent toolkit.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"coda.io\" API documentation pricing OAuth",
+   "coda api openapi spec",
+   "coda api webhooks sandbox",
+   "coda mcp server",
+   "\"Coda MCP Public Beta\"",
+   "coda.io official mcp server",
+   "coda api outbound webhooks",
+   "coda developer portal url",
+   "\"Coda\" OAuth app approval review listing",
+   "coda.io create integration oauth2",
+   " \"OAuth\"",
+   " \"oauth2/authorize\"",
+   "\"coda.io\" \"oauth2\" documentation",
+   "\"coda\" api \"bearer_token\" vs \"api_key\""
+  ],
+  "search_sources": [
+   {
+    "title": "coda.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_EysFkHKHASw4DAkVpylHUnPe5ogbQawVLHOAsfM7m8TU1wciRx8Op7I7KIighJGq3y0xF-Gg8zPy-VXhRC-ugno2w9UuzpRVVzN_I444JKDO78RgwBk6jI4RxDfR-zzhFJs2dw=="
+   },
+   {
+    "title": "rollout.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqEQAG0IPTdRACY7qQoc35i0ImlxtKTVvKUDJnkyYVRcY_8mc8wAEcy9GeG-hUvg3rJBmAAYkhnEn54biC3uegBaO5GgYhpMHb3-npkJGPrAwjnc6hdstIe1IcMlmxxdxOjGX1IqPmcgdZ7XtfkUrogVBRFdEZZqqrl9h4Xn2IvYXFUo61cc7XvcZ5f21B5LQSP6S4Ief2dUdPulp9KqTSrJMtcQ=="
+   },
+   {
+    "title": "simosme.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGju3ZJfGaTstZ17REHtfJZmUVc4w1LsbhtRHf_dulZ17oib44b9f45P81QWmWZmtW_5TwOXNkb07lhqGquIOYoUXnlNm0N_nt-8alag3jdyDLvy-31-shKnjCmkA=="
+   }
+  ],
+  "tokens": 13339,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Coda API authentication",
+    "Coda API keys",
+    "Coda OAuth documentation",
+    "coda.io/developers authentication",
+    "coda.io/developers API keys",
+    "coda.io/developers OAuth",
+    "Coda API getting started",
+    "Coda API quickstart",
+    "coda.io/developers getting started",
+    "coda.io/developers quickstart",
+    "Coda API pricing",
+    "Coda API access plans",
+    "Coda developer program",
+    "coda.io/developers pricing",
+    "coda.io/developers API access",
+    "Coda API reference",
+    "Coda API documentation index",
+    "coda.io/developers API reference",
+    "Coda MCP server official",
+    "Coda MCP server community",
+    "Coda API MCP"
+   ],
+   "candidates": 7,
+   "live_urls": [
+    "https://coda.io/packs/build/latest/",
+    "https://docs.superhuman.com/developers/apis/v1",
+    "https://id.superhuman.com/signin?oauth_client_type=MEDIATED_WEB&correlation_id=BPt_hwput9MJxgY_rTHnpg&version=v4&client_id=superhumanDocs",
+    "https://github.com/orellazri/coda-mcp",
+    "https://dlthub.com/context/source/coda-docs-migration",
+    "https://docs.nexla.com/user-guides/connectors/coda_api/coda_api_auth",
+    "https://mixedanalytics.com/knowledge-base/import-coda-data-to-google-sheets/",
+    "https://docs.rs/crate/coda-mcp/latest",
+    "https://tray.ai/documentation/connectors/service/coda",
+    "https://apis.io/apis/coda/coda-account-api/",
+    "https://www.postman.com/codaio/coda-workspace/collection/0vy7uxn/coda-api",
+    "https://connect.superhuman.com/t/discuss-template-getting-started-guide-coda-api/7714"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://coda.io/account/apiSettings",
+     "status": 404
+    },
+    {
+     "url": "https://coda.io/apis/mcp",
+     "status": 401
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://coda.io/packs/build/latest/",
+     "status": 200,
+     "chars": 5990,
+     "readable": true
+    },
+    {
+     "url": "https://docs.superhuman.com/developers/apis/v1",
+     "status": 200,
+     "chars": 141905,
+     "readable": true
+    },
+    {
+     "url": "https://id.superhuman.com/signin?oauth_client_type=MEDIATED_WEB&correlation_id=BPt_hwput9MJxgY_rTHnpg&version=v4&client_id=superhumanDocs",
+     "status": 200,
+     "chars": 7,
+     "readable": false
+    },
+    {
+     "url": "https://github.com/orellazri/coda-mcp",
+     "status": 200,
+     "chars": 6085,
+     "readable": true
+    },
+    {
+     "url": "https://dlthub.com/context/source/coda-docs-migration",
+     "status": 200,
+     "chars": 7983,
+     "readable": true
+    },
+    {
+     "url": "https://docs.nexla.com/user-guides/connectors/coda_api/coda_api_auth",
+     "status": 200,
+     "chars": 1,
+     "readable": false
+    },
+    {
+     "url": "https://mixedanalytics.com/knowledge-base/import-coda-data-to-google-sheets/",
+     "status": 200,
+     "chars": 11681,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 118.7
+ }
+}

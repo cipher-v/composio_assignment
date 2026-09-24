@@ -1,0 +1,80 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://dlthub.com/docs/dlt-ecosystem/verified-sources/pitchbook",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://frontegg.com/integrations/pitchbook",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.startupyeti.com/startup/the-cost-of-pitchbook",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.39
+  },
+  {
+   "blocked": true,
+   "claim": "access",
+   "url": "https://pitchbook.com/help-center/api",
+   "status": 403,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://wealthmcp.ai/server/pitchbook",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.45
+  }
+ ],
+ "auth_support": {
+  "api_key": false
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://frontegg.com/integrations/pitchbook']\n- Bot-walled / login pages our crawler could not read (verify via search): ['https://pitchbook.com/help-center/api']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://dlthub.com/docs/dlt-ecosystem/verified-sources/pitchbook', 'https://www.startupyeti.com/startup/the-cost-of-pitchbook', 'https://wealthmcp.ai/server/pitchbook']\n- Non-vendor sources (prefer official docs): ['https://dlthub.com/docs/dlt-ecosystem/verified-sources/pitchbook', 'https://www.startupyeti.com/startup/the-cost-of-pitchbook', 'https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview', 'https://wealthmcp.ai/server/pitchbook']\n- Auth methods not mentioned on any cited page: ['api_key']",
+ "metrics": {
+  "n_evidence": 6,
+  "alive_rate": 0.6666666666666666,
+  "dead_rate": 0.16666666666666666,
+  "blocked_rate": 0.16666666666666666,
+  "official_rate": 0.16666666666666666,
+  "readable": 3,
+  "quote_supported_rate": 0.0,
+  "lint_issues": 0,
+  "flag_count": 5
+ }
+}

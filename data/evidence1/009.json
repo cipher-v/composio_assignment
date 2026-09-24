@@ -1,0 +1,71 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developer.copper.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.03
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developer.copper.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://bit-integrations.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.copper.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.69
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://usecarly.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "api_key": false
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://developer.copper.com/', 'https://developer.copper.com/', 'https://bit-integrations.com/', 'https://usecarly.com/']\n- Non-vendor sources (prefer official docs): ['https://bit-integrations.com/', 'https://usecarly.com/']\n- Auth methods not mentioned on any cited page: ['api_key']",
+ "metrics": {
+  "n_evidence": 5,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.6,
+  "readable": 5,
+  "quote_supported_rate": 0.2,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

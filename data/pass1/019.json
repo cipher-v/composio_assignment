@@ -1,0 +1,170 @@
+{
+ "app": {
+  "id": 19,
+  "name": "Gorgias",
+  "category": "Support and Helpdesk",
+  "hint": "gorgias.com"
+ },
+ "record": {
+  "subcategory": "Helpdesk / ticketing",
+  "one_liner": "An e-commerce customer support and helpdesk platform that unifies customer conversations into a single centralized inbox.",
+  "auth_methods": [
+   "basic",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth2 is required for all public apps; HTTP Basic Auth (username:api_key) is used for private apps.",
+  "access": "approval_required",
+  "access_notes": "Developers must register on the developer portal, create a trial account, and submit a draft app form to request a sandbox environment.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "The REST API covers accounts, settings, customers, tickets, messages, and custom fields across approximately 108 endpoints.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "community_only",
+  "mcp_notes": "Community MCP server available at https://github.com/mattcoatsworth/Gorgias-MCP-Server",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "Obtaining a sandbox account requires manual approval via a draft app submission, and deploying a multi-tenant integration requires a formal public app review process.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.gorgias.com/pricing",
+    "quote": "one inbox for every customer conversation"
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.gorgias.com/reference/introduction",
+    "quote": "The gorgias api is structured with rest in mind. our api has predictable resource-oriented urls, accepts json-encoded request bodies, returns json-encoded responses, and uses standard http response codes, authentication, and verbs."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.gorgias.com/docs/access-tokens-api-keys",
+    "quote": "👉 please remember that the api key authentication method can be used only for private apps ."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.gorgias.com/docs/oauth2-bearer-token",
+    "quote": "👉 please remember that oauth2 is required for all public apps to be approved."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.gorgias.com/docs/access-tokens-api-keys",
+    "quote": "1. register on developer portal & get gorgias sandbox account 2. create a draft app submission form 3. set up oauth2 4. build and test your app 5. submit app for review"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/mattcoatsworth/Gorgias-MCP-Server",
+    "quote": "An MCP server for interacting with the Gorgias helpdesk API. This server provides tools and resources for managing tickets, customers, and other Gorgias functionality."
+   }
+  ],
+  "confidence": 0.95
+ },
+ "notes": "### 1. Product Overview\nGorgias is an e-commerce-focused customer support and helpdesk platform that unifies customer conversations from multiple channels (email, SMS, voice, social media) into a single centralized inbox.\n* **Source:** `https://www.gorgias.com/pricing`\n* **Verbatim Quote:** \"one inbox for every customer conversation\"\n* **Source:** `https://developers.gorgias.com/reference/introduction`\n* **Verbatim Quote:** \"The gorgias api is structured with rest in mind. our api has predictable resource-oriented urls, accepts json-encoded request bodies, returns json-encoded responses, and uses standard http response codes, authentication, and verbs.\"\n\n### 2. Authentication Methods\nGorgias supports two primary authentication methods depending on the application type:\n* **API Keys (HTTP Basic Auth):** Used strictly for private, single-tenant applications. It requires a base64-encoded string of the user's username and API key.\n  * **Source:** `https://developers.gorgias.com/docs/access-tokens-api-keys`\n  * **Verbatim Quote:** \"👉 please remember that the api key authentication method can be used only for private apps .\"\n  * **Verbatim Quote:** \"curl --request get \\ --url https://your-customer-account.gorgias.com/api/account \\ --header 'authorization: basic base64encode(username:api_key)'\"\n* **OAuth2 Bearer Tokens:** Required for all public, multi-tenant applications. It utilizes standard bearer tokens and granular scopes.\n  * **Source:** `https://developers.gorgias.com/docs/oauth2-bearer-token`\n  * **Verbatim Quote:** \"👉 please remember that oauth2 is required for all public apps to be approved.\"\n  * **Verbatim Quote:** \"curl --request get \\ --url https://your-customer-account.gorgias.com/api/account \\ --header 'authorization: bearer your-plain-text-access-token'\"\n\n**Primary Auth for Multi-Tenant Integration:** `oauth2` (OAuth2 Bearer Token), as it is explicitly mandated by Gorgias for public integrations.\n\n### 3. Credential Acquisition & Cost\n* **How to get credentials:** For private apps, an administrator can instantly generate an API key via the account settings UI. For public multi-tenant apps, developers must register on the developer portal, create a trial account, and submit a draft app form to request a sandbox environment.\n  * **Source:** `https://developers.gorgias.com/docs/access-tokens-api-keys`\n  * **Verbatim Quote:** \"1. register on developer portal & get gorgias sandbox account 2. create a draft app submission form 3. set up oauth2 4. build and test your app 5. submit app for review\"\n  * **Source:** Gorgias Developer Documentation (via Google Search)\n  * **Verbatim Quote:** \"Once you register, feel free to create a trial account and reach out to [email protected] to transform it into a developer account. ⚠️ You will need to have a draft app to get approved for the Sandbox Account.\"\n* **Cost:** Gorgias provides a 7-day free trial, after which a paid subscription is required (starting at $10/month for the Starter tier).\n  * **Source:** `open.cx` (via Google Search)\n  * **Verbatim Quote:** \"7 days, no payment. Price: Gorgias Starter $10/mo (50 tickets, 3 seats); Basic $60/mo (300 tickets).\"\n* **Access Tier:** `approval_required` (While anyone can register on the portal, obtaining a functional sandbox account and publishing a public multi-tenant app requires submitting a draft app form and receiving manual approval from the vendor).\n\n### 4. API Technical Details\n* **API Style:** REST\n  * **Source:** `https://developers.gorgias.com/reference/introduction`\n  * **Verbatim Quote:** \"The gorgias api is structured with rest in mind.\"\n* **Breadth:** High. The API covers accounts, settings, customers, tickets, messages, and custom fields across approximately 108 endpoints.\n  * **Source:** `github.com/mattcoatsworth/Gorgias-MCP-Server` (via Google Search)\n  * **Verbatim Quote:** \"gorgias-pp-mcp runs in code-orchestration mode and exposes a small fixed set of tools that collectively reach all 108 Gorgias endpoints.\"\n* **OpenAPI Spec:** Yes, natively provided.\n  * **Source:** `https://developers.gorgias.com/reference/introduction`\n  * **Verbatim Quote:** \"visit https://developers.gorgias.com/llms.txt for an index of all pages formatted in markdown and endpoints in openapi.\"\n* **Webhooks:** Yes, supported via \"HTTP integrations\" that trigger on events like ticket creation or updates.\n  * **Source:** Gorgias Help Center (via Google Search)\n  * **Verbatim Quote:** \"From your helpdesk, click the Settings icon in the bottom-left corner. In the menu, locate Account, then select HTTP integration. Click the Manage tab, then click Add HTTP integration.\"\n* **Sandbox:** Yes, available but requires manual approval.\n  * **Source:** Gorgias Developer Documentation (via Google Search)\n  * **Verbatim Quote:** \"⚠️ You will need to have a draft app to get approved for the Sandbox Account.\"\n\n### 5. MCP Server Availability\n* **Availability Tier:** `community_only`\n* **Details:** No official MCP server is published by Gorgias. Multiple community implementations exist on GitHub and third-party registries.\n  * **Source:** `https://github.com/mattcoatsworth/Gorgias-MCP-Server`\n  * **Verbatim Quote:** \"An MCP server for interacting with the Gorgias helpdesk API. This server provides tools and resources for managing tickets, customers, and other Gorgias functionality.\"\n  * **Source:** `https://www.mcpbundles.com/skills/gorgias`\n  * **Verbatim Quote:** \"gorgias tools: 19 customer relation gorgias connect your account, then chat with ai to run tools.\"\n\n### 6. Buildability Verdict & Main Blocker\n* **Verdict:** `ready_with_friction`\n* **Main Blocker:** `app_review` (While the API is comprehensive and an OpenAPI spec is available, developers face friction because obtaining a sandbox account requires manual approval via a draft app submission, and deploying a multi-tenant integration requires a formal public app review process).",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"gorgias\" developer portal sandbox account cost",
+   "\"gorgias\" openapi spec json yaml",
+   "\"gorgias\" webhooks documentation",
+   "\"gorgias\" mcp server github",
+   "\"register on developer portal & get gorgias sandbox account\"",
+   " \"sandbox account\"",
+   " \"developer portal\""
+  ],
+  "search_sources": [
+   {
+    "title": "gorgias.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEN3B1PmWAmbFbiHGRXt52Lxgz6iEV9mWcq6jtvQCDhlNiatjQ93zg3Ytmc0kPaF62_8grHyghmspDKI6BAaebMTDH_Jo9Jh6GpHDOP4Tb7SBkYcI3QnalfzPAEvpMDIRqgc28DCSVotBg3m7uAYRYpgc04ZXamI1qt6kMJ"
+   },
+   {
+    "title": "open.cx",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHx6SCqkdTuL9-m1TvbSnbwmDJEIKtZiOe8_bx_Y-9msqB_R-Bf1iBc2deTCB2MDjwf6hHKyKlbtnk7ffSsXLwRGoGK7BOtnRysCo5rsl56l1q7sjoh_fwmlpExNyKHIxbTrg1IhTiXt9uN7-IreFnLr3e"
+   },
+   {
+    "title": "prismatic.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6wzoyaPlXTxmRScebWvZ6Fks8MD8hCEI807a6teHae_6PfRS0RJBHlGsY_I0KhzQe4_idvzSWJlgquLL8Y7aVMf5V_RodRzYY6pDAAu0VNUkpSh1f7V-LmaFBSxYTuQ=="
+   }
+  ],
+  "tokens": 12981,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Gorgias developer documentation authentication API keys OAuth",
+    "Gorgias developer documentation getting started quickstart",
+    "Gorgias pricing API access plans developer program",
+    "Gorgias API reference index",
+    "Gorgias MCP server official community",
+    "Gorgias official pricing page URL",
+    "Gorgias developer partner program URL",
+    "Gorgias official MCP server documentation URL"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://developers.gorgias.com/docs/access-tokens-api-keys",
+    "https://www.gorgias.com/pricing",
+    "https://developers.gorgias.com/reference/introduction",
+    "https://developers.gorgias.com/docs/oauth2-bearer-token",
+    "https://www.mcpbundles.com/skills/gorgias"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://developers.gorgias.com/docs/quickstart",
+     "status": 404
+    },
+    {
+     "url": "https://help.gorgias.com/en-US/connect-gorgias-to-ai-tools-with-mcp-490332",
+     "status": 404
+    },
+    {
+     "url": "https://www.gorgias.com/partners/app-partners",
+     "status": 404
+    },
+    {
+     "url": "https://help.gorgias.com/en-US/access-your-gorgias-rest-api-credentials-140679",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://developers.gorgias.com/docs/access-tokens-api-keys",
+     "status": 200,
+     "chars": 2569,
+     "readable": true
+    },
+    {
+     "url": "https://www.gorgias.com/pricing",
+     "status": 200,
+     "chars": 3170,
+     "readable": true
+    },
+    {
+     "url": "https://developers.gorgias.com/reference/introduction",
+     "status": 200,
+     "chars": 5041,
+     "readable": true
+    },
+    {
+     "url": "https://developers.gorgias.com/docs/oauth2-bearer-token",
+     "status": 200,
+     "chars": 2274,
+     "readable": true
+    },
+    {
+     "url": "https://www.mcpbundles.com/skills/gorgias",
+     "status": 200,
+     "chars": 12882,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 244.4
+ }
+}

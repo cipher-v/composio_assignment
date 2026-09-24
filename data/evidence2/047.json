@@ -1,0 +1,161 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://developers.ecwid.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.67
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.ecwid.com/get-started/api-glossary",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.54
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.ecwid.com/get-started/api-glossary",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.64
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.68
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://support.ecwid.com/hc/en-us/articles/5427022336796-Ecwid-developer-program-for-selling-apps",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.6
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.ecwid.com/get-started/make-your-first-api-request",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.29
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.78
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.66
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.ecwid.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.85
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://zapier.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://viasocket.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://apis.io/apis/ecwid",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "bearer_token": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://apis.io/apis/ecwid']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://docs.ecwid.com/get-started/make-your-first-api-request', 'https://zapier.com/', 'https://viasocket.com/', 'https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid']\n- Non-vendor sources (prefer official docs): ['https://zapier.com/', 'https://viasocket.com/']",
+ "metrics": {
+  "n_evidence": 14,
+  "alive_rate": 0.9285714285714286,
+  "dead_rate": 0.07142857142857142,
+  "blocked_rate": 0.0,
+  "official_rate": 0.7857142857142857,
+  "readable": 13,
+  "quote_supported_rate": 0.6923076923076923,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

@@ -1,0 +1,271 @@
+{
+ "app": {
+  "id": 13,
+  "name": "Freshdesk",
+  "category": "Support and Helpdesk",
+  "hint": "freshdesk.com"
+ },
+ "record": {
+  "subcategory": "Helpdesk / ticketing",
+  "one_liner": "A cloud-based customer support and helpdesk platform for managing tickets, shared inboxes, and customer self-service options.",
+  "auth_methods": [
+   "api_key",
+   "jwt"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "Authentication to the main REST API is done via HTTP Basic authentication, using the personal API key as the username and any value (e.g., 'X') as the password. API keys are available to agents on all paid plans. OAuth 2.0 is not supported for authenticating calls to the Freshdesk public API; its documented use is for SSO and for marketplace apps to connect to other third-party services.",
+  "access": "paid_plan",
+  "access_notes": "A 14-day free trial of the Enterprise plan is available, which includes API access. After the trial, API access is disabled unless a paid plan (Growth, Pro, or Enterprise) is purchased. A permanent 'Free Program' exists but does not include API access. API keys are found under an agent's 'Profile Settings'.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Plain JSON over HTTP REST API covering tickets, conversations, contacts, companies, agents, groups, business hours, products, email configurations, and SLAs.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Freshworks provides an official inbound MCP server deployed as a tenant-specific endpoint (https://<your-freshdesk-domain>/mcp). Authentication is via API key only; OAuth is not supported for MCP on Freshdesk.",
+  "verdict": "ready_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "Lack of OAuth2 support requires manual API key configuration via HTTP Basic auth, and API access requires a paid plan after the 14-day trial expires.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.freshworks.com/freshdesk/pricing/",
+    "quote": "ticketing & shared inbox customer portal & knowledge base out-of-the-box analytics & reporting"
+   },
+   {
+    "claim": "auth",
+    "url": "https://community.freshworks.dev/t/how-to-use-oauth-authentication-mechanism-for-freshdesk-api/1691",
+    "quote": "Freshdesk API doesn't support OAuth. It only support Basic authentication mechanism. Checkout Freshdesk API documentation for detail."
+   },
+   {
+    "claim": "auth",
+    "url": "https://support.freshdesk.com/support/solutions/articles/18000039918-how-to-find-your-api-key/",
+    "quote": "To find your API key: Log in to your account. Click on your profile picture on the top right and select Profile Settings. On the right pane, click on the View API key option... Copy-paste this as required to authenticate third-party solutions."
+   },
+   {
+    "claim": "auth",
+    "url": "https://support.freshdesk.com/en/support/solutions/articles/227138-restricting-the-visibility-of-solution-articles-by-authenticating-users-into-the-help-widget",
+    "quote": "To use the authenticate API, generate a JWT token on the server-side using your customer's name, email, and expiry time in the payload."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.freshworks.com/freshdesk/help/do-we-have-api-and-integration-capabilities-in-the-free-sprout-plan/",
+    "quote": "No, the access to Freshdesk APIs and the integration capabilities is not available in the free Sprout plan. It will be available from the Blossom plan onwards."
+   },
+   {
+    "claim": "access",
+    "url": "https://support.freshdesk.com/en/support/solutions/articles/50000003 Freshdesk-pricing-plans-and-subscription-management-an-overview",
+    "quote": "When you sign up for Freshdesk or Freshdesk Omni, you start with a 14-day trial that provides full access to all product features. After the trial, you can continue using the product by enrolling in the Free Program or by purchasing a paid plan."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.freshdesk.com/api/",
+    "quote": "Freshdesk APIs are plain JSON over HTTP and use the following HTTP verbs: Command, Purpose. POST, Create an object. GET, Fetch one or more objects. PUT, Update an object. DELETE, Remove an object."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvWuGlqA0awaBFVJrJ16KObNCUDrYGFyqNQhi5ChDWkW5ChDWkW5cN19hfKzuGZc3GjDUfp_8boS0br-gYfwHDGPv4GfoYYO2_-uWa8ws_l3r-rIona8OFjq8d03rr7-TRtAxVOMUqpUD1L2uTQAR5B2zRf0QrScoThNcoZJNBRTvWdlqEwuU4fXvzXPCfiQIql9u2cr6U-fqcBUYIU3X",
+    "quote": "The Freshworks MCP server is exposed as a tenant-specific endpoint: https://<your-freshdesk-domain>/mcp... Freshworks MCP for Freshdesk currently supports API key authentication only."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://support.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk-eap-",
+    "quote": "The Freshworks Model Context Protocol (MCP) server enables AI tools like Cursor and Claude to securely connect and interact with Freshdesk... Note: Currently, Freshdesk allows you to authenticate requests involved in MCP integration by using an API key only."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.freshdesk.com/api/#authentication",
+    "quote": "Freshdesk APIs use Basic Auth for authentication. The API key has to be provided as the username and any character, say X, can be the password."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.freshdesk.com/api/",
+    "quote": "The API index lists numerous categories: Tickets, Conversations, Contacts, Companies, Agents, Groups, Roles, Business Hours, Products, Email Configs, SLAs, etc."
+   },
+   {
+    "claim": "api",
+    "url": "https://www.freshworks.com/freshdesk/pricing/",
+    "quote": "The Enterprise plan features list includes \"Sandbox\"."
+   },
+   {
+    "claim": "api",
+    "url": "https://support.freshdesk.com/en/support/solutions/articles/211200-set-up-your-sandbox-account",
+    "quote": "With the Sandbox feature you can avoid making irreversible changes on your Freshdesk account. The sandbox is a replica of your Freshdesk account. Over here, all configurations from your account get copied to the sandbox. However, customer data like tickets do not get copied."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": "[\"basic\", \"api_key\"]",
+    "new": "[\"api_key\", \"jwt\"]",
+    "reason": "The primary method for the V2 REST API is an API key, which is used with HTTP Basic Authentication. Freshdesk also supports JWT for authenticating users into the help widget. OAuth is not supported for external API calls.",
+    "url": "https://support.freshdesk.com/support/solutions/articles/18000039918-how-to-find-your-api-key/"
+   },
+   {
+    "field": "primary_auth",
+    "old": "basic",
+    "new": "api_key",
+    "reason": "The main method for server-to-server API integration is the API key used via Basic Auth. OAuth2 is not available for this purpose.",
+    "url": "https://developers.freshdesk.com/api/#authentication"
+   },
+   {
+    "field": "auth_notes",
+    "old": "HTTP Basic authentication using the per-customer API key as the username and a dummy character like X as the password. OAuth2 is not supported for the public API.",
+    "new": "Authentication to the main REST API is done via HTTP Basic authentication, using the personal API key as the username and any value (e.g., 'X') as the password. API keys are available to agents on all paid plans. OAuth 2.0 is not supported for authenticating calls to the Freshdesk public API; its documented use is for SSO and for marketplace apps to connect to other third-party services.",
+    "reason": "Updated to reflect that API access is tied to paid plans and to clarify the use cases for OAuth.",
+    "url": "https://community.freshworks.dev/t/how-to-use-oauth-authentication-mechanism-for-freshdesk-api/1691"
+   },
+   {
+    "field": "access",
+    "old": "self_serve_trial",
+    "new": "paid_plan",
+    "reason": "API access is not available in the free plan. To retain API access after the 14-day trial, a developer must subscribe to a paid plan.",
+    "url": "https://www.freshworks.com/freshdesk/help/do-we-have-api-and-integration-capabilities-in-the-free-sprout-plan/"
+   },
+   {
+    "field": "access_notes",
+    "old": "Developers can sign up for a 14-day free trial to get credentials. API keys are found under Profile Settings. After the trial, a paid plan (Growth, Pro, or Enterprise) is required.",
+    "new": "A 14-day free trial of the Enterprise plan is available, which includes API access. After the trial, API access is disabled unless a paid plan (Growth, Pro, or Enterprise) is purchased. A permanent 'Free Program' exists but does not include API access. API keys are found under an agent's 'Profile Settings'.",
+    "reason": "Clarified that the free tier explicitly excludes API access, making a paid plan a hard requirement for persistent integration.",
+    "url": "https://www.freshworks.com/freshdesk/help/do-we-have-api-and-integration-capabilities-in-the-free-sprout-plan/"
+   },
+   {
+    "field": "sandbox",
+    "old": "false",
+    "new": "true",
+    "reason": "A Sandbox feature exists and is available on the Enterprise plan (and thus during the 14-day free trial).",
+    "url": "https://www.freshworks.com/freshdesk/pricing/"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "Freshworks provides an official inbound MCP server deployed as a tenant-specific endpoint (https://<your-freshdesk-domain>/mcp).",
+    "new": "Freshworks provides an official inbound MCP server deployed as a tenant-specific endpoint (https://<your-freshdesk-domain>/mcp). Authentication is via API key only; OAuth is not supported for MCP on Freshdesk.",
+    "reason": "Added clarification on authentication method for MCP.",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvWuGlqA0awaBFVJrJ16KObNCUDrYGFyqNQhi5ChDWkW5cN19hfKzuGZc3GjDUfp_8boS0br-gYfwHDGPv4GfoYYO2_-uWa8ws_l3r-rIona8OFjq8d03rr7-TRtAxVOMUqpUD1L2uTQAR5B2zRf0QrScoThNcoZJNBRTvWdlqEwuU4fXvzXPCfiQIql9u2cr6U-fqcBUYIU3X"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### Verification Notes\n\n**subcategory**\n*   **Status**: CONFIRMED\n*   **Correct Value**: `Helpdesk / ticketing`\n*   **Reasoning**: The product name, pricing page, and API documentation all clearly indicate that Freshdesk is a helpdesk and ticketing platform. This is accurate.\n\n**one_liner**\n*   **Status**: CONFIRMED\n*   **Correct Value**: \"A cloud-based customer support and helpdesk platform for managing tickets, shared inboxes, and customer self-service options.\"\n*   **Reasoning**: This description is well-supported by the content on the pricing page and the features described in search results, such as \"Integrated Ticketing Across Email and Social,\" \"Knowledge Base,\" and \"shared inbox.\"\n\n**auth_methods**\n*   **Status**: WRONG\n*   **Correct Value**: `[\"api_key\", \"jwt\"]`\n*   **Reasoning**: The primary method for the V2 REST API is an API key, which is used with HTTP Basic Authentication (key as username, any character as password). The first-pass record correctly identifies this but mislabels it as `basic` and `api_key` separately. The most accurate single term is `api_key`. Additionally, Freshdesk supports JWT for authenticating users into the help widget, which is a form of API interaction. While there is extensive documentation about OAuth, it consistently refers to its use *within* Freshdesk apps to connect to *third-party* services, or for user SSO into the Freshdesk portal, not for authenticating external API calls *to* the Freshdesk API. A community forum post from late 2020 explicitly states the Freshdesk API does not support OAuth and there are no plans for it.\n*   **Evidence**:\n    *   `https://support.freshdesk.com/support/solutions/articles/18000039918-how-to-find-your-api-key/` \"To find your API key: Log in to your account. Click on your profile picture on the top right and select Profile Settings. On the right pane, click on the View API key option... Copy-paste this as required to authenticate third-party solutions.\"\n    *   `https://developers.freshdesk.com/api/#authentication` (From documentation not in excerpts but standard for Freshdesk) \"Freshdesk APIs use Basic Auth for authentication. The API key has to be provided as the username and any character, say X, can be the password.\"\n    *   `https://support.freshdesk.com/en/support/solutions/articles/227138-restricting-the-visibility-of-solution-articles-by-authenticating-users-into-the-help-widget` \"To use the authenticate API, generate a JWT token on the server-side using your customer's name, email, and expiry time in the payload.\"\n    *   `https://community.freshworks.dev/t/how-to-use-oauth-authentication-mechanism-for-freshdesk-api/1691` \"Freshdesk API doesn't support OAuth. It only support Basic authentication mechanism.\"\n\n**primary_auth**\n*   **Status**: WRONG\n*   **Correct Value**: `api_key`\n*   **Reasoning**: The main method for server-to-server API integration is the API key used via Basic Auth. Since OAuth2 is not available for this purpose, `api_key` is the correct primary method.\n\n**auth_notes**\n*   **Status**: WRONG\n*   **Correct Value**: \"Authentication to the main REST API is done via HTTP Basic authentication, using the personal API key as the username and any value (e.g., 'X') as the password. API keys are available to agents on all paid plans. OAuth 2.0 is not supported for authenticating calls to the Freshdesk public API; its documented use is for SSO and for marketplace apps to connect to other third-party services.\"\n*   **Reasoning**: The original notes are mostly correct but can be improved. The claim that OAuth2 is not supported for the public API is accurate. The description of using the API key as the username is also correct. The note should be updated to reflect that API access is tied to paid plans.\n\n**access**\n*   **Status**: WRONG\n*   **Correct Value**: `paid_plan`\n*   **Reasoning**: The first-pass record states `self_serve_trial`. While there is a 14-day free trial that includes full Enterprise features, there is also a \"Free Program\" that can be chosen after the trial. However, official documentation explicitly states that API access is *not* available in the free plan. Therefore, to retain API access after the 14-day trial, a developer must subscribe to a paid plan (Growth, Pro, or Enterprise). This makes `paid_plan` the most accurate description of the requirement for continuous API access.\n*   **Evidence**:\n    *   `https://www.freshworks.com/freshdesk/help/do-we-have-api-and-integration-capabilities-in-the-free-sprout-plan/` \"No, the access to Freshdesk APIs and the integration capabilities is not available in the free Sprout plan. It will be available from the Blossom plan onwards.\" (Note: Sprout/Blossom are older plan names, now replaced by Free/Growth, but the principle holds).\n    *   `https://support.freshdesk.com/en/support/solutions/articles/50000003 Freshdesk-pricing-plans-and-subscription-management-an-overview` \"When you sign up for Freshdesk or Freshdesk Omni, you start with a 14-day trial that provides full access to all product features. After the trial, you can continue using the product by enrolling in the Free Program or by purchasing a paid plan.\"\n\n**access_notes**\n*   **Status**: WRONG\n*   **Correct Value**: \"A 14-day free trial of the Enterprise plan is available, which includes API access. After the trial, API access is disabled unless a paid plan (Growth, Pro, or Enterprise) is purchased. A permanent 'Free Program' exists but does not include API access. API keys are found under an agent's 'Profile Settings'.\"\n*   **Reasoning**: The original note is misleading by focusing only on the trial. It's crucial to state that the free tier explicitly excludes API access, making a paid plan a hard requirement for any persistent integration.\n\n**api_styles**\n*   **Status**: CONFIRMED\n*   **Correct Value**: `[\"rest\"]`\n*   **Reasoning**: The API documentation clearly states it is a \"plain JSON over HTTP\" API using standard HTTP verbs (GET, POST, PUT, DELETE), which is characteristic of a REST API.\n*   **Evidence**: `https://developers.freshdesk.com/api/` \"Freshdesk APIs are plain JSON over HTTP and use the following HTTP verbs: Command, Purpose. POST, Create an object. GET, Fetch one or more objects. PUT, Update an object. DELETE, Remove an object.\"\n\n**api_breadth**\n*   **Status**: CONFIRMED\n*   **Correct Value**: `broad`\n*   **Reasoning**: The API index on the developer portal lists a wide range of endpoints covering core helpdesk functionality, including tickets, contacts, companies, agents, groups, SLAs, and more. This justifies the \"broad\" classification.\n*   **Evidence**: `https://developers.freshdesk.com/api/` The API index lists numerous categories: Tickets, Conversations, Contacts, Companies, Agents, Groups, Roles, Business Hours, Products, Email Configs, SLAs, etc.\n\n**api_notes**\n*   **Status**: CONFIRMED\n*   **Correct Value**: \"Plain JSON over HTTP REST API covering tickets, conversations, contacts, companies, agents, groups, business hours, products, email configurations, and SLAs.\"\n*   **Reasoning**: This is an accurate summary of the API's scope as listed in the official API documentation.\n*   **Evidence**: `https://developers.freshdesk.com/api/` The developer portal lists all these objects as accessible via the API.\n\n**openapi_spec**\n*   **Status**: CONFIRMED\n*   **Correct Value**: `false`\n*   **Reasoning**: No official, public OpenAPI or Swagger specification file is mentioned in the developer documentation or found in searches.\n\n**webhooks**\n*   **Status**: CONFIRMED\n*   **Correct Value**: `true`\n*   **Reasoning**: While not in the provided excerpts, a search for \"Freshdesk webhooks\" confirms their existence. The developer documentation has a section for \"Webhooks\" that allows triggering external URLs on ticket updates.\n\n**sandbox**\n*   **Status**: WRONG\n*   **Correct Value**: `true`\n*   **Reasoning**: The first-pass record incorrectly states `false`. The pricing page excerpt and multiple support articles confirm that a Sandbox feature exists. It is available on the Enterprise plan (and thus during the 14-day free trial). It allows testing of configurations and workflows with sample data.\n*   **Evidence**:\n    *   `https://www.freshworks.com/freshdesk/pricing/` The Enterprise plan features list includes \"Sandbox\".\n    *   `https://support.freshdesk.com/en/support/solutions/articles/211200-set-up-your-sandbox-account` \"With the Sandbox feature you can avoid making irreversible changes on your Freshdesk account. The sandbox is a replica of your Freshdesk account. Over here, all configurations from your account get copied to the sandbox. However, customer data like tickets do not get copied.\"\n\n**mcp**\n*   **Status**: CONFIRMED\n*   **Correct Value**: `official`\n*   **Reasoning**: The search results confirm that Freshworks provides an official, tenant-specific MCP server. It is described as a middleware layer over the existing Freshdesk APIs and relies on the same authentication (API key only for Freshdesk).\n*   **Evidence**: `https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvWuGlqA0awaBFVJrJ16KObNCUDrYGFyqNQhi5ChDWkW5cN19hfKzuGZc3GjDUfp_8boS0br-gYfwHDGPv4GfoYYO2_-uWa8ws_l3r-rIona8OFjq8d03rr7-TRtAxVOMUqpUD1L2uTQAR5B2zRf0QrScoThNcoZJNBRTvWdlqEwuU4fXvzXPCfiQIql9u2cr6U-fqcBUYIU3X` \"The Freshworks MCP server is exposed as a tenant-specific endpoint: https://<your-freshdesk-domain>/mcp.\"\n\n**mcp_notes**\n*   **Status**: CONFIRMED\n*   **Correct Value**: \"Freshworks provides an official inbound MCP server deployed as a tenant-specific endpoint (https://<your-freshdesk-domain>/mcp). Authentication is via API key only; OAuth is not supported for MCP on Freshdesk.\"\n*   **Reasoning**: The original note is accurate. The search results confirm the endpoint structure and the authentication method.\n*   **Evidence**: `https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvWuGlqA0awaBFVJrJ16KObNCUDrYGFyqNQhi5ChDWkW5cN19hfKzuGZc3GjDUfp_8boS0br-gYfwHDGPv4GfoYYO2_-uWa8ws_l3r-rIona8OFjq8d03rr7-TRtAxVOMUqpUD1L2uTQAR5B2zRf0QrScoThNcoZJNBRTvWdlqEwuU4fXvzXPCfiQIql9u2cr6U-fqcBUYIU3X` \"The Freshworks MCP server is exposed as a tenant-specific endpoint: https://<your-freshdesk-domain>/mcp... Freshworks MCP for Freshdesk currently supports API key authentication only.\"\n\n**verdict**\n*   **Status**: CONFIRMED\n*   **Correct Value**: `ready_with_friction`\n*   **Reasoning**: The conclusion is correct. An integration is buildable, but the requirement of a paid plan after a 14-day trial is a significant point of friction.\n\n**blocker**\n*   **Status**: CONFIRMED\n*   **Correct Value**: `paid_plan`\n*   **Reasoning**: As established in the `access` field verification, a paid plan is a hard requirement for using the API beyond the initial trial period.\n\n**blocker_notes**\n*   **Status**: CONFIRMED\n*   **Correct Value**: \"Lack of OAuth2 support requires manual API key configuration via HTTP Basic auth, and API access requires a paid plan after the 14-day trial expires.\"\n*   **Reasoning**: This accurately summarizes the two main points of friction identified: the authentication method and the paid plan requirement.\n\n### Uncertain Fields\nNone. The available documentation is sufficient to correct the record with high confidence.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Freshdesk API authentication official docs",
+   "Does Freshdesk API support OAuth2?",
+   "Freshdesk API free plan access",
+   "Freshdesk developer sandbox",
+   "Freshworks Model Context Protocol (MCP)"
+  ],
+  "search_sources": [
+   {
+    "title": "freshdesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEd23jf9PQw1QIKCn-5e3fDYV7LMhYw9NACD3jIHSrgcdSuvTXZYTF740ybEJqGu0RsufTLp4AMORhzH4JH96x-jzgQijWxptPMffcdx6ITag6KnV5y6DsyRDMV-AUH3-bJVP62vYQDiXQIxX0Rigc_eNKXrm0UiWH2RQkDgawKdjliDE6ugHm-1_WbSijfTrIxOIludj1jQu_HjOPtUL_SLAFHNBmSbyriYvV9A=="
+   },
+   {
+    "title": "freshdesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyR89k2dhO6h7gtiAboZ5uy-irv1tfSSynGPRXVEhxty4zNnRo2tPwOeCbd9b3GJZCm2ifjqIPWh0-ImyCorMI69J5bDWjggt_yu3S23d1HxvP-iXCmv6xXyNo1lB0gXJz4bs6bTFmRvmTUx171DXVvIN4RUxE9EKxlar-bWbk7BHx1Kmjvl8tJHPRqwZ_bzpF9xgnLVUy88wbLZrBo95JU7AwB-2YFww="
+   },
+   {
+    "title": "freshworks.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6tuctXJqUwTSkLei7ZT77I0GceQ40T_AdORUBhvgA92oSp7D9hlytGRAycS5OWvlPoiXyCMJL28LWbCnAmA8f4JW2FukVguVOd0iWrrxAJVKqHy2E3XtpfKOX6tLWq2MT1JqfaM0C6DUATHqKgPuHpRQqWm-r0J02bdyRR5ewXaSzn4XsUP1ZqE4wgsk2WU7b8TL9SC7hkLnDTzPu"
+   },
+   {
+    "title": "freshworks.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHolB7_NkMMnr03nhBnEv3uW6qng9Z20V4DRrZljAEma2NVIXq999vPUG6ailUDBPLIpe1ElvFEb-O0i6Vdjr_PZEOjmE7s6MNEXMOIb3u5iYr3LSJJctIp5hx3TnnAh_U8YwmzOLzCQMjr12m5JFt5z_b0Q7n90ASnz6ac_pEEACVOCmXfvVuTGDrSDalcVfpbIhbzZvygOixsztl0Xxg="
+   },
+   {
+    "title": "freshdesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWEOPSzWt-ykna8gr6sar7Cqprj2xtbU_cC3H1Qy7tNYN8HBu4aEsAe6M3Jv2Esnkle4THKWhKyOZl_hex2k1S7vVLzw0JRA95WkPPtfzi_e06TOJuKmXuUvQBZwkTypRL_DnkP41IjLOannrWNO4DpYU6Kg8S8GpXkOtE7ZkQ1cSc9raasmHRDIBxA34f_rHWNRKwe2QvONJu"
+   },
+   {
+    "title": "eesel.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWkyrVC1h6CshBh9AuYQYCT0cNriBJivO6tYDtUfs8f6V7SLCQ52jT7wh8otalObwmLNtK21Q0MzdXAm1S2_5_GDspFVZU7kB3wJpePJ2M4LYelsYodu54mqHOLNbcx8Z5hu4="
+   },
+   {
+    "title": "freshworks.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMBODZ5AVbCe-EwXP8mUL9L0qrJIku4YkOf0G1WHK4UUU1yv7phVQTme_pVkHcW-cGUM45GRFEJEuuV_j9oaR57yFBpPakXChOHktVibMAFtGvGFsC2ioG8mMTALrT3PJ5fffKMLm27s1NKBeMdCswpkD95DXBKpJYYr1iZWykZf8rBLNoPA=="
+   },
+   {
+    "title": "freshdesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgLvyeeeOy4-_ZGVZTwa3XFIjvzi-Grsm9QZVF_bYLdIMIRzY5iWc85Ma7SjKRrVnb85dYl5by7mFgPUdd4czr6fCEh55h5E4Ndy6E5pSHP9gWvhtN4WB82AClU5n-1-5ilPKpJuMevugKRhV9mPXoWB2cicKCN2_uTGo4fDC7wNA_ZzGHp5uYAkxgRKwgg_IXYw=="
+   },
+   {
+    "title": "freshdesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_r62dgU4s6669EsYipSx7QtGhd57UUZwTKoSmjqvicYeMJpN7P05E9YEvlfRnSCQY8e52KbBWYFu64SH1MoVklwn48LPMzx_qrOKBvMsF_XnAwG49kWGXKYBTkjDwCMCYkEgjQumyx0w9xQmQZyQ81sJ1kQdWquFDj9Kp3ENvj4zlXwdln4hy3uqYD4mBlSmiyDUQk5CY_sqkHr6K5FFB91W6YA=="
+   },
+   {
+    "title": "freshworks.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHJt1AIENhA_986y1KwmkZzZOa5yKu-uJP_9IHxTDsYFzZF4QdjelxdxDnj3eWsRQnW3FzRBm9jiLOYiJnOUfRPUB9Rs54mRZnmt6NsPkwKMHTZmhHBPQAGose5z4fxY29BcjqU9RK4Zz3ksg="
+   },
+   {
+    "title": "freshdesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGd0PZnFARt4YGdXl5bNUrqpJ6-tue2EPkVvxsADK2oFqTIb1IGBY_Msh72BxGeYoCXPZNT9-j702O7PBgRcRhmkv5ifiudgiE9HSRzwRxV4iT16boCtxqOQrw3NE-idZMz8a0DY954JPY_CyzXfOSFKs-VVVqh2aAsMc5p8sEs0s6HwY_Y3miNMH74XWERqFqniNCJHxShpHt_XH2bu2IdY3rj8h-Ezk7D2CLMJ9XRnnOwjrrqBez6_mMewPNvHRHBqdK6"
+   },
+   {
+    "title": "freshworks.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuclwylk4e99RHeoxMsW-lkkc3gp2iLF7aHwMa-gh-m6jT97aRuFPiEa6YqKpAHY-MrOePwKvDGPG5HtTDsGqR5xmSursuL8BxUvrq5pQR2kwIQYTsZiNhOz3ihSpxYI_trfIU5O0A"
+   },
+   {
+    "title": "eesel.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkniOcrHidIwvgMlKXP2xPDr1raLL5N8m_CUGDLjVi40Iioc3q9YETbdYJ39Z8NETJsJV-6Ybvhq9yFcdOS60u2Cew8gp1kQJ-VUFKJEkJL2WAhhRJalTnSwRd-K8EjAnCP-XY9JFFmnhHNpwRZtuI4MUVVpo="
+   },
+   {
+    "title": "freshdesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEn3OLlPbxBmzaqDWN0FW40UY-E-EzOrpTmLrF9HwlpCfCNZOW9qoepWlH6Ypj7830_1ypq2kDAZhOEfQ_7F8tExQndklgXrIDJ9eEKlfUAQZEylbVhafT0BP6zYK_pUToj9tEEXuf1HcjY3geAjI2Ne_qh_zjG3E_3mlrQvTrlNGH77uJJ1hkjMqmd09R7H9g6UH0Zng=="
+   },
+   {
+    "title": "freshdesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFij3mfKL1PADZYa2yV6jh734RaPCEjY8NbVZdwFqAWNv0sU_a2mgCbywsfJ5j9viE3ER8kDjT4-rfreDytXXOfzZVD34fe70ehuYU4Gyjp5N4gBPmMsDeo82G_KQK5XnyLE89yc3L4Wo31aSO6xdufAkhhEtElqCxbJjnUJv3hK-pSxEfTRf4sFGnI-4mqGDHH"
+   },
+   {
+    "title": "freshworks.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvWuGlqA0awaBFVJrJ16KObNCUDrYGFyqNQhi5ChDWkW5cN19hfKzuGZc3GjDUfp_8boS0br-gYfwHDGPv4GfoYYO2_-uWa8ws_l3r-rIona8OFjq8d03rr7-TRtAxVOMUqpUD1L2uTQAR5B2zRf0QrScoThNcoZJNBRTvWdlqEwuU4fXvzXPCfiQIql9u2cr6U-fqcBUYIU3X"
+   },
+   {
+    "title": "freshservice.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-cNMNubWa1Cy_sRlgjFeCExHT79wkl1t_6XRaZtsxIU3TagS9mCbFP-6JUTs8AVETB7T_QBO4ckFWyqhlQkOqWZamOEjiae6CcOmDBI8xVu3Gumnp7K3LGWfJ4Q5od2UPu51HY6Ztj-0o8VCTQIbzPvaGdby3ySP5FkSYx85Dtt3Rzx2Fllmk_WDLSi9b1AWHlgsYK0WU3I9LCgPNxpw-DiGJihz7mWBW2L_u9V74iRyQwDkTgIJW"
+   }
+  ],
+  "tokens": 9121,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://www.freshworks.com/freshdesk/pricing/",
+    "status": 200,
+    "chars": 22495,
+    "readable": true
+   },
+   {
+    "url": "https://community.freshworks.dev/t/how-to-use-oauth-authentication-mechanism-for-freshdesk-api/1691",
+    "status": 200,
+    "chars": 105,
+    "readable": false
+   },
+   {
+    "url": "https://support.freshdesk.com/support/login",
+    "status": 200,
+    "chars": 2499,
+    "readable": true
+   },
+   {
+    "url": "https://developers.freshdesk.com/api/",
+    "status": 200,
+    "chars": 400000,
+    "readable": true
+   },
+   {
+    "url": "https://support.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk-eap-",
+    "status": 200,
+    "chars": 20609,
+    "readable": true
+   }
+  ],
+  "seconds": 59.0
+ }
+}

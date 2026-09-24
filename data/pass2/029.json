@@ -1,0 +1,293 @@
+{
+ "app": {
+  "id": 29,
+  "name": "Aircall",
+  "category": "Communications and Messaging",
+  "hint": "aircall.io"
+ },
+ "record": {
+  "subcategory": "Cloud Phone System",
+  "one_liner": "Aircall is an AI-powered cloud phone system and customer communication platform for sales and support teams.",
+  "auth_methods": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth2 for public apps and multi-tenant integrations; Basic Auth (api_id/api_token) for internal tools or private integrations.",
+  "access": "paid_plan",
+  "access_notes": "Obtaining OAuth credentials for a public, multi-tenant app to be listed on the marketplace requires applying to the Technology Partner Program. However, any Aircall admin on a paid plan can self-serve generate API keys for private integrations without needing partnership approval. The 7-day free trial provides access to both Essentials and Professional plan features, but with significant limitations.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST API covering users, teams, calls, numbers, contacts, tags, messages, dialer campaigns, conversation intelligence, and AI voice agents.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "community_only",
+  "mcp_notes": "Aircall acts as an MCP client/host for its native AI Virtual Agents. Multiple third-party community MCP servers exist that wrap the Aircall API for external LLMs (e.g., by Allo, Cassia Research, Zapier, viaSocket, Pipedream).",
+  "verdict": "ready_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "The main blocker is that API access requires a paid plan, with a minimum of 3 licenses for standard plans. For developers wishing to build a public, multi-tenant app, applying and being approved for the Technology Partner Program is an additional hurdle to obtain OAuth credentials.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://aircall.io/pricing/",
+    "quote": "Aircall is the customer communications platform where both AI and your team work together... Essentials includes ai voice agents business phone system and customer conversations in one workspace, synced to your crm."
+   },
+   {
+    "claim": "general",
+    "url": "https://developer.aircall.io/docs/overview",
+    "quote": "Aircall is an AI-powered customer communications platform trusted by 23,000+ companies, unifying calls, SMS, and messaging with 250+ native CRM and helpdesk integrations."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.aircall.io/docs/oauth",
+    "quote": "With Aircall Public API, Authentication can be done through OAuth or Basic Auth. If you want to build an App for companies using Aircall - this is mainly the case for Technology Partners - please use the OAuth flow. It is a requirement to be listed on the Aircall App Marketplace."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.aircall.io/docs/oauth",
+    "quote": "OAuth is required for public apps. It provides a secure, scalable authentication method and ensures your app is easy to install for any Aircall user."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.aircall.io/docs/oauth",
+    "quote": "Before starting building the OAuth flow for your app, you will need to get OAuth client_id and client_secret from Aircall. Click the start building button on top of the page and fill in the form. We will get back to you shortly."
+   },
+   {
+    "claim": "access",
+    "url": "https://aircall.io/pricing/",
+    "quote": "Does Aircall offer a free trial? Yes. Aircall offers free access to test the platform before committing."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.aircall.io/docs/introduction",
+    "quote": "Direct API access requires the Professional plan. If you are calling the Messaging API directly — for example, building your own integration or testing from your own account — your Aircall account must be on Professional."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.aircall.io/docs/introduction",
+    "quote": "Aircall Public API is a classic REST API... visit https://developer.aircall.io/llms.txt for an index of all pages formatted in markdown and endpoints in openapi."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.aircall.io/docs/introduction",
+    "quote": "We are also supporting Webhooks. We can call back any endpoint of your choice, each time an event occurs on an Aircall account (contact added, call created, user switched off... see the Webhooks section for a complete list)."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.aircall.io/docs/introduction",
+    "quote": "Join a global ecosystem of technology partners... Get access to dedicated support, developer sandboxes, and co-marketing opportunities"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://developer.aircall.io/docs/introduction",
+    "quote": "AI Actions is how Aircall's agents connect to and act within external tools. MCP, the Model Context Protocol, is how you make your system's capabilities available to those agents... Stand up an MCP server that exposes your actions as tools."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/mobilefirstco/aircall-mcp-server",
+    "quote": "Unofficial MCP server for Aircall by Allo - 73 tools for calls, contacts, SMS, users, teams & AI insights... This MCP server is NOT built, maintained, or endorsed by Aircall."
+   }
+  ],
+  "confidence": 0.9,
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": "[\"basic\",\"oauth2\"]",
+    "new": "[\"api_key\",\"oauth2\"]",
+    "reason": "Aircall's 'Basic Auth' uses API ID and API Token, which is standard for API Key authentication, not HTTP Basic Auth.",
+    "url": "https://developer.aircall.io/docs/oauth"
+   },
+   {
+    "field": "access",
+    "old": "partner_or_sales",
+    "new": "paid_plan",
+    "reason": "API access is included in all paid plans, starting with the 'Essentials' plan. Any paying customer can generate API keys for their own use without partner approval.",
+    "url": "https://aircall.io/pricing/"
+   },
+   {
+    "field": "access_notes",
+    "old": "Multi-tenant OAuth credentials require applying to the Technology Partner Program. Basic Auth keys can be generated by an Aircall Admin. Direct API access and testing for certain endpoints (e.g., Messaging API) require a paid Professional plan.",
+    "new": "Obtaining OAuth credentials for a public, multi-tenant app to be listed on the marketplace requires applying to the Technology Partner Program. However, any Aircall admin on a paid plan can self-serve generate API keys for private integrations without needing partnership approval. The 7-day free trial provides access to both Essentials and Professional plan features, but with significant limitations.",
+    "reason": "Clarified that API keys are self-serve for paid plans, and the trial has limitations. The primary access is via paid plan, with partner approval being an additional step for public apps.",
+    "url": "https://aircall.io/pricing/"
+   },
+   {
+    "field": "sandbox",
+    "old": "true",
+    "new": "false",
+    "reason": "Aircall does not offer a dedicated sandbox environment. Testing is recommended within a live production account, which may incur costs. Developer sandboxes are only available to partners.",
+    "url": "https://developer.aircall.io/docs/introduction"
+   },
+   {
+    "field": "mcp",
+    "old": "community_only",
+    "new": "community_only",
+    "reason": "The first-pass value was correct, but the checker's notes provided more clarity on why it's community_only (Aircall's AI agents use MCP, but Aircall doesn't host an official public MCP server).",
+    "url": "https://developer.aircall.io/docs/introduction"
+   },
+   {
+    "field": "blocker",
+    "old": "app_review_or_approval",
+    "new": "paid_plan",
+    "reason": "The fundamental requirement to use the API at all (even for private use) is a paid subscription. App review is an additional blocker for public marketplace apps.",
+    "url": "https://aircall.io/pricing/"
+   },
+   {
+    "field": "blocker_notes",
+    "old": "Obtaining OAuth credentials for multi-tenant access requires applying and being approved for the Technology Partner Program. Testing core API features requires a paid Professional plan.",
+    "new": "The main blocker is that API access requires a paid plan, with a minimum of 3 licenses for standard plans. For developers wishing to build a public, multi-tenant app, applying and being approved for the Technology Partner Program is an additional hurdle to obtain OAuth credentials.",
+    "reason": "Emphasized that the primary blocker is the paid plan requirement for any API usage, with partner program approval being a secondary hurdle for public apps.",
+    "url": "https://aircall.io/pricing/"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### **Aircall Fact-Check**\n\nHere is a detailed verification of the information provided for Aircall.\n\n---\n\n### **Field-by-Field Verification**\n\n*   **subcategory**: **CONFIRMED**. Aircall describes itself as an \"AI-powered customer communication platform\" and a \"cloud-based business phone system\". \"Cloud Phone System\" is an accurate subcategory.\n*   **one_liner**: **CONFIRMED**. The one-liner is accurate. Aircall is described as an \"AI-powered cloud phone system and customer communication platform for sales and support teams\".\n*   **auth_methods**: **CORRECTED**. The correct methods are `api_key` and `oauth2`. The first-pass record incorrectly listed `basic`. Aircall's \"Basic Auth\" involves an `API ID` and `API Token` sent as a Base64 encoded string in the Authorization header, which is standard for API Key authentication, not HTTP Basic Auth. OAuth is used for multi-tenant apps, while API Keys are for internal tools.\n*   **primary_auth**: **CONFIRMED**. `oauth2` is the correct primary authentication method for multi-tenant applications, as confirmed by Aircall's documentation.\n*   **auth_notes**: **CONFIRMED**. The notes are accurate. OAuth is required for public apps intended for multiple customers, often in the context of the Technology Partner Program. API Keys (referred to as Basic Auth in their docs) are for customers building for their own internal use.\n*   **access**: **CORRECTED**. The correct access tier is `paid_plan`. API access is included in all paid plans, starting with the \"Essentials\" plan. There is a 7-day free trial, but it has limitations and is not a permanent way to access the API for a production integration. While obtaining OAuth credentials for a *public* app requires partnership approval, any paying customer can generate API keys for their own use. Therefore, access is not strictly `partner_or_sales` but is gated by a paid subscription.\n*   **access_notes**: **CORRECTED**. Obtaining OAuth credentials for a public, multi-tenant app to be listed on the marketplace requires applying to the Technology Partner Program. However, any Aircall admin on a paid plan can self-serve generate API keys for private integrations without needing partnership approval. The 7-day free trial provides access to both Essentials and Professional plan features, but with significant limitations.\n*   **api_styles**: **CONFIRMED**. The API is a `rest` API.\n*   **api_breadth**: **CONFIRMED**. The \"broad\" description is accurate. The API covers a wide range of resources including calls, contacts, users, teams, numbers, tags, webhooks, and conversation intelligence.\n*   **api_notes**: **CONFIRMED**. The notes accurately describe the API's capabilities.\n*   **openapi_spec**: **CONFIRMED**. Aircall provides OpenAPI specifications for its various APIs, which are referenced on sites like APIs.io.\n*   **webhooks**: **CONFIRMED**. Aircall supports webhooks for real-time event notifications.\n*   **sandbox**: **WRONG**. Aircall does not offer a dedicated sandbox environment. The developer documentation recommends creating temporary test users and numbers within a live production account for testing purposes and warns this may incur costs. However, partners in the Technology Partner Program may get access to \"developer sandboxes\".\n*   **mcp**: **CORRECTED**. The correct value is `community_only`. While Aircall's AI agents can connect to external tools via MCP, Aircall itself does not appear to publish or host an official, public MCP server. Multiple third-party and community-built MCP servers exist, including from Allo (The Mobile First Company), Cassia Research, Zapier, and Pipedream.\n*   **mcp_notes**: **CONFIRMED**. The notes are accurate. Aircall's AI Virtual Agents use MCP to connect to external tools. The dead link in the original record was for an unofficial server, and other community-hosted servers have been found. The server from \"Allo\" explicitly states it is \"NOT built, maintained, or endorsed by Aircall\".\n*   **verdict**: **CONFIRMED**. The verdict `ready_with_friction` is appropriate. A developer can build an integration, but it requires a paid plan. Building a multi-tenant public app introduces the additional friction of applying to the partner program.\n*   **blocker**: **CORRECTED**. The primary blocker is `paid_plan`. While `app_review_or_approval` is a blocker for public marketplace apps, the fundamental requirement to use the API at all (even for private use) is a paid subscription.\n*   **blocker_notes**: **CORRECTED**. The main blocker is that API access requires a paid plan, with a minimum of 3 licenses for standard plans. For developers wishing to build a public, multi-tenant app, applying and being approved for the Technology Partner Program is an additional hurdle to obtain OAuth credentials.\n\n---\n\n### **Uncertain Fields**\n\nAll fields were verifiable from the provided documentation and search results.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Aircall developer documentation authentication",
+   "Aircall API key authentication",
+   "Aircall API pricing plans",
+   "Aircall developer sandbox",
+   "Aircall OpenAPI spec",
+   "Aircall MCP server",
+   "Aircall technology partner program",
+   "Aircall free trial API access"
+  ],
+  "search_sources": [
+   {
+    "title": "squaretalk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCkaa70HcrgTMAJR8qNuI3oiQTY9t0OCXgbqHBWXpwUzXlS4w9TppbSBvMjMEJgUtU68qfL7W4QZFYqaAUYjMnN7T1ZShR82XQfK5cRuGB4lsVsootToI-BP3-blZE7TTLCAWATrnRsIWN36E="
+   },
+   {
+    "title": "partnerstack.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEM8U3sgDutzMKafCO-UYth84wCGa4BnkuAmhzbv2NXMlVr_067Mli3sV6F77VWxt8yW2pGZDh3UGR5xPkUFtcLjbQgUdJ2GpXMXIwTRKF39UOO_j76EKLi-wrC9-HvwLZJs2n7KGBvgqcB-FAlZnSNhL2zeLgCI2DoQw=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEwBYyVJuE9JoBWtg7HBsa5KSnsZfHc2QUuhYT6pS5Cy8M0xKB2jiz9uZ7cIb3766DeSMHFK3THlidYL6UVsID1CTfqKntKtVUpWGuhIHGFyrdLFWfKbFeaMrrbNwfNcPgp-s0"
+   },
+   {
+    "title": "aircall.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJ6DWgT8ik8zVHonOMqeWHYZVW0LBWcN_Zanj-6XeAqbJWDHm4g3L1jT6IVOeMea1w7FcQSf7qW8bJPva79JNz2XQ8v1aHe93q2m5Z6fhwc5Q9CmIatuJRPbeOZ1EgsXjl1BYRZ45IN_uZdHjaX5G93A=="
+   },
+   {
+    "title": "aircall.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvqwxe7K36KIjb4TFhO5R1GViOmhOhdV8Rr1mzWh2lzKJ7iqYhXaJSkGJ67OO4M1viu81brQ6mmSf7R1QSwKEsKkP3VHj2QkJbOstc-0jcUeaGtHSFdNePmzE0MEXhk22-6L-Prj7kn0sGGA=="
+   },
+   {
+    "title": "aircall.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBDpzI-eSpLQIOnLlVH_ObRPs4_S8_ZyMr2XSLmTBFgY0wxGLaRYpvAvG9-lwELW3Lv8-mNhGI02kx66Df0csAavN5sB8OpiPLvHQ8-l15Mj2Z_OWYhdG44KO6xlT1syq0crkl3GgLjl69A7KNi2uW-vFa"
+   },
+   {
+    "title": "aircall.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIyYDlFKc1BrnXzF8aLVIYNtfTqrnybt5WM7Ig6XdxKmjs-e5Qh1Xvpj05yOhhdCsLJvdKP4dWyH-dUeseZ9rl-ag0gEPhQdLEZg73GTxjEbADZy_FWEG9GfCzH_63z1o_DfunppfJ"
+   },
+   {
+    "title": "aircall.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFO108fTWLPnf6gzZqINr1qJ2iQDFWvfL-6izzS0hAg2acr8IN7FucyjYs_eN7WWVCtTz89yIdH6MpQZ7eaozfhBw8WIZ9sjH57M-y12xRXL9n9V64OQ=="
+   },
+   {
+    "title": "spendflo.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE03Q5kAdH2gnrkeScmjCSq1Q9kmuUWwi7MAbrjzurmxVXU681dtW9O0-sV10x68zRJK9lieuuwF84QCLlKWeo5QWSMOjlxHY7AX4zMuc_XfG5aBkDoXhYPkPRNPf69u1ey8AkU0mjg0CU3qwjVsg=="
+   },
+   {
+    "title": "aircall.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuMk3C136tsfxEcfs9WlpdY4yqNDScsnUWvufYqQPktOQiZOOcbCAcHWxbHBGCQIzcmatLILpLJ85J8gwyNDuaFNx8JXNsfgxTyI2FJ5XekgIBcL-3nq49ZnmytXczWdJTZ4VwcerZm40kWiAA3WnYBSZt"
+   },
+   {
+    "title": "aircall.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwt8VxIgaqNliVIQWBJP8cQoIy41bVzCp6X2DO9dLYdcZSGtCssbQaINf1CmW-ReWMnEwptIzc6afgL2DN5AP9-fEInD1z32MZ4qQoOL14KG-zfC2MrBoEKq0dBQe-887M5TdDRlB9_RTCNVIrFB33SwZU"
+   },
+   {
+    "title": "aircall.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNsay5O-mAG06IIhZW77Maa8Y0imIjKMHwIzoju701Ss1jY0NXXQfxj14nmBYbLENaQpO3fWEuo1cpbm_1OFPpGlfHvCDaEVXlWpQfBndSzfK1JmmkBpZAq4s-DS8lJAx0-YCrxlUP2yfxOgtxDO8oghM="
+   },
+   {
+    "title": "aircall.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5XsUH-Wt9bjeJTRqQpOMmOfESYIuF02TNg6ZLwvyYe3czuGYF5JNEx23NSGDosRtjXhsdTDETOOuasDJ5WKIAfyvlgH5iPXquMxkZsl6uLeE9XKFiPw1lYh0_I3TeK4Dv6TIU9qWSl28="
+   },
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3jL6Yvbyxd2GZ9T7JggoXKD87wBduK5FqxdG0Il-DZ028UaOpXMVo3UmmhYD-7He1fhtVPL3WUiEsT0A1vy2-rxf9tlGnQHLG8n03hhdqRm_o_-aPGNczfWpP9J_4oybBtL1ehu8eQmiO4Bc="
+   },
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvJbouh8iildgo6qFk5boCLToJHs0strRSkL2_3y9cl7N2Yc6cJI1Df3W7oK0wek7N4LZy3OMWYWR0_pEC5IwhF_ClJ4y2h55SJh98izFyNVvvjCo0C51gRVPwl7VdMGPJ4VJqn-rqnhDj7cedvyzPNOkBDH2HY7GN6HzuGCM="
+   },
+   {
+    "title": "apitracker.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuhjXL8h0t5CsRWKSlaoSnA58f_Zjgc9gatNJ87wVVBjyIzfBcVeYNkROAoSODGsmYLTaNZVb0gDO54VntDN2D6vzsrZF4zL2tzALhJWXZtgUj-tZnPuhZsY4="
+   },
+   {
+    "title": "aircall.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2JLT-yAbEvgHPr_4wi39Rk_U2gH_VQB2ZGt1JMVf0uQVKV14eFArvMTsqb64jqL6lreC_Axi8BpDwuyC2O6FcvBlDarWTQSCu3DqHjloP3x-ra21-O0xCN-T52RPSwz-cy1T1wItCxytDjvavJxzWUdDw"
+   },
+   {
+    "title": "aircall.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYfRQjEry_iQo3y3w4f-TR_FS7BD2kptK72lsVmyTS94cmcuRvd8sDWZrhUjzg1HHB1pknUdQ2NpWPc0ULK97gakDWfYCYY7W73DmYn9NiQsL0QzMEAYn1"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGK_hMtsppCNHALGwZuMocK7dHvsqp_GgkpTKJoleLNk6jLgdroOJg8YVcmojLuR6CMe85eJeTq9yCAZiXU65LCU7_7nheTjb0BadEWANQtgLnkTeCuDHWlI3sv25TZ_h0ym88A9TkOATezpbDfvcZBbQ=="
+   },
+   {
+    "title": "rulebase.co",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIIV2bT7OlbbJhOerY6zLBf16_4oV4xQrTMpjI1JL9h_7-Tj2s-d8p-0xuJIZXlJMgzqBUUvQYIa_nay09wuUeVgv1S2InWQL_KiZ-QCnZxlk39CaUeFCMzQs="
+   },
+   {
+    "title": "zapier.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpqykbQErskCj2fYPuJMJWzRs-l80IJtN2eE2PcM5LK-VPSaxs1x9hnF0GsSwg8U9SXAhiPzxS0xR5XOGGm55228oKrcvRAJTgjSFMEGtmPtnzIGnhuG_21Q=="
+   },
+   {
+    "title": "pipedream.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMtjBmNeYkb1v8Fx1ClSEKEATJ2uR5qbzL5gwLAeP_CHN49L6JPy3NMU2Atq5lMyeKwdUb-p9iid_sDPnTEILc8LsygKvq8iYgsSt6o7hBulSzVywYHDnvAR2LOopis0g="
+   },
+   {
+    "title": "cloudtalk.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPu1RN-2TXGXMN0gbpuybrCpf6YZ0rM43z5VCoPEpSBFmT9Ggyf8-vCVrLdOnbzT0gDo_tw7wU34s2MPwQkhsiq2aNswaREJSI651DaN3Su2i5PEkFi8oV6b1O1UQ_1-LYq3ORZ4JXdp0="
+   }
+  ],
+  "tokens": 7506,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://aircall.io/pricing/",
+    "status": 200,
+    "chars": 17323,
+    "readable": true
+   },
+   {
+    "url": "https://developer.aircall.io/docs/overview",
+    "status": 200,
+    "chars": 3158,
+    "readable": true
+   },
+   {
+    "url": "https://developer.aircall.io/docs/oauth",
+    "status": 200,
+    "chars": 10386,
+    "readable": true
+   },
+   {
+    "url": "https://developer.aircall.io/docs/introduction",
+    "status": 200,
+    "chars": 4075,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/mobilefirstco/aircall-mcp-server",
+    "status": 404,
+    "chars": 2893,
+    "readable": false
+   }
+  ],
+  "seconds": 75.8
+ }
+}

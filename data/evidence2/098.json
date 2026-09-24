@@ -1,0 +1,78 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://github.com/mermaid-js/mermaid-cli",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://github.com/mermaid-js/mermaid-cli",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://github.com/mermaid-js/mermaid-cli",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.4
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/mermaid-js/mermaid-cli",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://lobehub.com/nl/mcp/aviciot-mcp_mermaid",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.62
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://github.com/mermaid-js/mermaid-cli",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  }
+ ],
+ "auth_support": {},
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://github.com/mermaid-js/mermaid-cli', 'https://github.com/mermaid-js/mermaid-cli', 'https://github.com/mermaid-js/mermaid-cli']\n- Non-vendor sources (prefer official docs): ['https://lobehub.com/nl/mcp/aviciot-mcp_mermaid']",
+ "metrics": {
+  "n_evidence": 6,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.8333333333333334,
+  "readable": 6,
+  "quote_supported_rate": 0.5,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

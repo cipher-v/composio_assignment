@@ -1,0 +1,1396 @@
+{
+ "n": 100,
+ "headlines": [
+  "39% of the 100 apps could be shipped as agent toolkits today; 53% more are buildable with friction, and only 8% need outreach or are not feasible.",
+  "OAuth2 is the primary auth for 64% of apps, and 60% offer both OAuth2 and a static key/token - so a toolkit usually needs both an OAuth app and a key-based fallback.",
+  "Most self-serve: Developer, Infra and Data platforms (90%) and Productivity and Project Management (90%). Most gated: Finance and Fintech (30% self-serve) and Marketing, Ads, Email and Social (40%).",
+  "The most common blocker is 'app_review_or_approval' (24 apps), followed by 'paid_plan' (24), 'partnership_or_sales' (7).",
+  "74% already ship an official MCP server and 20% have only community ones. Official MCP tracks openness: 90% of ready-now apps vs 50% of apps that need outreach."
+ ],
+ "primary_auth": [
+  [
+   "oauth2",
+   64
+  ],
+  [
+   "api_key",
+   23
+  ],
+  [
+   "bearer_token",
+   6
+  ],
+  [
+   "basic",
+   5
+  ],
+  [
+   "jwt",
+   1
+  ],
+  [
+   "none",
+   1
+  ]
+ ],
+ "any_auth": [
+  [
+   "oauth2",
+   75
+  ],
+  [
+   "bearer_token",
+   48
+  ],
+  [
+   "api_key",
+   41
+  ],
+  [
+   "basic",
+   12
+  ],
+  [
+   "other",
+   7
+  ],
+  [
+   "jwt",
+   7
+  ],
+  [
+   "signature_hmac",
+   2
+  ],
+  [
+   "none",
+   2
+  ]
+ ],
+ "oauth_and_key": 60,
+ "access": [
+  [
+   "self_serve_free",
+   54
+  ],
+  [
+   "self_serve_trial",
+   9
+  ],
+  [
+   "paid_plan",
+   13
+  ],
+  [
+   "approval_required",
+   16
+  ],
+  [
+   "partner_or_sales",
+   8
+  ],
+  [
+   "no_public_api",
+   0
+  ]
+ ],
+ "verdict": [
+  [
+   "ready_now",
+   39
+  ],
+  [
+   "ready_with_friction",
+   53
+  ],
+  [
+   "needs_outreach",
+   8
+  ],
+  [
+   "not_feasible",
+   0
+  ]
+ ],
+ "blockers": [
+  [
+   "app_review_or_approval",
+   24
+  ],
+  [
+   "paid_plan",
+   24
+  ],
+  [
+   "partnership_or_sales",
+   7
+  ],
+  [
+   "local_cli_only",
+   2
+  ],
+  [
+   "unclear_or_sparse_docs",
+   1
+  ],
+  [
+   "no_public_api",
+   1
+  ]
+ ],
+ "mcp": [
+  [
+   "official",
+   74
+  ],
+  [
+   "community_only",
+   20
+  ],
+  [
+   "none_found",
+   6
+  ]
+ ],
+ "api_styles": [
+  [
+   "rest",
+   94
+  ],
+  [
+   "graphql",
+   14
+  ],
+  [
+   "cli_or_library",
+   7
+  ],
+  [
+   "grpc",
+   3
+  ],
+  [
+   "soap",
+   2
+  ],
+  [
+   "websocket",
+   2
+  ]
+ ],
+ "by_category": {
+  "CRM and Sales": {
+   "n": 10,
+   "access": {
+    "self_serve_free": 7,
+    "self_serve_trial": 1,
+    "approval_required": 1,
+    "partner_or_sales": 1
+   },
+   "verdict": {
+    "ready_now": 6,
+    "ready_with_friction": 3,
+    "needs_outreach": 1
+   },
+   "self_serve_pct": 80,
+   "ready_now_pct": 60,
+   "oauth_primary_pct": 90,
+   "official_mcp_pct": 60
+  },
+  "Support and Helpdesk": {
+   "n": 10,
+   "access": {
+    "approval_required": 2,
+    "paid_plan": 4,
+    "self_serve_trial": 3,
+    "self_serve_free": 1
+   },
+   "verdict": {
+    "ready_with_friction": 9,
+    "ready_now": 1
+   },
+   "self_serve_pct": 40,
+   "ready_now_pct": 10,
+   "oauth_primary_pct": 60,
+   "official_mcp_pct": 70
+  },
+  "Communications and Messaging": {
+   "n": 10,
+   "access": {
+    "self_serve_trial": 2,
+    "self_serve_free": 5,
+    "approval_required": 2,
+    "partner_or_sales": 1
+   },
+   "verdict": {
+    "ready_with_friction": 7,
+    "ready_now": 3
+   },
+   "self_serve_pct": 70,
+   "ready_now_pct": 30,
+   "oauth_primary_pct": 80,
+   "official_mcp_pct": 60
+  },
+  "Marketing, Ads, Email and Social": {
+   "n": 10,
+   "access": {
+    "approval_required": 5,
+    "paid_plan": 1,
+    "self_serve_free": 3,
+    "self_serve_trial": 1
+   },
+   "verdict": {
+    "ready_with_friction": 8,
+    "ready_now": 2
+   },
+   "self_serve_pct": 40,
+   "ready_now_pct": 20,
+   "oauth_primary_pct": 80,
+   "official_mcp_pct": 60
+  },
+  "Ecommerce": {
+   "n": 10,
+   "access": {
+    "approval_required": 2,
+    "self_serve_free": 5,
+    "partner_or_sales": 1,
+    "paid_plan": 2
+   },
+   "verdict": {
+    "ready_with_friction": 6,
+    "ready_now": 3,
+    "needs_outreach": 1
+   },
+   "self_serve_pct": 50,
+   "ready_now_pct": 30,
+   "oauth_primary_pct": 70,
+   "official_mcp_pct": 60
+  },
+  "Data, SEO and Scraping": {
+   "n": 10,
+   "access": {
+    "self_serve_free": 7,
+    "self_serve_trial": 1,
+    "paid_plan": 1,
+    "partner_or_sales": 1
+   },
+   "verdict": {
+    "ready_with_friction": 4,
+    "needs_outreach": 2,
+    "ready_now": 4
+   },
+   "self_serve_pct": 80,
+   "ready_now_pct": 40,
+   "oauth_primary_pct": 10,
+   "official_mcp_pct": 70
+  },
+  "Developer, Infra and Data platforms": {
+   "n": 10,
+   "access": {
+    "self_serve_free": 8,
+    "self_serve_trial": 1,
+    "approval_required": 1
+   },
+   "verdict": {
+    "ready_now": 8,
+    "ready_with_friction": 1,
+    "needs_outreach": 1
+   },
+   "self_serve_pct": 90,
+   "ready_now_pct": 80,
+   "oauth_primary_pct": 70,
+   "official_mcp_pct": 100
+  },
+  "Productivity and Project Management": {
+   "n": 10,
+   "access": {
+    "self_serve_free": 9,
+    "paid_plan": 1
+   },
+   "verdict": {
+    "ready_now": 7,
+    "ready_with_friction": 3
+   },
+   "self_serve_pct": 90,
+   "ready_now_pct": 70,
+   "oauth_primary_pct": 100,
+   "official_mcp_pct": 100
+  },
+  "Finance and Fintech": {
+   "n": 10,
+   "access": {
+    "self_serve_free": 3,
+    "approval_required": 3,
+    "partner_or_sales": 2,
+    "paid_plan": 2
+   },
+   "verdict": {
+    "ready_now": 1,
+    "ready_with_friction": 7,
+    "needs_outreach": 2
+   },
+   "self_serve_pct": 30,
+   "ready_now_pct": 10,
+   "oauth_primary_pct": 50,
+   "official_mcp_pct": 80
+  },
+  "AI, Research and Media-native": {
+   "n": 10,
+   "access": {
+    "partner_or_sales": 2,
+    "self_serve_free": 6,
+    "paid_plan": 2
+   },
+   "verdict": {
+    "needs_outreach": 1,
+    "ready_with_friction": 5,
+    "ready_now": 4
+   },
+   "self_serve_pct": 60,
+   "ready_now_pct": 40,
+   "oauth_primary_pct": 30,
+   "official_mcp_pct": 80
+  }
+ },
+ "category_order": [
+  "CRM and Sales",
+  "Support and Helpdesk",
+  "Communications and Messaging",
+  "Marketing, Ads, Email and Social",
+  "Ecommerce",
+  "Data, SEO and Scraping",
+  "Developer, Infra and Data platforms",
+  "Productivity and Project Management",
+  "Finance and Fintech",
+  "AI, Research and Media-native"
+ ],
+ "mcp_by_verdict": {
+  "ready_now": {
+   "official": 35,
+   "none_found": 1,
+   "community_only": 3
+  },
+  "ready_with_friction": {
+   "community_only": 16,
+   "official": 35,
+   "none_found": 2
+  },
+  "needs_outreach": {
+   "official": 4,
+   "none_found": 3,
+   "community_only": 1
+  }
+ },
+ "lists": {
+  "easy_wins": [
+   {
+    "id": 7,
+    "name": "Zoho CRM",
+    "category": "CRM and Sales",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "none_found",
+    "note": "Comprehensive documentation, free developer accounts, and official OpenAPI specs make it immediately buildable."
+   },
+   {
+    "id": 20,
+    "name": "Gladly",
+    "category": "Support and Helpdesk",
+    "primary_auth": "basic",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "community_only",
+    "note": "A self-serve path is available through the Gladly app on the Shopify App Store, which offers a free plan to get started."
+   },
+   {
+    "id": 27,
+    "name": "Telegram",
+    "category": "Communications and Messaging",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "community_only",
+    "note": "none"
+   },
+   {
+    "id": 48,
+    "name": "Gumroad",
+    "category": "Ecommerce",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "community_only",
+    "note": "None. The API is fully open, self-serve, and free to access for any developer with an account."
+   }
+  ],
+  "easy_with_official_mcp": [
+   {
+    "id": 1,
+    "name": "Salesforce",
+    "category": "CRM and Sales",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "No blockers. Free developer accounts provide full API access and OAuth 2.0 support, alongside official hosted MCP servers."
+   },
+   {
+    "id": 2,
+    "name": "HubSpot",
+    "category": "CRM and Sales",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "None. HubSpot provides self-serve free developer accounts, comprehensive REST APIs, official OpenAPI 3.0 specifications, robust testing sandboxes, and a publicly hosted official MCP server endpoint."
+   },
+   {
+    "id": 3,
+    "name": "Pipedrive",
+    "category": "CRM and Sales",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "null"
+   },
+   {
+    "id": 4,
+    "name": "Attio",
+    "category": "CRM and Sales",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "App review is only required for being listed in Attio's public App Marketplace. It is not a prerequisite for creating and using a multi-tenant OAuth application."
+   },
+   {
+    "id": 6,
+    "name": "Podio",
+    "category": "CRM and Sales",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "Self-serve credentials, free API access, and an official MCP server make it immediately buildable."
+   },
+   {
+    "id": 23,
+    "name": "Zoho Cliq",
+    "category": "Communications and Messaging",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "None. Fully self-serve, free API access, standard OAuth 2.0, complete OpenAPI spec, and official hosted MCP server."
+   },
+   {
+    "id": 30,
+    "name": "Vonage",
+    "category": "Communications and Messaging",
+    "primary_auth": "jwt",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "None. Vonage provides comprehensive public documentation, fully self-serve free developer accounts with test credits, and publicly available OpenAPI specifications for all its products."
+   },
+   {
+    "id": 35,
+    "name": "Mailchimp",
+    "category": "Marketing, Ads, Email and Social",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "None. Mailchimp provides a fully self-serve developer experience, includes API and OAuth app registration on its free tier, offers a comprehensive REST API with an OpenAPI specification, and supports standard OAuth 2.0 for multi-tenant integrations without requiring upfront approval or sales outreach. The lack of a dedicated sandbox environment is a minor inconvenience but does not block development since testing can be safely conducted on a free account."
+   },
+   {
+    "id": 36,
+    "name": "Klaviyo",
+    "category": "Marketing, Ads, Email and Social",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "app_review_or_approval",
+    "mcp": "official",
+    "note": "Access to the Webhooks API for managing system webhooks requires becoming a Klaviyo app partner or purchasing the 'Advanced KDP' add-on."
+   },
+   {
+    "id": 43,
+    "name": "BigCommerce",
+    "category": "Ecommerce",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "None. A developer can create a free sandbox store and generate API credentials to start building immediately."
+   },
+   {
+    "id": 50,
+    "name": "fanbasis",
+    "category": "Ecommerce",
+    "primary_auth": "api_key",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "None."
+   },
+   {
+    "id": 54,
+    "name": "MrScraper",
+    "category": "Data, SEO and Scraping",
+    "primary_auth": "bearer_token",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "none"
+   },
+   {
+    "id": 55,
+    "name": "Apify",
+    "category": "Data, SEO and Scraping",
+    "primary_auth": "bearer_token",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "None. Public documentation, self-serve credentials, free tier, complete OpenAPI spec, webhooks, and official MCP server make it ready."
+   },
+   {
+    "id": 56,
+    "name": "Firecrawl",
+    "category": "Data, SEO and Scraping",
+    "primary_auth": "api_key",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "none"
+   },
+   {
+    "id": 57,
+    "name": "Bright Data",
+    "category": "Data, SEO and Scraping",
+    "primary_auth": "api_key",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "None. Self-serve credentials, free tier, comprehensive docs, OpenAPI specs, and an official MCP server make it fully buildable."
+   },
+   {
+    "id": 61,
+    "name": "GitHub",
+    "category": "Developer, Infra and Data platforms",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "None. GitHub offers a self-serve free tier, extensive public documentation, an official OpenAPI spec, and an official Go-based MCP server."
+   },
+   {
+    "id": 62,
+    "name": "Vercel",
+    "category": "Developer, Infra and Data platforms",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "paid_plan",
+    "mcp": "official",
+    "note": "While API credentials can be obtained on the free tier, any commercial use of the API is prohibited by Vercel's terms of service for the \"Hobby\" plan, requiring an upgrade to a paid \"Pro\" plan."
+   },
+   {
+    "id": 63,
+    "name": "Netlify",
+    "category": "Developer, Infra and Data platforms",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "none"
+   },
+   {
+    "id": 64,
+    "name": "Cloudflare",
+    "category": "Developer, Infra and Data platforms",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "none"
+   },
+   {
+    "id": 65,
+    "name": "Supabase",
+    "category": "Developer, Infra and Data platforms",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "None. Comprehensive public documentation, self-serve free access to OAuth app creation, official OpenAPI specification, and existing official MCP server."
+   },
+   {
+    "id": 66,
+    "name": "Neo4j",
+    "category": "Developer, Infra and Data platforms",
+    "primary_auth": "basic",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "Access is self-serve via the AuraDB free tier, which provides non-expiring API credentials for the Query API without requiring a credit card."
+   },
+   {
+    "id": 68,
+    "name": "MongoDB Atlas",
+    "category": "Developer, Infra and Data platforms",
+    "primary_auth": "bearer_token",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "None"
+   },
+   {
+    "id": 70,
+    "name": "Sentry",
+    "category": "Developer, Infra and Data platforms",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "None. Sentry provides a fully self-serve path for developers. A free developer account includes API access, and developers can create a \"Public Integration\" to get OAuth 2.0 credentials for development and testing in an unpublished state without requiring upfront approval."
+   },
+   {
+    "id": 71,
+    "name": "Notion",
+    "category": "Productivity and Project Management",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "none"
+   },
+   {
+    "id": 73,
+    "name": "Linear",
+    "category": "Productivity and Project Management",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "None. Excellent developer documentation, self-serve free tier with API access, public OAuth 2.0, and official remote MCP server."
+   },
+   {
+    "id": 75,
+    "name": "Asana",
+    "category": "Productivity and Project Management",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "None. Asana provides a completely self-serve, free developer environment with comprehensive REST APIs, an official OpenAPI specification, standard OAuth 2.0 authentication, and an official MCP server. It is fully ready for building an AI agent toolkit today."
+   },
+   {
+    "id": 76,
+    "name": "Monday.com",
+    "category": "Productivity and Project Management",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "none"
+   },
+   {
+    "id": 77,
+    "name": "ClickUp",
+    "category": "Productivity and Project Management",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "none"
+   },
+   {
+    "id": 78,
+    "name": "Coda",
+    "category": "Productivity and Project Management",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "None. Coda offers a fully self-serve, free developer tier with robust OAuth 2.0 support, an official OpenAPI specification, and an official MCP server in public beta."
+   },
+   {
+    "id": 80,
+    "name": "Harvest",
+    "category": "Productivity and Project Management",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "none"
+   },
+   {
+    "id": 81,
+    "name": "Stripe",
+    "category": "Finance and Fintech",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "None. Self-serve free developer access, official OpenAPI spec, robust webhooks, and official hosted MCP server."
+   },
+   {
+    "id": 93,
+    "name": "Fathom",
+    "category": "AI, Research and Media-native",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "No technical blockers. Comprehensive public documentation and instant self-serve credentials (API keys and OAuth) are available. Public OAuth apps are subject to review, but developers can register and start building immediately."
+   },
+   {
+    "id": 94,
+    "name": "Consensus",
+    "category": "AI, Research and Media-native",
+    "primary_auth": "api_key",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "none"
+   },
+   {
+    "id": 95,
+    "name": "Reducto",
+    "category": "AI, Research and Media-native",
+    "primary_auth": "api_key",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "None. The platform provides comprehensive public documentation, an OpenAPI spec, and self-serve API keys with a generous free credit tier, allowing immediate toolkit development."
+   },
+   {
+    "id": 99,
+    "name": "YouTube Transcript",
+    "category": "AI, Research and Media-native",
+    "primary_auth": "api_key",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "none"
+   }
+  ],
+  "friction": [
+   {
+    "id": 5,
+    "name": "Twenty",
+    "category": "CRM and Sales",
+    "primary_auth": "api_key",
+    "access": "self_serve_free",
+    "blocker": "unclear_or_sparse_docs",
+    "mcp": "community_only",
+    "note": "There is no static API reference for Twenty. Each workspace has its own schema — when you add a custom object (say Invoice ), it immediately gets REST and GraphQL endpoints identical to built-in objects like Company or Person ."
+   },
+   {
+    "id": 8,
+    "name": "Close",
+    "category": "CRM and Sales",
+    "primary_auth": "oauth2",
+    "access": "self_serve_trial",
+    "blocker": "app_review_or_approval",
+    "mcp": "community_only",
+    "note": "OAuth apps are private by default; developers must request approval to make them public for multi-tenant use."
+   },
+   {
+    "id": 9,
+    "name": "Copper",
+    "category": "CRM and Sales",
+    "primary_auth": "oauth2",
+    "access": "approval_required",
+    "blocker": "app_review_or_approval",
+    "mcp": "community_only",
+    "note": "OAuth2 client registration is not self-serve and requires contacting support. End-users must be on a Professional plan or higher."
+   },
+   {
+    "id": 11,
+    "name": "Zendesk",
+    "category": "Support and Helpdesk",
+    "primary_auth": "oauth2",
+    "access": "approval_required",
+    "blocker": "app_review_or_approval",
+    "mcp": "community_only",
+    "note": "To distribute a multi-tenant integration, developers must apply for and receive manual approval for a Global OAuth Client from the Zendesk Marketplace team. Additionally, Zendesk enforces strict 30-minute token expirations and requires robust implementation of the OAuth 2.0 refresh token flow."
+   },
+   {
+    "id": 12,
+    "name": "Intercom",
+    "category": "Support and Helpdesk",
+    "primary_auth": "oauth2",
+    "access": "approval_required",
+    "blocker": "app_review_or_approval",
+    "mcp": "official",
+    "note": "Public integrations require a mandatory manual app review and approval process; production use requires a paid plan."
+   },
+   {
+    "id": 13,
+    "name": "Freshdesk",
+    "category": "Support and Helpdesk",
+    "primary_auth": "api_key",
+    "access": "paid_plan",
+    "blocker": "paid_plan",
+    "mcp": "official",
+    "note": "Lack of OAuth2 support requires manual API key configuration via HTTP Basic auth, and API access requires a paid plan after the 14-day trial expires."
+   },
+   {
+    "id": 14,
+    "name": "Front",
+    "category": "Support and Helpdesk",
+    "primary_auth": "oauth2",
+    "access": "paid_plan",
+    "blocker": "paid_plan",
+    "mcp": "official",
+    "note": "While Front provides a free developer sandbox and standard authentication methods, using the API in a production environment requires a paid subscription, which is a point of friction."
+   },
+   {
+    "id": 15,
+    "name": "Pylon",
+    "category": "Support and Helpdesk",
+    "primary_auth": "oauth2",
+    "access": "paid_plan",
+    "blocker": "paid_plan",
+    "mcp": "official",
+    "note": "Requires a manual per-customer admin setup with organization-wide Bearer tokens for the REST API, and testing requires a paid Professional plan with no free sandbox."
+   },
+   {
+    "id": 16,
+    "name": "LiveAgent",
+    "category": "Support and Helpdesk",
+    "primary_auth": "api_key",
+    "access": "self_serve_trial",
+    "blocker": "paid_plan",
+    "mcp": "official",
+    "note": "Requires a paid plan after the 30-day free trial expires, and lacks a public OAuth2 framework for multi-tenant apps, requiring manual per-customer API key configuration."
+   },
+   {
+    "id": 17,
+    "name": "Plain",
+    "category": "Support and Helpdesk",
+    "primary_auth": "api_key",
+    "access": "self_serve_trial",
+    "blocker": "paid_plan",
+    "mcp": "official",
+    "note": "The primary friction is the business model: API access requires a paid plan after a 7-day trial expires. Additionally, the core GraphQL API does not offer a standard multi-tenant OAuth 2.0 flow, requiring each integration to be configured with a manually generated API key."
+   },
+   {
+    "id": 18,
+    "name": "Help Scout",
+    "category": "Support and Helpdesk",
+    "primary_auth": "oauth2",
+    "access": "paid_plan",
+    "blocker": "paid_plan",
+    "mcp": "official",
+    "note": "API access requires a paid plan (Standard tier or higher) after a 15-day free trial. Additionally, API access is fragmented, with the Mailbox API using OAuth 2.0 and the Docs API using HTTP Basic Auth with a static API key, requiring management of two separate authentication flows."
+   },
+   {
+    "id": 19,
+    "name": "Gorgias",
+    "category": "Support and Helpdesk",
+    "primary_auth": "oauth2",
+    "access": "self_serve_trial",
+    "blocker": "app_review_or_approval",
+    "mcp": "community_only",
+    "note": "Obtaining a sandbox account requires manual approval via a draft app submission, and deploying a multi-tenant integration requires a formal public app review process."
+   },
+   {
+    "id": 21,
+    "name": "Slack",
+    "category": "Communications and Messaging",
+    "primary_auth": "oauth2",
+    "access": "self_serve_trial",
+    "blocker": "no_public_api",
+    "mcp": "official",
+    "note": "The platform no longer provides an official OpenAPI specification, which is a major friction point for development. Accessing a full-featured development environment (Sandbox) requires providing a payment method. The free tier is too limited for serious API development."
+   },
+   {
+    "id": 22,
+    "name": "Twilio",
+    "category": "Communications and Messaging",
+    "primary_auth": "basic",
+    "access": "self_serve_trial",
+    "blocker": "paid_plan",
+    "mcp": "official",
+    "note": "Trial expires after 30 days requiring a paid plan. Multi-tenant integration requires implementing the Twilio Connect OAuth 2.0 flow."
+   },
+   {
+    "id": 24,
+    "name": "Lark (Larksuite)",
+    "category": "Communications and Messaging",
+    "primary_auth": "oauth2",
+    "access": "approval_required",
+    "blocker": "app_review_or_approval",
+    "mcp": "official",
+    "note": "While development can start immediately with 'Custom Apps', a multi-tenant integration requires ISV qualification and a formal App Store review process for distribution to other Lark customers."
+   },
+   {
+    "id": 25,
+    "name": "Pumble",
+    "category": "Communications and Messaging",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "app_review_or_approval",
+    "mcp": "community_only",
+    "note": "The claim of 'immediate private deployment' is unsubstantiated. All add-ons created through the developer portal are subject to a review process of up to two weeks before they can be published."
+   },
+   {
+    "id": 26,
+    "name": "Discord",
+    "category": "Communications and Messaging",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "app_review_or_approval",
+    "mcp": "community_only",
+    "note": "Apps require review for continued access to Privileged Intents (e.g., Message Content, Guild Members, Guild Presences) once they reach 10,000 users. The previous 100-server threshold for bot verification has been replaced by this user-based count."
+   },
+   {
+    "id": 28,
+    "name": "WhatsApp Business",
+    "category": "Communications and Messaging",
+    "primary_auth": "oauth2",
+    "access": "approval_required",
+    "blocker": "app_review_or_approval",
+    "mcp": "official",
+    "note": "While a full-featured sandbox is available for immediate development, using the API in a production capacity requires the business to undergo Meta Business Verification, which is an approval process that gates full access."
+   },
+   {
+    "id": 29,
+    "name": "Aircall",
+    "category": "Communications and Messaging",
+    "primary_auth": "oauth2",
+    "access": "partner_or_sales",
+    "blocker": "paid_plan",
+    "mcp": "community_only",
+    "note": "The main blocker is that API access requires a paid plan, with a minimum of 3 licenses for standard plans. For developers wishing to build a public, multi-tenant app, applying and being approved for the Technology Partner Program is an additional hurdle to obtain OAuth credentials."
+   },
+   {
+    "id": 31,
+    "name": "Google Ads",
+    "category": "Marketing, Ads, Email and Social",
+    "primary_auth": "oauth2",
+    "access": "approval_required",
+    "blocker": "app_review_or_approval",
+    "mcp": "official",
+    "note": "Deploying a production-grade multi-tenant agent toolkit requires navigating Google's mandatory brand verification and project approval process to move beyond test accounts. Developers must also handle the complexity of GAQL and the lack of native OpenAPI specs."
+   },
+   {
+    "id": 32,
+    "name": "Meta Ads",
+    "category": "Marketing, Ads, Email and Social",
+    "primary_auth": "oauth2",
+    "access": "approval_required",
+    "blocker": "app_review_or_approval",
+    "mcp": "official",
+    "note": "The primary hurdle is the strict and lengthy App Review and Business Verification process required by Meta to transition from Development Access to production-level Standard/Advanced Access. Without this approval, multi-tenant integrations cannot access external users' data, and initial rate limits are too restrictive."
+   },
+   {
+    "id": 33,
+    "name": "LinkedIn Ads",
+    "category": "Marketing, Ads, Email and Social",
+    "primary_auth": "oauth2",
+    "access": "approval_required",
+    "blocker": "app_review_or_approval",
+    "mcp": "community_only",
+    "note": "Access to the LinkedIn Ads API (Advertising API product) requires explicit application review and approval from LinkedIn, even for the initial Development tier. There is no official sandbox environment, and requests require a strict versioning header."
+   },
+   {
+    "id": 34,
+    "name": "GoHighLevel",
+    "category": "Marketing, Ads, Email and Social",
+    "primary_auth": "oauth2",
+    "access": "paid_plan",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "None. The developer portal and sandbox are self-serve and free. The only hurdle is that end-users must be on a $297/mo plan to use the resulting integration in production."
+   },
+   {
+    "id": 37,
+    "name": "systeme.io",
+    "category": "Marketing, Ads, Email and Social",
+    "primary_auth": "api_key",
+    "access": "self_serve_free",
+    "blocker": "paid_plan",
+    "mcp": "official",
+    "note": "Multi-tenant integration platforms must have each user manually generate and paste a static API key from their dashboard, which is less secure and more cumbersome than a centralized OAuth flow."
+   },
+   {
+    "id": 38,
+    "name": "Pinterest",
+    "category": "Marketing, Ads, Email and Social",
+    "primary_auth": "oauth2",
+    "access": "approval_required",
+    "blocker": "app_review_or_approval",
+    "mcp": "none_found",
+    "note": "The main hurdle is the two-stage approval process. All apps must first be approved for 'Trial Access'. To enable public visibility of created content and get higher rate limits, apps must then be approved for 'Standard Access'. This second review is stricter and requires submitting a video demo of the app's OAuth flow and core functionality."
+   },
+   {
+    "id": 39,
+    "name": "Threads (Meta)",
+    "category": "Marketing, Ads, Email and Social",
+    "primary_auth": "oauth2",
+    "access": "approval_required",
+    "blocker": "app_review_or_approval",
+    "mcp": "community_only",
+    "note": "The primary blocker is the mandatory Meta App Review and Business Verification process, which can take 3-8 weeks for production access."
+   },
+   {
+    "id": 40,
+    "name": "SendGrid",
+    "category": "Marketing, Ads, Email and Social",
+    "primary_auth": "api_key",
+    "access": "self_serve_trial",
+    "blocker": "paid_plan",
+    "mcp": "community_only",
+    "note": "The free tier expires after 60 days, requiring a paid subscription to maintain active API credentials. Lack of public OAuth2 forces reliance on static API keys."
+   },
+   {
+    "id": 41,
+    "name": "Shopify",
+    "category": "Ecommerce",
+    "primary_auth": "oauth2",
+    "access": "approval_required",
+    "blocker": "app_review_or_approval",
+    "mcp": "official",
+    "note": "While Shopify provides excellent documentation and free developer access, it requires a per-customer configuration hurdle (collecting merchant's unique shop domain for OAuth) and new apps are restricted to the GraphQL Admin API, requiring dynamic GraphQL handling."
+   },
+   {
+    "id": 42,
+    "name": "WooCommerce",
+    "category": "Ecommerce",
+    "primary_auth": "basic",
+    "access": "self_serve_free",
+    "blocker": "app_review_or_approval",
+    "mcp": "official",
+    "note": "Per-customer admin setup / decentralized endpoints. No centralized API gateway; each merchant store has a unique domain. Multi-tenant platforms must prompt for the store URL and initiate the Application Authentication Endpoint flow on that domain. Server-side configurations (e.g., permalinks, firewalls) can cause 401 errors requiring manual troubleshooting."
+   },
+   {
+    "id": 45,
+    "name": "Magento (Adobe Commerce)",
+    "category": "Ecommerce",
+    "primary_auth": "bearer_token",
+    "access": "self_serve_free",
+    "blocker": "app_review_or_approval",
+    "mcp": "community_only",
+    "note": "Every merchant must manually log into their Magento Admin panel, create a new integration, configure resource permissions, and copy generated tokens into the platform. No centralized OAuth 2.0 marketplace."
+   },
+   {
+    "id": 46,
+    "name": "Squarespace",
+    "category": "Ecommerce",
+    "primary_auth": "oauth2",
+    "access": "paid_plan",
+    "blocker": "paid_plan",
+    "mcp": "none_found",
+    "note": "API access is a premium feature tied to specific paid subscription tiers. Without the proper merchant subscription, an integration cannot function. OAuth client registration also requires manual review and approval by Squarespace."
+   },
+   {
+    "id": 47,
+    "name": "Ecwid",
+    "category": "Ecommerce",
+    "primary_auth": "oauth2",
+    "access": "paid_plan",
+    "blocker": "paid_plan",
+    "mcp": "community_only",
+    "note": "The primary blocker is the requirement of a paid plan for API access. Developers can email support to request a free paid-plan upgrade for a test store, but this is a manual step."
+   },
+   {
+    "id": 49,
+    "name": "Amazon Selling Partner",
+    "category": "Ecommerce",
+    "primary_auth": "oauth2",
+    "access": "approval_required",
+    "blocker": "app_review_or_approval",
+    "mcp": "official",
+    "note": "Developers must go through a rigorous developer profile registration, application review, and data protection policy compliance check, alongside maintaining a paid Professional Seller account."
+   },
+   {
+    "id": 51,
+    "name": "DataForSEO",
+    "category": "Data, SEO and Scraping",
+    "primary_auth": "basic",
+    "access": "self_serve_free",
+    "blocker": "paid_plan",
+    "mcp": "community_only",
+    "note": "While a free sandbox is available, live production data requires a minimum deposit. The lack of OAuth2 also creates friction for multi-tenant integrations, requiring secure handling of individual customer basic auth credentials."
+   },
+   {
+    "id": 52,
+    "name": "SE Ranking",
+    "category": "Data, SEO and Scraping",
+    "primary_auth": "api_key",
+    "access": "self_serve_trial",
+    "blocker": "paid_plan",
+    "mcp": "official",
+    "note": "Lack of a permanent free tier. While a 14-day free trial is available, ongoing access and production usage require a paid subscription or standalone API package."
+   },
+   {
+    "id": 58,
+    "name": "Sherlock",
+    "category": "Data, SEO and Scraping",
+    "primary_auth": "api_key",
+    "access": "self_serve_free",
+    "blocker": "local_cli_only",
+    "mcp": "community_only",
+    "note": "Sherlock is primarily a command-line tool and library. An AI agent toolkit would need to wrap the Python CLI/library for local execution or rely on third-party hosted endpoints."
+   },
+   {
+    "id": 60,
+    "name": "Clay",
+    "category": "Data, SEO and Scraping",
+    "primary_auth": "api_key",
+    "access": "self_serve_free",
+    "blocker": "paid_plan",
+    "mcp": "official",
+    "note": "A free tier with API access for basic search is available. However, key integration features like incoming webhooks and the generic HTTP API connector require the Growth plan ($495/mo). The most powerful API feature, querying workspace tables, is gated behind an Enterprise contract. All integrations must use manually provisioned, static API keys, as there is no public OAuth system for third-party apps."
+   },
+   {
+    "id": 67,
+    "name": "Snowflake",
+    "category": "Developer, Infra and Data platforms",
+    "primary_auth": "oauth2",
+    "access": "self_serve_trial",
+    "blocker": "app_review_or_approval",
+    "mcp": "official",
+    "note": "The primary friction for building a multi-tenant application is that each customer (tenant) must manually register the integration as a custom OAuth client within their own Snowflake environment. This involves an administrator executing SQL commands to create a 'security integration' and then retrieving the tenant-specific client_id and client_secret."
+   },
+   {
+    "id": 72,
+    "name": "Airtable",
+    "category": "Productivity and Project Management",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "paid_plan",
+    "mcp": "official",
+    "note": "The free plan is limited to 1,000 API calls per month, which is insufficient for most integrations. A paid plan is required for realistic usage. Additionally, native webhooks expire after 7 days, requiring a mechanism to refresh them."
+   },
+   {
+    "id": 74,
+    "name": "Jira",
+    "category": "Productivity and Project Management",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "paid_plan",
+    "mcp": "official",
+    "note": "While API access is available on the free tier, a production-like sandbox environment for testing requires a paid Premium or Enterprise plan."
+   },
+   {
+    "id": 79,
+    "name": "Smartsheet",
+    "category": "Productivity and Project Management",
+    "primary_auth": "oauth2",
+    "access": "paid_plan",
+    "blocker": "paid_plan",
+    "mcp": "official",
+    "note": "A developer cannot obtain credentials or register an OAuth application without an active paid subscription (Business plan or higher)."
+   },
+   {
+    "id": 82,
+    "name": "Plaid",
+    "category": "Finance and Fintech",
+    "primary_auth": "api_key",
+    "access": "self_serve_free",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "A developer can sign up for a free Sandbox instantly and also get auto-approved for a \"Trial plan\" that allows connecting up to 10 real bank accounts at no cost. This provides a clear path to begin building and testing with live data without a mandatory manual review or payment."
+   },
+   {
+    "id": 83,
+    "name": "Binance",
+    "category": "Finance and Fintech",
+    "primary_auth": "api_key",
+    "access": "approval_required",
+    "blocker": "app_review_or_approval",
+    "mcp": "official",
+    "note": "Public access is limited to direct API keys for managing one's own account. Building a multi-tenant application that connects to other users' accounts requires using OAuth2, which is only available to approved 'close ecosystem partners'."
+   },
+   {
+    "id": 85,
+    "name": "iPayX",
+    "category": "Finance and Fintech",
+    "primary_auth": "api_key",
+    "access": "paid_plan",
+    "blocker": "paid_plan",
+    "mcp": "official",
+    "note": "API access requires a paid plan; the free tier does not include API access."
+   },
+   {
+    "id": 86,
+    "name": "QuickBooks",
+    "category": "Finance and Fintech",
+    "primary_auth": "oauth2",
+    "access": "approval_required",
+    "blocker": "app_review_or_approval",
+    "mcp": "official",
+    "note": "The mandatory App Assessment Questionnaire required for production credentials, combined with the tiered pricing model that meters read operations, create significant friction for scaling multi-tenant integrations."
+   },
+   {
+    "id": 87,
+    "name": "Xero",
+    "category": "Finance and Fintech",
+    "primary_auth": "oauth2",
+    "access": "paid_plan",
+    "blocker": "paid_plan",
+    "mcp": "official",
+    "note": "The primary blocker is the new pricing model. While not an absolute stop, the cost associated with scaling beyond 5 connections is a significant point of friction."
+   },
+   {
+    "id": 88,
+    "name": "Brex",
+    "category": "Finance and Fintech",
+    "primary_auth": "oauth2",
+    "access": "approval_required",
+    "blocker": "app_review_or_approval",
+    "mcp": "official",
+    "note": "Production OAuth applications require manual partner approval. User tokens can be used for immediate integration but require per-customer admin setup."
+   },
+   {
+    "id": 89,
+    "name": "Ramp",
+    "category": "Finance and Fintech",
+    "primary_auth": "oauth2",
+    "access": "self_serve_free",
+    "blocker": "app_review_or_approval",
+    "mcp": "official",
+    "note": "While a free sandbox is available for full development and testing, moving a multi-tenant application to production requires a formal app review process, including a live functional demo, scope justification, and strict security compliance attestations."
+   },
+   {
+    "id": 92,
+    "name": "Otter AI",
+    "category": "AI, Research and Media-native",
+    "primary_auth": "oauth2",
+    "access": "partner_or_sales",
+    "blocker": "none",
+    "mcp": "official",
+    "note": "While the full REST API and webhooks are restricted to the Enterprise plan, Otter provides an official, self-serve MCP server that is available on all plans, including the free 'Basic' tier. This allows developers to build integrations without needing to contact sales."
+   },
+   {
+    "id": 96,
+    "name": "Devin",
+    "category": "AI, Research and Media-native",
+    "primary_auth": "bearer_token",
+    "access": "paid_plan",
+    "blocker": "paid_plan",
+    "mcp": "official",
+    "note": "API access is only available on paid plans."
+   },
+   {
+    "id": 97,
+    "name": "higgsfield",
+    "category": "AI, Research and Media-native",
+    "primary_auth": "api_key",
+    "access": "self_serve_free",
+    "blocker": "paid_plan",
+    "mcp": "official",
+    "note": "There is no permanent free tier for API usage. To test the integration, developers must register a payment method and fund a prepaid balance with a minimum of $5."
+   },
+   {
+    "id": 98,
+    "name": "Mermaid CLI",
+    "category": "AI, Research and Media-native",
+    "primary_auth": "none",
+    "access": "self_serve_free",
+    "blocker": "local_cli_only",
+    "mcp": "community_only",
+    "note": "As an open-source command-line tool, it requires wrapping and execution within a secure local sandbox or container environment for integration."
+   },
+   {
+    "id": 100,
+    "name": "Grain",
+    "category": "AI, Research and Media-native",
+    "primary_auth": "bearer_token",
+    "access": "paid_plan",
+    "blocker": "paid_plan",
+    "mcp": "official",
+    "note": "API access requires a paid subscription, starting with the \"Starter\" plan."
+   }
+  ],
+  "outreach": [
+   {
+    "id": 10,
+    "name": "DealCloud",
+    "category": "CRM and Sales",
+    "primary_auth": "oauth2",
+    "access": "partner_or_sales",
+    "blocker": "partnership_or_sales",
+    "mcp": "official",
+    "note": "No free developer tier or self-serve trial; requires an enterprise customer to provision credentials via their admin profile."
+   },
+   {
+    "id": 44,
+    "name": "Salesforce Commerce Cloud",
+    "category": "Ecommerce",
+    "primary_auth": "oauth2",
+    "access": "partner_or_sales",
+    "blocker": "partnership_or_sales",
+    "mcp": "official",
+    "note": "No self-serve, free developer access to the B2C Commerce platform. A developer cannot sign up and obtain working API credentials without being a verified partner or a paying customer."
+   },
+   {
+    "id": 53,
+    "name": "Ahrefs",
+    "category": "Data, SEO and Scraping",
+    "primary_auth": "oauth2",
+    "access": "paid_plan",
+    "blocker": "partnership_or_sales",
+    "mcp": "official",
+    "note": "To build a public third-party OAuth application, developers must first apply for the Ahrefs Connect program. After approval, they can develop and test using free test queries. However, to make the application available to live users, the developer must purchase an Ahrefs Enterprise plan. This is the most significant blocker, in addition to the lack of webhook support. Direct API/MCP access for internal use is more straightforward, requiring only a Lite+ plan."
+   },
+   {
+    "id": 59,
+    "name": "Waterfall.io",
+    "category": "Data, SEO and Scraping",
+    "primary_auth": "api_key",
+    "access": "partner_or_sales",
+    "blocker": "partnership_or_sales",
+    "mcp": "none_found",
+    "note": "API access is entirely gated behind a sales-led onboarding process; developers cannot self-serve sign up or instantly obtain credentials."
+   },
+   {
+    "id": 69,
+    "name": "Datadog",
+    "category": "Developer, Infra and Data platforms",
+    "primary_auth": "api_key",
+    "access": "approval_required",
+    "blocker": "partnership_or_sales",
+    "mcp": "official",
+    "note": "To build a seamless multi-tenant integration, developers must join the Datadog Partner Network and undergo an approval process to create a public OAuth app. Without this partner approval, the integration is blocked on a per-customer admin setup hurdle."
+   },
+   {
+    "id": 84,
+    "name": "Paygent Connect",
+    "category": "Finance and Fintech",
+    "primary_auth": "api_key",
+    "access": "partner_or_sales",
+    "blocker": "none",
+    "mcp": "none_found",
+    "note": "none"
+   },
+   {
+    "id": 90,
+    "name": "PitchBook",
+    "category": "Finance and Fintech",
+    "primary_auth": "api_key",
+    "access": "partner_or_sales",
+    "blocker": "partnership_or_sales",
+    "mcp": "none_found",
+    "note": "There is no self-serve way to obtain API credentials. A developer must already be an enterprise client with a specific API add-on contract to access the documentation and keys."
+   },
+   {
+    "id": 91,
+    "name": "NotebookLM",
+    "category": "AI, Research and Media-native",
+    "primary_auth": "oauth2",
+    "access": "partner_or_sales",
+    "blocker": "partnership_or_sales",
+    "mcp": "community_only",
+    "note": "The primary blocker is the enterprise-only access model for the API, requiring a sales or partnership process to obtain credentials. A secondary, but critical, blocker is the extremely narrow scope of the official API, specifically the complete absence of a query or chat endpoint. An AI agent cannot programmatically query or converse with the notebook's RAG index using official enterprise credentials. Additional friction includes complex per-customer Google Cloud project setup and high minimum subscription cost."
+   }
+  ],
+  "not_feasible": []
+ },
+ "self_serve_total": 63
+}

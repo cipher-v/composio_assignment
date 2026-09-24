@@ -1,0 +1,142 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://developer.woocommerce.com/docs/apis/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.74
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developer.woocommerce.com/docs/apis/rest-api/authentication/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.72
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://woocommerce.github.io/woocommerce-rest-api-docs/#authentication-endpoint",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.86
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://woocommerce.github.io/woocommerce-rest-api-docs/#authentication-endpoint",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://woocommerce.com/for-agencies/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.woocommerce.com/docs/apis/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.75
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.woocommerce.com/docs/apis/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.54
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://woocommerce.github.io/woocommerce-rest-api-docs/#authentication-endpoint",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.31
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://usecarly.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/techspawn/woocommerce-mcp-server",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.68
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://woocommerce.github.io/woocommerce-rest-api-docs/#authentication-endpoint",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.53
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://woocommerce.github.io/woocommerce-rest-api-docs/#authentication-endpoint",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.52
+  }
+ ],
+ "auth_support": {
+  "api_key": true,
+  "basic": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://woocommerce.github.io/woocommerce-rest-api-docs/#authentication-endpoint', 'https://usecarly.com/']\n- Non-vendor sources (prefer official docs): ['https://usecarly.com/', 'https://github.com/techspawn/woocommerce-mcp-server']",
+ "metrics": {
+  "n_evidence": 12,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.8333333333333334,
+  "readable": 12,
+  "quote_supported_rate": 0.8333333333333334,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

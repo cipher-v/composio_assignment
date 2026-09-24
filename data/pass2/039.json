@@ -1,0 +1,247 @@
+{
+ "app": {
+  "id": 39,
+  "name": "Threads (Meta)",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "developers.facebook.com/docs/threads"
+ },
+ "record": {
+  "subcategory": "Social Media",
+  "one_liner": "Threads is a text-based social media platform by Meta for sharing multi-format content and engaging with communities.",
+  "auth_methods": [
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 with a standalone authorization flow on threads.net, not Facebook Login. Long-lived tokens are valid for 60 days and refreshable.",
+  "access": "approval_required",
+  "access_notes": "API access is free but requires registering a Meta Developer Account, creating an app, and passing Meta App Review for each permission scope (e.g., threads_content_publish) and Meta Business Verification for production use.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "RESTful API built on Meta's Graph API infrastructure, using JSON responses. Supports publishing, reading posts/replies, moderation, insights, and webhooks. Lacks a Direct Messaging (DM) API.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "community_only",
+  "mcp_notes": "No official Threads MCP server from Meta. Third-party MCP servers exist, such as modiva.ai/mcp/threads and postcopilot.ai.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "The primary blocker is the mandatory Meta App Review and Business Verification process, which can take 3-8 weeks for production access.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.socialcrawl.dev/blog/threads-api",
+    "quote": "The Threads API is Meta's official developer interface for the Threads platform... What it gives you: publishing (text up to 500 characters, images, videos, carousels of 2 to 20 items), reading your own posts and replies, reply moderation, account and media-level insights, webhooks for reply and mention events, public keyword search (capped, see below), and post deletion."
+   },
+   {
+    "claim": "auth",
+    "url": "https://www.socialcrawl.dev/blog/threads-api",
+    "quote": "It is built on Meta's Graph API infrastructure, uses RESTful conventions with JSON responses, and authenticates with OAuth 2.0."
+   },
+   {
+    "claim": "auth",
+    "url": "https://letmepost.dev",
+    "quote": "Standalone Threads OAuth on threads.net. Not Facebook Login."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.facebook.com/docs/threads",
+    "quote": "Long-lived tokens are valid for 60 days and can be refreshed as long as they are at least 24 hours old but have not expired..."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.blotato.com/blog/threads-api-pricing",
+    "quote": "Threads API pricing in 2026 is free. Meta publishes no paid tier, no per-call fee, and no pricing page in the official Threads developer docs."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.blotato.com/blog/threads-api-pricing",
+    "quote": "App review: 2 to 6 weeks for threads_basic + threads_content_publish + threads_manage_replies , plus 1 to 2 weeks for business verification."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.socialcrawl.dev/blog/threads-api",
+    "quote": "Every permission scope needs to pass Meta App Review, with screencasts, a privacy policy, and frequently business verification."
+   },
+   {
+    "claim": "api",
+    "url": "https://modiva.ai/mcp/threads",
+    "quote": "Are DMs available? No. Threads has no messaging api, so no tool (modiva's included) can read or send threads dms."
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/code-yeongyu/threads-api-openapi",
+    "quote": "The unofficial API for Threads. This repository contains the OpenAPI YAML file that documents the reverse-engineered APIs currently available for Threads."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.facebook.com/docs/threads",
+    "quote": "Your app must have successfully completed App Review (Advanced Access) to receive webhook notifications for all of the fields."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.facebook.com/docs/threads",
+    "quote": "Click the Add or Remove Threads Test Users to add testers to your app. The page will refresh to the App roles > Roles page in the dashboard. Click the Add People button to add people as to one or more of the following app roles"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://modiva.ai/mcp/threads",
+    "quote": "Meta shipped a threads api in 2024, but there is no official threads mcp server. modiva hosts one with 9 typed tools..."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://mcpservers.org/servers/postcopilot-ai-blog-postcopilot-mcp-server-threads-ai-tools",
+    "quote": "postcopilot is the first dedicated threads mcp server, and it works with claude, chatgpt, cursor, vs code, and any other mcp-compatible client."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://www.blotato.com/blog/threads-api-pricing",
+    "quote": "Production access waits on Meta App Review... App review: 2 to 6 weeks for threads_basic + threads_content_publish + threads_manage_replies , plus 1 to 2 weeks for business verification."
+   }
+  ],
+  "confidence": 0.9,
+  "changes": [],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### Verification Notes\n\nHere is a field-by-field analysis of the initial research record for the Threads API.\n\n**`subcategory`**: **CONFIRMED**\n*   **Value**: `Social Media`\n*   **Reasoning**: The API allows interaction with Threads, a text-based social media platform from Meta. This is self-evident from the product's nature and confirmed by numerous sources describing it as a social platform.\n\n**`one_liner`**: **CONFIRMED**\n*   **Value**: \"Threads is a text-based social media platform by Meta for sharing multi-format content and engaging with communities.\"\n*   **Reasoning**: Official documentation states the API is used to \"create and publish posts, retrieve media and profiles, moderate replies, and access insights,\" which aligns with the one-liner. Third-party sources also describe it as a \"text-based social platform\" for brands and creators to \"share inspiring content with their communities.\"\n\n**`auth_methods`**: **CONFIRMED**\n*   **Value**: `[\"oauth2\"]`\n*   **Reasoning**: The official Meta developer documentation explicitly states, \"API authentication is handled by Threads user access tokens that conform to the OAuth 2.0 protocol.\" No other authentication methods are documented for the public API.\n\n**`primary_auth`**: **CONFIRMED**\n*   **Value**: `oauth2`\n*   **Reasoning**: As OAuth 2.0 is the sole documented authentication method, it is the primary method for any multi-tenant application.\n\n**`auth_notes`**: **CONFIRMED**\n*   **Value**: \"OAuth 2.0 with a standalone authorization flow on threads.net, not Facebook Login. Long-lived tokens are valid for 60 days and refreshable.\"\n*   **Reasoning**: The authentication flow is confirmed by multiple sources to be a distinct OAuth 2.0 process. One source notes, \"Standalone Threads OAuth on threads.net. Not Facebook Login.\" The token lifecycle is also confirmed: short-lived tokens last for 1 hour and can be exchanged for long-lived tokens, which are valid for approximately 60 days (5,184,000 seconds).\n\n**`access`**: **CONFIRMED**\n*   **Value**: `approval_required`\n*   **Reasoning**: The official documentation states that for app users without a role (i.e., public users), \"each permission must first be approved through the App Review process, and your app must be published.\" This confirms that to access other users' data, vendor approval is mandatory.\n\n**`access_notes`**: **CONFIRMED**\n*   **Value**: \"API access is free but requires registering a Meta Developer Account, creating an app, and passing Meta App Review for each permission scope (e.g., threads_content_publish) and Meta Business Verification for production use.\"\n*   **Reasoning**: The API is free of charge; Meta has \"no published paid tier, no per-call fee, and no pricing page in the official Threads developer docs.\" The process requires creating a Meta Developer account and a Meta App with the \"Threads API\" use case selected. To receive live webhook notifications for the public, \"the business connected to the app must be verified,\" and permissions need \"Advanced Access\" via App Review.\n\n**`api_styles`**: **CONFIRMED**\n*   **Value**: `[\"rest\"]`\n*   **Reasoning**: The API is built on Meta's Graph API infrastructure, which is RESTful. Endpoints like `POST https://graph.threads.com/oauth/access_token` confirm the REST architecture.\n\n**`api_breadth`**: **CONFIRMED**\n*   **Value**: `moderate`\n*   **Reasoning**: The API supports a solid range of functions: publishing posts (text, image, video, carousels), reading posts/replies, managing replies, and viewing insights. However, it lacks key functionality like a Direct Messaging (DM) API, as confirmed by third-party analysis. This scope justifies a \"moderate\" breadth.\n\n**`api_notes`**: **CONFIRMED**\n*   **Value**: \"RESTful API built on Meta's Graph API infrastructure, using JSON responses. Supports publishing, reading posts/replies, moderation, insights, and webhooks. Lacks a Direct Messaging (DM) API.\"\n*   **Reasoning**: The API is part of the Meta Graph API. It supports publishing, reading, moderation, insights, and webhooks. The absence of a DM API is noted by community sources.\n\n**`openapi_spec`**: **CONFIRMED**\n*   **Value**: `false`\n*   **Reasoning**: While there are unofficial, reverse-engineered OpenAPI specifications created by the community, Meta does not publish an official one. The initial record's citation of an \"unofficial\" spec supports this.\n\n**`webhooks`**: **CONFIRMED**\n*   **Value**: `true`\n*   **Reasoning**: Meta's official documentation provides a dedicated guide for \"Webhooks for Threads,\" which \"allow you to receive real-time notifications for the subscribed topics and fields.\" This requires App Review for live notifications.\n\n**`sandbox`**: **CONFIRMED**\n*   **Value**: `true`\n*   **Reasoning**: The official documentation describes a testing mechanism using \"Threads Testers.\" Developers can add testers by role in the App Dashboard, who must then accept an invitation within the Threads app to grant permissions before the app has passed the full App Review. This functions as a sandbox environment.\n\n**`mcp`**: **CONFIRMED**\n*   **Value**: `community_only`\n*   **Reasoning**: Multiple third-party sources explicitly state that Meta has not released an official MCP server for Threads. Several community-built MCP servers exist, including those from Modiva, PostCopilot, and Outstand.\n\n**`mcp_notes`**: **CONFIRMED**\n*   **Value**: \"No official Threads MCP server from Meta. Third-party MCP servers exist, such as modiva.ai/mcp/threads and postcopilot.ai.\"\n*   **Reasoning**: This is a correct summary based on findings. One source states, \"Meta shipped a Threads API in 2024, but there is no official Threads MCP server.\" Another calls PostCopilot \"the first dedicated threads mcp server.\"\n\n**`verdict`**: **CONFIRMED**\n*   **Value**: `ready_with_friction`\n*   **Reasoning**: The API is publicly documented and access is free, but the mandatory App Review and Business Verification for production use constitute significant friction, making `ready_with_friction` the appropriate verdict.\n\n**`blocker`**: **CONFIRMED**\n*   **Value**: `app_review_or_approval`\n*   **Reasoning**: This directly corresponds to the `access` type. The primary hurdle to accessing data from users without a role on the app is passing Meta's App Review process.\n\n**`blocker_notes`**: **CONFIRMED**\n*   **Value**: \"The primary blocker is the mandatory Meta App Review and Business Verification process, which can take 3-8 weeks for production access.\"\n*   **Reasoning**: The mandatory nature of App Review and Business Verification is confirmed by official docs. The timeline is corroborated by third-party analysis, which estimates the process can take several weeks.\n\n### Uncertainties\n\nNone. The official Meta developer documentation was found and is comprehensive, allowing for the verification of all fields.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Meta Threads API documentation",
+   "Threads API permissions",
+   "Threads API authentication flow",
+   "Threads API access tiers pricing",
+   "Threads API webhooks",
+   "Threads API sandbox mode test users",
+   "official Threads MCP server"
+  ],
+  "search_sources": [
+   {
+    "title": "facebook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHm-AEbhMorq6kcQjHh72hnMvUByiXwSxspiY3nZJTxuvSTbkY4g8ivhG4977httF62cDG6fMrEzVwpT4kZbprDjNWwwkjydyD9gZVo0Dz4bvuWLfnBJ-6JUZcXh3lG7wXYYoi86WsJ-U-qrzMJA_U="
+   },
+   {
+    "title": "netrows.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbKC3X_wUruWoDF65u-tOX-hrwIYx_tngby503GCuJ1hm0hElE1SMQ2D3tnf38J2yBk8hFvFAfwk7w1YA3-j8nVIQjNJ-K_X96SXuFAXxd7RCLZ6B8jCxH7Hx7fghlSmqP1qzsOAxnjNqw2gCUHlU6MoI="
+   },
+   {
+    "title": "make.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKu9_hgR_Nwyl04O2zcR0FE8_1LlxSgcEH1F7_cpRaaM4y0BdyvA554IQLgQOXgcNsCu4SH3mykjJkZs9rRc7crfdGndW_CvX1zCo0I4lajzGQl4P6SboHQzh-Erd3N3kRclvk6wtAphYWmGasPcdtTQ=="
+   },
+   {
+    "title": "facebook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHG1X0vfPDqZyO6pXWUyAdtANjq0pGk3ncTwT89dinQQH5DECUeB6p0bPmtvP2Ie2ldv-9uFW_q0kIfdFys7il4mqyy_MpgW6OXgZ0YfU7rAA1fS_xVaBk1PQ8-_ISw3iS-KB7m-Qz4oi2dXQ-LzPyksBPKRt2neMEqf2Q="
+   },
+   {
+    "title": "facebook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtsBz1IrNXueuzR9MMpyB5939raIzq8zn7w1dCJXjT92QXxyy92Hh_sTjiKu-NNawmRB5bZ6cG3iEdYX1jEWeJq-tJHygk5YlNDJzrDswT6-1ogr80BBqblt_wbZSrsg_ssPkV6EOSOrORxGX56tl946YVBEWrVGSHpvImUsu9P-8BBHU6uM46ptCN4_oBIaKD0KiMjkV9i6KE5RfU"
+   },
+   {
+    "title": "letmepost.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETVsKtd9ZFsZ-L8H3oT9YPREPPktae6Ip_pQR7-4fhYqW4-k1KYG_yARXcUPK0ggo68bXRb5w_fTB8UGD_HtASWgHzHL07d-r8rdm936irJgvofbPTaA2asNyrO0sWQLj4"
+   },
+   {
+    "title": "note.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEabJSiZiwzVEjnceb7g7-79pQHrNRZh9NbeC1gnqgIQ-w16qUcQy4K2Yy_JZFVyZlAd-tZehQr33pd4Zu0jJBHUTYeERQ_vACb_vng0TR7rE63W6RI-2c0kRS3rCtjHz8Q6Gl3mPnxj1mkX58="
+   },
+   {
+    "title": "socialcrawl.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrC_00BEHyen6O0BNZZADz2QNvvaaY4PutsxARbeft3n2T13g5UdN2IXZWLgNEdSpcO98oLITCYpwAvGBKRkbkUpFLonV6OxRx4aSJg0j9g3X-eOf5zSjCrPTz2DEM2C1p9CrCqVI="
+   },
+   {
+    "title": "blotato.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDllg2njuiHF4jsRnSFqApV967GhYZFWYDXUtyDcJkGBLMcRdgpGBE0mPiIWfpHA3kB1LtInTh7j_-l06g_1d2j6p6Z7DgUiQWB4EFvKlMeym4s9mwr36fO6a-HPuptRihv2vOkcV4KW2N"
+   },
+   {
+    "title": "mixpost.app",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3Wv8rU9NcsGrlqAk0GTLqn3xcc8_vt7BCRvqbL9OkxJPdP4z1J8unK3kEPpCgbV_yu4Rc7EUEkgyTf2jxrSH3isSe4lg0TDkG8zYVU8fuKPi8FffCW6zIsm-2byTbXtMA51AMo7WZ-_ZktQ=="
+   },
+   {
+    "title": "postforme.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEB8BrKMOBy0x9jvIcqS_ES-wfO704gHO2MTHleWt-sbT5IpXUB7pxx606RVUhmUauFKMk-px-7i3G91D-6bXVZzF0XQW8p1Jrt-GwuuMa0TIog43ODZYlVHJWtyAghvS-73SVeSbIEna0vkOJSA-boYU_kk2hnJuDpmpFYEz1qbHa5"
+   },
+   {
+    "title": "facebook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWONw6XQT6_gu45WGIt_SpxLC0W1shtilj1gMnlZhVkCxtB8_aVnjsEt0fdXtjoMuLOtznS9exn20jeqZsH7Z-byq7hgFfkGzuj8KzuQgfPBy307kb0ujxr3cd7U3qJlWGsFhZJXHR33ltgfMekLQ-vlwFKixR05Y="
+   },
+   {
+    "title": "zernio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1zfCE1flNClwi5jKvGuBwTbAXlvpUwG92ucpKC5xj-RnHG1FTnh31--oxBZueNQfFIqc4SIERYGR6Ln2d3CGO4OmnX9IZcBFk3cPdeCIREEOARrE7_wwYjAjeHdk="
+   },
+   {
+    "title": "socialmediatoday.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEf4sG5CFc4Tn-yn65ZScj_8ZpQi-R10OTrd7-vUeJcZimU-LHGmO-g5BbOXto7LY7TXa_ax2Jf-gYvtzA0fCWY4LBy_YI2F9NcdXcyG5DuM5b6ioKazNTc1D8gfGmR-SGduwvQFRDlo8sUORozlysiRyNsY-C-Zvt3Rd2e7dfICPaq79A9xXa50DQ1dScDakbZ0iqBjXboziNUzU5V0GLKQiBYvW5WA=="
+   },
+   {
+    "title": "modiva.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVTeV97hkv37MVozyAnN8Jb-c-oznxwtfNDdwD2NhZGa-vFu327gQPA-6eZHkATIRH1armt_CZtRa_oin79OL-T_5u-NlPmvdkuuVYBCdXLFAPWxGkZWo="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHW_YZ41863BVEBfuZW0IQ9UgIsDsMdIC8YD2D_9nfOsuL4QQWz_oIA63jlFtHZfhsHvZ6yImEwAyLu39KMorGxvhWHEQc0Zs0aB-qh2iCIp-dv19XfTVXlswDK0z_6OvQ__sbX83SA"
+   },
+   {
+    "title": "outstand.so",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMhdpzzH55N-DSdPYXTHwgCcu0oJOVHndgBqJEu6CaWzOmMpEAuZE9mAuMnhWz3qnyJhfLN2UBzxJbeqqw8HyY01sLd5KxFbnrykIgV8qwHuaZUrwN3mHrlacQNqM="
+   },
+   {
+    "title": "mcpservers.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCRLarlqXao1vLxGKIJgH2FpE0FTzLO4imBRL7YIpftUvmrGjNccLVJdaAaJ48wl8xjIAGIXUKItpBDJ4wT7FrhCl7KqjGTat09DwTuXHgTNuAjiUEzO2DARIcEKjbK-ZiMtjtjkE3I-2ljcAo5UzKdvnpp75DVtVZdVNd7IdZob9EGsIH13z1Fx-2UD1TaHP3zvJV"
+   },
+   {
+    "title": "posteverywhere.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvUq0cmScfXOCoo8UxQHOCWBvXbcg-z-Z06yn7PfltbNPpU2b1ZgnR1rBe02_LNxLoaFqRwfZgrC0PyWlPuamPM8TqsfZR-tCqz4lndovxCcGG-sSBs1A7b9hbRLju3_WgyzllRctPzXqcbqI="
+   }
+  ],
+  "tokens": 11430,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://www.socialcrawl.dev/blog/threads-api",
+    "status": 200,
+    "chars": 17366,
+    "readable": true
+   },
+   {
+    "url": "https://letmepost.dev",
+    "status": 200,
+    "chars": 8621,
+    "readable": true
+   },
+   {
+    "url": "https://developers.facebook.com/docs/threads",
+    "status": 400,
+    "chars": 118,
+    "readable": false
+   },
+   {
+    "url": "https://www.blotato.com/blog/threads-api-pricing",
+    "status": 200,
+    "chars": 23520,
+    "readable": true
+   },
+   {
+    "url": "https://modiva.ai/mcp/threads",
+    "status": 200,
+    "chars": 3588,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/code-yeongyu/threads-api-openapi",
+    "status": 200,
+    "chars": 4487,
+    "readable": true
+   },
+   {
+    "url": "https://mcpservers.org/servers/postcopilot-ai-blog-postcopilot-mcp-server-threads-ai-tools",
+    "status": 200,
+    "chars": 6987,
+    "readable": true
+   }
+  ],
+  "seconds": 63.4
+ }
+}

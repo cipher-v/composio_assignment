@@ -1,0 +1,249 @@
+{
+ "app": {
+  "id": 53,
+  "name": "Ahrefs",
+  "category": "Data, SEO and Scraping",
+  "hint": "ahrefs.com/api"
+ },
+ "record": {
+  "subcategory": "SEO / Marketing",
+  "one_liner": "Ahrefs is an AI-powered marketing and SEO platform built on a massive proprietary web index.",
+  "auth_methods": [
+   "bearer_token",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "API Key (bearer_token) for direct workspace access by owners and admins; OAuth 2.0 (Authorization Code Flow with PKCE) for third-party applications via Ahrefs Connect integration program.",
+  "access": "paid_plan",
+  "access_notes": "API access requires a paid subscription (Lite tier or higher, starting at $129/month). OAuth apps require an application form submission and manual review by Ahrefs' enterprise team to verify eligibility and obtain client credentials.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API (v3) covering Site Explorer, Keywords Explorer, SERP Overview, Rank Tracker, Site Audit, Brand Radar, Social Media Management, Content Helper, and project management endpoints.",
+  "openapi_spec": false,
+  "webhooks": false,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Ahrefs hosts an official remote MCP server at api.ahrefs.com/mcp/mcp, exposing over 100 tools across Site Explorer, Keywords Explorer, Rank Tracker, and Site Audit. The older local MCP server repository is archived and deprecated.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "Developers must pay for a subscription plan (Lite tier or higher starting at $129/mo) to access the API/MCP, go through a manual application approval process to obtain OAuth credentials, and develop without a dedicated sandbox environment or webhook support.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://ahrefs.com/",
+    "quote": "ahrefs—ai marketing platform powered by big data marketing reports, apps, and automations, handled."
+   },
+   {
+    "claim": "general",
+    "url": "https://ahrefs.com/",
+    "quote": "the only ai marketing platform built on ahrefs’ proprietary index of the web."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.ahrefs.com/en/api/reference/public/get-domain-rating-free",
+    "quote": "generate an api key in account settings → api keys add it to your requests: authorization: bearer <token>"
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.ahrefs.com/en/ahrefs-connect/docs/oauth-guide",
+    "quote": "ahrefs connect uses oauth 2.0 authorization code flow with proof key for code exchange (pkce) ."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.ahrefs.com/en/ahrefs-connect/docs/introduction",
+    "quote": "ahrefs connect is our integration program that lets third-party products access ahrefs api data on behalf of ahrefs users. users connect their ahrefs account via oauth, and your app can fetch data using their api units."
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.ahrefs.com/en/ahrefs-connect/docs/introduction",
+    "quote": "Apply to join Get credentials and implement oauth"
+   },
+   {
+    "claim": "access",
+    "url": "https://ahrefs.com/",
+    "quote": "Submit the application form with: A description of your product; A link to your website; Details on how you plan to use Ahrefs data in your app. Our Enterprise team will confirm if your product is eligible"
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.ahrefs.com/en/ahrefs-connect/docs/introduction",
+    "quote": "once a technology provider joins the ahrefs connect program, their integration becomes available to users on ahrefs paid plans (lite, standard, advanced, and enterprise)."
+   },
+   {
+    "claim": "access",
+    "url": "https://ahrefs.com/pricing",
+    "quote": "Lite plan ($129/month) ... While all Lite and higher plans have access to our API, the Ahrefs Enterprise plan is the only one that grants unlimited access"
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.ahrefs.com/en/api/reference/public/get-domain-rating-free",
+    "quote": "home rest api mcp data studio bot analytics ahrefs connect"
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.ahrefs.com/en/api/docs/introduction",
+    "quote": "Currently, API v3 allows you to pull data from the Site Explorer, Keywords Explorer, SERP Overview, Rank Tracker, Site Audit, Brand Radar, Social Media Management and Content Helper endpoints, as well as manage your Rank Tracker projects and Keywords Explorer lists"
+   },
+   {
+    "claim": "api",
+    "url": "https://www.stitchflow.com/user-management/ahrefs/api",
+    "quote": "Webhooks available: No; Webhook notes: No webhook functionality is documented in the official Ahrefs API v3 reference or help center. The API is a pull-only REST API."
+   },
+   {
+    "claim": "api",
+    "url": "https://plainenglish.io/",
+    "quote": "A clean SEO API integration also depends on sandbox availability — SE Ranking and Semrush both offer test environments; Ahrefs does not."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.ahrefs.com/en/api/docs/introduction",
+    "quote": "We strongly encourage the use of our complimentary test queries for all development and testing purposes to mitigate any unintended usage of API units."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://usecarly.com/",
+    "quote": "Yes — Ahrefs has an official MCP server. It's a hosted remote server at api.ahrefs.com/mcp/mcp , and it lets any MCP-compatible AI tool pull live Site Explorer, Keywords Explorer, Rank Tracker, and Site Audit data straight from your Ahrefs account."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://agenticskills.io/",
+    "quote": "the ahrefs/ahrefs-mcp-server GitHub repo is officially archived and Ahrefs recommends against using it. Streamable HTTP API Key Required. Official remote, paid (Lite+)."
+   }
+  ],
+  "confidence": 0.9
+ },
+ "notes": "### 1. Product Overview\nAhrefs is an AI-powered marketing and SEO platform built on a massive proprietary web index. It provides comprehensive tools for tracking search rankings, backlink profiles, organic search traffic, keyword research, competitive intelligence, technical site audits, and brand mentions across AI chatbots.\n\n*   **Source URL:** `https://ahrefs.com/`\n*   **Verbatim Quote:** `\"ahrefs—ai marketing platform powered by big data marketing reports, apps, and automations, handled.\"`\n*   **Verbatim Quote:** `\"the only ai marketing platform built on ahrefs’ proprietary index of the web.\"`\n\n---\n\n### 2. Authentication Methods\nThe Ahrefs API v3 supports two primary methods of authentication:\n*   **API Key (`bearer_token`):** Used for direct workspace access by owners and admins.\n    *   **Source URL:** `https://docs.ahrefs.com/en/api/reference/public/get-domain-rating-free`\n    *   **Verbatim Quote:** `\"generate an api key in account settings → api keys add it to your requests: authorization: bearer <token>\"`\n*   **OAuth 2.0 (`oauth2`):** Used by third-party applications via the Ahrefs Connect integration program. It utilizes the Authorization Code Flow with PKCE.\n    *   **Source URL:** `https://docs.ahrefs.com/en/ahrefs-connect/docs/oauth-guide`\n    *   **Verbatim Quote:** `\"ahrefs connect uses oauth 2.0 authorization code flow with proof key for code exchange (pkce) .\"`\n\n**Primary Auth for Multi-Tenant Integration:** `oauth2`\nA multi-tenant integration platform like Composio must use **Ahrefs Connect (OAuth 2.0)** to securely request data on behalf of individual Ahrefs users.\n*   **Source URL:** `https://docs.ahrefs.com/en/ahrefs-connect/docs/introduction`\n*   **Verbatim Quote:** `\"ahrefs connect is our integration program that lets third-party products access ahrefs api data on behalf of ahrefs users. users connect their ahrefs account via oauth, and your app can fetch data using their api units.\"`\n\n---\n\n### 3. Developer Credentials & Cost\n*   **Access Tier:** `paid_plan` (with an additional `approval_required` process for OAuth apps).\n*   **How to Get Credentials:** Developers must submit an application form to join the Ahrefs Connect program. Ahrefs' enterprise team manually reviews the application to verify eligibility before providing client credentials.\n    *   **Source URL:** `https://docs.ahrefs.com/en/ahrefs-connect/docs/introduction`\n    *   **Verbatim Quote:** `\"Apply to join Get credentials and implement oauth\"`\n    *   **Source URL:** `https://ahrefs.com/` (via Ahrefs Connect Application Docs)\n    *   **Verbatim Quote:** `\"Submit the application form with: A description of your product; A link to your website; Details on how you plan to use Ahrefs data in your app. Our Enterprise team will confirm if your product is eligible\"`\n*   **Cost:** While a limited free tier exists for tracking a user's own verified site or making basic test queries, full API and Ahrefs Connect access requires a paid subscription plan starting at the Lite tier ($129/month).\n    *   **Source URL:** `https://docs.ahrefs.com/en/ahrefs-connect/docs/introduction`\n    *   **Verbatim Quote:** `\"once a technology provider joins the ahrefs connect program, their integration becomes available to users on ahrefs paid plans (lite, standard, advanced, and enterprise).\"`\n    *   **Source URL:** `https://ahrefs.com/pricing` (via Plan Details)\n    *   **Verbatim Quote:** `\"Lite plan ($129/month) ... While all Lite and higher plans have access to our API, the Ahrefs Enterprise plan is the only one that grants unlimited access\"`\n\n---\n\n### 4. API Technical Details\n*   **API Style:** REST API (v3).\n    *   **Source URL:** `https://docs.ahrefs.com/en/api/reference/public/get-domain-rating-free`\n    *   **Verbatim Quote:** `\"home rest api mcp data studio bot analytics ahrefs connect\"`\n*   **Breadth:** Broad coverage of SEO capabilities including Site Explorer (backlinks, organic/paid traffic), Keywords Explorer, SERP Overview, Rank Tracker, Site Audit, Brand Radar (AI overview tracking), Social Media Management, Content Helper, and project management endpoints.\n    *   **Source URL:** `https://docs.ahrefs.com/en/api/docs/introduction`\n    *   **Verbatim Quote:** `\"Currently, API v3 allows you to pull data from the Site Explorer, Keywords Explorer, SERP Overview, Rank Tracker, Site Audit, Brand Radar, Social Media Management and Content Helper endpoints, as well as manage your Rank Tracker projects and Keywords Explorer lists\"`\n*   **OpenAPI Spec:** Not officially published or documented.\n*   **Webhooks:** Not available. The API operates strictly on a pull-only model.\n    *   **Source URL:** `https://www.stitchflow.com/user-management/ahrefs/api`\n    *   **Verbatim Quote:** `\"Webhooks available: No; Webhook notes: No webhook functionality is documented in the official Ahrefs API v3 reference or help center. The API is a pull-only REST API.\"`\n*   **Sandbox:** No dedicated sandbox environment is available. However, Ahrefs provides complimentary \"free test queries\" to allow developers to build and test endpoints without consuming paid API units.\n    *   **Source URL:** `https://plainenglish.io/`\n    *   **Verbatim Quote:** `\"A clean SEO API integration also depends on sandbox availability — SE Ranking and Semrush both offer test environments; Ahrefs does not.\"`\n    *   **Source URL:** `https://docs.ahrefs.com/en/api/docs/introduction`\n    *   **Verbatim Quote:** `\"We strongly encourage the use of our complimentary test queries for all development and testing purposes to mitigate any unintended usage of API units.\"`\n\n---\n\n### 5. Model Context Protocol (MCP) Servers\n*   **MCP Status:** `official`\n*   **Details:** Ahrefs hosts an official remote MCP server available at `api.ahrefs.com/mcp/mcp` that exposes over 100 tools across Site Explorer, Keywords Explorer, Rank Tracker, and Site Audit directly to AI clients over a Streamable HTTP endpoint. The older local MCP server repository has been archived and deprecated.\n    *   **Source URL:** `https://usecarly.com/`\n    *   **Verbatim Quote:** `\"Yes — Ahrefs has an official MCP server. It's a hosted remote server at api.ahrefs.com/mcp/mcp , and it lets any MCP-compatible AI tool pull live Site Explorer, Keywords Explorer, Rank Tracker, and Site Audit data straight from your Ahrefs account.\"`\n    *   **Source URL:** `https://agenticskills.io/`\n    *   **Verbatim Quote:** `\"the ahrefs/ahrefs-mcp-server GitHub repo is officially archived and Ahrefs recommends against using it. Streamable HTTP API Key Required. Official remote, paid (Lite+).\"`\n\n---\n\n### 6. Buildability Verdict\n*   **Verdict:** `ready_with_friction`\n*   **Main Blocker:** The integration is fully buildable via OAuth 2.0 (Ahrefs Connect) or their official remote MCP server. However, significant friction exists because developers must pay for a subscription plan (Lite tier or higher starting at $129/mo) to access the API/MCP, go through a manual application approval process to obtain OAuth credentials, and develop without a dedicated sandbox environment or webhook support.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"ahrefs\" api pricing plans",
+   "\"ahrefs connect\" approval process",
+   "\"ahrefs\" openapi spec swagger",
+   "\"ahrefs\" mcp server",
+   "\"ahrefs\" api webhooks",
+   "\"ahrefs\" api sandbox",
+   " \"openapi\"",
+   " \"webhook\""
+  ],
+  "search_sources": [
+   {
+    "title": "ahrefs.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHziQz0HBTCv0lX1I_BH9p84PLU8W8rbKq3SbLemB0kOldjFAwiwYsW7yseRPTRQHbMufrja5FKq2TEGYi-AwTuzPREa-F4P6nYvUwnS2_s5U4NiE1-QIZ-_5DL_7hRFlsQtR-8kKvoej4Se_ZaOjSk-w=="
+   },
+   {
+    "title": "ahrefs.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRgsb_d-dd761REkzi62cUmOYuQfjSHCceJ_ks84qshX3GvgNNItOGpoiqLf6pQfjTFr82qRIPw940BVJXLLAr4m3ZtzNMYI_nqNc7RvqOFVfluIRw9uDV_Scx2O5Jiy4dohteSAfgGNvHLw=="
+   },
+   {
+    "title": "stitchflow.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEH4ZyGErhON5XA92QAcx1ZE67TTsc5VcM6_PJJ1cpAM73Bsi75G-XZjMKsVSVt9_Q7UpIZbikI3yjd-VYw7LAY5APNlEzNJ8qm9pXKP3N6xTAEAPfNt5mgupiAljwbzP0uYFhQQG-72-y4klulm2u"
+   },
+   {
+    "title": "plainenglish.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCkY1OfwskpO_HKHyTP1OR11J0vjAU2_GwoNstNy0bnVYKhdavFwD-aKcUA2FPYM55TCkznCFFSIpG7Gm7naGgw82VSmxIOmt_3OXpO2Nk6ZWEejXg-1-j0Gpa_25NrYRAZS2es8PWYwn8jxE5mnG4WNSe2tUaPLRJ4Xsu_kt1bfbuGUg9tVjZWsbzdixqLAfy1Yptjx3ud70LEPro"
+   }
+  ],
+  "tokens": 10506,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Ahrefs API authentication",
+    "Ahrefs API keys",
+    "Ahrefs OAuth",
+    "Ahrefs API getting started",
+    "Ahrefs API quickstart",
+    "Ahrefs API pricing",
+    "Ahrefs API plans",
+    "Ahrefs developer program",
+    "Ahrefs API reference",
+    "Ahrefs API documentation",
+    "Ahrefs MCP server"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://ahrefs.com/",
+    "https://ahrefs.com/pricing",
+    "https://app.ahrefs.com/web/oauth/authorize",
+    "https://docs.ahrefs.com/en/api/reference/public/get-domain-rating-free",
+    "https://docs.ahrefs.com/en/ahrefs-connect/docs/oauth-guide",
+    "https://docs.ahrefs.com/en/ahrefs-connect/docs/introduction",
+    "https://docs.ahrefs.com/en/api/docs/introduction",
+    "https://ahrefs.com/academy/api-course",
+    "https://docs.ahrefs.com/en/ahrefs-connect/docs/api-guide",
+    "https://www.stitchflow.com/user-management/ahrefs/api"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://ahrefs.com/api/introduction",
+     "status": 404
+    },
+    {
+     "url": "https://ahrefs.com/api/reference/introduction",
+     "status": 404
+    },
+    {
+     "url": "https://api.ahrefs.com/mcp/mcp",
+     "status": 405
+    },
+    {
+     "url": "https://ahrefs.com/api/ahrefs-connect/oauth-guide",
+     "status": 404
+    },
+    {
+     "url": "https://ahrefs.com/oauth2/token.php",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://ahrefs.com/",
+     "status": 200,
+     "chars": 12977,
+     "readable": true
+    },
+    {
+     "url": "https://ahrefs.com/pricing",
+     "status": 200,
+     "chars": 13081,
+     "readable": true
+    },
+    {
+     "url": "https://app.ahrefs.com/web/oauth/authorize",
+     "status": 200,
+     "chars": 29,
+     "readable": false
+    },
+    {
+     "url": "https://docs.ahrefs.com/en/api/reference/public/get-domain-rating-free",
+     "status": 200,
+     "chars": 3227,
+     "readable": true
+    },
+    {
+     "url": "https://docs.ahrefs.com/en/ahrefs-connect/docs/oauth-guide",
+     "status": 200,
+     "chars": 4573,
+     "readable": true
+    },
+    {
+     "url": "https://docs.ahrefs.com/en/ahrefs-connect/docs/introduction",
+     "status": 200,
+     "chars": 2439,
+     "readable": true
+    },
+    {
+     "url": "https://docs.ahrefs.com/en/api/docs/introduction",
+     "status": 200,
+     "chars": 4868,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 60.6
+ }
+}

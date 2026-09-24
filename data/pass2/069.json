@@ -1,0 +1,272 @@
+{
+ "app": {
+  "id": 69,
+  "name": "Datadog",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "docs.datadoghq.com/api"
+ },
+ "record": {
+  "subcategory": "Monitoring / Observability",
+  "one_liner": "Datadog is an integrated SaaS platform providing comprehensive monitoring, security observability, and digital experience management.",
+  "auth_methods": [
+   "api_key",
+   "oauth2",
+   "bearer_token",
+   "other"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "Datadog supports legacy dual-key (API key + Application key), Personal Access Tokens (PATs), Service Access Tokens (SATs), Workload Identity Federation, Customer-Managed OAuth Clients, and Partner OAuth 2.0 Apps. For multi-tenant integration, Partner OAuth 2.0 Apps are preferred.",
+  "access": "approval_required",
+  "access_notes": "Any developer can sign up for a free account or a 14-day free trial. Credentials (API keys, application keys, customer-managed OAuth clients) can be generated instantly. To create a public multi-tenant OAuth application, developers must apply to join the Datadog Partner Network (DPN) to gain access to a Partner Sandbox Account.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API with v1 and v2 endpoints, providing comprehensive endpoints to manage and query metrics, logs, traces, dashboards, monitors, incidents, users, roles, and security signals.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "The Datadog MCP Server acts as a bridge between your observability data in Datadog and any AI agents that support the Model Context Protocol (MCP).",
+  "verdict": "needs_outreach",
+  "blocker": "partnership_or_sales",
+  "blocker_notes": "To build a seamless multi-tenant integration, developers must join the Datadog Partner Network and undergo an approval process to create a public OAuth app. Without this partner approval, the integration is blocked on a per-customer admin setup hurdle.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://docs.datadoghq.com/api/latest/authentication/",
+    "quote": "...the integrated platform for monitoring & security observability security digital experience software delivery service management ai platform capabilities view product pricing observability end-to-end, simplified visibility into your stack’s health & performance infrastructure infrastructure monitoring custom metrics network monitoring container monitoring kubernetes autoscaling serverless monitoring cloud cost management storage management gpu monitoring applications application performance monitoring universal..."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.datadoghq.com/api/latest/authentication/",
+    "quote": "To support those new access patterns, Datadog is introducing a new authentication model built around four purpose-specific approaches: Personal Access Tokens (PATs), Service Access Tokens (SATs), workload identity federation, and customer-managed OAuth clients."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.datadoghq.com/extend/authorization/oauth2_in_datadog/",
+    "quote": "OAuth is available only to approved Technology Partners..."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.datadoghq.com/pricing/",
+    "quote": "login get started free free trial"
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.datadoghq.com/extend/authorization/oauth2_in_datadog/",
+    "quote": "Within your Datadog Partner Sandbox Account, create and configure your OAuth client in the Developer Platform."
+   },
+   {
+    "claim": "access",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuWeBGmK8KEDV7-B1NVFLwOGb2WjI9RLU2cEjpsH4tUbFdIdJ77AQuFYnuMOWLC0FH5TPeuqK1sfOp4mGr5Br5Br3NDhnK3BqnKlazZqvpsZO8Q05UdcBjjc4IHdugJQn7o6uM-PhRaF1kA==",
+    "quote": "It starts free for up to 5 hosts, and paid infrastructure runs from $15 to $23 per host per month."
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/DataDog/datadog-api-client-go",
+    "quote": "The client code, feature files, and test data are generated from Datadog's public OpenAPI specifications by internal tooling."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.datadoghq.com/integrations/webhooks/",
+    "quote": "Go to the Webhooks integration tile and enter the URL and name of the webhook you want to use... It triggers a POST request to the URL you set with the following content in JSON format."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.datadoghq.com/mcp_server/",
+    "quote": "The Datadog MCP Server acts as a bridge between your observability data in Datadog and any AI agents that support the Model Context Protocol (MCP)."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": "[\"api_key\", \"bearer_token\", \"oauth2\"]",
+    "new": "[\"api_key\", \"oauth2\", \"bearer_token\", \"other\"]",
+    "reason": "Datadog is transitioning from a legacy dual-key model (API Key + Application Key) to a new, more granular model. The new model includes: Personal Access Tokens (PATs) and Service Access Tokens (SATs) which fall under bearer_token; customer-managed OAuth clients (oauth2); and Workload Identity Federation (other). The legacy api_key and Application Key system still exists.",
+    "url": "https://docs.datadoghq.com/api/latest/authentication/"
+   },
+   {
+    "field": "primary_auth",
+    "old": "oauth2",
+    "new": "api_key",
+    "reason": "While OAuth 2.0 is available for multi-tenant integrations, creating a public OAuth application requires becoming an approved Technology Partner. This is a significant hurdle that makes it not a self-serve option. The most direct, self-serve method for a developer to start using the API is the legacy dual-key system (API Key + Application Key) or the newer PATs/SATs, which are available on free trials. Given the partner requirement for public OAuth, api_key (representing the key-based methods) is the more appropriate primary auth for a self-serve integration.",
+    "url": "https://docs.datadoghq.com/extend/authorization/oauth2_in_datadog/"
+   },
+   {
+    "field": "access",
+    "old": "self_serve_free",
+    "new": "approval_required",
+    "reason": "While any developer can get a 14-day free trial and generate API keys/tokens instantly, building a multi-tenant OAuth application (the preferred method for such integrations) requires approval to join the Datadog Partner Network. According to the definitions, if the primary, scalable authentication method (oauth2) requires vendor approval to work on other customers' accounts, the access tier is approval_required.",
+    "url": "https://docs.datadoghq.com/extend/authorization/oauth2_in_datadog/"
+   },
+   {
+    "field": "verdict",
+    "old": "ready_with_friction",
+    "new": "needs_outreach",
+    "reason": "Based on the strict definitions, because building a scalable, multi-tenant integration using the preferred OAuth 2.0 method requires joining the Datadog Partner Network and getting approved, this falls under needs_outreach. While a developer could build a single-tenant tool using API keys from a trial, a multi-tenant product is blocked by a partnership requirement.",
+    "url": "https://docs.datadoghq.com/extend/authorization/oauth2_in_datadog/"
+   },
+   {
+    "field": "blocker",
+    "old": "app_review_or_approval",
+    "new": "partner_or_sales",
+    "reason": "The blocker is not just an \"app review\" but a requirement to join a formal partner program.",
+    "url": "https://docs.datadoghq.com/extend/authorization/oauth2_in_datadog/"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "Here is the fact-checking analysis for the Datadog app record.\n\n### **Field-by-Field Verification**\n\n**subcategory**: **CONFIRMED**\n*   **Correct Value**: \"Monitoring / Observability\"\n*   **Evidence**: The one-liner and general product descriptions consistently refer to Datadog as a monitoring, observability, and security platform. For example, a press release calls it \"the AI-powered observability and security platform for cloud applications\".\n\n**one_liner**: **CONFIRMED**\n*   **Correct Value**: \"Datadog is an integrated SaaS platform providing comprehensive monitoring, security observability, and digital experience management.\"\n*   **Evidence**: This is an accurate summary. Datadog describes itself as \"the leading AI-powered observability and security platform for cloud applications\" that \"integrates and automates infrastructure monitoring, application performance monitoring, log management, user experience monitoring, cloud security and many other capabilities\".\n\n**auth_methods**: **WRONG**\n*   **Correct Value**: `[\"api_key\", \"oauth2\", \"bearer_token\", \"other\"]`\n*   **Evidence**: Datadog is transitioning from a legacy dual-key model (API Key + Application Key) to a new, more granular model. The new model includes: Personal Access Tokens (PATs) and Service Access Tokens (SATs) which fall under `bearer_token`; customer-managed OAuth clients (`oauth2`); and Workload Identity Federation (`other`). The legacy `api_key` and Application Key system still exists.\n*   **Quote**: \"To support those new access patterns, Datadog is introducing a new authentication model built around four purpose-specific approaches: Personal Access Tokens (PATs), Service Access Tokens (SATs), workload identity federation, and customer-managed OAuth clients.\"\n\n**primary_auth**: **WRONG**\n*   **Correct Value**: `api_key`\n*   **Evidence**: While OAuth 2.0 is available for multi-tenant integrations, creating a public OAuth application requires becoming an approved Technology Partner. This is a significant hurdle that makes it not a self-serve option. The most direct, self-serve method for a developer to start using the API is the legacy dual-key system (API Key + Application Key) or the newer PATs/SATs, which are available on free trials. Given the partner requirement for public OAuth, `api_key` (representing the key-based methods) is the more appropriate primary auth for a self-serve integration.\n*   **Quote**: \"OAuth is available only to approved Technology Partners developing official Datadog integrations. Standalone OAuth clients are not supported.\"\n\n**auth_notes**: **CONFIRMED**\n*   **Correct Value**: \"Datadog supports legacy dual-key (API key + Application key), Personal Access Tokens (PATs), Service Access Tokens (SATs), Workload Identity Federation, Customer-Managed OAuth Clients, and Partner OAuth 2.0 Apps. For multi-tenant integration, Partner OAuth 2.0 Apps are preferred.\"\n*   **Evidence**: This is an accurate summary of the authentication methods. A Datadog blog post from June 2026 details the new model: \"Datadog is introducing a new authentication model built around four purpose-specific approaches: Personal Access Tokens (PATs), Service Access Tokens (SATs), workload identity federation, and customer-managed OAuth clients.\" Documentation also confirms the existence of the legacy API key and Application key system. The preference for OAuth for partner integrations is also documented.\n\n**access**: **WRONG**\n*   **Correct Value**: `approval_required`\n*   **Evidence**: While any developer can get a 14-day free trial and generate API keys/tokens instantly, building a multi-tenant OAuth application (the preferred method for such integrations) requires approval to join the Datadog Partner Network. According to the definitions, if the primary, scalable authentication method (`oauth2`) requires vendor approval to work on other customers' accounts, the access tier is `approval_required`.\n*   **Quote**: \"OAuth is available only to approved Technology Partners developing official Datadog integrations. Standalone OAuth clients are not supported.\" and \"Before you begin developing an integration: Apply to the Datadog Partner Network's Technology Partner track.\"\n\n**access_notes**: **CONFIRMED**\n*   **Correct Value**: \"Any developer can sign up for a free account or a 14-day free trial. Credentials (API keys, application keys, customer-managed OAuth clients) can be generated instantly. To create a public multi-tenant OAuth application, developers must apply to join the Datadog Partner Network (DPN) to gain access to a Partner Sandbox Account.\"\n*   **Evidence**: Datadog offers a 14-day free trial which includes API access. The documentation for building integrations states that developers must first apply to the Datadog Partner Network and request a sandbox account. The documentation on OAuth 2.0 confirms that creating an OAuth client happens within this \"Datadog Partner Sandbox Account\".\n*   **Quote**: \"If you want to try Datadog, you begin with a 14-day free trial.\" and \"Within your Datadog Partner Sandbox Account, create and configure your OAuth client in the Developer Platform.\"\n\n**api_styles**: **CONFIRMED**\n*   **Correct Value**: `[\"rest\"]`\n*   **Evidence**: The API is consistently referred to as a RESTful HTTP API in documentation and guides.\n*   **Quote**: \"Datadog API is an HTTP REST API. The API uses resource-oriented URLs to call the API, uses status codes to indicate the success or failure of requests, returns JSON from all requests, and uses standard HTTP response codes.\"\n\n**api_breadth**: **CONFIRMED**\n*   **Correct Value**: \"broad\"\n*   **Evidence**: The API covers a vast range of the platform's capabilities, including metrics, logs, traces, dashboards, monitors, incidents, users, and security.\n*   **Quote**: \"The Datadog API Collection contains requests for the full range of Datadog APIs, including Metrics, Monitors, Dashboards, Logs, Synthetics, Security Monitoring, Cloud Cost Management, and more.\"\n\n**api_notes**: **CONFIRMED**\n*   **Correct Value**: \"REST API with v1 and v2 endpoints, providing comprehensive endpoints to manage and query metrics, logs, traces, dashboards, monitors, incidents, users, roles, and security signals.\"\n*   **Evidence**: This is an accurate summary. The API reference and various client libraries show v1 and v2 endpoints for a wide array of product features.\n\n**openapi_spec**: **CONFIRMED**\n*   **Correct Value**: `true`\n*   **Evidence**: Datadog's official client libraries are generated from their public OpenAPI specifications.\n*   **Quote**: \"These libraries were generated with the OpenAPI Generator and adhere to the OpenAPI Specification (formerly known as the Swagger Specification), which means developers can easily contribute to them.\"\n\n**webhooks**: **CONFIRMED**\n*   **Correct Value**: `true`\n*   **Evidence**: The initial record's citation was correct. The `integrations/webhooks` page in the documentation, though not fully excerpted, confirms the feature exists and allows sending data via POST requests. The API reference also lists webhook-related endpoints.\n\n**sandbox**: **CONFIRMED**\n*   **Correct Value**: `true`\n*   **Evidence**: Datadog provides a \"Partner Sandbox Account\" for developers who are part of the Datadog Partner Network. Additionally, the Learning Center provides a free sandbox environment. There are also third-party mock sandboxes available.\n*   **Quote**: \"When signing up for the Learning Center, a Datadog sandbox environment is automatically provisioned free of charge, allowing users to play around with the product without fear of breaking anything.\" and \"Within your Datadog Partner Sandbox Account, create and configure your OAuth client in the Developer Platform.\"\n\n**mcp**: **CONFIRMED**\n*   **Correct Value**: \"official\"\n*   **Evidence**: Datadog announced the general availability of its official MCP Server in March 2026. An official GitHub repository exists for it.\n*   **Quote**: \"NEW YORK, March 09, 2026 (GLOBE NEWSWIRE) -- Datadog, Inc. , (NASDAQ: DDOG), the AI-powered observability and security platform for cloud applications, today announced that its MCP Server is generally available.\"\n\n**mcp_notes**: **CONFIRD**\n*   **Correct Value**: \"The Datadog MCP Server acts as a bridge between your observability data in Datadog and any AI agents that support the Model Context Protocol (MCP).\"\n*   **Evidence**: This is a correct description. The official GitHub repository states: \"Datadog's managed MCP server connects your AI agents to Datadog's observability tools and data.\" The press release has similar wording.\n\n**verdict**: **WRONG**\n*   **Correct Value**: `needs_outreach`\n*   **Evidence**: Based on the strict definitions, because building a scalable, multi-tenant integration using the preferred OAuth 2.0 method requires joining the Datadog Partner Network and getting approved, this falls under `needs_outreach`. While a developer could build a single-tenant tool using API keys from a trial, a multi-tenant product is blocked by a partnership requirement.\n*   **Quote**: \"OAuth is available only to approved Technology Partners developing official Datadog integrations.\"\n\n**blocker**: **WRONG**\n*   **Correct Value**: `partner_or_sales`\n*   **Evidence**: The blocker is not just an \"app review\" but a requirement to join a formal partner program.\n*   **Quote**: \"Before you begin developing an integration: Apply to the Datadog Partner Network's Technology Partner track.\"\n\n**blocker_notes**: **CONFIRMED**\n*   **Correct Value**: \"To build a seamless multi-tenant integration, developers must join the Datadog Partner Network and undergo an approval process to create a public OAuth app. Without this partner approval, the integration is blocked on a per-customer admin setup hurdle.\"\n*   **Evidence**: This is an accurate summary of the situation. Documentation explicitly states that creating an OAuth integration requires being an \"approved Technology Partner\" and that the process starts by applying to the Datadog Partner Network.\n\n### **Uncertain Fields**\n\nNone. The official documentation was sufficient to verify all fields.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Datadog API authentication documentation",
+   "Datadog API keys and application keys",
+   "Datadog OAuth 2.0 for third-party applications",
+   "Datadog pricing plans API access",
+   "Datadog free trial API access",
+   "Datadog Partner Network OAuth app",
+   "Is Datadog MCP server official?",
+   "Datadog developer sandbox",
+   "Datadog API styles REST",
+   "Datadog OpenAPI specification"
+  ],
+  "search_sources": [
+   {
+    "title": "datadoghq.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6nnekrV2W2MjsvEWlZv-iyJXMozDIKaiktsXYkDkohngq_lLb5xb6JxYEj2z3CaSvC4XUFc3I-TK-cRQKLFR2IV7hCvixEJwyr50wMrfftQ8PA6nUnftTp7X--WI2F4f-v6OIX0V2vlr1JBSZ7MyXvIbpp90fDjOihgELggUeWJeLxh9ODVFPDADMSw9oZTd6iA4lu5xQLbombqHU98xovURx1S6UQ6NBC7DUtINCFJnwinYVnXHUlpxdlYps"
+   },
+   {
+    "title": "datadoghq.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4_2-Q_lomSii0d0cw_jUCXRFrZKSXBlaZIyHb6UQslQ502acJJmnr5QWmoff0dKsHYBZG_oPij15A_heqZYTDWdyvaDgx_xUzhuGgAihCtOdcYMYkN-0pWN1uuuM9SIblbBMHlpNgUnlodj3gtIxpC5CjIqs="
+   },
+   {
+    "title": "datadoghq.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzIO8bmB7c49vZTvKD-IETpohgMI2bFkrX6dLi9LroRYILKlbh-0HXTRA2Cudy1n56cQnmkwrdOOm6N8L3ekkVsk5upJKB8B9u0nDA4rXRA6PqSgRfKifyu9Mg39-WUVUrs31B_ARuKGZ-igXZD9-Z9GJRVUXj"
+   },
+   {
+    "title": "datadoghq.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTV_OozjWgDQP1YTDAL7PhV0JDQ9K38VwutWFyru59m2Ew9n7YRfbIZWGlWQFpgq5ymIqlhySocZ1CO5wJ-c0QhO7gJCR3wGYpeXxYp-ORrg_-3CpPe-c_kf73LxD1Ri5IrIoBp7TB_I7r-N1NuRHB"
+   },
+   {
+    "title": "postman.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyPizPBpBI3txBiB6m1_yGP_hi1Ym4UB8c9aXfI8k519EWY3weAyICydulz5CK89VhowgG3uFBJ8iRbO5wIYQZ29N1ClmD8I4-CPf3U2SUT8BeXxu3ZAr1bWhW_FFLMr1fIagVW6F3KjgXK7isFybZeXINWbHRVCMI1wontanH0aQEWnr7oF4EXuxY1pLRe9bMOS0="
+   },
+   {
+    "title": "datadoghq.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5Rmj1aXl5DCuEfFXpzTY_f2CnpmjpLgj8ZJANdpfxRYgy4rsYuuQ-1g_YBGTpnRKUYdYSlPSebsn2rxRgLNDWi6h8CQLisdGVSTRf9lvfpzm7OGNANoqIyxlfxB404X-3VF83kwad3trci_gW5zsC3jbrTrvvfGCoNw=="
+   },
+   {
+    "title": "datadoghq.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkgcPPaGxstcWlEep6ahrEbT8ncED44WLBtYVYKGisuTKNDxmgjoLN9TG3VlqhTburOp9hrzqwHmhfcosSFlo7t1RvxnS2Xo1kpk0-hflM3g1KK7THCHvDgLgDh6e79ylFOcHaFXBiHR9Rf_k152mq6M6iNbA41j81HsI="
+   },
+   {
+    "title": "datadoghq.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEqLTJeGOqFw1vFba3fOsCVkCcmRsaKvIjg7RiaDc4lA8l0354rlYOOjgY2lJ4StPx9kH8oVVy9XWR4mbGpQoPxa04AeN300STQk8es2y7oxAiEtc030WD2_OTh9rxhoo="
+   },
+   {
+    "title": "discovercloud.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuH6uaQnhmOYnCGUx0PwNRtc4IZ8JPqrDjcJnjTtVvUxrvd3Vi1nwvk_fjJ9QwN-evdeoTVjhkcnn_xYfwX9_OqjCLrglwTLiYCJDo_roOkLHIRBqXtJqbrk7JXvsjGf1TAdzASdrHNZs="
+   },
+   {
+    "title": "datadoghq.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHt6rPtQ4IfLulM4YkOJJVzYYTMf2tLXC7pD-tJjg47S6RoDwA10BcFqc370Ni9GaVJ18PchbAck1Ny9kQF4TSTz6RLuWfdUCb7OrMITHgQOlmMp3SssNF8ra6BMfeiHxS6KFXbmjngjKBx"
+   },
+   {
+    "title": "datadoghq.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFI82yTjh5g8MsekYNO_G_DBJe64gzb_g7v9Le5EUuZ6146bVcr9mwvQYHwXnlPXuKaXSvkWQurOzs_B1oGPTvQg33wrq9VENghLa78BIf0GIrNIfrOgF4XepSc0f_Fid5DN9bid8qkJ2oZqfk="
+   },
+   {
+    "title": "datadoghq.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4rDi2Whf8kyd7MwxbJ2X-X5HXj5itz4597GWjgWNKGT67y8lSKEXb8S0JsfZXnAkjifhj_bZzsKpRwygOUQxr0bQoExE9IPsN9lg8Tuu_HSXyWtt9Auer_LGUs1B5WIfjTtZz5VI2HsQVUpMiCP9T_i_Sy7v5TKBvpgDhQw=="
+   },
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEt7C7xnaIKPpByU7YZ63620Oi351MrXQ3o0HygsLgO0-PdXzyPSfgmqJWmVYQhdNyPhJXyTOsnwhcFiresoX00wgQe2py0vYbQpjjObPbMhK7y6mLCN3n-ickOS-Ax6TrRIt4E-ZACt5lP5xmi2w=="
+   },
+   {
+    "title": "dev.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOBopoB7Y4bBDlzh0jOTvFd6h2sc28VrztHWuvnjFCZLfsd3EKmLQoc1z_Im4IRyX9bDk9x7eV0t_VE5-455VDs2Gui8aJRbY82EahPwB-NfzoYfhqqBMayRWLPLwxDdcMfGTTeGbzDJsR5zS8uX9kQNB2y9e2QCPiKsfLrQ=="
+   },
+   {
+    "title": "postman.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbxtIuPD1WbZxGgnA2XpEcyyBoK_TNSy2IGwuE2jga_Ah2pCMsEFXPzHk2KxYpc_iAcV_Lib0RaArvUFkFlrQ9OltBkbDXA5v3zAnAECd-Ls9Bu43rWwSFuq_10I_exKKgOwAWFOPotDByTdM0Edrke9pOzob0uV3AW9C_wzZJJ2hEvpQMK8KlwWYpU23mpDmdK8s6JlZ_KJUPXBj2gQE="
+   },
+   {
+    "title": "datadoghq.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrUQvTDc2CvulBB_4K5ewbixeMStZ9zfN0xuxFP1iohfR3Pxui-YIsU2-UVQW-8nT5x9Rgc6Sf3wn2NMzBi8S9Ypj6O1UJMN3vF-FST1Jlb2n4rHj4XbCKbJT2kQ4_Rhmseh6F3kkg5sEoLEM="
+   },
+   {
+    "title": "datadoghq.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnEgUT4TBB5PKS-W_T1z8_JEfx90WTpwO4fPeCb8xDzpAkBeWXPMvs35949AxIcePTy72Kl8tQ_9Hfqm_T4t8Z-fpR0QnN3KP60QsDT4XszPtohrGSbRpDXU6KlZPk9QCqQ2n3Wem419h0MLC_UD2oPen6pCtSdwxPwwLEiDHAYvXcbdF7"
+   },
+   {
+    "title": "usesparta.co",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-9Lb8GaIEK3ulmiluSE5afxwURaosqWsXf1sdKp_PXa6Lchln12i87UM8jTn7yOj8Ni0CebUsxatMwzLRlMRu2OFKxgkRg--6AbFOe_1pd5PeLUMpHH0veF475hCzStDr3w=="
+   },
+   {
+    "title": "datadoghq.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxqFrcPUg4-5duYbg_tls4XIJZ7uj1vPtLbXa7Fe2YhdOqSk15GsNyH6fN64UsB8lmAeWJyhqFXZ__7F4gcCti7BIcraJ4_pkmAS3zqqdE4Mb9DQWdwSDgxEUNpEl5DKrN5n0dJclcq9UjDZ9Y5qKxLQuQjGMFUNGfRvLAQGbB9wGvC-cBko-Hv3RgSr3hvdofCw=="
+   },
+   {
+    "title": "datadoghq.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsO7bh9bbjJaQXwGM91lw3SzUFrPb6JKnsUwmtjJUBGzPmLf9TfaHF9CFZH5Hl9i8p2lwLPYZ51ol8EQs3JfbnroC6NRqHR_zc8PsPfM5VkzzaXs8n8UC29iap5vxr5c4Y7ELJLMlwML1qfDHNrkQjdQzYzIMwbisBEjDrJ2tDlztRLgtG84SXXO78a3P8sTe5lxHfkV5r6xYMuqzB67MbhnnNowyB_9m_xvGPfIO-iUZhS6qPHu_2NQ90IGg="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNqlrcAVvG75cBeRzANbCnuHEnBeA-C4NC7xDrOmeFKzlMzOsY_9oBC1EMStD0wdeVc6CIEsqAWkc5KmJMXZshy3HCey7iVL-V-0uuNCR2FKZ1xzlY_q8Aq2IWeFJKnP5sfZ4fDQ=="
+   }
+  ],
+  "tokens": 11416,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://docs.datadoghq.com/api/latest/authentication/",
+    "status": 200,
+    "chars": 91279,
+    "readable": true
+   },
+   {
+    "url": "https://docs.datadoghq.com/extend/authorization/oauth2_in_datadog/",
+    "status": 200,
+    "chars": 56417,
+    "readable": true
+   },
+   {
+    "url": "https://www.datadoghq.com/pricing/",
+    "status": 200,
+    "chars": 248408,
+    "readable": true
+   },
+   {
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuWeBGmK8KEDV7-B1NVFLwOGb2WjI9RLU2cEjpsH4tUbFdIdJ77AQuFYnuMOWLC0FH5TPeuqK1sfOp4mGr5Br3NDhnK3BqnKlazZqvpsZO8Q05UdcBjjc4IHdugJQn7o6uM-PhRaF1kA==",
+    "status": 200,
+    "chars": 23043,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/DataDog/datadog-api-client-go",
+    "status": 200,
+    "chars": 10113,
+    "readable": true
+   },
+   {
+    "url": "https://docs.datadoghq.com/integrations/webhooks/",
+    "status": 200,
+    "chars": 61550,
+    "readable": true
+   },
+   {
+    "url": "https://docs.datadoghq.com/mcp_server/",
+    "status": 200,
+    "chars": 54917,
+    "readable": true
+   }
+  ],
+  "seconds": 62.0
+ }
+}

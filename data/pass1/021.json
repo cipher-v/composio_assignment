@@ -1,0 +1,244 @@
+{
+ "app": {
+  "id": 21,
+  "name": "Slack",
+  "category": "Communications and Messaging",
+  "hint": "slack.com"
+ },
+ "record": {
+  "subcategory": "Team Collaboration",
+  "one_liner": "Slack is a cloud-based team communication and collaboration platform.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token",
+   "other"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 for app installation and token exchange; OpenID Connect for user authentication; Bearer Tokens (xoxb- for bot, xoxp- for user) for API requests.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up for a free Slack account or request a dedicated developer sandbox at no cost. Credentials (Client ID and Client Secret) are obtained instantly by creating an app via the Slack App Management dashboard. Public app listing requires manual review.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST-like Web API with hundreds of endpoints across methods, events, and scopes, including messaging, channels, files, canvases, lists, and administration.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Official Slack MCP server/plugin for connecting AI coding agents and tools to a Slack workspace. URL: https://github.com/slackapi/slack-mcp-plugin",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. The platform provides completely self-serve free credentials, comprehensive documentation, official OpenAPI specifications, and an official MCP server, making it fully ready for immediate toolkit deployment.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://slack.com/intl/en-in/pricing",
+    "quote": "channels chat and work together slack connect work with external partners meetings & video video chat with your team canvas create, edit and share docs lists manage projects in slack"
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.slack.dev/reference/methods/oauth.v2.access/",
+    "quote": "Exchanges a temporary OAuth verifier code for an access token."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.slack.dev/authentication/sign-in-with-slack/",
+    "quote": "{\"keys\":[{\"e\":\"aqab\",\"n\":\"zqqzxfb677bpmkw0idkc5wkvlyqk04pwmswyjdkqmuuuu_pmzdsvxbfhu7tczinohduvvgdqjqnklpezjxnazy0dddhvjks0ji8fkxifv1kny3dkpqmmhgawnftuisxgb5clypomotaem59ghpyjk9jhbwohs14nyeyzv9nvy0ekjauyydstz589aiku5la-cepg93jnqlw8a82kftlrj1iijo2isybganr0yzr-d3b_5evp7ivu7ph2v5jceuheilsrzizp3puyvfrph659deh-uasdfoyjbicimg9itnk5_45sb_xcd_un6h5i7tgoafajn4oi4aagd3elni_k1q\",\"kty\":\"rsa\",\"kid\":\"mb2mayksn555isd0ebdhkx6nkyai9xlq8rvceb_noyy\",\"alg\":\"rs256\"}]}"
+   },
+   {
+    "claim": "auth",
+    "url": "https://hexdocs.pm/slack_open_api/0.0.3/SlackOpenApi.html",
+    "quote": "export SLACK_BOT_TOKEN=\"xoxb-your-bot-token-here\""
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.slack.dev/quickstart/",
+    "quote": "if you don't have a slack workspace already, we recommend also setting up a developer sandbox ."
+   },
+   {
+    "claim": "access",
+    "url": "https://zenzap.co/blog/slack-pricing-guide",
+    "quote": "Free Plan: $0 ... Small teams testing Slack"
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.slack.dev/apps/marketplace/review-guide",
+    "quote": "The review itself consists of the Slack Marketplace Team checking your app against our guidelines."
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/slackapi/slack-api-specs",
+    "quote": "covers user and bot user token usage of public Web API methods"
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.slack.dev/reference/",
+    "quote": "slack apps can utilize a wide range of apis and platform features to accomplish their tasks. within this section contains a collection of reference guides for those features"
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/slackapi/slack-api-specs",
+    "quote": "OpenAPI 2.0 spec - covers user and bot user token usage of public Web API methods"
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.slack.dev/reference/",
+    "quote": "browse our ensemble of events to enlighten and elucidate the comings and goings in your slack workspace."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.slack.dev/quickstart/",
+    "quote": "if you don't have a slack workspace already, we recommend also setting up a developer sandbox ."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.slack.dev/quickstart/",
+    "quote": "try using the slack mcp plugin to aid in agent-assisted development."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/slackapi/slack-mcp-plugin",
+    "quote": "The Slack MCP and Skills Plugin for AI tools bundles together a set of skills that help you develop on the Slack platform with the Slack MCP Server."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://docs.slack.dev/quickstart/",
+    "quote": "if you don't have a slack workspace already, we recommend also setting up a developer sandbox ."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### 1. Product Overview\nSlack is a cloud-based team communication and collaboration platform. It enables teams to work together via public and private channels, direct messaging, voice and video calls (huddles), and collaborative documents (canvases) and lists.\n* **Source URL:** `https://slack.com/intl/en-in/pricing`\n* **Verbatim Quote:** `\"channels chat and work together slack connect work with external partners meetings & video video chat with your team canvas create, edit and share docs lists manage projects in slack\"`\n\n### 2. Authentication Methods\nThe Slack public API supports multiple authentication methods:\n* **OAuth 2.0:** Used for installing apps into workspaces and obtaining bot or user access tokens.\n  * **Source URL:** `https://docs.slack.dev/reference/methods/oauth.v2.access/`\n  * **Verbatim Quote:** `\"Exchanges a temporary OAuth verifier code for an access token.\"`\n* **OpenID Connect:** Used specifically for user authentication and identity verification (\"Sign in with Slack\").\n  * **Source URL:** `https://docs.slack.dev/authentication/sign-in-with-slack/`\n  * **Verbatim Quote:** `{\"keys\":[{\"e\":\"aqab\",\"n\":\"zqqzxfb677bpmkw0idkc5wkvlyqk04pwmswyjdkqmuuuu_pmzdsvxbfhu7tczinohduvvgdqjqnklpezjxnazy0dddhvjks0ji8fkxifv1kny3dkpqmmhgawnftuisxgb5clypomotaem59ghpyjk9jhbwohs14nyeyzv9nvy0ekjauyydstz589aiku5la-cepg93jnqlw8a82kftlrj1iijo2isybganr0yzr-d3b_5evp7ivu7ph2v5jceuheilsrzizp3puyvfrph659deh-uasdfoyjbicimg9itnk5_45sb_xcd_un6h5i7tgoafajn4oi4aagd4elni_k1q\",\"kty\":\"rsa\",\"kid\":\"mb2mayksn555isd0ebdhkx6nkyai9xlq8rvceb_noyy\",\"alg\":\"rs256\"}]}` *(from the associated keys endpoint `https://slack.com/openid/connect/keys`)*\n* **Bearer Tokens:** Static bot (`xoxb-`) or user (`xoxp-`) tokens passed in the HTTP Authorization header for API requests.\n  * **Source URL:** `https://hexdocs.pm/slack_open_api/0.0.3/SlackOpenApi.html`\n  * **Verbatim Quote:** `\"export SLACK_BOT_TOKEN=\\\"xoxb-your-bot-token-here\\\"\"`\n\n* **Primary Auth for Multi-Tenant Integration:** `oauth2`. A multi-tenant integration platform would utilize Slack's standard OAuth 2.0 flow to allow external workspaces to authorize the app and securely exchange authorization codes for access tokens.\n\n### 3. Developer Credentials & Cost\n* **Access Tier:** `self_serve_free`\n* **How to get credentials & Cost:** Any developer can sign up for a free Slack account or request a dedicated developer sandbox at no cost. Credentials (Client ID and Client Secret) are obtained instantly by creating an app via the Slack App Management dashboard.\n  * **Source URL:** `https://docs.slack.dev/quickstart/`\n  * **Verbatim Quote:** `\"if you don't have a slack workspace already, we recommend also setting up a developer sandbox .\"`\n  * **Source URL:** `https://zenzap.co/blog/slack-pricing-guide`\n  * **Verbatim Quote:** `\"Free Plan: $0 ... Small teams testing Slack\"`\n* **Approval Requirements:** No upfront approval or partner program is required to create an app, obtain credentials, or install it to a development workspace. However, if the developer intends to publicly list the app in the Slack Marketplace for all Slack users, it must undergo a manual review process.\n  * **Source URL:** `https://docs.slack.dev/apps/marketplace/review-guide`\n  * **Verbatim Quote:** `\"The review itself consists of the Slack Marketplace Team checking your app against our guidelines.\"`\n\n### 4. API Style & Technical Characteristics\n* **API Style:** REST-like Web API (uses HTTP methods, typically POST with JSON or URL-encoded bodies).\n  * **Source URL:** `https://github.com/slackapi/slack-api-specs`\n  * **Verbatim Quote:** `\"covers user and bot user token usage of public Web API methods\"`\n* **API Breadth:** Extremely broad. It covers hundreds of endpoints across methods, events, and scopes, including messaging, channels, files, canvases, lists, and administration.\n  * **Source URL:** `https://docs.slack.dev/reference/`\n  * **Verbatim Quote:** `\"slack apps can utilize a wide range of apis and platform features to accomplish their tasks. within this section contains a collection of reference guides for those features\"`\n* **OpenAPI Spec:** Yes, Slack officially maintains an OpenAPI 2.0 specification for its Web API and an AsyncAPI specification for its Events API.\n  * **Source URL:** `https://github.com/slackapi/slack-api-specs`\n  * **Verbatim Quote:** `\"OpenAPI 2.0 spec - covers user and bot user token usage of public Web API methods\"`\n* **Webhooks:** Supported. Slack provides both Incoming Webhooks (for posting messages) and the Events API (which pushes real-time event webhooks to a developer's server).\n  * **Source URL:** `https://docs.slack.dev/reference/`\n  * **Verbatim Quote:** `\"browse our ensemble of events to enlighten and elucidate the comings and goings in your slack workspace.\"`\n* **Sandbox:** Yes, Slack officially provides free developer sandboxes for testing.\n  * **Source URL:** `https://docs.slack.dev/quickstart/`\n  * **Verbatim Quote:** `\"if you don't have a slack workspace already, we recommend also setting up a developer sandbox .\"`\n\n### 5. Model Context Protocol (MCP) Support\n* **MCP Availability:** `official`\n* **Details:** Slack officially publishes and hosts a Slack MCP server/plugin designed to connect AI coding agents and tools directly to a Slack workspace.\n  * **Source URL:** `https://docs.slack.dev/quickstart/`\n  * **Verbatim Quote:** `\"try using the slack mcp plugin to aid in agent-assisted development.\"`\n  * **Source URL:** `https://github.com/slackapi/slack-mcp-plugin`\n  * **Verbatim Quote:** `\"The Slack MCP and Skills Plugin for AI tools bundles together a set of skills that help you develop on the Slack platform with the Slack MCP Server.\"`\n\n### 6. Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. The platform provides completely self-serve free credentials, comprehensive documentation, official OpenAPI specifications, and an official MCP server, making it fully ready for immediate toolkit deployment.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"slack mcp plugin\" OR \"slack mcp server\"",
+   "slack api openapi spec",
+   "slack api pricing free tier",
+   "slack app review process requirements"
+  ],
+  "search_sources": [
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkfwpgC3hb1kH7zN57PfQ6c0KDH9RGrUzepIfCZq1oxcoRC0SMhmUq0dOZxFvgmkrNntrwETuheN9DNBUwjdlb3UQcuUy-cOhTEhOZkghX6VrOgXI4jyIiqPoYTWo_Brx5vIPoZw=="
+   },
+   {
+    "title": "slack.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1MJeRyki5SVjMGANgC_hXppw6duVjZjQAjmH_wleZykAcnVSDKJsk73nPYrSmDUv_sFl1vDx1BhoJQS5eSlGI9XMZQKqOYBKwnbdzVoABwZn7coqk78sM"
+   },
+   {
+    "title": "medium.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcfQvbNwa3aVDwiU7WAUh_LVMjtu2Rmxsytg14-uZRNDyC3bSTyg4SMPko47oFU7U3CN98TwAcE2OAb5y6dXVlsr7zbUNELEzKtufXrtY6aXpasWEzVTvCzJoFV1HncsfY7PrNiXuxAXrBtpTvfb0c_ynTVlma7BFDauX9edsqUDnhm7qTKwUXBV7BVMEF7bfDvYXNhqw1tb2N"
+   },
+   {
+    "title": "slack.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6qqXbJEMGqumuimRc3Pm1yJIuSWfqNMil2NK3CpIIp2AynQJI3lprQ3s3RLTCV8dNGujk458Euo3l1CgSPmH71tMaNsSHlnm_HFrzDzRGdZxp5OVbPs0tMP2pEbSZoLTRJB8B"
+   },
+   {
+    "title": "augmentcode.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTlj2lqXvmI9DGq7cpMYlk9wpoRyN9oEadGUgvYIu0SjwICVbsJg6qQ7yH8cZ0vWRLjjZnOV9I9ip3snjg29Dri1ECguzdGT2qVEfdLWDoUJXpmYOBh8rw2P_EX0WCy-SsGzjXyH8S5mG5"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJyVzDfwS4C8temmu4e2Q7vcP7OyGNwk79q3S5m3ninCT_4FAsm65Qo1f2nobVQKqsGkFrJjrL4DX3mC-L3cdS0XkwpMotoAOpUZn7esdGEhjEXS71xZ_hXR_5lyenn7ZMCEkmkfC-5aE="
+   },
+   {
+    "title": "slack.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_5A0WNhWXb1EVbBBJiMx43noEqY4roP4C7g2hX_R6nJCkgRbdk5gWdcF-CUyLBb8NREDe8kYDiLH6sJ69fMZUqPFP9AZiHmXQiAHzEKzPTNb0kr87QveespuTQEDbuqZ9CdsoRKSmrA=="
+   }
+  ],
+  "tokens": 8545,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Slack API authentication URL",
+    "Slack OAuth documentation URL",
+    "Slack API keys developer documentation URL",
+    "Slack API getting started URL",
+    "Slack API quickstart guide URL",
+    "Slack API pricing URL",
+    "Slack developer program URL",
+    "Slack API plans URL",
+    "Slack API reference index URL",
+    "Slack MCP server"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://docs.slack.dev/quickstart/",
+    "https://slack.com/intl/en-in/pricing",
+    "https://docs.slack.dev/reference/",
+    "https://docs.slack.dev/404?from=%2Fautomation%2Fmcp",
+    "https://slack.com/api/openid.connect.token",
+    "https://slack.com/api/openid.connect.userInfo",
+    "https://slack.com/openid/connect/keys",
+    "https://docs.slack.dev/authentication/sign-in-with-slack/",
+    "https://docs.slack.dev/authentication/installing-with-oauth/",
+    "https://docs.slack.dev/reference/methods/oauth.v2.access/",
+    "https://logto.io/oauth-providers-explorer/slack",
+    "https://nango.dev/blog/how-to-get-slack-user-access-token-oauth/",
+    "https://community.n8n.io/t/slack-oauth2-api-credentials-for-slack-app/45461",
+    "https://community.n8n.io/t/slack-oauth2-api-credentials-for-slack-app/45461?tl=en",
+    "https://getknit.dev/blog/slack-api-integration-guide/"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://slack.com/openid/connect/authorize",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://docs.slack.dev/quickstart/",
+     "status": 200,
+     "chars": 5220,
+     "readable": true
+    },
+    {
+     "url": "https://slack.com/intl/en-in/pricing",
+     "status": 200,
+     "chars": 30487,
+     "readable": true
+    },
+    {
+     "url": "https://docs.slack.dev/reference/",
+     "status": 200,
+     "chars": 2014,
+     "readable": true
+    },
+    {
+     "url": "https://docs.slack.dev/404?from=%2Fautomation%2Fmcp",
+     "status": 200,
+     "chars": 2135,
+     "readable": true
+    },
+    {
+     "url": "https://slack.com/api/openid.connect.token",
+     "status": 200,
+     "chars": 35,
+     "readable": false
+    },
+    {
+     "url": "https://slack.com/api/openid.connect.userInfo",
+     "status": 200,
+     "chars": 33,
+     "readable": false
+    },
+    {
+     "url": "https://slack.com/openid/connect/keys",
+     "status": 200,
+     "chars": 450,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 109.9
+ }
+}

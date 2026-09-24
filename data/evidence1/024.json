@@ -1,0 +1,90 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.larksuite.com/en_us/plans",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://open.larksuite.com/document/server-docs/authentication-management/access-token/obtain-access-tokens",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://open.larksuite.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.chanty.com/blog/lark-pricing/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.29
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://open.larksuite.com/document/server-docs/api-access-management/api-list",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/larksuite/lark-openapi-mcp",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.7
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://open.larksuite.com/document/home/introduction-to-scope-and-authorization/overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://www.chanty.com/blog/lark-pricing/']\n- Non-vendor sources (prefer official docs): ['https://www.chanty.com/blog/lark-pricing/', 'https://github.com/larksuite/lark-openapi-mcp']",
+ "metrics": {
+  "n_evidence": 7,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.7142857142857143,
+  "readable": 2,
+  "quote_supported_rate": 0.5,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

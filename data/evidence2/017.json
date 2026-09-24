@@ -1,0 +1,131 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.plain.com/docs/what-is-plain",
+   "status": 0,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.plain.com/blog/api-first-infrastructure-wins-in-an-agent-driven-world",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.plain.com/docs/graphql/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.75
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.plain.com/docs/graphql/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.59
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://pypi.org/project/plain.oauthserver/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.67
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.plain.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.4
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.plain.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.5
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.plain.com/docs/graphql/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.88
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.plain.com/docs/graphql/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.71
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.plain.com/docs/webhooks/introduction",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://www.plain.com/blog/why-api-first-infrastructure-wins-in-an-agent-driven-world",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "api_key": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://www.plain.com/docs/what-is-plain', 'https://www.plain.com/blog/api-first-infrastructure-wins-in-an-agent-driven-world', 'https://www.plain.com/docs/webhooks/introduction', 'https://www.plain.com/blog/why-api-first-infrastructure-wins-in-an-agent-driven-world']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://www.plain.com/pricing']\n- Non-vendor sources (prefer official docs): ['https://pypi.org/project/plain.oauthserver/']",
+ "metrics": {
+  "n_evidence": 11,
+  "alive_rate": 0.6363636363636364,
+  "dead_rate": 0.36363636363636365,
+  "blocked_rate": 0.0,
+  "official_rate": 0.9090909090909091,
+  "readable": 7,
+  "quote_supported_rate": 0.8571428571428571,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

@@ -1,0 +1,140 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://seranking.com/api/data/getting-started/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.96
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://seranking.com/api/project/getting-started/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.79
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://seranking.com/api/data/getting-started/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.52
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://help.seranking.com/hc/en-us/articles/21487397355420-API-pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.59
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://seranking.com/api/data/getting-started/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.61
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/seranking/openapi",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/seranking/n8n-nodes-seranking",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.4
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://seranking.com/api/data/getting-started/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.91
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/seranking/seo-skills",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.06
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://help.seranking.com/hc/en-us/articles/21487397355420-API-pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.84
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://zapier.com/apps/se-ranking/integrations",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": true,
+   "claim": "api",
+   "url": "https://www.make.com/en/integrations/se-ranking",
+   "status": 403,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "api_key": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Bot-walled / login pages our crawler could not read (verify via search): ['https://www.make.com/en/integrations/se-ranking']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://github.com/seranking/n8n-nodes-seranking', 'https://github.com/seranking/seo-skills', 'https://zapier.com/apps/se-ranking/integrations']\n- Non-vendor sources (prefer official docs): ['https://github.com/seranking/openapi', 'https://github.com/seranking/n8n-nodes-seranking', 'https://github.com/seranking/seo-skills', 'https://zapier.com/apps/se-ranking/integrations']",
+ "metrics": {
+  "n_evidence": 12,
+  "alive_rate": 0.9166666666666666,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.08333333333333333,
+  "official_rate": 0.5833333333333334,
+  "readable": 11,
+  "quote_supported_rate": 0.7272727272727273,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

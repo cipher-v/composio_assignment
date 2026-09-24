@@ -1,0 +1,71 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.attio.com",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://attio.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.47
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.attio.com/docs/overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.88
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://docs.attio.com/mcp/overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.77
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://attio.com",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "bearer_token": false
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://docs.attio.com', 'https://attio.com/pricing', 'https://attio.com']\n- Auth methods not mentioned on any cited page: ['bearer_token']",
+ "metrics": {
+  "n_evidence": 5,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 1.0,
+  "readable": 5,
+  "quote_supported_rate": 0.4,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

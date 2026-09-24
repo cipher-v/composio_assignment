@@ -1,0 +1,226 @@
+{
+ "app": {
+  "id": 41,
+  "name": "Shopify",
+  "category": "Ecommerce",
+  "hint": "shopify.dev"
+ },
+ "record": {
+  "subcategory": "E-commerce platform",
+  "one_liner": "Shopify is a comprehensive e-commerce platform to build online stores, manage products, inventory, and orders.",
+  "auth_methods": [
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 Authorization Code Grant Flow for standalone/API-only apps (multi-tenant); Client Credentials Grant Flow for apps within developer's own organization; OAuth 2.0 with PKCE for customer-facing authentication.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up for the Shopify Partner Program for free and create an app to obtain Client ID and Client Secret. Unlimited free development stores are available for testing. App review is only required for public listing on the Shopify App Store.",
+  "api_styles": [
+   "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Strictly GraphQL-first for new integrations, covering all aspects of store management (products, customers, orders, inventory). Legacy REST Admin API is deprecated.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "community_only",
+  "mcp_notes": "Multiple community-built MCP servers exist on GitHub for Shopify's Storefront and Admin APIs, but no official server from Shopify.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "While Shopify provides excellent documentation and free developer access, it requires a per-customer configuration hurdle (collecting merchant's unique shop domain for OAuth) and new apps are restricted to the GraphQL Admin API, requiring dynamic GraphQL handling.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.shopify.com/pricing",
+    "quote": "sell online, in person, and in ai chats"
+   },
+   {
+    "claim": "auth",
+    "url": "https://shopify.dev/docs/apps/build/authentication-authorization/authenticate-standalone-apps?lang=node",
+    "quote": "because they can't use id tokens , they authenticate using the oauth authorization code grant flow: redirect the merchant to shopify, get their approval, and exchange a code for an access token."
+   },
+   {
+    "claim": "auth",
+    "url": "https://shopify.dev/docs/apps/build/authentication-authorization/authenticate-standalone-apps?lang=node",
+    "quote": "if your app only acts on stores in your own shopify organization, use the client credentials grant instead. it skips the merchant authorization flow."
+   },
+   {
+    "claim": "auth",
+    "url": "https://shopify.dev/docs/storefronts/headless/building-with-the-customer-account-api/authenticate-customers?extension=javascript",
+    "quote": "this tutorial shows you how to implement oauth 2.0 with pkce (proof key for code exchange) ) to authenticate customers, store their access tokens, and query their order information."
+   },
+   {
+    "claim": "access",
+    "url": "https://shopify.com/partners",
+    "quote": "The Shopify Partner Program is a global partner community that is free to join and lets you access unlimited test stores, programs, incentives, expertise, and tools."
+   },
+   {
+    "claim": "access",
+    "url": "https://shopify.dev/docs/apps/build/authentication-authorization/authenticate-standalone-apps?lang=node",
+    "quote": "app credentials you have your app's client id and client secret from the dev dashboard."
+   },
+   {
+    "claim": "access",
+    "url": "https://shopify.dev/docs/apps/store/review",
+    "quote": "After you submit your public app for review, it moves to the Submitted status... After your app has been approved by the app review team, you'll receive an email confirming that your app has moved to the Published status"
+   },
+   {
+    "claim": "api",
+    "url": "https://shopify.dev/docs/api/admin-rest",
+    "quote": "the rest admin api is a legacy api as of october 1, 2024. starting april 1, 2025, all new public apps must be built exclusively with the graphql admin api ."
+   },
+   {
+    "claim": "api",
+    "url": "https://shopify.dev/docs/api/admin-graphql",
+    "quote": "GraphQL Admin API reads and writes products, customers, orders, inventory, and the rest of the data behind the Shopify admin."
+   },
+   {
+    "claim": "api",
+    "url": "https://shopify.dev/docs/storefronts/headless/building-with-the-storefront-api/getting-started",
+    "quote": "This schema is generated using the Storefront API's introspection query, and is available at @shopify/hydrogen-react/storefront.schema.json."
+   },
+   {
+    "claim": "api",
+    "url": "https://shopify.dev/docs/apps/store/review",
+    "quote": "GDPR Webhooks: You must provide endpoints for the mandatory GDPR webhooks (Customer Data Request, Customer Redact, Shop Redact)."
+   },
+   {
+    "claim": "api",
+    "url": "https://shopify.com/partners",
+    "quote": "lets you access unlimited test stores, programs, incentives, expertise, and tools."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/",
+    "quote": "Shopify MCP Proxy & Mock Server (ShopifyMCPMockShop) This project implements a Model Context Protocol (MCP) server that acts as an intelligent bridge and proxy to Shopify's Storefront API."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/",
+    "quote": "MCP Shopify. A comprehensive Model Context Protocol (MCP) server for Shopify Admin API integration."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Research Notes\n\n#### 1. What the Product Does\nShopify is a comprehensive e-commerce platform that enables businesses to build online stores, manage products, inventory, customers, payments, and fulfill orders across multiple sales channels.\n* **Source URL:** https://www.shopify.com/pricing\n* **Verbatim Quote:** `\"sell online, in person, and in ai chats\"`\n\n#### 2. Public API Authentication Methods\nShopify supports multiple authentication methods depending on the application architecture and target API:\n* **OAuth 2.0 Authorization Code Grant Flow:** Used for standalone or API-only apps. This is the primary method a multi-tenant integration platform (like Composio) would use to authenticate merchants.\n  * **Source URL:** https://shopify.dev/docs/apps/build/authentication-authorization/authenticate-standalone-apps?lang=node\n  * **Verbatim Quote:** `\"because they can't use id tokens , they authenticate using the oauth authorization code grant flow: redirect the merchant to shopify, get their approval, and exchange a code for an access token.\"`\n* **Client Credentials Grant Flow:** Used exclusively for apps that only interact with stores within the developer's own organization.\n  * **Source URL:** https://shopify.dev/docs/apps/build/authentication-authorization/authenticate-standalone-apps?lang=node\n  * **Verbatim Quote:** `\"if your app only acts on stores in your own shopify organization, use the client credentials grant instead. it skips the merchant authorization flow.\"`\n* **OAuth 2.0 with PKCE:** Used for customer-facing authentication via the Customer Account API.\n  * **Source URL:** https://shopify.dev/docs/storefronts/headless/building-with-the-customer-account-api/authenticate-customers?extension=javascript\n  * **Verbatim Quote:** `\"this tutorial shows you how to implement oauth 2.0 with pkce (proof key for code exchange) ) to authenticate customers, store their access tokens, and query their order information.\"`\n\n#### 3. Developer Credentials Acquisition & Cost\n* **Access Level:** `self_serve_free`\n* **Process:** Any developer can sign up for the Shopify Partner Program at no cost. From the Partner or Dev Dashboard, they can immediately create an app to obtain a Client ID and Client Secret. They also receive access to unlimited free development stores for testing.\n  * **Source URL:** https://shopify.com/partners (via search results)\n  * **Verbatim Quote:** `\"The Shopify Partner Program is a global partner community that is free to join and lets you access unlimited test stores, programs, incentives, expertise, and tools.\"`\n  * **Source URL:** https://shopify.dev/docs/apps/build/authentication-authorization/authenticate-standalone-apps?lang=node\n  * **Verbatim Quote:** `\"app credentials you have your app's client id and client secret from the dev dashboard.\"`\n* **App Review / Approval:** App review and approval are only required if the developer intends to publish the app publicly on the Shopify App Store. Custom apps or unlisted apps do not require marketplace review for private multi-tenant usage.\n  * **Source URL:** https://shopify.dev/docs/apps/store/review (via search results)\n  * **Verbatim Quote:** `\"After you submit your public app for review, it moves to the Submitted status... After your app has been approved by the app review team, you'll receive an email confirming that your app has moved to the Published status\"`\n\n#### 4. API Style & Technical Details\n* **API Style:** Strictly GraphQL-first for all new integrations. The legacy REST Admin API is deprecated.\n  * **Source URL:** https://shopify.dev/docs/api/admin-rest\n  * **Verbatim Quote:** `\"the rest admin api is a legacy api as of october 1, 2024. starting april 1, 2025, all new public apps must be built exclusively with the graphql admin api .\"`\n* **Breadth:** Extremely broad, covering all aspects of store management.\n  * **Source URL:** https://shopify.dev/docs/api/admin-graphql (via search results)\n  * **Verbatim Quote:** `\"GraphQL Admin API reads and writes products, customers, orders, inventory, and the rest of the data behind the Shopify admin.\"`\n* **OpenAPI Spec:** No official OpenAPI spec is provided because the modern APIs are GraphQL-based. Instead, Shopify exposes GraphQL schemas via introspection queries.\n  * **Source URL:** https://shopify.dev/docs/storefronts/headless/building-with-the-storefront-api/getting-started (via search results)\n  * **Verbatim Quote:** `\"This schema is generated using the Storefront API's introspection query, and is available at @shopify/hydrogen-react/storefront.schema.json.\"`\n* **Webhooks:** Extensively supported, including mandatory compliance webhooks.\n  * **Source URL:** https://shopify.dev/docs/apps/store/review (via search results)\n  * **Verbatim Quote:** `\"GDPR Webhooks: You must provide endpoints for the mandatory GDPR webhooks (Customer Data Request, Customer Redact, Shop Redact).\"`\n* **Sandbox:** Provided via unlimited free development stores.\n  * **Source URL:** https://shopify.com/partners (via search results)\n  * **Verbatim Quote:** `\"lets you access unlimited test stores, programs, incentives, expertise, and tools.\"`\n\n#### 5. Model Context Protocol (MCP) Servers\n* **MCP Status:** `community_only`\n* **Details:** Multiple community-built MCP servers exist on GitHub for interacting with Shopify's Storefront and Admin APIs, but there is no official server published by Shopify.\n  * **Source URL:** https://github.com/ (via search results)\n  * **Verbatim Quote:** `\"Shopify MCP Proxy & Mock Server (ShopifyMCPMockShop) This project implements a Model Context Protocol (MCP) server that acts as an intelligent bridge and proxy to Shopify's Storefront API.\"`\n  * **Source URL:** https://github.com/ (via search results)\n  * **Verbatim Quote:** `\"MCP Shopify. A comprehensive Model Context Protocol (MCP) server for Shopify Admin API integration.\"`\n\n#### 6. Buildability Verdict\n* **Verdict:** `ready_with_friction`\n* **Main Blocker / Hurdle:** `per_customer_shop_domain_required`\n* **Explanation:** While Shopify provides excellent documentation and free developer access, it requires a per-customer configuration hurdle. Because Shopify is a multi-tenant platform where each merchant has a unique store domain (e.g., `shop-name.myshopify.com`), the integration platform must dynamically collect the merchant's specific shop domain to initiate the OAuth flow and route API requests. Additionally, because new apps are restricted to the GraphQL Admin API, the toolkit cannot rely on standard REST endpoints and must handle dynamic GraphQL query/mutation generation or pre-defined schemas.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "shopify partner program cost free tier developer account",
+   "shopify api access pricing plan",
+   "shopify app review process approval",
+   "shopify mcp server github",
+   "shopify admin api openapi spec",
+   "shopify graphql schema download"
+  ],
+  "search_sources": [
+   {
+    "title": "magenest.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEl1ROZ6QjjLElJRmSq_7QdeAlwc1lJzHOrvDXKixUwwJ11zoPTCS1sSbEj5rMzNSmh5r_jPFUfXYaxCmMR11m67cNGpN1H1H75ZzAYVlCGWmVM45BycrTCBNMeHAnF1_rzWZDm340="
+   },
+   {
+    "title": "github.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeuUBZrjjUy6EnITIry_oPok3gV4DAl9q8CzHYwS65IU_0vrEph6wZPH43yoFe_T-EZAY3MHMFCMQJiF1jg6HodMUiZGAzRvF1ian2soQCFC5y13Yhl5NCWM_RZU-R4uhKAD_OU_LOhkdeNPbcwtxXn0EiHmGZjNmbO4LX5pCAAk7eQHgfS8F0MBEk8ZGM"
+   },
+   {
+    "title": "shopify.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8D8cNExC7fP2JUvo6w0c0Yu9Eyx4U0zIddLYCLDk6h4iZCJQqMvOGBrOPhJwkOk-13kUrIu76EXMVUhYVvrONiJoMQM3pI42kbW9ScOhTDQe7s1vTeEtmIpXvI3Or1QypdcXSbXtVi5oLEKAy1VI3Y_x74w=="
+   },
+   {
+    "title": "shopify.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeQvLsLqqzf3cvr-ljuaxN_xhUW0dkgyPwT6KxPa0yKCGbIunPy2ulZstKhOhAhou0S4oDdHf6cOXMpL_q20J91asyeuR4LxZPx36yS81G978Z9wDE809zwMpO2WniR2-CU13My7UCM-of4R-HSj6qv1e81mlfpmOq60FfcutsmEVupguPzovD"
+   }
+  ],
+  "tokens": 13650,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "Shopify API authentication URL",
+    "Shopify OAuth documentation URL",
+    "Shopify API keys documentation URL",
+    "Shopify API getting started URL",
+    "Shopify developer quickstart URL",
+    "Shopify API pricing URL",
+    "Shopify developer plans API access URL",
+    "Shopify partner program API access URL",
+    "Shopify API reference index URL",
+    "Shopify MCP server URL"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://shopify.dev/docs/apps/build/authentication-authorization/authenticate-standalone-apps?lang=node",
+    "https://shopify.dev/docs/apps/build/build?framework=reactRouter",
+    "https://www.shopify.com/pricing",
+    "https://shopify.dev/docs/api/admin-rest",
+    "https://shopify.dev/docs/api/partner/latest#authentication",
+    "https://shopify.dev/docs/storefronts/headless/building-with-the-customer-account-api/authenticate-customers?extension=javascript",
+    "https://shopify.dev/docs/api/partner/latest",
+    "https://community.shopify.com/t/shopify-app-development-basics/201722",
+    "https://shopify.dev/docs/storefronts/headless/building-with-the-storefront-api/getting-started",
+    "https://shopify.dev/docs/storefronts/headless/building-with-the-customer-account-api/getting-started",
+    "https://www.youtube.com/watch?v=CRWNIlWj9jQ"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://shopify.dev/docs/api/customer-account/latest/mcp",
+     "status": 404
+    },
+    {
+     "url": "https://shopify.dev/docs/api/admin-rest/latest/auth/oauth",
+     "status": 404
+    },
+    {
+     "url": "https://shopify.dev/docs/api/customer-account",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://shopify.dev/docs/apps/build/authentication-authorization/authenticate-standalone-apps?lang=node",
+     "status": 200,
+     "chars": 150602,
+     "readable": true
+    },
+    {
+     "url": "https://shopify.dev/docs/apps/build/build?framework=reactRouter",
+     "status": 200,
+     "chars": 273962,
+     "readable": true
+    },
+    {
+     "url": "https://www.shopify.com/pricing",
+     "status": 200,
+     "chars": 17338,
+     "readable": true
+    },
+    {
+     "url": "https://shopify.dev/docs/api/admin-rest",
+     "status": 200,
+     "chars": 22940,
+     "readable": true
+    },
+    {
+     "url": "https://shopify.dev/docs/api/partner/latest#authentication",
+     "status": 200,
+     "chars": 12537,
+     "readable": true
+    },
+    {
+     "url": "https://shopify.dev/docs/storefronts/headless/building-with-the-customer-account-api/authenticate-customers?extension=javascript",
+     "status": 200,
+     "chars": 106364,
+     "readable": true
+    },
+    {
+     "url": "https://shopify.dev/docs/api/partner/latest",
+     "status": 200,
+     "chars": 12537,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 55.9
+ }
+}

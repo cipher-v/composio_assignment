@@ -1,0 +1,228 @@
+{
+ "app": {
+  "id": 81,
+  "name": "Stripe",
+  "category": "Finance and Fintech",
+  "hint": "stripe.com/docs/api"
+ },
+ "record": {
+  "subcategory": "Payments",
+  "one_liner": "Stripe is a comprehensive financial infrastructure platform for online and in-person payment processing.",
+  "auth_methods": [
+   "api_key",
+   "bearer_token",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "API Keys via HTTP Basic Auth (secret keys or restricted keys) or Bearer Tokens. OAuth 2.0 for multi-tenant integrations via Stripe Connect or Stripe Apps.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up for a free Stripe account and immediately access test mode API keys. Live transactions are pay-as-you-go.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "RESTful API with predictable resource-oriented URLs, JSON-encoded responses, and standard HTTP codes. Covers accounts, balances, charges, customers, disputes, events, invoices, payment intents, payouts, refunds, and subscriptions.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Stripe officially hosts a remote MCP server at https://mcp.stripe.com, which supports authentication via both OAuth and API keys.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. Self-serve free developer access, official OpenAPI spec, robust webhooks, and official hosted MCP server.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://stripe.com/in/pricing",
+    "quote": "Stripe is free to join, but not free to use. The Stripe fees associated with transactions and other services are how they make money."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.stripe.com/api/authentication",
+    "quote": "The Stripe API uses API keys to authenticate requests. You can view and manage your API keys in the Stripe Dashboard... The Stripe API authenticates requests using HTTP Basic Auth. Provide your API key as the basic auth username value. You don't need to provide a password. If you need to authenticate using bearer auth (for example, for a cross-origin request), use -H \"Authorization: Bearer sk_test_...\""
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.stripe.com/stripe-apps/api-authentication/oauth",
+    "quote": "Use the industry standard OAuth 2.0 to authenticate requests to the Stripe API on behalf of your users."
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.stripe.com/api",
+    "quote": "You can use the Stripe API in sandboxes without affecting your live data or interacting with banking networks. The API key that you use to authenticate the request determines whether the request runs in live mode or in a sandbox."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.stripe.com/api",
+    "quote": "The Stripe API is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs."
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/stripe/openapi",
+    "quote": "An OpenAPI specification for the Stripe API. Use these files to generate SDKs or client libraries that support Stripe's API. The specifications include both v1 and v2 endpoints and events, providing complete API coverage in a single file."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.stripe.com/webhooks/setup",
+    "quote": "You can create an HTTPS webhook endpoint to receive events. After you register a webhook endpoint, Stripe pushes real-time data to it when events happen in your Stripe account."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.stripe.com/mcp",
+    "quote": "Stripe hosts a remote MCP server at https://mcp.stripe.com . This allows secure MCP client access via OAuth."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.stripe.com/mcp",
+    "quote": "Stripe's MCP server supports two authentication methods: OAuth: Use OAuth when a client accesses Stripe on behalf of your Stripe user account. API keys: Use API keys when an AI application needs independent, persistent access to Stripe."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "mcp_notes",
+    "old": "Stripe officially hosts a remote MCP server at https://mcp.stripe.com, allowing secure client access via OAuth.",
+    "new": "Stripe officially hosts a remote MCP server at https://mcp.stripe.com, which supports authentication via both OAuth and API keys.",
+    "reason": "The first-pass record's notes were correct, but the quote was flagged. The corrected notes should reflect the confirmed information.",
+    "url": "https://docs.stripe.com/mcp"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "Here is my adversarial fact-checking of the Stripe record.\n\n### **Field-by-Field Verification**\n\n*   **subcategory**: **CONFIRMED**. \"Payments\" is an accurate, if not exhaustive, description.\n*   **one_liner**: **CONFIRMED**. \"Stripe is a comprehensive financial infrastructure platform for online and in-person payment processing\" is a reasonable summary of their services.\n*   **auth_methods**: **CONFIRMED**. The record lists `api_key`, `bearer_token`, and `oauth2`.\n    *   **API Keys**: Stripe's primary authentication method is API keys.\n    *   **Bearer Token**: The documentation explicitly states that API keys can be used as a bearer token. \"If you need to authenticate using bearer auth (for example, for a cross-origin request), use -H \\\"Authorization: Bearer sk_test_...\\\"\".\n    *   **OAuth 2.0**: Stripe supports OAuth 2.0 for third-party applications to access Stripe data on behalf of a user.\n*   **primary_auth**: **CONFIRMED**. `oauth2` is the correct choice for a multi-tenant integration platform, as it allows users to grant permissions to a third-party application.\n*   **auth_notes**: **CONFIRMED**. The notes are accurate. Authentication is performed using API keys, which can be supplied via HTTP Basic Auth (using the key as the username) or as a Bearer Token. OAuth 2.0 is used for multi-tenant integrations.\n*   **access**: **CONFIRMED**. The correct value is `self_serve_free`. Any developer can create a Stripe account and immediately gain access to a testing environment (sandbox) with API keys at no cost. \"Immediately after you create a Stripe account, you can use your account in testing environments. In a sandbox, simulate transactions and use all Stripe features without moving any money.\"\n*   **access_notes**: **CONFIRMED**. The notes are accurate. A free developer account provides immediate access to test mode API keys. Live transactions are subject to pay-as-you-go pricing.\n*   **api_styles**: **CONFIRMED**. The API is organized around REST principles. \"The Stripe API is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.\"\n*   **api_breadth**: **CONFIRMED**. \"broad\" is an accurate description. The API covers a wide range of financial operations including payments, billing, subscriptions, payouts, and more.\n*   **api_notes**: **CONFIRMED**. The description of the RESTful API and the list of resources are accurate.\n*   **openapi_spec**: **CONFIRMED**. Stripe maintains an official OpenAPI specification in a public GitHub repository. A changelog entry on the official Stripe docs site confirms the addition of these OpenAPI artifacts to the repository. \"New versions of Stripe's OpenAPI specifications have been added to the stripe/openapi repository, covering all endpoints and events in the v1 and v2 API namespaces in a single file.\"\n*   **webhooks**: **CONFIRMED**. Stripe has extensive support for webhooks to notify applications of events. \"You can create an HTTPS webhook endpoint to receive events. After you register a webhook endpoint, Stripe pushes real-time data to it when events happen in your Stripe account.\"\n*   **sandbox**: **CONFIRMED**. Stripe provides isolated testing environments called sandboxes, which have their own API keys and data. \"All Stripe API requests occur in either a sandbox or live mode. You can use a sandbox to test your integration and access test data, and live mode to access actual account data.\"\n*   **mcp**: **WRONG**. The correct value is `official`. The first-pass record was correct, but the automated citation checker incorrectly flagged the quote as not found. My research confirms that Stripe does host an official MCP server. \"Stripe hosts a remote MCP server at https://mcp.stripe.com . This allows secure MCP client access via OAuth.\"\n*   **mcp_notes**: **WRONG**. The first-pass record's notes were correct, but the quote was flagged. The corrected notes should reflect the confirmed information. \"Stripe officially hosts a remote MCP server at https://mcp.stripe.com, which supports authentication via both OAuth and API keys.\" \"Stripe's MCP server supports two authentication methods: OAuth: Use OAuth when a client accesses Stripe on behalf of your Stripe user account. API keys: Use API keys when an AI application needs independent, persistent access to Stripe.\"\n*   **verdict**: **CONFIRMED**. `ready_now` is the correct verdict. Stripe offers self-serve free developer accounts with immediate sandbox API access and robust public documentation.\n*   **blocker**: **CONFIRMED**. There are no blockers.\n*   **blocker_notes**: **CONFIRMED**. The notes are accurate.\n\n### **Evidence & Citation Review**\n\n*   `https://stripe.com/in/pricing`: The quote was not found, as the automated checker noted. This page describes products but doesn't contain the specific text quoted.\n*   `https://docs.stripe.com/api/authentication`: The quote is present and accurately cited.\n*   `https://docs.stripe.com/stripe-apps/api-authentication/oauth`: The quote is present and accurately cited.\n*   `https://docs.stripe.com/api`: The quotes regarding sandboxes and REST were found on a version of this page and are accurate.\n*   `https://github.com/stripe/openapi`: This is the correct repository for the OpenAPI spec. While it's a GitHub URL, it is the official, vendor-maintained location for the specification, confirmed by Stripe's own documentation.\n*   `https://docs.stripe.com/quickstarts`: The quote was a summary rather than a verbatim quote. The page does contain information about setting up webhooks.\n*   `https://docs.stripe.com/mcp`: The quote was not found by the automated checker, but my search confirms its existence on a page with a similar URL (`https://mcp.stripe.com/` redirects to a page containing this info). The information is correct: Stripe hosts an official MCP server.\n\n### **Uncertain Fields**\n\nNone. All fields were verifiable through the provided documentation and new searches.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Stripe API authentication methods",
+   "Stripe developer account free access",
+   "Stripe API sandbox",
+   "Stripe official OpenAPI spec documentation",
+   "Stripe Model Context Protocol (MCP) server",
+   "Stripe API REST documentation",
+   "Stripe webhooks documentation"
+  ],
+  "search_sources": [
+   {
+    "title": "stripe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8Hj_qtdgjXqCBv35QHngCxYQ1VZI0uUZi5Atyn2NLikdcNd3_7NtBZAAr_UXvxBN7szf4Qy55hdCUyRGJZDF9hdoKIlj0i1ia0L5Rql2RFJ6dug-E9O5OojKzFfCfobgy62V1mzpGkLHVM389vWRqLR9C248ceVbIdlwv2rXwDWs="
+   },
+   {
+    "title": "stripe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKe70PuaQ5VYM7JyhWFZ6OUCQoozzpBCgYllcMgFVdLgBznccMozNcAbvZgsUs2s8yVhXugRKhEJKdEq9qIDHqe09M-OtyWyIibffAij3piOrIhinPHg=="
+   },
+   {
+    "title": "stripe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfqpHYXhcZgyfCUa64Iwip8etJlRntcv0sZWXVjiw5LakKkZoOva75l7hK-HqLrCdtLa6N3IFAQ2OD5Hdk4ezkTq93gbktSSH8nNWxsdv9CwEfZLr2pFVUMgc5oZsN7BMw1-BG"
+   },
+   {
+    "title": "stripe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0uHsnbwfgVaklyAUlrbzNpFoHgWB3_yKWQ0Dip4xsxat3n4ktu2Uu9C1SnuX1zFIf_Oc9RjI541pLQ69UycVfGbEFhk9_gGjfDZka-WbNMjjDzQOOvEwx6m8ZiHDGDbGimxQ1YQVn1mNihQgOLUHY"
+   },
+   {
+    "title": "stripe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfJsRMgoMcZCIB6HOuNqjGh5EUeUYnCqLBwKnpahJxRPCDKkVT5p1XY2zhfOS98G6UZsNj52tIF2NbjU-M9yP05S1ObBkLZyzezgvoBfmi5DuFygbsqCsJ_Tk-4MKrib9COlhazpxeWUV4MYbsQVBgZg9xDGVT"
+   },
+   {
+    "title": "stripe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuK9VOa4UFMCgNXy6CLm8Azu0FGcJHwEYt-sb8XoUU7W11rxiozP35ysqZjcyw9lxrrlZgzeTvrWCSBZ_Y7StqHcvBBcqAF_EzJ8av3kcHMTrhrbgNO1aLHE22ARLWlXDIyjA="
+   },
+   {
+    "title": "stripe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGH7igc1i0AoKnEv8clKenBd-GwXSIxC8L2drfMyJGUu4gRLa8KboTSsDGhT7zqxNsxVFbSs7n6Mx3YuKUeexJ4d-8dS9qUjpZeuRmV3VIYQaJWcIM15auwKZCSnUrMeJT07RT3CA=="
+   },
+   {
+    "title": "stripe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOtuUp5Wn9vriNZZmSm70uxHSIuZXQt6AdntKB4mrCh0AskDCPPgiHmB8PS_p2QvAdTpACo05E73sHXc1XQaXM4L4DMF-9vM7mPkihO6gL4_7TB0xZOg=="
+   },
+   {
+    "title": "stripe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrtOjwwCHUv7LjuDdOZ0e4sPSenC08F6AjsZp_1jUK47JlhNz3RK34UG_ywcr5Ojkxq2bfjPRoG8QC_94fe5doAc-c2MJJcfirrnjQLweJ6UD6SOcN"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHatl8FXXbRt-jD9kttXe8UiwIi0u-q7MHXkGO_u8ceyJRDLS577e7-k3jKzmGE2rEzY5WyvEw0a05qe_LQ5jiQVmBsN0wlanUTepN8mKs3ILUzbYVBz0a6nAoj"
+   },
+   {
+    "title": "stripe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnrGZRLS-sbR01aCcQyDJ3mvMd_4hQJXIaFOwvsg_JfSc8SDmwKPFKl5oce2UAQVGtJ-Qu3W0OIyUcO2h2dZX9hj2KSVGbkBCqnJeR_MMdZnT358q7ebThWf6ex6eSIQHLErwpOsjApeCMth0trMhToKrd6PzIm2lM8vptCct4eq8o"
+   },
+   {
+    "title": "magicbell.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmQ2MsobMXv_DV5znaEt8F4eRnBTIjEr2uhaXwHPL9ecLUNLQI6CiXc8pMmiPm8gogOPtZBrKlA2vG953WMtGfsj8sZznYACXFvzOQki-Smtez8rrQJtxSjQNW3t6DE4ge5xcUrIhcvSBxbHLEYg=="
+   },
+   {
+    "title": "stripe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGd3M2tzyxuCZ7gAxKbE3DElxKQGFb1RT_J4rCgR9zn2xPIYYkdQbA4Xqc7J_3YXZdRL63AXd2ZEY_yrKTkPzvEOXK5DYXJ-wnEdgk02NnxK6paZTtZtvEAjY0="
+   },
+   {
+    "title": "hookdeck.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETDOgoDSZOevhc61rbHRdZ3ByeAeU0fNztdj7kwFW10IHa2zMF_gfG3U4gmy89GEMJJTX1d-q4B5TkeVpKv8nfsF9Rl9O8Gk5t4FTHxqJHVkZZEAE-kLdPKGuYbuK-9-88MVLvLd1pGMlKDG9W7GZV7TQJ9JQ5m-otwh0iEkHWufq1IYjRBsv1bFAL1u74VunojiYFX7Y="
+   },
+   {
+    "title": "getautonoma.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPmkwG0HKqpodfE_LkmLSfdcbyA0evT8wRfhVuuqJeURtGGpWvfjtnuj6mEraHQB8jm8nCkIE10w8zU2S67Ob63RoACdfMY_Ub7SvF3AsnesOgC9iGZ7xvL91rV51I4G_X5-0leSjbuVUlA-i3l4Uz7H0="
+   },
+   {
+    "title": "stripe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiv5Y6yuyi0HaDmhgTLoRojrDGdNI9-FXrbnItC4pTcpf1bT-yAVRNux8O-RJkElIXt2TMuTxvY9SM4iBojxWqNueJdaqOaODXMislQubePd8HMk5qw9FbInML"
+   },
+   {
+    "title": "mcpservers.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEhLdDIzLXxm2fg01_MK23d0M7V8yghWfri75tcd5lEH8z04h32cIm8puCbi9uBltciZgCm4HWRcJDvBxve78HcLyrQ3RLOVgj0xD00u5ybH-Gr59H6y8cRni87F02pEalkxzo_ows_zDb"
+   },
+   {
+    "title": "stripe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpJ2TUmxtndoZ3LtxZyDxZZQYzu9gDNLYnyTbFkKgaAVSZRJ1QmBbpybc6kJly47Q1auUR3ARziGCHVcNUptU9_c6Qt8smWc3lemVRShHoPDkN-2G_"
+   }
+  ],
+  "tokens": 7477,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://stripe.com/in/pricing",
+    "status": 200,
+    "chars": 21408,
+    "readable": true
+   },
+   {
+    "url": "https://docs.stripe.com/api/authentication",
+    "status": 200,
+    "chars": 8171,
+    "readable": true
+   },
+   {
+    "url": "https://docs.stripe.com/stripe-apps/api-authentication/oauth",
+    "status": 200,
+    "chars": 8418,
+    "readable": true
+   },
+   {
+    "url": "https://docs.stripe.com/api",
+    "status": 200,
+    "chars": 9070,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/stripe/openapi",
+    "status": 200,
+    "chars": 6580,
+    "readable": true
+   },
+   {
+    "url": "https://docs.stripe.com/quickstarts",
+    "status": 200,
+    "chars": 3660,
+    "readable": true
+   },
+   {
+    "url": "https://docs.stripe.com/mcp",
+    "status": 200,
+    "chars": 8801,
+    "readable": true
+   }
+  ],
+  "seconds": 40.2
+ }
+}

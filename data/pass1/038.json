@@ -1,0 +1,223 @@
+{
+ "app": {
+  "id": 38,
+  "name": "Pinterest",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "developers.pinterest.com"
+ },
+ "record": {
+  "subcategory": "Social Media / Visual Discovery",
+  "one_liner": "Pinterest is a visual discovery engine and social media platform for content creation, ad management, and analytics.",
+  "auth_methods": [
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 for user authentication and authorization. Short-lived 'product limited tokens' (test tokens) expire after 24 hours for quick testing.",
+  "access": "approval_required",
+  "access_notes": "Free API. Requires creating a Pinterest Business account, accepting developer terms, and submitting a request for 'Trial Access'. Production 'Standard Access' requires a strict app review process including a privacy policy, documented OAuth flow, and video demo.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive coverage for content management (pins and boards), conversion tracking, ads management, targeting, shopping catalogs, and analytics reporting.",
+  "openapi_spec": true,
+  "webhooks": false,
+  "sandbox": true,
+  "mcp": "community_only",
+  "mcp_notes": "Pinterest has announced an official MCP server is 'on the way'. Currently, only third-party/community MCP servers exist.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "The primary hurdle is the strict app review and approval process required to transition from 'Trial Access' to 'Standard Access'. Trial Access pins/boards are sandbox-only and hidden from public. Standard Access requires a privacy policy, documented OAuth flow, and video demo for manual review.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://developers.pinterest.com/",
+    "quote": "One API to seamlessly integrate with Pinterest securely plan content, manage ads, upload product feeds, and more."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.pinterest.com/docs/getting-started/connect-app/",
+    "quote": "build a working authentication flow based on oauth 2 for full details on the oauth process, review our guide on scopes & authentication ."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.pinterest.com/docs/getting-started/connect-app/",
+    "quote": "product limited tokens : once your app is approved for trial access you can generate a token to test the api without setting up the oauth flow.test tokens expire after 24 hours and allow you to explore certain endpoints faster."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.pinterest.com/docs/getting-started/connect-app/",
+    "quote": "login or create a business account . this is the account you will use to administer your app. verify your account's email address go to my apps and click through to accept our developer terms of service once you've completed these requirements we'll ask for more details to register your app. register your app details to get your app id and secret key while logged into the pinterest account you want to use to administer your app complete the following steps: select connect app and complete our request form with your app information. submit your request for trial access."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.blotato.com/blog/pinterest-api-pricing",
+    "quote": "Pinterest does not publish API access fees for either tier, so both Trial and Standard are effectively free... There is no paid tier of the Pinterest API."
+   },
+   {
+    "claim": "access",
+    "url": "https://data365.co/blog/pinterest-api-pricing",
+    "quote": "To apply, you'll need: a developer account. a documented OAuth flow. a working privacy policy. a video demo of your app performing core actions. a use case Pinterest considers convincing."
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/pinterest/api-description",
+    "quote": "This repository contains OpenAPI (version 3.0.3) descriptions for Pinterest's REST API."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.pinterest.com/docs/getting-started/connect-app/",
+    "quote": "sandbox : our sandbox environment allows you to make test calls without impacting the pinterest product environment."
+   },
+   {
+    "claim": "api",
+    "url": "https://rollout.com/",
+    "quote": "The official Pinterest API does not have native webhook support. The API documentation focuses on RESTful endpoints for managing pins, boards, users, and other Pinterest objects."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://developers.pinterest.com/",
+    "quote": "pinterest mcp is on the way learn more"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://mcp.so",
+    "quote": "Mcp Pinterest is a Model Context Protocol (MCP) server that provides Pinterest image search and information retrieval."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://www.blotato.com/blog/pinterest-api-pricing",
+    "quote": "Pins and Boards created with Trial access are visible only to their creator as Sandbox entities, while Standard access enables full public visibility"
+   },
+   {
+    "claim": "verdict",
+    "url": "https://data365.co/blog/pinterest-api-pricing",
+    "quote": "The Pinterest API Approval Process: Free to Apply, Not Guaranteed to Enter. It's a pitch. To apply, you'll need: a developer account. a documented OAuth flow. a working privacy policy. a video demo of your app performing core actions."
+   }
+  ],
+  "confidence": 0.9
+ },
+ "notes": "### Product Overview\nPinterest is a visual discovery engine and social media platform used by creators, advertisers, and merchants to plan content, manage product catalogs, and run ad campaigns. The Pinterest Developer Platform provides tools to programmatically create content, track conversions, manage advertising campaigns, and analyze performance data.\n* **Source URL:** `https://developers.pinterest.com/`\n* **Verbatim Quote:** `\"One API to seamlessly integrate with Pinterest securely plan content, manage ads, upload product feeds, and more.\"`\n* **Source URL:** `https://developers.pinterest.com/`\n* **Verbatim Quote:** `\"create content build apps and experiences that allow pinterest users to create and manage organic content (pins and boards) on pinterest.\"`\n\n---\n\n### Authentication Methods\nThe Pinterest API v5 relies on **OAuth 2.0** for user authentication and authorization. Additionally, the platform offers short-lived \"product limited tokens\" (test tokens) that expire after 24 hours, allowing developers to test endpoints quickly without implementing a full OAuth flow during the initial setup.\nFor a multi-tenant integration platform like Composio, the integration must utilize OAuth 2.0 to securely act on behalf of multiple end-users.\n* **Primary Auth:** `oauth2`\n* **Source URL:** `https://developers.pinterest.com/docs/getting-started/connect-app/`\n* **Verbatim Quote:** `\"build a working authentication flow based on oauth 2 for full details on the oauth process, review our guide on scopes & authentication .\"`\n* **Source URL:** `https://developers.pinterest.com/docs/getting-started/connect-app/`\n* **Verbatim Quote:** `\"product limited tokens : once your app is approved for trial access you can generate a token to test the api without setting up the oauth flow.test tokens expire after 24 hours and allow you to explore certain endpoints faster.\"`\n\n---\n\n### Developer Credentials & Cost\n* **Access Tier:** `approval_required`\n* **Cost:** The official Pinterest API is completely free. There are no subscription fees, price cards, or per-call meters.\n* **Credential Acquisition Process:**\n  1. Create or log into a Pinterest Business account and verify the email address.\n  2. Accept the developer terms of service under the \"My Apps\" portal.\n  3. Complete the registration form and submit a request for **Trial Access**.\n  4. Once approved for Trial Access, the developer receives a unique App ID and App Secret.\n  5. To move to production (**Standard Access**), the app must undergo a strict app review process. This requires submitting a working privacy policy, a documented OAuth flow, and a recorded video demo of the app performing core actions.\n* **Source URL:** `https://developers.pinterest.com/docs/getting-started/connect-app/`\n* **Verbatim Quote:** `\"login or create a business account . this is the account you will use to administer your app. verify your account's email address go to my apps and click through to accept our developer terms of service once you've completed these requirements we'll ask for more details to register your app. register your app details to get your app id and secret key while logged into the pinterest account you want to use to administer your app complete the following steps: select connect app and complete our request form with your app information. submit your request for trial access.\"`\n* **Source URL:** `https://www.blotato.com/blog/pinterest-api-pricing`\n* **Verbatim Quote:** `\"Pinterest does not publish API access fees for either tier, so both Trial and Standard are effectively free... There is no paid tier of the Pinterest API.\"`\n* **Source URL:** `https://data365.co/blog/pinterest-api-pricing`\n* **Verbatim Quote:** `\"To apply, you'll need: a developer account. a documented OAuth flow. a working privacy policy. a video demo of your app performing core actions. a use case Pinterest considers convincing.\"`\n\n---\n\n### API Technical Details\n* **API Style:** REST\n* **Breadth:** Comprehensive coverage across content management (pins and boards), conversion tracking, ads management, targeting, shopping catalogs, and analytics reporting.\n* **OpenAPI Spec:** Yes, Pinterest officially maintains and publishes its OpenAPI v3 descriptions in a public GitHub repository.\n* **Webhooks:** The official Pinterest API does not provide native general webhooks for standard content management (requiring polling instead), though it does support webhooks specifically for Lead Ads (currently in beta).\n* **Sandbox:** Yes, a dedicated sandbox environment is available to make test calls without affecting live production data.\n* **Source URL:** `https://github.com/pinterest/api-description`\n* **Verbatim Quote:** `\"This repository contains OpenAPI (version 3.0.3) descriptions for Pinterest's REST API.\"`\n* **Source URL:** `https://developers.pinterest.com/docs/getting-started/connect-app/`\n* **Verbatim Quote:** `\"sandbox : our sandbox environment allows you to make test calls without impacting the pinterest product environment.\"`\n* **Source URL:** `https://rollout.com/`\n* **Verbatim Quote:** `\"The official Pinterest API does not have native webhook support. The API documentation focuses on RESTful endpoints for managing pins, boards, users, and other Pinterest objects.\"`\n\n---\n\n### Model Context Protocol (MCP) Servers\n* **MCP Status:** `community_only`\n* **Details:** Pinterest has officially announced that an official MCP server is \"on the way\" and allows developers to sign up for updates. Currently, only third-party/community MCP servers exist (such as the Node.js `mcp-pinterest` server for image retrieval or Activepieces' integration).\n* **Source URL:** `https://developers.pinterest.com/`\n* **Verbatim Quote:** `\"pinterest mcp is on the way learn more\"`\n* **Source URL:** `https://mcp.so`\n* **Verbatim Quote:** `\"Mcp Pinterest is a Model Context Protocol (MCP) server that provides Pinterest image search and information retrieval.\"`\n\n---\n\n### Buildability Verdict\n* **Verdict:** `ready_with_friction`\n* **Main Blocker:** The primary hurdle is the strict **app review and approval process** required to transition from the \"Trial Access\" tier to the production \"Standard Access\" tier. Under Trial Access, any pins and boards created by the API are sandbox-only and hidden from the public. To make the integration usable for live multi-tenant applications, developers must submit a privacy policy, a documented OAuth flow, and a recorded video demo to pass Pinterest's manual review cycle.\n* **Source URL:** `https://www.blotato.com/blog/pinterest-api-pricing`\n* **Verbatim Quote:** `\"Pins and Boards created with Trial access are visible only to their creator as Sandbox entities, while Standard access enables full public visibility\"`\n* **Source URL:** `https://data365.co/blog/pinterest-api-pricing`\n* **Verbatim Quote:** `\"The Pinterest API Approval Process: Free to Apply, Not Guaranteed to Enter. Getting approved isn't a formality. It's a pitch. To apply, you'll need: a developer account. a documented OAuth flow. a working privacy policy. a video demo of your app performing core actions.\"`",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "pinterest api pricing",
+   "pinterest api openapi spec",
+   "pinterest api webhooks",
+   "pinterest mcp server"
+  ],
+  "search_sources": [
+   {
+    "title": "pinterest.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5Tp4bwhkLHY4R1CI5NkmboQzcGOnBm4-SxcbFN9iIIhVf965Cc2v_9jUE_y1AHwgKD2nJ2_rsMfrlqScpS31AdJ4ILRNfKzWsmB6Zq4qHYxPBv2FF5SzRahX1wQkOegfSm6Mi31vfZPCtfC0qKgUl"
+   },
+   {
+    "title": "data365.co",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnaah11rxx7djVxC4Fhy7hRtlGw6VOk5wnlRFlt9wErpsqzc0aaQcIgNwKfHma-Mk8agmDfkMQ2CqgOlzmmy5W_M66oCDA1u3bvIP-MgZiubprtWWXMREcPsDund8KkMHqobfQNCMEgA=="
+   },
+   {
+    "title": "socialcrawl.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnP0s5bo0HWNytB5-syNMfgYO8s-YgZjoiJjNN-KiPZVnryDic5SymRwhnAXDSJ3ubOWsc1lMzuoBcPN2uNXKjcgURRoKbX9QOyDSC3XCq9GXaq5NXYp2u4EXDRRoEqVzCAKKiiel3adTA-0k3Z_p8vWzDuABr5Ixp"
+   },
+   {
+    "title": "blotato.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHs5RqZQoRQ0WKYb4xcqFzoey_UESZff9fNF8kQjiVqbtAJeohW5iJLVEqiVqlz-lo1FZQ-avRlJIBETE-Evp9aXy7-ehmFHFxonQE6FFQxfv0YcauUPYzGUnHARr58C5Cq6p7xo2nAxkvrKnt"
+   },
+   {
+    "title": "outstand.so",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFu_etyrP6n08h7tk3kWjWVEbUFDwCvv5aFuSry1jKLbffPiGDfDebcJ640Y444DXwrYFsoseCsmfuAZUNymza7T_hcPDx6swXDxSgeKIAJ2Z9CUtxRS6bdOkkH7g=="
+   },
+   {
+    "title": "rollout.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMF1rypxxEFqZ9S_oiSubxJwN76tr6biIqXlmb__MmuDkdwTYd_CPda1Bo2aF9p7Xmar4BNhkPbxE8oYq3Lqfgxqdc5itRJd0f-lYS8g_XQau-ST2QttmzQGJBgvaNJIQS6qbrCGRM2vJGcw1JWxU6S0fJyQErg7Qmvw=="
+   },
+   {
+    "title": "mcp.so",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-LwdpGSV_-6624MTi8HbSabTDui4m2EYjo3f48nu_dNPg0kNOzKJPS9sAnwURftnf5zD5sx_T2Tdla10Zbrf_-HCBUse-BkJ2fsrRDCpow3jXbQAPyqGwDvffxDpIPA=="
+   },
+   {
+    "title": "infoq.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHV2tgtz7zQeHj8OYs4mn2TNQneBLA5F_7iub0PexroZhzmjEVARgej-A6wR4p2uWfY3fAzCpWAExeDs-QWTed6qvmAcPqxggA3BAFlUWGPuJ3U0qVD1ZOgR9Vw41e9wO6Uo_phWxKFLn9XBvNO2Lrxlpbi6Oe8"
+   },
+   {
+    "title": "aibase.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9mhO7GmTXyGwIDRzZFn9PGqW_LG-vUFJpkDQcz5CfJnCOOG7xLi_wlswKjeAQ3T7c82nmmBcbShmZFwhnhBtm-rau3zjlrLg_Qa0xXaJdcG4zFjud55YZ_bVdl-UqMeg_VtmlnGj4X7Yk564="
+   }
+  ],
+  "tokens": 11112,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    " pinterest developers authentication API keys OAuth",
+    " pinterest developers getting started quickstart",
+    " pinterest developers pricing API plans partner program",
+    " pinterest developers API reference documentation",
+    "Pinterest MCP server"
+   ],
+   "candidates": 7,
+   "live_urls": [
+    "https://developers.pinterest.com/docs/getting-started/connect-app/",
+    "https://developers.pinterest.com/docs/",
+    "https://developers.pinterest.com/",
+    "https://developers.pinterest.com/docs/api/v5/introduction/",
+    "https://developers.pinterest.com/docs/overview/welcome/",
+    "https://developers.pinterest.com/docs/getting-started/set-up-authentication-and-authorization/",
+    "https://www.blotato.com/blog/pinterest-api-pricing",
+    "https://www.outstand.so/pinterest",
+    "https://data365.co/blog/pinterest-api-pricing"
+   ],
+   "bad_candidates": [],
+   "pages_read": [
+    {
+     "url": "https://developers.pinterest.com/docs/getting-started/connect-app/",
+     "status": 200,
+     "chars": 3310,
+     "readable": true
+    },
+    {
+     "url": "https://developers.pinterest.com/docs/",
+     "status": 200,
+     "chars": 115,
+     "readable": false
+    },
+    {
+     "url": "https://developers.pinterest.com/",
+     "status": 200,
+     "chars": 1712,
+     "readable": true
+    },
+    {
+     "url": "https://developers.pinterest.com/docs/api/v5/introduction/",
+     "status": 200,
+     "chars": 115,
+     "readable": false
+    },
+    {
+     "url": "https://developers.pinterest.com/docs/overview/welcome/",
+     "status": 200,
+     "chars": 2695,
+     "readable": true
+    },
+    {
+     "url": "https://developers.pinterest.com/docs/getting-started/set-up-authentication-and-authorization/",
+     "status": 200,
+     "chars": 22286,
+     "readable": true
+    },
+    {
+     "url": "https://www.blotato.com/blog/pinterest-api-pricing",
+     "status": 200,
+     "chars": 24686,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 121.1
+ }
+}

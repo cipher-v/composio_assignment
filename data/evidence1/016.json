@@ -1,0 +1,150 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://support.liveagent.com/741982-API-key",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.46
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://support.liveagent.com/741982-API-key",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.62
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://support.liveagent.com/840770-Complete-API-reference",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.2
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://support.liveagent.com/567924-Documentation?r=1",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.79
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.liveagent.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.61
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://support.liveagent.com/741982-API-key",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.84
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://support.liveagent.com/741982-API-key",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://support.liveagent.com/567924-Documentation?r=1",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://support.liveagent.com/567924-Documentation?r=1",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.liveagent.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://support.liveagent.com/647358-MCP-Integration-for-Agents",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.42
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://support.liveagent.com/647358-MCP-Integration-for-Agents",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.69
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://www.liveagent.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  }
+ ],
+ "auth_support": {
+  "api_key": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://support.liveagent.com/741982-API-key', 'https://support.liveagent.com/840770-Complete-API-reference', 'https://support.liveagent.com/741982-API-key', 'https://support.liveagent.com/567924-Documentation?r=1', 'https://www.liveagent.com/', 'https://support.liveagent.com/647358-MCP-Integration-for-Agents', 'https://www.liveagent.com/']",
+ "metrics": {
+  "n_evidence": 13,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 1.0,
+  "readable": 13,
+  "quote_supported_rate": 0.46153846153846156,
+  "lint_issues": 0,
+  "flag_count": 1
+ }
+}

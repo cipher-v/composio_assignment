@@ -1,0 +1,260 @@
+{
+ "app": {
+  "id": 30,
+  "name": "Vonage",
+  "category": "Communications and Messaging",
+  "hint": "developer.vonage.com"
+ },
+ "record": {
+  "subcategory": "Cloud Communications",
+  "one_liner": "Vonage provides cloud communications APIs for voice, SMS, messaging, video, and verification.",
+  "auth_methods": [
+   "api_key",
+   "jwt"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "Primary methods are static API keys/secrets and JSON Web Tokens (JWTs) signed with an Application ID and a private key. For multi-tenant platforms, API key/secret or JWT generation using user's Application ID and Private Key are used as Vonage does not offer a centralized public OAuth 2.0 application marketplace for its core Communications APIs.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up for a free developer account on the Vonage API Dashboard to immediately obtain an API key and secret. Account creation is free, and Vonage provides complimentary free credits upon signup to test the platform. Production usage is pay-as-you-go.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extremely broad, covering SMS, Messages (WhatsApp, Viber, Facebook Messenger, RCS), Voice, Video, Verify (2FA), Numbers, Applications, and Reports.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Vonage officially hosts and publishes the \"Vonage Documentation MCP Server\" (vonage-docs). A Tooling MCP Server to expose live API functions is in development.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. Vonage provides comprehensive public documentation, fully self-serve free developer accounts with test credits, and publicly available OpenAPI specifications for all its products.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://developer.vonage.com/en/getting-started/overview",
+    "quote": "vonage provides a suite of apis that enable you to communicate with your customers using your preferred channels."
+   },
+   {
+    "claim": "general",
+    "url": "https://apis.io/vonage",
+    "quote": "Vonage (part of Ericsson) provides cloud communications APIs for voice, SMS, messaging, video, and verification."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.vonage.com/en/getting-started/concepts/authentication",
+    "quote": "vonage apis support different authentication methods depending on which product you are using: api key and secret (header) json web token (jwt)"
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.vonage.com/en/getting-started/overview",
+    "quote": "Typically this is done using basic authentication or jwts . you can generate a suitable jwt using the vonage cli, or our online tool ."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.vonage.com/en/getting-started/overview",
+    "quote": "to work with our apis, you will need to sign up for an account . this will give you an api key and secret that you can use to access our apis."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.vonage.com/en/getting-started/overview",
+    "quote": "we’ll give you some free credit when you first open your account and you can top up when you run low."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.vonage.com/blog/api-pricing-models/",
+    "quote": "All API pricing is by usage, with big value and no surprises a key part of our philosophy... They're all based on a pay as you go API pricing model, meaning you're charged based on usage."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.vonage.com/en/getting-started/concepts/openapi",
+    "quote": "OpenAPI is an industry standard specification for describing APIs. We use OpenAPI to describe all our APIs, and we make those specifications publicly available too."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.vonage.com/en/getting-started/overview",
+    "quote": "while basic authentication will work, it will not allow you to receive webhooks - these can only be enabled by using jwts ."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.vonage.com/en/messages/concepts/messages-api-sandbox",
+    "quote": "The Messages API Sandbox is a quick way to try out sending messages via certain messaging channels using the Vonage Messages API. It does not need any external accounts to be set up with providers (such as WhatsApp Business Account)."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://documentation-mcp.vonage.dev/",
+    "quote": "vonage mcp server setup guide vonage documentation mcp server getting started in your ide"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://developer.vonage.com/en/blog/introducing-the-vonage-documentation-mcp-server",
+    "quote": "To help developers start experimenting, Vonage has launched its first MCP server: the Vonage Documentation Server, which lets agents search and retrieve information directly from the official docs. This will soon be followed by a Tooling MCP Server, which will go further by exposing live API functions."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### 1. Product Overview\nVonage provides a comprehensive suite of cloud communications APIs that allow developers to integrate real-time communication capabilities—such as Voice, SMS, multi-channel messaging, Video, and two-factor authentication—directly into their software applications.\n\n* **Source URL:** `https://developer.vonage.com/en/getting-started/overview`\n* **Verbatim Quote:** `\"vonage provides a suite of apis that enable you to communicate with your customers using your preferred channels.\"`\n* **Source URL:** `https://apis.io/vonage` (via Google Search)\n* **Verbatim Quote:** `\"Vonage (part of Ericsson) provides cloud communications APIs for voice, SMS, messaging, video, and verification.\"`\n\n---\n\n### 2. Authentication Methods & Multi-Tenant Integration\nVonage APIs support multiple authentication methods depending on the specific product being utilized. The primary methods are static API keys/secrets and JSON Web Tokens (JWTs) signed with an Application ID and a private key. \n\nFor a multi-tenant integration platform (like Composio), the primary authentication method is **`api_key`** (along with an API secret) or **`bearer_token`** (via JWT generation using the user's Application ID and Private Key). Because Vonage does not offer a centralized public OAuth 2.0 application marketplace for its core Communications APIs, a multi-tenant platform must securely collect and store individual user credentials.\n\n* **Source URL:** `https://developer.vonage.com/en/getting-started/concepts/authentication`\n* **Verbatim Quote:** `\"vonage apis support different authentication methods depending on which product you are using: api key and secret (header) json web token (jwt)\"`\n* **Source URL:** `https://developer.vonage.com/en/getting-started/overview`\n* **Verbatim Quote:** `\"Typically this is done using basic authentication or jwts . you can generate a suitable jwt using the vonage cli, or our online tool .\"`\n\n---\n\n### 3. Credential Acquisition & Cost\n* **Access Classification:** `self_serve_free`\n* **Credential Acquisition:** Any developer can sign up for a free developer account on the Vonage API Dashboard to immediately obtain an API key and secret. No manual approval, partner program membership, or sales contact is required for standard API access.\n* **Cost:** Account creation is free, and Vonage provides complimentary free credits upon signup to test the platform. Production usage is entirely pay-as-you-go (usage-based) based on the volume of messages sent, minutes used, or successful verifications completed.\n\n* **Source URL:** `https://developer.vonage.com/en/getting-started/overview`\n* **Verbatim Quote:** `\"to work with our apis, you will need to sign up for an account . this will give you an api key and secret that you can use to access our apis.\"` and `\"we’ll give you some free credit when you first open your account and you can top up when you run low.\"`\n* **Source URL:** `https://www.vonage.com/blog/api-pricing-models/` (via Google Search)\n* **Verbatim Quote:** `\"All API pricing is by usage, with big value and no surprises a key part of our philosophy... They're all based on a pay as you go API pricing model, meaning you're charged based on usage.\"`\n\n---\n\n### 4. API Technical Profile\n* **API Style:** REST\n* **Breadth:** Extremely broad, covering SMS, Messages (WhatsApp, Viber, Facebook Messenger, RCS), Voice, Video, Verify (2FA), Numbers, Applications, and Reports.\n* **OpenAPI Spec:** Yes. Vonage maintains and publishes official OpenAPI specifications for each of its API products, which are downloadable directly from the developer portal and hosted on GitHub.\n* **Webhooks:** Yes, supported across multiple APIs (e.g., for receiving messages or call status updates). Note that JWT authentication is required to enable webhooks securely.\n* **Sandbox:** Yes. Vonage provides a dedicated \"Messages API Sandbox\" environment that allows developers to test social channels like WhatsApp, Viber, and Facebook Messenger instantly without setting up external business accounts.\n\n* **Source URL:** `https://developer.vonage.com/en/getting-started/concepts/openapi` (via Google Search)\n* **Verbatim Quote:** `\"OpenAPI is an industry standard specification for describing APIs. We use OpenAPI to describe all our APIs, and we make those specifications publicly available too.\"`\n* **Source URL:** `https://developer.vonage.com/en/getting-started/overview`\n* **Verbatim Quote:** `\"while basic authentication will work, it will not allow you to receive webhooks - these can only be enabled by using jwts .\"`\n* **Source URL:** `https://developer.vonage.com/en/messages/concepts/messages-api-sandbox` (via Google Search)\n* **Verbatim Quote:** `\"The Messages API Sandbox is a quick way to try out sending messages via certain messaging channels using the Vonage Messages API. It does not need any external accounts to be set up with providers (such as WhatsApp Business Account).\"`\n\n---\n\n### 5. Model Context Protocol (MCP) Servers\n* **MCP Classification:** `official`\n* **Details:** Vonage officially hosts and publishes the \"Vonage Documentation MCP Server\" (`vonage-docs`), allowing AI assistants to query its developer documentation directly from within IDEs or clients like Claude Desktop. Vonage has also announced that a Tooling MCP Server to expose live API functions is in development.\n\n* **Source URL:** `https://documentation-mcp.vonage.dev/`\n* **Verbatim Quote:** `\"vonage mcp server setup guide vonage documentation mcp server getting started in your ide\"`\n* **Source URL:** `https://developer.vonage.com/en/blog/introducing-the-vonage-documentation-mcp-server`\n* **Verbatim Quote:** `\"To help developers start experimenting, Vonage has launched its first MCP server: the Vonage Documentation Server, which lets agents search and retrieve information directly from the official docs. This will soon be followed by a Tooling MCP Server, which will go further by exposing live API functions.\"`\n\n---\n\n### 6. Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. Vonage provides comprehensive public documentation, fully self-serve free developer accounts with test credits, and publicly available OpenAPI specifications for all its products. A developer can immediately build a multi-tenant integration or an AI agent toolkit.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"vonage\" oauth2 multi tenant OR \"third party\" OR \"marketplace\"",
+   "vonage api \"openapi spec\" github",
+   "vonage mcp server",
+   "vonage free tier pricing",
+   " \"oauth2\"",
+   " \"api key and secret\" multi-tenant",
+   "vonage api \"oauth\" app marketplace",
+   "vonage developer \"oauth2\"",
+   "\"vonage\" \"sandbox\" messages api",
+   "vonage sandbox environment"
+  ],
+  "search_sources": [
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGK9sTLN6Mwf__RYLX2dkE0ocKZZ2wKdAWdKvOTP6Jm6Uft1ANX77gLc5aZ0FnRXNHbmMjrq7tbyinZ7cMKnAyfTsPt5vn0gGXdBS5luXeBikQFdliJ2ZXgw6muqg=="
+   },
+   {
+    "title": "vonage.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHf-sm6wiSwy5wh0dgDat2qkslsYZggzkZj5BH5bMJGyhRvbgfULjOAVO-BRtrZTDae3-SzGtMdjpr4YaypjXZ2D-Rba4e0g5-wOcuTa2bXgdgxT-lGTNm6tbrsdcxJZGfSBJDCRkiCNaWNBsm75Y="
+   },
+   {
+    "title": "youtube.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjts-Pi-b-Q6EY7zBDw9tsu6zEHqHMViCTArIPcrMAzstC4THs5NmxP2SwfFbPU_wM0Z52WhVzHo7Yf7iVE2a7EDjWtFK9pysoSWs74ZAmqNlKbzEyFx-dl4u47UjeudRvPRR9jQ0="
+   },
+   {
+    "title": "vonage.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHA7F5zRKMYEI8LKv4zeEb445q6WQlfUqWlKNx9Enz8obgFBM5PPbuMk2taEMraGmbKSFmOYTU7_hYULatWLwRM0LF1vJ4YNtBMLYd-AxS-5wGoa30OrCBMBLPqVY67K8BnSqsUl3-YGxI2LQnK81w="
+   },
+   {
+    "title": "dev.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDSt6A0lJt7o3G6foJIkSVDho5TmB8I3pQpumXmI9egDJwk4b9x3owicmEgiHdX6Czw87-VMsw2qK80tkuRC4qTlZZ48D85wvW13hUAHyffUFVS8eQGpWjXhptXixL5XJXsf9lE0V35Hbb1SB5scAF8G-ZFJVoaX0HMA=="
+   },
+   {
+    "title": "vonage.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWu7BVxlTyUtzeU_rPrL-UzFDrphtQstVM347SOXomkbRetp_LYoUE_T2BWXZzfK4EFylYqD8GyLlAq3sXdhllW5CMqsfAF1ylKQT1BN3EMsFPBR0qXeaVF78I2Q54nN30ADvGhsGu3lveaX9LNkHMRhgrKJxtLZ8="
+   },
+   {
+    "title": "make.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOZa8Gqx74BKcAX8AgOataZ7Xnmw5b6hIUKPDcKQ84y4lP2cIQLv168AgqkmHgUPwUeAXT2Bv71TQCTi8KdL8Jtg3n91STM130W99k6Fp42gpaoRuXFzw="
+   },
+   {
+    "title": "vonage.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqd9Ud10Ry6FMJweXFQ2W5ZnNbJJtn7P5nYLCInGntTQEC4CWGoQ6l_L2CyOLYmCzXpDswcbG5X1u7AsXC54n9iXkeLwBpgtaHY2TTkJPe7Lqo3BRmPaAvA31O0nHrTtIGPtkvUBx0MNBbIhOIEoHDe0XwdKWVBkOwPsEmeiu10u-5EOY-bCqX4SuJG7mKr-3lLA=="
+   },
+   {
+    "title": "vonage.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJFG2m5sSZ5wfNnj3NwRTn_xr0iYkpHB9FhV9uUGNAdSzzVnuiPa1IsHukIdpaMy_urEHg5a-KzcMQhmfINW6e0wX_0gqjI2A3RfBIwRu-41o7PkpWZK1nJ1WRbXVNvHd00PUk73YEVXKU-gb18AMJq-YldgsB8TWmj_XA9nfIchw="
+   },
+   {
+    "title": "vonage.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzWdyI7QMILk1m7uWHvttrbEiZ1oRDKF316ry_2tpY1mmhPdKj9Zy2lGHWW1wNGAImSwIpkTs63BRhEVr-GNxpFRljZ4NTfICrIaNxMG_kVL1Ova__dLIKtDY9pDGhKyqaMj4tl7tIO4eCLFFTYg3qcRvrN7-i6hyQJz1r8AdSz_lf_Es="
+   }
+  ],
+  "tokens": 9056,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "Vonage API authentication developer.vonage.com",
+    "Vonage API keys developer.vonage.com",
+    "Vonage OAuth developer developer.vonage.com",
+    "Vonage API getting started developer.vonage.com",
+    "Vonage API quickstart developer.vonage.com",
+    "Vonage developer guide developer.vonage.com",
+    "Vonage API pricing vonage.com",
+    "Vonage developer program vonage.com",
+    "Vonage API plans vonage.com",
+    "Vonage API reference developer.vonage.com",
+    "Vonage API documentation index developer.vonage.com",
+    "Vonage MCP server",
+    " authentication api keys oauth",
+    " getting started quickstart",
+    " pricing api access plans",
+    " api reference index",
+    " Vonage Startup Program",
+    "Vonage Documentation MCP Server URL",
+    "Vonage MCP server github",
+    " \"Authentication - API Concepts\"",
+    " \"CAMARA OAuth2 Scheme\"",
+    " \"Getting Started With Vonage APIs (New User Guide)\"",
+    " \"API Reference\"",
+    " \"Voice API Pricing\"",
+    " \"Messages API Pricing\"",
+    " \"Video API Pricing\"",
+    " \"Startup Program\"",
+    " \"Telephony MCP Server Vonage\""
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://developer.vonage.com/en/getting-started/overview",
+    "https://www.vonage.com/communications-apis/voice/pricing/",
+    "https://documentation-mcp.vonage.dev/",
+    "https://developer.vonage.com/en/api/camara/oauth2",
+    "https://www.vonage.com/communications-apis/sms/pricing/",
+    "https://www.vonage.com/communications-apis/video/pricing/",
+    "https://developer.vonage.com/en/getting-started/concepts/authentication",
+    "https://developer.vonage.com/en/auth/camara",
+    "https://developer.vonage.com/en/blog/introducing-the-vonage-documentation-mcp-server",
+    "https://zenn.dev/nonejp/articles/acc96e1bca0102",
+    "https://github.com/Vonage/vonage-mcp-server-documentation",
+    "https://www.mcpbundles.com/skills/vonage-com-vgis"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://developer.vonage.com/en/concepts/authentication",
+     "status": 404
+    },
+    {
+     "url": "https://developer.vonage.com/en/api-reference",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://developer.vonage.com/en/getting-started/overview",
+     "status": 200,
+     "chars": 6913,
+     "readable": true
+    },
+    {
+     "url": "https://www.vonage.com/communications-apis/voice/pricing/",
+     "status": 200,
+     "chars": 13673,
+     "readable": true
+    },
+    {
+     "url": "https://documentation-mcp.vonage.dev/",
+     "status": 200,
+     "chars": 809,
+     "readable": true
+    },
+    {
+     "url": "https://developer.vonage.com/en/api/camara/oauth2",
+     "status": 200,
+     "chars": 528,
+     "readable": true
+    },
+    {
+     "url": "https://www.vonage.com/communications-apis/sms/pricing/",
+     "status": 200,
+     "chars": 14317,
+     "readable": true
+    },
+    {
+     "url": "https://www.vonage.com/communications-apis/video/pricing/",
+     "status": 200,
+     "chars": 19173,
+     "readable": true
+    },
+    {
+     "url": "https://developer.vonage.com/en/getting-started/concepts/authentication",
+     "status": 200,
+     "chars": 25338,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 67.9
+ }
+}

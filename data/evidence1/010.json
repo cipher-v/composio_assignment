@@ -1,0 +1,63 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://dealcloud.com",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": true,
+   "claim": "access",
+   "url": "https://g2.com",
+   "status": 403,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://dealcloud.com",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://releasebot.io",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  }
+ ],
+ "auth_support": {
+  "oauth2": false,
+  "api_key": false,
+  "basic": false,
+  "jwt": false
+ },
+ "lint": [],
+ "summary_for_verifier": "- Bot-walled / login pages our crawler could not read (verify via search): ['https://g2.com']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://dealcloud.com', 'https://dealcloud.com', 'https://releasebot.io']\n- Non-vendor sources (prefer official docs): ['https://releasebot.io']\n- Auth methods not mentioned on any cited page: ['oauth2', 'api_key', 'basic', 'jwt']",
+ "metrics": {
+  "n_evidence": 4,
+  "alive_rate": 0.75,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.25,
+  "official_rate": 0.5,
+  "readable": 3,
+  "quote_supported_rate": 0.0,
+  "lint_issues": 0,
+  "flag_count": 4
+ }
+}

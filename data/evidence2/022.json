@@ -1,0 +1,62 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZ-FIDzpqbHt5_Glt7zHFVGQUC07yTMOS4dLYk-y0CBCXSZqBaqLXUX4cv9QeL3kXQZZNf7UTdFMdSTtCkp4LYnNUQSUkRnrH__K0se_4r-jlosbBwCsL6PVITJtLkV_09gjbv2MY",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.43
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFj-dc4XCjgh85SH4jeeymicTfh-sS4c-K22dEhWsKAiTa_pk8uVrfqqcqoCjs9MVK6zmOdVAYGgogWOHcdO5QRvdhpMhCB65rrf-s04gU6VSVoKRmLfypJpuM7GIJWqhbdOR8=",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.77
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG95a8ElCUGoKPShUbR5l52Svn1z9XYAFSRmu2VIUBx8WPgGmsZYXn_UD6LUm_QZwjOlzHKiVJWAEleIP19BSM7xHxqoh6QuWvhN6EFD_EAd5ERUyRJKOExHbg",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.67
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF95TCg2NVwRt-YBIDhY6wwX0Had6rjKZtNvGWqpiNEV33JsYSvQlqCqvl1G7nEUX5TEMrjnRpSRL4zhJrW6XXdiNugCxnqVygoIiDTZycFBhqn-mCDRw==",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.6
+  }
+ ],
+ "auth_support": {
+  "basic": false,
+  "api_key": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZ-FIDzpqbHt5_Glt7zHFVGQUC07yTMOS4dLYk-y0CBCXSZqBaqLXUX4cv9QeL3kXQZZNf7UTdFMdSTtCkp4LYnNUQSUkRnrH__K0se_4r-jlosbBwCsL6PVITJtLkV_09gjbv2MY']\n- Non-vendor sources (prefer official docs): ['https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZ-FIDzpqbHt5_Glt7zHFVGQUC07yTMOS4dLYk-y0CBCXSZqBaqLXUX4cv9QeL3kXQZZNf7UTdFMdSTtCkp4LYnNUQSUkRnrH__K0se_4r-jlosbBwCsL6PVITJtLkV_09gjbv2MY', 'https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFj-dc4XCjgh85SH4jeeymicTfh-sS4c-K22dEhWsKAiTa_pk8uVrfqqcqoCjs9MVK6zmOdVAYGgogWOHcdO5QRvdhpMhCB65rrf-s04gU6VSVoKRmLfypJpuM7GIJWqhbdOR8=', 'https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG95a8ElCUGoKPShUbR5l52Svn1z9XYAFSRmu2VIUBx8WPgGmsZYXn_UD6LUm_QZwjOlzHKiVJWAEleIP19BSM7xHxqoh6QuWvhN6EFD_EAd5ERUyRJKOExHbg', 'https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF95TCg2NVwRt-YBIDhY6wwX0Had6rjKZtNvGWqpiNEV33JsYSvQlqCqvl1G7nEUX5TEMrjnRpSRL4zhJrW6XXdiNugCxnqVygoIiDTZycFBhqn-mCDRw==']\n- Auth methods not mentioned on any cited page: ['basic']",
+ "metrics": {
+  "n_evidence": 4,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.0,
+  "readable": 4,
+  "quote_supported_rate": 0.75,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

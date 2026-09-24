@@ -1,0 +1,245 @@
+{
+ "app": {
+  "id": 36,
+  "name": "Klaviyo",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "developers.klaviyo.com"
+ },
+ "record": {
+  "subcategory": "Marketing Automation",
+  "one_liner": "Klaviyo is a marketing automation platform and B2C CRM for email and SMS marketing.",
+  "auth_methods": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Private API Keys for server-side REST API, Public API Keys (Site ID) for client-side tracking, and OAuth 2.0 for third-party integrations. OAuth is mandated for public integrations and marketplace listings.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up for a free Klaviyo account without a credit card, which includes API access. OAuth credentials can be created instantly via the Klaviyo Developer Console.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "RESTful API (JSON:API compliant) covering profiles, metrics, lists, segments, campaigns, templates, web feeds, and custom objects.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "The Klaviyo remote MCP server is a hosted Model Context Protocol endpoint at https://mcp.klaviyo.com/mcp.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://developers.klaviyo.com/en/v1-2/reference/api-overview",
+    "quote": "The following klaviyo resources can be accessed using our restful apis: metrics profiles lists & segments data privacy campaigns templates"
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.klaviyo.com/en/docs/authenticate_",
+    "quote": "All /api endpoints use API private keys to authenticate requests."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.klaviyo.com/en/docs/authenticate_",
+    "quote": "All /client endpoints use a public API key: your 6-character company ID, also known as a site ID."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.klaviyo.com/en/docs/authenticate_",
+    "quote": "If you are a tech partner integrating with Klaviyo, we recommend using OAuth to make authorized API calls."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.klaviyo.com/en/docs/set_up_oauth",
+    "quote": "We now require all of our published partners to use OAuth when integrating with Klaviyo."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.klaviyo.com/uk/pricing",
+    "quote": "The free plan allows you to create a Klaviyo account, import or sync your contacts and activity data, use the drag-and-drop email/SMS editors and build automations, segmentation and reports. On this tier you are limited to up to 250 active profiles (contacts who may receive marketing emails) and 500 email sends per month."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.klaviyo.com/en/docs/set_up_oauth",
+    "quote": "Go to your Klaviyo Developer Console. Create an OAuth app... Grab your Client ID and Client Secret."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.klaviyo.com/en/docs/set_up_oauth",
+    "quote": "Your app must use OAuth in order to be considered for Klaviyo's App Marketplace."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.klaviyo.com/en/v1-2/reference/api-overview",
+    "quote": "These apis are organized around rest, and use your private api keys for authentication."
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/klaviyo/openapi",
+    "quote": "OpenAPI Specification for Klaviyo's API... Path, Contents, Use it when. openapi/stable.json, Full GA spec (~2.5 MB, all operations across all categories)"
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.klaviyo.com/en/docs/authenticate_",
+    "quote": "Our Webhooks API specifically handles system webhook management, i.e., it allows you to forward Klaviyo events to external endpoints of your choosing... Note that only Advanced KDP customers and Klaviyo app partners can access and manage webhooks with our Webhooks API."
+   },
+   {
+    "claim": "api",
+    "url": "https://help.klaviyo.com/hc/en-us/articles/360045726811",
+    "quote": "If you would like to test custom integrations and applications without any risk of impacting your production account, you can create an additional free Klaviyo account for testing purposes."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://developers.klaviyo.com/en/docs/authenticate_",
+    "quote": "The Klaviyo remote MCP server is a hosted Model Context Protocol endpoint at https://mcp.klaviyo.com/mcp, so AI assistants can connect to it without installing or running anything locally."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### 1. Product Capabilities\nKlaviyo is a marketing automation platform and B2C CRM designed for managing customer data, email, and SMS marketing. It provides tools for tracking user behavior, segmenting audiences, building automated flows, and running campaigns.\n*   **Source:** `https://developers.klaviyo.com/en/v1-2/reference/api-overview`\n*   **Quote:** \"The following klaviyo resources can be accessed using our restful apis: metrics profiles lists & segments data privacy campaigns templates\"\n\n### 2. Authentication Methods & Multi-Tenant Integration\nKlaviyo provides three primary authentication methods:\n1.  **Private API Keys (`api_key`):** Used for server-side REST API endpoints to read and write data.\n    *   **Source:** `https://developers.klaviyo.com/en/docs/authenticate_`\n    *   **Quote:** \"All /api endpoints use API private keys to authenticate requests.\"\n2.  **Public API Keys / Site ID (`api_key`):** A 6-character identifier used for client-side tracking endpoints.\n    *   **Source:** `https://developers.klaviyo.com/en/docs/authenticate_`\n    *   **Quote:** \"All /client endpoints use a public API key: your 6-character company ID, also known as a site ID.\"\n3.  **OAuth 2.0 (`oauth2`):** Used for third-party integrations and applications.\n    *   **Source:** `https://developers.klaviyo.com/en/docs/authenticate_`\n    *   **Quote:** \"If you are a tech partner integrating with Klaviyo, we recommend using OAuth to make authorized API calls.\"\n\n**Primary Auth Method for Multi-Tenant Integration:** `oauth2`\nKlaviyo mandates OAuth for all public integrations and marketplace listings.\n*   **Source:** `https://developers.klaviyo.com/en/docs/set_up_oauth`\n*   **Quote:** \"We now require all of our published partners to use OAuth when integrating with Klaviyo.\"\n\n### 3. Developer Credentials & Cost\n*   **Access Level:** `self_serve_free`\n*   **Process & Cost:** Any developer can sign up for a free Klaviyo account without a credit card. This free plan includes API access and allows testing core features.\n    *   **Source:** `https://www.klaviyo.com/uk/pricing`\n    *   **Quote:** \"The free plan allows you to create a Klaviyo account, import or sync your contacts and activity data, use the drag-and-drop email/SMS editors and build automations, segmentation and reports. On this tier you are limited to up to 250 active profiles (contacts who may receive marketing emails) and 500 email sends per month.\"\n*   **Obtaining OAuth Credentials:** Developers can instantly create an OAuth app via the Klaviyo Developer Console to obtain a Client ID and Client Secret. No upfront approval or sales contact is required for development.\n    *   **Source:** `https://developers.klaviyo.com/en/docs/set_up_oauth`\n    *   **Quote:** \"Go to your Klaviyo Developer Console. Create an OAuth app... Grab your Client ID and Client Secret.\"\n*   **App Review:** App review is only required if the developer wishes to list the application publicly on the Klaviyo App Marketplace.\n    *   **Source:** `https://developers.klaviyo.com/en/docs/set_up_oauth`\n    *   **Quote:** \"Your app must use OAuth in order to be considered for Klaviyo's App Marketplace.\"\n\n### 4. API Style & Technical Characteristics\n*   **API Style:** REST (JSON:API compliant).\n    *   **Source:** `https://developers.klaviyo.com/en/v1-2/reference/api-overview`\n    *   **Quote:** \"These apis are organized around rest, and use your private api keys for authentication.\"\n*   **API Breadth:** Extremely broad, covering profiles, metrics, lists, segments, campaigns, templates, web feeds, and custom objects.\n*   **OpenAPI Spec:** Yes, Klaviyo maintains a public GitHub repository with full and per-category OpenAPI 3 specifications.\n    *   **Source:** `https://github.com/klaviyo/openapi`\n    *   **Quote:** \"OpenAPI Specification for Klaviyo's API... Path, Contents, Use it when. openapi/stable.json, Full GA spec (~2.5 MB, all operations across all categories)\"\n*   **Webhooks:** Yes, Klaviyo provides a Webhooks API for managing system webhooks, though it is restricted to certain tiers or app partners.\n    *   **Source:** `https://developers.klaviyo.com/en/docs/authenticate_`\n    *   **Quote:** \"Our Webhooks API specifically handles system webhook management, i.e., it allows you to forward Klaviyo events to external endpoints of your choosing... Note that only Advanced KDP customers and Klaviyo app partners can access and manage webhooks with our Webhooks API.\"\n*   **Sandbox/Test Environment:** Developers can create dedicated free test accounts linked to their main login.\n    *   **Source:** `https://help.klaviyo.com/hc/en-us/articles/360045726811`\n    *   **Quote:** \"If you would like to test custom integrations and applications without any risk of impacting your production account, you can create an additional free Klaviyo account for testing purposes.\"\n\n### 5. Model Context Protocol (MCP) Servers\n*   **MCP Support:** `official`\n*   **Details:** Klaviyo officially supports and hosts a remote MCP server, allowing AI clients to interact directly with Klaviyo's APIs using natural language.\n    *   **Source:** `https://developers.klaviyo.com/en/docs/authenticate_`\n    *   **Quote:** \"The Klaviyo remote MCP server is a hosted Model Context Protocol endpoint at https://mcp.klaviyo.com/mcp, so AI assistants can connect to it without installing or running anything locally.\"\n\n### 6. Buildability Verdict\n*   **Verdict:** `ready_now`\n*   **Main Blocker:** `none`\n*   **Reasoning:** Klaviyo provides a completely self-serve free tier with full API capabilities, instant OAuth app creation via the developer console, comprehensive OpenAPI specifications, and an officially hosted MCP server. There are no financial or administrative hurdles blocking immediate toolkit development.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "klaviyo free tier developer account",
+   "klaviyo api authentication oauth private key",
+   "klaviyo openapi spec webhooks",
+   "klaviyo mcp server"
+  ],
+  "search_sources": [
+   {
+    "title": "mcpservers.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPku9K82MwBRylUihF2Ear83dhz3zvMUB7SG1e7HruPpRIaQEpL4wjvoGth_k49UAvbQ2ZSUV_yUGKCvpRuYJrKTH2J96Ng3gfFTYfhqawHZe34ar-R33UNQXqMlv7FUlruk_GaXJbj7tQPeQ="
+   },
+   {
+    "title": "klaviyo.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcCHc5VRZLZYyOq0jentLVE0U29yyWSDlXRyA6ZoG_biWAUybLtbt1nuQJ2f8X1kZoqj23x_Gg3mn2Es7AMbEjjNpZ974U6SyN-Q6a5fYA9Xfluv1LLSRzESZU12V8MLQcg_urfIwRsQON_0BWjtg="
+   },
+   {
+    "title": "klaviyo.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8Sxp5MdGAAGmsNvsmWCl7nHetffP8QX4syfLH_3yU7U86Awgd4OaN5oyy2-xOqa_T9pd_z30ITZDznRQdw5AuR8493q6sIloEy8s71RxluZy2nf3kdQ3u7Ac="
+   },
+   {
+    "title": "checkthat.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRyOfg4-TS5aWs_IchaqsNvl-YDHXvNlQsILRuFoCMdC5eDCgBpc7WzbAgs-IRcK0-Wx41TcNg-NLA6-mJnMtVyS0RIg4Qk1TILKRdVNo9RSZoFzUvR5AGAdupMd5ZmcMbtbSNhms="
+   },
+   {
+    "title": "omnisend.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbN3ohMSONug0ZMHCMf3Oy9T11cTw6CGUXa0eDdXfkMNzjbnsOHISrEayW2LCQfYo2yhOlYIXQ6YviNxThgnUlxn55fu0Qhvm2N3JzUw2K-nFV6FBnTdtzOOg6lcCWW2esAFvNnnc1ZCg="
+   },
+   {
+    "title": "klaviyo.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVF6A2fLwMqD6UMYGxnLrWJkMSwc7SicAEbdusQ7OONXJMmgajpckekQS8Gc8qORHe9ueQZEN5iyD1lka1dUsGjPsR27FSp5ym5UwbXwyT88iMODcHnYejjs3LcczNFHy1etVsC6bgkXUKhRoaPvDl5d6MUzYtQ721aCrMeJDMWxOZ_KgWyeG8UFShWp4KWwQhyQ=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHApkmRgKV158TkshKpkWwfFBKZsMMfaZQ-XFZ75KFca0XwF7GPTqrfAb_ve1vPeoBYSTRcQyChSdbe-2fHGWGC3MT7CXAqSnGzPdhTGv0RejadtT7fWTcgBmy-5Hk="
+   },
+   {
+    "title": "klaviyo.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5WRle5sCBa7uFZ33--VtWf4ZNHa8q914d7rjMOapOQK4Ryln-oh0kBYyxckYGOKvZWht1zWpt1tUt6zkn9ZnOLInkS3ChMTSF1IhYE-EGYMbwch4a10ckVdVwO5lso0KfdDTmrCGgk-g_ID55ftQT0I8h"
+   },
+   {
+    "title": "klaviyo.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyDXHlJZ0p2IwSEA50urVi6P2zmzg1Ki1w9PRHJoEmCaieJsZnD-tWMWZ-6zMfZAOG9Kmy5td2bbdSwrbPuwmNeXN9IlDJ17h1DiU3P4lvapf3_5CyPKdaR2vTR1ET5Jn5KOrp8nYVRei4oR7i_6Pc-z_39gLQfStPKj4n"
+   },
+   {
+    "title": "klaviyo.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEytMiq6ZzDzG3L6jrYCBZUp3HiwlyTzpfYAVol10Esj4QiC5UPcY3S4ThO1VmIvqrYRb7A1avLS6Hi0gBx5PYct2XCJnh187Fem5BA4RG9OEVda5SF3-z1LzDkjSAk3CliNDNcr6ml5TY0cCDPeqE0BuCx8gCHpQ=="
+   },
+   {
+    "title": "magnetmonster.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgPki6eSqnE5nj3j--N0LzGFTEYZ0jD9e546nacv14bvhymNEQNMkUEPnuTVDJwx9wV8PpewBDrMueKxfwOiwcTkGd9-LZwkV7lE5SsrZLLMl95pm_HVAFYb4BZjjUebuC4owHUGB3HNeZ0I5YAoQPamlDGApwDIMN16-GKlJlZHgkGeXFV8xwQ1gOybQ5a04="
+   },
+   {
+    "title": "klaviyo.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEmYJ3yozWdEcHNzYGUqHZfyk78BNrrnGflzruRT3qmona5JNpLje33ZkcZDgLKfXmQfpPvuRogAsNzi06at0Mq-5H5USw0iwQs_4je4rlPsvVQpGIRg0nRVPNjluvMzqMMKFOiYpV_YKblPU6GsFB"
+   },
+   {
+    "title": "klaviyo.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhtZYdKCFmI9AuWXPq4GBqHUrHO1nQ4yKJa9gqFAsyZntO3ifiAooCOGU2A5DsZXhkNl4rgpavrhjdDTZCe80g2dzZeosoxMeELV6-kxYWXdfgfSMFmc744pq_Mp1VC8mPBtFNsyc6Cu96xg_9P3b4oLUMqw=="
+   }
+  ],
+  "tokens": 12685,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Klaviyo API authentication",
+    "Klaviyo API keys",
+    "Klaviyo OAuth",
+    "Klaviyo API getting started",
+    "Klaviyo API quickstart",
+    "Klaviyo API pricing",
+    "Klaviyo API access plans",
+    "Klaviyo developer program",
+    "Klaviyo API reference",
+    "Klaviyo API documentation",
+    "Klaviyo MCP server"
+   ],
+   "candidates": 0,
+   "live_urls": [
+    "https://developers.klaviyo.com/en/docs/authenticate_",
+    "https://help.klaviyo.com/hc/en-us/articles/360045726811",
+    "https://www.klaviyo.com/uk/pricing",
+    "https://developers.klaviyo.com/en/v1-2/reference/api-overview",
+    "https://developers.klaviyo.com/en/v2023-01-24/docs/retrieve_api_credentials",
+    "https://developers.klaviyo.com/en/docs/set_up_oauth",
+    "https://developers.klaviyo.com/en/docs/get_started",
+    "https://developers.klaviyo.com/en/v2023-07-15/reference/api_overview"
+   ],
+   "bad_candidates": [],
+   "pages_read": [
+    {
+     "url": "https://developers.klaviyo.com/en/docs/authenticate_",
+     "status": 200,
+     "chars": 12214,
+     "readable": true
+    },
+    {
+     "url": "https://help.klaviyo.com/hc/en-us/articles/360045726811",
+     "status": 200,
+     "chars": 13607,
+     "readable": true
+    },
+    {
+     "url": "https://www.klaviyo.com/uk/pricing",
+     "status": 200,
+     "chars": 13764,
+     "readable": true
+    },
+    {
+     "url": "https://developers.klaviyo.com/en/v1-2/reference/api-overview",
+     "status": 200,
+     "chars": 8494,
+     "readable": true
+    },
+    {
+     "url": "https://developers.klaviyo.com/en/v2023-01-24/docs/retrieve_api_credentials",
+     "status": 200,
+     "chars": 5587,
+     "readable": true
+    },
+    {
+     "url": "https://developers.klaviyo.com/en/docs/set_up_oauth",
+     "status": 200,
+     "chars": 29167,
+     "readable": true
+    },
+    {
+     "url": "https://developers.klaviyo.com/en/docs/get_started",
+     "status": 200,
+     "chars": 7569,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 95.2
+ }
+}

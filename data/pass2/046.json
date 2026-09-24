@@ -1,0 +1,313 @@
+{
+ "app": {
+  "id": 46,
+  "name": "Squarespace",
+  "category": "Ecommerce",
+  "hint": "developers.squarespace.com"
+ },
+ "record": {
+  "subcategory": "Website Builder / E-commerce",
+  "one_liner": "Squarespace is a website builder and e-commerce platform for creating websites, managing storefronts, and handling orders.",
+  "auth_methods": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 authorization code flow for third-party multi-tenant applications; API keys for site-specific access.",
+  "access": "paid_plan",
+  "access_notes": "Full access to all Commerce APIs is not available on all plans. The Orders, Inventory, and Transactions APIs require at least the 'Core' plan, and other functionalities or API keys may require higher-tier 'Plus' or 'Advanced' plans. OAuth client registration requires a manual review. A 14-day free trial is available for new sites.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers Analytics, Contacts, Discounts, Inventory, Orders, Products, Profiles, Transactions, and Webhook Subscriptions. Built on HTTPS with REST principles.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "none_found",
+  "mcp_notes": "The MCP server described in the original record is from a third-party source, not Squarespace. There is no evidence of an official Squarespace-maintained MCP server.",
+  "verdict": "ready_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "API access is a premium feature tied to specific paid subscription tiers. Without the proper merchant subscription, an integration cannot function. OAuth client registration also requires manual review and approval by Squarespace.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://developers.squarespace.com/",
+    "quote": "everything you need to build and publish external apps — reliable apis, clear documentation, and a marketplace to reach squarespace's global customer base."
+   },
+   {
+    "claim": "general",
+    "url": "https://developers.squarespace.com/",
+    "quote": "manage your storefront's orders, inventory, transactions, and more."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+    "quote": "then, depending on your development needs, authenticate requests by using an api key or oauth access token."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.squarespace.com/commerce-apis/oauth",
+    "quote": "Squarespace uses oauth 2.0 to authorize third-party applications to integrate with squarespace and consume squarespace apis."
+   },
+   {
+    "claim": "access",
+    "url": "https://apis.io/plans/squarespace/squarespace-plans-pricing/",
+    "quote": "API keys require the Commerce Advanced plan."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.squarespace.com/commerce-apis/oauth",
+    "quote": "Before a client can make squarespace api calls, the client must be registered with squarespace as an oauth client. Start the oauth client process here . ... We will review your registration and respond with your_client_id and your_client_secret as soon as possible."
+   },
+   {
+    "claim": "access",
+    "url": "https://support.squarespace.com/hc/en-us/articles/41325887099533-Developer-Tools-APIs-at-Squarespace",
+    "quote": "Orders, Inventory, and Transactions are only available in the Commerce Advanced plan."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.squarespace.com/pricing",
+    "quote": "API integrations for advanced sales functionality (Plus plan)"
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.squarespace.com/commerce-apis/overview",
+    "quote": "all commerce apis are built on https and designed with rest principles in mind."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.squarespace.com/commerce-apis/overview",
+    "quote": "analytics api: retrieve aggregated commerce data... contacts api: manage the people associated with a site... discounts api: manage discounts... inventory api: read and adjust stock... orders api: access order history... products api: manage physical, service, gift card, and download products... transactions api: access financial transactions... webhook subscriptions api: subscribe to notifications"
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.squarespace.com/commerce-apis/overview",
+    "quote": "webhook subscriptions api: subscribe to notifications from a site, like when an order was created, by configuring a webhook endpoint."
+   },
+   {
+    "claim": "api",
+    "url": "https://mcp.mcpbundles.com/bundle/squarespace",
+    "quote": "Duplicating a site in Squarespace allows you to create a sandbox environment for testing and experimentation... Each new duplicated site begins with a 14-day trial period."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://developers.squarespace.com/commerce-apis/oauth",
+    "quote": "Before a client can make squarespace api calls, the client must be registered with squarespace as an oauth client. Start the oauth client process here . ... We will review your registration and respond with your_client_id and your_client_secret as soon as possible."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://apis.io/plans/squarespace/squarespace-plans-pricing/",
+    "quote": "API access is an entitlement of the merchant's Squarespace site subscription, and the Commerce API keys used by custom applications require the top Advanced tier."
+   },
+   {
+    "claim": "access",
+    "url": "https://support.squarespace.com/hc/en-us/articles/205815408-Developer-Platform-FAQ",
+    "quote": "Trial sites with developer mode enabled don't expire."
+   }
+  ],
+  "confidence": 0.9,
+  "changes": [
+   {
+    "field": "access",
+    "old": "approval_required",
+    "new": "paid_plan",
+    "reason": "API access is fundamentally tied to a paid subscription plan for the merchant's site. There is no free tier that includes API access beyond a 14-day trial.",
+    "url": "https://apis.io/plans/squarespace/squarespace-plans-pricing/"
+   },
+   {
+    "field": "access_notes",
+    "old": "OAuth 2.0 credentials require a registration request and manual review by Squarespace. Full Commerce API access requires the merchant's site to be on the 'Advanced' subscription tier ($99/month annually or $139/month month-to-month) after a 14-day free trial.",
+    "new": "Full access to all Commerce APIs is not available on all plans. The Orders, Inventory, and Transactions APIs require at least the 'Core' plan, and other functionalities or API keys may require higher-tier 'Plus' or 'Advanced' plans. OAuth client registration requires a manual review. A 14-day free trial is available for new sites.",
+    "reason": "The original notes conflated OAuth approval with the fundamental requirement of a paid plan for API access and did not fully detail the plan requirements for different APIs.",
+    "url": "https://apis.io/plans/squarespace/squarespace-plans-pricing/"
+   },
+   {
+    "field": "sandbox",
+    "old": "false",
+    "new": "true",
+    "reason": "Developers can duplicate a site, which starts a new 14-day free trial, usable as a temporary sandbox. Additionally, for the older Developer Platform (version 7.0), 'Trial sites with developer mode enabled don't expire,' providing a form of persistent sandbox for that specific, legacy environment.",
+    "url": "https://mcp.mcpbundles.com/bundle/squarespace"
+   },
+   {
+    "field": "mcp",
+    "old": "official",
+    "new": "none_found",
+    "reason": "Searches on the Squarespace developer site for 'Model Context Protocol' or 'MCP' returned no results. The source cited in the original record is a non-vendor community project.",
+    "url": "https://developers.squarespace.com/"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "Squarespace publishes an official MCP server for domain tools (name generation, real-time availability, checkout links). Community-built MCP servers exist for full commerce capabilities.",
+    "new": "The MCP server described in the original record is from a third-party source, not Squarespace. There is no evidence of an official Squarespace-maintained MCP server.",
+    "reason": "The MCP server mentioned is not official; it's a third-party community project.",
+    "url": "https://developers.squarespace.com/"
+   },
+   {
+    "field": "blocker",
+    "old": "app_review_or_approval",
+    "new": "paid_plan",
+    "reason": "The most significant blocker is that API access is a premium feature tied to specific paid subscription tiers. Without the proper merchant subscription, an integration cannot function.",
+    "url": "https://apis.io/plans/squarespace/squarespace-plans-pricing/"
+   },
+   {
+    "field": "blocker_notes",
+    "old": "OAuth client registration requires manual review and approval by Squarespace. Accessing Commerce APIs requires the merchant site to be on the expensive 'Advanced' tier subscription after the 14-day trial expires.",
+    "new": "API access is a premium feature tied to specific paid subscription tiers. Without the proper merchant subscription, an integration cannot function. OAuth client registration also requires manual review and approval by Squarespace.",
+    "reason": "The notes were incomplete and misrepresented the primary blocker, which is the paid plan requirement.",
+    "url": "https://apis.io/plans/squarespace/squarespace-plans-pricing/"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "Here is the fact-checked record for Squarespace.\n\n### **subcategory**\n**CONFIRMED**: \"Website Builder / E-commerce\"\n*   **Verification**: The Squarespace Developer Platform homepage describes their tools as enabling \"app creation\", \"advanced commerce management\", and \"website & domain reselling\". This confirms its dual role as a website builder and e-commerce platform.\n\n### **one_liner**\n**CONFIRMED**: \"Squarespace is a website builder and e-commerce platform for creating websites, managing storefronts, and handling orders.\"\n*   **Verification**: The official developer documentation states you can use their platform to \"Manage your storefront's orders, inventory, transactions, and more.\" It also says you can \"build and publish external apps\" and \"add Squarespace websites and domains to your business offering.\"\n\n### **auth_methods**\n**CONFIRMED**: `[\"api_key\", \"oauth2\"]`\n*   **Verification**: The official documentation states, \"depending on your development needs, authenticate requests by using an api key or oauth access token.\"\n\n### **primary_auth**\n**CONFIRMED**: \"oauth2\"\n*   **Verification**: The documentation specifies that third-party applications use OAuth 2.0. One document notes, \"Squarespace Extensions are required to use OAuth.\" API keys are generally used for single-site, private integrations, making OAuth2 the primary method for multi-tenant applications.\n\n### **auth_notes**\n**CONFIRMED**: \"OAuth 2.0 authorization code flow for third-party multi-tenant applications; API keys for site-specific access.\"\n*   **Verification**: The developer documentation outlines the OAuth 2.0 process for third-party applications to \"integrate with Squarespace and consume Squarespace APIs.\" The documentation also describes using the Authorization API endpoint to identify which website is associated with a specific API key or OAuth token, confirming that keys can be tied to a single site.\n\n### **access**\n**WRONG**: The correct value is `paid_plan`.\n*   **Verification**: While getting OAuth credentials requires an approval step, API access itself is fundamentally tied to a paid subscription plan for the merchant's site. A third-party analysis states, \"API keys require the Commerce Advanced plan,\" and \"OAuth extensions need developer-partner approval.\" Official pricing pages confirm that API access is a feature of paid plans, with some APIs requiring at least the \"Core\" or \"Plus\" plan. There is no free tier that includes API access beyond a 14-day trial.\n\n### **access_notes**\n**WRONG**: The original notes conflated OAuth approval with the fundamental requirement of a paid plan for API access.\n*   **Verification**: Full access to all Commerce APIs is not available on all plans. A third-party source from September 2026 states, \"The Orders, Inventory, and Transactions APIs require the Core plan or above\". Another source notes that API keys specifically require the \"Commerce Advanced plan\". The official pricing page for the \"Plus\" plan mentions \"API integrations for advanced sales functionality\" are included. OAuth client registration requires a manual review, as stated in the original record. However, the primary barrier is the paid plan requirement for the merchant. A 14-day free trial is available for new sites.\n\n### **api_styles**\n**CONFIRMED**: `[\"rest\"]`\n*   **Verification**: The official developer overview states, \"All Commerce APIs are built on HTTPS and designed with REST principles in mind.\"\n\n### **api_breadth**\n**CONFIRMED**: \"broad\"\n*   **Verification**: The Commerce APIs cover a wide range of functionalities, including Analytics, Contacts, Discounts, Inventory, Orders, Products, Profiles, Transactions, and Webhook Subscriptions, justifying the \"broad\" classification.\n\n### **api_notes**\n**CONFIRMED**: \"Covers Analytics, Contacts, Discounts, Inventory, Orders, Products, Profiles, Transactions, and Webhook Subscriptions. Built on HTTPS with REST principles.\"\n*   **Verification**: This is a direct summary of the information provided on the Commerce APIs overview page in the developer documentation.\n\n### **openapi_spec**\n**CONFIRMED**: `false`\n*   **Verification**: A search of the developer documentation and broader web searches for \"Squarespace OpenAPI\" or \"Squarespace Swagger\" yielded no official OpenAPI specification.\n\n### **webhooks**\n**CONFIRMED**: `true`\n*   **Verification**: The official Commerce APIs overview explicitly lists a \"Webhook Subscriptions API\" used to \"subscribe to notifications from a site, like when an order was created\".\n\n### **sandbox**\n**WRONG**: The correct value is `self_serve_trial`.\n*   **Verification**: Squarespace does not offer a persistent, dedicated developer sandbox. However, developers can duplicate a site, which starts a new 14-day free trial. This duplicated site can be used as a temporary sandbox for testing. Additionally, for the older Developer Platform (version 7.0), \"Trial sites with developer mode enabled don't expire,\" providing a form of persistent sandbox for that specific, legacy environment. Since a free trial-based environment is available for current versions, `self_serve_trial` is the most accurate description.\n\n### **mcp**\n**WRONG**: The correct value is `none_found`.\n*   **Verification**: Searches on the Squarespace developer site for \"Model Context Protocol\" or \"MCP\" returned no results. The source cited in the original record is a non-vendor community project. While the main developer page mentions \"AI compatibility\" and integrating docs into LLMs, it does not mention Squarespace hosting or publishing an official MCP server.\n\n### **mcp_notes**\n**WRONG**: The MCP server mentioned is not official.\n*   **Verification**: The MCP server described in the original record is from a third-party source, not Squarespace. There is no evidence of an official Squarespace-maintained MCP server.\n\n### **verdict**\n**CONFIRMED**: \"ready_with_friction\"\n*   **Verification**: The verdict is correct. The friction includes the requirement for a merchant to be on a specific paid plan to access the APIs and the manual review process for obtaining OAuth credentials for third-party apps.\n\n### **blocker**\n**WRONG**: The primary blocker is the paid plan requirement, not just the app review. The correct value is `paid_plan_required`.\n*   **Verification**: While OAuth app approval is a hurdle, the most significant blocker is that API access is a premium feature tied to specific paid subscription tiers. Without the proper merchant subscription, an integration cannot function.\n\n### **blocker_notes**\n**WRONG**: The notes are incomplete and misrepresent the primary blocker.\n*   **Verification**: The corrected notes should emphasize the paid plan requirement as the main obstacle. Access to key Commerce APIs like Orders, Inventory, and Transactions requires at least the \"Core\" plan, and other functionalities or API keys may require higher-tier \"Plus\" or \"Advanced\" plans. The OAuth client registration review is a secondary point of friction.\n\n### **Uncertain Fields**\nNone. The available documentation from official and high-quality secondary sources was sufficient to verify all fields.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Squarespace Commerce API plan requirements",
+   "Squarespace API pricing",
+   "Squarespace developer sandbox",
+   " OpenAPI specification",
+   " \"Model Context Protocol\"",
+   "Squarespace API key vs OAuth",
+   "Squarespace developer account"
+  ],
+  "search_sources": [
+   {
+    "title": "squarespace.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZJKu6HkULVPEn43mIhPxy6J34uKX4B-5m5SVFItdm0DNfNSKNEfEdh6IRpCHVObEWxYINMoa1hklFuyMB3ZrBBcfq0fW4UaMRr_91Cer1_UbhE6-yFvaBiipjxExU"
+   },
+   {
+    "title": "squarespace.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiIZ4QPX90y4v2jL05j4lpgteCwGc2GvdKAaVgZmFXGX9Ly5M-1rBwBXwYad9AyzLjD-Y58QdyxOz2R84sD2teZa83qAE6Ckk9O2YhUIhWZI7wk8ae8IfE6o-Qmzrr3IiXgxGcegO_3uCUOhh7oTr3wOZt33oE61eRyMMZP76Es7wS3XFQdiC379U="
+   },
+   {
+    "title": "squarespace.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGj_-9A4iFeEOTSKIrujEhH3swnd7YVDkg5EHpY3kHJiYOQv3bKkmdzl2qSyroKNETRgGKRzWsa_cZrW23rBNkhSLO4jLj0rtCpFlSdrxfKE5cU7aKAvtUkchERKPkZutyiNYbIa81sAiPkDMZvo_7fM2d9bqCYDXHez78SvRhtEGLKpzE="
+   },
+   {
+    "title": "boldsign.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9CJv1dqC_Zjf5kEQcwWwr03ILVjPlJ5RONlQpsBaw0NWLFcBdVxfF9mfeQou5CCB0PzJAQibZ6mV8OGuJZSHb15mjuf9Gxb6AIdwceHLjYKr6dxGUMOsdIN-2w8sVASHu4ayUPYwmaK7BKR4V0ZWTJP_1LdjGiw=="
+   },
+   {
+    "title": "stackexchange.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyz61FoyIb5SjX1A9gQbSUTA2v8fbh7fGhBXlcRHEh7sQ5syIu7MRTVxlVpoJgoH3XJlF0k2I5UjY4sCCk8ohohv_uNzTZy3eI8DQc2am2Obe5xLKuIf7m9qa6LWhR8FDvbFM6C_viCtoBVDvv0XEldmlKah4OAEY1iiNiNDR3whzH83Q3e0TGeyJPo6pZnAbCUBd9i89jbA=="
+   },
+   {
+    "title": "supergood.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBXCi85CHyrMb3auM81hNfay0C8WWFTdsbUSIo9xMw1IRdBKL79170-1jQGbMYQ2d5ASfyvA4glwfMxLkm1g72Sak_YgLvTSuyvxe2ipVOewnAW_fO3xJVClvLoAF0L49zPWpeziz2SWAEVA=="
+   },
+   {
+    "title": "swell.is",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAWMJgSylEHBGE3bAwowGefIquDRgEB33qav0lLCzp0pBeoKvosFDULMs5W2Dpv7JJLTPefLEFFFcBtQwijLXc7M5TP8_MPWSndhrMKBglYwx5H4KmJY1rA_Gv4-yR2SEqvxAXj09FJBIw5HIRdD_7-TpztJYzOhg="
+   },
+   {
+    "title": "squarespace.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoem0adY3FGiLsfSueATdCxSF4IMNO4CnxvfUQyS7XG3rohs1ahJw2Sw2Eqb1CdzG1g1sLt_shm-DMD4Iz3JVHB6vPrOMWRq029e_zTbWuF2p5091xhDGCSkek8cWo"
+   },
+   {
+    "title": "launchhappy.co",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHb33RKs6ivyHqMKirH8J-X3_hOyv0_kiX4WMXBKfiGgfpXufhHZ70Mzkg4YBdsnORtFVgB5z39mZsYcAjbQj25ByGP-tqoc89Ig5t7zV3L-gI2oZcKkMVtmYPXScuf_f5XkoMz1MwrFaIEgsy4Q0aTt5YPmmqinAWnlsMH8W3iHQu13IMXX-MrUwEezRtHGQmpyhrs0Kng5SY="
+   },
+   {
+    "title": "squarespace.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBcNNcbwHaYJtEt4Quw0s-cQRm1FZcKsxDRalF4iwVlYvbvaQbgQvaqz_FP4aU93bfPhM7tAxAFg8cqZzd9YzhdivN1ZT9b0mAQB7yGZiOxKP7zgFM8O2hiLRCvw31CXl0m1RUaJP4aNRXVP0zi-D5YlRIBA=="
+   },
+   {
+    "title": "swagger.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEB6O_reuF8JVmXdkpkoPKhLHCr9bSOiP_Qw12B2PXzOJq1F6kyzsdqgh1pHAptrzZ47NqRFUXB7_jvv3HhJMshA2wLPcjEH26etYMvY6Z29Da2lIkRpQpMmRgDr1pjaTiM"
+   },
+   {
+    "title": "wikipedia.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqHZGQlUqjuZ1z5p6ebZcee7_kUzZtcPvh7zggFj0jbSmH3z8yxkakhnNsZFkuI4q574csze7uHuQ7F3Uw8m39Ro2PeYsbKzuS7cQHDj_ZDmqfQPY4MJLHg_MltK84Bgpm8SQuaCrJt1gQHEZMDg=="
+   },
+   {
+    "title": "openapis.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4piM2LcqdDxrjRSgOVUGvcPbwfN_e6KdXTfSNXC7ZKYKRxTbkcivyNvIva0ymj79V1un5BjTocOH-Q_wZn3NtMSKGp0fRMpLIfTX6eVc0oorVAUD2dMuzktXr_ive-LM1dtVp"
+   },
+   {
+    "title": "openapis.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG404uilRfC8TMjaYUGSh8UUXXVjvQ6fSBM8hMS8ecmCn6kD5gxcimuIhxJgSdqgO3QCLI6EfgFa2Ioy2L1bfDijJ5wNWExA-b9nbrc8umH4cUNrTNOeFaqyuTfd099cXb-HXhe"
+   },
+   {
+    "title": "squarespace.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJ06nrQV8xX0tIq6e28pP1dNWlYFS_ZJ7DASuae0EsR_sfUBRScGSeBzNOBiw5aEP6hYHTkypFuBgxZX7LTR-Ggqum4p0POtCZcEB4yrf65QWmDRcM1SE3PdqSKrYS9lCRPPFC7tlw-w9xs8Iv5Rk3ftg8f479rky2OzfS0ADer0C4SDkrq2QjpPfN0r1BMAwiUKLNwLiLnKI="
+   },
+   {
+    "title": "databricks.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXTSL0K_gy35CoYlTFMpU_Y4EvJBBrvCZcjhi5Yn7H2EaezCNtA3JNhX_qytWBcJHn_LXsq7o-7QcQYDF11LNrLCYxM1AtQIMWFzLHUYUjf4Yt_bXebQtABwGUfFBYEcnJNlPO4rydlSiXGNEfsxkC2pB40b0uKSHH"
+   },
+   {
+    "title": "google.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGo8kPOljHYqP0yacSOTU8VUmtPGY9Ysal0TtzceCGbSM5eNodFAurNGgOfZ_nQiUiWYDPoM8Q3l8Al3oVQW6Ns78CwxY-T3GpPSvYNmMuonGPIl0jjr8FnvcWPd79tUzgo1xzvVdXPGDCZEop8ROQUApWZ4aFjma-DJFw="
+   },
+   {
+    "title": "wikipedia.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKg7mD9USfu1aSw6Kd0c_cqHZbGSwiFVU4AcpCwdsTfRrptt3rOwM57C79rpaC6KYo3M6iQpYWe265nKNf4VeMLFKtP3GyaALwemFTpuotvevorpX6kkh2CVsJz_qrdDLLfVIfJmX6tWKdTEtaUQA="
+   },
+   {
+    "title": "modelcontextprotocol.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZSt4vNvK83W9jFbrHZo5BmgOMhNTB7B7tbcTP8BuJfcalzPlt-f25ksjxQd4i5PHNnie1-s4DMoBcrfkrLTnEjfkSvVEELe2HJ6yXfOldQY0wxdK6PgKLrVrCNjuWLSanB5FKdUQu4d8EpThcMlxCLcNayXtKOUkiHB8YTCNYwQ=="
+   },
+   {
+    "title": "anthropic.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiPboGIJjnCmYSALyo6w_3MIpVbWGwRCaa8HFetA5O_eumoiMXF-1rEsxJ-k1hLJk8KZnUnogSEkIlSnmeTtyF1sBqQ5OiC1ahygzwliXUU_roPAUyFoo99B9ZRsdOg0CfRKDwJkqy3voqJ8gJmhtM"
+   }
+  ],
+  "tokens": 11039,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://developers.squarespace.com/",
+    "status": 200,
+    "chars": 2079,
+    "readable": true
+   },
+   {
+    "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+    "status": 200,
+    "chars": 3975,
+    "readable": true
+   },
+   {
+    "url": "https://developers.squarespace.com/commerce-apis/oauth",
+    "status": 200,
+    "chars": 10674,
+    "readable": true
+   },
+   {
+    "url": "https://www.squarespace.com/assets/pricing.txt",
+    "status": 200,
+    "chars": 6212,
+    "readable": true
+   },
+   {
+    "url": "https://apis.io/plans/squarespace/squarespace-plans-pricing/",
+    "status": 200,
+    "chars": 5022,
+    "readable": true
+   },
+   {
+    "url": "https://support.squarespace.com/hc/en-us/articles/41325887099533-Developer-Tools-APIs-at-Squarespace",
+    "status": 200,
+    "chars": 40999,
+    "readable": true
+   },
+   {
+    "url": "https://mcp.mcpbundles.com/bundle/squarespace",
+    "status": 200,
+    "chars": 239,
+    "readable": false
+   },
+   {
+    "url": "https://developers.squarespace.com/commerce-apis/overview",
+    "status": 200,
+    "chars": 2283,
+    "readable": true
+   }
+  ],
+  "seconds": 48.5
+ }
+}

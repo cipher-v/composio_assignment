@@ -1,0 +1,151 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://developer.xero.com/documentation/getting-started-guide/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developer.xero.com/documentation/oauth2",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developer.xero.com/documentation/oauth2/auth-code-flow",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developer.xero.com/pricing/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developer.xero.com/pricing/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.04
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.xero.com/documentation/tools/openapi-specifications/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.xero.com/documentation/guides/webhooks/overview/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.xero.com/documentation/api/accounting/overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.xero.com/documentation/getting-started-guide/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://xero.developer.com/explore/ai-tools-and-features/xero-unveils-new-model-context-protocol-server-for-smarter-accounting/",
+   "status": 0,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://www.kipper.ai/post/xero-mcp-server",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://developer.xero.com/pricing/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developer.xero.com/documentation/getting-started/development-accounts/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "bearer_token": false
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://xero.developer.com/explore/ai-tools-and-features/xero-unveils-new-model-context-protocol-server-for-smarter-accounting/', 'https://www.kipper.ai/post/xero-mcp-server']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://developer.xero.com/pricing/']\n- Auth methods not mentioned on any cited page: ['bearer_token']",
+ "metrics": {
+  "n_evidence": 13,
+  "alive_rate": 0.8461538461538461,
+  "dead_rate": 0.15384615384615385,
+  "blocked_rate": 0.0,
+  "official_rate": 0.9230769230769231,
+  "readable": 3,
+  "quote_supported_rate": 0.6666666666666666,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

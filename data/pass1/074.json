@@ -1,0 +1,257 @@
+{
+ "app": {
+  "id": 74,
+  "name": "Jira",
+  "category": "Productivity and Project Management",
+  "hint": "developer.atlassian.com"
+ },
+ "record": {
+  "subcategory": "Project management",
+  "one_liner": "Jira is an agile project management and issue tracking software developed by Atlassian.",
+  "auth_methods": [
+   "oauth2",
+   "basic"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 (3LO) for external applications; Basic Authentication with API Tokens for user-generated static tokens.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can create an Atlassian account, access the Developer Console, and configure OAuth 2.0 (3LO) to obtain Client ID and Client Secret without approval. A free tier for Jira Cloud (up to 10 users) and a free developer instance are available.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST API covering issues, projects, workflows, users, groups, comments, attachments, worklogs, dashboards, and filters. Some specific features utilize GraphQL.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Atlassian officially publishes and maintains the 'Atlassian Rovo MCP Server' on GitHub (atlassian/atlassian-mcp-server) and via a hosted cloud bridge (https://mcp.atlassian.com/v2/mcp).",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. Jira provides a fully self-serve, free developer ecosystem with robust OAuth 2.0 support, a comprehensive REST API with an official OpenAPI spec, and an official MCP server.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.atlassian.com/software/free",
+    "quote": "Jira. Project and issue tracking... Scrum and Kanban boards... Customizable roadmaps; Board and timeline views."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.atlassian.com/cloud/oauth/",
+    "quote": "OAuth 2.0 (3LO) allows external applications and services to access Atlassian product APIs on a user's behalf. OAuth 2.0 (3LO) apps are created and managed in the developer console."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/",
+    "quote": "Basic auth requires API tokens... Build a string of the form useremail:api_token . BASE64 encode the string."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.atlassian.com/cloud/oauth/",
+    "quote": "From any page on developer.atlassian.com, select your profile icon in the top-right corner, and from the dropdown, select Developer console. Select your app from the list (or create one if you don't already have one). Select Authorization in the left menu. Next to OAuth 2.0 (3LO), select Configure."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.atlassian.com/platform/marketplace/getting-started",
+    "quote": "If you're already a developer or are thinking about developing for Atlassian, we'll give you a free developer instance to make it easier than ever to develop and test on our Atlassian apps like Jira and Confluence."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/",
+    "quote": "The actual link to this file is https://developer.atlassian.com/cloud/jira/platform/swagger-v3.v3.json."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/",
+    "quote": "You can use Jira webhooks to notify your app or web application when certain events occur in Jira."
+   },
+   {
+    "claim": "api",
+    "url": "https://support.atlassian.com/organization-administration/docs/manage-product-sandboxes",
+    "quote": "There's a sandbox option built into all Premium and Enterprise plans. This is an isolated environment where you can test and experiment without impacting production."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.atlassian.com/cloud/jira/platform/rate-limiting/",
+    "quote": "Enforcement of the new points-based API rate limits and tiered quota rate limits for Jira and Confluence Cloud apps will begin on March 2, 2026... Your entire site shares a 65,000 point hourly budget across all apps (Tier 1 — Global Pool)."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/atlassian/atlassian-mcp-server",
+    "quote": "The official Model Context Protocol (MCP) server for Atlassian: a cloud-hosted bridge that gives your AI tools secure, real-time access to Jira, Confluence, Jira Service Management, Bitbucket, and Compass... New setups should use https://mcp.atlassian.com/v2/mcp"
+   },
+   {
+    "claim": "verdict",
+    "url": "https://developer.atlassian.com/cloud/oauth/",
+    "quote": "From any page on developer.atlassian.com, select your profile icon in the top-right corner, and from the dropdown, select Developer console. Select your app from the list (or create one if you don't already have one). Select Authorization in the left menu. Next to OAuth 2.0 (3LO), select Configure."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### 1. Product Overview\nJira is an agile project management and issue tracking software developed by Atlassian. It enables teams to plan, track, and manage software development or general workflows using tools such as Scrum boards, Kanban boards, backlogs, and roadmaps.\n* **Source URL:** `https://www.atlassian.com/software/free`\n* **Verbatim Quote:** `\"Jira. Project and issue tracking... Scrum and Kanban boards... Customizable roadmaps; Board and timeline views.\"`\n\n### 2. Authentication Methods & Multi-Tenant Integration\nThe Jira Cloud public API supports the following authentication methods:\n* **OAuth 2.0 (Three-Legged OAuth / 3LO):** Allows external applications to securely access Atlassian product APIs on behalf of a user via authorization code grants. It supports both account-level and resource-level (site-restricted) grants.\n* **Basic Authentication with API Tokens:** Authenticates requests using an email address and a user-generated static API token. Password-based basic authentication is deprecated.\n* **Forge / Connect App Authentication:** Framework-specific internal authentication (such as JWT for Connect apps) used when building applications that run natively inside the Atlassian ecosystem.\n\n**Primary Auth for Multi-Tenant Integration:** `oauth2` (specifically Three-Legged OAuth / 3LO). A multi-tenant platform like Composio would use OAuth 2.0 (3LO) because it allows the platform to securely request scoped access to a user's Jira sites without collecting or storing their static passwords or personal API tokens.\n* **Source URL:** `https://developer.atlassian.com/cloud/oauth/`\n* **Verbatim Quote:** `\"OAuth 2.0 (3LO) allows external applications and services to access Atlassian product APIs on a user's behalf. OAuth 2.0 (3LO) apps are created and managed in the developer console.\"`\n* **Source URL:** `https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/`\n* **Verbatim Quote:** `\"Basic auth requires API tokens... Build a string of the form useremail:api_token . BASE64 encode the string.\"`\n\n### 3. Developer Credentials & Cost\n* **Access Level:** `self_serve_free`\n* **How to get credentials:** Any developer can log into the Atlassian Developer Console using a standard Atlassian account, create an app, and immediately configure OAuth 2.0 (3LO) by setting up a callback URL to obtain a Client ID and Client Secret. No manual approval, marketplace listing review, or partner program registration is required to obtain credentials and begin testing.\n* **Cost:** Free. Atlassian offers a standard free tier for Jira Cloud (up to 10 users) as well as a dedicated free developer instance for testing and building marketplace applications.\n* **Source URL:** `https://developer.atlassian.com/cloud/oauth/`\n* **Verbatim Quote:** `\"From any page on developer.atlassian.com, select your profile icon in the top-right corner, and from the dropdown, select Developer console. Select your app from the list (or create one if you don't already have one). Select Authorization in the left menu. Next to OAuth 2.0 (3LO), select Configure.\"`\n* **Source URL:** `https://developer.atlassian.com/platform/marketplace/getting-started`\n* **Verbatim Quote:** `\"If you're already a developer or are thinking about developing for Atlassian, we'll give you a free developer instance to make it easier than ever to develop and test on our Atlassian apps like Jira and Confluence.\"`\n\n### 4. API Capabilities & Infrastructure\n* **API Style:** REST (The primary platform API is REST, though some specific features utilize GraphQL).\n* **Breadth:** Extremely comprehensive, covering issues, projects, workflows, users, groups, comments, attachments, worklogs, dashboards, and filters.\n* **OpenAPI Spec:** Yes, Atlassian officially publishes a complete OpenAPI spec for the Jira Cloud platform REST API.\n  * **Source URL:** `https://developer.atlassian.com/cloud/jira/platform/rest/v3/`\n  * **Verbatim Quote:** `\"The actual link to this file is https://developer.atlassian.com/cloud/jira/platform/swagger-v3.v3.json.\"`\n* **Webhooks:** Yes, Jira supports webhooks that can be registered programmatically via the REST API or manually in the administration console.\n  * **Source URL:** `https://developer.atlassian.com/cloud/jira/platform/rest/v3/`\n  * **Verbatim Quote:** `\"You can use Jira webhooks to notify your app or web application when certain events occur in Jira.\"`\n* **Sandbox:** Yes, a built-in sandbox environment is available for Premium and Enterprise plans, and developers can also use the free developer instance as an isolated sandbox.\n  * **Source URL:** `https://support.atlassian.com/organization-administration/docs/manage-product-sandboxes`\n  * **Verbatim Quote:** `\"There's a sandbox option built into all Premium and Enterprise plans. This is an isolated environment where you can test and experiment without impacting production.\"`\n* **Rate Limiting:** Jira Cloud enforces a points-based hourly quota system alongside per-second burst limits.\n  * **Source URL:** `https://developer.atlassian.com/cloud/jira/platform/rate-limiting/`\n  * **Verbatim Quote:** `\"Enforcement of the new points-based API rate limits and tiered quota rate limits for Jira and Confluence Cloud apps will begin on March 2, 2026... Your entire site shares a 65,000 point hourly budget across all apps (Tier 1 — Global Pool).\"`\n\n### 5. Model Context Protocol (MCP) Servers\n* **MCP Status:** `official`\n* **Details:** Atlassian officially publishes and maintains the \"Atlassian Rovo MCP Server\". It is available as an open-source repository on GitHub (`atlassian/atlassian-mcp-server`) and can be run locally via npm/pip or connected via their hosted cloud bridge (`https://mcp.atlassian.com/v2/mcp`). It provides dozens of tools to manage Jira issues, sprints, boards, backlogs, and Confluence pages.\n* **Source URL:** `https://github.com/atlassian/atlassian-mcp-server`\n* **Verbatim Quote:** `\"The official Model Context Protocol (MCP) server for Atlassian: a cloud-hosted bridge that gives your AI tools secure, real-time access to Jira, Confluence, Jira Service Management, Bitbucket, and Compass... New setups should use https://mcp.atlassian.com/v2/mcp\"`\n\n### 6. Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. Jira provides a fully self-serve, free developer ecosystem with robust OAuth 2.0 support, a comprehensive REST API with an official OpenAPI spec, and an official MCP server. The toolkit can be built immediately.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"atlassian-mcp-server\" github",
+   "jira cloud free developer instance",
+   "jira cloud openapi spec download",
+   "jira cloud webhooks documentation",
+   "\"atlassian/atlassian-mcp-server\"",
+   " \"oauth\" 3LO",
+   " \"api token\" basic authentication",
+   " \"rate limiting\" jira cloud"
+  ],
+  "search_sources": [
+   {
+    "title": "claudedirectory.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQES3ni7wtAPdwoAZi33y6J7bwfYydjrOjti2_N6V2qTMWpXtUoWVB2zYtUE1jwH2_nzcsEi3ppxcm9uR5PWb2_yenXsyDg6cMCPdhnHqmzU-B4hzvZwANgedtLUnOLqDlV0cws5y8vyObxgkLA="
+   },
+   {
+    "title": "atlassian.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEd2dbyPC_ivgkIsSRptt2j2wQzKYyeoD2IONEPTDEUzqSIxNWid4_7B5M2yIk1nF1ZMSz5-b4gd5i-c5iTuc5EBoCN-HexmW7h-g16sa2dnPsYsLzPhS-7SdcW8FZLKxzGqISPQxTPpxkumMRnmmyIAtzVQwpj5TjfO7Hgrw=="
+   },
+   {
+    "title": "atlassian.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxacKtViMxtyfl7OwzL9kgxqLqA7MtTss9lQ8zBuKEbMG_xgubDl6iVSpinWnxDTYQI18VBZxsSUfIxF-ksi5Cut9rFc7PTF5rFaTngMUbX0MeW48Olyo5hZ-_RbJxaCagj_ReSwo4orksASvinB6coMiHA6dVgakOgQjIqUiIcu7cdah15SrA"
+   },
+   {
+    "title": "atlassian.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHx4y73Id_taoq0wC8icaxV-dH4rql5dtzT-97dBt1R4MzK6cZubVN_rfDAdJ8j2Jbr8Ut81IhkQA6WBu8nC335TynWOsRRfPg4XnH5QxPPmD-pqHaQ2pNtDk6Sr6i_YGHhIGf8xTHidxnY93aBqMkYJ7aGMXEXEzSAK2LJ4xmQ4Tv8niqZLz07y5X8PLar"
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaUwBc1uJlO_DzA-gkwFvsG5KEJ9khBEoaPSw24O9SNQfBHi2fmWBJoDBnAL3-BapKGf_TkoJexuT-OpQS75lL9KwohNgQ6KBYFA4kvyGr48WF3Jdnp5M3hazFpKav_s5N6VU0LTVIOWaIYCngW0w_zBo-fJNyfpUyxjlsvaJBCEqcaeJLt_aKJrLCwcAZ-IKTtAyJU5DlB-uH"
+   },
+   {
+    "title": "databricks.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGswhqAfSJ814IYAdiv1RlKNimTgduKO_uPUytAsbCgxDa9wLiHaKfiuzxenbPZEH0jH_zP3D314zd_sxUL0rSA-Mb24GZ8SS67OAPcwU0lMbXH8kYSc3NxMLyPcdS2FFT09nkoMDUNHK8F2sM7c-GjV4iVNomBv8TD4BhhXm9G4IaIlDTDK_GoC1NeHHaAtwfIdvP3Mjmez44PdZddq22rojDyIp2wRqc7"
+   },
+   {
+    "title": "atlassian.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFGScuGHyAsI3S11oY6k0gfWBylIkAtzRTLgwDoL5uOkKNB5icD9GK4kcy75sAQP3RQWYalU7xTgZ9_ZaLvjbdktlp_ebebCQtP3ysib7DcUe1ZTEYi4M6lmPEID8fMpjZCDpbLvT96PWVWUMr21mYYTgaSfOgWBgQ09YMYNDfW9fsOS_JoLtMLiEqx2DujBZ0G7rYiDogzEsKYeRApEdfvSwbLRsUNbtJQFzWYeKIVFcnd8FpLBKd9x9z1fWjjhLZeSJh"
+   },
+   {
+    "title": "atlassian.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzkQoIz-Boo5bhYgWUaHdnFh-1_XR4GjteZJT3HXWz746ma2YPN0-UAyuSspHZtKjFtmPIrRCxi2aGaKG2ft45VIi7AMsSqi26xRKAEt_BgQXut_YBbsxLP-u20Uxh8E2Gc8wHy2dkeWg_4Mo-pxD3WHujQ-qcjrxGtoPilDk="
+   },
+   {
+    "title": "atlassian.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG761tqO_Jgs7BzfGJ8w7lxDu22RMFW5FMtml8R0wWWOVPJFmW0Wzun2JBSpp14eVPbj22u14kF85a3TIhc3dc8dRazeyrSYqbmXKyH_UubGyjHUAsGU7IKji_qqzEC_h3xBf7VaFco08Hg_Ip2ipq6iwLWi0WRLfbrTazqHg=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7tII6ryRcJ8i5XGmxMHJvaFRbVBQXI-yVMkQgDCRb8hc_q_swtlI5qJ2xWdeOm5IbmSryvnW6ZfaRkMzLwX4KGiNdUlOIsaYBK5s5IOxbAErvNkK2zgvRxbO65Umyg3_ruBNvIJE_Aer_hRU="
+   },
+   {
+    "title": "atlassian.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2Y4rZAkLopjj7BsIGn005u2aQ7-wdyHamxUJzemzXf2ZW5inlTyTW3vlh1DUJoW3lW8Lg7r9ITYWOSO6ak1WBsNOs-wteWqdTWHFTLQHC6E5IqYgFXMkMfO1P0ZSONmS11MXChGL8UDsK4cmqfqytuKDUUdeikgKmUgSKZLjeYxnrQA1wJ5O1XfxgF90nHwWmqKW3NJ1hRM56EmPqPlUdpWRfgnV2pTl5lg-JrY4LnXOolNYXx92T0kCFvM0nm3JoUz-Ft9TVHg=="
+   },
+   {
+    "title": "skillsllm.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgrdrLuTS0OFUWgoJ8wHdf17u412Xrw89wuKPrpsZa4_5GMQATVwtbGqj6tm4ProN9TJsINRsgH5dAUmZ6Ysi9M7EAVYrW6Soy6D-Jaz58mn2TQXbNexwOZ6HfjDqvBAs1bjhBkdh7_YeKdA=="
+   }
+  ],
+  "tokens": 8190,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Jira developer authentication",
+    "Jira API keys",
+    "Jira OAuth developer",
+    "Jira developer getting started",
+    "Jira quickstart guide developer",
+    "Jira API pricing",
+    "Jira developer program",
+    "Jira API access plans",
+    "Jira API reference",
+    "Jira REST API documentation",
+    "Jira MCP server"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://developer.atlassian.com/server/jira/platform/getting-started/",
+    "https://www.atlassian.com/software/jira/pricing",
+    "https://developer.atlassian.com/cloud/jira/platform/rest/v3/",
+    "https://developer.atlassian.com/developer-guide/auth/",
+    "https://developer.atlassian.com/cloud/jira/platform/security-overview/",
+    "https://developer.atlassian.com/cloud/oauth/",
+    "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/",
+    "https://titanapps.io/blog/jira-mcp-server",
+    "https://github.com/atlassian/atlassian-mcp-server"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://developer.atlassian.com/platform/marketplace/security-overview/",
+     "status": 404
+    },
+    {
+     "url": "https://mcp.atlassian.com/v1/mcp/authv2",
+     "status": 401
+    },
+    {
+     "url": "https://developer.atlassian.com/cloud/jira/platform/security/",
+     "status": 404
+    },
+    {
+     "url": "https://developer.atlassian.com/platform/marketplace/oauth-2-0-authorization-code-grants-3lo-for-apps/",
+     "status": 404
+    },
+    {
+     "url": "https://github.com/atlassian/mcp-server",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://developer.atlassian.com/server/jira/platform/getting-started/",
+     "status": 200,
+     "chars": 4109,
+     "readable": true
+    },
+    {
+     "url": "https://www.atlassian.com/software/jira/pricing",
+     "status": 200,
+     "chars": 63,
+     "readable": false
+    },
+    {
+     "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/",
+     "status": 200,
+     "chars": 2653,
+     "readable": true
+    },
+    {
+     "url": "https://developer.atlassian.com/developer-guide/auth/",
+     "status": 200,
+     "chars": 4708,
+     "readable": true
+    },
+    {
+     "url": "https://developer.atlassian.com/cloud/jira/platform/security-overview/",
+     "status": 200,
+     "chars": 4764,
+     "readable": true
+    },
+    {
+     "url": "https://developer.atlassian.com/cloud/oauth/",
+     "status": 200,
+     "chars": 959,
+     "readable": true
+    },
+    {
+     "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/",
+     "status": 200,
+     "chars": 13746,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 99.7
+ }
+}

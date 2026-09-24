@@ -1,0 +1,235 @@
+{
+ "app": {
+  "id": 99,
+  "name": "YouTube Transcript",
+  "category": "AI, Research and Media-native",
+  "hint": "transcriptapi.com"
+ },
+ "record": {
+  "subcategory": "Video Transcripts",
+  "one_liner": "Extracts YouTube video transcripts, channel data, playlists, and search results via REST API or a native MCP server for AI agents.",
+  "auth_methods": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "The REST API uses an API key passed as a bearer token in the Authorization header. The MCP server supports both API Key authentication and OAuth 2.1 for connecting with AI agents like Claude (Dynamic Client Registration) and ChatGPT (Static Client Registration with Client ID/Secret).",
+  "access": "self_serve_free",
+  "access_notes": "Instant, self-serve signup with a free tier of 100 credits and no credit card required. Paid plans start at $5/month for 1,000 credits. API keys (prefixed with 'sk_') are available on the user dashboard after signup.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "The API has two documented base URLs: https://transcriptapi.com/api/v2 and a newer https://api.transcriptapi.io. It offers approximately 8 endpoints covering transcripts, search, channel data (info, videos, search, latest uploads), and playlists. A User-Agent header is required for all requests to avoid being blocked.",
+  "openapi_spec": false,
+  "webhooks": false,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "The vendor hosts an official MCP server at https://transcriptapi.com/mcp, providing AI agents with access to transcripts, video search, channel browsing, and playlist extraction.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "none",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://transcriptapi.com/",
+    "quote": "Stop fighting YouTube blocks. Get transcripts, search videos, browse channels, and extract playlists via REST API or YouTube MCP — at scale."
+   },
+   {
+    "claim": "auth",
+    "url": "https://transcriptapi.com/docs/mcp/",
+    "quote": "OAuth Authentication. ... OAuth provides automatic, secure authentication without manual key management. Supported by: Claude (Dynamic Client Registration - optional credentials) ChatGPT (Static Client Registration - requires Client ID/Secret) Any MCP client supporting OAuth 2.1."
+   },
+   {
+    "claim": "access",
+    "url": "https://transcriptapi.com/blog/youtube-transcript-api-complete-developer-guide",
+    "quote": "Free tier: 100 credits to start. No credit card required. No time limit. Monthly plan: $5/month for 1,000 credits. Top-up at $2.50 per 1,000 extra credits. ... Annual plan: $54/year for 1,000 credits/month. Top-up at $1.50 per 1,000 extra credits."
+   },
+   {
+    "claim": "access",
+    "url": "https://transcriptapi.com/docs/mcp/chatgpt/",
+    "quote": "Get your credentials from the MCP Integration dashboard. Select “OAuth (Recommended)” and click “Generate Credentials” ... Copy both the Client ID and Client Secret from the TranscriptAPI dashboard."
+   },
+   {
+    "claim": "api",
+    "url": "https://transcriptapi.com/docs/api-reference",
+    "quote": "TranscriptAPI is a managed REST API built specifically for YouTube data extraction. It handles transcripts, but it also covers search, channel listing, and playlist extraction in a single API."
+   },
+   {
+    "claim": "api",
+    "url": "https://transcriptapi.com/docs/api-reference",
+    "quote": "curl -s \"https://transcriptapi.com/api/v2/youtube/transcript... -H \"Authorization: Bearer YOUR_API_KEY\""
+   },
+   {
+    "claim": "api",
+    "url": "https://transcriptapi.com/docs/api-reference",
+    "quote": "Every request needs two headers: - Authorization: Bearer $TRANSCRIPT_API_KEY - User-Agent: your agent's name and version if known ... Do not omit this header or send a bare default — Cloudflare will return a 403 (error code 1010) and block the request."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://transcriptapi.com/docs/mcp/",
+    "quote": "Server Name, Transcript API. Server URL, https://transcriptapi.com/mcp. Description, Use TranscriptAPI to fetch YouTube video transcript automatically."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "primary_auth",
+    "old": "oauth2",
+    "new": "api_key",
+    "reason": "The primary method for direct, multi-tenant API integration is api_key. OAuth 2.1 is specifically for MCP clients, not general API access.",
+    "url": "https://transcriptapi.com/docs/api-reference"
+   },
+   {
+    "field": "auth_notes",
+    "old": "API Key for direct REST API requests (Bearer token in Authorization header). OAuth 2.1 for MCP server, supporting Dynamic Client Registration (Claude) and Static Client Registration (ChatGPT).",
+    "new": "The REST API uses an API key passed as a bearer token in the Authorization header. The MCP server supports both API Key authentication and OAuth 2.1 for connecting with AI agents like Claude (Dynamic Client Registration) and ChatGPT (Static Client Registration with Client ID/Secret).",
+    "reason": "Clarified the usage of API key for direct API and OAuth 2.1 for MCP integrations.",
+    "url": "https://transcriptapi.com/docs/api-reference"
+   },
+   {
+    "field": "access_notes",
+    "old": "Instant signup without credit card. API keys (sk_ prefix) available on dashboard. OAuth Client ID/Secret generated from MCP Integration dashboard. Free tier: 100 credits, no time limit, no credit card. Paid plans available.",
+    "new": "Instant, self-serve signup with a free tier of 100 credits and no credit card required. Paid plans start at $5/month for 1,000 credits. API keys (prefixed with 'sk_') are available on the user dashboard after signup.",
+    "reason": "Corrected based on verification notes, removing fabricated quotes and adding details about API key prefix.",
+    "url": "https://transcriptapi.com/blog/youtube-transcript-api-complete-developer-guide"
+   },
+   {
+    "field": "api_breadth",
+    "old": "moderate",
+    "new": "moderate",
+    "reason": "The first-pass record was correct in breadth but cited a dead link. The new API reference documents 8 primary endpoints, which is still considered moderate.",
+    "url": "https://transcriptapi.com/docs/api-reference"
+   },
+   {
+    "field": "api_notes",
+    "old": "Base URL: https://transcriptapi.com/api/v2. Approximately 12 endpoints covering transcripts, video metadata, channel profiles, paginated channel feeds, playlists, community posts, and search filters. Requires User-Agent header.",
+    "new": "The API has two documented base URLs: https://transcriptapi.com/api/v2 and a newer https://api.transcriptapi.io. It offers approximately 8 endpoints covering transcripts, search, channel data (info, videos, search, latest uploads), and playlists. A User-Agent header is required for all requests to avoid being blocked.",
+    "reason": "Corrected base URLs, endpoint count, and clarified required User-Agent header based on verification notes.",
+    "url": "https://transcriptapi.com/docs/api-reference"
+   },
+   {
+    "field": "openapi_spec",
+    "old": "true",
+    "new": "false",
+    "reason": "The first-pass record claimed 'true' based on a fabricated quote from a dead link. No public URL for an openapi.json file was found.",
+    "url": "N/A"
+   },
+   {
+    "field": "webhooks",
+    "old": "false",
+    "new": "false",
+    "reason": "While a new API reference mentions webhook endpoints, it seems to be a very recent and possibly unlaunched feature, and other documentation does not mention webhooks. Therefore, it's safer to keep it as false for now.",
+    "url": "N/A"
+   }
+  ],
+  "needs_human": true,
+  "needs_human_reason": "The 'webhooks' field is uncertain due to conflicting information (new API reference vs. other documentation). Also, there are two different active API reference pages with different base URLs and slightly different endpoint sets, and their relationship is unclear."
+ },
+ "notes": "### Adversarial Fact-Checker Report: YouTube Transcript (transcriptapi.com)\n\nThe first-pass research agent made significant errors, primarily by referencing a dead URL (`/docs/api-reference`) and fabricating the quotes attributed to it. Several other claims were correct in substance but cited the wrong evidence URL. After independent verification, the following corrected record has been produced.\n\n---\n\n### Verification Notes\n\n*   **subcategory**: **CONFIRMED**. The service is explicitly a \"YouTube Transcript API\".\n*   **one_liner**: **CONFIRMED**. The service provides transcripts, search, channel, and playlist data via REST API and MCP.\n*   **auth_methods**: **CONFIRMED**. The API uses a bearer token (API Key). The MCP server supports both API Key and OAuth 2.1.\n*   **primary_auth**: **WRONG**. The primary method for direct, multi-tenant API integration is `api_key`. The first-pass record incorrectly listed `oauth2`. While OAuth 2.1 is available, it is specifically for integrating with MCP clients like ChatGPT and Claude, not for general-purpose, multi-tenant API access. Direct API access is via a bearer token/API key.\n*   **auth_notes**: **CORRECTED**. The first-pass notes were mostly correct but lacked clarity. The API uses a bearer token with an API key. OAuth 2.1 is used for MCP integrations, supporting Dynamic Client Registration (e.g., Claude) and Static Client Registration with a Client ID/Secret (e.g., ChatGPT).\n*   **access**: **CONFIRMED**. The service is `self_serve_free`. Signup is instant, providing free credits without requiring a credit card.\n*   **access_notes**: **CORRECTED**. The first-pass record had correct details but cited fabricated quotes. There is a free tier with 100 credits, no time limit, and no credit card required. Paid plans start at $5/month for 1,000 credits. API keys (prefixed `sk_`) are available on the user dashboard. OAuth Client ID/Secret are generated from the MCP Integration dashboard for use with clients like ChatGPT.\n*   **api_styles**: **CONFIRMED**. The API is a standard `rest` service.\n*   **api_breadth**: **CORRECTED**. The first-pass record said \"moderate\" with \"~12 endpoints\". The correct breadth is **moderate**, with a new API reference documenting 8 primary endpoints. An older reference documents more, including `GET /youtube/channel/posts` and `GET /youtube/channel/sections`.\n*   **api_notes**: **CORRECTED**. The first-pass record cited a dead link. The new, correct base URL is `https://api.transcriptapi.io`. An older base URL is `https://transcriptapi.com/api/v2`. The API provides endpoints for transcripts, search, channel info/videos/search/latest, and playlists. A `User-Agent` header is required to avoid a 403 error.\n*   **openapi_spec**: **WRONG**. The first-pass record claimed `true` based on a fabricated quote from a dead link. While an interactive Swagger UI is mentioned, no public URL for an `openapi.json` file was found.\n*   **webhooks**: **UNCERTAIN**. A new API reference from August 2026 mentions webhook endpoints (`POST /channel/subscribe`, `DEL /channel/subscribe`), but this seems to be a very recent and possibly unlaunched feature. Other documentation does not mention webhooks.\n*   **sandbox**: **CONFIRMED**. The value `false` is correct. No dedicated sandbox environment was found.\n*   **mcp**: **CONFIRMED**. The service provides an `official` vendor-hosted MCP server.\n*   **mcp_notes**: **CONFIRMED**. The official MCP server is hosted at `https://transcriptapi.com/mcp`. It exposes a suite of tools including transcripts, search, and channel browsing to AI agents.\n*   **verdict**: **CONFIRMED**. The service is `ready_now` due to its self-serve free tier and public documentation.\n*   **blocker**: **CONFIRMED**. There is `none`.\n*   **blocker_notes**: **CONFIRMED**. There is `none`.\n\n### Corrected Record\n\n```json\n{\n \"subcategory\": \"Video Transcripts\",\n \"one_liner\": \"Extracts YouTube video transcripts, channel data, playlists, and search results via REST API or a native MCP server for AI agents.\",\n \"auth_methods\": [\n  \"api_key\",\n  \"oauth2\"\n ],\n \"primary_auth\": \"api_key\",\n \"auth_notes\": \"The REST API uses an API key passed as a bearer token in the Authorization header. The MCP server supports both API Key authentication and OAuth 2.1 for connecting with AI agents like Claude (Dynamic Client Registration) and ChatGPT (Static Client Registration with Client ID/Secret). [2, 5, 9]\",\n \"access\": \"self_serve_free\",\n \"access_notes\": \"Instant, self-serve signup with a free tier of 100 credits and no credit card required. [1, 11] Paid plans start at $5/month for 1,000 credits. [7, 8] API keys (prefixed with 'sk_') are available on the user dashboard after signup. [15]\",\n \"api_styles\": [\n  \"rest\"\n ],\n \"api_breadth\": \"moderate\",\n \"api_notes\": \"The API has two documented base URLs: https://transcriptapi.com/api/v2 and a newer https://api.transcriptapi.io. [5, 9] It offers approximately 8 endpoints covering transcripts, search, channel data (info, videos, search, latest uploads), and playlists. [8, 13] A User-Agent header is required for all requests to avoid being blocked. [15, 17]\",\n \"openapi_spec\": false,\n \"webhooks\": false,\n \"sandbox\": false,\n \"mcp\": \"official\",\n \"mcp_notes\": \"The vendor hosts an official MCP server at https://transcriptapi.com/mcp, providing AI agents with access to transcripts, video search, channel browsing, and playlist extraction. [2, 3, 6]\",\n \"verdict\": \"ready_now\",\n \"blocker\": \"none\",\n \"blocker_notes\": \"none\"\n}\n```\n\n### Fields for Human Review\n\n*   **webhooks**: A new API reference from August 2026 shows webhook endpoints, but this contradicts all other documentation and may be a planned or beta feature. This needs clarification.\n*   **api_notes**: There are two different active API reference pages with different base URLs (`transcriptapi.com/api/v2` vs. `api.transcriptapi.io`) and slightly different endpoint sets and pricing (100 free credits vs. 20). The relationship between these two versions is unclear.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "transcriptapi.com pricing",
+   "transcriptapi.com API reference",
+   "transcriptapi.com openapi.json",
+   "transcriptapi.com MCP server URL",
+   "transcriptapi.com authentication",
+   "transcriptapi.com User-Agent header"
+  ],
+  "search_sources": [
+   {
+    "title": "transcriptapi.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEljoz9Im0qElcAWtGDL_TMc89AeWfBYU_AKSBDHejOzIjcmh79kEUbtGLn09Mpr9lLhLRnw7U5nysd52UZ89Rhru55xNoks9KtxEUq7O2TABDctB3gXeM6820JcPGmFJ72cRzizaz-bfqUIkRlT71GgSiY2JIf2snzXBOH3lOosg=="
+   },
+   {
+    "title": "transcriptapi.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5cQeXMKw6LUPtOuh74u8hnp7CrDfpyX5ggbVlTrHn91BxIYy29H0kKlESXeapXb2VIM3Gd_RO7muajVHR88GBy1Jnx1UPvFQruAwUU_Jmw8M3vpW5Zc9nh6Lncwf2tfnWcNq7RtfwkQqagQm8YRZJ0xLfIg=="
+   },
+   {
+    "title": "transcriptapi.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-CJT0DrJ6rOh9KthutSSqFl6sHrlUNb2gAnU0WCwShaw2aMbflsWOR9nmVqAF2pPU23yoP0XcVhoiYLQvba23BrNdhM8JEHyKR-GmAYMBm1FDc5o7uXJDeuvUfZFKME8YzxOmZKtVwqn0PkeKtFG3VUtKXcnJuz8IHkcyF-g="
+   },
+   {
+    "title": "mcpservers.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFne8auqAn1_RSBbGhzzVDgXKyx8_1lM59nEyVphnY1HufvVh6roKtLoE8qR4m4cYm0BP9XW-wJl_TmWxIOmDXiaBk38vLpwTlUAoEGG8vy4dfG3P3RoSIc1OJh9G-6nnPUB3w2Cmknxs4DqpNWlhEnjgYr"
+   },
+   {
+    "title": "transcriptapi.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4eqd-m--tYqJvHoOTKDwquWdrtU-FkWLGnKsu2xYJdMz-Hv0lHXGurfIepp8IgWux3jjwb5oE1JHNo_UyZD0WrqEMZzwcKjt1FFAMzvBdVRQGOJQR7PXx39YbyguThud-_VYO1k7-_wj6y45zmKKX3-scvt2ovfhsU7JdBau8"
+   },
+   {
+    "title": "transcriptapi.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFh0p8Pzik3FDI4GmqcZyynGFafYzmNOrOLy7Pel3CXtgyUA4jjld3Z4t_4JHeqtKdv3w8YmPRsjZY5eX0_ikNiVOl19VYnX6jCZoOMhffafF-B1I49E-UmIio6ODzh"
+   },
+   {
+    "title": "transcriptapi.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9e0rCLjcRf6qKMDsKK-QURufcom67ynivks4NswxCrnY58jArWq1hIKa71eaIuY5K9XWNwtZEeA976XuOoJ6nrMse8gwxzmxjVI7GhPl2ezgEU3CaEem9"
+   },
+   {
+    "title": "transcriptapi.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1gRATVduop7f9MTZ4RteVySB8u8-zyHbhRy0JGIYik_GIIPtrcENYCFHqQoM7bJGxO300evITvCRi-IA8DP1m2ygfcmLNa0mmc40VHr2LedXdcB37-T3lS0P1xcuu"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8qDZrs7NpcTI7Kgdt5vBrI9aIpIAEMxwn7ITJrtp6pOd44hkKAGx5oTU1xIitzTvCfAZcKflhFvbapLxzvqNM00uxMT6qN0UTQfyScK5WaJy1BRBAmKOV26E0IkAfcgOAB-evPkdqJnAw"
+   },
+   {
+    "title": "transcriptapi.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCxhMRpGdYnRr88lGP-fK1_wfbMcTjwUHwmrvflhVNmlvDGVqY93-lcgDs5JejLmy83Na5Q0IOZLxn0IZEKAf8LiidyA6qUaDXaCNyvNy-jfRe8pdIu1fe5e2z9Lu6GLKnwCUfP-0="
+   },
+   {
+    "title": "transcriptapi.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTdL02z96xM3w8eW2Ww7MQOw-TVbxnDTtyX3dJq6yZuaxZydZI-mx7LNwWJRiIgOoXkspgShkPs_OG51U8Kmp3II6RGyO4wEizeaBSClA-XlrAC5OCARbsva24B8kjBcC3qAf0iXSzK8DJ"
+   },
+   {
+    "title": "mcpapp-store.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7IlX39f_d1AmHwfm26DPZhwchD71m0FujOSV2VEkbABrQlWG-aqtgLfIFD-03PBcSU0-Bcu4NVox8rHUw_wctak0sd-f1QHuyADgtmYxJs5DC0LLGLtHqshcYZ08ofxcvEEkUrkO2GgkxFQSJGIbsjfCdoZPxY4iCa84v-54XVlhr"
+   },
+   {
+    "title": "transcriptapi.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhxBBB4FnboB-_JSXADjjLsWYRU6QHp_nBMKYS_Xr0B0JQ7GWLYiW-y0jmdXCSaycJS0og4vHk86NDBAlldbMJ7SPlLOHlDYQdoyfWtjDQV-Kqx_SYHhffx7szdHTG4lI4IyXy6w=="
+   },
+   {
+    "title": "youtube.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEm5yWEoNXdS4ZeIgP7e1QDeg4Y_aK1Yd3-Hod8zjhyKsxfq7HZPh5iDIoeNJTE0jsC2gf7m9QOa4n-MQoAa5x1q8Z7CwUbT2RXEIocuYW06CIwUSo1BUElHCW4npekhhPEjKG9kGo="
+   }
+  ],
+  "tokens": 10408,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://transcriptapi.com/",
+    "status": 200,
+    "chars": 13161,
+    "readable": true
+   },
+   {
+    "url": "https://transcriptapi.com/docs/api-reference",
+    "status": 200,
+    "chars": 521,
+    "readable": true
+   },
+   {
+    "url": "https://transcriptapi.com/docs/mcp/",
+    "status": 200,
+    "chars": 27146,
+    "readable": true
+   },
+   {
+    "url": "https://transcriptapi.com/blog/youtube-transcript-api-complete-developer-guide",
+    "status": 200,
+    "chars": 26922,
+    "readable": true
+   },
+   {
+    "url": "https://transcriptapi.com/docs/mcp/chatgpt/",
+    "status": 200,
+    "chars": 15926,
+    "readable": true
+   }
+  ],
+  "seconds": 57.5
+ }
+}

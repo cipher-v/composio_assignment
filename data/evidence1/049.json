@@ -1,0 +1,161 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://developer.amazonservices.com/start",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.58
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developer-docs.amazon/sp-api/docs/authorizing-selling-partner-api-applications?ld=ASPTSPAPIDirect&pageName=US%3ASPDS%3ASPAPI-BRIGHTSPOT-grow%2Fapi-amazon-business-b2b-venda-com-sp-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.06
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://dlthub.com/docs/dlt-ecosystem/verified-sources/amazon_sp_api",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://feedvisor.com/resources/amazon-fba/amazon-sandbox/",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://ppc.land/amazon-cancels-selling-partner-api-fees/",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developer-docs.amazon/sp-api/docs/sp-api-vendor-use-cases",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.46
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.amazonservices.com/start",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.38
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/sshaw/peddler",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.amazonservices.com/start",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.38
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/amzn/selling-partner-api-models",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://surpass.biz/understanding-amazons-selling-partner-api/",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer-docs-amazon-shipping.readme.io/apis/docs/amazon-scpn-authorization-workflow",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.05
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://mcp.pizza/server/amazon-sp-api-mcp-server",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://developer-docs.amazon/sp-api/docs/sp-api-vendor-use-cases",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.46
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "signature_hmac": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://feedvisor.com/resources/amazon-fba/amazon-sandbox/', 'https://ppc.land/amazon-cancels-selling-partner-api-fees/', 'https://github.com/sshaw/peddler', 'https://surpass.biz/understanding-amazons-selling-partner-api/', 'https://mcp.pizza/server/amazon-sp-api-mcp-server']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://developer-docs.amazon/sp-api/docs/authorizing-selling-partner-api-applications?ld=ASPTSPAPIDirect&pageName=US%3ASPDS%3ASPAPI-BRIGHTSPOT-grow%2Fapi-amazon-business-b2b-venda-com-sp-api', 'https://dlthub.com/docs/dlt-ecosystem/verified-sources/amazon_sp_api', 'https://developer-docs.amazon/sp-api/docs/sp-api-vendor-use-cases', 'https://developer.amazonservices.com/start', 'https://developer.amazonservices.com/start', 'https://developer-docs-amazon-shipping.readme.io/apis/docs/amazon-scpn-authorization-workflow', 'https://developer-docs.amazon/sp-api/docs/sp-api-vendor-use-cases']\n- Non-vendor sources (prefer official docs): ['https://dlthub.com/docs/dlt-ecosystem/verified-sources/amazon_sp_api']",
+ "metrics": {
+  "n_evidence": 14,
+  "alive_rate": 0.6428571428571429,
+  "dead_rate": 0.35714285714285715,
+  "blocked_rate": 0.0,
+  "official_rate": 0.5714285714285714,
+  "readable": 9,
+  "quote_supported_rate": 0.2222222222222222,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

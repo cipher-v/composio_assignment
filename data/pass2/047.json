@@ -1,0 +1,294 @@
+{
+ "app": {
+  "id": 47,
+  "name": "Ecwid",
+  "category": "Ecommerce",
+  "hint": "api-docs.ecwid.com"
+ },
+ "record": {
+  "subcategory": "E-commerce",
+  "one_liner": "Ecwid is an e-commerce platform for building online stores, managing catalogs, and processing orders.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 for public (multi-tenant) apps; static access tokens (secret_token, public_token) for custom (private) apps.",
+  "access": "paid_plan",
+  "access_notes": "API access is only available on paid plans. There is a free plan, but it does not include API access. Developers can email support to request a free upgrade to a paid plan for their test store for specific purposes like developing a public app. Public apps intended for the App Market must undergo a formal review before they are listed.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST API covering products, categories, orders, store profiles, customers, and discount coupons.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "community_only",
+  "mcp_notes": "No official MCP server. Third-party integration platforms like Zapier and viaSocket provide community-driven MCP wrappers for Ecwid actions.",
+  "verdict": "ready_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "The primary blocker is the requirement of a paid plan for API access. Developers can email support to request a free paid-plan upgrade for a test store, but this is a manual step.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://developers.ecwid.com/",
+    "quote": "customize a store’s functionality or design, create headless sites, or build powerful apps that empower merchants selling around the world."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.ecwid.com/get-started/api-glossary",
+    "quote": "api keys unchangeable and unique credentials for app authentication and decoding some api requests. every application has two api keys: client_id (app id) and client_secret (app secret)."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.ecwid.com/get-started/api-glossary",
+    "quote": "access tokens secure app credentials for authorizing rest api requests. if an app is installed in several ecwid stores, it has unique access tokens for every store. there are two tokens: secret_token and public_token ."
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+    "quote": "step 1. sign up with ecwid the first step is to get yourself a store. only stores on paid plans can access api. if you don’t yet have a store, sign up with ecwid . ecwid provides a free upgrade to a paid plan if you: ... develop a public application for our app market. ... email us to get a free plan upgrade for your test store."
+   },
+   {
+    "claim": "access",
+    "url": "https://support.ecwid.com/hc/en-us/articles/5427022336796-Ecwid-developer-program-for-selling-apps",
+    "quote": "to sell apps with ecwid: sign up as a developer to create an ecwid account. develop your app. ... once the app is done, contact the ecwid team to submit your app for review."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.ecwid.com/get-started/make-your-first-api-request",
+    "quote": "make your first api request | ecwid documentation ... rest api reference"
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+    "quote": "in the following guide, you’ll find instructions on getting yourself a test store with a custom app. together, they'll allow you to make api requests and manage your store data through the code."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+    "quote": "custom apps come with some default permissions allowing you to: receive, change, and delete details about products and categories in your store. create new products and categories. receive store profile details. receive and change details of all placed and unfinished orders in your store."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.ecwid.com/",
+    "quote": "webhooks build automated business processes or sync the store data with an external service. Connect webhooks"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://zapier.com/",
+    "quote": "Zapier Ecwid by Lightspeed MCP lets you connect Ecwid by Lightspeed's actions with any AI tool that supports MCP, all without managing integrations or writing glue code."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://viasocket.com/",
+    "quote": "Connect Ecwid actions with AI tools like ChatGPT, Claude, and Cursor using the viaSocket MCP Server."
+   },
+   {
+    "claim": "api",
+    "url": "https://apis.io/apis/ecwid",
+    "quote": "Ecwid API OpenAPI 3.1.0"
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+    "quote": "Only stores on paid plans can access API."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+    "quote": "There is no test mode in Ecwid API, so we recommend setting up a separate test store."
+   }
+  ],
+  "confidence": 0.9,
+  "changes": [
+   {
+    "field": "access",
+    "old": "approval_required",
+    "new": "paid_plan",
+    "reason": "The official documentation states that API access is only available on paid plans. While a free upgrade for test stores is possible, the fundamental requirement is a paid plan.",
+    "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid"
+   },
+   {
+    "field": "access_notes",
+    "old": "Free Ecwid account. API access requires a paid plan, but developers can email support for a free upgrade to a paid plan for their test store. Public apps require formal app review for marketplace listing.",
+    "new": "API access is only available on paid plans. There is a free plan, but it does not include API access. Developers can email support to request a free upgrade to a paid plan for their test store for specific purposes like developing a public app. Public apps intended for the App Market must undergo a formal review before they are listed.",
+    "reason": "Clarified that the paid plan is the primary requirement for API access, and the free upgrade is for specific development purposes. The app review is for marketplace listing, not initial API access.",
+    "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid"
+   },
+   {
+    "field": "openapi_spec",
+    "old": "false",
+    "new": "true",
+    "reason": "An OpenAPI specification for the Ecwid API is available on APIs.io.",
+    "url": "https://apis.io/apis/ecwid"
+   },
+   {
+    "field": "sandbox",
+    "old": "true",
+    "new": "false",
+    "reason": "The documentation explicitly states there is no test mode in Ecwid API, recommending a separate test store instead, which is a live store, not a sandbox.",
+    "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid"
+   },
+   {
+    "field": "blocker",
+    "old": "app_review_or_approval",
+    "new": "paid_plan",
+    "reason": "The primary blocker for API access is the requirement of a paid plan. The app review is for marketplace distribution, not initial API access.",
+    "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid"
+   },
+   {
+    "field": "blocker_notes",
+    "old": "No official OpenAPI specification, requiring manual tool schema generation. Manual process to get a free paid-plan upgrade for test stores (email support). Public apps require a formal app review.",
+    "new": "The primary blocker is the requirement of a paid plan for API access. Developers can email support to request a free paid-plan upgrade for a test store, but this is a manual step.",
+    "reason": "Corrected the blocker to reflect the paid plan requirement as primary. Removed the incorrect claim about no OpenAPI spec and de-emphasized the app review as the main blocker for initial access.",
+    "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### Verification of the Ecwid Record\n\nHere is a field-by-field analysis of the provided record for Ecwid.\n\n---\n\n**`subcategory`**: **CONFIRMED**\n*   **Value:** `E-commerce`\n*   **Reasoning:** Ecwid is consistently described as an e-commerce platform for building online stores, managing inventory, and selling products across various channels. This classification is accurate.\n\n**`one_liner`**: **CONFIRMED**\n*   **Value:** \"Ecwid is an e-commerce platform for building online stores, managing catalogs, and processing orders.\"\n*   **Reasoning:** The official documentation and search results describe Ecwid as a multi-channel e-commerce platform for managing inventory, orders, and selling across websites and social media. The one-liner is a correct and concise summary.\n\n**`auth_methods`**: **CONFIRMED**\n*   **Value:** `oauth2`, `bearer_token`\n*   **Reasoning:** The documentation confirms that Ecwid uses OAuth 2.0, particularly for public (multi-tenant) apps. For private (single-store) \"custom apps,\" developers can obtain non-expiring `secret_token` and `public_token` directly from their app dashboard, which function as static bearer tokens. API requests are made using the `Authorization: Bearer <token>` header.\n\n**`primary_auth`**: **CONFIRMED**\n*   **Value:** `oauth2`\n*   **Reasoning:** The documentation explicitly states, \"Ecwid uses OAuth 2.0 to provide secure access to the store data for public apps.\" Since public apps are the mechanism for multi-tenant integrations, OAuth 2.0 is the correct primary authentication method.\n\n**`auth_notes`**: **CONFIRMED**\n*   **Value:** \"OAuth 2.0 for public (multi-tenant) apps; static access tokens (secret_token, public_token) for custom (private) apps.\"\n*   **Reasoning:** This distinction is clearly laid out in the documentation. Public apps, intended for the App Market, use the OAuth 2.0 flow. Custom apps, which are private to a single store, allow developers to skip the OAuth flow and use pre-generated, non-expiring `secret_token` and `public_token`.\n\n**`access`**: **WRONG**\n*   **Correct Value:** `paid_plan`\n*   **Reasoning:** The original record's `approval_required` is incorrect. Official documentation states unequivocally, \"Only stores on paid plans can access API.\" While there is a free plan, it does not include API access. Developers can email support to request a free upgrade to a paid plan for a test store, but this is a courtesy for development purposes, not a standard access tier. The core requirement for API access on a live, production store is a paid subscription. The approval process mentioned is for publishing a \"public app\" to the marketplace, not for gaining initial API access to build an app.\n\n**`access_notes`**: **CORRECTED**\n*   **Correct Value:** API access is only available on paid plans. There is a free plan, but it does not include API access. Developers can email support to request a free upgrade to a paid plan for their test store for specific purposes like developing a public app. Public apps intended for the App Market must undergo a formal review before they are listed.\n*   **Reasoning:** The original notes were mostly correct but framed the access model incorrectly. The fundamental requirement is a paid plan. The free developer upgrade is an exception for testing, and the app review is for distribution, not initial access.\n\n**`api_styles`**: **CONFIRMED**\n*   **Value:** `rest`\n*   **Reasoning:** The documentation consistently refers to the API as the \"Ecwid REST API.\"\n\n**`api_breadth`**: **CONFIRMED**\n*   **Value:** `broad`\n*   **Reasoning:** The API provides extensive access to manage core e-commerce objects, including products, categories, orders, customers, store profiles, discount coupons, payment methods, and shipping methods. This qualifies as a broad API.\n\n**`api_notes`**: **CONFIRMED**\n*   **Value:** \"Comprehensive REST API covering products, categories, orders, store profiles, customers, and discount coupons.\"\n*   **Reasoning:** This is an accurate summary of the API's capabilities as described in the API reference and overview documents.\n\n**`openapi_spec`**: **WRONG**\n*   **Correct Value:** `true`\n*   **Reasoning:** While not prominently featured in the main developer documentation, an OpenAPI specification for the Ecwid API is available. Search results point to a specification on APIs.io, which appears to be a documentation-derived but functional OpenAPI 3.1.0 spec.\n\n**`webhooks`**: **CONFIRMED**\n*   **Value:** `true`\n*   **Reasoning:** The main developer portal page explicitly mentions \"Webhooks\" as a feature to \"build automated business processes or sync the store data with an external service.\" The `developers.ecwid.com` page confirms this.\n\n**`sandbox`**: **WRONG**\n*   **Correct Value:** `false`\n*   **Reasoning:** The documentation explicitly states, \"There is no test mode in Ecwid API, so we recommend setting up a separate test store.\" Developers can get a free upgrade to a paid plan for a test store, but this is a fully functional, live store, not a dedicated, isolated sandbox environment.\n\n**`mcp`**: **CONFIRMED**\n*   **Value:** `community_only`\n*   **Reasoning:** There is no evidence of an official, vendor-maintained MCP server. However, multiple third-party integration platforms, including Zapier, viaSocket, and Truto, offer community-built MCP servers for Ecwid.\n\n**`mcp_notes`**: **CONFIRMED**\n*   **Value:** \"No official MCP server. Third-party integration platforms like Zapier and viaSocket provide community-driven MCP wrappers for Ecwid actions.\"\n*   **Reasoning:** This is an accurate summary. Zapier offers an \"Ecwid by Lightspeed MCP\" to connect actions with AI tools. viaSocket also explicitly provides an \"MCP Server for Ecwid.\" The original quotes were not found verbatim, but the substance of the claim is correct.\n\n**`verdict`**: **CONFIRMED**\n*   **Value:** `ready_with_friction`\n*   **Reasoning:** The requirement of a paid plan for API access is a clear point of friction. While a free developer store can be requested, it's an extra manual step. Therefore, a developer cannot immediately self-serve credentials without either paying or going through an email approval loop.\n\n**`blocker`**: **WRONG**\n*   **Correct Value:** `paid_plan`\n*   **Reasoning:** The primary blocker is that API access is gated behind a paid subscription. The app review is a subsequent step for distribution, not initial development, so `app_review_or_approval` is not the first hurdle.\n\n**`blocker_notes`**: **CORRECTED**\n*   **Correct Value:** The primary blocker is the requirement of a paid plan for API access. Developers can email support to request a free paid-plan upgrade for a test store, but this is a manual step.\n*   **Reasoning:** The original notes incorrectly cited the lack of an OpenAPI spec (which does exist) and focused too much on the app review process. The main friction point is the paid plan requirement.\n\n---\n### Uncertain Fields\n\nNone. The available documentation was sufficient to verify all fields.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Ecwid API authentication methods",
+   "Ecwid API OAuth 2.0",
+   "Ecwid API access token types",
+   "Ecwid API access for free plan",
+   "Ecwid developer account free",
+   "Ecwid API reference",
+   "Ecwid API OpenAPI spec",
+   "Ecwid API sandbox",
+   "Ecwid MCP server",
+   "Ecwid public app vs custom app"
+  ],
+  "search_sources": [
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqSc__4FUY1VpChSUV90M_JQH8Ob2oimApbgvDpT1EqkFpkv-mtbEEp7qfJEZOguPk0aLBM4fwcLbRYrTPexVSC1YrdfI62ill-Z65zCQcu6_ECg-BbmfJKZk="
+   },
+   {
+    "title": "shift4shop.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGClsVB_RcBU4SkrNnEAVOSiA1Vb_RHPZ489wCL0UI14UuU78E9Xn0yJwOFCU0o5v3481h9Mslde826CVxCsPASxK5cHo-tkb7kGJRRd03n_pMVtRMZav3rD_4Ez5VlTvYwEkrn9WWlzpd9GtvIlOHpvlVFMaI3MhU="
+   },
+   {
+    "title": "ecwid.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXAOPByOMlDZsVo_UaDRhmNOTwSJPJY0Y307I-NZRCDE4EidoMS3jAHE0xJNTyc8GHJmi_xBdhdfU2cop4beZVWLmI77whFmrLR70X2WUAmZyK9FxwLp-SGYUqDzm1wrU-ZJj2kufFA3DHLxQzL9SQJQLbKr4f7Ko="
+   },
+   {
+    "title": "ecwid.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiCCttAoQdqAR7I9wE7HGV9hksc3bDUhicCC81IBcw9vekd-sp6bWnGWPgtHroM_Q8-LkyafktLnUeo-ceNiGZNSNZjPqD_GCZQtVCZiIT9PbxbpU3nQFjJNh5y4hb"
+   },
+   {
+    "title": "ecwid.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFL0td0Cv3nvpZGjrUhXi_eSiJo9KpCQaIwr8H4_IrUhnN2LZDpEwbr-2iiqceZlatRFkWNdZsRQvvRpXY_G7zbulPbzSjkivE9TRaYifV8VM1zfPMWP2cDc0sQU3aVO7G3o-7GcWPJPor"
+   },
+   {
+    "title": "ecwid.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiFzDKFZgmQshlU7hjetX9Db5_zbeL9OeEWnDqXtJz4wt9YboQBbDxOZRNSFVANVaxEcwM-72MNMtJRgm5LiTaUix1A8J8om0QccgXeIqUlyji5Eji2Wj90y178lyqxx8XO1v8Q1lBpYAyaGpixv0mJ1_RIXlReTlxcP1PMTTgA4U="
+   },
+   {
+    "title": "ecwid.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHn0HLwzr0TxXaXpS1tEGql3LEllOU56vl_s6DDNu-VCLqda6CEK_IcDq4c4l8RkljlSlOjKBWCzU0VWt9TeYUWzFo5HLCHGoq0xBbNDzysNlmeCed1jUl3otXkj4BwmWL41juYKDZcie3USDF1h0y9EsbgxVRlB7B_nOqw-MmETJk="
+   },
+   {
+    "title": "next-cart.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHR2MFST0Dg9HPhyKsaoMPZOrr7B9Z0cDozKTYcI3tjSOFFxPfxnHTSmZ13CjVAjupBh_9jV25FiggeRfNbLXV0yjFjLSxpYfUObkQiI-9w4e5wP8P_Zq1EhBhY9le6bDAMUuyyjBEEu5yD3dIOTmkiVoFZn9Moee4vkw=="
+   },
+   {
+    "title": "shopwired.co.uk",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtTeO0FsSnUPbB5ckI5ODI2XTHYzfXM22yNZ5j1_uZjNHOiFlJjS8gXCvt-VHT0zHHDRIfZcqgohnmWfLRxC1YmqcskE00GhZxvLec3cdFkhf9YBHn1XFJUKhigSvBI6Iv1zE="
+   },
+   {
+    "title": "ecwid.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmMFqX_Cgf86LMT9bPd9hYASZlrApxgBhUWPJ7M0XZNF149PHhy_tHQJC8uWBoj2wUY8iGvmUf1iSmM9XES1nq1mE1FTZ81x_RXiKsaEq85q01nIJ_YPOs3DxZQYhc7zfT5izDVPZaw2aEJuObT_5zv4kKsn-PoRcB1ubnjOBEe4GWU_kA3nwbKdF5r3pgw5r-lea2F0-yfiy6myA="
+   },
+   {
+    "title": "ecwid.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyWdZHLFaQYkVGkaO4NONRT32RhgkfHicgzxpGmDAEBuQT8jQLbIcYYodPnoHj1wJHC2D_mIP3l4IBysgjMDYrj2-WFzKfVAtVPvxMx5zejDiFhzxo9ksNHqE-95qoX_Zd03d5Ql_NwUn6eJ2qIcYDCDsQgIhQRh_EUVCK1QdW"
+   },
+   {
+    "title": "ecwid.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_kbp6KoryYC1VCVFIoYovMIAzXIeLGGHyri1m_DpePrrwYRKc1pioICR3qxcZXeWoZrsZtQ7iaIgCSXu4bsqLNijuB9IHkydWBjTnfTp6d62fuWjBVqw6tHRr81rORsbGI85bMo5N7sUiSIhqWYhYIP89nvSW"
+   },
+   {
+    "title": "ecwid.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHS2ckELis_TmTTO5IzzG12P3AzjTrDuemJmlNbNbEFx1Nvoowe40wRN2bypkR_K5OcVoMWhdVYHS-Wtnjl7iaf7K7B8KGtdFohQemP9UfagA0C4z8d5cqojTBfOc5eW18dTKM="
+   },
+   {
+    "title": "ecwid.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFbXWpsniHH71CcImZJSlHdcmvMNgQl6M11MwCuhgjnpphdUiyrHDMas4UX5WLDs-vuOQFvpegXpqe_fgcKOQXyEgSb4OYZV9l75Tl55CjiE82umVT840="
+   },
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHg4VkbxzCYyzdJHpONN1kDWXqycnKndfyPR_oMk6Ikt68Tr_wHXMSj_KzZHDlbZiKfddkwGGtcdt2lMJ9LVDO9pFY-SglneSInktz_oDPmRgG1uNfO1-l6mo8UUOuwuwJduBgLIMTbOpA="
+   },
+   {
+    "title": "zapier.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmPyHvgEzw2TtE314mwGapO5PkYzkv_PtbQzguqPa__lhaHfsVfe5_hijL7znii5WwFKR_iqCeJ4w6DenIL3CXZhl2nyxDzBS9tWkiX2CJWezwv1QLfw=="
+   },
+   {
+    "title": "usefulapi.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFk5cRCpjo99WUH0CLvO11tlemeOZLW_EkyZhlU0TVvzwK_RNVuLmSpC-jgyeBmixTnDG22FB2bEcSCK-1dWIF9XUiGl8wABKtQXnz-ssgbLszj7Ns"
+   },
+   {
+    "title": "truto.one",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkkHZoNE6Hez-4PB0kSYQUqxsuWNeUcWSnu-CVy05tCcTPQVODWSb41xXzTBpr-QKBlW_4EvRkRHW2PlpkY1hx_k2Ch35qN3cfiqUj3U99HDwq0e6ZnbYWYRjWYhnxVQJWSkZM7O0="
+   },
+   {
+    "title": "viasocket.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwMtqZplfg4hjmUrq3lQSAT5STt7j6g_mpaEGljaTwwGVdtNwmh8mpnOqgfe9R6erkBRMbtekkTIJRE5gCG_pi-q4xWCVnvrQYxRkA92bkO9uv2r_TA8jGbYGjJcpRzQkQgRjPqKvl"
+   }
+  ],
+  "tokens": 10347,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://developers.ecwid.com/",
+    "status": 200,
+    "chars": 2696,
+    "readable": true
+   },
+   {
+    "url": "https://docs.ecwid.com/get-started/api-glossary",
+    "status": 200,
+    "chars": 3890,
+    "readable": true
+   },
+   {
+    "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+    "status": 200,
+    "chars": 3261,
+    "readable": true
+   },
+   {
+    "url": "https://support.ecwid.com/hc/en-us/articles/5427022336796-Ecwid-developer-program-for-selling-apps",
+    "status": 200,
+    "chars": 4191,
+    "readable": true
+   },
+   {
+    "url": "https://docs.ecwid.com/get-started/make-your-first-api-request",
+    "status": 200,
+    "chars": 3822,
+    "readable": true
+   },
+   {
+    "url": "https://zapier.com/",
+    "status": 200,
+    "chars": 11914,
+    "readable": true
+   },
+   {
+    "url": "https://viasocket.com/",
+    "status": 200,
+    "chars": 35857,
+    "readable": true
+   }
+  ],
+  "seconds": 46.5
+ }
+}

@@ -1,0 +1,112 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://docs.datadoghq.com/api/latest/authentication/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.83
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.datadoghq.com/api/latest/authentication/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.datadoghq.com/extend/authorization/oauth2_in_datadog/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.datadoghq.com/pricing/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.datadoghq.com/extend/authorization/oauth2_in_datadog/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.77
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuWeBGmK8KEDV7-B1NVFLwOGb2WjI9RLU2cEjpsH4tUbFdIdJ77AQuFYnuMOWLC0FH5TPeuqK1sfOp4mGr5Br5Br3NDhnK3BqnKlazZqvpsZO8Q05UdcBjjc4IHdugJQn7o6uM-PhRaF1kA==",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/DataDog/datadog-api-client-go",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.69
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.datadoghq.com/integrations/webhooks/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.91
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://docs.datadoghq.com/mcp_server/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.95
+  }
+ ],
+ "auth_support": {
+  "api_key": true,
+  "oauth2": true,
+  "bearer_token": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuWeBGmK8KEDV7-B1NVFLwOGb2WjI9RLU2cEjpsH4tUbFdIdJ77AQuFYnuMOWLC0FH5TPeuqK1sfOp4mGr5Br5Br3NDhnK3BqnKlazZqvpsZO8Q05UdcBjjc4IHdugJQn7o6uM-PhRaF1kA==']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://docs.datadoghq.com/api/latest/authentication/', 'https://docs.datadoghq.com/extend/authorization/oauth2_in_datadog/']\n- Non-vendor sources (prefer official docs): ['https://github.com/DataDog/datadog-api-client-go']",
+ "metrics": {
+  "n_evidence": 9,
+  "alive_rate": 0.8888888888888888,
+  "dead_rate": 0.1111111111111111,
+  "blocked_rate": 0.0,
+  "official_rate": 0.7777777777777778,
+  "readable": 8,
+  "quote_supported_rate": 0.75,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

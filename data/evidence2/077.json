@@ -1,0 +1,231 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://clickup.com/features",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.65
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developer.clickup.com/docs/Getting%20Started",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.54
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://help.clickup.com/hc/en-us/articles/6303422883095-Create-your-own-app-with-the-ClickUp-API",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.68
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://help.clickup.com/hc/en-us/articles/6303422883095-Create-your-own-app-with-the-ClickUp-API",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.86
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://help.clickup.com/hc/en-us/articles/6303422883095-Create-your-own-app-with-the-ClickUp-API",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.81
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://clickup.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.64
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.clickup.com/docs/Getting%20Started",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.92
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.clickup.com/docs/Getting%20Started",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.91
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.clickup.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.clickup.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.clickup.com/reference/getaccesstoken",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://developer.clickup.com/mcp/clickups-mcp-server",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://clickup.com/blog/mcp-tools",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://developer.clickup.com/mcp/clickups-mcp-server",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://developer.clickup.com/mcp/clickups-mcp-server",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.apis.io/provider/clickup",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.apis.io/provider/clickup",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.apis.io/provider/clickup",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developer.clickup.com/docs/api-availability-by-plan",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.reddit.com/r/clickup/comments/1ap2y1r/api_subscription/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.reddit.com/r/clickup/comments/1ap2y1r/api_subscription/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "bearer_token": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://developer.clickup.com/mcp/clickups-mcp-server', 'https://developer.clickup.com/mcp/clickups-mcp-server', 'https://developer.clickup.com/mcp/clickups-mcp-server', 'https://www.apis.io/provider/clickup', 'https://www.apis.io/provider/clickup', 'https://www.apis.io/provider/clickup', 'https://developer.clickup.com/docs/api-availability-by-plan']\n- Non-vendor sources (prefer official docs): ['https://www.reddit.com/r/clickup/comments/1ap2y1r/api_subscription/', 'https://www.reddit.com/r/clickup/comments/1ap2y1r/api_subscription/']",
+ "metrics": {
+  "n_evidence": 21,
+  "alive_rate": 0.6666666666666666,
+  "dead_rate": 0.3333333333333333,
+  "blocked_rate": 0.0,
+  "official_rate": 0.7619047619047619,
+  "readable": 12,
+  "quote_supported_rate": 1.0,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

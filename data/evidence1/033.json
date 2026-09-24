@@ -1,0 +1,160 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/?view=li-lms-2026-09",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.58
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.75
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started?view=li-lms-2026-09#using-oauth-20",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.91
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.64
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers?view=li-lms-2026-08",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.78
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers?view=li-lms-2026-08",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://blotato.com",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-integrations-overview?view=li-lms-2026-09",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.53
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://microsoft.com",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://microsoft.com",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://stitchflow.com",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers?view=li-lms-2026-08",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://modiva.ai",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.08
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://mcpbundles.com",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  }
+ ],
+ "auth_support": {
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://blotato.com', 'https://microsoft.com', 'https://microsoft.com', 'https://stitchflow.com', 'https://modiva.ai', 'https://mcpbundles.com']\n- Non-vendor sources (prefer official docs): ['https://blotato.com', 'https://stitchflow.com', 'https://modiva.ai', 'https://mcpbundles.com']",
+ "metrics": {
+  "n_evidence": 14,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.7142857142857143,
+  "readable": 14,
+  "quote_supported_rate": 0.5714285714285714,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

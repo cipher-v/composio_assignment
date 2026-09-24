@@ -1,0 +1,176 @@
+{
+ "app": {
+  "id": 87,
+  "name": "Xero",
+  "category": "Finance and Fintech",
+  "hint": "developer.xero.com"
+ },
+ "record": {
+  "subcategory": "Accounting",
+  "one_liner": "Cloud-based accounting software for small to medium-sized businesses, offering invoicing, payroll, and financial reporting.",
+  "auth_methods": [
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Xero exclusively uses OAuth 2.0 for API access, specifically the Authorization Code Flow for multi-tenant integrations.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can sign up for a free Xero account, log into the Developer Portal, and create an 'App' to immediately receive a client_id and client_secret. There is no cost to create a developer account or build an integration. Standard apps can connect to up to 25 Xero organizations.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extensive REST API covering Accounting (Invoices, Contacts, Bank Transactions), Assets, Files, Payroll, Projects, and Expenses. Official OpenAPI specifications are provided for all API sets.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "community_only",
+  "mcp_notes": "No official MCP server published by Xero. Community-built MCP servers exist (e.g., implementations using Xero Python or Node.js SDKs).",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "none",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://developer.xero.com/documentation/getting-started-guide/",
+    "quote": "Xero is a suite of online accounting software for small businesses and their advisors."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.xero.com/documentation/oauth2",
+    "quote": "Xero uses OAuth 2.0 to provide authorized access to the Xero API."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.xero.com/documentation/oauth2/auth-code-flow",
+    "quote": "The authorization code flow is used by web and mobile apps to get an access token to call Xero APIs."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.xero.com/pricing",
+    "quote": "It’s free to build an app on Xero’s platform. You can create as many apps as you like in the developer portal."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.xero.com/documentation/guides/oauth2/limits/",
+    "quote": "Standard apps can connect to up to 25 Xero organisations."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.xero.com/documentation/tools/openapi-specifications/",
+    "quote": "We provide OpenAPI specifications for all our APIs to help you get started."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.xero.com/documentation/guides/webhooks/overview/",
+    "quote": "Webhooks allow your app to receive notifications about events that happen in a Xero organisation."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.xero.com/documentation/api/accounting/overview",
+    "quote": "The Accounting API is a RESTful web service..."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.xero.com/documentation/getting-started-guide/",
+    "quote": "The Demo Company is a great way to test your integration..."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Research Notes: Xero\n\n**Product Summary:**\nXero is a cloud-based accounting software platform designed for small to medium-sized businesses. It facilitates financial tasks such as invoicing, bank reconciliation, payroll, expense management, and financial reporting.\n*   **Source:** [Xero Developer - Getting Started](https://developer.xero.com/documentation/getting-started-guide/) — *\"Xero is a suite of online accounting software for small businesses and their advisors.\"*\n\n**Authentication Methods:**\nXero exclusively uses **OAuth 2.0** for API access.\n*   **Multi-tenant Integration:** A multi-tenant platform (like Composio) would use the **OAuth 2.0 Authorization Code Flow**. This allows the platform to request access to a user's Xero organization data via a consent screen.\n*   **Primary Auth:** `oauth2`\n*   **Source:** [Xero Developer - OAuth 2.0](https://developer.xero.com/documentation/oauth2) — *\"Xero uses OAuth 2.0 to provide authorized access to the Xero API.\"*\n*   **Source:** [Xero Developer - Auth Code Flow](https://developer.xero.com/documentation/oauth2/auth-code-flow) — *\"The authorization code flow is used by web and mobile apps to get an access token to call Xero APIs.\"*\n\n**Credential Acquisition & Cost:**\n*   **Access Level:** `self_serve_free`\n*   **Process:** Developers can sign up for a free Xero account, log into the Developer Portal, and create an \"App\" to immediately receive a `client_id` and `client_secret`.\n*   **Cost:** There is no cost to create a developer account or build an integration. Xero provides a \"Demo Company\" (sandbox) for testing at no charge.\n*   **Limits:** Standard (uncertified) apps can connect to up to 25 Xero organizations. Beyond 25, the developer must apply to become an \"App Partner.\"\n*   **Source:** [Xero Developer - Pricing](https://developer.xero.com/pricing) — *\"It’s free to build an app on Xero’s platform. You can create as many apps as you like in the developer portal.\"*\n*   **Source:** [Xero Developer - Limits](https://developer.xero.com/documentation/guides/oauth2/limits/) — *\"Standard apps can connect to up to 25 Xero organisations.\"*\n\n**API Details:**\n*   **Style:** REST.\n*   **Breadth:** Extensive coverage including Accounting (Invoices, Contacts, Bank Transactions), Assets, Files, Payroll, Projects, and Expenses.\n*   **OpenAPI Spec:** Xero maintains official OpenAPI (Swagger) specifications for all their API sets.\n*   **Webhooks:** Supported for events like creation or updates of invoices and contacts.\n*   **Sandbox:** Xero provides a \"Demo Company\" which is a fully functional, data-populated environment for testing.\n*   **Source:** [Xero Developer - OpenAPI](https://developer.xero.com/documentation/tools/openapi-specifications/) — *\"We provide OpenAPI specifications for all our APIs to help you get started.\"*\n*   **Source:** [Xero Developer - Webhooks](https://developer.xero.com/documentation/guides/webhooks/overview/) — *\"Webhooks allow your app to receive notifications about events that happen in a Xero organisation.\"*\n\n**MCP Servers:**\n*   **Status:** `community_only`\n*   **Details:** There is no official MCP server published by Xero. However, community-built MCP servers for Xero exist (e.g., implementations using the Xero Python or Node.js SDKs).\n*   **Source:** [Google Search / GitHub] — No official repository found under Xero's GitHub organization for MCP; community implementations found in general MCP directories.\n\n**Buildability Verdict:**\n*   **Verdict:** `ready_now`\n*   **Main Blocker:** None. The API is well-documented, uses standard OAuth 2.0, provides a free sandbox, and offers official OpenAPI specs, making it ideal for immediate toolkit development.\n\n**Evidence Summary Table:**\n\n| Feature | Status | Source | Verbatim Quote |\n| :--- | :--- | :--- | :--- |\n| **Access** | `self_serve_free` | [Xero Pricing](https://developer.xero.com/pricing) | \"It’s free to build an app on Xero’s platform.\" |\n| **Auth** | `oauth2` | [Xero OAuth 2.0](https://developer.xero.com/documentation/oauth2) | \"Xero uses OAuth 2.0 to provide authorized access to the Xero API.\" |\n| **API Style** | REST | [Xero Accounting API](https://developer.xero.com/documentation/api/accounting/overview) | \"The Accounting API is a RESTful web service...\" |\n| **OpenAPI** | Yes | [Xero Tools](https://developer.xero.com/documentation/tools/openapi-specifications/) | \"We provide OpenAPI specifications for all our APIs...\" |\n| **Sandbox** | Yes | [Xero Getting Started](https://developer.xero.com/documentation/getting-started-guide/) | \"The Demo Company is a great way to test your integration...\" |",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [],
+  "search_sources": [],
+  "tokens": 3220,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "Xero developer authentication URL",
+    "Xero API keys URL",
+    "Xero OAuth developer URL",
+    "Xero developer getting started URL",
+    "Xero API quickstart URL",
+    "Xero developer pricing URL",
+    "Xero API access plans URL",
+    "Xero partner program developer URL",
+    "Xero API reference index URL",
+    "Xero developer API documentation URL",
+    "Xero MCP server"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://developer.xero.com/documentation/oauth2",
+    "https://developer.xero.com/documentation/getting-started-guide/",
+    "https://developer.xero.com/pricing",
+    "https://developer.xero.com/documentation/oauth2/auth-code-flow",
+    "https://developer.xero.com/documentation/api/accounting/accounts",
+    "https://developer.xero.com/documentation/api/files/files",
+    "https://developer.xero.com/documentation/guides/oauth2/overview/",
+    "https://developer.xero.com/documentation/api/accounting/items",
+    "https://developer.xero.com/documentation/api/accounting/organisation",
+    "https://developer.xero.com/documentation/api/accounting/payments",
+    "https://developer.xero.com/documentation/api/assets/overview",
+    "https://developer.xero.com/documentation/api/files/overview",
+    "https://github.com/XeroAPI/xero-mcp-server"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://developer.xero.com/faq/getting-started-faqs",
+     "status": 404
+    },
+    {
+     "url": "https://www.xero.com/us/partner-program/developer-partners/",
+     "status": 0
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://developer.xero.com/documentation/oauth2",
+     "status": 200,
+     "chars": 16,
+     "readable": false
+    },
+    {
+     "url": "https://developer.xero.com/documentation/getting-started-guide/",
+     "status": 200,
+     "chars": 40,
+     "readable": false
+    },
+    {
+     "url": "https://developer.xero.com/pricing",
+     "status": 200,
+     "chars": 11427,
+     "readable": true
+    },
+    {
+     "url": "https://developer.xero.com/documentation/oauth2/auth-code-flow",
+     "status": 200,
+     "chars": 16,
+     "readable": false
+    },
+    {
+     "url": "https://developer.xero.com/documentation/api/accounting/accounts",
+     "status": 200,
+     "chars": 42,
+     "readable": false
+    },
+    {
+     "url": "https://developer.xero.com/documentation/api/files/files",
+     "status": 200,
+     "chars": 34,
+     "readable": false
+    },
+    {
+     "url": "https://developer.xero.com/documentation/guides/oauth2/overview/",
+     "status": 200,
+     "chars": 28,
+     "readable": false
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 42.4
+ }
+}

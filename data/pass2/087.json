@@ -1,0 +1,339 @@
+{
+ "app": {
+  "id": 87,
+  "name": "Xero",
+  "category": "Finance and Fintech",
+  "hint": "developer.xero.com"
+ },
+ "record": {
+  "subcategory": "Accounting",
+  "one_liner": "Cloud-based accounting software for small to medium-sized businesses, offering invoicing, payroll, and financial reporting.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Xero uses OAuth 2.0 for all API access. For multi-tenant web apps, the Authorization Code flow is standard. For mobile or desktop apps, the PKCE flow is used. For single-tenant, machine-to-machine integrations, a premium \"Custom Connection\" option using the client credentials grant type is available.",
+  "access": "paid_plan",
+  "access_notes": "Developers can sign up for a free Xero account and use the Developer Portal to create an app and get credentials. However, API access is governed by a tiered pricing model effective March 2026. A free \"Starter\" tier exists but is limited to 5 connections and 1,000 daily API calls per organization. To exceed 5 connections, developers must upgrade to a paid tier, which also increases the daily call limit to 5,000 and provides a data egress allowance with overage fees. Access to premium APIs like Xero Practice Manager requires separate approval.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extensive REST API covering Accounting (Invoices, Contacts, Bank Transactions), Assets, Files, Payroll, Projects, and Expenses. Official OpenAPI specifications are provided for all API sets.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Xero has published an official, open-source MCP server on GitHub. It acts as a bridge between the MCP protocol and the Xero API, supporting authentication via Custom Connections or bearer tokens.",
+  "verdict": "ready_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "The primary blocker is the new pricing model. While not an absolute stop, the cost associated with scaling beyond 5 connections is a significant point of friction.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://developer.xero.com/documentation/getting-started-guide/",
+    "quote": "Xero is a suite of online accounting software for small businesses and their advisors."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.xero.com/documentation/oauth2",
+    "quote": "Xero's API supports the authorization code grant type using the standard authorization code flow or the Proof Key for Code Exchange (PKCE) extension. We also have a premium integration option called Custom Connections which utilises the client credentials grant type."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.xero.com/documentation/oauth2/auth-code-flow",
+    "quote": "The authorization code flow is used by web and mobile apps to get an access token to call Xero APIs."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.xero.com/pricing/",
+    "quote": "App pricing is a flat monthly fee based on tier and includes a set allotment of data consumption via the Xero APIs."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.xero.com/pricing/",
+    "quote": "New apps created in the Xero Developer portal will default to the Starter tier. The Starter tier has unlimited data access to enable early innovation but is capped at 5 connections. In order to add a 6th connection, you will need to first add your payment details. Once that is complete, you will move to the Core tier."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.xero.com/documentation/tools/openapi-specifications/",
+    "quote": "We provide OpenAPI specifications for all our APIs to help you get started."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.xero.com/documentation/guides/webhooks/overview/",
+    "quote": "Webhooks allow your app to receive notifications about events that happen in a Xero organisation."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.xero.com/documentation/api/accounting/overview",
+    "quote": "The Accounting API is a RESTful web service..."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.xero.com/documentation/getting-started-guide/",
+    "quote": "The Demo Company is a great way to test your integration..."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://xero.developer.com/explore/ai-tools-and-features/xero-unveils-new-model-context-protocol-server-for-smarter-accounting/",
+    "quote": "We've developed an MCP server that seamlessly integrates with Xero's public API, allowing LLMs to interact with business data in a secure and efficient way."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://www.kipper.ai/post/xero-mcp-server",
+    "quote": "Xero's official MCP server is published as an open-source GitHub repository for developer-run local setups."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://developer.xero.com/pricing/",
+    "quote": "App pricing is a flat monthly fee based on tier and includes a set allotment of data consumption via the Xero APIs."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.xero.com/documentation/getting-started/development-accounts/",
+    "quote": "Designed to meet developers where they are in their app development journey, we are transitioning to five tiers: Starter, Core, Plus, Advanced, Enterprise based on connections and data consumption via the Xero APIs."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": "[\"oauth2\"]",
+    "new": "[\"oauth2\", \"bearer_token\"]",
+    "reason": "The first-pass record was incomplete. While the primary method is OAuth 2.0 (Authorization Code and PKCE flows), Xero also offers a client_credentials grant type as a premium option for single-tenant, machine-to-machine integrations called \"Custom Connections\". This is a form of bearer token.",
+    "url": "https://developer.xero.com/documentation/oauth2"
+   },
+   {
+    "field": "auth_notes",
+    "old": "Xero exclusively uses OAuth 2.0 for API access, specifically the Authorization Code Flow for multi-tenant integrations.",
+    "new": "Xero uses OAuth 2.0 for all API access. For multi-tenant web apps, the Authorization Code flow is standard. For mobile or desktop apps, the PKCE flow is used. For single-tenant, machine-to-machine integrations, a premium \"Custom Connection\" option using the client credentials grant type is available.",
+    "reason": "The claim \"exclusively\" is incorrect. Xero supports multiple OAuth 2.0 grant types. The Authorization Code and PKCE flows are standard, but a client_credentials flow is available for premium \"Custom Connections\".",
+    "url": "https://developer.xero.com/documentation/oauth2"
+   },
+   {
+    "field": "access",
+    "old": "self_serve_free",
+    "new": "paid_plan",
+    "reason": "As of March 2026, Xero has a mandatory tiered pricing model based on connections and data egress. While there is a \"Starter\" tier that is free, it is heavily restricted to 5 connections and 1,000 daily API calls, making it unsuitable for most production apps. To scale beyond 5 connections, a developer must move to a paid \"Core\" tier. This model constitutes a hurdle beyond a simple free tier.",
+    "url": "https://developer.xero.com/pricing/"
+   },
+   {
+    "field": "access_notes",
+    "old": "Developers can sign up for a free Xero account, log into the Developer Portal, and create an 'App' to immediately receive a client_id and client_secret. There is no cost to create a developer account or build an integration. Standard apps can connect to up to 25 Xero organizations.",
+    "new": "Developers can sign up for a free Xero account and use the Developer Portal to create an app and get credentials. However, API access is governed by a tiered pricing model effective March 2026. A free \"Starter\" tier exists but is limited to 5 connections and 1,000 daily API calls per organization. To exceed 5 connections, developers must upgrade to a paid tier, which also increases the daily call limit to 5,000 and provides a data egress allowance with overage fees. Access to premium APIs like Xero Practice Manager requires separate approval.",
+    "reason": "This note is outdated and misleading. While signing up for a developer account is free, API access for any meaningful application is not. As of March 2026, a new tiered pricing model is in effect. The free \"Starter\" tier is limited to 5 connections. The previous limit of 25 connections for \"standard\" (uncertified) apps has been replaced by these new tiers. To get more than 5 connections, a paid plan is required. Additionally, access to certain APIs like the Xero Practice Manager (XPM) API requires special approval.",
+    "url": "https://developer.xero.com/pricing/"
+   },
+   {
+    "field": "mcp",
+    "old": "community_only",
+    "new": "official",
+    "reason": "Xero has released an official Model Context Protocol (MCP) server. It is available as an open-source project on GitHub.",
+    "url": "https://xero.developer.com/explore/ai-tools-and-features/xero-unveils-new-model-context-protocol-server-for-smarter-accounting/"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "No official MCP server published by Xero. Community-built MCP servers exist (e.g., implementations using Xero Python or Node.js SDKs).",
+    "new": "Xero has published an official, open-source MCP server on GitHub. It acts as a bridge between the MCP protocol and the Xero API, supporting authentication via Custom Connections or bearer tokens.",
+    "reason": "This is incorrect. Xero has published an official, open-source MCP server that integrates with its public API.",
+    "url": "https://xero.developer.com/explore/ai-tools-and-features/xero-unveils-new-model-context-protocol-server-for-smarter-accounting/"
+   },
+   {
+    "field": "verdict",
+    "old": "ready_now",
+    "new": "ready_with_friction",
+    "reason": "The introduction of a mandatory, usage-based pricing model with a very limited free tier (5 connections) means there is significant friction to building and scaling an application. This aligns with the ready_with_friction definition.",
+    "url": "https://developer.xero.com/pricing/"
+   },
+   {
+    "field": "blocker",
+    "old": "none",
+    "new": "paid_plan",
+    "reason": "The primary blocker is the new pricing model. While not an absolute stop, the cost associated with scaling beyond 5 connections is a significant point of friction.",
+    "url": "https://developer.xero.com/pricing/"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### **Verification Notes**\n\n**subcategory**: `Accounting`\n*   **CONFIRMED**. The one-liner and general evidence confirm Xero is accounting software.\n\n**one_liner**: `Cloud-based accounting software for small to medium-sized businesses, offering invoicing, payroll, and financial reporting.`\n*   **CONFIRMED**. Search results describe Xero as \"cloud-based accounting software for small to medium-sized businesses\" and mention its capabilities for invoicing, payroll, and financial reporting.\n\n**auth_methods**: `[\"oauth2\"]`\n*   **WRONG**. The first-pass record is incomplete. While the primary method is OAuth 2.0 (Authorization Code and PKCE flows), Xero also offers a `client_credentials` grant type as a premium option for single-tenant, machine-to-machine integrations called \"Custom Connections\".\n*   **Correct Value**: `[\"oauth2\", \"client_credentials\"]`\n*   **Source**: [https://developer.xero.com/documentation/guides/oauth2/custom-connections/](https://developer.xero.com/documentation/guides/oauth2/custom-connections/), [https://developer.xero.com/documentation/oauth2](https://developer.xero.com/documentation/oauth2)\n*   **Quote**: \"Xero's API supports the authorization code grant type using the standard authorization code flow or the Proof Key for Code Exchange (PKCE) extension. We also have a premium integration option called Custom Connections which utilises the client credentials grant type.\"\n\n**primary_auth**: `oauth2`\n*   **CONFIRMED**. For multi-tenant integrations, which is the primary use case for a platform, the standard OAuth 2.0 Authorization Code flow is the correct method. The `client_credentials` flow is for single-tenant \"Custom Connections\".\n\n**auth_notes**: `Xero exclusively uses OAuth 2.0 for API access, specifically the Authorization Code Flow for multi-tenant integrations.`\n*   **WRONG**. The claim \"exclusively\" is incorrect. Xero supports multiple OAuth 2.0 grant types. The Authorization Code and PKCE flows are standard, but a `client_credentials` flow is available for premium \"Custom Connections\".\n*   **Correct Value**: Xero uses OAuth 2.0 for all API access. For multi-tenant web apps, the Authorization Code flow is standard. For mobile or desktop apps, the PKCE flow is used. For single-tenant, machine-to-machine integrations, a premium \"Custom Connection\" option using the client credentials grant type is available.\n*   **Source**: [https://developer.xero.com/documentation/oauth2](https://developer.xero.com/documentation/oauth2)\n*   **Quote**: \"Xero's API supports the authorization code grant type using the standard authorization code flow or the Proof Key for Code Exchange (PKCE) extension. We also have a premium integration option called Custom Connections which utilises the client credentials grant type.\"\n\n**access**: `self_serve_free`\n*   **WRONG**. As of March 2026, Xero has a mandatory tiered pricing model based on connections and data egress. While there is a \"Starter\" tier that is free, it is heavily restricted to 5 connections and 1,000 daily API calls, making it unsuitable for most production apps. To scale beyond 5 connections, a developer must move to a paid \"Core\" tier. This model constitutes a hurdle beyond a simple free tier.\n*   **Correct Value**: `ready_with_friction`\n*   **Source**: [https://developer.xero.com/pricing/](https://developer.xero.com/pricing/), [https://www.accountingtoday.com/news/xero-shifts-to-tiered-pricing-model-for-developers](https://www.accountingtoday.com/news/xero-shifts-to-tiered-pricing-model-for-developers)\n*   **Quote**: \"App pricing is a flat monthly fee based on tier and includes a set allotment of data consumption via the Xero APIs.\" and \"New apps created in the Xero Developer portal will default to the Starter tier. The Starter tier has unlimited data access to enable early innovation but is capped at 5 connections. In order to add a 6th connection, you will need to first add your payment details. Once that is complete, you will move to the Core tier.\"\n\n**access_notes**: `Developers can sign up for a free Xero account, log into the Developer Portal, and create an 'App' to immediately receive a client_id and client_secret. There is no cost to create a developer account or build an integration. Standard apps can connect to up to 25 Xero organizations.`\n*   **WRONG**. This note is outdated and misleading. While signing up for a developer account is free, API access for any meaningful application is not. As of March 2026, a new tiered pricing model is in effect. The free \"Starter\" tier is limited to 5 connections. The previous limit of 25 connections for \"standard\" (uncertified) apps has been replaced by these new tiers. To get more than 5 connections, a paid plan is required. Additionally, access to certain APIs like the Xero Practice Manager (XPM) API requires special approval.\n*   **Correct Value**: Developers can sign up for a free Xero account and use the Developer Portal to create an app and get credentials. However, API access is governed by a tiered pricing model effective March 2026. A free \"Starter\" tier exists but is limited to 5 connections and 1,000 daily API calls per organization. To exceed 5 connections, developers must upgrade to a paid tier, which also increases the daily call limit to 5,000 and provides a data egress allowance with overage fees. Access to premium APIs like Xero Practice Manager requires separate approval.\n*   **Source**: [https://developer.xero.com/pricing/](https://developer.xero.com/pricing/), [https://developer.xero.com/documentation/getting-started/development-accounts/](https://developer.xero.com/documentation/getting-started/development-accounts/)\n*   **Quote**: \"Designed to meet developers where they are in their app development journey, we are transitioning to five tiers: Starter, Core, Plus, Advanced, Enterprise based on connections and data consumption via the Xero APIs.\" and \"The Starter tier... is capped at 5 connections. In order to add a 6th connection, you will need to first add your payment details. Once that is complete, you will move to the Core tier.\"\n\n**api_styles**: `[\"rest\"]`\n*   **CONFIRMED**. The API is consistently described as a RESTful web service that returns JSON.\n\n**api_breadth**: `broad`\n*   **CONFIRMED**. The API covers a wide range of accounting functions, including Accounting (Invoices, Contacts, Bank Transactions), Payroll, Assets, Files, Projects, and more.\n\n**api_notes**: `Extensive REST API covering Accounting (Invoices, Contacts, Bank Transactions), Assets, Files, Payroll, Projects, and Expenses. Official OpenAPI specifications are provided for all API sets.`\n*   **CONFIRMED**. The list of APIs is accurate, and Xero provides official OpenAPI specifications.\n\n**openapi_spec**: `true`\n*   **CONFIRMED**. Xero provides OpenAPI specifications for its APIs and maintains a GitHub repository for them.\n\n**webhooks**: `true`\n*   **CONFIRMED**. Xero provides webhooks for receiving real-time notifications and recommends using them to avoid polling and stay within rate limits.\n\n**sandbox**: `true`\n*   **CONFIRMED**. Developers can sign up for a free Xero account which includes a \"Demo Company\". This demo company comes pre-populated with data and can be used as a sandbox environment to test API integrations without affecting live data.\n\n**mcp**: `community_only`\n*   **WRONG**. Xero has released an official Model Context Protocol (MCP) server. It is available as an open-source project on GitHub.\n*   **Correct Value**: `official`\n*   **Source**: [https://www.kipper.ai/post/xero-mcp-server](https://www.kipper.ai/post/xero-mcp-server), [https://xero.developer.com/explore/ai-tools-and-features/xero-unveils-new-model-context-protocol-server-for-smarter-accounting/](https://xero.developer.com/explore/ai-tools-and-features/xero-unveils-new-model-context-protocol-server-for-smarter-accounting/)\n*   **Quote**: \"We're thrilled to announce the launch of a Model Context Protocol (MCP) server specifically designed for accounting data, available as open-source on GitHub.\" and \"Xero's official MCP server is published as an open-source GitHub repository for developer-run local setups.\"\n\n**mcp_notes**: `No official MCP server published by Xero. Community-built MCP servers exist (e.g., implementations using Xero Python or Node.js SDKs).`\n*   **WRONG**. This is incorrect. Xero has published an official, open-source MCP server that integrates with its public API.\n*   **Correct Value**: Xero has published an official, open-source MCP server on GitHub. It acts as a bridge between the MCP protocol and the Xero API, supporting authentication via Custom Connections or bearer tokens.\n*   **Source**: [https://xero.developer.com/explore/ai-tools-and-features/xero-unveils-new-model-context-protocol-server-for-smarter-accounting/](https://xero.developer.com/explore/ai-tools-and-features/xero-unveils-new-model-context-protocol-server-for-smarter-accounting/)\n*   **Quote**: \"We've developed an MCP server that seamlessly integrates with Xero's public API, allowing LLMs to interact with business data in a secure and efficient way.\"\n\n**verdict**: `ready_now`\n*   **WRONG**. The introduction of a mandatory, usage-based pricing model with a very limited free tier (5 connections) means there is significant friction to building and scaling an application. This aligns with the `ready_with_friction` definition.\n*   **Correct Value**: `ready_with_friction`\n*   **Source**: [https://developer.xero.com/pricing/](https://developer.xero.com/pricing/)\n*   **Quote**: \"App pricing is a flat monthly fee based on tier and includes a set allotment of data consumption via the Xero APIs.\"\n\n**blocker**: `none`\n*   **WRONG**. The primary blocker is the new pricing model. While not an absolute stop, the cost associated with scaling beyond 5 connections is a significant point of friction.\n*   **Correct Value**: `paid_plan`\n*   **Source**: [https://developer.xero.com/pricing/](https://developer.xero.com/pricing/)\n*   **Quote**: \"To be listed on the Xero App Store, you will need to be in the Plus tier or higher.\" and \"In order to add a 6th connection, you will need to first add your payment details. Once that is complete, you will move to the Core tier.\"\n\n### **Uncertain Fields**\n\nNone. The official documentation and recent secondary sources provide a clear picture of the current state of Xero's API access and tooling.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Xero developer account free",
+   "Xero API access pricing",
+   "Xero API authentication methods",
+   "Does Xero API use anything other than OAuth 2.0",
+   "Xero API sandbox environment",
+   "Xero official mock API server",
+   "Xero API app review process",
+   "Xero API connection limits"
+  ],
+  "search_sources": [
+   {
+    "title": "apix-drive.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOmtWEiYQu6rszO7PFnLIHDw3Zd_u0TBxUHEhm_cqNcAFFiSpgcGXWDEn50-usBekdqHxg9s8afAgEX2Ncq1_HNwpDWvT_pJXj4otHytWrYXSylCUlU1iZQpM-A6FN6ngyfwEE87C2C-IYKjvL2IxuMZ8yQw=="
+   },
+   {
+    "title": "bindbee.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECG4qQ0NtA_QEkXQhTqoYJIpdVazoplzgeWpjqo4-agTX4kO-5EeGPC79tT3QBJB3uQUMVOR4Z9Ropfjvk13caQYSDL3YYXfV565Q5Ls1K5Sl5vRuEtU5muHUvWmg-9xOLRg=="
+   },
+   {
+    "title": "apideck.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnXvbjO5W8l26Xn6xLixODFoIxDOJYl7fy2Gi4L_DOLUxkprauKTPg7ZJes-7nTJDS_sV3UsGniJVQCJDAgSRqztxqSifTkjCjRYzwrcd0ZEJMKmHIwHU0v1HNQs2idBJUW6CMXfSG1jHiLnV2IYzEVRmlGWgBL8hK3Ojk5aYH0GO9kCdusiZsUydGvyqgQSDVC_hG3Zv1oa-TCdKiBA=="
+   },
+   {
+    "title": "xero.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvFclcENFUN9OIHJ1Uf3D8RNxX17h6IwfW-CZUt-27WaoWtUTI4m_2JCW78b7fBAVIH01f8a4OjKZ_XZLiGlznPqx52PekVWxi-7k6iXYqGZ_JlfuWlmmNwfy5b7-VlRNCug317Qbhgb9bmyjkO_YGWKVIWTuummmjUjs="
+   },
+   {
+    "title": "xero.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWLWQ49KMXSONiGr1U07cuhZrq1Qe6lYE0zN5JsS1bcnzb4wVhcUOrX8KKiAU9LSYogMUHCITUEzZN4L4c39XsBJrqnlNn39B83yvQHMqiI6Lc73wuNkH9_3pmBl8cJdVQC4_qmzFyNw=="
+   },
+   {
+    "title": "satvasolutions.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnmNjVTqJ5bkgvdWyYAMeioEuR8Lno_m6cvozx-RrDn5XBdAR4H7AdIRvW7VHWBetHeDzD7YrlpCcYDCgVGMh1spzAqOW5kh2cWhoG4Hj-5srl6cBig1PPxjlk33lchEgE6eTpVdE2mJ1VqcciBSknJuoNrDY="
+   },
+   {
+    "title": "getknit.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2bSsfJ8vE3jAZ8U0mXrxfD1gZtJpZc1WWkUEOJXEWsekQEodzJY3_IyvzRO98QzcXUE5gk0OmEzubmbl_IFCEV9l1eh1AnffsaBodLjAx76dkswicFapzgFiWeZSATMCaNDyhb45N"
+   },
+   {
+    "title": "accountingtoday.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnTR3jebPIjYqhjlYX7niV2znzfnKSTmPJWArCnqe1g_qcE8aY-VmGVJhyWIiU6vvHlU1Y8ZokFGYPrqK_Ooi_EzUc2eWkYnAFGrTpsll6JJZ_r323P2ZbbfCYsviCcueiJenzFv1Lfbud2T98VuLNzcz7TRoZk7ssIqIpbAHmVjoQYFFTvPXgyQbtU-XtzFQtlg=="
+   },
+   {
+    "title": "xero.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXb8-_CTLCASBuw4lKgyT-S9ETD-CXgOwOxDPET3a5x1R69JIToDFxO3biLO5wyR1cYNkjHmSZhbFtW0vHrIjYN5RedD_UDkidPXGKAej2cFInqMnLdbs8JjzOHyI="
+   },
+   {
+    "title": "xero.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDaFFG4Mg7_0RS7-M-1w9cOKpqLAPz37WInTUOrtHzYbnbECB8FrMHx7XgyXfL072Oc6EFbHrJLGBuxkvcLA_OceV7UIesFzqsbTGofsS79E_qX1qZYXSoGg=="
+   },
+   {
+    "title": "xero.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWoJHEvPoI22q5-EzW39gnfqLH7ajHLHIgjN1ehewi477tibcxvxCOlo-6fX329D-tbSHX0GaXB7yaHMOZU6PH6l4NV6oZ79zvcs0wtnQGZHLCH7SBUVtnwtskM-JkVPFGpSoEMq7WGbKwnFfsrjnQyvCWr1h-gQ5W"
+   },
+   {
+    "title": "coefficient.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERi9bBzIzKKlG5o12g-e7x3gOE-HrNlRDFbVFpQv20vwhiqh8vQDGaLbosS2uHYl8UATdE3N0F1lVtTGzRQfdC4FiGZbU98O4qfleP6jS8wsSKG-0K-M8JdZPecwNzRT8sGb-X3sNYI2JGxQQKbRE="
+   },
+   {
+    "title": "apideck.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElrqnxCmsOI16vOpkrJk76Nw7AGfzv5HX8Q-X0h6K0WoU7Uei06fbvPmBClDIn8pffANXlDejuQCuWbunFkBRD3YAVxo5WuFoXZNyGZpcuFoeJSTqaLZ1eEJKJytLL-Wbkv9_dmOn7nBs="
+   },
+   {
+    "title": "satvasolutions.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLqXzY_cP-mKIGTTKsDvwOhpw8bNCqZ4YugiKYcDCm5J7XXRx8sJX1QmHWWux-JS1yqm1ng1PlL_UQRimQseklM0pgp7a5H2gckLLvDBmZCYkKxZovSfTeSlVmykkIwZbjFBVvWCvBSZ2Obc-xREMrYplBlJu0dC7c8x7f6xoJgxgmDUdPJQ=="
+   },
+   {
+    "title": "xero.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3lLmlhPCGdOrcbSdbha9Styww8_UNF3MfM4WRsmjOXDrVoyUsZ0982rdC_bP7Qs3H0uK3rIhHOjviU5W4J-PlJUKDv-DiHqqXWGbaWvPdJ8u9xj3No0qeBP2jF-bkRpO2Jar_4C4fBzkMguG21-Y7yhy72hB9Ba6NhcGuW3-cCGU84q54UuaNoy1XrGEIPoBkG7F3tt-mPT0Rs35L9EouZlGd"
+   },
+   {
+    "title": "xero.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3tyyIyqq6QGpgu7sP81ir1AmssheEcZmAk6OgdcrB67T13D6k-pgRIKk2fzku7I206ypaYpYxaIsExtOaJSynN19Pc2KND6wsVcSPdzfyk7Kb5m-LQGaCeczyVD0XHrloUSsrf-DzEsnfqOxFs_EamDH0gg=="
+   },
+   {
+    "title": "getknit.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrl9tLmQrn_OyeYRaR4dSC1nJRJ4dKtzYyQVmwMl_S0xCrtOOAWSJIR8VTV_LMyuQSYuYlsJNdYUISSz27QtYmZsdOXg47MhZxM7z8gDMCmAzl1xMT-Px0iuyyPQ_E1Orovj2JFiW9tJ_UnJlGKK1n8P87m8oXzls="
+   },
+   {
+    "title": "mockoon.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIvH56ANQEZ8pu5CpRwO2z45MgWOKBnV9Zi8vvvggX4xVYNHd71V5gvu4B-RTr5EGBhGgSbruBtVXPNA_26ICzwj5LBmH9vl6ljKWPlU2FGivFisopNOo-FycejsnT4sOwuypYxv6H-gOAht1kd3BwjhJW4g=="
+   },
+   {
+    "title": "apitracker.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6IY8vr6tHA10lqeAVdGHQynGiR8fqaSJ5nVp05MJueIyuTN6j-o3sypXEGvi67ZDz1NnR9xwHH-TzF33NEkkykNDe_xZss7ao4wIcwkqSufU8IfuVunA="
+   },
+   {
+    "title": "apideck.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6JtwOZyvOOD1f332JJPlwT0jtwiO03eUas7JKAG7YFIwiyWOasg4FaBoSP7R9k2hNW4T7ryPt51vX30dK6cOVR7MOfAslvRRsiu4zmWNUZJx0RYeHTTuYukCNX4Zp_d6-qk9uCZW5KUAIQd-LgSwFwrLUQbw7qLuwQvVB5t_JfL-Xnn8="
+   },
+   {
+    "title": "endgrate.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEV6ey1ylJ3tDmn0RxK-YWyV-8tDJG8sSaGkOtmPgvXPW01bsqgK03X8C1DDOX2iiNQjI4sQBQ8DzYWPiqyrY6FqgqBPikxhj42g6_51YMZOL6FHRUf22oqnzUjVKoIsPUgLlh-tVVJOW9Z4jGwLISqhfYBh-Q4_XBgFfMmtvb9KCJ_qykdh0WEA2S_l0pAD4_tY6UciC6YjvtZ1NY="
+   },
+   {
+    "title": "routable.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHft9IU0fydnFalnsM-92-og5UrqGSJBm6r2yomTFPM6-3UO-DonZXlZsxVGydj_hNc1ctE93t05bXKI2aL4A_UF3KNePWrlJECPFWUB9Xw-23HPcktfJXvHq4FP6DYm3HpR8ijUa4wEG7SsB8="
+   },
+   {
+    "title": "kipper.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPHXhZNWJ1RnXCqQY_yYJWGvlYXK_teuPFgJ7Mpfz1Dr0e8mpmcRHfKKoLNGmjO-6s-ezR-ob6unVyPn8zrVSgHXce4WDUoCtGydpqunWSr2_oV4UC5wVgxhvrbHXRFSAYPkKXnht3tPXKFkkwnRk5ffBzsQ=="
+   },
+   {
+    "title": "xero.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGORe3ywFdazHpG3byiJahGTEpkReiFCtNzov4FmvvdqHICEwG8QCjWsWCcw4tztxR0zcW3494wq4wdu2fTc53ERmAQd8o-WUhxEo1W7K5kRIucaxjkYyuNc43HyGu9wmMir-VUL1ND7Dhx2Ytg9WBiM_q042MDqedOW9CN1xrzcMFaGXkrH2M9Nj--8NKarifb_-IPIUcTNZsZ5o-uhOKKFMeoy0v4My6G"
+   },
+   {
+    "title": "hexmos.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiaN5mbGRORuU08gcHYf-2aCKyxpJxZVYt6sHH6_PyCp7tKH0KuKP38t0MUGiPJ-3Zgn5tw3ILmTaHcqiQJS_dau8Oeu_cXJFZznNulORNTsK6nWNxGY8EG5SNlFiM-5sAsP60XDmIdmrmIs6EbV3ScAApt9aPp2OhR5u_FeJnxMj-pT_hc5U="
+   },
+   {
+    "title": "mcpservers.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9kfNgvNgmN1Clhvu2CGPr-FPnnfF4-__3eN42o2-tLdKfeAFRQc9t0yfFirudYV0KfhM0WRxNUSzauiVkjEAouOG8DFGFOEWFPyVOzZ0p-shHlivfEOW-MkDJtrJTjeIA09uHPxc2H5JTfGdHq5RYyw=="
+   },
+   {
+    "title": "xero.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOsFgCWmIGCF4M38LSmTHoMZeh7_xAS-uB5iqOnbFkuD42bu5XeycIPVtDUmrWv6tJe_PpPSiCy_Dd5-bkzRwuluzzuySBjkUK1xVTquvlasHLtNQ9J-tTqcN4GeA60wD94Jt7oBaOXbAPgauEdEAiSuSLbyGBvUcC9EjCIn8k_vrRE2qcaAXNEpnbaHQeeow4DUwJmvotHts0j8GyDzU="
+   }
+  ],
+  "tokens": 7338,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://developer.xero.com/documentation/getting-started-guide/",
+    "status": 200,
+    "chars": 40,
+    "readable": false
+   },
+   {
+    "url": "https://developer.xero.com/documentation/oauth2",
+    "status": 200,
+    "chars": 16,
+    "readable": false
+   },
+   {
+    "url": "https://developer.xero.com/documentation/oauth2/auth-code-flow",
+    "status": 200,
+    "chars": 16,
+    "readable": false
+   },
+   {
+    "url": "https://developer.xero.com/pricing",
+    "status": 200,
+    "chars": 11427,
+    "readable": true
+   },
+   {
+    "url": "https://developer.xero.com/documentation/guides/oauth2/limits/",
+    "status": 200,
+    "chars": 39,
+    "readable": false
+   },
+   {
+    "url": "https://developer.xero.com/documentation/tools/openapi-specifications/",
+    "status": 200,
+    "chars": 16,
+    "readable": false
+   },
+   {
+    "url": "https://developer.xero.com/documentation/guides/webhooks/overview/",
+    "status": 200,
+    "chars": 36,
+    "readable": false
+   },
+   {
+    "url": "https://developer.xero.com/documentation/api/accounting/overview",
+    "status": 200,
+    "chars": 42,
+    "readable": false
+   }
+  ],
+  "seconds": 80.8
+ }
+}

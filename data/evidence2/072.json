@@ -1,0 +1,121 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://airtable.com/developers/agents",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.71
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://sfailabs.com/guides/how-to-get-airtable-api-key",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.64
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://github.com/Airtable/oauth-example",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://airtable.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://github.com/Airtable/oauth-example",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://dev.to",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://hookdeck.com",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://simplified-webhooks.com",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://airtable.com",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://airtable.com/developers/agents",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.25
+  }
+ ],
+ "auth_support": {
+  "bearer_token": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://dev.to', 'https://hookdeck.com', 'https://simplified-webhooks.com', 'https://airtable.com', 'https://airtable.com/developers/agents']\n- Non-vendor sources (prefer official docs): ['https://sfailabs.com/guides/how-to-get-airtable-api-key', 'https://github.com/Airtable/oauth-example', 'https://github.com/Airtable/oauth-example', 'https://dev.to', 'https://hookdeck.com', 'https://simplified-webhooks.com']",
+ "metrics": {
+  "n_evidence": 10,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.4,
+  "readable": 10,
+  "quote_supported_rate": 0.5,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

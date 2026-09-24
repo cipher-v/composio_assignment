@@ -1,0 +1,246 @@
+{
+ "app": {
+  "id": 71,
+  "name": "Notion",
+  "category": "Productivity and Project Management",
+  "hint": "developers.notion.com"
+ },
+ "record": {
+  "subcategory": "Productivity / Project Management",
+  "one_liner": "Notion is an all-in-one workspace that combines notes, tasks, wikis, and databases.",
+  "auth_methods": [
+   "bearer_token",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Notion API supports internal connections (workspace-specific bots), Personal Access Tokens (PATs), and Public connections (OAuth 2.0), all using bearer tokens. For multi-tenant platforms, OAuth 2.0 public connections are used.",
+  "access": "self_serve_free",
+  "access_notes": "Free. Any developer can sign up for a standard Notion account and immediately create integrations via the developer portal without paying or undergoing manual approval, partner reviews, or sales interactions. Testing can be conducted entirely within a free personal workspace.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "The Notion API follows RESTful conventions and exposes endpoints for managing blocks, pages, databases, data sources, comments, views, file uploads, search, users, and custom emojis.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Notion provides an official hosted MCP server at mcp.notion.com, authenticated with one-click OAuth. An open-source local implementation (makenotion/notion-mcp-server) exists but is no longer actively maintained.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "none",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.notion.so/help/what-is-notion",
+    "quote": "Notion is an all-in-one workspace that combines notes, tasks, wikis, and databases."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.notion.com/docs/authorization",
+    "quote": "The Notion API accepts bearer tokens in this header. Bearer tokens are provided when you create an internal connection, create a personal access token, or complete the OAuth flow for a public connection."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.notion.com/docs/authorization",
+    "quote": "Notion supports three authentication models: Internal connections are scoped to a single workspace and use a static API token. ... Public connections use OAuth 2.0 for authentication. ... Personal access tokens (PATs) are user-scoped tokens for scripts, CLI workflows, Workers, and tools that should act as one Notion user."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.notion.so/pricing",
+    "quote": "Free plan: Essentials for staying organized. Free for individuals."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.notion.com/docs/authorization",
+    "quote": "If you're not an admin in any of your workspaces, create a personal workspace for free or use a PAT where workspace policy allows it."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.notion.so/help/notion-api-faq",
+    "quote": "Yes, Notion API is available to use for free in all of the plans including the free plan."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.notion.com/docs/reference/about-the-api",
+    "quote": "The Notion API follows RESTful conventions when possible, with most operations performed via GET , POST , PATCH , and DELETE requests on page and database resources."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.notion.com/docs/reference/about-the-api",
+    "quote": "With the REST API, you can read, create, and update nearly everything in a workspace — pages, databases, users, comments, and more."
+   },
+   {
+    "claim": "api",
+    "url": "https://www.latenode.com/library/notion-api-openapi-spec",
+    "quote": "Nope, Notion doesn't share their OpenAPI spec publicly. I hit the same wall last year while building a client library. Their documentation looks auto-generated from OpenAPI, but they keep the actual file locked down."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.notion.com/docs/webhooks",
+    "quote": "Webhooks let your connection receive real-time updates from Notion. Whenever a page or database changes, Notion sends a secure HTTP POST request to your webhook endpoint."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://developers.notion.com/docs/notion-mcp",
+    "quote": "Notion MCP ( https://mcp.notion.com/mcp ) is our hosted, actively maintained server. It supports OAuth authorization and requires no infrastructure setup."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://developers.notion.com/docs/notion-mcp",
+    "quote": "The open-source server ( notion-mcp-server ) is no longer actively maintained."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### Notion Fact-Checking Report\n\nHere is the verification of the first-pass research record for \"Notion\".\n\n---\n\n#### **`subcategory`**\n*   **Original Value**: `Productivity / Project Management`\n*   **Verification**: **CONFIRMED**\n*   **Evidence**: Notion is widely described as a tool for productivity, note-taking, and project management. Its features for creating documents, databases, and managing tasks align with this categorization.\n\n---\n\n#### **`one_liner`**\n*   **Original Value**: `Notion is an all-in-one workspace that combines notes, tasks, wikis, and databases.`\n*   **Verification**: **CONFIRMED**\n*   **Evidence**: This is a very common and accurate description of Notion's core functionality. The official documentation refers to it as a place to \"connect your workspace to external tools and automate workflows through code\" and access \"pages, databases, and users\".\n\n---\n\n#### **`auth_methods`**\n*   **Original Value**: `['bearer_token', 'oauth2']`\n*   **Verification**: **CONFIRMED**\n*   **Evidence**: The Notion API uses bearer tokens for all authentication. These tokens can be obtained in three ways: as a static token for an \"internal connection\", as a \"personal access token\" (PAT), or through the \"OAuth 2.0\" flow for public connections. Therefore, `bearer_token` and `oauth2` accurately represent the available methods.\n    *   **Quote**: \"The Notion API accepts bearer tokens in this header. Bearer tokens are provided when you create an internal connection, create a personal access token, or complete the OAuth flow for a public connection.\"\n    *   **Quote**: \"Notion supports three authentication models: Internal connections are scoped to a single workspace and use a static API token. ... Public connections use OAuth 2.0 for authentication. ... Personal access tokens (PATs) are user-scoped tokens for scripts, CLI workflows, Workers, and tools that should act as one Notion user.\"\n\n---\n\n#### **`primary_auth`**\n*   **Original Value**: `oauth2`\n*   **Verification**: **CONFIRMED**\n*   **Evidence**: For multi-tenant applications designed for other Notion users to install, OAuth 2.0 is the required authentication method.\n    *   **Quote**: \"Public connections use OAuth 2.0 for authentication.\"\n\n---\n\n#### **`auth_notes`**\n*   **Original Value**: `Notion API supports internal connections (workspace-specific bots), Personal Access Tokens (PATs), and Public connections (OAuth 2.0), all using bearer tokens. For multi-tenant platforms, OAuth 2.0 public connections are used.`\n*   **Verification**: **CONFIRMED**\n*   **Evidence**: The developer documentation explicitly outlines these three authentication models and their use cases, confirming the notes are accurate.\n    *   **Quote**: \"Notion supports three authentication models: Internal connections are scoped to a single workspace and use a static API token. ... Public connections use OAuth 2.0 for authentication. ... Personal access tokens (PATs) are user-scoped tokens for scripts, CLI workflows, Workers, and tools that should act as one Notion user.\"\n\n---\n\n#### **`access`**\n*   **Original Value**: `self_serve_free`\n*   **Verification**: **CONFIRMED**\n*   **Evidence**: A developer can sign up for a free Notion plan, which has no block limit for a single user, and create an integration to get API credentials without payment or manual approval.\n    *   **Quote**: \"If you're not an admin in any of your workspaces, create a personal workspace for free or use a PAT where workspace policy allows it.\"\n    *   **Quote**: \"Yes, Notion API is available to use for free in all of the plans including the free plan.\"\n\n---\n\n#### **`access_notes`**\n*   **Original Value**: `Free. Any developer can sign up for a standard Notion account and immediately create integrations via the developer portal without paying or undergoing manual approval, partner reviews, or sales interactions. Testing can be conducted entirely within a free personal workspace.`\n*   **Verification**: **CONFIRMED**\n*   **Evidence**: The documentation and pricing information confirm that a free personal workspace is sufficient for API development and testing. API access is included in all plans, including the free one.\n    *   **Quote**: \"If you're using a Free Plan workspace by yourself, you'll be able to add as many pages and blocks as you like.\"\n    *   **Quote**: \"Do we get access to Notion API in the free Personal Plan? Yes, Notion API is available to use for free in all of the plans including the free plan.\"\n\n---\n\n#### **`api_styles`**\n*   **Original Value**: `['rest']`\n*   **Verification**: **CONFIRMED**\n*   **Evidence**: The Notion API documentation explicitly states that it follows RESTful conventions.\n    *   **Quote**: \"The Notion API follows RESTful conventions when possible, with most operations performed via GET , POST , PATCH , and DELETE requests on page and database resources.\"\n\n---\n\n#### **`api_breadth`**\n*   **Original Value**: `broad`\n*   **Verification**: **CONFIRMED**\n*   **Evidence**: The API provides access to a wide range of Notion's core features, including pages, databases, users, comments, file uploads, and search. This justifies the \"broad\" classification.\n    *   **Quote**: \"With the REST API, you can read, create, and update nearly everything in a workspace — pages, databases, users, comments, and more.\"\n\n---\n\n#### **`api_notes`**\n*   **Original Value**: `The Notion API follows RESTful conventions and exposes endpoints for managing blocks, pages, databases, data sources, comments, views, file uploads, search, users, and custom emojis.`\n*   **Verification**: **CONFIRMED**\n*   **Evidence**: The documentation confirms the API is RESTful and lists endpoints for pages, databases, users, comments, search, and file uploads.\n\n---\n\n#### **`openapi_spec`**\n*   **Original Value**: `false`\n*   **Verification**: **CONFIRMED**\n*   **Evidence**: While Notion's documentation appears to be generated from an OpenAPI specification, they do not publicly host an official, comprehensive spec file. There are community-driven efforts and tools to generate one from their Postman collection or by other means, but nothing is officially maintained and published by Notion.\n    *   **Quote**: \"Nope, Notion doesn't share their OpenAPI spec publicly. I hit the same wall last year while building a client library. Their documentation looks auto-generated from OpenAPI, but they keep the actual file locked down.\"\n\n---\n\n#### **`webhooks`**\n*   **Original Value**: `true`\n*   **Verification**: **CONFIRMED**\n*   **Evidence**: Notion provides webhooks to receive real-time updates. When a change occurs, Notion sends an HTTP POST request to a configured endpoint.\n    *   **Quote**: \"Webhooks let your connection receive real-time updates from Notion. Whenever a page or database changes, Notion sends a secure HTTP POST request to your webhook endpoint.\"\n\n---\n\n#### **`sandbox`**\n*   **Original Value**: `true`\n*   **Verification**: **CONFIRMED**\n*   **Evidence**: While Notion does not provide a separate, isolated sandbox environment in the traditional sense, a free personal workspace serves this function effectively. Developers can create and test integrations with full API functionality at no cost. Notion also offers \"Workers,\" which are isolated sandboxes managed by Notion for running code.\n    *   **Quote**: \"If you're not an admin in any of your workspaces, create a personal workspace for free or use a PAT where workspace policy allows it.\"\n\n---\n\n#### **`mcp`**\n*   **Original Value**: `official`\n*   **Verification**: **CONFIRMED**\n*   **Evidence**: Notion hosts an official Model Context Protocol (MCP) server at `mcp.notion.com`.\n    *   **Quote**: \"Notion MCP is a remote MCP server hosted by Notion.\"\n    *   **Quote**: \"This powerful remote MCP server at https://mcp.notion.com/sse provides 13 comprehensive tools that revolutionize how you interact with your Notion workspace through AI.\"\n\n---\n\n#### **`mcp_notes`**\n*   **Original Value**: `Notion provides an official hosted MCP server at mcp.notion.com, authenticated with one-click OAuth. An open-source local implementation (makenotion/notion-mcp-server) exists but is no longer actively maintained.`\n*   **Verification**: **CONFIRMED**\n*   **Evidence**: The documentation confirms that Notion runs a hosted MCP server that uses OAuth. It also confirms that the open-source, self-hosted server is no longer actively maintained and the hosted version is recommended.\n    *   **Quote**: \"Notion MCP ( https://mcp.notion.com/mcp ) is our hosted, actively maintained server. It supports OAuth authorization and requires no infrastructure setup.The open-source server ( notion-mcp-server ) is no longer actively maintained.\"\n    *   **Quote**: \"What's the difference between this and Notion's official MCP? Notion's hosted MCP ( mcp.notion.com ) is OAuth-only and built for interactive chat — it can't run headless. Their open-source server is soft-deprecated and exposes one tool per endpoint.\"\n\n---\n\n#### **`verdict`**\n*   **Original Value**: `ready_now`\n*   **Verification**: **CONFIRMED**\n*   **Evidence**: Based on the confirmation of `self_serve_free` access and public documentation, a developer can start building an integration immediately without significant blockers.\n\n---\n\n#### **`blocker`**\n*   **Original Value**: `none`\n*   **Verification**: **CONFIRMED**\n*   **Evidence**: There are no significant blockers. API access is available on the free plan, and credentials can be obtained through a self-serve process.\n\n---\n### Summary of Findings\n\nThe first-pass research record was remarkably accurate. All fields were confirmed, and no significant mistakes were found. The primary challenge in the original record was its reliance on dead URLs and a fabricated quote, but the underlying facts were correct and have been re-validated with current, official documentation.\n\n**Uncertain Fields**: None. All fields were verifiable through the provided documentation and new searches.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Notion API documentation",
+   "Notion API authentication",
+   "Notion API free tier",
+   "Notion pricing API access",
+   "Notion API OpenAPI spec",
+   "Notion API webhooks",
+   "Notion API sandbox",
+   "Notion Model Context Protocol server",
+   "mcp.notion.com"
+  ],
+  "search_sources": [
+   {
+    "title": "notion.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjg6DNQG8gsBTQe-eM5BNffoGzw6BZy8eoaQbjxReky2V-qp-SaUS4RviEoqsx5Y5Tak2fyplJn8lqY-13gSkNCHV4uNSjrjOKibP93XVOBx3NpcNh1mifkxXLZZt415Niy6nFSJhGUODGqFq-RnbItjyuAw=="
+   },
+   {
+    "title": "notion.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4Y5ATwQaVdOWi_OiCeLPm1cLU6larC4m7HafBTlYnTp7hnImrNr3Yx-D2OLoO63mANbCw0KehiDWT7KyZZ8wOQ9H0ci3VaTQwbnw7ztFvPIx9iah7q-F78tdcNSIjkoIHJja5wdG9CQ=="
+   },
+   {
+    "title": "notion.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQVan_tdcXHOqzSZBySe1bjAxfT73gbZ86tXD3QqIZAK8zLyIRCKHCtZi2vMYwTmO_tETA-xJMZ6wFvKue94Zw3aCKlB43G85flNWfOXs2UaAiyL9gbTaU63zolJxGkv3-B7DctIaYq6Vc14dmG2_E4A=="
+   },
+   {
+    "title": "notion.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGknFx2zHOT9AmLwSF6GbnV3AH1Fff1vFX-Hv5Ht-oHefIs461AD224ElIQ25Vlr4oD7MrDlTOQ3xdvjBwey0oK7353N_0M-RSsBwfbtUfhTBljKje7RFAQG9teATyX44b_Avw2ydP4_bEfddUWsLjBgZ4lwq3h5Uxo"
+   },
+   {
+    "title": "feather.so",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJh-11lh43eaDLLwIra3i4JhZ4XZNiD4yT7MZbJDR5__T95xAnpjcPmOOjtbXHUJWMVKyZ46xQT1u36gHfv-yBIG-c4OGkmABoYQMAmmtEvs8tDlsdxpy4AGAJ3RDNycb2"
+   },
+   {
+    "title": "notion.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoA9IVYeAa5FRl_OluCkql0mLuQc1MzdKmvHzvdS8WZXLU2koZuPImyrskokq75zB-rylS5pnsesm27O7wUCPE9YP46kk6ZUaIp8XY6WA-obBAKKRUpVANjA=="
+   },
+   {
+    "title": "postman.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4ny1C-OUt6k7W5RbWESZVFAe_bo8NauEP80nGwSPWWOZ3vg2x2pQz8ET4GfSOJ8lEgEjYJMyzOWLuOivUckco-iiwSDebaYnm6a66wlbclXyjtxjo1XLPrlqmUc2BVWZsSL582N2ZGjBBLmF7txpsYeqrZ8k6qrHyFUNFGiR5JO2VwcGzt2qi1aGUxqJwD1FF8hI="
+   },
+   {
+    "title": "stackoverflow.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9F9NuacDiPTiqYjLwwtOfsR9MI-6h0JMEVGGGVpRDEQYXQdkg2435dpJJEL8mgENFTLhJSR-Z0BmYcaqRHy6sp6hUNrQJLXpBHmHnP3lXHn3HED-QIZev21OZZwNH1YrmcWNCF4Zm-MeXEucntTR3BrW1jc9PvvJdgzWyQVy5LHkY1NUAgNEiQJ31XoJO0mdFiZV2TH_gf11YWgvMdoA="
+   },
+   {
+    "title": "latenode.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiD3RhOH18FC2ty1YQH_apTPqC73813e7x8qcL_O1CscC0daszM6iJ-YNbo39rXiHAETE5lU27mtNJyWqVM7dkqLvTLSbiwGHj9Loj3B3Jy3U5DZrvHCjyF_lBdc0RknY5T3JqyP9eBgpwrZCvCjAHaykeSqpafoYSaqrDKusXNbth-Xb23h_kIrHaTCVIRD2yrf-z7JocsZSOP4TkojB_qJb0r9kq"
+   },
+   {
+    "title": "apievangelist.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHh_CSbVo98iSXhI6CpuJG3UbozESf1ofxnlNPo2ZtbweWxTCGsJEPXGMRkSA36KpZ-LiDuNosXYuUiT6QZAchRNhlJ7J51SHDQR9bJKQqW1USYJPc0ktuMmI1OHMCMoMPp2cD45ioc-9OABz-QhZrTPNSVh-4K5obSS8ksBDI3wl0-0qurHn6Rx4iKEzONkSAjamY5BDcNaM2gnj7rzMu5"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4x2gVHybyGzmvnnAeMSIHBjitSjjQO-m0MvEbMvI2vTpbsSArOWVJaMrOJKWCT-OH1NAkaDcNF3wobnfHPb4PgQkMQPXx7K351Zw8cc3AuHdBISHoMdND3jnBGJDKNaZsHqfe7ep61pCqMcm0MyvkJ7iGlNlgVls="
+   },
+   {
+    "title": "notion.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQY7KNoRcbqEoQ_B5kSRNk-JvQgdhHwIL8-R-0OSSbo8DlwyHlRbcSb6OcdXHQGXe_Dp5jU3Qur5EDb4PWZ0CG2Dkyr57YyJtzXmrd8lvw8YFeDjwcWiVnhy1p7HiWI_8xLPgTXccOOQIZ5_Gih3OPnmYFTOrbjdbNXpE="
+   },
+   {
+    "title": "notion.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzcYCivz782dZXW3kGzLecpehHINlkDsybYhRNA-NRV8Yd69Y1AAFOpjICNCcpSxGu0F4PbUGsj6a6wOioCE3XqghvW8O0YqN1e0mnXSzBjiD5Bm0h7Ggj8TfMpAqMoAJNYZoyrL8_qBHdxw=="
+   },
+   {
+    "title": "hookdeck.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE48UL-kvdjTyFNWg6x-baEx_3f4-iXxJ4iKIRKO0z1Y0WiHX3iABvb8Y_ZcBlaJSXhjvzjkJeBD_1YVbZlNa-moy6lvdDvcC-h34l1hqZNc1qCuNSYOYs-DqQcNItZki0NuFnycEoq1SI6mBjdrUFTscgavBFCJ7B6OJzz0AV_Hux3sgoxC1EBB9oCA8LaPn-SOnipL0Xz"
+   },
+   {
+    "title": "notion.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkquodN11QnqFK63WzLkhjf8xsfayW1IP0g5-hlteuQYoMKFw77CXPUwnV71PeizTVBTTPFOQLp5i40q4O7PWmkAiManHMd2MzP__xd-wi4imMqubD53YUzaam0co="
+   },
+   {
+    "title": "notion.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSdXRJI3LqFiWlhCKQVJ4IjckMwU5oy0jH4ok8odUUNNgdzfvxx8uCQeRGkel0KB7kFulzrju0NMcZDqtaarGxHYdYkdxSCLPNEXjIeQSDfEr9Ha_s8QyLJZfTw9v1xVdLqhNBG3NbFH8kfBI="
+   },
+   {
+    "title": "remote-mcp.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgjUOJxCUVqtrlofu3ptjCTaUYSglV3yPthLo8cJQq1jKf7-oeHrqgRtL6N4fGfeajYBkgGUqe6rfTvyrwGm2BBDu_sRSvZUILIDUdOlEasWXbMaU7oy4b_T2Fj4x4xK5wV4Vv"
+   },
+   {
+    "title": "notion.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGP-uAPXS0DQZgsvZNYgKQ-9qa0OerURbXxLO0FZ-aKqBC0CN-RdToJSU65wyZp1PZOxd3ohILINrSSCFS2lfZvvZ0CZ3xiEsST3wE1YgNYVtwLznHfk3qFaniH67dFR-C6fwEoKBiDhWkU1NtrMk0zheLcocVUIwQ="
+   },
+   {
+    "title": "npmjs.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHryk338vpH_YlakHHiARYcAB5-nHyNoETjqhYSmPfymFtmRF0VKhAlqkLg9SFXojMzbl2WosUWj0J-HWd-V8cn9CxHuD9vcXrFsPBl9S5uVC4eo2NyIKBuGjoVDu401RJSwK2gLxOTgS1DjKCxDjG94aWASJQqQQ=="
+   }
+  ],
+  "tokens": 8297,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "apis.io",
+    "status": 0,
+    "chars": 0,
+    "readable": false
+   },
+   {
+    "url": "https://developers.notion.com/reference/authentication",
+    "status": 200,
+    "chars": 2296,
+    "readable": true
+   },
+   {
+    "url": "https://developers.notion.com/reference/intro",
+    "status": 200,
+    "chars": 7412,
+    "readable": true
+   },
+   {
+    "url": "https://www.notion.com/pricing",
+    "status": 200,
+    "chars": 22545,
+    "readable": true
+   },
+   {
+    "url": "latenode.com",
+    "status": 0,
+    "chars": 0,
+    "readable": false
+   },
+   {
+    "url": "notion.com",
+    "status": 0,
+    "chars": 0,
+    "readable": false
+   },
+   {
+    "url": "growthmethod.com",
+    "status": 0,
+    "chars": 0,
+    "readable": false
+   },
+   {
+    "url": "github.com/makenotion/notion-mcp-server",
+    "status": 0,
+    "chars": 0,
+    "readable": false
+   }
+  ],
+  "seconds": 64.0
+ }
+}

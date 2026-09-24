@@ -1,0 +1,234 @@
+{
+ "app": {
+  "id": 45,
+  "name": "Magento (Adobe Commerce)",
+  "category": "Ecommerce",
+  "hint": "developer.adobe.com/commerce"
+ },
+ "record": {
+  "subcategory": "E-commerce",
+  "one_liner": "Enterprise-grade e-commerce platform for building, managing, and scaling online storefronts.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token",
+   "other"
+  ],
+  "primary_auth": "bearer_token",
+  "auth_notes": "OAuth 1.0a for third-party apps, bearer_token for mobile/admin/customer. Multi-tenant requires per-customer admin setup to generate tokens or OAuth 1.0a credentials.",
+  "access": "self_serve_free",
+  "access_notes": "Magento Open Source is free and self-hostable, providing full API access. Adobe Commerce (paid enterprise) requires contacting sales.",
+  "api_styles": [
+   "rest",
+   "graphql",
+   "soap"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extremely broad, covering products, categories, inventory, orders, customers, carts, checkout, CMS pages, and promotions.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "community_only",
+  "mcp_notes": "Multiple community-developed MCP servers exist, e.g., https://github.com/magenable/magento-adobe-commerce-mcp-server and https://github.com/magendooro/magemcp.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "Every merchant must manually log into their Magento Admin panel, create a new integration, configure resource permissions, and copy generated tokens into the platform. No centralized OAuth 2.0 marketplace.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://developer.adobe.com/commerce/webapi/rest/",
+    "quote": "...the rest apis that are available in adobe commerce (paas) and adobe commerce as a cloud service (saas). the apis can be used to perform a wide array of tasks. for example: create a shopping app... integrate with crm (customer relationship management) or erp (enterprise resource planning) backend systems..."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.adobe.com/commerce/webapi/get-started/",
+    "quote": "three types of authentication : third-party applications authenticate with oauth 1.0a . mobile applications authenticate using tokens . administrators and customers are authenticated with login credentials ."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.adobe.com/commerce/webapi/get-started/",
+    "quote": "To create an integration, click system > extensions > integration > add new integration**. Be sure to restrict which resources the integration can access."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.adobe.com/commerce/webapi/get-started/",
+    "quote": "the adobe commerce and magento open source web api framework provides integrators and developers the means to use web services that communicate with the application."
+   },
+   {
+    "claim": "access",
+    "url": "https://stylefactoryproductions.com/",
+    "quote": "Magento Open Source — free, open-source software that you install on your own server or hosting service... pricing range of $22,000+ per year for access to Adobe Commerce"
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.adobe.com/commerce/webapi/get-started/",
+    "quote": "support for graphql , rest (representational state transfer) and soap (simple object access protocol)."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.adobe.com/commerce/webapi/get-started/",
+    "quote": "the system does not currently support webhooks."
+   },
+   {
+    "claim": "api",
+    "url": "https://magendoo.ro/",
+    "quote": "You can also export the Swagger JSON for your endpoints (/rest/<store>/schema?services=<YourServiceInterfaces>) to produce an OpenAPI definition."
+   },
+   {
+    "claim": "api",
+    "url": "https://adobe.com/",
+    "quote": "Adobe Developer App Builder is a serverless extensibility platform... Additionally, Adobe I/O Events can call webhooks for easy integration with third-party systems."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/magenable/magento-adobe-commerce-mcp-server",
+    "quote": "This is a Model Context Protocol (MCP) server that connects to a Magento Open Source or Adobe Commerce REST API making possible Claude, OpenAI Agent Builder and other MCP clients to request supported Magento REST API endpoints."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/magendooro/magemcp",
+    "quote": "MageMCP — MCP server connecting AI agents to Magento 2 / Adobe Commerce. Exposes catalog, orders, customers, and inventory as MCP tools via REST and GraphQL APIs"
+   },
+   {
+    "claim": "verdict",
+    "url": "https://developer.adobe.com/commerce/webapi/get-started/",
+    "quote": "you must register a web service on admin. use the following general steps to set up magento to enable web services... create a new integration on admin. to create an integration, click system > extensions > integration > add new integration**."
+   }
+  ],
+  "confidence": 0.9
+ },
+ "notes": "### 1. Product Functionality\nMagento (now officially known as Adobe Commerce) is an enterprise-grade e-commerce platform designed to build, manage, and scale online storefronts. It provides robust capabilities for catalog and product management, checkout workflows, order processing, customer management, inventory tracking, and marketing promotions. It is available as a free self-hosted version (Magento Open Source) and as paid enterprise tiers (Adobe Commerce and Adobe Commerce Cloud).\n* **Source URL:** `https://developer.adobe.com/commerce/webapi/rest/`\n* **Verbatim Quote:** \"...the rest apis that are available in adobe commerce (paas) and adobe commerce as a cloud service (saas). the apis can be used to perform a wide array of tasks. for example: create a shopping app... integrate with crm (customer relationship management) or erp (enterprise resource planning) backend systems...\"\n\n### 2. API Authentication Methods & Multi-Tenant Integration\nThe platform supports multiple authentication methods depending on the client type. For a multi-tenant integration platform, it requires a per-customer admin setup to generate either an Integration Access Token (`bearer_token`) or OAuth 1.0a credentials.\n* **Authentication Methods:** \n  * OAuth 1.0a for third-party applications.\n  * Token-based authentication (`bearer_token`) for mobile applications, administrators, and customers.\n  * Session-based authentication (login credentials) for administrators and customers.\n* **Multi-Tenant Choice:** `bearer_token` (Static Integration Access Token) or OAuth 1.0a. Because Magento is decentralized, there is no centralized public OAuth 2.0 app marketplace. Integrations must be configured manually per store instance.\n* **Source URL:** `https://developer.adobe.com/commerce/webapi/get-started/`\n* **Verbatim Quote:** \"three types of authentication : third-party applications authenticate with oauth 1.0a . mobile applications authenticate using tokens . administrators and customers are authenticated with login credentials .\"\n* **Source URL:** `https://developer.adobe.com/commerce/webapi/get-started/`\n* **Verbatim Quote:** \"To create an integration, click system > extensions > integration > add new integration**. Be sure to restrict which resources the integration can access.\"\n\n### 3. Credential Acquisition & Cost\n* **Access Definition:** `self_serve_free` (via Magento Open Source self-hosting).\n* **Developer Credentials & Cost:** Any developer can download the core code of Magento Open Source from GitHub and self-host it locally or on a server at no cost to obtain full API access and credentials. Conversely, the enterprise editions (Adobe Commerce / Adobe Commerce Cloud) require contacting sales for a custom quote and carry high annual licensing fees (estimated at $22,000+ per year).\n* **Source URL:** `https://developer.adobe.com/commerce/webapi/get-started/`\n* **Verbatim Quote:** \"the adobe commerce and magento open source web api framework provides integrators and developers the means to use web services that communicate with the application.\"\n* **Source URL:** `https://stylefactoryproductions.com/` (via search results)\n* **Verbatim Quote:** \"Magento Open Source — free, open-source software that you install on your own server or hosting service... pricing range of $22,000+ per year for access to Adobe Commerce\"\n\n### 4. API Style & Characteristics\n* **API Style:** REST, GraphQL, and SOAP.\n* **Breadth:** Extremely broad, covering products, categories, inventory, orders, customers, carts, checkout, CMS pages, and promotions.\n* **OpenAPI Spec:** Yes. A live Swagger UI is available on active instances at `/swagger`, and the OpenAPI specification can be dynamically generated/exported via the schema endpoint.\n* **Webhooks:** Magento Open Source does not support webhooks natively (requiring third-party extensions). Adobe Commerce supports synchronous native webhooks and asynchronous events via Adobe Developer App Builder / Adobe I/O Events.\n* **Sandbox:** No official hosted sandbox is provided by Adobe; developers use a self-hosted Magento Open Source instance as a local sandbox environment.\n* **Source URL:** `https://developer.adobe.com/commerce/webapi/get-started/`\n* **Verbatim Quote:** \"support for graphql , rest (representational state transfer) and soap (simple object access protocol).\"\n* **Source URL:** `https://developer.adobe.com/commerce/webapi/get-started/`\n* **Verbatim Quote:** \"the system does not currently support webhooks.\"\n* **Source URL:** `https://magendoo.ro/` (via search results)\n* **Verbatim Quote:** \"You can also export the Swagger JSON for your endpoints (/rest/<store>/schema?services=<YourServiceInterfaces>) to produce an OpenAPI definition.\"\n* **Source URL:** `https://adobe.com/` (via search results)\n* **Verbatim Quote:** \"Adobe Developer App Builder is a serverless extensibility platform... Additionally, Adobe I/O Events can call webhooks for easy integration with third-party systems.\"\n\n### 5. MCP Servers\n* **MCP Status:** `community_only`\n* **Details:** There are no official MCP servers published by Adobe. However, multiple community-developed MCP servers exist that connect to Magento's REST/GraphQL APIs.\n* **Source URL:** `https://github.com/magenable/magento-adobe-commerce-mcp-server`\n* **Verbatim Quote:** \"This is a Model Context Protocol (MCP) server that connects to a Magento Open Source or Adobe Commerce REST API making possible Claude, OpenAI Agent Builder and other MCP clients to request supported Magento REST API endpoints.\"\n* **Source URL:** `https://github.com/magendooro/magemcp`\n* **Verbatim Quote:** \"MageMCP — MCP server connecting AI agents to Magento 2 / Adobe Commerce. Exposes catalog, orders, customers, and inventory as MCP tools via REST and GraphQL APIs\"\n\n### 6. Buildability Verdict & Blocker\n* **Verdict:** `ready_with_friction`\n* **Main Blocker:** `per_customer_admin_setup`\n* **Reasoning:** A developer can easily build a toolkit today using a free, self-hosted Magento Open Source instance. However, because Magento is decentralized (either self-hosted or deployed on isolated per-customer cloud environments), there is no centralized OAuth 2.0 application marketplace that allows a multi-tenant integration platform to authenticate users with a single click. Every single merchant must manually log into their Magento Admin panel, navigate to settings, create a new integration, configure resource permissions, and copy the generated tokens back into the platform.\n* **Source URL:** `https://developer.adobe.com/commerce/webapi/get-started/`\n* **Verbatim Quote:** \"you must register a web service on admin. use the following general steps to set up magento to enable web services... create a new integration on admin. to create an integration, click system > extensions > integration > add new integration**.\"",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"Magento\" \"Adobe Commerce\" free tier trial pricing API",
+   "\"Magento\" \"Adobe Commerce\" app review developer partner program",
+   "\"Magento\" \"Adobe Commerce\" \"MCP server\" model context protocol",
+   "\"Magento\" OpenAPI spec swagger json",
+   "\"Adobe Commerce\" webhooks native",
+   "\"Magento 2\" webhooks native"
+  ],
+  "search_sources": [
+   {
+    "title": "postaffiliatepro.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHupuKF4TGEvGOpupgIhCuJUHbVCjM8CnyjyjBkJZJpTDyKoOltXjf25EF0gcdLycjmkTWjhAsey0RNdf3usUvUqXlbau-gaJ5gynEXTBZkl-yduXo9a-4OoXuT0ZIR0A3E5foEyeVaok9BxRevzXUFu0LHAOJMSmOqvg=="
+   },
+   {
+    "title": "stylefactoryproductions.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3SN1rGAL8ej2oGMFOra8vHrLuDKLjcnh-O7PAQJpYIIsOCwU4jOrgtCZ8HgCSdrO_Mu9V9FPRabuzDM1MsD6e9MZadHRe6E-nizVx28eLFVstlLZei71SmpynN2eacksVnemz0PwfMjU7DZm5aT1LBiG-t2LpnsWEKtOPTrlJgi35H0dq"
+   },
+   {
+    "title": "magecomp.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWB0Uzoiu2_6DjAaiIr3jwqMN0-UHnJKW06FeQ2jCqRTtBtFfhUOPvAN2cD5keSN9Yk4U_uxU5GME7XBM49CmiXe3t4V0fRDIbrdNwr0JVHHVgm-2_vL67TLFstIr4m1aEk0NF9hZ31sgmvtlwukzWd3KpLfgw9U9S-lm7gw=="
+   },
+   {
+    "title": "elogic.co",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLtyakFUTXi7qqAcxiua-SW4GaZG38otvcI1zOyQ888it5wVk4qZdS9hG4pvBKWCtIAD4RN5js_b0hhWr-9a7AdPa4g_SCvlI5TWShaKgw3c7FwPvaam03xeEYCnxFYfSAa3jIx-J7SZ4G62zshErEadoR2QEDegn9M6EH_5TuaI-oA-9xJrTK__KYwgx9SM_saAy7bDVIos0IY-xA0Ls9M0FYkXE="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-pO4Kj3Unu6kXnbe_oUhGH4OVV3ghaZJttnJobLgzayRjE_n0wvgwpwJfu7k--7V2QnQfjGQQxNK4kNS3t8SQaBdn0Im2BnBKfenbD3zwBvmRMQ144yCl7bFGqetr8ZzHMyZqidk="
+   },
+   {
+    "title": "adobe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvJLvHTQS5eGEERScAYvbOM8q-qb3ypm2xZ1vcDQD8RrQ-k5D1BPpW-3Ox7S849pOfK20mGQ8A7ppzvQFKq0Xsn5kyGLpG-MykvqLD7Gr5xJXyYCPfeRRp2oMdlZhCXaVHIlkMWedl6wnjhYImh7M0537xxFJMfYxFgLWQDVDYfw5f5mWNNgUExVW6uEN7lR2U_m5YGPhO"
+   },
+   {
+    "title": "adobe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHSXvtu4P5f3N1Q0DGNEKlMEQE_IPGVrY6rIzBHihBwi0sQVqMMmbSEFfsWxSdpn-mk7Ta4yqIt3BkAmRr5fcdWlzo6bNbHdcKWwleCqv7gp7dudDDw_BXLKRxlVHNnZkHvS5VQO2ec61s749jLlWvb-0cIaF8H2TMMCNjZKlZms_LaZcjRnZERJk4VCrRzG25k-u2"
+   }
+  ],
+  "tokens": 12900,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "Magento Adobe Commerce authentication API keys OAuth developer documentation",
+    "Magento Adobe Commerce getting started quickstart developer documentation",
+    "Magento Adobe Commerce pricing API access developer program",
+    "Magento Adobe Commerce API reference index developer documentation",
+    "Magento Adobe Commerce MCP server official community"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://developer.adobe.com/commerce/webapi/",
+    "https://developer.adobe.com/commerce/webapi/rest/",
+    "https://developer.adobe.com/commerce/docs/",
+    "https://experienceleague.adobe.com/en/docs/commerce-on-cloud/user-guide/develop/authentication-keys",
+    "https://experienceleague.adobe.com/en/docs/commerce-operations/installation-guide/prerequisites/authentication-keys",
+    "https://developer.adobe.com/commerce/webapi/get-started/",
+    "https://experienceleague.adobe.com/en/docs/commerce",
+    "https://docs.magento-opensource.com/developer/",
+    "https://github.com/magento/magento2/issues/38192",
+    "https://www.netsolutions.com/insights/magento-adobe-commerce-pricing/"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-oauth/",
+     "status": 404
+    },
+    {
+     "url": "https://www.netsolutions.com/insights/adobe-commerce-magento-pricing-guide/",
+     "status": 404
+    },
+    {
+     "url": "https://dev.to/adobe/supercharging-adobe-commerce-development-introducing-the-adobe-commerce-docs-mcp-server-321j",
+     "status": 404
+    },
+    {
+     "url": "https://experienceleague.adobe.com/docs/commerce-cloud-admin/authentication/authentication-keys.html",
+     "status": 404
+    },
+    {
+     "url": "https://magento.github.io/devdocs/",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://developer.adobe.com/commerce/webapi/",
+     "status": 200,
+     "chars": 1381,
+     "readable": true
+    },
+    {
+     "url": "https://developer.adobe.com/commerce/webapi/rest/",
+     "status": 200,
+     "chars": 3778,
+     "readable": true
+    },
+    {
+     "url": "https://developer.adobe.com/commerce/docs/",
+     "status": 200,
+     "chars": 2646,
+     "readable": true
+    },
+    {
+     "url": "https://experienceleague.adobe.com/en/docs/commerce-on-cloud/user-guide/develop/authentication-keys",
+     "status": 200,
+     "chars": 2625,
+     "readable": true
+    },
+    {
+     "url": "https://experienceleague.adobe.com/en/docs/commerce-operations/installation-guide/prerequisites/authentication-keys",
+     "status": 200,
+     "chars": 3371,
+     "readable": true
+    },
+    {
+     "url": "https://developer.adobe.com/commerce/webapi/get-started/",
+     "status": 200,
+     "chars": 2960,
+     "readable": true
+    },
+    {
+     "url": "https://experienceleague.adobe.com/en/docs/commerce",
+     "status": 200,
+     "chars": 6758,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 63.9
+ }
+}

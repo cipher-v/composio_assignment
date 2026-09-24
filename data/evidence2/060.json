@@ -1,0 +1,152 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://composio.dev/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://autobound.ai/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.clay.com/quickstart",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://university.clay.com/fr/docs/cli-security-privacy",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.86
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developers.clay.com/quickstart",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.5
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://fast.io/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://fast.io/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://apis.io/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://autobound.ai/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://apis.io/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://developers.clay.com/quickstart",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.86
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://university.clay.com/docs-topics/getting-started",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.91
+  }
+ ],
+ "auth_support": {
+  "api_key": true,
+  "bearer_token": true,
+  "jwt": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://composio.dev/', 'https://autobound.ai/', 'https://fast.io/', 'https://fast.io/', 'https://apis.io/', 'https://github.com/', 'https://autobound.ai/', 'https://apis.io/']\n- Non-vendor sources (prefer official docs): ['https://composio.dev/', 'https://autobound.ai/', 'https://fast.io/', 'https://fast.io/', 'https://apis.io/', 'https://github.com/', 'https://autobound.ai/', 'https://apis.io/']",
+ "metrics": {
+  "n_evidence": 13,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.38461538461538464,
+  "readable": 13,
+  "quote_supported_rate": 0.38461538461538464,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

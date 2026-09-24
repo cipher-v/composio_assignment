@@ -1,0 +1,244 @@
+{
+ "app": {
+  "id": 11,
+  "name": "Zendesk",
+  "category": "Support and Helpdesk",
+  "hint": "zendesk.com"
+ },
+ "record": {
+  "subcategory": "Helpdesk / ticketing",
+  "one_liner": "An AI-first customer service and support platform providing ticketing, help center, live chat, messaging, and voice solutions.",
+  "auth_methods": [
+   "oauth2",
+   "basic"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth2 via a Global OAuth client is required for multi-tenant integrations. Basic auth (email/password or email/token) is supported but API tokens will be deprecated by April 2027.",
+  "access": "approval_required",
+  "access_notes": "Zendesk offers a 14-day free trial and a non-expiring Sponsored Developer Account (Suite Enterprise plan for up to 5 agents) for testing. However, production multi-tenant applications require submitting a request for a Global OAuth client via the Zendesk Marketplace portal, which undergoes manual review and approval.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extremely broad REST APIs covering ticketing, help center, messaging, live chat, voice, custom data, users, and organizations. An official OpenAPI spec is published for Zendesk Messaging, while a public Postman collection is maintained for the core Support API.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "community_only",
+  "mcp_notes": "reminia/zendesk-mcp-server (https://github.com/reminia/zendesk-mcp-server)",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "To distribute a multi-tenant integration, developers must apply for and receive manual approval for a Global OAuth Client from the Zendesk Marketplace team. Additionally, Zendesk enforces strict 30-minute token expirations and requires robust implementation of the OAuth 2.0 refresh token flow.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.zendesk.com/in/pricing/#georedirect",
+    "quote": "deliver faster, higher quality resolutions with the only ai-first service platform"
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.zendesk.com/api-reference/",
+    "quote": "To authenticate API requests, use basic authentication with your email address and password, your email address and an API token, or an OAuth access token."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.zendesk.com/api-reference/",
+    "quote": "Zendesk is removing API tokens as an authentication method. Starting July 28, 2026, unused tokens will automatically deactivate. By April 30, 2027, all API tokens will stop working."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.zendesk.com/api-reference/",
+    "quote": "If you distribute a public app or an integration app to multiple Zendesk customers, you must use global OAuth tokens to authenticate requests. You may not use regular API tokens or OAuth tokens because the Zendesk Developer Terms prohibits Zendesk customers from sharing their API credentials with you."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.zendesk.com/api-reference/",
+    "quote": "Zendesk does not currently offer a permanently free plan for its helpdesk software as of 2026. Instead, they focus on providing a high-value, scalable platform... A 14-day free trial: You get to test out the robust features"
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.zendesk.com/api-reference/",
+    "quote": "If you're interested in becoming a Zendesk developer partner, you can convert your trial account into a sponsored Zendesk Support account. As part of becoming a Zendesk developer partner, Zendesk sponsors an instance for up to 5 agents that you can use for developing, demoing, and troubleshooting your app or integration. Unlike a trial account, a sponsored account does not expire after 14 days."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.zendesk.com/api-reference/",
+    "quote": "Sign in to the Zendesk Marketplace portal . Select Global OAuth from the menu on the left side, and then click the Request new OAuth button. Complete the request form. Ensure the subdomain includes the prefix d3v- ."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.zendesk.com/api-reference/",
+    "quote": "Zendesk's REST APIs let you access Zendesk data and functionality using code instead of a user interface."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.zendesk.com/api-reference/",
+    "quote": "Zendesk Messaging maintains and publishes a public version of our OpenAPI specification for integrators to use as a reference. API specification. The latest version of the OpenAPI specification can be found on GitHub , published in YAML format."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.zendesk.com/api-reference/",
+    "quote": "A webhook sends an HTTP request to a specified URL in response to activity in Zendesk Support, Guide, Gather, and Messaging."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.zendesk.com/api-reference/",
+    "quote": "A sandbox is a test environment with the replicated configurations and data from your production environment... The availability of sandbox environments vary by plan: Support Enterprise includes one sandbox."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/reminia/zendesk-mcp-server",
+    "quote": "A Model Context Protocol server for Zendesk. This server provides a comprehensive integration with Zendesk. It offers: Tools for retrieving and managing Zendesk tickets and comments"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://developer.zendesk.com/",
+    "quote": "The Model Context Protocol (MCP) lets admins connect Zendesk to external MCP servers, discover the tools those servers provide, and use those tools as steps in action flows."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Product Research Notes: Zendesk\n\n#### 1. What the Product Does\nZendesk is an AI-first customer service and support platform that provides ticketing, help center (knowledge base), live chat, messaging, voice, and AI agents to manage and resolve customer inquiries across multiple channels.\n* **Source URL:** `https://www.zendesk.com/in/pricing/#georedirect`\n* **Verbatim Quote:** `\"deliver faster, higher quality resolutions with the only ai-first service platform\"`\n\n#### 2. API Authentication Methods & Multi-Tenant Integration\nZendesk supports HTTP Basic authentication (using an email address combined with either a password or an API token) and OAuth 2.0 access tokens. However, API tokens are being deprecated and will be completely removed by April 2027. For a multi-tenant integration platform, developers **must** use OAuth 2.0 via a \"Global OAuth client\" approved by Zendesk, as sharing standard API credentials across different customer accounts is prohibited.\n* **Primary Auth:** `oauth2`\n* **Source URL:** `https://developer.zendesk.com/api-reference/` (via Zendesk Support documentation)\n* **Verbatim Quotes:** \n  * `\"To authenticate API requests, use basic authentication with your email address and password, your email address and an API token, or an OAuth access token.\"`\n  * `\"Zendesk is removing API tokens as an authentication method. Starting July 28, 2026, unused tokens will automatically deactivate. By April 30, 2027, all API tokens will stop working.\"`\n  * `\"If you distribute a public app or an integration app to multiple Zendesk customers, you must use global OAuth tokens to authenticate requests. You may not use regular API tokens or OAuth tokens because the Zendesk Developer Terms prohibits Zendesk customers from sharing their API credentials with you.\"`\n\n#### 3. How to Get Credentials & Cost\n* **Access Level:** `approval_required`\n* **Process & Cost:** Zendesk does not offer a permanently free tier for standard users, but it provides a 14-day free trial. For developers, Zendesk offers a free, non-expiring **Sponsored Developer Account** (Suite Enterprise plan for up to 5 agents) to build and test integrations. However, to obtain production credentials for a multi-tenant application, developers must submit a request for a \"Global OAuth client\" via the Zendesk Marketplace portal, which requires manual review and approval.\n* **Source URL:** `https://developer.zendesk.com/api-reference/` (via Zendesk Developer Docs)\n* **Verbatim Quotes:**\n  * `\"Zendesk does not currently offer a permanently free plan for its helpdesk software as of 2026. Instead, they focus on providing a high-value, scalable platform... A 14-day free trial: You get to test out the robust features\"`\n  * `\"If you're interested in becoming a Zendesk developer partner, you can convert your trial account into a sponsored Zendesk Support account. As part of becoming a Zendesk developer partner, Zendesk sponsors an instance for up to 5 agents that you can use for developing, demoing, and troubleshooting your app or integration. Unlike a trial account, a sponsored account does not expire after 14 days.\"`\n  * `\"Sign in to the Zendesk Marketplace portal . Select Global OAuth from the menu on the left side, and then click the Request new OAuth button. Complete the request form. Ensure the subdomain includes the prefix d3v- .\"`\n\n#### 4. API Style, Breadth, OpenAPI Spec, Webhooks, & Sandbox\n* **API Style:** REST APIs.\n* **Breadth:** Extremely broad, covering ticketing, help center, messaging, live chat, voice, custom data, users, and organizations.\n* **OpenAPI Spec:** Zendesk publishes official OpenAPI specifications for specific components (such as Sunshine Conversations / Messaging), but the core Support/Ticketing API does not have a single unified official OpenAPI spec file (though a public Postman collection is maintained).\n* **Webhooks:** Fully supported. Webhooks can subscribe to specific events or connect directly to triggers and automations.\n* **Sandbox:** Available. Replicated test environments are included in Enterprise plans or available as paid add-ons for lower tiers. Sponsored developer accounts receive the Suite Enterprise plan, which includes sandbox capabilities.\n* **Source URL:** `https://developer.zendesk.com/api-reference/`\n* **Verbatim Quotes:**\n  * `\"Zendesk's REST APIs let you access Zendesk data and functionality using code instead of a user interface.\"`\n  * `\"Zendesk Messaging maintains and publishes a public version of our OpenAPI specification for integrators to use as a reference. API specification. The latest version of the OpenAPI specification can be found on GitHub , published in YAML format.\"`\n  * `\"A webhook sends an HTTP request to a specified URL in response to activity in Zendesk Support, Guide, Gather, and Messaging.\"`\n  * `\"A sandbox is a test environment with the replicated configurations and data from your production environment... The availability of sandbox environments vary by plan: Support Enterprise includes one sandbox.\"`\n\n#### 5. Model Context Protocol (MCP) Servers\n* **MCP Status:** `community_only`\n* **Details:** Zendesk does not publish an official outbound MCP server for its API. However, multiple community-built MCP servers exist (e.g., `reminia/zendesk-mcp-server`). Note that Zendesk has an *inbound* feature allowing admins to connect Zendesk workflows to external third-party MCP servers, but for an AI agent calling into Zendesk, community tools must be used.\n* **Source URL:** `https://github.com/reminia/zendesk-mcp-server` / `https://developer.zendesk.com/`\n* **Verbatim Quotes:**\n  * `\"A Model Context Protocol server for Zendesk. This server provides a comprehensive integration with Zendesk. It offers: Tools for retrieving and managing Zendesk tickets and comments\"`\n  * `\"The Model Context Protocol (MCP) lets admins connect Zendesk to external MCP servers, discover the tools those servers provide, and use those tools as steps in action flows.\"`\n\n#### 6. Buildability Verdict & Main Blocker\n* **Verdict:** `ready_with_friction`\n* **Main Blocker:** To distribute a multi-tenant integration, developers cannot use standard API keys or local OAuth clients; they must apply for and receive manual approval for a **Global OAuth Client** from the Zendesk Marketplace team. Additionally, Zendesk enforces strict token expirations (access tokens expire in 30 minutes) and requires robust implementation of the OAuth 2.0 refresh token flow. API tokens are completely deprecated and will stop working entirely by April 30, 2027.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"Zendesk\" developer account free tier sandbox",
+   "\"Zendesk\" API authentication methods OAuth2",
+   "\"Zendesk\" OpenAPI spec swagger",
+   "\"Zendesk\" webhooks documentation",
+   "\"Zendesk\" \"sponsored developer account\"",
+   "\"Zendesk\" developer program free account",
+   "\"Zendesk\" \"OpenAPI\" github repository",
+   "\"Zendesk\" MCP server model context protocol",
+   "\"Zendesk\" \"global oauth\" client approval process",
+   "\"Zendesk\" \"global oauth\" review time"
+  ],
+  "search_sources": [
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4H2GqClz5OCLUlohDKjdmkLwqsQGgCwePMzvYQJb378V2uhgRkXclMMZiGzmnJRvFEArw1HSBGyg5_aYDdxIyqmifGRk7BmRxQ3qUOcB6zypnC4xgi-mtSU0tjCz6jpmKS6SfONhLaTrHxV6AaQ68w9Dgq9U88ubhvCwtXfYyKjhAQXF8j5Q6hmL7gcPeUS6ehoStGt6JPFhHgddEpBn7kgoNchOVh4V47w=="
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGS7a9hQTq8ws6PHIud9Hm1kGHJsiLKGCxYw-flPjTdCO2BQK6PQJ-At4MWDwjiA-KGFewo9xHMhRbN3nlsBHs_MhS4ZnHCu7NnoUndOiPqGe87Lixfh6N7H4C9nAqwQ444Bu9FyvIDxAaLlfjJOxsr5eYopI0mNFS1gyKt7lPJtxrB7niPWZ17cI88DE1JJVuPErrhEg5PRgG-chUaj5gTr0L_3HD05WN3ledeagGXCNGaD_KqeXXb64LrR3buQSnPvjn90qQEDvQ5ArQVsew="
+   },
+   {
+    "title": "eesel.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhT_JKflUifzV98npTOPOnX5Vs9SexJciaKR5hPCJCtSqLKAAEmD9L-PXTz69eMxV9B38NjQNYsmk4T39dG__luM4IB8HKgH6TjZa_9PLgJ2kUoebSXYCylLLTWYADyOaxSNK0ojo="
+   },
+   {
+    "title": "helpdesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9nm1yzadfCTiY-8BrvzzF2gt95e6uvLpWfRgUuq2RDoPYRIeWhistnDWC_qJPACV-t2oICWm_Giw3IypGDa1TXUYRUHrH4ESDxDjuWc1wKtgXzelH7F2IfhLIL8vWfwBRI3B-fYTMQ60="
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5WvAjPWI03sLCwGFAwT4FWkcES9Jbcg-wKr8Cde1Gb5ED_cpL4prg2XISDDdpxPZhu1dmPn4Osz0No1WebIFJlDlnRvsSGWxp5KxT6KNX-RQW7Agpof0GoBg8HWFuKjtI6Gq-kx8wBCIT_pMLTt_WJrBEhhtTgN--sL7Rj4trTojxd9dQivKfUZuyvnTp6zBRAqHFd0v7ywY="
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBNHJI56y6kf9-4FXyQIj8Lr-hpBCG13dkUaCcriNEbSs5_2RrHkkGGRXotrZBfUEA-B5Ao_RVIcQlSnhqBGasvWyofG0tUM051InqLKDaxPo2EBzX7YhBzZsoJO5VGqn-bIquzDI="
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdSf3EYfipe2dB5Lhwke3IuJOTZCi9Yr-TL9bUFM1uex1DzEbBGh_-8hsa4bUmNImnQehFx9gBxKmeFFrhQ6ZLVpQuOL4Vj5m3d-IeqI5vmTF9okuKp6uJ3ulO2N2F9dBsimXc2AoMGk6vknBzs44MgJDnzuxRd9Z_A-IKXgFtd6ZBHWrkQX69TsFYyZZfYMhvI1cpyrAf6GXwBOgMlnwCthqqT0eLU_sN1Riagq9tsoEa6ITbP0lNDsdv0v31C9xcmyUt"
+   }
+  ],
+  "tokens": 8955,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Zendesk developer documentation authentication API keys OAuth",
+    "Zendesk developer documentation getting started quickstart",
+    "Zendesk API pricing plans developer program",
+    "Zendesk API reference index",
+    "Zendesk MCP server official community",
+    " authentication OAuth page",
+    " API quickstart getting started",
+    " pricing plans API access developer program",
+    " API reference index",
+    "\"Zendesk MCP server\" github official community"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://www.zendesk.com/in/pricing/#georedirect",
+    "https://developer.zendesk.com/api-reference/",
+    "https://developer.zendesk.com/api-reference/introduction/rate-limits/",
+    "https://github.com/reminia/zendesk-mcp-server",
+    "https://www.apiboost.com/pricing",
+    "https://developers.jup.ag/pricing",
+    "https://www.getmonetizely.com/articles/api-pricing-strategies-monetizing-developer-platforms-successfully",
+    "https://swagger.io/product/pricing/",
+    "https://scalar.com/pricing",
+    "https://www.usecarly.com/blog/zendesk-mcp/",
+    "https://github.com/koundinya/zd-mcp-server"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://developer.zendesk.com/api-reference/introduction/security-and-authentication/",
+     "status": 404
+    },
+    {
+     "url": "https://developer.zendesk.com/documentation/ticketing/getting-started/api-quick-start/",
+     "status": 404
+    },
+    {
+     "url": "https://developer.zendesk.com/documentation/ticketing/getting-started/getting-a-trial-or-sponsored-account-for-development/",
+     "status": 404
+    },
+    {
+     "url": "https://www.zendesk.com/marketplace/apps/support/975191/mcp-server/",
+     "status": 403
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://www.zendesk.com/in/pricing/#georedirect",
+     "status": 200,
+     "chars": 27782,
+     "readable": true
+    },
+    {
+     "url": "https://developer.zendesk.com/api-reference/",
+     "status": 200,
+     "chars": 3307,
+     "readable": true
+    },
+    {
+     "url": "https://developer.zendesk.com/api-reference/introduction/rate-limits/",
+     "status": 200,
+     "chars": 9426,
+     "readable": true
+    },
+    {
+     "url": "https://github.com/reminia/zendesk-mcp-server",
+     "status": 200,
+     "chars": 13684,
+     "readable": true
+    },
+    {
+     "url": "https://www.apiboost.com/pricing",
+     "status": 200,
+     "chars": 6925,
+     "readable": true
+    },
+    {
+     "url": "https://developers.jup.ag/pricing",
+     "status": 200,
+     "chars": 793,
+     "readable": true
+    },
+    {
+     "url": "https://www.getmonetizely.com/articles/api-pricing-strategies-monetizing-developer-platforms-successfully",
+     "status": 200,
+     "chars": 8005,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 187.6
+ }
+}

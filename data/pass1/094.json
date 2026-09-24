@@ -1,0 +1,236 @@
+{
+ "app": {
+  "id": 94,
+  "name": "Consensus",
+  "category": "AI, Research and Media-native",
+  "hint": "consensus.app (OAuth requested)"
+ },
+ "record": {
+  "subcategory": "Academic Research Search Engine",
+  "one_liner": "AI-powered search engine for peer-reviewed scientific literature, offering programmatic access.",
+  "auth_methods": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "API Key for direct REST API requests (x-api-key header). OAuth 2.0 with PKCE and Dynamic Client Registration (RFC 7591) for MCP server integration.",
+  "access": "self_serve_free",
+  "access_notes": "Free tier provides 30 API/MCP calls per month. Paid plans (Pro, Deep) offer more calls and features. Credentials are self-serve from the user dashboard.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "narrow",
+  "api_notes": "Consists of a single primary search endpoint to query 220+ million peer-reviewed papers.",
+  "openapi_spec": true,
+  "webhooks": false,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Consensus hosts and maintains its own official remote MCP server at https://mcp.consensus.app/mcp.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "none",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://docs.consensus.app/api-get-started",
+    "quote": "Search over 220 million peer-reviewed research papers with the Consensus REST API. The Consensus API lets you search 220+ million peer-reviewed papers over a single REST endpoint. Send a query and get back ranked papers with titles, authors, journals, publication years, citation counts, and direct links."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.consensus.app/api-get-started",
+    "quote": "Pass the key in the x-api-key header. Requests without a valid key return 401 ."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.consensus.app/consensus-mcp",
+    "quote": "When prompted, log in to your Consensus account via OAuth."
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.consensus.app/api-get-started",
+    "quote": "1. Open the dashboard. In Consensus, click your profile icon and choose API & MCP Dashboard. 2. Create a key. Open Keys and clients, click New key, and name it. The full key is shown once."
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.consensus.app/api-get-started",
+    "quote": "The API is self-serve on every Consensus plan. Your plan sets how many calls you get each month... Free, Pro, Teams, Deep, Enterprise. Included calls per month, 30, 500, 500, 2,000, Custom... Free plans stop at 30 calls."
+   },
+   {
+    "claim": "access",
+    "url": "https://consensus.app/pricing/",
+    "quote": "Pro... $12/mo... 500 API & MCP uses included per month."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.consensus.app/api-get-started",
+    "quote": "The Consensus API lets you search 220+ million peer-reviewed papers over a single REST endpoint."
+   },
+   {
+    "claim": "api",
+    "url": "https://api.consensus.app/v1/search",
+    "quote": "The supported endpoint for searching academic papers. Use this instead of the legacy /v1/quick_search endpoint, which is deprecated and will be removed on 2027-02-07."
+   },
+   {
+    "claim": "api",
+    "url": "https://api.consensus.app/v1/search",
+    "quote": "For AI agents: visit https://docs.consensus.app/llms.txt for an index of all pages formatted in Markdown and endpoints in OpenAPI."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.consensus.app/consensus-mcp",
+    "quote": "The Consensus MCP server enables AI assistants like ChatGPT, Claude, Gemini Spark, and other MCP-compatible clients to search over 220 million peer-reviewed academic research papers directly from the conversation... The MCP URL is https://mcp.consensus.app/mcp."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Product Overview\nConsensus (`consensus.app`) is an AI-powered academic research search engine that allows users and AI agents to programmatically query peer-reviewed scientific literature.\n* **Source URL:** `https://docs.consensus.app/api-get-started`\n* **Verbatim Quote:** \"Search over 220 million peer-reviewed research papers with the Consensus REST API. The Consensus API lets you search 220+ million peer-reviewed papers over a single REST endpoint. Send a query and get back ranked papers with titles, authors, journals, publication years, citation counts, and direct links.\"\n\n---\n\n### Authentication Methods\nConsensus supports two primary authentication mechanisms depending on the interface used:\n1. **API Key:** Used for direct REST API requests, passed via a custom header.\n   * **Source URL:** `https://docs.consensus.app/api-get-started`\n   * **Verbatim Quote:** \"Pass the key in the x-api-key header. Requests without a valid key return 401 .\"\n2. **OAuth 2.0:** Used for connecting to their Model Context Protocol (MCP) server. It supports OAuth 2.0 with PKCE and utilizes Dynamic Client Registration (RFC 7591), allowing multi-tenant platforms to dynamically register clients and authenticate users seamlessly.\n   * **Source URL:** `https://docs.consensus.app/consensus-mcp`\n   * **Verbatim Quote:** \"When prompted, log in to your Consensus account via OAuth.\"\n\n* **Primary Auth Method for Multi-Tenant Integration:** `oauth2` (preferred for agent/MCP integrations via Dynamic Client Registration) or `api_key` (for standard REST API integrations).\n\n---\n\n### Credentials Acquisition & Cost\n* **Access Level:** `self_serve_free`\n* **How to get credentials:** Any developer can sign up for a free account and generate credentials instantly from the user dashboard.\n   * **Source URL:** `https://docs.consensus.app/api-get-started`\n   * **Verbatim Quote:** \"1. Open the dashboard. In Consensus, click your profile icon and choose API & MCP Dashboard. 2. Create a key. Open Keys and clients, click New key, and name it. The full key is shown once.\"\n* **Pricing & Plans:**\n   * **Free Tier:** Includes 30 API/MCP calls per month at no cost, but has strict functional limitations (no pagination past page 0, max 20 papers per request, no full-text excerpts).\n   * **Pro Tier ($12/mo):** Includes 500 calls/month. Additional usage costs $0.05 per call. Unlocks pagination and full-text excerpts.\n   * **Deep Tier ($45/mo):** Includes 2,000 calls/month. Additional usage costs $0.05 per call.\n   * **Source URL:** `https://docs.consensus.app/api-get-started`\n   * **Verbatim Quote:** \"The API is self-serve on every Consensus plan. Your plan sets how many calls you get each month... Free, Pro, Teams, Deep, Enterprise. Included calls per month, 30, 500, 500, 2,000, Custom... Free plans stop at 30 calls.\"\n   * **Source URL:** `https://consensus.app/pricing/`\n   * **Verbatim Quote:** \"Pro... $12/mo... 500 API & MCP uses included per month.\"\n\n---\n\n### API Technical Details\n* **API Style:** REST API (and JSON-RPC for the MCP server).\n* **API Breadth:** Extremely narrow. It consists of exactly one primary search endpoint.\n   * **Source URL:** `https://docs.consensus.app/api-get-started`\n   * **Verbatim Quote:** \"The Consensus API lets you search 220+ million peer-reviewed papers over a single REST endpoint.\"\n   * **Source URL:** `https://api.consensus.app/v1/search`\n   * **Verbatim Quote:** \"The supported endpoint for searching academic papers. Use this instead of the legacy /v1/quick_search endpoint, which is deprecated and will be removed on 2027-02-07.\"\n* **OpenAPI Spec:** Yes, provided via their LLM index file.\n   * **Source URL:** `https://api.consensus.app/v1/search`\n   * **Verbatim Quote:** \"For AI agents: visit https://docs.consensus.app/llms.txt for an index of all pages formatted in Markdown and endpoints in OpenAPI.\"\n* **Webhooks:** None found or documented.\n* **Sandbox:** None found or documented. Testing is performed directly using production keys (including on the free tier).\n\n---\n\n### MCP Server Support\n* **MCP Support:** `official`\n* **Details:** Consensus hosts and maintains its own official remote MCP server that integrates directly with compatible AI clients.\n   * **Source URL:** `https://docs.consensus.app/consensus-mcp`\n   * **Verbatim Quote:** \"The Consensus MCP server enables AI assistants like ChatGPT, Claude, Gemini Spark, and other MCP-compatible clients to search over 220 million peer-reviewed academic research papers directly from the conversation... The MCP URL is https://mcp.consensus.app/mcp.\"\n\n---\n\n### Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. The API and MCP server are fully public, self-serve, and well-documented. A developer can build a multi-tenant agent toolkit immediately using either API keys or the public OAuth/MCP endpoint.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"consensus.app\" api pricing",
+   "\"consensus.app\" oauth",
+   " \"plans and access\"",
+   " mcp",
+   " oauth",
+   " \"mcp\"",
+   " \"authentication\"",
+   " \"search\"",
+   "\"https://docs.consensus.app/consensus-mcp\"",
+   "\"api.consensus.app/v1/search\"",
+   " \"OpenAPI\"",
+   " \"webhooks\"",
+   " \"sandbox\""
+  ],
+  "search_sources": [
+   {
+    "title": "consensus.app",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlfedkt5A7ZOHnzfwLMhA4GF8u4j09iNUH5MQyirqVsWkSfiFUJKxzLj3p4wS4Bk4bxhT4WMGW3DwQ1bcKB4pwhlK2so4bV5PtY9oTgHx2BEP1jdE_ybWbCaj24lTRpw5eLJuUHl9JfpMgnJMf1CpzECPmoww04MiVzVuNng=="
+   },
+   {
+    "title": "consensus.app",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxnZp1FaZTQy-T6PeJb7NNhT8N0kN5eGLjRvqEoms6qriB-DfR6vzt-WnIs_G-R9OEYEBFNG6kus8mmZscYHEt864O55TBDQA3TWVMAAFuuCyTtyFJc_4RuDsXQ56xp3NaI4gQBB-r"
+   },
+   {
+    "title": "consensus.app",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHi-gyKCA84OvbB0LridXp-keiG3Uaix8f-r2XSUmQt8nz2oR_OCI9llBghSot8Bv9puhzrTyB05R2lbPtgrmxBEA4Lz-l3zoS3DNeGn_pW5EbeKFbYJWT9x2edyylcGIFZARJVhA=="
+   },
+   {
+    "title": "consensus.app",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9eVDeOVlJlUpKCTJPTZi4UL7STJpKuZ2x4x1VWXof_DSOYjbzr0HK6CyNMz-RTillK6aqcXqvPV8_gfofu2LrEWQv2HaFyu79JUDWVXX0Ng7I17fefKbkOpcOxZ-ceLzkURCuJ35xw4hhk54lbaVd0Dtg7BI7wXlGe0JP"
+   },
+   {
+    "title": "consensus.app",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhY0W9JUKr9Fc8N7QOLnTBOiizWhbfFj3uSrExaJQSf8MawnVD08S8125IhVYrg4C5P6-jbMfDBzk82i5Hdkvdj-LhU4RoTmzWHmgEsD5WNE2mgb0nv1Mkqt74-rIxkFq6HcOCbb_htA=="
+   }
+  ],
+  "tokens": 10662,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status':"
+  ],
+  "discovery": {
+   "search_queries": [
+    "Consensus app API authentication",
+    "Consensus app OAuth documentation",
+    "Consensus app API keys",
+    "Consensus app developer portal login",
+    "Consensus app getting started API",
+    "Consensus app quickstart guide API",
+    "Consensus app API pricing",
+    "Consensus app developer plans API access",
+    "Consensus app partner program API",
+    "Consensus app API reference documentation",
+    "Consensus app API index",
+    "Consensus MCP server official",
+    "Consensus MCP server community"
+   ],
+   "candidates": 7,
+   "live_urls": [
+    "https://consensus.app/",
+    "https://docs.consensus.app/api-get-started",
+    "https://help.consensus.app/en/articles/16516328-the-consensus-api",
+    "https://docs.consensus.app/core-features/api",
+    "https://hub.goconsensus.com/general-integration-setup-and-sso-66/how-to-access-consensus-api-documentation-95",
+    "https://support.goconsensus.com/consensus-api-documents",
+    "https://support.goconsensus.com/how-to-access-your-api-credentials",
+    "https://docs.consensus.app/api-plans-and-access",
+    "https://consensus.app/pricing/"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://consensus.app/api-docs/",
+     "status": 404
+    },
+    {
+     "url": "https://consensus.app/api-plans/",
+     "status": 404
+    },
+    {
+     "url": "https://mcp.consensus.app/mcp",
+     "status": 401
+    },
+    {
+     "url": "https://help.consensus.app/en/articles/8389694-the-consensus-api",
+     "status": 404
+    },
+    {
+     "url": "https://goconsensus.com/knowledge-base/how-to-access-your-api-credentials/",
+     "status": 404
+    },
+    {
+     "url": "https://help.consensus.app/en/articles/8233303-how-to-access-consensus-api-documentation",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://consensus.app/",
+     "status": 200,
+     "chars": 95,
+     "readable": false
+    },
+    {
+     "url": "https://docs.consensus.app/api-get-started",
+     "status": 200,
+     "chars": 8183,
+     "readable": true
+    },
+    {
+     "url": "https://help.consensus.app/en/articles/16516328-the-consensus-api",
+     "status": 200,
+     "chars": 7927,
+     "readable": true
+    },
+    {
+     "url": "https://docs.consensus.app/core-features/api",
+     "status": 200,
+     "chars": 4275,
+     "readable": true
+    },
+    {
+     "url": "https://hub.goconsensus.com/general-integration-setup-and-sso-66/how-to-access-consensus-api-documentation-95",
+     "status": 200,
+     "chars": 3321,
+     "readable": true
+    },
+    {
+     "url": "https://support.goconsensus.com/consensus-api-documents",
+     "status": 200,
+     "chars": 3295,
+     "readable": true
+    },
+    {
+     "url": "https://support.goconsensus.com/how-to-access-your-api-credentials",
+     "status": 200,
+     "chars": 1994,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 362.3
+ }
+}

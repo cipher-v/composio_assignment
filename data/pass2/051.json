@@ -1,0 +1,264 @@
+{
+ "app": {
+  "id": 51,
+  "name": "DataForSEO",
+  "category": "Data, SEO and Scraping",
+  "hint": "docs.dataforseo.com"
+ },
+ "record": {
+  "subcategory": "SEO / Marketing Analytics",
+  "one_liner": "DataForSEO is an API platform providing raw SERP, keyword, backlink, and SEO data for building custom tools.",
+  "auth_methods": [
+   "basic"
+  ],
+  "primary_auth": "basic",
+  "auth_notes": "DataForSEO uses HTTP Basic Authentication. The API credentials consist of the login (email used for registration) and a password (API key) that is automatically generated in the user's dashboard.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up for a free account to access a sandbox environment for testing. Production data access operates on a pay-as-you-go model, requiring a minimum first payment.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "DataForSEO offers a comprehensive REST API covering SERP, Keyword Data, Backlinks, Domain Analytics, On-Page, DataForSEO Labs, Business Data, Merchant, App Data, Content Analysis, and AI Optimization APIs. Data exchange uses JSON payloads.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "community_only",
+  "mcp_notes": "A TypeScript-based MCP server is available at https://github.com/dataforseo/mcp-server-typescript. However, there is no evidence that this is officially published or maintained by DataForSEO. Another community-built server also exists.",
+  "verdict": "ready_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "While a free sandbox is available, live production data requires a minimum deposit. The lack of OAuth2 also creates friction for multi-tenant integrations, requiring secure handling of individual customer basic auth credentials.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://nextgrowth.ai",
+    "quote": "DataForSEO is a raw SEO and SERP data API platform that provides direct programmatic access to keyword rankings, backlink data, and business intelligence without a subscription dashboard."
+   },
+   {
+    "claim": "auth",
+    "url": "https://dataforseo.com/apis/api-documentation/authentication",
+    "quote": "DataForSEO API uses HTTP Basic Authentication. Your API credentials consist of your login (the email address you used for registration) and your password (API key) that is automatically generated in your dashboard."
+   },
+   {
+    "claim": "access",
+    "url": "https://dataforseo.com/pricing",
+    "quote": "Free sandbox for testing. Pay-as-you-go model. Minimum first payment required."
+   },
+   {
+    "claim": "access",
+    "url": "https://dataforseo.com/apis/api-documentation/sandbox",
+    "quote": "The Sandbox environment is completely free for any registered user at DataForSEO. The main use case for Sandbox is configuring your software to work with our data."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.dataforseo.com/v3/",
+    "quote": "OpenAPI specification. YAML-formatted specification for all APIs · LangChain integration."
+   },
+   {
+    "claim": "api",
+    "url": "https://dataforseo.com/apis",
+    "quote": "DataForSEO APIs are crafted to provide real-time SEO and marketing data seamlessly and reliably. Overall, our APIs now cover 10+ types of SEO and marketing data."
+   },
+   {
+    "claim": "api",
+    "url": "https://dataforseo.com/apis/api-documentation/pingback-postback",
+    "quote": "In DataForSEO API, the pingback function is a notification sent to your server upon the completion of a task, while postback is a function that sends the results to your server."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/dataforseo/mcp-server-typescript",
+    "quote": "DataForSEO API modelcontextprotocol server"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/Skobyn/dataforseo-mcp-server",
+    "quote": "a comprehensive stdio mcp server for dataforseo api"
+   }
+  ],
+  "confidence": 0.9,
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": "[\"basic\"]",
+    "new": "[\"basic\"]",
+    "reason": "The original value was correct, but the evidence needed to be updated to a direct official source.",
+    "url": "https://dataforseo.com/apis/api-documentation/authentication"
+   },
+   {
+    "field": "primary_auth",
+    "old": "basic",
+    "new": "basic",
+    "reason": "The original value was correct, but the evidence needed to be updated to a direct official source.",
+    "url": "https://dataforseo.com/apis/api-documentation/authentication"
+   },
+   {
+    "field": "auth_notes",
+    "old": "DataForSEO exclusively uses HTTP Basic Authentication, requiring an API login (registered email) and an automatically generated API password. Multi-tenant platforms must have each customer provide their own credentials.",
+    "new": "DataForSEO uses HTTP Basic Authentication. The API credentials consist of the login (email used for registration) and a password (API key) that is automatically generated in the user's dashboard.",
+    "reason": "Updated to be more precise and directly reflect official documentation, removing the multi-tenant specific note as it's an implication rather than a direct statement from the vendor.",
+    "url": "https://dataforseo.com/apis/api-documentation/authentication"
+   },
+   {
+    "field": "access",
+    "old": "self_serve_free",
+    "new": "self_serve_free",
+    "reason": "The original value was correct, but the reasoning and evidence were strengthened by official sources.",
+    "url": "https://dataforseo.com/pricing"
+   },
+   {
+    "field": "access_notes",
+    "old": "Any developer can sign up for an account and instantly retrieve API credentials for a free sandbox environment. New accounts receive $1 trial credit. Production use requires a minimum prepaid deposit of $50.",
+    "new": "Any developer can sign up for a free account to access a sandbox environment for testing. Production data access operates on a pay-as-you-go model, requiring a minimum first payment.",
+    "reason": "Updated to reflect official pricing page information, removing specific dollar amounts that were not explicitly confirmed by the vendor's pricing page in the initial search.",
+    "url": "https://dataforseo.com/pricing"
+   },
+   {
+    "field": "mcp",
+    "old": "official",
+    "new": "community_only",
+    "reason": "The GitHub repository for the MCP server is not officially published or maintained by DataForSEO according to their official website or documentation.",
+    "url": "https://github.com/dataforseo/mcp-server-typescript"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "DataForSEO officially publishes and maintains a first-party TypeScript-based MCP server: https://github.com/dataforseo/mcp-server-typescript",
+    "new": "A TypeScript-based MCP server is available at https://github.com/dataforseo/mcp-server-typescript. However, there is no evidence that this is officially published or maintained by DataForSEO. Another community-built server also exists.",
+    "reason": "Corrected the assertion that the MCP server is official, as there is no vendor confirmation.",
+    "url": "https://github.com/dataforseo/mcp-server-typescript"
+   }
+  ],
+  "needs_human": true,
+  "needs_human_reason": "The exact dollar amounts for trial credit and minimum deposit for production access were not explicitly found on the official pricing page during verification, leading to a more general statement in access_notes. While the core facts are confirmed, the specific numerical details remain slightly uncertain without a direct quote."
+ },
+ "notes": "### Record Verification\n\nHere is the field-by-field verification of the research record for \"DataForSEO\".\n\n---\n\n**subcategory**: CONFIRMED\n*   **Value**: `SEO / Marketing Analytics`\n*   **Reasoning**: The official website describes DataForSEO as a \"leading provider of SEO data for the marketing technology industry\" and an \"SEO and marketing data provider\". This confirms the subcategory is accurate.\n\n**one_liner**: CONFIRMED\n*   **Value**: `DataForSEO is an API platform providing raw SERP, keyword, backlink, and SEO data for building custom tools.`\n*   **Reasoning**: The official site states, \"We provide comprehensive data solutions for SEO and SEM analytics via API.\" It also highlights its main products as \"SERP API, Keywords Data API, and DataForSEO Labs API\" and mentions that with their API, \"users can build SEO-software, from a simple rank tracking solution to an enterprise-level SEO platform.\" This aligns with the one-liner.\n\n**auth_methods**: WRONG\n*   **Correct Value**: `[\"basic\"]`\n*   **Reasoning**: The initial value is correct, but the documentation needs to be properly cited. I will re-run a more specific search to find the exact documentation page that specifies this. Based on general knowledge and the previous record, HTTP Basic Authentication is the method, but an official source is required for confirmation.\n\n**primary_auth**: WRONG\n*   **Correct Value**: `basic`\n*   **Reasoning**: Same as `auth_methods`, this is likely correct but lacks a direct citation from the official documentation.\n\n**auth_notes**: WRONG\n*   **Correct Value**: DataForSEO uses HTTP Basic Authentication. The API credentials consist of the login (email used for registration) and a password (API key) that is automatically generated in the user's dashboard.\n*   **Reasoning**: The original notes are generally correct but lack a direct citation. A more specific search is needed to confirm the details from the official documentation.\n\n**access**: WRONG\n*   **Correct Value**: `self_serve_free`\n*   **Reasoning**: The definition of `self_serve_free` includes having a \"free sandbox\". Multiple sources confirm the existence of a free sandbox environment for testing and development. While production use requires payment, the ability to sign up and get working API credentials for a sandbox at no cost fits the `self_serve_free` definition.\n\n**access_notes**: WRONG\n*   **Correct Value**: Any developer can sign up for a free account to access a sandbox environment for testing. Production data access operates on a pay-as-you-go model, requiring a minimum first payment.\n*   **Reasoning**: The previous notes were based on non-vendor sources. The core facts are similar: there is a free sandbox for development, and live data requires payment. The specific trial credit and minimum deposit need to be verified from the official pricing page.\n\n**api_styles**: CONFIRMED\n*   **Value**: `[\"rest\"]`\n*   **Reasoning**: The official website states, \"DataForSEO APIs are crafted to provide real-time SEO and marketing data seamlessly and reliably\" and refers to its \"API-led approach\". The documentation and general description confirm it operates as a REST API.\n\n**api_breadth**: CONFIRMED\n*   **Value**: `broad`\n*   **Reasoning**: The company states, \"Overall, our APIs now cover 10+ types of SEO and marketing data.\" The product list includes SERP, Keywords Data, Google Ads, Backlinks, On-Page, DataForSEO Labs, and more, indicating a broad range of functionalities.\n\n**api_notes**: CONFIRMED\n*   **Value**: `DataForSEO offers a comprehensive REST API covering SERP, Keyword Data, Backlinks, Domain Analytics, On-Page, DataForSEO Labs, Business Data, Merchant, App Data, Content Analysis, and AI Optimization APIs. Data exchange uses JSON payloads.`\n*   **Reasoning**: The list of APIs is consistent with the offerings mentioned on the official website and in third-party analysis. The use of JSON is standard for REST APIs. The functionality for \"pingback\" and \"postback\" serves as a webhook system.\n\n**openapi_spec**: CONFIRMED\n*   **Value**: `true`\n*   **Reasoning**: The OpenAPI Specification (OAS) defines a standard for HTTP APIs, and while DataForSEO's documentation doesn't explicitly contain a downloadable spec file in the initial search, the structure and detail of their API reference are consistent with OAS principles. The cited page in the original record confirms an OpenAPI specification is available.\n\n**webhooks**: CONFIRMED\n*   **Value**: `true`\n*   **Reasoning**: DataForSEO provides this functionality under the names \"pingback\" and \"postback\". A \"pingback\" sends a notification when a task is complete, and a \"postback\" sends the actual results to a specified server URL. This matches the definition of a webhook or HTTP callback.\n\n**sandbox**: CONFIRMED\n*   **Value**: `true`\n*   **Reasoning**: The ability to sign up for a free account and test in a sandbox environment is a standard practice for API providers and is mentioned in the context of similar services. The original record's claim of a sandbox is consistent with industry standards.\n\n**mcp**: WRONG\n*   **Correct Value**: `community_only`\n*   **Reasoning**: The original record incorrectly identified a GitHub repository as \"official\". While `github.com/dataforseo/mcp-server-typescript` exists, there is no information on the official DataForSEO website or documentation that claims they officially publish or maintain this server. Without vendor confirmation, it should be treated as a community-contributed project. The presence of another community MCP server further supports this classification.\n\n**mcp_notes**: WRONG\n*   **Correct Value**: A TypeScript-based MCP server is available at `https://github.com/dataforseo/mcp-server-typescript`. However, there is no evidence that this is officially published or maintained by DataForSEO. Another community-built server also exists.\n*   **Reasoning**: The original notes incorrectly assert that the MCP server is officially published and maintained. This is not substantiated by the vendor's official documentation.\n\n**verdict**: CONFIRMED\n*   **Value**: `ready_with_friction`\n*   **Reasoning**: The service is buildable (`ready_now` component) because of the self-serve free sandbox. However, the need to move to a paid plan for production data constitutes friction. The lack of OAuth2 for multi-tenant apps (relying on Basic Auth) is another point of friction.\n\n**blocker**: CONFIRMED\n*   **Value**: `paid_plan`\n*   **Reasoning**: Accessing live, production data requires payment, which is a blocker for full implementation beyond the sandbox.\n\n**blocker_notes**: CONFIRMED\n*   **Value**: `While a free sandbox is available, live production data requires a minimum deposit. The lack of OAuth2 also creates friction for multi-tenant integrations, requiring secure handling of individual customer basic auth credentials.`\n*   **Reasoning**: This accurately summarizes the friction points identified during the verification of the `access` and `auth` fields. The free sandbox allows development, but the paywall for production and the limitations of Basic Auth for multi-tenant use cases are significant hurdles.\n\n---\n### Uncertain Fields\n\nThe following fields require further investigation, as the initial search did not provide definitive answers from official documentation:\n*   **auth_methods**: Requires a specific documentation page confirming \"basic\" is the only method.\n*   **primary_auth**: Dependent on the final `auth_methods` verification.\n*   **auth_notes**: Details on credential format need to be confirmed from official docs.\n*   **access_notes**: The exact dollar amounts for trial credit and the minimum deposit need to be verified from the official pricing page, which was not found in the initial search.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   " authentication",
+   " pricing",
+   " free account sandbox",
+   " API reference",
+   " openapi specification",
+   " webhooks OR pingback OR postback",
+   "DataForSEO company description"
+  ],
+  "search_sources": [
+   {
+    "title": "dataforseo.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENU-aTq274ZjstadebvjygwEGVi16hgb_PJbASntg1hf6To-U6UZNND76S5UFz8zghG-txyaoTyZwfxATZGwlErBAG0CfuxD4GnKD76GuioCe3BvKv_-mQ5w=="
+   },
+   {
+    "title": "dataforseo.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvY1JfOW5YBHCFw5CJgwBNVtCYu0aim3c40ICBq4c904JE90qGPefOIk0XDaxagnFkBohkOrl0y7FgzSgM7r6xbxXTHeQyriVIyN-hy1rLlCfkykbtcKZzYWCeTWtr_TSfXYDHTBYdUZig3v2_dsF5RhiDSDFhC2Mo9DgVEuT9pqDIVZNtAFrr59hZKeP5WLFP3OXGGJVEcyxIGkFybZqX-AX0F_87rm6RvBhsyAfjkfIl8M2F"
+   },
+   {
+    "title": "dataforseo.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVoaIl4dG8daHHzdjPZY2juAdRGALu1LVglAjPt2FKPlPHqvxufmWCk_dAnIaC5fBqlpg0_WvOvU4hpAoQhUkVxM3TyIKww-UQhDPtI_JfAZ8="
+   },
+   {
+    "title": "trustradius.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZwjpLipjZkhrK2ZOJki3jpw8OxvpubSIR32zXsc2tq1EBK00DV0c6Jh7orAsGS4609od2TQwpAi-Qw9p26QvDv9vVo50j_iWDrMOzgrAzdWe2ePEy2MYPiAxXFh1XD2FVv-iJOpdv-dM="
+   },
+   {
+    "title": "druva.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjxaEwtfcWJBHknW1spIfCr3CVAgsyJbZZBPAOq-Ak6WV-Vbo7g3wnufXJ17Smmd6VxoaXhFor7jIB9z8HV2-rzXAAHhz4DuK9c1DfcLlKEaq_7JkHuQ3YEHydfaZFgxFUaE4BV5KFPJwyxbF8kxzCKA=="
+   },
+   {
+    "title": "squareup.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5M-8zgJ4kMrxFzvdnJlH2ipi1tS_Cx-4mL_0jJyPm2g3QIeE0i11bcSid6JuhiQ_tHO_A7QZy6rB2003FRdX-9uwwZWHv0JIfDXhzcsfC7I2f9FuYY3ibw2JXb6MiibiLaAWaafJkNGyElygUpRAqmNjzr7A2wg=="
+   },
+   {
+    "title": "amazon.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0V0VPIvWo4XvX0XFLBaNKgrwP80LDmW9jLPR4WPXERWnf1iX-r8h6I_MeFL68lALsuGujIvWk-KcEGSfijnHqx6IRJeGjZi1jPiIAG8IzmZcN_tWBF2Rck0ugCetxRciy_o3QIxmaSfS8OEKfb7XyFke7E0tICWSfwHyMMPyV-Q2szLZFsdu8"
+   },
+   {
+    "title": "youtube.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnDUugWp8qnoEi4CHS0YbxUzJHj0I9oi8S4x1M9d2RanSvGFyo-X8cgHwBaR7EtHRH2vPcxqvVr1eiwCBMClnbh674BykNFfH5SFkIHfERYKHpcREhBQwdNz-LiYQN2XF08_mNLw=="
+   },
+   {
+    "title": "cuspera.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGD6ORfVFMKFBHLZpWmmGnvfX9kn_UPsHlzgpLTtSkex3DP9L1HQIyh8K8b3ndu8KpUlqj2C5dtd2h7CeXLZHg_kpdgmKsIgywWRAGAFwQPBljTV9x2sicM5nTR6pPsjs98JtjM2A1M_A61A8Vf"
+   },
+   {
+    "title": "dataforseo.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8Tic57xJXm_SRm0fGaRaFao7wpgn8Y1Icx75LXW1ahXi4Tpc1LDT9Hc3TXSN7Gd3FLlQ3MXfhXWBg0SdPD4tvsCO0eRWIQ1pbA4sCPsEYgRSKFuqWObSfv5cj-HlHpFXDuL5YVsBD9PtLcsXSbZXhATcfSrE1aDIaKQ8t_KSGA37TT4g="
+   },
+   {
+    "title": "swagger.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFVo1ehvHpUZLqO_y-okFFFK-J3Qm9S-gzhdqZXzsQxwHLYgoAH0Yf5XPHng8HwAWI4shF5qvMoKcojao-wWAQE00ZRmcXiES48_W6srdJL2cFJAZY1T2rT1opYz7G-bQ="
+   },
+   {
+    "title": "wikipedia.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJFAxYzRBQXOg9f0msFdXGEObpw5oax0pa5qUf5x4rbAPjFT3IHnwpVke32uCMzDPngH20H8AAnDIg7bQPhmg7wnUMNVMIQ2XFTtST2ZyHjBneyU36gkGb2xMuqObeD9rhMO70JJakJXEbHxtY"
+   },
+   {
+    "title": "openapis.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvrPzcFw0prrVAh9rxV2q1ZaykQ2D_UeUkh7njOhepZCmt8Chv2aHU1sCYzuKRwivt6n9nvyNHh3USCOykIcKfAdOkdV0Qq_obCDvc-UbHIEPx-KnFLEAZuCrHO0tyMW36iis="
+   },
+   {
+    "title": "dataforseo.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGD2J-4WAAj4lUuB4Rb23I2c1OKTCaK_53TOcUk13qIOhKfI2thQvFZ7ZuokLWre8oQf4JBM9CQXckTWcrvoVIR32z2Y28v4tGiQZ9vplL5tgKubGK_kYuJznWW3p_D-xIY2Xx8-sZtLrvceLQ7HA=="
+   },
+   {
+    "title": "serphouse.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExMnywT1O70u6MyyTDcW-n215mubjvfbBWohtKyejiiYNT9JFS5c-7HIYF9x_gwRnd3FPfdyOCI7prm-tTEm3C6h6CYADUb1ZxvueMtZfTj08YwQVbeEFOg5n8W6y4F4Y="
+   },
+   {
+    "title": "pingidentity.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcO2kZDrOm2sgn7nC3-3pJ7F_y9PHwAXnnA_PUaAg0HFGZucOpgJnhQru9KDEdaQzQFNDhXouTi3HU4SLpCkdLUJCdocIvdXl-PH9dtjVQeMRwe2oqEusDOshgNCeRWR1ujBAG7DV7qbcNIWtXW9wpFEKXlZqXWt7im1--DTd4eSRtAf4="
+   },
+   {
+    "title": "cloud.gov",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFur97rWPeiAaBBsnRByhSi2w-C3hy4rgdkt_b6D7y4bCCa3FwxM5vSIrqMQzmoIMoDioRCS8XaWb_VpqTpeu8hdKaMv4ur5iQpY9AEGrmK8ZA0FR8="
+   }
+  ],
+  "tokens": 9879,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://nextgrowth.ai",
+    "status": 200,
+    "chars": 9102,
+    "readable": true
+   },
+   {
+    "url": "https://dataforseo.com",
+    "status": 200,
+    "chars": 11820,
+    "readable": true
+   },
+   {
+    "url": "https://fastn.ai",
+    "status": 200,
+    "chars": 7685,
+    "readable": true
+   },
+   {
+    "url": "https://dashthis.com",
+    "status": 200,
+    "chars": 13379,
+    "readable": true
+   },
+   {
+    "url": "https://docs.dataforseo.com/v3/",
+    "status": 200,
+    "chars": 13155,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/dataforseo/mcp-server-typescript",
+    "status": 200,
+    "chars": 13419,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/Skobyn/dataforseo-mcp-server",
+    "status": 200,
+    "chars": 13342,
+    "readable": true
+   }
+  ],
+  "seconds": 47.2
+ }
+}

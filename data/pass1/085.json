@@ -1,0 +1,200 @@
+{
+ "app": {
+  "id": 85,
+  "name": "iPayX",
+  "category": "Finance and Fintech",
+  "hint": "ipayx.ai/docs"
+ },
+ "record": {
+  "subcategory": "Financial / FX Auditing",
+  "one_liner": "AI-powered platform for forensic auditing of foreign exchange transactions to detect hidden bank markups.",
+  "auth_methods": [
+   "api_key"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "API access requires an API Key, which is a static credential.",
+  "access": "paid_plan",
+  "access_notes": "API access is gated behind paid subscriptions (Credit Pack or Unlimited). A free tier offers 5 lifetime manual audits but no API access.",
+  "api_styles": [
+   "cli_or_library"
+  ],
+  "api_breadth": "narrow",
+  "api_notes": "The API is focused on FX auditing and rate verification, offering tools like 'check_fx_mid_market_rate', 'audit_fx_transaction', 'full_forensic_fx_report', and 'compare_fx_sources'. The MCP server uses JSON-RPC.",
+  "openapi_spec": false,
+  "webhooks": false,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Official MCP server hosted at https://mcp.ipayx.ai/mcp, supporting Streamable HTTP and SSE.",
+  "verdict": "ready_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "API access requires a paid plan; the free tier does not include API access.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.licium.ai/directory/mcp-ipayx-ai-mcp~aHR0cHM6Ly9tY3AuaXBheXguYWkvbWNw",
+    "quote": "fx forensic audit mcp. detects hidden bank markups on cross-border payments. fintrac msb."
+   },
+   {
+    "claim": "general",
+    "url": "https://www.ipayx.ai/",
+    "quote": "iPayX Protocol is the neutral FX verification layer... We audit foreign-exchange transactions, compare the rate a bank or card network applied against the real-time mid-market rate, reveal invisible spreads, quantify FX costs, and project annual savings."
+   },
+   {
+    "claim": "auth",
+    "url": "https://www.claudemcp.org/mcp/registry/io-github-ipayx-technologies-mcp-fx-audit-c685dd880c90.html",
+    "quote": "supply any required credentials in your client settings."
+   },
+   {
+    "claim": "auth",
+    "url": "https://www.ipayx.ai/",
+    "quote": "Upgrade to the 100-audit Credit Pack or Unlimited for API access"
+   },
+   {
+    "claim": "access",
+    "url": "https://www.ipayx.ai/",
+    "quote": "Five free audits. Then transparent usage-based pricing. Start free with five lifetime audits. Upgrade to the 100-audit Credit Pack or Unlimited for API access..."
+   },
+   {
+    "claim": "api",
+    "url": "https://mcp.ipayx.ai/mcp",
+    "quote": "tools\":[\"check_fx_mid_market_rate\",\"audit_fx_transaction\",\"full_forensic_fx_report\",\"compare_fx_sources\"]"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://www.licium.ai/directory/mcp-ipayx-ai-mcp~aHR0cHM6Ly9tY3AuaXBheXguYWkvbWNw",
+    "quote": "endpoint url https://mcp.ipayx.ai/mcp ... transport streamable-http"
+   },
+   {
+    "claim": "verdict",
+    "url": "https://www.ipayx.ai/",
+    "quote": "Upgrade to the 100-audit Credit Pack or Unlimited for API access"
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Research Notes: iPayX\n\n#### What the product does\niPayX is an AI-powered foreign exchange (FX) forensic auditing platform and protocol. It is designed to detect hidden bank markups and spreads on cross-border payments by comparing applied transaction rates against real-time mid-market data. It serves enterprise treasuries, accounting firms, and AI agent developers by providing structured audit reports and execution grades.\n*   **Source:** [licium.ai](https://www.licium.ai/directory/mcp-ipayx-ai-mcp~aHR0cHM6Ly9tY3AuaXBheXguYWkvbWNw) — *\"fx forensic audit mcp. detects hidden bank markups on cross-border payments. fintrac msb.\"*\n*   **Source:** [ipayx.ai](https://www.ipayx.ai/) — *\"iPayX Protocol is the neutral FX verification layer... We audit foreign-exchange transactions, compare the rate a bank or card network applied against the real-time mid-market rate, reveal invisible spreads, quantify FX costs, and project annual savings.\"*\n\n#### Auth method\nThe primary authentication method for the public API and MCP server is an **API Key**. While the platform mentions integrations with tools like Plaid for data fetching, the developer-facing API for auditing requires static credentials. A multi-tenant integration would use `api_key` provided by the end-user.\n*   **Source:** [claudemcp.org](https://www.claudemcp.org/mcp/registry/io-github-ipayx-technologies-mcp-fx-audit-c685dd880c90.html) — *\"supply any required credentials in your client settings.\"*\n*   **Source:** [ipayx.ai](https://www.ipayx.ai/) — *\"Upgrade to the 100-audit Credit Pack or Unlimited for API access\"* (API access is treated as a credentialed feature).\n\n#### How to get credentials and cost\nAccess is categorized as **paid_plan**. While there is a limited free tier for manual audits, programmatic API access is gated behind paid subscriptions.\n*   **Free Tier:** 5 lifetime audits (manual/web-based).\n*   **Paid Plan:** Developers must upgrade to a \"Credit Pack\" or \"Unlimited\" plan to unlock API access.\n*   **Source:** [ipayx.ai](https://www.ipayx.ai/) — *\"Five free audits. Then transparent usage-based pricing. Start free with five lifetime audits. Upgrade to the 100-audit Credit Pack or Unlimited for API access...\"*\n\n#### API style and breadth\n*   **Style:** The platform uses a **JSON-RPC** protocol for its MCP server and likely **REST** for its standard API endpoints.\n*   **Breadth:** The API is focused on FX auditing and rate verification. The MCP manifest lists four primary tools: `check_fx_mid_market_rate`, `audit_fx_transaction`, `full_forensic_fx_report`, and `compare_fx_sources`.\n*   **OpenAPI Spec:** No public OpenAPI/Swagger spec was found; however, the MCP server provides a machine-readable manifest at the `/mcp` endpoint.\n*   **Webhooks:** No documentation found for outbound webhooks.\n*   **Sandbox:** A \"demo\" mode and 5 free lifetime audits serve as a functional sandbox for testing the audit logic before purchasing API credits.\n*   **Source:** [mcp.ipayx.ai/mcp](https://mcp.ipayx.ai/mcp) — *\"tools\":[\"check_fx_mid_market_rate\",\"audit_fx_transaction\",\"full_forensic_fx_report\",\"compare_fx_sources\"]\"*\n\n#### MCP servers\n*   **Official:** iPayX hosts an official MCP server.\n*   **Endpoint:** `https://mcp.ipayx.ai/mcp` (supports Streamable HTTP and SSE).\n*   **Source:** [licium.ai](https://www.licium.ai/directory/mcp-ipayx-ai-mcp~aHR0cHM6Ly9tY3AuaXBheXguYWkvbWNw) — *\"endpoint url https://mcp.ipayx.ai/mcp ... transport streamable-http\"*\n\n#### Buildability verdict: **ready_with_friction**\nComposio could ship an agent toolkit for iPayX today by wrapping their official MCP server. The main blocker is that it is a **paid_plan** requirement for API access; a developer cannot build a production-ready integration without purchasing a credit pack, as the free tier is limited to 5 lifetime manual audits and explicitly excludes API access.\n\n*   **Main Blocker:** `paid_plan` (API access requires a paid upgrade).\n*   **Source:** [ipayx.ai](https://www.ipayx.ai/) — *\"Upgrade to the 100-audit Credit Pack or Unlimited for API access\"*",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "iPayX API authentication oauth api key",
+   "iPayX pricing free tier API access",
+   "iPayX developer documentation OpenAPI spec",
+   "iPayX partner program API access"
+  ],
+  "search_sources": [
+   {
+    "title": "ipayx.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFP7I9Acf41xtWeKhWI52dE77Djx-gdYjMw9R4EMa8t5IYwdw9ZWD9bTh0Uncr6Z-s120EbsbKValzdhSACy6BrhRCoA6xOEki7M-9XqRo2g8hQ395fH7sc"
+   },
+   {
+    "title": "ipayx.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWwP9MfzLXXxpJvbWjfT6_pdmkRZq-slbCFNX9nZSJyxD8ZWWPJZVj4FVdjW6HZufCc11o5a6jokV88nwxlIkMdlSsUSviFhVdGv65OkK-ZQ=="
+   },
+   {
+    "title": "grizzlypeaksoftware.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcrpuug-uIN8-ZFa3LeSH_OCuo_JnrvwSaFR4gaWYGOzXolfQXy3P0O16_IvpIu0D0Au_f4aKbqIl1LsPfgb9mdhLIfASLCdK39Mbhb13nxmjAmS14Q-9yIwYymK-Q1nh7aX-MNJy8_IZjcJBn-RmGMEfBg1Zb0eosz4ohuQN01jyLgPAWp4JxeS8ETBncU4dwbrbIkBwXu-alvUaHXFQIHVWtBPjHuj7gc_lqNNhWo2Ce4g=="
+   }
+  ],
+  "tokens": 6818,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "iPayX developer documentation",
+    "ipayx.ai/docs",
+    "iPayX authentication API keys OAuth",
+    "iPayX getting started quickstart",
+    "iPayX pricing API access",
+    "iPayX API reference index",
+    "iPayX MCP server",
+    " developer documentation",
+    " developer documentation",
+    " \"API keys\" authentication",
+    " \"API keys\" authentication",
+    " \"getting started\"",
+    " \"quickstart\"",
+    " pricing",
+    " pricing",
+    " \"API reference\"",
+    " \"API reference\"",
+    " mcp server documentation",
+    " mcp server documentation",
+    " developers",
+    " \"API keys\" OR authentication OR OAuth",
+    " \"getting started\" OR quickstart",
+    " pricing",
+    " \"API reference\" OR \"REST API Reference\"",
+    " \"MCP server docs\"",
+    "https://mcp.ipayx.ai/mcp",
+    "ipayx.ai/docs",
+    " developers",
+    " \"API keys\" authentication",
+    " \"getting started\" quickstart",
+    " pricing",
+    " \"REST API Reference\"",
+    " \"MCP Server Docs\"",
+    "https://mcp.ipayx.ai/mcp"
+   ],
+   "candidates": 5,
+   "live_urls": [
+    "https://mcp.ipayx.ai/mcp",
+    "https://www.ipayx.ai/",
+    "https://www.ipayx.ai/integrations/microsoft-foundry",
+    "https://www.claudemcp.org/mcp/registry/io-github-ipayx-technologies-mcp-fx-audit-c685dd880c90.html",
+    "https://www.licium.ai/directory/mcp-ipayx-ai-mcp~aHR0cHM6Ly9tY3AuaXBheXguYWkvbWNw"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://ipayxprotocol.com/developers",
+     "status": 0
+    },
+    {
+     "url": "https://ipayxprotocol.com/pricing",
+     "status": 0
+    },
+    {
+     "url": "https://ipayxprotocol.com/developers/rest-api-reference",
+     "status": 0
+    },
+    {
+     "url": "https://ipayxprotocol.com/developers/mcp-server-docs",
+     "status": 0
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://mcp.ipayx.ai/mcp",
+     "status": 200,
+     "chars": 543,
+     "readable": true
+    },
+    {
+     "url": "https://www.ipayx.ai/",
+     "status": 200,
+     "chars": 61,
+     "readable": false
+    },
+    {
+     "url": "https://www.ipayx.ai/integrations/microsoft-foundry",
+     "status": 200,
+     "chars": 61,
+     "readable": false
+    },
+    {
+     "url": "https://www.claudemcp.org/mcp/registry/io-github-ipayx-technologies-mcp-fx-audit-c685dd880c90.html",
+     "status": 200,
+     "chars": 1330,
+     "readable": true
+    },
+    {
+     "url": "https://www.licium.ai/directory/mcp-ipayx-ai-mcp~aHR0cHM6Ly9tY3AuaXBheXguYWkvbWNw",
+     "status": 200,
+     "chars": 1648,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 82.4
+ }
+}

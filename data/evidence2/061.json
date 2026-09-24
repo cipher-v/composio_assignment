@@ -1,0 +1,202 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://en.wikipedia.org/wiki/GitHub",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.43
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.78
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.72
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.92
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/benefits-of-migrating-from-oauth-apps-to-github-apps",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://github.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.7
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.6
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.blog/2020-07-27-introducing-the-github-openapi-description/",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.github.com/en/rest/about-the-rest-api/openapi-description",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/benefits-of-migrating-from-oauth-apps-to-github-apps",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-as-a-github-app",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.18
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/github/github-mcp-server",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.36
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://docs.github.com/en/copilot/github-copilot-enterprise/managing-github-copilot-enterprise/managing-access-for-github-copilot-enterprise-in-your-enterprise#about-github-copilot-enterprise",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.blog/2024-04-04-the-github-model-context-protocol-mcp-is-now-open-source/",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/github/github-mcp-server",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.github.com/en/copilot/github-copilot-enterprise/managing-github-copilot-enterprise/managing-access-for-github-copilot-enterprise-in-your-enterprise#about-github-copilot-enterprise",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/microsoft/AL-Go-for-GitHub/blob/main/Scenarios/Sandbox.md",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "bearer_token": true,
+  "oauth2": true,
+  "jwt": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/benefits-of-migrating-from-oauth-apps-to-github-apps', 'https://github.blog/2020-07-27-introducing-the-github-openapi-description/', 'https://docs.github.com/en/rest/about-the-rest-api/openapi-description', 'https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/benefits-of-migrating-from-oauth-apps-to-github-apps', 'https://docs.github.com/en/copilot/github-copilot-enterprise/managing-github-copilot-enterprise/managing-access-for-github-copilot-enterprise-in-your-enterprise#about-github-copilot-enterprise', 'https://github.blog/2024-04-04-the-github-model-context-protocol-mcp-is-now-open-source/', 'https://docs.github.com/en/copilot/github-copilot-enterprise/managing-github-copilot-enterprise/managing-access-for-github-copilot-enterprise-in-your-enterprise#about-github-copilot-enterprise', 'https://github.com/microsoft/AL-Go-for-GitHub/blob/main/Scenarios/Sandbox.md']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://en.wikipedia.org/wiki/GitHub', 'https://github.com/', 'https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-as-a-github-app', 'https://github.com/github/github-mcp-server', 'https://github.com/github/github-mcp-server']\n- Non-vendor sources (prefer official docs): ['https://en.wikipedia.org/wiki/GitHub', 'https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api', 'https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api', 'https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api', 'https://github.com/pricing', 'https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api', 'https://github.com/', 'https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-as-a-github-app', 'https://github.com/github/github-mcp-server', 'https://github.com/github/github-mcp-server']",
+ "metrics": {
+  "n_evidence": 18,
+  "alive_rate": 0.5555555555555556,
+  "dead_rate": 0.4444444444444444,
+  "blocked_rate": 0.0,
+  "official_rate": 0.1111111111111111,
+  "readable": 10,
+  "quote_supported_rate": 0.5,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

@@ -1,0 +1,181 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://help.plain.com/article/quickstart",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.36
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.plain.com/blog",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.plain.com/docs/graphql/authentication.md",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.75
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.plain.com/docs/graphql/authentication.md",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.59
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://github.com/superset-sh/superset/issues/6470",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.57
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.plain.com/docs/graphql/authentication.md",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.plain.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.5
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.plain.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.4
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://help.plain.com/article/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.7
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.plain.com/docs/graphql/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.plain.com/blog",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.plain.com/blog",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.plain.com/docs/graphql/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.plain.com/docs/graphql/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://www.plain.com/docs/graphql/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://www.plain.com/docs/graphql/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  }
+ ],
+ "auth_support": {
+  "api_key": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://help.plain.com/article/quickstart', 'https://www.plain.com/blog', 'https://www.plain.com/docs/graphql/authentication.md', 'https://www.plain.com/pricing', 'https://www.plain.com/blog', 'https://www.plain.com/blog', 'https://www.plain.com/docs/graphql/authentication', 'https://www.plain.com/docs/graphql/authentication', 'https://www.plain.com/docs/graphql/authentication', 'https://www.plain.com/docs/graphql/authentication']\n- Non-vendor sources (prefer official docs): ['https://github.com/superset-sh/superset/issues/6470']",
+ "metrics": {
+  "n_evidence": 16,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.9375,
+  "readable": 16,
+  "quote_supported_rate": 0.375,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

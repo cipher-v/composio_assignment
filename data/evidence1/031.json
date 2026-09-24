@@ -1,0 +1,110 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://developers.google.com/google-ads/api/docs/get-started/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.83
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.google.com/google-ads/api/docs/oauth/overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "Google Ads Developer Blog (September 2026 Announcement)",
+   "status": 0,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developers.google.com/google-ads/api/docs/api-policy/developer-token",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.05
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "Google Ads Developer Blog (September 2026 Update)",
+   "status": 0,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.google.com/google-ads/api/docs/client-libs/python/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.09
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "Google Ads Help / Lead Form Documentation",
+   "status": 0,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "Google Ads API Testing Guide",
+   "status": 0,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "Google Developers / GitHub Repository (google-ads-mcp)",
+   "status": 0,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['Google Ads Developer Blog (September 2026 Announcement)', 'Google Ads Developer Blog (September 2026 Update)', 'Google Ads Help / Lead Form Documentation', 'Google Ads API Testing Guide', 'Google Developers / GitHub Repository (google-ads-mcp)']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://developers.google.com/google-ads/api/docs/api-policy/developer-token', 'https://developers.google.com/google-ads/api/docs/client-libs/python/authentication']",
+ "metrics": {
+  "n_evidence": 9,
+  "alive_rate": 0.4444444444444444,
+  "dead_rate": 0.5555555555555556,
+  "blocked_rate": 0.0,
+  "official_rate": 0.4444444444444444,
+  "readable": 4,
+  "quote_supported_rate": 0.5,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

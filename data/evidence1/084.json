@@ -1,0 +1,162 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://paygentcommerce.com/developers/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.29
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://withpaygent.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://paygentcommerce.com/developers/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.75
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://paygent.to/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://paygent.to/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://support.google.com/pay/merchants/answer/16385635",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://paygent.to/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://paygent.to/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://paygentcommerce.com/developers/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.5
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://paygentcommerce.com/developers/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.4
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://withpaygent.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://paygentcommerce.com/developers/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.54
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://support.google.com/pay/merchants/answer/16385635",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://paygent.to/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  }
+ ],
+ "auth_support": {
+  "api_key": true,
+  "bearer_token": true,
+  "oauth2": false
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://support.google.com/pay/merchants/answer/16385635', 'https://support.google.com/pay/merchants/answer/16385635']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://paygentcommerce.com/developers/', 'https://withpaygent.com/pricing', 'https://paygent.to/', 'https://paygent.to/', 'https://paygent.to/', 'https://paygentcommerce.com/developers/', 'https://withpaygent.com/']\n- Auth methods not mentioned on any cited page: ['oauth2']",
+ "metrics": {
+  "n_evidence": 14,
+  "alive_rate": 0.8571428571428571,
+  "dead_rate": 0.14285714285714285,
+  "blocked_rate": 0.0,
+  "official_rate": 0.8571428571428571,
+  "readable": 12,
+  "quote_supported_rate": 0.4166666666666667,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

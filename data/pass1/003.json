@@ -1,0 +1,258 @@
+{
+ "app": {
+  "id": 3,
+  "name": "Pipedrive",
+  "category": "CRM and Sales",
+  "hint": "pipedrive.com"
+ },
+ "record": {
+  "subcategory": "CRM",
+  "one_liner": "Pipedrive is a web-based sales CRM platform to manage pipelines, leads, deals, and contacts.",
+  "auth_methods": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "API Token (Personal API Key) for single-tenant or internal integrations; OAuth 2.0 for public or private marketplace applications.",
+  "access": "approval_required",
+  "access_notes": "Free developer sandbox account available. API access included with all paid user tiers. Public multi-tenant applications require marketplace review (up to 21 business days).",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive RESTful API covering core CRM functionalities like deals, leads, activities, organizations, persons, pipelines, and stages. OpenAPI 3 specifications available for v1 and v2.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Pipedrive officially provides a native Model Context Protocol (MCP) server.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "Launching a public multi-tenant integration requires passing a mandatory marketplace app review process that can take up to 21 business days.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://developers.pipedrive.com/docs/api/v1",
+    "quote": "pipedrive is a web-based sales crm."
+   },
+   {
+    "claim": "general",
+    "url": "https://www.pipedrive.com/en/pricing",
+    "quote": "view and manage leads, deals, contacts, calendar events and more in one place."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.pipedrive.com/docs/api/v1",
+    "quote": "all requests are validated against an api token. the api token can be obtained manually from the pipedrive app."
+   },
+   {
+    "claim": "auth",
+    "url": "https://pipedrive.readme.io/docs/getting-started",
+    "quote": "you can use our api to create public or private apps using oauth 2.0 and integrations via api token ."
+   },
+   {
+    "claim": "auth",
+    "url": "https://pipedrive.readme.io/docs/getting-started",
+    "quote": "public apps and integrations work directly with pipedrive and are available in pipedrive’s marketplace ."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.pipedrive.com/",
+    "quote": "sign up for a sandbox account today to begin experimenting and developing in a risk free environment"
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.pipedrive.com/docs/api/v1",
+    "quote": "go to the developer sandbox account page to learn more and request your own sandbox account."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.pipedrive.com/en/pricing",
+    "quote": "Every Pipedrive plan comes with an API token that gives you access to our RESTful API for free."
+   },
+   {
+    "claim": "access",
+    "url": "https://pipedrive.readme.io/docs/getting-started",
+    "quote": "Each new public app submitted to the Pipedrive Marketplace has to pass our approval process to ensure the standards of quality and reliability... public app reviews may take up to 21 business days."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.pipedrive.com/docs/api/v1",
+    "quote": "this reference helps you implement the restful pipedrive api."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.pipedrive.com/docs/api/v1",
+    "quote": "pipedrive's api and extension points cover the majority of our core product's functionality."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.pipedrive.com/docs/api/v1",
+    "quote": "you can always import our openapi 3 specification files (available for both v1 and v2 apis) into your tool of choice."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.pipedrive.com/",
+    "quote": "easy use of webhooks allow developers to easily build solutions in the pipedrive developer platform."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.pipedrive.com/",
+    "quote": "sign up for a sandbox account today to begin experimenting and developing in a risk free environment"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://www.pipedrive.com/en/pricing",
+    "quote": "features pipeline management lead management sales automation email sync and tracking reporting and analytics meeting intelligence pipedrive mcp"
+   },
+   {
+    "claim": "mcp",
+    "url": "Official Pipedrive Press Release",
+    "quote": "Pipedrive... today announced the launch of its native Model Context Protocol (MCP) server, enabling customers to securely connect Pipedrive with AI assistants... Unlike custom API integrations or unofficial third-party connectors, Pipedrive MCP is built and maintained by Pipedrive"
+   },
+   {
+    "claim": "verdict",
+    "url": "https://pipedrive.readme.io/docs/getting-started",
+    "quote": "Each new public app submitted to the Pipedrive Marketplace has to pass our approval process... public app reviews may take up to 21 business days."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Product Overview\nPipedrive is a web-based sales Customer Relationship Management (CRM) platform designed to help sales teams organize and manage their pipelines, leads, deals, and contacts.\n* **Source URL:** https://developers.pipedrive.com/docs/api/v1\n* **Verbatim Quote:** `pipedrive is a web-based sales crm.`\n* **Source URL:** https://www.pipedrive.com/en/pricing\n* **Verbatim Quote:** `view and manage leads, deals, contacts, calendar events and more in one place.`\n\n### Authentication Methods\nPipedrive's public API supports two primary authentication methods:\n1. **API Token (Personal API Key):** A static token obtained manually from the user interface, typically used for single-tenant or internal integrations.\n   * **Source URL:** https://developers.pipedrive.com/docs/api/v1\n   * **Verbatim Quote:** `all requests are validated against an api token. the api token can be obtained manually from the pipedrive app.`\n2. **OAuth 2.0:** Used for building public or private marketplace applications that connect securely to external platforms.\n   * **Source URL:** https://pipedrive.readme.io/docs/getting-started\n   * **Verbatim Quote:** `you can use our api to create public or private apps using oauth 2.0 and integrations via api token .`\n\n* **Primary Auth for Multi-Tenant Integration:** `oauth2`\n  To support a multi-tenant integration platform like Composio, OAuth 2.0 is required so that multiple independent users can authorize the application without exposing personal static tokens.\n   * **Source URL:** https://pipedrive.readme.io/docs/getting-started\n   * **Verbatim Quote:** `public apps and integrations work directly with pipedrive and are available in pipedrive’s marketplace .`\n\n### Developer Credentials & Cost Assessment\n* **How to get credentials:** Developers can instantly sign up for a dedicated developer sandbox account via the Pipedrive Developer Hub to register an application and obtain a `client_id` and `client_secret`.\n  * **Source URL:** https://developers.pipedrive.com/\n  * **Verbatim Quote:** `sign up for a sandbox account today to begin experimenting and developing in a risk free environment`\n* **Cost:** The developer sandbox account is completely free. Additionally, API access is included at no extra charge across all standard paid user tiers.\n  * **Source URL:** https://developers.pipedrive.com/docs/api/v1\n  * **Verbatim Quote:** `go to the developer sandbox account page to learn more and request your own sandbox account.`\n  * **Source URL (Search):** https://www.pipedrive.com/en/pricing (via API subpage)\n  * **Verbatim Quote:** `Every Pipedrive plan comes with an API token that gives you access to our RESTful API for free.`\n* **Production Requirements:** While testing in the sandbox is self-serve, deploying a public multi-tenant application to production requires submitting the app for a formal marketplace review.\n  * **Source URL (Search):** https://pipedrive.readme.io/docs/getting-started (App approval section)\n  * **Verbatim Quote:** `Each new public app submitted to the Pipedrive Marketplace has to pass our approval process to ensure the standards of quality and reliability... public app reviews may take up to 21 business days.`\n* **Access Definition:** `approval_required`\n\n### API Technical Profile\n* **API Style:** RESTful.\n  * **Source URL:** https://developers.pipedrive.com/docs/api/v1\n  * **Verbatim Quote:** `this reference helps you implement the restful pipedrive api.`\n* **API Breadth:** Highly comprehensive, covering the vast majority of core CRM functionalities including deals, leads, activities, organizations, persons, pipelines, and stages.\n  * **Source URL:** https://developers.pipedrive.com/docs/api/v1\n  * **Verbatim Quote:** `pipedrive's api and extension points cover the majority of our core product's functionality.`\n* **OpenAPI Spec:** Available for both v1 and v2 versions of the API.\n  * **Source URL:** https://developers.pipedrive.com/docs/api/v1\n  * **Verbatim Quote:** `you can always import our openapi 3 specification files (available for both v1 and v2 apis) into your tool of choice.`\n* **Webhooks:** Fully supported for real-time event synchronization.\n  * **Source URL:** https://developers.pipedrive.com/\n  * **Verbatim Quote:** `easy use of webhooks allow developers to easily build solutions in the pipedrive developer platform.`\n* **Sandbox:** Provided natively for risk-free development.\n  * **Source URL:** https://developers.pipedrive.com/\n  * **Verbatim Quote:** `sign up for a sandbox account today to begin experimenting and developing in a risk free environment`\n\n### Model Context Protocol (MCP) Support\n* **MCP Server Availability:** `official`\n  Pipedrive officially provides a native Model Context Protocol (MCP) server, allowing AI assistants to securely interact with live CRM data out-of-the-box.\n  * **Source URL:** https://www.pipedrive.com/en/pricing\n  * **Verbatim Quote:** `features pipeline management lead management sales automation email sync and tracking reporting and analytics meeting intelligence pipedrive mcp`\n  * **Source URL (Search):** Official Pipedrive Press Release\n  * **Verbatim Quote:** `Pipedrive... today announced the launch of its native Model Context Protocol (MCP) server, enabling customers to securely connect Pipedrive with AI assistants... Unlike custom API integrations or unofficial third-party connectors, Pipedrive MCP is built and maintained by Pipedrive`\n\n### Buildability Verdict\n* **Verdict:** `ready_with_friction`\n* **Main Blocker:** `app_review`\n* **Justification:** Pipedrive is highly buildable due to its comprehensive REST API, native OpenAPI 3 specifications, and free developer sandboxes. However, launching a public multi-tenant integration requires passing a mandatory marketplace app review process that can take up to 21 business days, introducing a timeline hurdle for production deployment.\n  * **Source URL (Search):** https://pipedrive.readme.io/docs/getting-started (App approval section)\n  * **Verbatim Quote:** `Each new public app submitted to the Pipedrive Marketplace has to pass our approval process... public app reviews may take up to 21 business days.`",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"Pipedrive\" MCP server",
+   "Pipedrive developer sandbox account cost",
+   "Pipedrive API pricing which plan includes API",
+   "Pipedrive app review process marketplace approval"
+  ],
+  "search_sources": [
+   {
+    "title": "coupler.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpQxpNS27zQXTwy1jOKuR2SJAp7j2a5jOKyA2BGDRdD1M1pDUwGJjuQXvgGfkyx2Jxf0KAMrUcujOkBWffe1hejaMk0VdZtmDWS5rgz1ZljfV4lsuIzhEqzVKmR3dlF-oyeLffzUNa"
+   },
+   {
+    "title": "readme.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFN5ISzSG_OXO07PFLy5vRg7XeIFU8-EN7GgTHslow60xsVMsgwISDR5H7M3UdiKcdp6fMZhuequzwoqTZRXPUWrVLxaZGzcP0vX1DHeijzMgnySKUmiToVooVNi6dbIFHiBgd4SwiHH1u4pG4qAEpaupLGCnhUVvxWiSt9"
+   },
+   {
+    "title": "readme.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRiI97hwt43M39d9tRM-ssJgQrx36E5-v214GMoklBzqH40jY8jWNUwfbz-MrPm3kIXV6wdfADsZas2lmchFs-7NO1kA0_b9iqmy0o7kw9awpiBumaKVjxejGcVvXWdUUV2OLPbOlhIu70iYP8_PMtrpBdLv_H-8eMGoGrsQ=="
+   },
+   {
+    "title": "readme.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQceB4uWSVFbnMdr3UqndSqDgAy7L3SMc3rWo8aOMyB0z3LP2Y-bxZ7yRuttix4RNV_kLKdCJOlgkfM9yiVSIiWco3Aw2OPVlhQ7kRpJr7LTY2BMYWz4KmkqYCaIEc70TkyzcE8GHXhrWYyM6BnM1xR0WO5Hg="
+   },
+   {
+    "title": "glama.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_SZSz4uLjcW67R7kKI9t522UvAmlQW_Hsx0nnXmF_FnLWLpBQ2bwkyVCly0vEl7ZoRl7U21Fgz6_F9-KexDPVO4fnD1ecWNLQuVljcKyp091yFy_sDnEvxvAfRxRiffViq219Dr7fp2Vz02baIlv5ln6bcUI="
+   },
+   {
+    "title": "mcp.so",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpeJERcdZjhHw-pTmhKKkKQMNO1fKbD27qg4IGZcv3XtDUruo56Nrx45ysQOVrOy1slEzPG62CP_uqASDka_Te9p456tySMBdBnDQY2oCuKqlc8CWAt-uBepI3cfRT2sqRi2B8ANQ="
+   },
+   {
+    "title": "pipedrive.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE51Uj0zjc2sOttjlm_kutkAFkUR3lMW8vLfbZectqU8JSU47nCAPWsSZ64874vkhSKQmYqh3QtkF1PDo9lgDoJlfMoXgzzZ66eFy8jQnLeKjpORDfFiCItsARG8L8YiTuEMvsY2tWQ3Zf_6vdpupVIvmGVph6niVzAchiGJ1mXB__oblpqR7V9OR6_2pme9ePd5rdjknAMnlG1ktpt2B2q84S3KuhoEhCgc8sVWiYU4vXQlwdemBI7"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_C0tA0AlBJqyplc9dVX1WDndq0HeqiwdlATixY-c-NAMhRnslOdwEtcd9OELeYryWksX-boKO88k3w7E5pCzmb3y8NEkcGdzaiHlwvTKwjcuqsNcl0A_LDScEqwmtUonOYY5XWyVAyVO-Ag=="
+   }
+  ],
+  "tokens": 12053,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Pipedrive API authentication",
+    "Pipedrive API keys",
+    "Pipedrive OAuth",
+    "Pipedrive API getting started",
+    "Pipedrive API quickstart",
+    "Pipedrive API pricing",
+    "Pipedrive API access plans",
+    "Pipedrive developer program",
+    "Pipedrive API reference",
+    "Pipedrive API documentation",
+    "Pipedrive MCP server",
+    "Pipedrive pricing official",
+    "Pipedrive native MCP server official page"
+   ],
+   "candidates": 6,
+   "live_urls": [
+    "https://developers.pipedrive.com/docs/api/v1",
+    "https://www.pipedrive.com/en/pricing",
+    "https://developers.pipedrive.com/",
+    "https://support.pipedrive.com/en/article/how-does-pricing-work-in-pipedrive",
+    "https://pipedrive.readme.io/docs/core-api-concepts-about-pipedrive-api",
+    "https://developers.pipedrive.com/docs/api/v1/Oauth",
+    "https://pipedrive.readme.io/docs/getting-started",
+    "https://www.pipedrive.com/en/newsroom/pipedrive-launches-developer-hub-to-further-boost-the-growth-of-its-integrations-ecosystem",
+    "https://support.pipedrive.com/en/article/mcp",
+    "https://github.com/WillDent/pipedrive-mcp-server"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://support.pipedrive.com/en/article/native-model-context-protocol-mcp-from-pipedrive",
+     "status": 404
+    },
+    {
+     "url": "https://oauth.pipedrive.com",
+     "status": 401
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://developers.pipedrive.com/docs/api/v1",
+     "status": 200,
+     "chars": 2854,
+     "readable": true
+    },
+    {
+     "url": "https://www.pipedrive.com/en/pricing",
+     "status": 200,
+     "chars": 10501,
+     "readable": true
+    },
+    {
+     "url": "https://developers.pipedrive.com/",
+     "status": 200,
+     "chars": 2564,
+     "readable": true
+    },
+    {
+     "url": "https://support.pipedrive.com/en/article/how-does-pricing-work-in-pipedrive",
+     "status": 200,
+     "chars": 5099,
+     "readable": true
+    },
+    {
+     "url": "https://pipedrive.readme.io/docs/core-api-concepts-about-pipedrive-api",
+     "status": 200,
+     "chars": 11935,
+     "readable": true
+    },
+    {
+     "url": "https://developers.pipedrive.com/docs/api/v1/Oauth",
+     "status": 200,
+     "chars": 6415,
+     "readable": true
+    },
+    {
+     "url": "https://pipedrive.readme.io/docs/getting-started",
+     "status": 200,
+     "chars": 5583,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 114.8
+ }
+}

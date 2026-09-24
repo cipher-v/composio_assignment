@@ -1,0 +1,196 @@
+{
+ "app": {
+  "id": 12,
+  "name": "Intercom",
+  "category": "Support and Helpdesk",
+  "hint": "intercom.com"
+ },
+ "record": {
+  "subcategory": "Helpdesk / ticketing",
+  "one_liner": "Intercom is a customer support platform for messaging, automation, and managing customer interactions via tickets and help centers.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth2 is required for public multi-tenant apps; Access Tokens (bearer) are used for private workspace integrations.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can sign up for a free developer account and create a non-expiring development workspace via the Developer Hub.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API version 2.16 covers conversations, tickets, contacts, companies, articles, admins, events, and macros.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Intercom hosts official remote MCP servers at mcp.intercom.com/mcp (US) and mcp.eu.intercom.com/mcp (EU).",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "Public integrations require a mandatory manual app review and approval process; production use requires a paid plan.",
+  "evidence": [
+   {
+    "claim": "auth",
+    "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+    "quote": "An Access Token is for if you're using the API to access data in your own Intercom workspace, in other words, building a private app. OAuth is for if you're building a public app that accesses other people's Intercom data."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth",
+    "quote": "Each development workspace automatically gives you the option to use OAuth. To start, tick the Use OAuth option on your Authentication page in the Developer Hub."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.intercom.com/docs/references/introduction",
+    "quote": "this is documentation for version 2.16 of the rest api. ... this api reference is auto-generated from an openapi specification ."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://growthmethod.com/intercom-mcp-server/",
+    "quote": "Yes - Intercom runs a remote MCP server at mcp.intercom.com , giving MCP-compatible AI clients secure, permission-aware access to conversations, contacts, companies and Help Center articles."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/oauth-scopes",
+    "quote": "...when you configure oauth you will need to define the oauth scopes, and these will be reviewed when you submit your app for approval ."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### 1. Product Overview\n* **What the product does:** Intercom is a customer support and helpdesk platform designed for customer messaging, support automation, and managing customer interactions. It provides tools to handle conversations, tickets, contacts, companies, and help center articles.\n* **Source URL:** https://growthmethod.com/intercom-mcp-server/\n* **Verbatim Quote:** \"...Intercom (or Fin, depending which part of the business you mean) is a widely used one for customer messaging and support.\"\n* **Source URL:** https://developers.intercom.com/docs/references/introduction\n* **Verbatim Quote:** \"...admins ai content articles audiences away status reasons banners brands calls companies contacts content content snippets conversations conversations attributes custom object instances data attributes data connectors data events data export emails fin agent help center internal articles ip allowlist jobs macros messages news notes office hours reporting data export segments subscription types switch tags teams ticket states ticket type attributes ticket types tickets visitors whatsapp workflows models\"\n\n### 2. Authentication Methods\n* **Auth Methods Available:** Intercom supports Access Tokens (Bearer Tokens) for private workspace integrations and OAuth 2.0 for public integrations.\n* **Multi-tenant Integration Choice:** `oauth2`\n* **Source URL:** https://developers.intercom.com/docs/build-an-integration/learn-more/authentication\n* **Verbatim Quote:** \"To access the Intercom API, you have two authentication options depending on whether you app is public or private. An Access Token is for if you're using the API to access data in your own Intercom workspace, in other words, building a private app. OAuth is for if you're building a public app that accesses other people's Intercom data.\"\n\n### 3. Credentials & Access Cost\n* **Access Level:** `self_serve_free`\n* **How to get credentials:** Anyone can sign up for a free developer account and create a non-expiring development workspace via the Intercom Developer Hub to configure OAuth and obtain credentials.\n* **Cost / Plans:** Free for development and testing. However, production use requires a paid subscription plan.\n* **App Review / Approval:** Public multi-tenant integrations require a mandatory app review and approval process by the Intercom team before they can be authorized by external workspaces.\n* **Source URL:** https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth\n* **Verbatim Quote:** \"Each development workspace automatically gives you the option to use OAuth. To start, tick the Use OAuth option on your Authentication page in the Developer Hub.\"\n* **Source URL:** https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/oauth-scopes\n* **Verbatim Quote:** \"...when you configure oauth you will need to define the oauth scopes, and these will be reviewed when you submit your app for approval .\"\n\n### 4. API Technical Profile\n* **API Style:** REST API\n* **API Breadth:** Extremely broad, covering conversations, tickets, contacts, companies, articles, admins, data attributes, events, and macros.\n* **OpenAPI Spec:** Yes, the API reference is auto-generated from an OpenAPI specification hosted publicly on GitHub.\n* **Webhooks:** Yes, supports webhooks for real-time event notifications.\n* **Sandbox:** Yes, the free development workspace serves as a fully functional sandbox environment.\n* **Source URL:** https://developers.intercom.com/docs/references/introduction\n* **Verbatim Quote:** \"this is documentation for version 2.16 of the rest api. ... this api reference is auto-generated from an openapi specification .\"\n* **Source URL:** https://developers.intercom.com/docs/build-an-integration/learn-more/authentication\n* **Verbatim Quote:** \"...using the apis webhooks fin agent api news center...\"\n\n### 5. Model Context Protocol (MCP) Support\n* **MCP Availability:** `official`\n* **Details:** Intercom hosts an official remote MCP server (`mcp.intercom.com/mcp` for the US and `mcp.eu.intercom.com/mcp` for the EU) that provides tools for searching and reading conversations, contacts, companies, and help center articles. Community-built alternatives also exist.\n* **Source URL:** https://growthmethod.com/intercom-mcp-server/\n* **Verbatim Quote:** \"Yes - Intercom runs a remote MCP server at mcp.intercom.com , giving MCP-compatible AI clients secure, permission-aware access to conversations, contacts, companies and Help Center articles.\"\n* **Source URL:** https://www.enterpret.com/guides/the-6-best-mcp-servers-for-intercom-customer-conversations\n* **Verbatim Quote:** \"Intercom's native MCP server provides a small set of read tools for searching conversations and contacts through a query DSL.\"\n\n### 6. Buildability Verdict\n* **Verdict:** `ready_with_friction`\n* **Main Blocker:** App review and paid plan requirement for production use. While developers can build and test immediately using a free development workspace, deploying a multi-tenant integration to production requires a paid Intercom plan and a mandatory 7-14 day manual app review process by Intercom's team.\n* **Source URL:** https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/oauth-scopes\n* **Verbatim Quote:** \"...when you configure oauth you will need to define the oauth scopes, and these will be reviewed when you submit your app for approval .\"",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"developers.intercom.com\" \"authentication\"",
+   "\"developers.intercom.com\" \"setting-up-oauth\"",
+   "\"intercom\" \"free developer account\" OR \"sandbox\" workspace",
+   "\"intercom\" \"mcp-server\" official",
+   "\"create a developer workspace\" OR",
+   "\"intercom\" \"app review\" OR \"approval\" public app",
+   "\"intercom\" openapi spec download OR github",
+   "\"intercom\" webhooks documentation"
+  ],
+  "search_sources": [
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKSeqKYrrNm8p1R0n-xNCtF_dhiLPw4v3KL-c1uma-QQxQVhnVpcUfyJHWb9UykszmQm2GMxv8MI2eblK24FDyRdk3hoEabm_qdRhs22VCvm9F3HAzXcmzNeEXNUbNjc92Cczl55gV"
+   },
+   {
+    "title": "intercom.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHt02yAV_cKVHwSGfkXuKA_65f9h1Gpgv4erjJpc_VTqvsNsO8WlYRCnyvZqmZJ6nuAlIiv0JvESPJ-2kiEN_BvKkxe5qzoBeef0Kao5qGXg0hiTifUZbKFVKyZOb8TSJGKqBxnoAa9Li9CBymOGDJc9GmreQ=="
+   },
+   {
+    "title": "intercom.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH99-gS9eAAsdXTornWFxvEuqncg-OJXCE6EHFSlTauubZAB1lJ7_YT_7bahsrmWKZmNMDr7qTBKXYKvZIB9xz5m2tfZveDrIpgGjcazO85Way9PiRfEMBhl1z4xQb2xrS6EFRf-I5GuIWUhaa7pzj3rWRZ9A9RymDyiY2YYKavMG6c2lqJzIA="
+   },
+   {
+    "title": "prismatic.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEmdfDYHEi8wYI-0OOB7WDTmeXOM_GRn9_ZCxb5MXd7rrSN1iilBQSgIvSbrbV5GLL4C3i78cD_Ig-wHlDAQ6-dlhtFYQrq7UkuHLj9oGKVyc3Lp4uyrCSWoBpSuMemxv70tKE-zzBThQ="
+   },
+   {
+    "title": "intercom.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjD2tqmRsu21VIhb5m4QXk6_0BWNFAXV4uPrU2QJQ9mJMAQv7ioSX7gXqhob8ZECMmbrZV2H7ohO7LinFORQ5xXO9Q7ch-5OnpTrhL6tVnvP-toKDkpfKA71vrLTlXIQn_z5YVKZSV3C5-WKnB_BI0Sw=="
+   },
+   {
+    "title": "intercom.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3rnztQ8dOdk-C7kj3uvJOFn2Kch2K560fGS_z-WlikhaKyl3WLEEbG86_O9zZL7JvaMnsrgqsjNHUXOsw3Pn0XZzDqEyBBo7BiBH85Ayp2jXlMEbBzc2dWyP0EY6e8vghLyi0UZBBhHJ4gMDSoxMzPOQUX1VXr07lTE90"
+   },
+   {
+    "title": "intercom.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsl9QnEj_ysNVHzo74vvQeyajHfKuzCo5e8xAmqEK-7Qd0I286MAzgytqjzd1ZRh7WOoh_X11RkFF1F2Q5CHE85hC7xRDsiBItsWWDmFNrXx_9yBWX9PxfjOHVM01dip4qk_yjqLqlgA=="
+   }
+  ],
+  "tokens": 10778,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "Intercom developer documentation authentication API keys OAuth",
+    "Intercom developer documentation getting started quickstart",
+    "Intercom API pricing plans API access",
+    "Intercom API reference index",
+    "Intercom MCP server official community"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+    "https://www.intercom.com/pricing",
+    "https://developers.intercom.com/docs/references/introduction",
+    "https://developers.intercom.com/docs/references/2.15/rest-api/api.intercom.io/models/reference",
+    "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth",
+    "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/oauth-scopes",
+    "https://www.intercom.com/help/en/articles/9639255-getting-started-with-intercom",
+    "https://developers.intercom.com/docs/build-an-integration/getting-started",
+    "https://github.com/raoulbia-ai/mcp-server-for-intercom",
+    "https://github.com/intercom/intercom-mcp-server",
+    "https://www.enterpret.com/guides/the-6-best-mcp-servers-for-intercom-customer-conversations",
+    "https://growthmethod.com/intercom-mcp-server/"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://developers.intercom.com/docs/build-an-integration/getting-started/overview/",
+     "status": 404
+    },
+    {
+     "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/mcp/",
+     "status": 404
+    },
+    {
+     "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/oauth/",
+     "status": 404
+    },
+    {
+     "url": "https://developers.intercom.com/docs/build-an-integration/getting-started/set-up-a-workspace/",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+     "status": 200,
+     "chars": 3893,
+     "readable": true
+    },
+    {
+     "url": "https://www.intercom.com/pricing",
+     "status": 200,
+     "chars": 11350,
+     "readable": true
+    },
+    {
+     "url": "https://developers.intercom.com/docs/references/introduction",
+     "status": 200,
+     "chars": 3169,
+     "readable": true
+    },
+    {
+     "url": "https://developers.intercom.com/docs/references/2.15/rest-api/api.intercom.io/models/reference",
+     "status": 200,
+     "chars": 11230,
+     "readable": true
+    },
+    {
+     "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth",
+     "status": 200,
+     "chars": 17512,
+     "readable": true
+    },
+    {
+     "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/oauth-scopes",
+     "status": 200,
+     "chars": 5498,
+     "readable": true
+    },
+    {
+     "url": "https://www.intercom.com/help/en/articles/9639255-getting-started-with-intercom",
+     "status": 200,
+     "chars": 49706,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 565.4
+ }
+}

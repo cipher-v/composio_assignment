@@ -1,0 +1,180 @@
+{
+ "app": {
+  "id": 10,
+  "name": "DealCloud",
+  "category": "CRM and Sales",
+  "hint": "api.docs.dealcloud.com"
+ },
+ "record": {
+  "subcategory": "CRM / Relationship Management",
+  "one_liner": "A deal and relationship management platform built for financial and professional services firms.",
+  "auth_methods": [
+   "oauth2",
+   "api_key",
+   "basic",
+   "jwt"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "DealCloud uses the OAuth2 Client Credentials flow to generate a bearer token using a clientId and apiKey.",
+  "access": "partner_or_sales",
+  "access_notes": "No self-serve developer portal or free trial. Credentials must be generated within an active paid enterprise instance by a system administrator.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API covering Authentication, User Management, Schema, Data, Backups, Publications, and Relationship Intelligence. Exposes interactive Swagger page at https://{host}/swagger.",
+  "openapi_spec": true,
+  "webhooks": false,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Official read-only MCP server available as part of the DealCloud with Celeste license.",
+  "verdict": "ready_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "No free developer tier or self-serve trial; requires an enterprise customer to provision credentials via their admin profile.",
+  "evidence": [
+   {
+    "claim": "auth",
+    "url": "https://dealcloud.com",
+    "quote": "Authentication Methods. OAuth2 Client Credentials. API Key Authentication. Basic Authentication. JWT Authentication. Microsoft Entra ID (Azure AD) Okta."
+   },
+   {
+    "claim": "access",
+    "url": "https://g2.com",
+    "quote": "DealCloud offers no free tier. According to G2's pricing data for DealCloud, all access is governed by custom enterprise quotes with no publicly listed tiers. There is no free plan or standard self-serve entry point. Prospective buyers must engage DealCloud's sales team directly to obtain pricing."
+   },
+   {
+    "claim": "api",
+    "url": "https://dealcloud.com",
+    "quote": "This site provides a comprehensive overview of our REST APIs, their capabilities, and available endpoints."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://releasebot.io",
+    "quote": "DealCloud now provides a Model Context Protocol (MCP) server which gives AI agents read access to your DealCloud data. This feature is available as part of the DealCloud with Celeste license."
+   }
+  ],
+  "confidence": 0.95
+ },
+ "notes": "### 1. Product Overview\nDealCloud (by Intapp) is a specialized CRM and relationship management platform purpose-built for financial and professional services firms, such as private equity, investment banking, growth equity, and advisory firms. It enables teams to manage relationships, track pipelines, and streamline deal execution.\n* **Source:** `https://www.softwareadvice.com/crm/dealcloud-profile/`\n* **Verbatim Quote:** `\"DealCloud is a deal and relationship management platform built for financial and professional services firms, including private equity, investment banking, and advisory businesses of all sizes.\"`\n* **Source:** `https://www.intapp.com`\n* **Verbatim Quote:** `\"purpose-built for regulated industries, intapp helps partners, dealmakers, and advisors win new business, manage risk, and drive profitability.\"`\n\n### 2. Authentication Methods & Multi-Tenant Integration\nDealCloud supports multiple authentication methods across its REST API and its newly introduced Model Context Protocol (MCP) server.\n* **Supported Methods:** OAuth2 Client Credentials, API Key, Basic Authentication, JWT Authentication, and enterprise identity providers like Microsoft Entra ID (Azure AD) and Okta.\n  * **Source:** `https://dealcloud.com` (via search results)\n  * **Verbatim Quote:** `\"Authentication Methods. OAuth2 Client Credentials. API Key Authentication. Basic Authentication. JWT Authentication. Microsoft Entra ID (Azure AD) Okta.\"`\n* **Primary Auth for Multi-Tenant Integration:** `oauth2` (specifically the OAuth2 Client Credentials flow). A multi-tenant integration platform would collect a per-customer `clientId` and `apiKey` (acting as the client secret) to request a temporary bearer token from the tenant's specific token endpoint.\n  * **Source:** `https://dealcloud.com` (via search results)\n  * **Verbatim Quote:** `\"DealCloud uses the OAuth2 Client Credentials flow to generate a bearer token, which is then used in the HTTP Authentication header for API requests. How the OAuth2 Client Credentials Flow Works: The client application sends a POST request to the token endpoint, providing its client_id , apiKey , and the required scope(s) .\"`\n* **MCP Authentication:** The native MCP server utilizes standard OAuth 2.0 to authenticate and scope data access on behalf of individual signed-in users.\n  * **Source:** `https://dealcloud.com` (via search results)\n  * **Verbatim Quote:** `\"DealCloud MCP uses OAuth to authenticate, letting AI assistants connect on behalf of an individual user. The user signs in through DealCloud to authorize the assistant...\"`\n\n### 3. Credential Acquisition & Cost\n* **Access Level:** `partner_or_sales`\n* **How to get credentials:** There is no self-serve developer portal or free trial. Credentials can only be generated within an active paid enterprise instance. A user with a system administrator role (such as Platform Manager) must manually enable and retrieve the API keys from their user profile.\n  * **Source:** `https://anduintransact.com` (via search results)\n  * **Verbatim Quote:** `\"Access your Profile from the top right navigation; Toggle on the Enable API key; Toggle on the Show API key and take note of the apiKey and clientId which will be entered in our configuration wizard.\"`\n* **Cost:** DealCloud does not offer a free tier or a standard free trial. All access requires a custom enterprise contract negotiated directly with their sales team.\n  * **Source:** `https://g2.com` (via search results)\n  * **Verbatim Quote:** `\"DealCloud offers no free tier. According to G2's pricing data for DealCloud, all access is governed by custom enterprise quotes with no publicly listed tiers. There is no free plan or standard self-serve entry point. Prospective buyers must engage DealCloud's sales team directly to obtain pricing.\"`\n\n### 4. API Style & Technical Characteristics\n* **API Style:** REST API.\n  * **Source:** `https://dealcloud.com` (via search results)\n  * **Verbatim Quote:** `\"This site provides a comprehensive overview of our REST APIs, their capabilities, and available endpoints.\"`\n* **Breadth:** The API provides comprehensive coverage across Authentication, User Management, Schema discovery, Data manipulation, Backups, Publications, and Relationship Intelligence.\n  * **Source:** `https://dealcloud.com` (via search results)\n  * **Verbatim Quote:** `\"Authentication – Provides tokens for use with all other APIs. User Management – Endpoints for managing users. Schema – Endpoints to help you understand your site's structure. Data – Endpoints for manipulating site data. Backups – Endpoints for generating backup exports. Publications – Endpoints for working with real-time event APIs. Relationship Intelligence – Import data points for Relationship Intelligence.\"`\n* **OpenAPI Spec:** Yes. Each individual tenant site exposes an interactive Swagger page and an OpenAPI spec file.\n  * **Source:** `https://dealcloud.com` (via search results)\n  * **Verbatim Quote:** `\"Each DealCloud site provides an interactive Swagger page for testing API calls... https://{{host}}/swagger\"` and `\"Postman can consume the Swagger/OpenAPI spec file exposed at. https://{host}/swagger/current.\"`\n* **Webhooks:** DealCloud does not use standard HTTP webhooks for real-time events. Instead, it provides a \"Publications API\" that relies on a message-queue style polling and acknowledgment mechanism.\n  * **Source:** `https://api.docs.dealcloud.com/`\n  * **Verbatim Quote:** `\"publications getting started topics poll acknowledge event types data schema user bootstrap\"`\n* **Sandbox:** Non-production sandboxes are available for testing configurations and APIs, but they are gated behind additional enterprise fees.\n  * **Source:** `https://www.intapp.com` (via search results)\n  * **Verbatim Quote:** `\"This includes a non-production (or preview) sandbox that allows you to safely test new features, configurations, APIs, and other modifications without impacting live operations... Please contact your Intapp representative for detailed pricing.\"`\n\n### 5. Model Context Protocol (MCP) Servers\n* **MCP Availability:** `official`\n* **Details:** DealCloud provides an official, native MCP server that allows AI clients to securely connect and retrieve context from DealCloud data. The server is currently read-only and is available to customers holding a \"DealCloud with Celeste\" license.\n  * **Source:** `https://releasebot.io` (via search results)\n  * **Verbatim Quote:** `\"DealCloud now provides a Model Context Protocol (MCP) server which gives AI agents read access to your DealCloud data. This feature is available as part of the DealCloud with Celeste license.\"`\n  * **Source:** `https://dealcloud.com` (via search results)\n  * **Verbatim Quote:** `\"The DealCloud MCP Server exposes the following set of tools, allowing an AI assistant to explore and retrieve data from your site... All DealCloud MCP tools are currently read-only and do not create, update, or delete data.\"`\n\n### 6. Buildability Verdict\n* **Verdict:** `ready_with_friction`\n* **Main Blocker:** `paid_plan` / `per_customer_admin_setup`\n* **Explanation:** The API documentation is fully public, and the platform natively exposes OpenAPI/Swagger specs alongside an official MCP server. However, because there is no free developer tier or self-serve trial, a developer cannot independently spin up a sandbox to build or test. Building a multi-tenant integration requires relying on an enterprise customer to provision a `clientId` and `apiKey` via their admin profile.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"dealcloud\" api authentication oauth",
+   "\"dealcloud\" api access cost developer account",
+   "\"dealcloud\" mcp server",
+   " \"mcp\"",
+   "\"dealcloud\" \"publications\" webhooks",
+   " \"publications\""
+  ],
+  "search_sources": [
+   {
+    "title": "softwareadvice.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHG5j_TXwexqPsLyUwQlCZcjlwExKxoew4O4yLKHH3uioS8PiV9qH0x20z5KMuUXmXPH20l-piaZZkvI5dU1B0zPGDAZwbXv6ycU1uJq4Y_ArNIpAN5zPM-zMFLhZpr_jRf3PZPdaWel3gZcE5U9KVkDIbrvp6w"
+   },
+   {
+    "title": "agentsky.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5hzyARWEpLXCKeU9-KuXh6_3Bwp5EFlVM0sL2SOuZmKUR8Ie0TAB93-ga-ZIiFU9AE-RAVC_LM3BMLNhhLOAui_kamWeDQlwUMEjYg71nXJ6wjhSkswDT_4sY0oBpoph6LPmMYBL4RJdN0ovge50Utw=="
+   },
+   {
+    "title": "ctacquisitions.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrK_6SreLGS6L7DTrLnF21mKGbSvsAECEc6e8FBO7u2XoksxeZHpDdYmyCLVlB7oGhUy2igqFGf_fPXsWhsjFfqsKFDbNAuRsZJsB7sFCjKacfvS3eKdbEKlWsqvsAlmKw6y20gO8I8XAjcCLIt4JCMQU0Dx0pP4A="
+   },
+   {
+    "title": "g2.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHR1m8pLQO2MW0DN5IIFrI6pC9Hiq1qxpI9i0M0iwnkfzHiBEn-TxGmep5na0Ht20YQF0P1BT6F6Kw2qJsInFZav9jn6CSOMnDcjjBJ3R8rMTE_aSYgkNKJsdrztq2l5gf1TDlXGV1X2A=="
+   },
+   {
+    "title": "dealcloud.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGM2vTxf-zJHsUssmqG88K99mMh3EVT6RuVWVLo2hokb-eGkDPGRW5z24sexQ6on5aGvNUBbZ_CrDaQwWTGGs-c_dzq1KBX4bN6iMtn2Sm2gwz9BENmMtlIyshs_T7m"
+   },
+   {
+    "title": "dealcloud.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE60X1JLstCAKsQlV0FDMDLfAIAFnHG0HUcdMqe1b1Ggdo3iDGU_z97DGqCFP7PFbYex2DgDH0U7UEs0-cLd7Z7wS6So0PuUGrKvTdhnOBw2nGWGL5l-8bj9FbqXKX0"
+   },
+   {
+    "title": "intapp.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnKWihlcB5qDMFUKzgSU1YNf1b8DTx6l1JrcUXl-lsJbBm3SUrG1s_2TZ3RyktimH0zIzWXtBb9YfH7nPmsNX0F8sZPj4uiQ_AXPz_dXpY4U6nhPMRipoAUkfFwbz_4s5wzJDn0vq0Zj9lv5n4qa7D"
+   },
+   {
+    "title": "wikipedia.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLM-GV-JXHY6cDueagekfQRrWxlq0_WtXUO6FvaYUDLQZ7LQnBvzshciqt_5voFwlAiQEJM4uMZkoEzoz2YKi0jLSrZAhdS8-auXcYf8cHf4cHcqFBnVdqVuPRFqV-VhNmgHnjKU4V_XD6-06GYV8="
+   },
+   {
+    "title": "claude.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqst3tyIqN2DGYEvPaHIIAPfvVsdcPrEq4bXcASUCTCNQWh9tRgSAukYrYXunD6ZRwYtqBGL0xzjX1cd-fYN8t2-a8xJiAIUDAInejHS2dw7JyD9IoO67gLkAlj1r_R9nMGsobH2X-D6jtPnT7jSMqOdQPWXBO8XJpGTiEsnYhAcwDOzJCzaG59TIJfMklLwWQ9II6"
+   }
+  ],
+  "tokens": 9710,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "DealCloud API documentation authentication OAuth",
+    "DealCloud API getting started quickstart",
+    "DealCloud API pricing plans access",
+    "DealCloud API reference index",
+    "DealCloud MCP server official community",
+    "",
+    "DealCloud developer program partner program",
+    "DealCloud API access plans documentation",
+    " pricing"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://api.docs.dealcloud.com/",
+    "https://www.intapp.com"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://api.docs.dealcloud.com/getting-started/api-keys",
+     "status": 404
+    },
+    {
+     "url": "https://api.docs.dealcloud.com/getting-started/quick-start",
+     "status": 404
+    },
+    {
+     "url": "https://api.docs.dealcloud.com/getting-started/api-keys#user-groups-and-permissions",
+     "status": 404
+    },
+    {
+     "url": "https://api.docs.dealcloud.com/api-reference",
+     "status": 404
+    },
+    {
+     "url": "https://api.docs.dealcloud.com/ai-clients/mcp",
+     "status": 404
+    },
+    {
+     "url": "https://api.docs.dealcloud.com/ai-clients/available-tools",
+     "status": 404
+    },
+    {
+     "url": "https://api.docs.dealcloud.com/sdks/python/getting-started/quick-start",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://api.docs.dealcloud.com/",
+     "status": 200,
+     "chars": 3340,
+     "readable": true
+    },
+    {
+     "url": "https://www.intapp.com",
+     "status": 200,
+     "chars": 5106,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 433.7
+ }
+}

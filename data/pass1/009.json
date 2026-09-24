@@ -1,0 +1,170 @@
+{
+ "app": {
+  "id": 9,
+  "name": "Copper",
+  "category": "CRM and Sales",
+  "hint": "copper.com"
+ },
+ "record": {
+  "subcategory": "CRM",
+  "one_liner": "A CRM and sales tracking platform designed specifically for teams operating within Google Workspace.",
+  "auth_methods": [
+   "oauth2",
+   "api_key"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "API Keys via X-PW-AccessToken and X-PW-UserEmail headers; OAuth2.0 Authorization Code Grant for partner integrations.",
+  "access": "self_serve_trial",
+  "access_notes": "14-day free trial includes API access. Production requires a Professional plan or higher ($59-$69/user/month). OAuth2 app registration requires contacting support.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API with JSON responses. Covers people, companies, leads, opportunities, tasks, activities, projects. Supports bulk operations and webhooks.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "community_only",
+  "mcp_notes": "viaSocket, Pipedream, SyncHub, and MCPBundles provide community MCP servers.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "OAuth2 client registration is not self-serve and requires contacting support. End-users must be on a Professional plan or higher.",
+  "evidence": [
+   {
+    "claim": "auth",
+    "url": "https://developer.copper.com/",
+    "quote": "There are two ways to access the Copper Developer API: API keys and OAuth2.0. API Keys are suitable for individual users, while OAuth2.0 is the preferred approach for partner integrations."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.copper.com/",
+    "quote": "To use OAuth2.0 with Copper, you must first register your application... To register your application, contact us. You will need to provide the name and purpose of your application as well as a URL to an HTTPS endpoint that will handle the secure callback."
+   },
+   {
+    "claim": "access",
+    "url": "https://bit-integrations.com/",
+    "quote": "Copper documents Developer API access on its trial, Professional, and Business plans. The free trial grants temporary access to Professional and Business-level features, including the API... Copper Basic and Starter do not include API access."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.copper.com/",
+    "quote": "The Copper Developer API (\"Dev API\") provides a RESTful interface with JSON-formatted responses to access most Copper resources."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://usecarly.com/",
+    "quote": "Is there an official Copper MCP server? No. Copper hasn't shipped one, and neither ChatGPT nor Claude has a native Copper connector. The Copper MCP servers available today are third-party wrappers around the public API"
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Product Overview\nCopper (formerly ProsperWorks) is a customer relationship management (CRM) and sales tracking platform designed specifically for teams operating within Google Workspace. It integrates natively with Gmail, Google Calendar, and Google Drive to manage contacts, track pipelines, and automate workflows directly from the user's inbox.\n* **Source URL:** `https://aeroleads.com/blog/copper-crm-pricing-breakdown-plan-compared-2026/`\n* **Verbatim Quote:** `\"copper is built specifically for google workspace users, and that focus shapes every pricing decision the company makes. if your team lives inside gmail and google calendar, copper’s native integration removes a whole category of friction that other crms charge you to solve with add-ons.\"`\n\n---\n\n### Authentication Methods\nThe Copper Developer API supports two authentication methods:\n1. **API Keys:** Token-based authentication where developers pass an access token (`X-PW-AccessToken`) and the user's email address (`X-PW-UserEmail`) in the request headers. This method is intended for individual user setups.\n2. **OAuth2.0:** Uses the standard Authorization Code Grant flow. This is the **primary auth method** a multi-tenant integration platform like Composio would use, as it allows secure, scoped access open to all users without exposing static administrative keys.\n\n* **Source URL:** `https://developer.copper.com/` (via official documentation subpages)\n* **Verbatim Quote:** `\"There are two ways to access the Copper Developer API: API keys and OAuth2.0. API Keys are suitable for individual users, while OAuth2.0 is the preferred approach for partner integrations.\"`\n* **Verbatim Quote:** `\"You can now access the Copper Developer API via OAuth2.0. This authentication method is an alternative to Copper's legacy API Keys, and is particularly well-suited for third-party integrations looking to create a seamless and secure link between their users and Copper.\"`\n\n---\n\n### Credential Acquisition & Cost\n* **API Keys:** Can be generated directly by an administrator within the Copper web application under `System settings > API Keys`.\n* **OAuth2.0 Credentials:** To obtain a `client_id` and `client_secret` for multi-tenant applications, developers cannot use a self-serve dashboard; they must manually contact Copper to register the application.\n* **Cost / Plan Requirements:** Copper offers a 14-day free trial which includes API access. However, for permanent production use, API access is gated and requires a **Professional plan or higher** (starting at $59/user/month billed annually or $69/user/month billed monthly). The Starter and Basic plans do not include API access.\n* **Access Classification:** `self_serve_trial` (Credentials can be obtained and tested during the free trial, but a paid Professional plan is required long-term).\n\n* **Source URL:** `https://developer.copper.com/` (via official documentation subpages)\n* **Verbatim Quote:** `\"To use OAuth2.0 with Copper, you must first register your application... To register your application, contact us. You will need to provide the name and purpose of your application as well as a URL to an HTTPS endpoint that will handle the secure callback.\"`\n* **Source URL:** `https://bit-integrations.com/` (via third-party integration verification)\n* **Verbatim Quote:** `\"Copper documents Developer API access on its trial, Professional, and Business plans. The free trial grants temporary access to Professional and Business-level features, including the API... Copper Basic and Starter do not include API access.\"`\n* **Source URL:** `https://aeroleads.com/blog/copper-crm-pricing-breakdown-plan-compared-2026/`\n* **Verbatim Quote:** `\"professional ~$69 ~$59 unlimited contacts growing teams needing automation\"`\n\n---\n\n### API Style & Technical Details\n* **API Style:** REST API returning JSON-formatted responses.\n* **Breadth:** Broad CRUD capabilities covering core CRM entities including people, companies, leads (with upsert functionality), opportunities, tasks, activities, and projects. It also supports bulk operations (up to 10 objects per call) for several endpoints.\n* **OpenAPI Spec:** No official OpenAPI/Swagger specification is published by Copper; they provide Postman collections and environment files instead.\n* **Webhooks:** Supported. Subscriptions can be created, updated, listed, and deleted programmatically via the API (up to 100 active subscriptions per account), though there is no dashboard UI for managing them.\n* **Sandbox:** Copper does not offer a dedicated, free developer sandbox environment. Developers must use a standard account or a free trial account to test integrations.\n\n* **Source URL:** `https://developer.copper.com/`\n* **Verbatim Quote:** `\"The Copper Developer API (\"Dev API\") provides a RESTful interface with JSON-formatted responses to access most Copper resources.\"`\n* **Verbatim Quote:** `\"Postman Resources: Import the Collection; Import and Use the Environment.\"`\n* **Verbatim Quote:** `\"webhooks overview create new subscription update a subscription delete subscription list all subscriptions view subscription by id\"`\n* **Source URL:** `https://usecarly.com/`\n* **Verbatim Quote:** `\"Full create/update/delete: people, companies, leads (with upsert), opportunities, tasks, activities, projects. Several support bulk operations. Read-only: account and users, tags, field layouts.\"`\n* **Source URL:** `https://endgrate.com/`\n* **Verbatim Quote:** `\"Before you can start creating or updating people with the Copper API, you'll need to set up a test or sandbox account... If you don't already have a Copper account, you can sign up for a free trial on the Copper website.\"`\n\n---\n\n### Model Context Protocol (MCP) Servers\n* **MCP Status:** `community_only`\n* **Details:** Copper does not publish or host an official MCP server. However, multiple third-party integration platforms provide community MCP servers that wrap Copper's public API (e.g., viaSocket, Pipedream, SyncHub, and MCPBundles).\n\n* **Source URL:** `https://usecarly.com/`\n* **Verbatim Quote:** `\"Is there an official Copper MCP server? No. Copper hasn't shipped one, and neither ChatGPT nor Claude has a native Copper connector. The Copper MCP servers available today are third-party wrappers around the public API\"`\n* **Source URL:** `https://viasocket.com/mcp/copper`\n* **Verbatim Quote:** `\"copper mcp server for copper connect copper actions with ai tools like chatgpt, claude, and cursor using the viasocket mcp server.\"`\n\n---\n\n### Buildability Verdict\n* **Verdict:** `ready_with_friction`\n* **Main Blocker:** While the API is fully functional and can be tested immediately via a free trial, building a production-ready multi-tenant integration introduces friction because **OAuth2.0 application registration is not self-serve** (requires manually contacting Copper support/sales), and end-users must be subscribed to the **Professional plan or higher** to utilize custom API integrations.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"copper\" crm api authentication oauth2",
+   "\"copper\" crm api pricing plan api access",
+   "\"copper\" crm openapi spec swagger",
+   "\"copper\" crm sandbox developer account",
+   "\"copper\" mcp server",
+   "\"copper\" crm mcp server",
+   " \"copper\" mcp server",
+   "\"copper\" crm openapi json yaml",
+   " \"api\" pricing",
+   "\"api access\"",
+   "\"api keys\" plan",
+   "\"copper crm\" \"api\" plan restriction"
+  ],
+  "search_sources": [
+   {
+    "title": "usecarly.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHwkTnCQHcmpLQe9ColuEFTydro_vJsGb7StcRvuez1KNpB91fd5-cMP5_-oxH1zbv-o0f25-3vfNl7oML0Z6V2TMgvo5SPlOfjaGQ1mW3TBXauyKb32auj56th85f5l1qS-sNe8o="
+   },
+   {
+    "title": "bit-integrations.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1Q4AOIdmuF_8ZcirEXinCU6jb3-l6fUzUjKSK_s1X_kQVdcvC68v7KS8gTiI5X1EEmKrvSCdwy3j3-syHG6BH2KOizk0OOij98JDVo85utPMSeBJxWTi02BpqVOQENAdI2uWmXC-cUB57iZhPXekiPdfjyYHDYQlDH2wRzkvz-Mw="
+   },
+   {
+    "title": "clonepartner.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmxwlDRqGf61aV5_44YMOZhoZAyJyigph0HwpfZho_mOa73LWr4d9dzP3bL9dnpD8IsSf3SUK18sHn-fJICeARiSie148A6pwq5w5jH9DdLtv1h9N9JXJydNqnvPs3h3yBXxOG5uFV3rCtes0eO2YvCbaF0mSpCfXEyz9Bo8HzJNt0_FJcTz_Pk4F-ig=="
+   },
+   {
+    "title": "saascrmreview.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2ztm68SLsvVN0s_8-y7khypzJCcnpuSxS5XEPHWqapDbIZ8cgQxUgkSIBrv05d3eM-Qbw77leF2jDDB2Qk6kuQJ7IZ3ff3hKSNXice2-hlV1YDEwxg8TDn9YXOSWcqOgKsA3QCHY="
+   }
+  ],
+  "tokens": 11605,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Copper CRM developer documentation authentication API keys OAuth",
+    "Copper CRM developer documentation getting started quickstart",
+    "Copper CRM pricing API access plans",
+    "Copper CRM API reference index",
+    "Copper CRM MCP server official community",
+    " authentication API keys",
+    " oauth2.0",
+    " getting started quickstart",
+    " API reference index",
+    "Copper CRM pricing API access plan details official"
+   ],
+   "candidates": 7,
+   "live_urls": [
+    "https://www.copper.com/pricing",
+    "https://developer.copper.com/",
+    "https://viasocket.com/mcp/copper",
+    "https://aeroleads.com/blog/copper-crm-pricing-breakdown-plan-compared-2026/"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://developer.copper.com/authentication/api-keys.html",
+     "status": 404
+    },
+    {
+     "url": "https://developer.copper.com/getting-started/overview.html",
+     "status": 404
+    },
+    {
+     "url": "https://developer.copper.com/authentication/oauth2-0.html",
+     "status": 404
+    },
+    {
+     "url": "https://developer.copper.com/getting-started/quickstart-guide.html",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://www.copper.com/pricing",
+     "status": 200,
+     "chars": 12479,
+     "readable": true
+    },
+    {
+     "url": "https://developer.copper.com/",
+     "status": 200,
+     "chars": 5614,
+     "readable": true
+    },
+    {
+     "url": "https://viasocket.com/mcp/copper",
+     "status": 200,
+     "chars": 6090,
+     "readable": true
+    },
+    {
+     "url": "https://aeroleads.com/blog/copper-crm-pricing-breakdown-plan-compared-2026/",
+     "status": 200,
+     "chars": 19837,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 93.7
+ }
+}

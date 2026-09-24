@@ -1,0 +1,141 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://aircall.io/pricing/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.9
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://developer.aircall.io/docs/overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developer.aircall.io/docs/oauth",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developer.aircall.io/docs/oauth",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developer.aircall.io/docs/oauth",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://aircall.io/pricing/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.71
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developer.aircall.io/docs/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.aircall.io/docs/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.68
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.aircall.io/docs/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.aircall.io/docs/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://developer.aircall.io/docs/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/mobilefirstco/aircall-mcp-server",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "api_key": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://github.com/mobilefirstco/aircall-mcp-server']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://developer.aircall.io/docs/overview', 'https://developer.aircall.io/docs/oauth', 'https://developer.aircall.io/docs/oauth', 'https://developer.aircall.io/docs/oauth', 'https://developer.aircall.io/docs/introduction', 'https://developer.aircall.io/docs/introduction', 'https://developer.aircall.io/docs/introduction', 'https://developer.aircall.io/docs/introduction']",
+ "metrics": {
+  "n_evidence": 12,
+  "alive_rate": 0.9166666666666666,
+  "dead_rate": 0.08333333333333333,
+  "blocked_rate": 0.0,
+  "official_rate": 0.9166666666666666,
+  "readable": 11,
+  "quote_supported_rate": 0.2727272727272727,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

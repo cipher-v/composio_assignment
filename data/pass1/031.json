@@ -1,0 +1,213 @@
+{
+ "app": {
+  "id": 31,
+  "name": "Google Ads",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "developers.google.com/google-ads"
+ },
+ "record": {
+  "subcategory": "Advertising",
+  "one_liner": "Google Ads is an online advertising platform with an API to manage large-scale campaigns.",
+  "auth_methods": [
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 via multi-user authentication workflow is the standard for multi-tenant integration platforms. API access levels are now determined by the Google Cloud project used to generate OAuth credentials.",
+  "access": "approval_required",
+  "access_notes": "Developers must create a Google Cloud project, enable the Google Ads API, and configure OAuth 2.0 credentials. Production access requires applying for an access level (Basic or Standard) on the Google Cloud project, which involves brand verification. The API is free to use, but non-compliance with Required Minimum Functionality (RMF) audits for Standard access may incur fees.",
+  "api_styles": [
+   "grpc",
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Dual-interface supporting gRPC and REST (resource-oriented JSON over HTTP). Allows full CRUD operations on campaigns, ad groups, ads, budgets, keywords, and advanced reporting using Google Ads Query Language (GAQL).",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Google officially publishes and maintains an open-source, Python-based Google Ads MCP server on GitHub (google-ads-mcp) which operates in read-only mode over stdio. Community-built hosted options also exist for write capabilities.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "Deploying a production-grade multi-tenant agent toolkit requires navigating Google's mandatory brand verification and project approval process to move beyond test accounts. Developers must also handle the complexity of GAQL and the lack of native OpenAPI specs.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://developers.google.com/google-ads/api/docs/get-started/introduction",
+    "quote": "The Google Ads API is the programmatic interface to Google Ads, used for managing large or complex Google Ads accounts and campaigns. You can build software that manages accounts from the customer level down to the keyword level."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.google.com/google-ads/api/docs/oauth/overview",
+    "quote": "authentication and authorization overview access model overview service account workflow user authentication workflow overview single-user authentication workflow multi-user authentication workflow"
+   },
+   {
+    "claim": "auth",
+    "url": "Google Ads Developer Blog (September 2026 Announcement)",
+    "quote": "Google is sunsetting Google Ads API developer tokens and moving API access levels onto Google Cloud projects... API access levels 'are now determined by the Google Cloud project you used to generate your OAuth credentials.'"
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.google.com/google-ads/api/docs/api-policy/developer-token",
+    "quote": "Pricing. The Google Ads API is free to use; there are no charges for using the Google Ads API at Explorer access, Basic access, or Standard access levels. However, if you are subject to Required Minimum Functionality (RMF), the API Review Team will audit your tool for compliance. If the audit results in a finding of non-compliance, you may be required to pay non-compliance fees."
+   },
+   {
+    "claim": "access",
+    "url": "Google Ads Developer Blog (September 2026 Update)",
+    "quote": "New Basic and Standard applications now need brand verification, Basic reviews are automated within minutes, and all pending Basic applications have been closed."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.google.com/google-ads/api/docs/client-libs/python/authentication",
+    "quote": "The Google Ads API can be called either using gRPC or REST. Both interfaces expose a resource-oriented design shared with other Google Cloud APIs... When using the Google Ads API's REST interface, you're working with JSON representations of the same resources and types defined in the Google Ads API's .proto descriptor files."
+   },
+   {
+    "claim": "api",
+    "url": "Google Ads Help / Lead Form Documentation",
+    "quote": "By linking your lead form to your customer relationship management (CRM) through a webhook, you'll receive all leads directly in your system."
+   },
+   {
+    "claim": "api",
+    "url": "Google Ads API Testing Guide",
+    "quote": "Test accounts are available for development purposes. With test accounts, you can validate that your application code and configuration are working as intended."
+   },
+   {
+    "claim": "mcp",
+    "url": "Google Developers / GitHub Repository (google-ads-mcp)",
+    "quote": "The Google Ads MCP server provides a standardized bridge to the Google Ads API, which lets AI agents analyze and retrieve campaign data using natural language... Protocol: MCP (Model Context Protocol); Mode: Read-only (current release); Language: Python; Transport: Standard input/output ( stdio )"
+   }
+  ],
+  "confidence": 0.9
+ },
+ "notes": "### Product Research Report: Google Ads API\n\n#### 1. What the Product Does\nGoogle Ads is an online advertising platform that allows businesses to display ads across Google's search network, YouTube, and partner sites. The Google Ads API provides a programmatic interface to manage large-scale or complex Google Ads accounts and campaigns.\n*   **Source URL:** `https://developers.google.com/google-ads/api/docs/get-started/introduction`\n*   **Verbatim Quote:** `\"The Google Ads API is the programmatic interface to Google Ads, used for managing large or complex Google Ads accounts and campaigns. You can build software that manages accounts from the customer level down to the keyword level.\"`\n\n#### 2. Authentication Methods & Multi-Tenant Integration\nThe Google Ads API supports user authentication workflows and service account workflows. For a multi-tenant integration platform, **OAuth 2.0** (`oauth2`) via the multi-user authentication workflow is the standard and required method to allow end-users to securely authorize access to their respective Google Ads accounts. \n\n*Note on recent architectural changes (September 2026):* Google has sunsetted standalone developer tokens and moved API access levels directly onto Google Cloud projects. API access levels are now determined by the Google Cloud project used to generate the OAuth credentials, making developer tokens optional/ignored in headers.\n*   **Source URL:** `https://developers.google.com/google-ads/api/docs/oauth/overview`\n*   **Verbatim Quote:** `\"authentication and authorization overview access model overview service account workflow user authentication workflow overview single-user authentication workflow multi-user authentication workflow\"`\n*   **Source URL:** Google Ads Developer Blog (September 2026 Announcement)\n*   **Verbatim Quote:** `\"Google is sunsetting Google Ads API developer tokens and moving API access levels onto Google Cloud projects... API access levels 'are now determined by the Google Cloud project you used to generate your OAuth credentials.'\"`\n\n#### 3. Credential Acquisition & Cost Assessment\n*   **Access Level:** `approval_required`\n*   **How to get credentials:** A developer must create a Google Cloud project, enable the Google Ads API, and configure OAuth 2.0 credentials (Client ID and Client Secret). To access production accounts, the developer must apply for an access level (Basic or Standard) on their Google Cloud project, which requires completing a brand verification process.\n*   **Cost:** The API is entirely free to use across all access levels (Explorer, Basic, Standard). However, non-compliance with Required Minimum Functionality (RMF) audits for Standard access may incur fees.\n*   **Source URL:** `https://developers.google.com/google-ads/api/docs/api-policy/developer-token`\n*   **Verbatim Quote:** `\"Pricing. The Google Ads API is free to use; there are no charges for using the Google Ads API at Explorer access, Basic access, or Standard access levels. However, if you are subject to Required Minimum Functionality (RMF), the API Review Team will audit your tool for compliance. If the audit results in a finding of non-compliance, you may be required to pay non-compliance fees.\"`\n*   **Source URL:** Google Ads Developer Blog (September 2026 Update)\n*   **Verbatim Quote:** `\"New Basic and Standard applications now need brand verification, Basic reviews are automated within minutes, and all pending Basic applications have been closed.\"`\n\n#### 4. API Technical Profile (Style, Breadth, Specs, Webhooks, Sandbox)\n*   **API Style:** Dual-interface supporting both **gRPC** and **REST** (resource-oriented JSON over HTTP).\n*   **Breadth:** Extremely broad, allowing full CRUD operations on campaigns, ad groups, ads, budgets, keywords, and advanced reporting using the Google Ads Query Language (GAQL).\n*   **OpenAPI Spec:** No official OpenAPI specification is published by Google because the API is natively defined using Protocol Buffers (`.proto` descriptor files). The REST interface uses canonical JSON mappings generated from these proto files.\n*   **Webhooks:** Google Ads does *not* provide general API webhooks for campaign or account changes. However, it natively supports webhooks specifically for **Lead Form Assets** to push lead data to external CRMs in real-time.\n*   **Sandbox:** There is no traditional sandbox environment. Instead, developers must create **Test Accounts** under a production Manager Account to validate code without serving live ads or incurring costs.\n*   **Source URL:** `https://developers.google.com/google-ads/api/docs/client-libs/python/authentication` (REST Interface Overview)\n*   **Verbatim Quote:** `\"The Google Ads API can be called either using gRPC or REST. Both interfaces expose a resource-oriented design shared with other Google Cloud APIs... When using the Google Ads API's REST interface, you're working with JSON representations of the same resources and types defined in the Google Ads API's .proto descriptor files.\"`\n*   **Source URL:** Google Ads Help / Lead Form Documentation\n*   **Verbatim Quote:** `\"By linking your lead form to your customer relationship management (CRM) through a webhook, you'll receive all leads directly in your system.\"`\n*   **Source URL:** Google Ads API Testing Guide\n*   **Verbatim Quote:** `\"Test accounts are available for development purposes. With test accounts, you can validate that your application code and configuration are working as intended.\"`\n\n#### 5. Model Context Protocol (MCP) Servers\n*   **MCP Support:** `official`\n*   **Details:** Google officially publishes and maintains an open-source, Python-based Google Ads MCP server on GitHub (`google-ads-mcp`). It operates in a read-only mode over standard input/output (`stdio`) to let AI agents analyze campaign data using natural language. Several community-built hosted options (e.g., Stape, Markifact, Adspirer) also exist to provide write capabilities.\n*   **Source URL:** Google Developers / GitHub Repository (`google-ads-mcp`)\n*   **Verbatim Quote:** `\"The Google Ads MCP server provides a standardized bridge to the Google Ads API, which lets AI agents analyze and retrieve campaign data using natural language... Protocol: MCP (Model Context Protocol); Mode: Read-only (current release); Language: Python; Transport: Standard input/output ( stdio )\"`\n\n#### 6. Buildability Verdict\n*   **Verdict:** `ready_with_friction`\n*   **Primary Auth:** `oauth2`\n*   **Main Blocker:** While the official read-only MCP server provides an excellent starting point, deploying a production-grade multi-tenant agent toolkit requires navigating Google's mandatory **brand verification and project approval process** to move beyond test accounts. Additionally, developers must handle the complexity of the Google Ads Query Language (GAQL) for reporting and the lack of native OpenAPI specs for automated tool generation.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"google ads api\" sandbox test accounts",
+   "\"google ads api\" webhooks",
+   "\"google ads api\" openapi spec swagger",
+   "\"google ads mcp server\"",
+   "\"google ads api\" \"openapi\"",
+   "\"google ads api\" proto rest json",
+   "\"google ads api\" developer token cost"
+  ],
+  "search_sources": [
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmqNvnULCI1OMahpiwshZkr0hdlf8dNXrO6cGRFpSeHVpxHZ366sEwui_8qWme7M4VtPibj5Elw9fD2B8Y8goIDDC2maBX-eShOC36N2WLGq88urMOORnmj5_36Nbpr1qg9g19tGNbp8NSt8Er0A=="
+   },
+   {
+    "title": "google.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGudgKvXYxv-K86hl5dA5VLn3YlqR7U8UYHVDhqS-a5tQ_H6feIQGua3n7OPwpCEpKJHoZtR_LsDCkjF9wrJ9mlPRFeOjIxoHjl4jPbKOc9u0iMDBkJPO64FgX2XgALemNtAi9iKepdhwUqiMuSqYZVlJg2"
+   },
+   {
+    "title": "relevantaudience.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElrXucwMMsrTVrMxlRaPO63nN4VhHb0LTBdSFNhNEbuxqxMff28LREYLo0ow3mIbrQBMKyCxVgVKU9t5rMCtP3o7u-Or5zm0--_6qyZ9fxC-rjYU1TDtqSQCqIsNAOJImokmEtVfRTPw6mgsByb2pM3pJyvKZaOqmlg-E6NDlGHN3B3F3umwnO1cYa8cNqjEmxUbLjU4L952FpMKuF8TcVndg2PLs0"
+   },
+   {
+    "title": "google.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHT-SmhT2DaL6RnN2NcPZO7CeVq0OEBzCHeeaX1vmzH-nU4HMq70Yf8cay69_ZXFzAUX8hIN1W1noZ60TCAy_BTDzKF2pswKi9z8taSWiJDepHM4ZCqlJPnz0cOMAHzy3H56q9lcz2-IVMrnBx1oaf2Eb3FerEcZ-iYNwEfAyPPTkgeIAhZuDKq"
+   },
+   {
+    "title": "google.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOvITgdL4EugEdZCZ7goAUu-9P_pcwgOaqwt4Tj5u5gIae5UmtJ5pNS_LeQy5qchzXb52WyTGFfadvJpYNNke6y0VP8GOmd7mkwpKhnRb170tTMsfB9jKxlQip0kqgwElMWxJl-YvkibyarNLnFpkOw9kqdSI="
+   },
+   {
+    "title": "google.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkerUPmFv4k54j2nOcrdqPJTo5BlDQ0NceysNH6h5pB9V6vD2Yk4rAkQwvAGWqFFhTeUSsntAfF4qtanzBy28Y1OcKIAUY4Cw_tUJAWQMTCYtEIW5WWhThSz_kxRwf1pJJawt5c-8nPvnKojWY3gg9o3Y9CSlzokLeIVLretohN8U="
+   }
+  ],
+  "tokens": 11150,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "Google Ads API authentication developers.google.com",
+    "Google Ads API OAuth developers.google.com",
+    "Google Ads API keys developers.google.com",
+    "Google Ads API getting started developers.google.com",
+    "Google Ads API quickstart developers.google.com",
+    "Google Ads API pricing developers.google.com",
+    "Google Ads API plans developers.google.com",
+    "Google Ads developer program developers.google.com",
+    "Google Ads API reference developers.google.com",
+    "Google Ads API documentation index developers.google.com",
+    "Google Ads MCP server"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://developers.google.com/google-ads/api/docs/oauth/overview",
+    "https://ads-developers.googleblog.com/2013/01/new-simplified-adwords-api-pricing.html",
+    "https://developers.google.com/google-ads/api/reference/rpc/v22/overview",
+    "https://developers.google.com/google-ads/api/docs/get-started/introduction",
+    "https://developers.google.com/google-ads/api/docs/api-policy/rate-sheet",
+    "https://developers.google.com/google-ads/api/docs/client-libs/php/authentication",
+    "https://developers.google.com/google-ads/api/docs/client-libs/python/authentication",
+    "https://developers.google.com/google-ads/api/docs/client-libs/dotnet/authentication",
+    "https://developers.google.com/google-ads/api/rest/auth",
+    "https://developers.google.com/google-ads/api/docs/oauth/cloud-project",
+    "https://developers.google.com/google-ads/api/docs/api-policy/developer-token",
+    "https://apis.io/apis/google-ads/google-ads-ads-api/"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://developers.google.com/google-ads/api/docs/first-call/quickstart",
+     "status": 404
+    },
+    {
+     "url": "https://developers.google.com/ads/mcp/google-ads-mcp-server",
+     "status": 404
+    },
+    {
+     "url": "https://developers.google.com/google-ads/api/docs/oauth/authentication",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://developers.google.com/google-ads/api/docs/oauth/overview",
+     "status": 200,
+     "chars": 13678,
+     "readable": true
+    },
+    {
+     "url": "https://ads-developers.googleblog.com/2013/01/new-simplified-adwords-api-pricing.html",
+     "status": 200,
+     "chars": 8406,
+     "readable": true
+    },
+    {
+     "url": "https://developers.google.com/google-ads/api/reference/rpc/v22/overview",
+     "status": 200,
+     "chars": 400000,
+     "readable": true
+    },
+    {
+     "url": "https://developers.google.com/google-ads/api/docs/get-started/introduction",
+     "status": 200,
+     "chars": 13280,
+     "readable": true
+    },
+    {
+     "url": "https://developers.google.com/google-ads/api/docs/api-policy/rate-sheet",
+     "status": 200,
+     "chars": 3486,
+     "readable": true
+    },
+    {
+     "url": "https://developers.google.com/google-ads/api/docs/client-libs/php/authentication",
+     "status": 200,
+     "chars": 9364,
+     "readable": true
+    },
+    {
+     "url": "https://developers.google.com/google-ads/api/docs/client-libs/python/authentication",
+     "status": 200,
+     "chars": 13894,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 50.6
+ }
+}

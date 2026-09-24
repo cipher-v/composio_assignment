@@ -1,0 +1,234 @@
+{
+ "app": {
+  "id": 75,
+  "name": "Asana",
+  "category": "Productivity and Project Management",
+  "hint": "developers.asana.com"
+ },
+ "record": {
+  "subcategory": "Project Management",
+  "one_liner": "Asana is a project and work management platform for organizing, tracking, and managing team workflows.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 for secure user authorization, Personal Access Tokens also supported.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can sign up for a free \"Personal\" plan which is free forever for up to two users. This plan provides API access with a rate limit of 150 requests per minute. Credentials for OAuth 2.0 (Client ID and Secret) or Personal Access Tokens can be obtained instantly and self-serve through the developer console. An app can be shared with any Asana user via a direct authorization link without requiring an app review. A formal app review is only required to be listed in the official Asana App Directory. Enterprise admins can, however, configure their organization to require admin approval for all new app integrations.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "RESTful interface with predictable resource-oriented URLs, accepts JSON or form-encoded requests, returns JSON. Covers tasks, projects, portfolios, users, workspaces, webhooks, time tracking, and more.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Asana officially provides and supports an MCP server, accessible via app integration, allowing AI assistants to interact directly with the Asana work graph.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. Asana provides a completely self-serve, free developer environment with comprehensive REST APIs, an official OpenAPI specification, standard OAuth 2.0 authentication, and an official MCP server. It is fully ready for building an AI agent toolkit today.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://asana.com/pricing",
+    "quote": "agentic work management for cross-functional teams asana service management for service teams asana client management for teams delivering client work"
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.asana.com/docs/authentication",
+    "quote": "authentication personal access token oauth oauth code samples / libraries oauth"
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.asana.com/docs/oauth",
+    "quote": "Asana uses OAuth 2.0 for secure user authorization. Scopes allow your app to request only the access it needs, following the principle of least privilege."
+   },
+   {
+    "claim": "access",
+    "url": "https://asana.com/pricing",
+    "quote": "personal for one or two people managing personal projects. $0 free forever sign up manage tasks and personal to-dos: 2 users unlimited tasks and projects never run out of space for work."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.asana.com/docs/oauth",
+    "quote": "You must first register your application with Asana to receive a client ID and client secret. To do so, first visit the developer console and select Create new app"
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.asana.com/docs/manage-and-share-your-app",
+    "quote": "Submitting your app for review is not required to obtain a token. You only need to submit your app if you intend to: Make your app available to users in any Asana workspace, beyond your own organization or development environment; List your app publicly on the Asana app directory."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.asana.com/reference/rest-api-reference",
+    "quote": "The asana api is a rest ful interface with predictable resource-oriented urls, accepts json or form-encoded requests, returns json, and uses standard http features"
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.asana.com/reference/rest-api-reference",
+    "quote": "webhooks get multiple webhooks get establish a webhook post get a webhook get update a webhook put delete a webhook del workspace memberships get a workspace membership"
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.asana.com/reference/rest-api-reference",
+    "quote": "reference is generated from our openapi specification , and contains a comprehensive reference for objects, schemas, and endpoints available in the api."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.asana.com/reference/rest-api-reference",
+    "quote": "webhooks get multiple webhooks get establish a webhook post get a webhook get update a webhook put delete a webhook del"
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.asana.com/docs/authentication",
+    "quote": "get started api explorer developer sandbox quick start guide faq feature guides"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://developers.asana.com/docs/mcp-server",
+    "quote": "powered by mcp server asana offers a model context protocol (mcp) server, accessible via app integration, which allows ai assistants and other applications to access the asana work graph from beyond the asana platform."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "access_notes",
+    "old": "Developers can sign up for a free 'Personal' plan ($0 forever) which supports up to 2 users and provides full access to the developer console. Credentials (Client ID and Client Secret) are obtained instantly by registering an app in the Asana Developer Console. App review is only required for public distribution or listing in the Asana App Directory, not for internal development or token generation.",
+    "new": "Developers can sign up for a free \"Personal\" plan which is free forever for up to two users. This plan provides API access with a rate limit of 150 requests per minute. Credentials for OAuth 2.0 (Client ID and Secret) or Personal Access Tokens can be obtained instantly and self-serve through the developer console. An app can be shared with any Asana user via a direct authorization link without requiring an app review. A formal app review is only required to be listed in the official Asana App Directory. Enterprise admins can, however, configure their organization to require admin approval for all new app integrations.",
+    "reason": "The original notes were mostly correct but contained a fabricated quote and could be more precise. The corrected notes provide more accurate details regarding the free plan, API access, rate limits, credential acquisition, app sharing, and app review requirements, including the nuance about enterprise admin approval.",
+    "url": "https://asana.com/pricing"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### Asana Fact-Checking Report\n\nBelow is a field-by-field verification of the provided record for the Asana API.\n\n---\n\n#### **`subcategory`**\n*   **Original Value**: `Project Management`\n*   **Verification**: **CONFIRMED**\n*   **Correction**: None.\n*   **Reasoning**: Asana's pricing page describes its product as \"agentic work management for cross-functional teams,\" and its core functionality revolves around project and task management. [https://asana.com/pricing] \"Project Management\" is an accurate and standard categorization.\n\n---\n\n#### **`one_liner`**\n*   **Original Value**: `Asana is a project and work management platform for organizing, tracking, and managing team workflows.`\n*   **Verification**: **CONFIRMED**\n*   **Correction**: None.\n*   **Reasoning**: This description aligns with the product's purpose as described on its website and in its documentation. The API documentation states the API helps \"read information from inside Asana, input information from outside Asana, and automatically react when things change.\"\n\n---\n\n#### **`auth_methods`**\n*   **Original Value**: `[\"oauth2\", \"bearer_token\"]`\n*   **Verification**: **CONFIRMED**\n*   **Correction**: None.\n*   **Reasoning**: The Asana developer documentation outlines two primary methods for API authentication: OAuth 2.0 and Personal Access Tokens (PATs). PATs are used as bearer tokens in the `Authorization` header, making `bearer_token` the correct technical classification. Asana also offers Service Accounts, but this is an Enterprise-only feature.\n\n---\n\n#### **`primary_auth`**\n*   **Original Value**: `oauth2`\n*   **Verification**: **CONFIRMED**\n*   **Correction**: None.\n*   **Reasoning**: The documentation explicitly recommends OAuth for applications that need to support multiple users, stating, \"Most of the time, OAuth is the preferred method of authentication for developers, users, and Asana as a platform.\" This makes it the appropriate choice for a multi-tenant integration platform.\n\n---\n\n#### **`auth_notes`**\n*   **Original Value**: `OAuth 2.0 for secure user authorization, Personal Access Tokens also supported.`\n*   **Verification**: **CONFIRMED**\n*   **Correction**: None.\n*   **Reasoning**: This is a correct and concise summary of the available authentication methods for general use.\n\n---\n\n#### **`access`**\n*   **Original Value**: `self_serve_free`\n*   **Verification**: **CONFIRMED**\n*   **Correction**: None.\n*   **Reasoning**: Asana offers a \"Personal\" plan that is \"$0 free forever.\" [https://asana.com/pricing] This free plan includes API access, as confirmed by multiple sources that state free users can use the API, albeit with lower rate limits. Developers can create an app and get credentials (Client ID/Secret or a Personal Access Token) instantly from the developer console without requiring payment or approval.\n\n---\n\n#### **`access_notes`**\n*   **Original Value**: `Developers can sign up for a free 'Personal' plan ($0 forever) which supports up to 2 users and provides full access to the developer console. Credentials (Client ID and Client Secret) are obtained instantly by registering an app in the Asana Developer Console. App review is only required for public distribution or listing in the Asana App Directory, not for internal development or token generation.`\n*   **Verification**: **WRONG**\n*   **Correction**: The original notes were mostly correct but contained a fabricated quote and could be more precise.\n*   **Corrected Notes**: Developers can sign up for a free \"Personal\" plan which is free forever for up to two users. [https://asana.com/pricing] This plan provides API access with a rate limit of 150 requests per minute. Credentials for OAuth 2.0 (Client ID and Secret) or Personal Access Tokens can be obtained instantly and self-serve through the developer console. An app can be shared with any Asana user via a direct authorization link without requiring an app review. A formal app review is only required to be listed in the official Asana App Directory. Enterprise admins can, however, configure their organization to require admin approval for all new app integrations.\n\n---\n\n#### **`api_styles`**\n*   **Original Value**: `[\"rest\"]`\n*   **Verification**: **CONFIRMED**\n*   **Correction**: None.\n*   **Reasoning**: The API is explicitly described in the documentation as a \"RESTful interface with predictable resource-oriented URLs.\" [https://developers.asana.com/reference/rest-api-reference]\n\n---\n\n#### **`api_breadth`**\n*   **Original Value**: `broad`\n*   **Verification**: **CONFIRMED**\n*   **Correction**: None.\n*   **Reasoning**: The API reference shows a wide range of endpoints covering core Asana objects like tasks, projects, portfolios, users, workspaces, webhooks, and time tracking, indicating broad functionality. [https://developers.asana.com/reference/rest-api-reference]\n\n---\n\n#### **`api_notes`**\n*   **Original Value**: `RESTful interface with predictable resource-oriented URLs, accepts JSON or form-encoded requests, returns JSON. Covers tasks, projects, portfolios, users, workspaces, webhooks, time tracking, and more.`\n*   **Verification**: **CONFIRMED**\n*   **Correction**: None.\n*   **Reasoning**: This accurately summarizes the API's characteristics as described in the developer documentation. [https://developers.asana.com/reference/rest-api-reference]\n\n---\n\n#### **`openapi_spec`**\n*   **Original Value**: `true`\n*   **Verification**: **CONFIRMED**\n*   **Correction**: None.\n*   **Reasoning**: The API reference page states, \"reference is generated from our openapi specification.\" [https://developers.asana.com/reference/rest-api-reference]\n\n---\n\n#### **`webhooks`**\n*   **Original Value**: `true`\n*   **Verification**: **CONFIRMED**\n*   **Correction**: None.\n*   **Reasoning**: The API reference includes a dedicated section for creating and managing webhooks. [https://developers.asana.com/reference/rest-api-reference]\n\n---\n\n#### **`sandbox`**\n*   **Original Value**: `true`\n*   **Verification**: **CONFIRMED**\n*   **Correction**: None.\n*   **Reasoning**: Asana provides a developer sandbox, which is a temporary Asana domain that can include premium features for testing. Access to this sandbox is granted upon submitting a request form. This is distinct from the internal \"sandbox\" environments Asana engineers use.\n\n---\n\n#### **`mcp`**\n*   **Original Value**: `official`\n*   **Verification**: **CONFIRMED**\n*   **Correction**: None.\n*   **Reasoning**: The developer documentation has a dedicated page for the Model Context Protocol (MCP) server, stating, \"Asana offers a model context protocol (mcp) server, accessible via app integration.\" [https://developers.asana.com/docs/mcp-server] This confirms it is an official offering.\n\n---\n\n#### **`mcp_notes`**\n*   **Original Value**: `Asana officially provides and supports an MCP server, accessible via app integration, allowing AI assistants to interact directly with the Asana work graph.`\n*   **Verification**: **CONFIRMED**\n*   **Correction**: None.\n*   **Reasoning**: The quote from the documentation directly supports this claim: \"Asana offers a model context protocol (mcp) server, accessible via app integration, which allows ai assistants and other applications to access the asana work graph from beyond the asana platform.\" [https://developers.asana.com/docs/mcp-server]\n\n---\n\n#### **`verdict`**\n*   **Original Value**: `ready_now`\n*   **Verification**: **CONFIRMED**\n*   **Correction**: None.\n*   **Reasoning**: Asana provides a free tier with API access, self-serve credentials, standard OAuth 2.0, and comprehensive public documentation. An integration can be built and used immediately without mandatory approvals, fitting the `ready_now` definition.\n\n---\n\n#### **`blocker`**\n*   **Original Value**: `none`\n*   **Verification**: **CONFIRMED**\n*   **Correction**: None.\n*   **Reasoning**: There are no significant blockers to development.\n\n---\n\n#### **`blocker_notes`**\n*   **Original Value**: `None. Asana provides a completely self-serve, free developer environment with comprehensive REST APIs, an official OpenAPI specification, standard OAuth 2.0 authentication, and an official MCP server. It is fully ready for building an AI agent toolkit today.`\n*   **Verification**: **CONFIRMED**\n*   **Correction**: None.\n*   **Reasoning**: This summary is accurate based on the verification of all other fields.\n\n---\n### Uncertain Fields\n\nNone. All fields were verifiable using the provided documentation and further searches.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Asana API authentication methods",
+   "Asana API key authentication",
+   "Asana service account authentication",
+   "Asana API app approval requirements",
+   "Asana developer sandbox details",
+   "Asana API access on free plan",
+   "Asana \"share your app\" documentation"
+  ],
+  "search_sources": [
+   {
+    "title": "asana.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQr7xzp2hcjLw98TFVUfLCn5DDIp-S0Z0zl8ha79vWq39y8KpPXsRmyCLBMgfu1NDAtwmaBJwTNRRbZgSVb_hD2eV1dQRvs7sSAkfGH8I9MHEinWZxNb7AfaGfYWnY0_T4FRaXw9LE4w=="
+   },
+   {
+    "title": "asana.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxyDxKh8Ix97Xg1J-HLwta1q59coLCK22dskdpTqfUexkMXLLTwYizxEseYHKkGQOaNdpMBfPNSy91japDJ0W4BE1T5IfxsASzT-2H-OP6amVnBzIZy8-2iHJGVKl8a6ohFiH9xwaBG2roil5tRA=="
+   },
+   {
+    "title": "asana.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0-H0P5ge1mnegj4zOHuYAKkUc2V6upH6Nt4GKhRo1a9Rz4FS7W61dC637HaHStFM2AdiYgJfAwkATRJtC7C2U-njAlyCvm_gn6hctYi78yxeoBfLjlK1KiOZkoowVRoEk6DV9MUkJIPlqBQ=="
+   },
+   {
+    "title": "asana.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIM3SQ5xVrQV0Sf8ulYFwQddBYGbOUij3bNy6aHbssr_siaB7PjPIJyodGNLiJGearIR4ftDOwd0_Jr7gfd7QsUTGbf0xxe5nO0slSys7HyGptFThBlUJ3965iUUg1h6gU2pWgYLCkeCwfs75Sd8RMJjU="
+   },
+   {
+    "title": "asana.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcwFUeO--7weI7d707aWtQSP-laLrg7Kq7klD5XpM2hGvHOHvruyJcPLneIkUIPz35NtnbN2aXGfQuXUZpmFOKn07whmY4zoeWicIu8oBO9oo2iNk2ZYgwhVvDBxqa-LL2kuby2jeOgTdQNDY="
+   },
+   {
+    "title": "asana.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhm-5yhM55gtrDM6cl9Y8q3B2V9QesMHQPZ96sEu5_hW8cYCGAWw9M5UJt28ZLzM0-oA2ezfV0oJ-1_qanpUjsOASL73sWdF_i1r_tVLtqsyEnIxdUvQwIa5ESZeT9iRgzzA=="
+   },
+   {
+    "title": "asana.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmR8_IohucE2S7Y73pc7KLaDOKsVw4hdPD_RPnI1iavxzAcFj3NVeUuuXGVa0SSv_nW6dXc-m6YylQn4KGbJT0BnwHPv0MUj5tOHRjZkKujUF51Bp6HAQ5DB01XbP8XiDf0feQytUSCq_rfbX-sCdOMZ6wY36GF2rJrSJzrJDj601Q_Mk="
+   },
+   {
+    "title": "asana.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzJZMgGHvSwUoA6dunMsQoUoPGIj08KyiyB0ucvRvjZEWzXtq0m-8FOq1yhWAgkFIIKDx4biTZiL0cNDXLVZC-r1_nkXiklMebT9XOBFmwY952knAYQvByEHAx9BcUpQvHT8ddv3cjn9Oxg6hOICxIuKjzaZ3DpzB9CWoVo3hTtJbAenR49Q=="
+   },
+   {
+    "title": "merge.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgmwFqpA6vC0CkvXdjuI8aWbO6fIsEnkfP-xl3JG1C-jtqXABHBsMptHgo2gCg_iwoJYHCtq-4zMCoLB5_LQUswWSQwHCStrEa65ojvEgOTpsMR3Z2rJYZR-NT98TUDJ5Pi9C0bRKee2mjg95vb352mg=="
+   },
+   {
+    "title": "asana.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqfgQbV7tIQv8Jjn4V7XqUC8XnnuZtmwSEWgw83tZ2TX7hwe-ldu3l9bIZXzteG9U9I38P2MgXueFOaTXZQMaWlk_SFnRtvvYQJxgG9kAnVB2feeOL9pmsFBOcjfX4dVDe7vlzvUkPxGqXVw=="
+   },
+   {
+    "title": "asana.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6KXdt9a_fHKBTAOv0ltPBTDs3IaKgSIovYmAvSiZFJjcXDmAzy1EexJH64UzOLC_47kLjP7xkHzdnIVFSIwfzvsjjFbzg2qFTtUEP2mnTGuXB3Q67OTOsJBPkrnr2BYM="
+   },
+   {
+    "title": "asana.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5hMjKfvSXef1zEVTIrWEhY_ahV7A_dGF3gkRC_oMZvXYY89DkuBDekqZFIkBss_ik95oMdmV-Ru7_ZwzzZlRlhShOKljpUmZWoLS3Z73EKylduhbF5mTcBG844E39qBtU-11MTK9RUAlLIxP-"
+   },
+   {
+    "title": "asana.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLNwxYXxnztzr7C2nhTMLlHwyAv-Pj7fcPzMI_JCGERst2wPw4hw_3Xd7J9985Q8tO5ilfex-LoV5KKgfe1Jsb0ES_rU7iG2TNmdGTUBSF18U-7mCYZDy0NgR6bQC1OTmz5DsYHJ4_8w1mspiM2Jk534cQO-h8mMmeXEs="
+   },
+   {
+    "title": "youtube.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHPn3-_QEihcd5ecbcHLjo0xe1R1XfTbx1SyzLUXvi3DVTbQeu4fvygA5k3ZRzzwQ61bj6b05uXfeRYvm_Ru2KNAO8UsRs3UkdL-cQ76zlUbDrNL1_qz8HdFjC49hV-7ZGaS1ihzg="
+   },
+   {
+    "title": "asana.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmGFb64N3HeiXVLgbpx3HyqKYEiRgh_dlikjO_nlYSWRjafBmnL3S_jQ3uQQuiF0xzp7IoQKx8OwzxaW5uHLMzmFP1ch7HaB7hWMxWbNbPhFjHRqepyLFun17aqpZP893opPfO9diG9t03Sk15mA=="
+   },
+   {
+    "title": "thetechyside.com.au",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9jU0IKg7Lt1XY1AMEEmi1KlTSkUz_jkbfSlKpB9rDLc6Kr17VC4AnwlqAc74OHLyWyNr0QFLXaDZIu4p4BnldTwKg0ZwY_ww22rZoy8_8xHYknbxXRyiAoXoSUkZYKuTaonbNppBWJPA="
+   },
+   {
+    "title": "asana.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_eC-hFVu5Ze-i6-LamfIDf8SdiP23aQrrDFuWcTj_KbSoifIfDYMd_TLfOgsE_r1RRIb7vSP_jAwp5COkxZ7OhCJ6zwbE4ywMq6xxCwpoQoss9eijEFJMpPvkA6b2fpdx8injG80F5xjRK7mfl6LneDDowKzRHjHle-3Vc0Ogqf473ROnpN4yOqgmGpd7K4Oyzt2fIBbxOBpSAwMw"
+   }
+  ],
+  "tokens": 30658,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "pages_read": [
+   {
+    "url": "https://asana.com/pricing",
+    "status": 200,
+    "chars": 42899,
+    "readable": true
+   },
+   {
+    "url": "https://developers.asana.com/docs/authentication",
+    "status": 200,
+    "chars": 6335,
+    "readable": true
+   },
+   {
+    "url": "https://developers.asana.com/docs/oauth",
+    "status": 200,
+    "chars": 27198,
+    "readable": true
+   },
+   {
+    "url": "https://developers.asana.com/docs/manage-and-share-your-app",
+    "status": 200,
+    "chars": 2611,
+    "readable": true
+   },
+   {
+    "url": "https://developers.asana.com/reference/rest-api-reference",
+    "status": 200,
+    "chars": 10377,
+    "readable": true
+   },
+   {
+    "url": "https://developers.asana.com/docs/mcp-server",
+    "status": 200,
+    "chars": 2226,
+    "readable": true
+   }
+  ],
+  "seconds": 141.5
+ }
+}

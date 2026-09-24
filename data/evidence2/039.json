@@ -1,0 +1,160 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.socialcrawl.dev/blog/threads-api",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.43
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.socialcrawl.dev/blog/threads-api",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.67
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://letmepost.dev",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.facebook.com/docs/threads",
+   "status": 400,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.blotato.com/blog/threads-api-pricing",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.61
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.blotato.com/blog/threads-api-pricing",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.45
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.socialcrawl.dev/blog/threads-api",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.47
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://modiva.ai/mcp/threads",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.28
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/code-yeongyu/threads-api-openapi",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.84
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.facebook.com/docs/threads",
+   "status": 400,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.facebook.com/docs/threads",
+   "status": 400,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://modiva.ai/mcp/threads",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.68
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://mcpservers.org/servers/postcopilot-ai-blog-postcopilot-mcp-server-threads-ai-tools",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.5
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://www.blotato.com/blog/threads-api-pricing",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.48
+  }
+ ],
+ "auth_support": {
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://developers.facebook.com/docs/threads', 'https://developers.facebook.com/docs/threads', 'https://developers.facebook.com/docs/threads']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://www.socialcrawl.dev/blog/threads-api', 'https://letmepost.dev', 'https://www.blotato.com/blog/threads-api-pricing', 'https://www.socialcrawl.dev/blog/threads-api', 'https://modiva.ai/mcp/threads', 'https://www.blotato.com/blog/threads-api-pricing']\n- Non-vendor sources (prefer official docs): ['https://www.socialcrawl.dev/blog/threads-api', 'https://www.socialcrawl.dev/blog/threads-api', 'https://letmepost.dev', 'https://www.blotato.com/blog/threads-api-pricing', 'https://www.blotato.com/blog/threads-api-pricing', 'https://www.socialcrawl.dev/blog/threads-api', 'https://modiva.ai/mcp/threads', 'https://github.com/code-yeongyu/threads-api-openapi', 'https://modiva.ai/mcp/threads', 'https://mcpservers.org/servers/postcopilot-ai-blog-postcopilot-mcp-server-threads-ai-tools', 'https://www.blotato.com/blog/threads-api-pricing']",
+ "metrics": {
+  "n_evidence": 14,
+  "alive_rate": 0.7857142857142857,
+  "dead_rate": 0.21428571428571427,
+  "blocked_rate": 0.0,
+  "official_rate": 0.21428571428571427,
+  "readable": 11,
+  "quote_supported_rate": 0.45454545454545453,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

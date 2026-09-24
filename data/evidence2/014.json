@@ -1,0 +1,171 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://front.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://dev.frontapp.com/reference/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.84
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://dev.frontapp.com/reference/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://dev.frontapp.com/docs/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.9
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://dev.frontapp.com/docs/oauth",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://dev.frontapp.com/docs/partnering-with-front",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.85
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://dev.frontapp.com/docs/partnering-with-front",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://dev.frontapp.com/docs/partnering-with-front",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.91
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://dev.frontapp.com/reference/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.86
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://dev.frontapp.com/docs/partnering-with-front",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://dev.frontapp.com/docs/partnering-with-front",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://dev.frontapp.com/docs/partnering-with-front",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://dev.frontapp.com/docs/partnering-with-front",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://dev.frontapp.com/docs/mcp-server",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.61
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://dev.frontapp.com/docs/mcp-server",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.5
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "bearer_token": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://dev.frontapp.com/reference/introduction', 'https://dev.frontapp.com/docs/partnering-with-front', 'https://dev.frontapp.com/docs/partnering-with-front', 'https://dev.frontapp.com/docs/partnering-with-front', 'https://dev.frontapp.com/docs/partnering-with-front', 'https://dev.frontapp.com/docs/partnering-with-front']",
+ "metrics": {
+  "n_evidence": 15,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 1.0,
+  "readable": 15,
+  "quote_supported_rate": 0.6,
+  "lint_issues": 0,
+  "flag_count": 1
+ }
+}

@@ -1,0 +1,175 @@
+{
+ "app": {
+  "id": 8,
+  "name": "Close",
+  "category": "CRM and Sales",
+  "hint": "close.com"
+ },
+ "record": {
+  "subcategory": "CRM",
+  "one_liner": "A sales-focused CRM for managing leads, pipelines, and automated outreach with built-in communication tools.",
+  "auth_methods": [
+   "oauth2",
+   "api_key"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "API keys for scripts or OAuth 2.0 for user-facing integrations.",
+  "access": "self_serve_trial",
+  "access_notes": "14-day free trial available with no credit card required; paid plans start at $9/month (Solo plan) for continued API access.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST API covering leads, contacts, opportunities, tasks, custom objects, and communication activities like calls and SMS.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Official remote MCP server hosted at https://mcp.close.com/mcp supporting HTTP Streamable and OAuth 2.0 DCR.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "OAuth apps are private by default; developers must request approval to make them public for multi-tenant use.",
+  "evidence": [
+   {
+    "claim": "auth",
+    "url": "https://developer.close.com/",
+    "quote": "authentication api keys for scripts or oauth 2.0 for user-facing integrations."
+   },
+   {
+    "claim": "access",
+    "url": "https://close.com/pricing",
+    "quote": "Close does not offer a permanent free plan, but it does provide a free trial that lets users to test the product before committing to a paid plan. ... Free 14-day trial, no credit card required."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.close.com/",
+    "quote": "rest api reference full endpoint docs with schemas, examples, and an interactive api explorer."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://developer.close.com/mcp/",
+    "quote": "The MCP server URL is https://mcp.close.com/mcp and has “HTTP Streamable” and “OAuth 2.0 Dynamic Client Registration (DCR)” support."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://developer.close.com/",
+    "quote": "If you want other Close customers to authorize it, you'll need to request to make it public and optionally get listed."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Product Capabilities\nClose is a sales-focused CRM platform designed for inside sales teams to manage leads, track pipelines, and automate outreach. It features built-in communication tools including email, calling, SMS, WhatsApp, power dialers, native forms, and sales reporting.\n* **Source URL:** https://developer.close.com/\n* **Verbatim Quote:** `\"whether you’re a close customer automating your sales process or a partner building an integration, the close developer platform gives everything you or your ai agents need.\"`\n* **Source URL:** https://close.com/pricing (via G2 pricing data)\n* **Verbatim Quote:** `\"Built for the individual who wants every lead, pipeline, and conversation in one place.\"`\n\n### Authentication Methods\nThe Close public API supports two main authentication methods:\n1. **API Keys (`api_key`):** Used primarily for internal scripts or single-organization automation.\n2. **OAuth 2.0 (`oauth2`):** Used for user-facing, multi-tenant integrations.\n\nFor a multi-tenant integration platform like Composio, **OAuth 2.0** (`oauth2`) is the primary authentication method to allow external Close customers to securely authorize the toolkit.\n* **Source URL:** https://developer.close.com/\n* **Verbatim Quote:** `\"authentication api keys for scripts or oauth 2.0 for user-facing integrations.\"`\n* **Source URL:** https://developer.close.com/\n* **Verbatim Quote:** `\"publish an integration — build for many close customers with oauth and get listed in the integrations directory .\"`\n\n### Developer Credentials & Cost\n* **Access Level:** `self_serve_trial`\n* **Cost & Signup:** Close does not offer a permanent free tier. However, developers can sign up for a 14-day free trial with no credit card required to obtain working API credentials and build integrations. Paid plans start at $9/month per seat (Solo plan), which includes API and integration access.\n* **Credential Acquisition:** Creating an OAuth app is self-serve via the account settings dashboard. By default, new OAuth apps are created as \"Private\" (restricted to the developer's own organization). To allow multi-tenant access by other Close customers, developers must submit an approval request to make the app public.\n* **Source URL:** https://close.com/pricing (via G2 pricing data)\n* **Verbatim Quote:** `\"Close does not offer a permanent free plan, but it does provide a free trial that lets users to test the product before committing to a paid plan. ... Free 14-day trial, no credit card required.\"`\n* **Source URL:** https://developer.close.com/ (OAuth App Setup)\n* **Verbatim Quote:** `\"Navigate to Settings → Developer → OAuth Apps and click Create App.\"`\n* **Source URL:** https://developer.close.com/ (OAuth App Setup)\n* **Verbatim Quote:** `\"OAuth apps are Private by default, meaning only members of your own Close organization can authorize them. ... If you want other Close customers to authorize it, you'll need to request to make it public and optionally get listed.\"`\n\n### API Architecture & Technical Details\n* **API Style:** REST API.\n* **API Breadth:** Very broad. Endpoints cover core CRM objects (leads, contacts, opportunities, tasks, custom objects), communication activities (notes, calls, emails, SMS, WhatsApp, meetings), smart views, sequences, and reporting.\n* **OpenAPI Spec:** Close does not explicitly publish a downloadable standalone OpenAPI spec file (`.json` or `.yaml`), but it provides comprehensive endpoint schemas and an interactive API explorer.\n* **Webhooks:** Supported. Real-time event notifications are provided alongside a 30-day event log, with full CRUD endpoints for managing webhook subscriptions.\n* **Sandbox:** Close does not provide a dedicated sandbox environment; developers use standard trial or paid accounts for testing.\n* **Source URL:** https://developer.close.com/\n* **Verbatim Quote:** `\"rest api reference full endpoint docs with schemas, examples, and an interactive api explorer.\"`\n* **Source URL:** https://developer.close.com/\n* **Verbatim Quote:** `\"webhooks & events real-time event notifications and a 30-day event log.\"`\n\n### Model Context Protocol (MCP) Servers\n* **MCP Support:** `official`\n* **Details:** Close hosts and maintains an official remote MCP server at `https://mcp.close.com/mcp`. It uses the HTTP Streamable transport protocol and supports OAuth 2.0 with Dynamic Client Registration (DCR) for user-facing clients (e.g., Claude, Cursor, ChatGPT), as well as static API keys passed via custom headers (`Close-API-Key` and `Close-Scope`) for headless execution.\n* **Source URL:** https://developer.close.com/\n* **Verbatim Quote:** `\"mcp server model context protocol for ai agents.\"`\n* **Source URL:** https://developer.close.com/mcp/\n* **Verbatim Quote:** `\"The MCP server URL is https://mcp.close.com/mcp and has “HTTP Streamable” and “OAuth 2.0 Dynamic Client Registration (DCR)” support.\"`\n\n### Buildability Verdict\n* **Verdict:** `ready_with_friction`\n* **Main Blocker:** The integration is highly buildable due to self-serve OAuth app creation and an officially hosted remote MCP server. The primary friction points are the **14-day time limit on the free trial** (requiring a paid plan afterward to maintain developer credentials) and the **approval review required to transition the OAuth app from private to public** for multi-tenant production use.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"close.com\" API pricing free trial",
+   " \"authentication with oauth\"",
+   " \"mcp\"",
+   " \"openapi\"",
+   "",
+   " \"create an oauth app\"",
+   " \"api\"",
+   "\"Close\" CRM OpenAPI spec json yaml",
+   " \"mcp server\"",
+   " \"openapi\" OR \"swagger\" OR \"spec\"",
+   " \"making your app public\"",
+   "\"close mcp server\"",
+   "\"OpenAPI\"",
+   "\"sandbox\"",
+   "\"webhooks\"",
+   " \"openapi.json\" OR \"swagger.json\" OR \"openapi.yaml\"",
+   " \"sandbox\" OR \"test account\" OR \"development account\"",
+   " \"webhooks\"",
+   " \"llms.txt\"",
+   " \"sandbox\"",
+   " \"test account\"",
+   " \"rate limits\""
+  ],
+  "search_sources": [],
+  "tokens": 9020,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "Close CRM developer documentation",
+    "Close CRM API authentication OAuth page",
+    "Close CRM API getting started quickstart",
+    "Close CRM pricing API access plans",
+    "Close CRM API reference index",
+    "Close CRM MCP server official community",
+    " API Reference index",
+    " getting started quickstart",
+    " partner developer program",
+    " MCP server documentation",
+    " \"API Reference\"",
+    " \"Getting Started\"",
+    " \"Partner Program\"",
+    " \"MCP Server\"",
+    " \"Partner with Close\""
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://developer.close.com/api/overview/api-key-authentication",
+    "https://close.com/pricing",
+    "https://developer.close.com/",
+    "https://developer.close.com/mcp/",
+    "https://close.com/partners",
+    "https://getknit.dev/mcp-servers/close-crm-mcp-server/"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://developer.close.com/topics/build-an-integration/",
+     "status": 404
+    },
+    {
+     "url": "https://developer.close.com/topics/authentication-oauth/",
+     "status": 404
+    },
+    {
+     "url": "https://github.com/closeio/close-crm-cli",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://developer.close.com/api/overview/api-key-authentication",
+     "status": 200,
+     "chars": 13622,
+     "readable": true
+    },
+    {
+     "url": "https://close.com/pricing",
+     "status": 200,
+     "chars": 20348,
+     "readable": true
+    },
+    {
+     "url": "https://developer.close.com/",
+     "status": 200,
+     "chars": 3028,
+     "readable": true
+    },
+    {
+     "url": "https://developer.close.com/mcp/",
+     "status": 200,
+     "chars": 8833,
+     "readable": true
+    },
+    {
+     "url": "https://close.com/partners",
+     "status": 200,
+     "chars": 11954,
+     "readable": true
+    },
+    {
+     "url": "https://getknit.dev/mcp-servers/close-crm-mcp-server/",
+     "status": 200,
+     "chars": 23046,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 100.0
+ }
+}

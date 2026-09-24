@@ -1,0 +1,202 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://developer.monday.com/api-reference",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.7
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developer.monday.com/apps/docs/authentication",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developer.monday.com/apps/docs/authentication",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developer.monday.com/apps/docs/oauth",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developer.monday.com/api-reference",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.92
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developer.monday.com/api-reference",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.1
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.monday.com/api-reference",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.monday.com/api-reference",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.45
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.monday.com/api-reference",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.monday.com/api-reference/llms.txt",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.14
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.monday.com/api-reference/docs/webhooks",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.85
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.monday.com/apps/docs/plans-and-pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.monday.com/api-reference",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.89
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.monday.com/api-reference/docs/api-playground",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.78
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://developer.monday.com/apps/docs/mcp-overview",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://developer.monday.com/apps/docs/mcp-overview",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/mondaycom/mcp",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.03
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/mondaycom/mcp",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.18
+  }
+ ],
+ "auth_support": {
+  "bearer_token": true,
+  "oauth2": true,
+  "jwt": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://developer.monday.com/apps/docs/authentication', 'https://developer.monday.com/apps/docs/authentication', 'https://developer.monday.com/apps/docs/mcp-overview', 'https://developer.monday.com/apps/docs/mcp-overview']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://developer.monday.com/apps/docs/oauth', 'https://developer.monday.com/api-reference', 'https://developer.monday.com/api-reference', 'https://developer.monday.com/api-reference', 'https://developer.monday.com/api-reference', 'https://developer.monday.com/api-reference/llms.txt', 'https://developer.monday.com/apps/docs/plans-and-pricing', 'https://github.com/mondaycom/mcp', 'https://github.com/mondaycom/mcp']\n- Non-vendor sources (prefer official docs): ['https://github.com/mondaycom/mcp', 'https://github.com/mondaycom/mcp']",
+ "metrics": {
+  "n_evidence": 18,
+  "alive_rate": 0.7777777777777778,
+  "dead_rate": 0.2222222222222222,
+  "blocked_rate": 0.0,
+  "official_rate": 0.8888888888888888,
+  "readable": 14,
+  "quote_supported_rate": 0.35714285714285715,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

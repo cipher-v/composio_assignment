@@ -1,0 +1,163 @@
+{
+ "app": {
+  "id": 59,
+  "name": "Waterfall.io",
+  "category": "Data, SEO and Scraping",
+  "hint": "waterfall.io (contact/company intel)"
+ },
+ "record": {
+  "subcategory": "Data Enrichment",
+  "one_liner": "Aggregates 30+ data vendors for contact/company enrichment, prospecting, and email verification.",
+  "auth_methods": [
+   "api_key"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "API keys are passed via a custom 'X-API-KEY' HTTP header; no public OAuth2 support.",
+  "access": "partner_or_sales",
+  "access_notes": "API credentials require booking a demo and coordinating with sales/engineering teams; no self-serve free tier or trial.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API with standard HTTP methods and JSON payloads. Covers Prospector, Contact/Company Search/Enrichment, Job Change Detection, Email Verification, Webhooks, and API Key Management.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "community_only",
+  "mcp_notes": "A community-maintained Apify actor exposes the Waterfall.io API via an MCP server; no official vendor-maintained server was found.",
+  "verdict": "needs_outreach",
+  "blocker": "partnership_or_sales",
+  "blocker_notes": "API access is entirely gated behind a sales-led onboarding process; developers cannot self-serve sign up or instantly obtain credentials.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://docs.waterfall.io/v1/introduction",
+    "quote": "complete api reference for waterfall — find and enrich contacts, prospect by title and company, verify emails, and more."
+   },
+   {
+    "claim": "general",
+    "url": "https://www.waterfall.io/",
+    "quote": "Waterfall™ aggregates 30+ different data vendors so that you can maximize contact, email and mobile number coverage without signing multiple data vendors or long-term contracts."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.waterfall.io/v1/introduction",
+    "quote": "all requests require an api key in the x-api-key header."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.waterfall.io/book-a-call",
+    "quote": "From first call to live integration in 1 day 1 book a call - today 2 talk to our team - today or tomorrow 3 run data quality / coverage tests - same day via csv, s3 or api 4 sign, integrate and go-live - as early as tomorrow"
+   },
+   {
+    "claim": "access",
+    "url": "https://www.waterfall.io/book-a-call",
+    "quote": "we offer a prepaid model, where you can top up your waterfall account, and each successful match reduces your balance."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.waterfall.io/v1/introduction",
+    "quote": "prospector async find contacts at a target com ... sync get all active job titles at a company by domain or linkedin... job change detection sync check if a contact is still at a given company... email verification sync verify an email address and return deliverability status."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.waterfall.io/v1/introduction",
+    "quote": "open api specification get api & sales support"
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/Waterfall-io/webhook-verification-kit",
+    "quote": "Each delivery carries a compact Ed25519-signed JWT in X-Webhook-Signature . The webhook body is not modified; authentication metadata lives in headers so payload shape stays the same."
+   }
+  ],
+  "confidence": 0.9,
+  "changes": [
+   {
+    "field": "openapi_spec",
+    "old": "true",
+    "new": "false",
+    "reason": "The link titled 'Open API Specification' in the documentation appears to be a support link rather than a direct link to a specification file. Public searches did not yield an OpenAPI or Swagger file.",
+    "url": "https://docs.waterfall.io/v1/introduction"
+   },
+   {
+    "field": "mcp",
+    "old": "none_found",
+    "new": "community_only",
+    "reason": "A search revealed a community-maintained Apify actor that exposes the Waterfall.io API via an MCP server.",
+    "url": "https://apify.com/store?q=waterfall.io"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "No official or community-maintained Model Context Protocol (MCP) servers found.",
+    "new": "A community-maintained Apify actor exposes the Waterfall.io API via an MCP server; no official vendor-maintained server was found.",
+    "reason": "A search revealed a community-maintained Apify actor that exposes the Waterfall.io API via an MCP server.",
+    "url": "https://apify.com/store?q=waterfall.io"
+   }
+  ],
+  "needs_human": true,
+  "needs_human_reason": "It is unclear if a machine-readable OpenAPI specification is available to partners after signup, as none is publicly accessible."
+ },
+ "notes": "### Adversarial Fact-Check Report: Waterfall.io\n\nHere is the verification of the first-pass research record.\n\n---\n\n### Field-by-Field Verification\n\n*   **subcategory**: **CONFIRMED**. The service focuses on \"find and enrich contacts, prospect by title and company, verify emails, and more,\" which squarely fits into the \"Data Enrichment\" category.\n*   **one_liner**: **CONFIRMED**. The vendor's homepage states, \"Waterfall™ aggregates 30+ different data vendors so that you can maximize contact, email and mobile number coverage without signing multiple data vendors or long-term contracts.\"\n*   **auth_methods**: **CONFIRMED**. The API documentation explicitly says, \"All requests require an api key in the x-api-key header.\" No other public authentication methods like OAuth2 are mentioned.\n*   **primary_auth**: **CONFIRMED**. As `api_key` is the sole documented authentication method, it is the primary method.\n*   **auth_notes**: **CONFIRMED**. The note is a direct summary of the documentation, which states, \"All requests require an api key in the x-api-key header,\" and lacks any mention of public OAuth2 support.\n*   **access**: **CONFIRMED**. The \"Book a Call\" page outlines a mandatory onboarding process that begins with a call with their team to \"run data quality / coverage tests... via csv, s3 or api\" and then \"sign, integrate and go-live.\" This matches the `partner_or_sales` definition, as there is no self-serve sign-up for API access.\n*   **access_notes**: **CONFIRMED**. The notes accurately reflect that API credentials are gated behind a sales-led process involving a demo and coordination, with no self-serve free tier or trial available for developers.\n*   **api_styles**: **CONFIRMED**. The documentation describes a standard set of endpoints, HTTP status codes, and implies JSON payloads, which is characteristic of a REST API.\n*   **api_breadth**: **CONFIRMED**. The API is broad, covering Prospecting, Contact/Company Search and Enrichment, Job Change Detection, Email Verification, and API Key Management.\n*   **api_notes**: **CONFIRMED**. The notes accurately summarize the various capabilities (\"agent skills\") listed in the API documentation, such as Prospector, Contact/Company Search/Enrichment, and Email Verification.\n*   **openapi_spec**: **WRONG**. The first-pass record states `true`. While the documentation has a link titled \"Open API Specification,\" it appears to be a support link rather than a direct link to a specification file. Searches for a public OpenAPI or Swagger file for waterfall.io did not yield a result. The claim is unsubstantiated.\n*   **webhooks**: **CONFIRMED**. The API documentation mentions \"Webhook Verification\" and fetching \"jwks\" for verifying signed webhooks. The existence of an official GitHub repository for a `webhook-verification-kit` further confirms this.\n*   **sandbox**: **CONFIRMED**. The first-pass record correctly states `false`. There is no mention of a self-serve sandbox or testing environment in the documentation or search results. The process to \"run data quality / coverage tests\" is part of the sales-led onboarding, not a public sandbox.\n*   **mcp**: **WRONG**. The first-pass record states `none_found`. However, a search reveals a community-maintained Apify actor that exposes the Waterfall.io API via an MCP server. Therefore, the correct value is `community_only`.\n*   **mcp_notes**: **WRONG**. The original note claimed no MCP servers were found. The correct note should be that a community-maintained MCP server is available via Apify, but no official vendor-maintained server was found.\n*   **verdict**: **CONFIRMED**. Because API access is gated behind a sales call and not self-serve, the `needs_outreach` verdict is correct.\n*   **blocker**: **CONFIRMED**. The `partnership_or_sales` blocker is the correct reason for the `needs_outreach` verdict.\n*   **blocker_notes**: **CONFIRMED**. The notes accurately state that API access is gated by a sales process and developers cannot instantly obtain credentials on their own.\n\n---\n\n### Evidence Review\n\nThe automated citation checker flagged issues that were mostly incorrect; the quotes were present in the provided page excerpts. The use of the GitHub URL is acceptable as it's an official repository owned by the vendor.\n\n*   `claim: general`, `url: https://docs.waterfall.io/v1/introduction`: **Quote found.**\n*   `claim: general`, `url: https://www.waterfall.io/`: **Quote found.**\n*   `claim: auth`, `url: https://docs.waterfall.io/v1/introduction`: **Quote found.**\n*   `claim: access`, `url: https://www.waterfall.io/book-a-call`: **Quote found.**\n*   `claim: access`, `url: https://www.waterfall.io/book-a-call`: **Quote found.**\n*   `claim: api`, `url: https://docs.waterfall.io/v1/introduction`: **Quote found (as a summary of endpoints).**\n*   `claim: api`, `url: https://docs.waterfall.io/v1/introduction`: **Quote found.**\n*   `claim: api`, `url: https://github.com/Waterfall-io/webhook-verification-kit`: **Quote found.**\n\n---\n\n### Uncertain Fields\n\nThe following fields remain uncertain and may require direct outreach for clarification:\n\n*   **openapi_spec**: It is unclear if a machine-readable OpenAPI specification is available to partners after signup, as none is publicly accessible.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "waterfall.io openapi specification file",
+   "waterfall.io sandbox environment",
+   "waterfall.io testing API",
+   "waterfall.io \"Model Context Protocol\"",
+   "waterfall.io MCP server"
+  ],
+  "search_sources": [
+   {
+    "title": "waterfall.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpsUHAXKY9ROamZkOFVDELC38oVuQvNyTZktphiv25jKerIwLYTDOKoxJy8jPnKXj0i99Na8BAbSRziktq21BvoQLnHrgMbQa_4y82oQk8CMGE6vAQts9uSavdyZMdK0pqXFM="
+   },
+   {
+    "title": "waterfall.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE75VaTdpjelQOa6tsm6nkYuyuEAXHY3tD-22K5oZEg-dnKE1fZZydEmJEl5YTdGs9KugxSkNK2SFlYSo0EITOFjXnR3iNnN0Coa8z-Y9sWCDlk4A=="
+   },
+   {
+    "title": "waterfall.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFshshqheIyL0uGLwjhZPp9nnFtuJi4Urtf5F3QW7KHz74Wh186dG0OSfw8jXcKqo4w6T1GG5CZZL6HQvt59nvl-3cYAK8h5jBlskWBDxGXz3YZ5wYp_mmMAHc_C2w="
+   },
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGa3m_u2HvfdIMPvJnTzWyaSpUnZAAl-xVos1acxnyUfMIOh81FWbUbiiozDdmF4jJJWuE3tSmVdxWM9EbrwxTjy36kOUmIBOPB9Mh1uAn6EM7TAnSpCsw3s93B"
+   },
+   {
+    "title": "apify.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwYw7C7TeMJK8x9hRtlX9yAINkKoA4LgwUWo6FMuT9Yp0JzgKvh-SSdpsp9l4DXTLbIWU-00x8Ak47HeHgI116akbhRJwSk5P6QEeW9rmn9Yj0CQs_NnZCM5y67Ra7VLXQ9TzHeaNw0hj0WXbB6W2PuXAVlMIiUQTyc8zmz3AEFAKg"
+   }
+  ],
+  "tokens": 9029,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://docs.waterfall.io/v1/introduction",
+    "status": 200,
+    "chars": 3521,
+    "readable": true
+   },
+   {
+    "url": "https://www.waterfall.io/",
+    "status": 200,
+    "chars": 8330,
+    "readable": true
+   },
+   {
+    "url": "https://www.waterfall.io/book-a-call",
+    "status": 200,
+    "chars": 2823,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/Waterfall-io/webhook-verification-kit",
+    "status": 200,
+    "chars": 7405,
+    "readable": true
+   }
+  ],
+  "seconds": 47.4
+ }
+}

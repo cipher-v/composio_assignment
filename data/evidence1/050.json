@@ -1,0 +1,190 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://commas.com/fanbasis-is-now-commas",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.09
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://commas.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.61
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://commasdocs.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://commasdocs.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://commasdocs.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://commasdocs.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://commasdocs.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://commasdocs.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://commasdocs.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://commasdocs.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://commas.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.65
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://commasdocs.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://commasdocs.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://zapier.com/mcp",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://commasdocs.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://commasdocs.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://commasdocs.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "api_key": false
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://commas.com/fanbasis-is-now-commas', 'https://zapier.com/mcp']\n- Non-vendor sources (prefer official docs): ['https://commas.com/fanbasis-is-now-commas', 'https://commas.com/', 'https://commasdocs.com/', 'https://commasdocs.com/', 'https://commasdocs.com/', 'https://commasdocs.com/', 'https://commasdocs.com/', 'https://commasdocs.com/', 'https://commasdocs.com/', 'https://commasdocs.com/', 'https://commas.com/', 'https://commasdocs.com/', 'https://commasdocs.com/', 'https://zapier.com/mcp', 'https://commasdocs.com/', 'https://commasdocs.com/', 'https://commasdocs.com/']\n- Auth methods not mentioned on any cited page: ['api_key']",
+ "metrics": {
+  "n_evidence": 17,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.0,
+  "readable": 4,
+  "quote_supported_rate": 0.5,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

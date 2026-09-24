@@ -1,0 +1,173 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.postman.com",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.27
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.06
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://apis.io",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.mystrika.com",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.02
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://apitracker.io",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.postman.com",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.twilio.com/docs/sendgrid/api-reference",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.73
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.twilio.com/docs/sendgrid/api-reference",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://www.usecarly.com",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://www.usecarly.com",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://www.mystrika.com",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.02
+  }
+ ],
+ "auth_support": {
+  "bearer_token": true,
+  "basic": true
+ },
+ "lint": [
+  "primary_auth not in auth_methods"
+ ],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://www.postman.com', 'https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication', 'https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication', 'https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication', 'https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication', 'https://apis.io', 'https://www.mystrika.com', 'https://apitracker.io', 'https://www.postman.com', 'https://github.com', 'https://www.twilio.com/docs/sendgrid/api-reference', 'https://www.usecarly.com', 'https://www.usecarly.com', 'https://www.mystrika.com']\n- Non-vendor sources (prefer official docs): ['https://www.postman.com', 'https://apis.io', 'https://www.mystrika.com', 'https://apitracker.io', 'https://www.postman.com', 'https://github.com', 'https://www.usecarly.com', 'https://www.usecarly.com', 'https://www.mystrika.com']\n- Consistency: primary_auth not in auth_methods",
+ "metrics": {
+  "n_evidence": 15,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.4,
+  "readable": 15,
+  "quote_supported_rate": 0.06666666666666667,
+  "lint_issues": 1,
+  "flag_count": 3
+ }
+}

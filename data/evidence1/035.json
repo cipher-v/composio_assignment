@@ -1,0 +1,161 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://mailchimp.com/developer/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://mailchimp.com/developer/marketing/guides/quick-start/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.69
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://mailchimp.com/developer/marketing/guides/quick-start/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://mailchimp.com/developer/marketing/guides/quick-start/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.88
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.stitchflow.com/user-management/mailchimp/api",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.5
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://mailchimp.com/developer/marketing/guides/quick-start/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.83
+  },
+  {
+   "blocked": true,
+   "claim": "access",
+   "url": "https://lovable.dev",
+   "status": 403,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://mailchimp.com/developer/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://mailchimp.com/developer/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://mailchimp.com/developer/marketing/api/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.67
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://mailchimp.com/developer/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://apitracker.io",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://apitracker.io",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://apify.com",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  }
+ ],
+ "auth_support": {
+  "api_key": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Bot-walled / login pages our crawler could not read (verify via search): ['https://lovable.dev']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://mailchimp.com/developer/', 'https://mailchimp.com/developer/', 'https://mailchimp.com/developer/', 'https://apitracker.io', 'https://apitracker.io', 'https://apify.com']\n- Non-vendor sources (prefer official docs): ['https://www.stitchflow.com/user-management/mailchimp/api', 'https://apitracker.io', 'https://apitracker.io', 'https://apify.com']",
+ "metrics": {
+  "n_evidence": 14,
+  "alive_rate": 0.9285714285714286,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.07142857142857142,
+  "official_rate": 0.6428571428571429,
+  "readable": 13,
+  "quote_supported_rate": 0.5384615384615384,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

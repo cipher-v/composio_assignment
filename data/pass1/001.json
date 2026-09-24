@@ -1,0 +1,189 @@
+{
+ "app": {
+  "id": 1,
+  "name": "Salesforce",
+  "category": "CRM and Sales",
+  "hint": "salesforce.com"
+ },
+ "record": {
+  "subcategory": "Customer Relationship Management (CRM)",
+  "one_liner": "A cloud-based CRM platform providing a centralized source of customer data across sales, marketing, service, and commerce teams.",
+  "auth_methods": [
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 Authorization Code Flow (Web Server Flow) using External Client Apps (ECAs) or legacy Connected Apps.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can sign up for a free, lifetime Salesforce Developer Edition account. Production use requires paid plans starting from Enterprise Edition ($175/user/month) or Pro Suite with an API surcharge.",
+  "api_styles": [
+   "rest",
+   "graphql",
+   "soap",
+   "grpc"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extremely comprehensive APIs including sObjects REST API, Connect REST API, Bulk API v2, GraphQL, SOAP, and Pub/Sub API (gRPC). Features dynamic OpenAPI 3.0 spec generation.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Salesforce Hosted MCP Servers (https://mcp.salesforce.com/sse) are cloud-hosted and GA as of April 2026. The Salesforce DX MCP Server is a local developer tool available on GitHub.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "No blockers. Free developer accounts provide full API access and OAuth 2.0 support, alongside official hosted MCP servers.",
+  "evidence": [
+   {
+    "claim": "auth",
+    "url": "https://developer.salesforce.com/",
+    "quote": "For a client application to access REST API resources, it must be authorized as a safe visitor. To implement this authorization, use either an external client app or a connected app and an OAuth 2.0 authorization flow. Creating connected apps is restricted as of Spring '26. You can continue to use existing connected apps during and after Spring '26. However, we recommend using external client apps instead."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.salesforce.com/signup",
+    "quote": "Go to the Salesforce Developer website and click the “Sign Up” button, which will redirect you to https://developer.salesforce.com/signup. Fill out the form to get a FREE Developer account. Is Salesforce Developer Org Free? Yes, the Salesforce Developer Org is free of cost. It will give you a lifetime free developer account."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.salesforce.com/",
+    "quote": "You can generate an OpenAPI document for sObjects REST API using this opt-in beta feature. The OpenAPI document represents sObject REST API resources that reflect your customizations and configurations... The OpenAPI document adheres to Version 3.0 of the OpenAPI Specification."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/salesforcecli/mcp",
+    "quote": "Overview of the Salesforce DX MCP Server. The Salesforce DX MCP Server is a specialized Model Context Protocol (MCP) implementation designed to facilitate seamless interaction between large language models (LLMs) and Salesforce orgs."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### 1. Product Overview\nSalesforce is a cloud-based Customer Relationship Management (CRM) platform that provides a centralized source of customer data across multiple business teams, including sales, marketing, customer service, and commerce.\n* **Source:** `https://medium.com/` (via search results)\n* **Verbatim Quote:** `\"Salesforce is a cloud-based Customer Relationship Management (CRM) platform which businesses use to connect with their customers and have a centralized source of customer data that can be used across multiple teams that manage different aspects of the customer needs.\"`\n\n### 2. Authentication Methods & Multi-Tenant Integration\nSalesforce relies strictly on the OAuth 2.0 protocol for its modern public APIs, supporting multiple authorization flows (e.g., Authorization Code / Web Server Flow, Client Credentials Flow, JWT Bearer Flow, and User-Agent Flow). It does not support static API keys or basic authentication for standard REST APIs.\n\nFor a multi-tenant integration platform (like Composio), the **OAuth 2.0 Authorization Code Flow** (Web Server Flow) is the primary choice because it allows customer administrators to securely grant consent. Furthermore, Salesforce has introduced **External Client Apps (ECAs)** as the modern, packageable replacement for legacy Connected Apps.\n* **Primary Auth:** `oauth2`\n* **Source:** `https://developer.salesforce.com/` (REST API Developer Guide)\n* **Verbatim Quote:** `\"For a client application to access REST API resources, it must be authorized as a safe visitor. To implement this authorization, use either an external client app or a connected app and an OAuth 2.0 authorization flow. Creating connected apps is restricted as of Spring '26. You can continue to use existing connected apps during and after Spring '26. However, we recommend using external client apps instead.\"`\n* **Source:** `https://airbyte.com/` (via search results)\n* **Verbatim Quote:** `\"Authorization Code is the standard choice for multi-tenant SaaS products when customer admins must grant consent. Based on the Salesforce material cited here, new Salesforce integrations should generally build on External Client Apps (ECAs), while existing Connected Apps continue to work.\"`\n\n### 3. Developer Credentials Acquisition & Cost\n* **Access Level:** `self_serve_free`\n* **How to get credentials:** Any developer can sign up for a free, non-expiring \"Salesforce Developer Edition\" account (Developer Org) by filling out a basic registration form. This provides immediate access to all developer tools and full API capabilities for testing and building integrations.\n* **Cost / Paid Plans:** While the developer environment is free, production use requires a paid subscription that includes or supports API access. The Web Services API is bundled natively in the **Enterprise Edition** ($175/user/month), **Unlimited Edition** ($350/user/month), and **Agentforce 1 Sales** ($550/user/month). For the **Pro Suite** ($100/user/month), the API can be added as a surcharge. Lower tiers like the **Starter Suite** ($25/user/month) do not include API access.\n* **Source:** `https://developer.salesforce.com/signup` (via search results)\n* **Verbatim Quote:** `\"Go to the Salesforce Developer website and click the “Sign Up” button, which will redirect you to https://developer.salesforce.com/signup. Fill out the form to get a FREE Developer account. Is Salesforce Developer Org Free? Yes, the Salesforce Developer Org is free of cost. It will give you a lifetime free developer account.\"`\n* **Source:** `https://reddit.com/` (via search results)\n* **Verbatim Quote:** `\"It offers 5000 API calls every 24 hours... You cannot use this developer account for commercial purposes.\"`\n* **Source:** `https://apis.io/` (via search results)\n* **Verbatim Quote:** `\"Enterprise... $175 USD/User/Month, billed annually. This is the lowest edition where the web services API is bundled.\"`\n* **Source:** `https://appstackinsider.com/` (via search results)\n* **Verbatim Quote:** `\"Web Services API is included from Enterprise upward, but on Pro Suite it costs an additional $25 USD per user, per month — a 25% surcharge on that edition's seat price for API access.\"`\n\n### 4. API Technical Details (Style, Breadth, OpenAPI, Webhooks, Sandbox)\n* **API Style:** Salesforce supports multiple API styles, including REST (sObjects REST API, Connect REST API, Bulk API v2), GraphQL, SOAP, and gRPC/HTTP/2 (Pub/Sub API).\n* **Breadth:** Extremely comprehensive, allowing full CRUD operations, metadata manipulation, user management, and execution of custom Apex code.\n* **OpenAPI Spec:** Salesforce features an opt-in capability to dynamically generate an OpenAPI 3.0 specification that reflects the unique custom objects and configurations of a specific organization.\n* **Webhooks & Event Streaming:** Real-time event-driven integrations are handled via the **Pub/Sub API**, which uses gRPC and Apache Avro format to stream platform events and Change Data Capture (CDC) events.\n* **Sandbox:** Paid editions include access to Sandboxes (Developer, Developer Pro, Partial, Full) and Scratch Orgs via Salesforce DX for isolated testing.\n* **Source:** `https://developer.salesforce.com/` (Pub/Sub API Guide)\n* **Verbatim Quote:** `\"With Pub/Sub API, you can write event-driven apps that integrate with Salesforce through real-time event messages, including platform events, change data capture events, and real-time event monitoring events. Based on gRPC and HTTP/2, Pub/Sub API efficiently publishes and delivers binary event messages in the Apache Avro format.\"`\n* **Source:** `https://developer.salesforce.com/` (OpenAPI Spec Generation Guide)\n* **Verbatim Quote:** `\"You can generate an OpenAPI document for sObjects REST API using this opt-in beta feature. The OpenAPI document represents sObject REST API resources that reflect your customizations and configurations... The OpenAPI document adheres to Version 3.0 of the OpenAPI Specification.\"`\n\n### 5. Model Context Protocol (MCP) Servers\n* **MCP Status:** `official`\n* **Details:** Salesforce provides multiple official MCP servers:\n  1. **Salesforce Hosted MCP Servers** (GA as of April 2026): A cloud-hosted, vendor-managed endpoint (`https://mcp.salesforce.com/sse`) that securely exposes core CRM data, flows, Apex actions, and queries via OAuth to any MCP client. It is available in Enterprise Edition and above, as well as Developer Edition orgs.\n  2. **Salesforce DX MCP Server** (Beta): A local, CLI-based MCP server distributed as the `@salesforce/mcp` npm package (hosted at `salesforcecli/mcp` on GitHub) designed for developers to manage metadata, run Apex tests, and execute Salesforce DX commands.\n  3. **Marketing Cloud Engagement MCP Server** (GA as of June 2026): A dedicated server for managing journeys, data extensions, and automations.\n* **Community Servers:** Third-party community servers also exist, such as `salesforcediariesbysanket-salesforce-docs-mcp` on LobeHub, which provides full-text search across developer documentation.\n* **Source:** `https://growthmethod.com/` (via search results)\n* **Verbatim Quote:** `\"Salesforce Hosted MCP Servers reached general availability in April 2026, exposing core CRM data and logic to any MCP-compatible client such as Claude or ChatGPT. A hosted MCP server is a Salesforce-managed endpoint that exposes your org's data, flows, Apex actions and queries to any MCP-compatible client... Separately, the Salesforce DX MCP Server (Beta) is a local, developer-only tool for Salesforce CLI projects\"`\n* **Source:** `https://github.com/salesforcecli/mcp`\n* **Verbatim Quote:** `\"Overview of the Salesforce DX MCP Server. The Salesforce DX MCP Server is a specialized Model Context Protocol (MCP) implementation designed to facilitate seamless interaction between large language models (LLMs) and Salesforce orgs.\"`\n* **Source:** `https://lobehub.com/mcp/salesforcediariesbysanket-salesforce-docs-mcp`\n* **Verbatim Quote:** `\"salesforce documentation mcp server... mcp server for salesforce developer documentation - local-first full-text search across 360 pdf documents.\"`\n\n### 6. Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. Salesforce provides a completely free, non-expiring Developer Edition with full API access and OAuth 2.0 support. Extensive documentation, REST/GraphQL APIs, and even official Hosted MCP servers are available. There are no blockers preventing Composio from shipping an agent toolkit today.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"000385207\" salesforce help",
+   "\"000385436\" salesforce help",
+   "salesforce developer edition free account cost",
+   "salesforce api access pricing plans",
+   "\"000385436\" salesforce",
+   "salesforce rest api documentation oauth methods",
+   "salesforce webhooks pub/sub api event driven",
+   "salesforce openapi spec download",
+   "",
+   "\"salesforcecli/mcp\"",
+   "\"External Client Apps\" salesforce oauth multi-tenant",
+   "salesforce api authentication methods oauth2"
+  ],
+  "search_sources": [
+   {
+    "title": "aptclouds.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1J9pjpWKyULTydxPkdG6leF0SDsaJA5He_g8jvdRFvn2tkWkJ9B31HRmCy0ZuI-YJwE3ggR7tMEyfizRlnCYC5JeJM7F8eVRfvXW4AZyRVkxs66s6FmoEYZLAORd_FmqjaN4ecrRI4Xl-t-UMqLOSdzWV4PjiKS7xq_ZEEnMjIkLmayOsSnsJstnbFvJN1Jio-TyJtAP_swtjtZvVkuiHeQrqrQ=="
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERQ_lUgCHR1B6ryxjIJO6emrw3ZMOvYYHJawtfSajfCYNGHN86wC74QPjQYLC2DoHVkdmvGqbOlSYAjaCHY9o6lUaJ6AUsw7W7gW2DMQG-bonaNcKfMwlDyffI-2a0LCbrn9nZu3q73RR7MX1ek-q3c7_WmuvMeK6p_7Mm3PI0tn-EL60jdf_DDS6L5WSd5-D8TyEyYxco_li_mIXy46D-0_I="
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFaop0OsLT3E-rKRzbN00Zyi3DDa06QtDqjcLZOMEHN9ENWlJkr4_brAtgjdtKhVfPR6E1VOJhL_Jn-ptC0CP6eIanPecLM7N0I7Xm_BQa-dMgH9r7OgLZ0NrXQvrGVljF-xMuAMlcs9o-5jnc1BPvxZXtaHz3etFxFO29YfmeBZQVk8AqeZ508vS8bZFIeq0jGRreBaYWVkMBGnFjrX2Pnz5PxbuMCXP5cpvA="
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEk3TsjcFUnf8Ferb0jERKKoaLSUOwV0mKlIqUQvMX74Iu3ehGXxslmT9_zCm7hGdQd46a1CP5y0PmUmBjBLVyAbXQj047gnuo1T1XVeHTsNV71QwSA0LvPMdwKeQPJUpS3eg3B7RVGMtMtB7TK-prjmoXZE9twyvOjvz1NShvt6z0B-cjFW2cwFsh4jNKLcOnEcA_a8N6x6-Pg898="
+   },
+   {
+    "title": "airbyte.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0BbgpCKbL-sbWB02dRecbfmwIWSuFJbg2q5SwQtfFF1caayuMap2XDbS5WmaK_XKH6rS1Tz-mS5qyXHjjaNqQKicCIbohSNab0v6dCoJuZLSKgcEhcWFimi1gBeSkGSFpdutSnylZfk558PDGABvct3G2bx8Y052Es1F2rtQ="
+   },
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyQvfjutbjB99bis51jzhjj3Gry46Ow8qcSEer05aLBtuUeXYABLmm1kqMy90ORVrqxHJZWmjI9S-bGU3a3HIMf0Aj62-mB56DZHAEB6-92yrZYR_aM1u8POYJ3WKNH8lJoR6p_hCwxb6ydGgt7Y4D"
+   },
+   {
+    "title": "postman.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGq-RpbuwRpRB_Y4yZgmm6FCG0qwsJ_os1QzW6TaLzpMrqvy_uliRAjMJXJZlGSYKhnWY4QZbbSZQkEPmmg6EGB0dNdixnGO1l7muvXjhN7iPS49sIQrR3qnRNqlfzG0K-2SXHI-5of86NUnwOlqZjwMoIr9-v8vEiS_midLjEM5zMhzefRYr-NLgvZulrcTAoj6zunQZFuxNsyHFLNFnsrfw=="
+   }
+  ],
+  "tokens": 11276,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "Salesforce developer documentation authentication OAuth API keys",
+    "Salesforce developer getting started quickstart",
+    "Salesforce pricing API access developer program",
+    "Salesforce API reference index",
+    "Salesforce MCP server official community",
+    "Salesforce editions pricing API access official page",
+    "Salesforce developer documentation API reference index official URL",
+    "Salesforce official MCP server documentation URL",
+    "Salesforce partner program developer program page URL"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://help.salesforce.com/s/articleView?language=en_US&id=000385207&type=1",
+    "https://partners.salesforce.com/",
+    "https://trailhead.salesforce.com/content/learn/trails/force_com_dev_beginner",
+    "https://help.salesforce.com/s/articleView?id=000385436&language=en_US&type=1",
+    "https://github.com/salesforcecli/mcp",
+    "https://lobehub.com/mcp/salesforcediariesbysanket-salesforce-docs-mcp"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_understanding_authentication.htm",
+     "status": 403
+    },
+    {
+     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/quickstart.htm",
+     "status": 403
+    },
+    {
+     "url": "https://developer.salesforce.com/docs/apis",
+     "status": 403
+    },
+    {
+     "url": "https://developer.salesforce.com/docs/atlas.en-us.mcp_dev_guide.meta/mcp_dev_guide/mcp_standard_servers.htm",
+     "status": 403
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://help.salesforce.com/s/articleView?language=en_US&id=000385207&type=1",
+     "status": 200,
+     "chars": 63,
+     "readable": false
+    },
+    {
+     "url": "https://partners.salesforce.com/",
+     "status": 200,
+     "chars": 1,
+     "readable": false
+    },
+    {
+     "url": "https://trailhead.salesforce.com/content/learn/trails/force_com_dev_beginner",
+     "status": 200,
+     "chars": 5189,
+     "readable": true
+    },
+    {
+     "url": "https://help.salesforce.com/s/articleView?id=000385436&language=en_US&type=1",
+     "status": 200,
+     "chars": 63,
+     "readable": false
+    },
+    {
+     "url": "https://github.com/salesforcecli/mcp",
+     "status": 200,
+     "chars": 28978,
+     "readable": true
+    },
+    {
+     "url": "https://lobehub.com/mcp/salesforcediariesbysanket-salesforce-docs-mcp",
+     "status": 200,
+     "chars": 9916,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 67.4
+ }
+}

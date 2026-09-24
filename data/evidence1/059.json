@@ -1,0 +1,100 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://docs.waterfall.io/v1/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.33
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.waterfall.io/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.74
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.waterfall.io/v1/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.waterfall.io/book-a-call",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.52
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.waterfall.io/book-a-call",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.65
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.waterfall.io/v1/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.79
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.waterfall.io/v1/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.5
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/Waterfall-io/webhook-verification-kit",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.77
+  }
+ ],
+ "auth_support": {
+  "api_key": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://docs.waterfall.io/v1/introduction']\n- Non-vendor sources (prefer official docs): ['https://github.com/Waterfall-io/webhook-verification-kit']",
+ "metrics": {
+  "n_evidence": 8,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.875,
+  "readable": 8,
+  "quote_supported_rate": 0.875,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

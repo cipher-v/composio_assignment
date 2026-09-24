@@ -1,0 +1,112 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://developer.xero.com/documentation/getting-started-guide/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developer.xero.com/documentation/oauth2",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developer.xero.com/documentation/oauth2/auth-code-flow",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developer.xero.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developer.xero.com/documentation/guides/oauth2/limits/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.xero.com/documentation/tools/openapi-specifications/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.xero.com/documentation/guides/webhooks/overview/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.xero.com/documentation/api/accounting/overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.xero.com/documentation/getting-started-guide/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "oauth2": true
+ },
+ "lint": [
+  "mcp=community_only claimed without mcp evidence"
+ ],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://developer.xero.com/pricing']\n- Consistency: mcp=community_only claimed without mcp evidence",
+ "metrics": {
+  "n_evidence": 9,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 1.0,
+  "readable": 1,
+  "quote_supported_rate": 0.0,
+  "lint_issues": 1,
+  "flag_count": 2
+ }
+}

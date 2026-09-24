@@ -1,0 +1,261 @@
+{
+ "app": {
+  "id": 28,
+  "name": "WhatsApp Business",
+  "category": "Communications and Messaging",
+  "hint": "developers.facebook.com/docs/whatsapp"
+ },
+ "record": {
+  "subcategory": "Messaging",
+  "one_liner": "The WhatsApp Business Platform (Cloud API) allows businesses to communicate with customers at scale using the WhatsApp network.",
+  "auth_methods": [
+   "bearer_token",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Direct API requests use a Bearer token; a temporary token is provided for testing, while permanent tokens must be generated for a 'System User' for production use. For multi-tenant platforms, the 'Embedded Signup' flow provides a standard OAuth 2.0 interface for clients to authorize the platform to manage their WhatsApp assets.",
+  "access": "approval_required",
+  "access_notes": "A developer can immediately start building in a free sandbox with a test phone number and temporary access token. Production use with a business's own phone number requires completing Meta Business Verification, an approval process that involves submitting legal business documents and can take from minutes up to several days.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive RESTful API covering messaging (template and free-form), message template management, media uploads, phone number registration, webhooks for real-time notifications, and business profile updates.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Meta provides an official 'WhatsApp Business Tools MCP server' that allows AI agents and IDE assistants to manage WhatsApp Business assets. It authenticates using OAuth with a Meta developer account. Community-built MCP servers also exist.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "While a full-featured sandbox is available for immediate development, using the API in a production capacity requires the business to undergo Meta Business Verification, which is an approval process that gates full access.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started",
+    "quote": "This guide helps developers quickly get started with the WhatsApp Cloud API. It covers the basic setup steps, including registering as a developer, creating a Meta app, sending your first message, and setting up a test webhook endpoint."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started",
+    "quote": "For any request to the API, you must set the Authorization header to Bearer <YOUR ACCESS TOKEN>."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.facebook.com/docs/whatsapp/embedded-signup",
+    "quote": "Embedded Signup is an authentication and authorization interface that is compatible with desktop and mobile. Your business customers use it to generate the assets you need to onboard them to the WhatsApp Business Platform."
+   },
+   {
+    "claim": "access",
+    "url": "https://wati.io/help-center/meta-business-verification-a-step-by-step-guide/",
+    "quote": "Meta Business Verification helps confirm that your business is legitimate and authorized to use certain Meta business features...Verification may take anywhere from 10 minutes to 14 working days."
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/facebook/openapi",
+    "quote": "This repository contains OpenAPI specifications for Meta APIs. It's intended to formally describe a product area's complete specification and is designed to be used to generate SDKs by Meta and others who wish to monitor and integrate Meta APIs into other tools."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://developers.facebook.com/docs/whatsapp/mcp/mcp-for-whatsapp",
+    "quote": "For developers building on the WhatsApp Business Platform (Cloud API) — the WhatsApp Business Tools MCP server lets your AI agent and IDE assistant manage and debug your WhatsApp Business integration from one place."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started",
+    "quote": "After creating your app with the WhatsApp use case you are redirected to the Customize use case > Connect on WhatsApp > Quickstart page in the dashboard."
+   }
+  ],
+  "confidence": 5.0,
+  "changes": [
+   {
+    "field": "access",
+    "old": "approval_required",
+    "new": "approval_required",
+    "reason": "The checker initially marked this as WRONG and suggested 'ready_with_friction', but the definition of 'approval_required' (account is free, but vendor must approve before credentials work on other customers' accounts) aligns perfectly with the need for Meta Business Verification for production use. The first-pass value was correct.",
+    "url": "https://wati.io/help-center/meta-business-verification-a-step-by-step-guide/"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "Meta hosts an official remote MCP server at https://mcp.facebook.com/whatsapp_business_tools.",
+    "new": "Meta provides an official 'WhatsApp Business Tools MCP server' that allows AI agents and IDE assistants to manage WhatsApp Business assets. It authenticates using OAuth with a Meta developer account. Community-built MCP servers also exist.",
+    "reason": "The URL provided in the first pass was incorrect, and the notes needed to be updated to reflect the purpose and authentication method of the official MCP server, as well as mention community options.",
+    "url": "https://developers.facebook.com/docs/whatsapp/mcp/mcp-for-whatsapp"
+   },
+   {
+    "field": "verdict",
+    "old": "ready_now",
+    "new": "ready_with_friction",
+    "reason": "The 'ready_now' verdict was inconsistent with the 'approval_required' access model. Because Meta Business Verification is required for production use, there is a clear friction point that prevents immediate, fully self-serve deployment.",
+    "url": "https://wati.io/help-center/meta-business-verification-a-step-by-step-guide/"
+   },
+   {
+    "field": "blocker",
+    "old": "none",
+    "new": "app_review_or_approval",
+    "reason": "The original blocker 'none' was incorrect given the requirement for Meta Business Verification for production use. The correct blocker is 'app_review_or_approval' as this is an approval process.",
+    "url": "https://wati.io/help-center/meta-business-verification-a-step-by-step-guide/"
+   },
+   {
+    "field": "blocker_notes",
+    "old": "None. The platform provides a free sandbox and a well-documented REST API. For multi-tenant use, the 'Embedded Signup' flow is the standard, though it requires the platform to be a verified Meta Business.",
+    "new": "While a full-featured sandbox is available for immediate development, using the API in a production capacity requires the business to undergo Meta Business Verification, which is an approval process that gates full access.",
+    "reason": "The original notes were contradictory with the 'approval_required' access. The corrected notes clarify that while a sandbox is instantly available, production access is gated by Meta Business Verification, which is a required approval step.",
+    "url": "https://wati.io/help-center/meta-business-verification-a-step-by-step-guide/"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "Here is the corrected record for \"WhatsApp Business\" after fact-checking each field.\n\n### Verification Notes\n\n*   **subcategory**: **CONFIRMED**. \"Messaging\" is the correct subcategory.\n*   **one_liner**: **CONFIRMED**. The one-liner is an accurate summary. The Cloud API enables businesses to programmatically communicate with customers on WhatsApp.\n*   **auth_methods**: **WRONG**. The correct methods are `bearer_token` and `oauth2`. The first-pass was correct, but the automated checker was wrong to flag it. Direct API calls use a Bearer token (either a temporary test token or a permanent System User token). The \"Embedded Signup\" flow, designed for multi-tenant platforms to onboard their customers, is an OAuth 2.0 flow.\n*   **primary_auth**: **CONFIRMED**. For a multi-tenant platform, `oauth2` via the \"Embedded Signup\" flow is the correct primary authentication method, as it allows a platform to get permission to manage a client's WhatsApp Business Account.\n*   **auth_notes**: **CONFIRMED**. The notes are accurate. Direct API calls use a Bearer token. There are temporary tokens for testing that expire in about 24 hours and permanent tokens generated for a \"System User\" for production use. The \"Embedded Signup\" is an OAuth flow for platforms to onboard their clients.\n*   **access**: **WRONG**. The correct value is `ready_with_friction`. While a developer can get started immediately with a test number in a sandbox environment, using the API in production with a real business phone number requires several approval and verification steps. Specifically, the business itself must undergo Meta Business Verification, which can take from minutes to several days and requires submitting legal business documents. This constitutes a friction point beyond simple self-serve signup.\n*   **access_notes**: **CONFIRMED**. The notes are accurate. A developer gets a free sandbox with a test number and a temporary access token immediately upon creating an app. Production use requires connecting a real phone number and undergoing Meta Business Verification by providing documents to prove the business is legitimate. Compliance with WhatsApp's Commerce Policy is also required.\n*   **api_styles**: **CONFIRMED**. The API is a standard `rest` API.\n*   **api_breadth**: **CONFIRMED**. The API is `broad`, covering messaging, template management, media, phone number management, webhooks, and more.\n*   **api_notes**: **CONFIRMED**. The description is accurate. The API is a comprehensive RESTful service for a wide range of business communication functions.\n*   **openapi_spec**: **CONFIRMED**. Meta maintains an official GitHub repository containing OpenAPI specifications for its APIs, including the WhatsApp Business API.\n*   **webhooks**: **CONFIRMED**. Webhooks are a fundamental part of the API and are required for receiving inbound messages and status updates.\n*   **sandbox**: **CONFIRMED**. Meta provides a free sandbox environment upon app creation, which includes a test phone number, a temporary access token, and the ability to send messages to a limited number of recipient numbers for testing purposes.\n*   **mcp**: **WRONG**. The correct value is `official`. The original record was correct. Meta now provides an official \"WhatsApp Business Tools MCP server\" that allows AI agents and IDEs to interact with the WhatsApp Business Platform. There are also community-built MCP servers.\n*   **mcp_notes**: **WRONG**. While an official MCP server exists, the URL provided in the first pass is incorrect. The server is a remote endpoint that authenticates via OAuth with a Meta developer account. It is designed to let AI agents like Claude or IDE assistants manage WhatsApp assets programmatically.\n*   **verdict**: **WRONG**. The correct verdict is `ready_with_friction`. The `ready_now` verdict was inconsistent with the `approval_required` access model. Because Meta Business Verification is required for production use, there is a clear friction point that prevents immediate, fully self-serve deployment.\n*   **blocker**: **WRONG**. The correct blocker is `approval_required`. This reflects the need to complete the Meta Business Verification process before the API can be used for production purposes with a business's own phone number.\n*   **blocker_notes**: **WRONG**. The original notes were contradictory. The corrected notes should clarify that while a sandbox is instantly available, production access is gated by Meta Business Verification, which is a required approval step.\n\n### Corrected Record\n\n```json\n{\n \"subcategory\": \"Messaging\",\n \"one_liner\": \"The WhatsApp Business Platform (Cloud API) allows businesses to communicate with customers at scale using the WhatsApp network.\",\n \"auth_methods\": [\n  \"bearer_token\",\n  \"oauth2\"\n ],\n \"primary_auth\": \"oauth2\",\n \"auth_notes\": \"Direct API requests use a Bearer token; a temporary token is provided for testing, while permanent tokens must be generated for a 'System User' for production use. [4, 20, 33] For multi-tenant platforms, the 'Embedded Signup' flow provides a standard OAuth 2.0 interface for clients to authorize the platform to manage their WhatsApp assets. [27, 32, 35]\",\n \"access\": \"ready_with_friction\",\n \"access_notes\": \"A developer can immediately start building in a free sandbox with a test phone number and temporary access token. [4, 20] Production use with a business's own phone number requires completing Meta Business Verification, an approval process that involves submitting legal business documents and can take from minutes up to several days. [2, 6, 24]\",\n \"api_styles\": [\n  \"rest\"\n ],\n \"api_breadth\": \"broad\",\n \"api_notes\": \"Comprehensive RESTful API covering messaging (template and free-form), message template management, media uploads, phone number registration, webhooks for real-time notifications, and business profile updates. [20, 22]\",\n \"openapi_spec\": true,\n \"webhooks\": true,\n \"sandbox\": true,\n \"mcp\": \"official\",\n \"mcp_notes\": \"Meta provides an official 'WhatsApp Business Tools MCP server' that allows AI agents and IDE assistants to manage WhatsApp Business assets. [12, 15] It authenticates using OAuth with a Meta developer account. [12] Community-built MCP servers also exist. [9, 23]\",\n \"verdict\": \"ready_with_friction\",\n \"blocker\": \"approval_required\",\n \"blocker_notes\": \"While a full-featured sandbox is available for immediate development, using the API in a production capacity requires the business to undergo Meta Business Verification, which is an approval process that gates full access.\",\n \"evidence\": [\n  {\n   \"claim\": \"general\",\n   \"url\": \"https://developers.facebook.com/docs/whatsapp/cloud-api/get-started\",\n   \"quote\": \"This guide helps developers quickly get started with the WhatsApp Cloud API. It covers the basic setup steps, including registering as a developer, creating a Meta app, sending your first message, and setting up a test webhook endpoint.\"\n  },\n  {\n   \"claim\": \"auth\",\n   \"url\": \"https://developers.facebook.com/docs/whatsapp/cloud-api/get-started\",\n   \"quote\": \"For any request to the API, you must set the Authorization header to Bearer <YOUR ACCESS TOKEN>.\"\n  },\n  {\n   \"claim\": \"auth\",\n   \"url\": \"https://developers.facebook.com/docs/whatsapp/embedded-signup\",\n   \"quote\": \"Embedded Signup is an authentication and authorization interface that is compatible with desktop and mobile. Your business customers use it to generate the assets you need to onboard them to the WhatsApp Business Platform.\"\n  },\n  {\n   \"claim\": \"access\",\n   \"url\": \"https://wati.io/help-center/meta-business-verification-a-step-by-step-guide/\",\n   \"quote\": \"Meta Business Verification helps confirm that your business is legitimate and authorized to use certain Meta business features...Verification may take anywhere from 10 minutes to 14 working days.\"\n  },\n  {\n   \"claim\": \"api\",\n   \"url\": \"https://github.com/facebook/openapi\",\n   \"quote\": \"This repository contains OpenAPI specifications for Meta APIs. It's intended to formally describe a product area's complete specification and is designed to be used to generate SDKs by Meta and others who wish to monitor and integrate Meta APIs into other tools.\"\n  },\n  {\n   \"claim\": \"mcp\",\n   \"url\": \"https://developers.facebook.com/docs/whatsapp/mcp/mcp-for-whatsapp\",\n   \"quote\": \"For developers building on the WhatsApp Business Platform (Cloud API) — the WhatsApp Business Tools MCP server lets your AI agent and IDE assistant manage and debug your WhatsApp Business integration from one place.\"\n  },\n  {\n   \"claim\": \"verdict\",\n   \"url\": \"https://developers.facebook.com/docs/whatsapp/cloud-api/get-started\",\n   \"quote\": \"After creating your app with the WhatsApp use case you are redirected to the Customize use case > Connect on WhatsApp > Quickstart page in the dashboard.\"\n  }\n ],\n \"confidence\": 5.0\n}\n```",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "getting started with whatsapp business cloud api",
+   "whatsapp business cloud api authentication",
+   "whatsapp business cloud api access token types",
+   "whatsapp business platform embedded signup for multi-tenant",
+   "whatsapp business cloud api pricing model",
+   "whatsapp business api meta business verification process",
+   "meta openapi specification for whatsapp",
+   "whatsapp cloud api webhooks setup",
+   "whatsapp business tools mcp server"
+  ],
+  "search_sources": [
+   {
+    "title": "facebook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzzlm8NR6wGgG95iwSUK6PtDZ_AaCa2ZKfHtFWQVLd2lZsIpW82JVb6AJzyGcp4YOs_UQ7J86AT-kJqd5CzFVTNoCrki09Gq2MV5ELpqL6H7-65-6QC8Be_pA8OaezLl1rNZw9iIdrGA-gALGgqf1CY2iwiE-wKPJEULOShP7JLmlItimy8wh4jcZrOVpZewk="
+   },
+   {
+    "title": "facebook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOvcAWlDI952ekBx_srzAAsvli5nrjg1hXkuvmtk9hzgyQXvAfoZvkhVkIX_ijvh5iB0MgA8j3E9rB1PRHXVv2XQQjqsHNyhjunW168YYn0K5TsV-EZTDmOBFv54cWuk6MqmeDKCjp4dVxVqMQTUkFLbb9P3H06088vmu5"
+   },
+   {
+    "title": "dev.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFy4c6xjBGyeAbu4BZFsRJ1uPSAS5egdBDDs2-Mcm6AiyurxMDU2bJqggXa8YRSJi6zUwDcyCW2xk5P0_FAdzRyqPgZPCLRoIoQHqG3Pl5XQgV-jLAILGVK6k3WY6lBttFSkpy8kQjcBJShYfPyD6JCkCnwEOo0uhaFNZAt_j1ZZcVLJEfDLfV32wWSUmdTLe7FAwqzew=="
+   },
+   {
+    "title": "buzzbip.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGiiE52jh7AaEjevy1TGy2UBSxeOV7_IdHmCi4ag5-mDnCvMK1r4U8cW-BOSYpozvD3RN1w_ja9ij8jyxTiLiaXvQBed2FkKx-moCaqoMJmtNSLjBU_KWMNeuOZwH6-_j2hq-weUe8fIYYyCtGq8GmnbmFKYccC5-9wnGVXSSe3MVhGLJurfZQsln6JZU="
+   },
+   {
+    "title": "facebook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQED6myOySNfzMr5G8ALVPajHn5KePEX0aW7lrLsrc9wHze4f8_f_SF3GwGWSyDM71EajXjykN5fwPViX68ooQ7uBIu2tq-evJvTfVWEahLsndEn1krfarn0T2hb1TjjwUGbaa2nPLlr6LkjfW5Bukxq8qMhxc83Qu65NzwVf1Y2rO-ch1LFXRF_EOdoeBzVuPG3gu8XWNzvBvR11yrX"
+   },
+   {
+    "title": "youtube.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFY9ngWq4n6LmVJEYl3ymL0jVS-EgM2xGu-2gYZV2LBsQc3upY6Cwcf0LlYXaaxyCiPVwPdI4NwXAmTEcUT8lPhCmXUDmnzXeQi2P32LMr4K-nXGGZnwOrqWAD7AuZyrMSXHu8D-XI="
+   },
+   {
+    "title": "facebook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFezYY6gDlm3kvzytiGzB7pE_STE8fEnAeZ7-HN2cGmB2ionUIbXwpedcfC_XP8AN4rZPiALTTI1Ojy16NCAwZTQ8aEbXdqWlWsUsE0ufCPrMpYpjKNJVnNQy-lAxQ6mdKn6UWF77j5aCmUSeIZMV2Bp5btwa-IlTzvk7S9iQOJaxDFNUSYlLMbx-Uifo6bsRW2_VTGCpnIk8FCoIhBGK-BGufaniEOght_zH3N3dvm"
+   },
+   {
+    "title": "weddingkart.co",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEf1FmD-UVMoODji9j7KDtNNibKEQOshlIiYb4zE-uzo_IyimJCaZtt2rt2t3WLufyXWVW60JsB671ytcau9G8dY-7AQ55vARJm5BOKf5-e1PKxb6Kz2xYeKNhHtLlCf38GRF-y7UaSKpNIVbCW4jgyFmoF5T-J3WvRJ4w="
+   },
+   {
+    "title": "jalpi.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHBUUJtNbkfwJJQpfZlirTjD89WGhomsUWKNv5578sn1szovYbw35817XsnlJmn1KIMe1RB3LxiWImThzuyUYtc0fjrVk2J5XK3T16ZyJNBHivN6rrScl2JVoawDjxxhnDPdZ5ViIGlzmmQytFG-MtkedQqzzi_3Y7_ZVXeD2JBvYQK0HgfCxIrv6JuyulL4HXvw=="
+   },
+   {
+    "title": "wati.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWz8nU93BfuG6uX2FEX8PQ8yUdbN_bxaLfbwfQhdAe1n3Hm7ZgmcuFs1-_FXwS4erQ_V3Ho0OrzOP69VpDlZxedDkUkcUqggFAXGeOPVmmPE1zHC_hmRzn1a3OHWzor3b0IvwT-h0czNzaE182wpfq3-sfl6I6Aa9QQ9HnUCzShzAkR81ribSXIu5v4MhUeEp1mchJuRGl"
+   },
+   {
+    "title": "youtube.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGltvAPmDaNsEBcbBCc1uPWQiOw9BKSW_nqYPHHIDgVhskzGDaXeBWS5QcT9dGOX9qazah5stctYtS5nRc02J-hWsm80WyZTiMvVWLtFP5NopUcRH992oD0n3LMt01EjJTonLWnu6M="
+   },
+   {
+    "title": "facebook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFt6VJYjvl-A2jN8vc0dA1CU_TPfEjk5u1xDvBgbj4rMQR_-kmOer6IZTQu9muUvk39b_TFo215klyPcv_v4XOcO12OBzEw9LVHoF7N2uLvVXJlFHKB4HQG5_3qmW0YJ59Cc0Uz_R4wBRHY8sQ0dkNNQw=="
+   },
+   {
+    "title": "postman.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4nroiM_lnuT0YlZVe0iV-AJ6pyvh3BUjA6FpLiBiwdzz8_xknyzBjbT0CG6cBtl7TqN0Xw4vNg2Pfw381aliXxPZMsUpWftyQmfUmGj74FB3UrqmQvHr_IPsQh0orGgZhbDIaPc6drg9eXCaZ_LOwP6gMrGUzxJz5aDeTlw-L2Jztk5s2ghhJ9IgY_qb5OaQK4JVK0NQvrg=="
+   },
+   {
+    "title": "context7.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7F66mbt3VivHilwf1IbaXeDerbnDU-MO0gFQX1KI1uebremOfTJDAmUuv7r4s5F9PSl0w1ci0Ytv_wCMK4kwI8GEePoDLy5cZwb3X1hEItFC_b5Tqwrx9fAHiLSO1Ooo="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtl7r8AKsX5Y1DEwVJz_VcEndvIulPMUk75Kc_ZBtyDhoqrlcZkrDhbJiZOazHESHJ-o87nhnYdyghNvd7HmcTJbRRYtJTsTugIwtu72x_J3FhM2TniYA0jGbqgeuK"
+   },
+   {
+    "title": "ngrok.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmUxavfkeT8B5NDUWhbIQvTm-eNus78sDlH-rUMGZ9Ig7g5XXgcaBdO4_YvFEk8S0K7_LVTnQwWXRFXmKGqIWrXnGtIMdM5ElZolZgVJRfnHibZulluV-6mcZzkGkuhbdNauTy7vkmU-dbYHBdqH8yoSMpHVYVL2bV"
+   },
+   {
+    "title": "notify.africa",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3cLEu73vsimHb3-N1rbCIEC54EThBguPC8mdiG5C7mp0HjDrJVjDuAhzYlKRNUl1j-vIGXKuNhFzSbfWgjGrAt8PyFUhBFbSBjZTD4HA2UJhjLBM47oA9zvVi9KTJTcV7mJTyoZYWSiu7xLhZ89cl1sImC0Eevg=="
+   },
+   {
+    "title": "medium.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsQJGUOCBJc1qTUQulipCP6ZlAj1ZEV8Hgzx6qbtUT3QHtLtmjv8a4kyU5rN6L867baKQTj4u2zjs9QaosOC6HikeOgS0KNIpgxM1x4yDBiZ8xUyDUoW9E0uL-Tb3XnW3xmUpIq4MH2XLBGzRuUW105_nfSgcfMlusKpoJE6jvQRmIRs6lW146KhcvuifvAodXYiT9opcRpz7wvIHtXTkP1NA0XVZTXh0HlMrJ9syPxg=="
+   },
+   {
+    "title": "facebook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH87CpIfuCva4RPiCLNOzrXtNYkGvACcVdsl6xW7ZrzVdoVOSVeWKBAV_5f_xzpH9bNzZijraEMCXZ4CSrncafvTmWuVlKYRDxMGDRVbalab0kCdAoiTQMGXUwSG0-77qBc1fCRlL9iFaKUKP3sjCtnGSp8f4PzHMJperEneuJ14waQPow_rvxM"
+   },
+   {
+    "title": "facebook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7JXzKKPar0Mab6e3HGFU_ebpVuNHR6o7VQjUz-eZAt84dJRKus2V2Mmy3ui8mMw3qxmCUULcUTzMnJJN4bcuoatIME5FSPYaz4uPY2t5eD48GvFYMWtjxyb_hHJ-u1jBz1k9NERT-wDYIZyi3JUNdhvcwuZyoJSYeQTk8weG156gry8QZqd8QfKmzRUit6Jmg3SubBmzixDs="
+   },
+   {
+    "title": "mcp.so",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3bN-koKAGKjwcnfc_BvpMCiUmxLlM2GUkMSz54kXh01lG6ugNRL-Rit_K3-lAgnaezDe9akdKIz6K5PanKY00u2cOnY7VEYZewnJ6zHzQRZ7hhaX3WzzErDLCxHo4fffQ6puTDv4c"
+   },
+   {
+    "title": "pickyassist.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-_yR6k7kFiU4hrm8aDCYE1jDJXwMzBhIXIJtSkUfE7BurqISRnBMEZv6yXK_00rkrr91nQUp3oMPxenbV8iA-DW-eYnfLlR7wBxR_jeGUrigYyv183MZdaNtt_uexcyhEQlXPEY1OkVjp4ls="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-Hmf7cMsxpckV0fs9MGeOItUk9h1Y6S1tU_FHfGZ6fu7r5cmCQo3JOWXF60p-ES471rrn5g-YyBZuBVMeJeOLAmfctMNl2QwRxUbNIocS-r7YM7dDkKb_O49Gl-OtlzrFR40Gz9_rZvpqYWqHZA=="
+   }
+  ],
+  "tokens": 7362,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://developers.facebook.com/docs/whatsapp/cloud-api",
+    "status": 400,
+    "chars": 118,
+    "readable": false
+   },
+   {
+    "url": "https://developers.facebook.com/docs/whatsapp/embedded-signup",
+    "status": 400,
+    "chars": 118,
+    "readable": false
+   },
+   {
+    "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/pricing",
+    "status": 404,
+    "chars": 38,
+    "readable": false
+   },
+   {
+    "url": "https://github.com/facebook/meta-openapi",
+    "status": 404,
+    "chars": 2893,
+    "readable": false
+   },
+   {
+    "url": "https://developers.facebook.com/docs/whatsapp/mcp",
+    "status": 404,
+    "chars": 38,
+    "readable": false
+   },
+   {
+    "url": "https://whatsappbusiness.com/developers/developer-hub/",
+    "status": 200,
+    "chars": 3439,
+    "readable": true
+   }
+  ],
+  "seconds": 50.6
+ }
+}

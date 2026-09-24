@@ -1,0 +1,171 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://work-management.org",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://github.com/infralayers/pumble-mcp",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://github.io/pumble-sdk",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://lobehub.com",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://pumble.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://dev-docs.marketplace.cake.com/pumble/build/private-addon-deployment.html",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/infralayers/pumble-mcp",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.08
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://lobehub.com",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://pumble-api-keys.addons.marketplace.cake.com/api-docs/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.io/pumble-sdk",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://pumble.com/learn/pumble/connecting-pumble-with-ai-agents-mcp/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.66
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "api_key": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://work-management.org', 'https://github.com/infralayers/pumble-mcp', 'https://github.io/pumble-sdk', 'https://lobehub.com', 'https://pumble.com/pricing', 'https://github.com/infralayers/pumble-mcp', 'https://lobehub.com', 'https://github.io/pumble-sdk']\n- Non-vendor sources (prefer official docs): ['https://work-management.org', 'https://github.com/infralayers/pumble-mcp', 'https://github.io/pumble-sdk', 'https://lobehub.com', 'https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html', 'https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html', 'https://dev-docs.marketplace.cake.com/pumble/build/private-addon-deployment.html', 'https://github.com/infralayers/pumble-mcp', 'https://lobehub.com', 'https://github.io/pumble-sdk', 'https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html', 'https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html']",
+ "metrics": {
+  "n_evidence": 15,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.2,
+  "readable": 9,
+  "quote_supported_rate": 0.1111111111111111,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

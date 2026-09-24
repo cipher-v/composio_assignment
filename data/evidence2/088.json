@@ -1,0 +1,171 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.brex.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.5
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.brex.com/support/brex-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.46
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://truto.one/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://supergood.ai/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://postman.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.brex.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.33
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.brex.com/support/brex-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.85
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://supergood.ai/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.brex.com/partners",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.67
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://truto.one/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://truto.one/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://redocly.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://webhooks.fyi/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://supergood.ai/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://developer.brex.com/docs/mcp",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.53
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "bearer_token": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://www.brex.com/support/brex-api', 'https://truto.one/', 'https://supergood.ai/', 'https://postman.com/', 'https://www.brex.com/pricing', 'https://supergood.ai/', 'https://truto.one/', 'https://truto.one/', 'https://redocly.com/', 'https://webhooks.fyi/', 'https://supergood.ai/']\n- Non-vendor sources (prefer official docs): ['https://truto.one/', 'https://supergood.ai/', 'https://postman.com/', 'https://supergood.ai/', 'https://truto.one/', 'https://truto.one/', 'https://redocly.com/', 'https://webhooks.fyi/', 'https://supergood.ai/']",
+ "metrics": {
+  "n_evidence": 15,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.4,
+  "readable": 15,
+  "quote_supported_rate": 0.26666666666666666,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

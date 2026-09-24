@@ -1,0 +1,238 @@
+{
+ "app": {
+  "id": 47,
+  "name": "Ecwid",
+  "category": "Ecommerce",
+  "hint": "api-docs.ecwid.com"
+ },
+ "record": {
+  "subcategory": "E-commerce",
+  "one_liner": "Ecwid is an e-commerce platform for building online stores, managing catalogs, and processing orders.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 for public (multi-tenant) apps; static access tokens (secret_token, public_token) for custom (private) apps.",
+  "access": "approval_required",
+  "access_notes": "Free Ecwid account. API access requires a paid plan, but developers can email support for a free upgrade to a paid plan for their test store. Public apps require formal app review for marketplace listing.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST API covering products, categories, orders, store profiles, customers, and discount coupons.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "community_only",
+  "mcp_notes": "No official MCP server. Third-party integration platforms like Zapier and viaSocket provide community-driven MCP wrappers for Ecwid actions.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "No official OpenAPI specification, requiring manual tool schema generation. Manual process to get a free paid-plan upgrade for test stores (email support). Public apps require a formal app review.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://developers.ecwid.com/",
+    "quote": "customize a store’s functionality or design, create headless sites, or build powerful apps that empower merchants selling around the world."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.ecwid.com/get-started/api-glossary",
+    "quote": "api keys unchangeable and unique credentials for app authentication and decoding some api requests. every application has two api keys: client_id (app id) and client_secret (app secret)."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.ecwid.com/get-started/api-glossary",
+    "quote": "access tokens secure app credentials for authorizing rest api requests. if an app is installed in several ecwid stores, it has unique access tokens for every store. there are two tokens: secret_token and public_token ."
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+    "quote": "step 1. sign up with ecwid the first step is to get yourself a store. only stores on paid plans can access api. if you don’t yet have a store, sign up with ecwid . ecwid provides a free upgrade to a paid plan if you: ... develop a public application for our app market. ... email us to get a free plan upgrade for your test store."
+   },
+   {
+    "claim": "access",
+    "url": "https://support.ecwid.com/hc/en-us/articles/5427022336796-Ecwid-developer-program-for-selling-apps",
+    "quote": "to sell apps with ecwid: sign up as a developer to create an ecwid account. develop your app. ... once the app is done, contact the ecwid team to submit your app for review."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.ecwid.com/get-started/make-your-first-api-request",
+    "quote": "make your first api request | ecwid documentation ... rest api reference"
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+    "quote": "in the following guide, you’ll find instructions on getting yourself a test store with a custom app. together, they'll allow you to make api requests and manage your store data through the code."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+    "quote": "custom apps come with some default permissions allowing you to: receive, change, and delete details about products and categories in your store. create new products and categories. receive store profile details. receive and change details of all placed and unfinished orders in your store."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.ecwid.com/",
+    "quote": "webhooks build automated business processes or sync the store data with an external service. Connect webhooks"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://zapier.com/",
+    "quote": "Zapier Ecwid by Lightspeed MCP lets you connect Ecwid by Lightspeed's actions with any AI tool that supports MCP, all without managing integrations or writing glue code."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://viasocket.com/",
+    "quote": "Connect Ecwid actions with AI tools like ChatGPT, Claude, and Cursor using the viaSocket MCP Server."
+   }
+  ],
+  "confidence": 0.9
+ },
+ "notes": "### Research Notes: Ecwid Toolkit Buildability\n\n#### 1. What the Product Does\nEcwid (by Lightspeed) is an e-commerce platform that enables merchants to build online stores, manage catalogs, track inventory, process orders, and embed shopping functionality into any existing website, social media channel, or marketplace.\n* **Source URL:** `https://developers.ecwid.com/`\n* **Verbatim Quote:** *\"customize a store’s functionality or design, create headless sites, or build powerful apps that empower merchants selling around the world.\"*\n\n#### 2. Authentication Methods\nThe Ecwid REST API supports two primary authentication models depending on whether the application is private or public:\n* **Custom (Private) Apps:** Use static access tokens (`secret_token` and `public_token`) generated directly inside a specific store's admin dashboard.\n* **Public Apps (Multi-Tenant):** Use standard **OAuth 2.0** (`oauth2`) authentication. Applications are assigned a `client_id` and `client_secret` used to execute an authorization code exchange flow, yielding unique access tokens for each store that installs the app.\n* **Primary Auth for Multi-Tenant Integration:** `oauth2` is the standard method for multi-tenant integration platforms to securely request scoped permissions across multiple merchant stores.\n* **Source URL:** `https://docs.ecwid.com/get-started/api-glossary`\n* **Verbatim Quote:** \n  * *\"api keys unchangeable and unique credentials for app authentication and decoding some api requests. every application has two api keys: client_id (app id) and client_secret (app secret).\"*\n  * *\"access tokens secure app credentials for authorizing rest api requests. if an app is installed in several ecwid stores, it has unique access tokens for every store. there are two tokens: secret_token and public_token .\"*\n\n#### 3. Credential Acquisition & Cost\n* **Access Category:** `approval_required`\n* **Process & Cost:** Developers can sign up for an Ecwid account at no cost. While standard API access is restricted to paid merchant plans (Venture tier or higher), Ecwid provides a free upgrade to a paid plan for development purposes. However, developers must manually email support to request this upgrade for their test store. Furthermore, publishing a public app to the marketplace requires a formal app review.\n* **Source URL:** `https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid`\n* **Verbatim Quote:** *\"step 1. sign up with ecwid the first step is to get yourself a store. only stores on paid plans can access api. if you don’t yet have a store, sign up with ecwid . ecwid provides a free upgrade to a paid plan if you: ... develop a public application for our app market. ... email us to get a free plan upgrade for your test store.\"*\n* **Source URL:** `https://support.ecwid.com/hc/en-us/articles/5427022336796-Ecwid-developer-program-for-selling-apps`\n* **Verbatim Quote:** *\"to sell apps with ecwid: sign up as a developer to create an ecwid account. develop your app. ... once the app is done, contact the ecwid team to submit your app for review.\"*\n\n#### 4. API Style & Technical Details\n* **API Style:** REST API\n* **Breadth:** Comprehensive coverage of core e-commerce resources, including products, categories, orders, store profiles, customers, and discount coupons.\n* **OpenAPI Spec:** None found. Ecwid does not publish an official OpenAPI/Swagger specification file.\n* **Webhooks:** Supported. Ecwid sends POST requests for store events such as product and order creation or updates.\n* **Sandbox:** Supported via a \"test store\" environment, which requires a manual upgrade request to unlock API capabilities.\n* **Source URL:** `https://docs.ecwid.com/get-started/make-your-first-api-request`\n* **Verbatim Quote:** *\"make your first api request | ecwid documentation ... rest api reference\"*\n* **Source URL:** `https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid`\n* **Verbatim Quote:** \n  * *\"in the following guide, you’ll find instructions on getting yourself a test store with a custom app. together, they'll allow you to make api requests and manage your store data through the code.\"*\n  * *\"custom apps come with some default permissions allowing you to: receive, change, and delete details about products and categories in your store. create new products and categories. receive store profile details. receive and change details of all placed and unfinished orders in your store.\"*\n* **Source URL:** `https://developers.ecwid.com/`\n* **Verbatim Quote:** *\"webhooks build automated business processes or sync the store data with an external service. connect webhooks\"*\n\n#### 5. Model Context Protocol (MCP) Servers\n* **MCP Status:** `community_only`\n* **Details:** No official MCP server is published or hosted by Ecwid/Lightspeed. However, third-party integration platforms provide community-driven MCP wrappers to expose Ecwid actions to LLMs.\n* **Source URL:** `https://zapier.com/`\n* **Verbatim Quote:** *\"Zapier Ecwid by Lightspeed MCP lets you connect Ecwid by Lightspeed's actions with any AI tool that supports MCP, all without managing integrations or writing glue code.\"*\n* **Source URL:** `https://viasocket.com/`\n* **Verbatim Quote:** *\"Connect Ecwid actions with AI tools like ChatGPT, Claude, and Cursor using the viaSocket MCP Server.\"*\n\n#### 6. Buildability Verdict\n* **Verdict:** `ready_with_friction`\n* **Main Blocker:** The primary hurdles are the lack of an official OpenAPI specification (requiring manual tool schema generation) and the manual friction involved in setting up the developer environment. Developers must explicitly email Ecwid support to receive a free plan upgrade on their test store to unlock API access, and public multi-tenant apps are subject to a manual app review process before production deployment.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"Ecwid\" API authentication OAuth2",
+   "\"Ecwid\" OpenAPI spec swagger",
+   "\"Ecwid\" MCP server",
+   "\"Ecwid\" API plans pricing",
+   "\"Ecwid REST API\" plan",
+   "\"only stores on paid plans can access api\" ecwid",
+   "\"sign up as a developer\" ecwid",
+   "\"app dashboard\" ecwid register developer",
+   "\"register as a developer\"",
+   "\"sign up as a developer\"",
+   "\"developer account\" ecwid cost",
+   "\"Ecwid\" \"app dashboard\" public app client_id",
+   "\"how to get client_id\" ecwid",
+   "\"public app\" client_id client_secret",
+   "\"register public app\" ecwid",
+   "\"request application updates\" ecwid app dashboard",
+   "\"register as a developer\" ecwid",
+   "\"Ecwid developer registration\"",
+   "\"Ecwid\" \"public app\" \"client_id\" \"client_secret\" how to get",
+   "\"OpenAPI\"",
+   "\"Swagger\"",
+   "\"openapi.json\" ecwid",
+   "\"swagger.json\" ecwid"
+  ],
+  "search_sources": [
+   {
+    "title": "supermetrics.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpnBD-Q_Ec7o45dAS6vb0DnjxfYEQBmQCo1KVbjgJL-9ZmQUd7vIcdWMYDiNZrPBfRHEnptLRR6ZQzJvJsf-V97on0qogSdkowHtgBPLuNU6REFxqJwVE="
+   },
+   {
+    "title": "openapis.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyNqBEfkFKuO7nVbxthxs2NVUk8ts_O_T-8L2X1p1USc_NqrST-1eCwdELPuh5Qk-X9IQmohyMcgLsHwcMlCiI9yssb8VwP4Wx4fs4Js8MMovPXLSolhyyDi93Z9s8M4jsmEI3JRwUCk5iDMTCf325HlMlkATI0M5PX5ba"
+   },
+   {
+    "title": "supermetrics.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgMS-lE2Hd4lcIHhJCZfHyVAQhgMSlU3MnBGPp9Uqj3OcrYMHsJMSXSVzt_gXobPt8a10CX5HnBd5VW1LZvdGCHP-8fxQTqVby0vtqJGprimA1TxpcRgb0"
+   }
+  ],
+  "tokens": 12939,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "Ecwid API authentication api-docs.ecwid.com",
+    "Ecwid API keys api-docs.ecwid.com",
+    "Ecwid OAuth api-docs.ecwid.com",
+    "Ecwid API getting started api-docs.ecwid.com",
+    "Ecwid API quickstart api-docs.ecwid.com",
+    "Ecwid API pricing",
+    "Ecwid API access plans",
+    "Ecwid developer program",
+    "Ecwid API reference index api-docs.ecwid.com",
+    "Ecwid MCP server"
+   ],
+   "candidates": 7,
+   "live_urls": [
+    "https://docs.ecwid.com/get-started/make-your-first-api-request",
+    "https://docs.ecwid.com/develop-apps/app-settings",
+    "https://docs.ecwid.com/get-started/api-glossary",
+    "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+    "https://developers.ecwid.com/",
+    "https://support.ecwid.com/hc/en-us/articles/5427022336796-Ecwid-developer-program-for-selling-apps",
+    "https://support.ecwid.com/hc/en-us/articles/207100729-Ecwid-plans-and-features",
+    "https://docs.ecwid.com/api-reference"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://www.ecwid.com/developers/docs/getting-started/make-your-first-api-request/",
+     "status": 404
+    },
+    {
+     "url": "https://www.ecwid.com/developers/",
+     "status": 404
+    },
+    {
+     "url": "https://www.ecwid.com/developers/docs/api-reference/",
+     "status": 404
+    },
+    {
+     "url": "https://zapier.com/apps/ecwid-by-lightspeed/mcp",
+     "status": 404
+    },
+    {
+     "url": "https://www.ecwid.com/developers/docs/apps/app-settings/",
+     "status": 404
+    },
+    {
+     "url": "https://www.ecwid.com/developers/docs/api-glossary/",
+     "status": 404
+    },
+    {
+     "url": "https://www.ecwid.com/developers/docs/getting-started/set-up-your-dev-environment-in-ecwid/",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://docs.ecwid.com/get-started/make-your-first-api-request",
+     "status": 200,
+     "chars": 3822,
+     "readable": true
+    },
+    {
+     "url": "https://docs.ecwid.com/develop-apps/app-settings",
+     "status": 200,
+     "chars": 9810,
+     "readable": true
+    },
+    {
+     "url": "https://docs.ecwid.com/get-started/api-glossary",
+     "status": 200,
+     "chars": 3890,
+     "readable": true
+    },
+    {
+     "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+     "status": 200,
+     "chars": 3261,
+     "readable": true
+    },
+    {
+     "url": "https://developers.ecwid.com/",
+     "status": 200,
+     "chars": 2696,
+     "readable": true
+    },
+    {
+     "url": "https://support.ecwid.com/hc/en-us/articles/5427022336796-Ecwid-developer-program-for-selling-apps",
+     "status": 200,
+     "chars": 4191,
+     "readable": true
+    },
+    {
+     "url": "https://support.ecwid.com/hc/en-us/articles/207100729-Ecwid-plans-and-features",
+     "status": 200,
+     "chars": 13558,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 115.4
+ }
+}

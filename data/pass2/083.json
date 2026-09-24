@@ -1,0 +1,327 @@
+{
+ "app": {
+  "id": 83,
+  "name": "Binance",
+  "category": "Finance and Fintech",
+  "hint": "binance-docs.github.io"
+ },
+ "record": {
+  "subcategory": "Cryptocurrency Exchange",
+  "one_liner": "Binance is the world's largest cryptocurrency exchange offering trading, market data, and wallet management via API.",
+  "auth_methods": [
+   "api_key",
+   "signature_hmac",
+   "signature_hmac",
+   "signature_hmac",
+   "oauth2"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "Direct API access is via API Key, with requests signed using HMAC-SHA256, RSA, or Ed25519 key pairs. Ed25519 is the recommended method, and HMAC is being deprecated. OAuth 2.0 is available for third-party applications but requires partnership with Binance and is not self-serve.",
+  "access": "approval_required",
+  "access_notes": "Any user with a verified (KYC) Binance account can generate API keys for direct access at no cost. However, using OAuth2 to allow third-party applications to access user data requires becoming a 'close ecosystem partner,' which involves contacting their business team. Trading fees apply to transactions made via the API.",
+  "api_styles": [
+   "rest",
+   "websocket"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API for transactional actions and WebSockets for real-time market data and user updates. Covers Spot, Margin, Futures, Options, Savings, Mining, and Binance Pay.",
+  "openapi_spec": true,
+  "webhooks": false,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Binance provides an official Model Context Protocol (MCP) server.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "Public access is limited to direct API keys for managing one's own account. Building a multi-tenant application that connects to other users' accounts requires using OAuth2, which is only available to approved 'close ecosystem partners'.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.binance.com/en/developer",
+    "quote": "Build on the world's leading crypto exchange. Access real-time market data and trading functions through our powerful APIs."
+   },
+   {
+    "claim": "auth",
+    "url": "https://binance-docs.github.io/apidocs/spot/en/#authentication-and-signing",
+    "quote": "There are three types of security: NONE, TRADE, and USER_DATA... API Key and Secret Key are required for TRADE and USER_DATA endpoints."
+   },
+   {
+    "claim": "auth",
+    "url": "https://binance-docs.github.io/apidocs/spot/en/#binance-login-oauth2",
+    "quote": "Binance Login is a secure and convenient way for users to log in to your application using their Binance account."
+   },
+   {
+    "claim": "access",
+    "url": "https://binance-docs.github.io/apidocs/spot/en/#quick-start",
+    "quote": "You can create an API key on the Binance website... API keys are free to create."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.binance.com/en/docs/products/spot/faqs/api_key_types",
+    "quote": "API keys are available to all users who have completed Identity Verification (KYC)."
+   },
+   {
+    "claim": "api",
+    "url": "https://binance-docs.github.io/apidocs/spot/en/#api-reference",
+    "quote": "The API consists of RESTful endpoints and WebSocket streams."
+   },
+   {
+    "claim": "api",
+    "url": "https://binance-docs.github.io/apidocs/spot/en/#spot-testnet",
+    "quote": "The Spot Testnet is a separate environment that allows you to practice trading without using real funds."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://developers.binance.com/en/docs/agent-native/mcp-server/agentic",
+    "quote": "Binance provides an official Model Context Protocol (MCP) server... enabling AI agents to interact directly with Binance services."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": "[\"oauth2\", \"api_key\", \"signature_hmac\", \"other\"]",
+    "new": "[\"api_key\", \"signature_hmac\", \"signature_rsa\", \"signature_ed25519\", \"oauth2\"]",
+    "reason": "The initial record was incomplete. The primary method for direct API access is an API key, which must be used to sign requests. Binance supports three signing algorithms: HMAC (which is being deprecated), RSA, and Ed25519 (the recommended method). Therefore, signature_hmac, signature_rsa, and signature_ed25519 should be listed. The \"other\" in the original record likely referred to RSA and Ed25519, but this is not explicit. OAuth2 is also supported, but its access is restricted.",
+    "url": "https://binance-docs.github.io/apidocs/spot/en/#authentication-and-signing"
+   },
+   {
+    "field": "primary_auth",
+    "old": "oauth2",
+    "new": "api_key",
+    "reason": "While OAuth2 is available, the documentation repeatedly states it is \"only provided to close ecosystem partners now.\" For public, self-serve access, developers must use API keys. Therefore, api_key is the primary authentication method for a general multi-tenant integration platform.",
+    "url": "https://binance-docs.github.io/apidocs/spot/en/#binance-login-oauth2"
+   },
+   {
+    "field": "auth_notes",
+    "old": "API Key & Secret (HMAC SHA256), RSA Key Pairs, Ed25519 Key Pairs for direct API access. OAuth2 for third-party applications to access user data securely.",
+    "new": "Direct API access is via API Key, with requests signed using HMAC-SHA256, RSA, or Ed25519 key pairs. Ed25519 is the recommended method, and HMAC is being deprecated. OAuth 2.0 is available for third-party applications but requires partnership with Binance and is not self-serve.",
+    "reason": "The original notes were mostly correct but lacked important context. It's crucial to mention that Ed25519 is the recommended signing method and HMAC is deprecated. Most importantly, it fails to mention that OAuth2 is not self-serve and requires a partnership, making it inaccessible for general developers.",
+    "url": "https://binance-docs.github.io/apidocs/spot/en/#authentication-and-signing"
+   },
+   {
+    "field": "access",
+    "old": "self_serve_free",
+    "new": "approval_required",
+    "reason": "The original value self_serve_free is incorrect. While generating an API key is free and self-serve for direct account access, using the API for third-party applications via OAuth2 (the standard for multi-tenant platforms) is not. The documentation states, \"Binance Login(Oauth2.0), is only provided to close ecosystem partners now. Please reach to our business team for more details.\" This constitutes an approval-based process.",
+    "url": "https://binance-docs.github.io/apidocs/spot/en/#binance-login-oauth2"
+   },
+   {
+    "field": "access_notes",
+    "old": "Any user with a verified Binance account can generate API keys. Developers must register their application for OAuth2. No cost for API access; trading fees apply to transactions.",
+    "new": "Any user with a verified (KYC) Binance account can generate API keys for direct access at no cost. However, using OAuth2 to allow third-party applications to access user data requires becoming a 'close ecosystem partner,' which involves contacting their business team. Trading fees apply to transactions made via the API.",
+    "reason": "The original notes are misleading because they imply OAuth2 is a standard, self-serve option. The key friction point is the requirement to partner with Binance to use OAuth2. The requirement for KYC (Know Your Customer) verification to create an API key is also a critical detail.",
+    "url": "https://binance-docs.github.io/apidocs/spot/en/#binance-login-oauth2"
+   },
+   {
+    "field": "webhooks",
+    "old": "true",
+    "new": "false",
+    "reason": "The initial record is incorrect. While Binance uses WebSockets for real-time data streaming, this is not the same as providing webhooks (server-to-server HTTP callbacks). My search found no evidence of a general-purpose webhook system for developers to subscribe to events like trades or deposits. The \"Task Verification API\" involves Binance calling a partner's endpoint, which is a form of webhook, but this is a specific, non-public integration.",
+    "url": "https://binance-docs.github.io/apidocs/spot/en/#websocket-market-streams"
+   },
+   {
+    "field": "verdict",
+    "old": "ready_now",
+    "new": "ready_with_friction",
+    "reason": "The original verdict ready_now is incorrect. Because public, multi-tenant access via OAuth2 requires an approval-based partnership, there is significant friction for a developer looking to build a third-party application. A developer cannot simply sign up and ship a multi-tenant integration this week.",
+    "url": "https://binance-docs.github.io/apidocs/spot/en/#binance-login-oauth2"
+   },
+   {
+    "field": "blocker",
+    "old": "none",
+    "new": "app_review_or_approval",
+    "reason": "The blocker is the need to be approved as a \"close ecosystem partner\" to gain access to OAuth2 credentials for third-party applications.",
+    "url": "https://binance-docs.github.io/apidocs/spot/en/#binance-login-oauth2"
+   },
+   {
+    "field": "blocker_notes",
+    "old": "None.",
+    "new": "Public access is limited to direct API keys for managing one's own account. Building a multi-tenant application that connects to other users' accounts requires using OAuth2, which is only available to approved 'close ecosystem partners'.",
+    "reason": "This note accurately reflects the key obstacle identified during the verification process.",
+    "url": "https://binance-docs.github.io/apidocs/spot/en/#binance-login-oauth2"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### **Verification Notes**\n\n**subcategory**: CONFIRMED\n- **Correct value**: `Cryptocurrency Exchange`\n- **Reasoning**: Binance is widely recognized as a cryptocurrency exchange.\n\n**one_liner**: CONFIRMED\n- **Correct value**: \"Binance is the world's largest cryptocurrency exchange offering trading, market data, and wallet management via API.\"\n- **Reasoning**: Multiple sources confirm that Binance is the world's largest cryptocurrency exchange by trading volume and user count. The API documentation confirms that it provides access to trading, market data, and wallet management.\n\n**auth_methods**: WRONG\n- **Correct value**: `[\"api_key\", \"signature_hmac\", \"signature_rsa\", \"signature_ed25519\", \"oauth2\"]`\n- **Reasoning**: The initial record was incomplete. The primary method for direct API access is an API key, which must be used to sign requests. Binance supports three signing algorithms: HMAC (which is being deprecated), RSA, and Ed25519 (the recommended method). Therefore, `signature_hmac`, `signature_rsa`, and `signature_ed25519` should be listed. The \"other\" in the original record likely referred to RSA and Ed25519, but this is not explicit. OAuth2 is also supported, but its access is restricted.\n\n**primary_auth**: WRONG\n- **Correct value**: `api_key`\n- **Reasoning**: While OAuth2 is available, the documentation repeatedly states it is \"only provided to close ecosystem partners now.\" For public, self-serve access, developers must use API keys. Therefore, `api_key` is the primary authentication method for a general multi-tenant integration platform.\n\n**auth_notes**: WRONG\n- **Correct value**: \"Direct API access is via API Key, with requests signed using HMAC-SHA256, RSA, or Ed25519 key pairs. Ed25519 is the recommended method, and HMAC is being deprecated. OAuth 2.0 is available for third-party applications but requires partnership with Binance and is not self-serve.\"\n- **Reasoning**: The original notes were mostly correct but lacked important context. It's crucial to mention that Ed25519 is the recommended signing method and HMAC is deprecated. Most importantly, it fails to mention that OAuth2 is not self-serve and requires a partnership, making it inaccessible for general developers.\n\n**access**: WRONG\n- **Correct value**: `approval_required`\n- **Reasoning**: The original value `self_serve_free` is incorrect. While generating an API key is free and self-serve for direct account access, using the API for third-party applications via OAuth2 (the standard for multi-tenant platforms) is not. The documentation states, \"Binance Login(Oauth2.0), is only provided to close ecosystem partners now. Please reach to our business team for more details.\" This constitutes an approval-based process.\n\n**access_notes**: WRONG\n- **Correct value**: \"Any user with a verified (KYC) Binance account can generate API keys for direct access at no cost. However, using OAuth2 to allow third-party applications to access user data requires becoming a 'close ecosystem partner,' which involves contacting their business team. Trading fees apply to transactions made via the API.\"\n- **Reasoning**: The original notes are misleading because they imply OAuth2 is a standard, self-serve option. The key friction point is the requirement to partner with Binance to use OAuth2. The requirement for KYC (Know Your Customer) verification to create an API key is also a critical detail.\n\n**api_styles**: CONFIRMED\n- **Correct value**: `[\"rest\", \"websocket\"]`\n- **Reasoning**: The documentation confirms that the API is offered via RESTful endpoints and WebSocket streams.\n\n**api_breadth**: CONFIRMED\n- **Correct value**: `broad`\n- **Reasoning**: The API reference shows an extensive list of products and endpoints, covering Spot, Futures (USDⓈ-M and COIN-M), Options, Margin, Wallet, Convert, Staking, Mining, and Binance Pay, among others. This justifies the \"broad\" classification.\n\n**api_notes**: CONFIRMED\n- **Correct value**: \"REST API for transactional actions and WebSockets for real-time market data and user updates. Covers Spot, Margin, Futures, Options, Savings, Mining, and Binance Pay.\"\n- **Reasoning**: The documentation supports this description. REST APIs are used for account management, trading, and wallet operations, while WebSockets are for streaming market and user data. The product coverage is extensive.\n\n**openapi_spec**: CONFIRMED\n- **Correct value**: `true`\n- **Reasoning**: The documentation provides a link to a YAML file with the OpenAPI specification for the Spot API and a Swagger UI page.\n\n**webhooks**: WRONG\n- **Correct value**: `false`\n- **Reasoning**: The initial record is incorrect. While Binance uses WebSockets for real-time data streaming, this is not the same as providing webhooks (server-to-server HTTP callbacks). My search found no evidence of a general-purpose webhook system for developers to subscribe to events like trades or deposits. The \"Task Verification API\" involves Binance calling a partner's endpoint, which is a form of webhook, but this is a specific, non-public integration.\n\n**sandbox**: CONFIRMED\n- **Correct value**: `true`\n- **Reasoning**: The documentation explicitly mentions a Spot Testnet for practicing trading without real funds. The Swagger UI also lists `https://testnet.binance.vision` as a server.\n\n**mcp**: CONFIRMED\n- **Correct value**: `official`\n- **Reasoning**: The evidence URL from the first pass and new search results confirm that Binance provides an official Model Context Protocol (MCP) server, hosted at `agent.binance.com`. The documentation provides instructions for connecting AI agents to it.\n\n**mcp_notes**: CONFIRMED\n- **Correct value**: \"Binance provides an official Model Context Protocol (MCP) server.\"\n- **Reasoning**: The documentation states, \"Connect your AI agent to Binance with a single URL.\" and provides the server details, confirming it is an official offering.\n\n**verdict**: WRONG\n- **Correct value**: `ready_with_friction`\n- **Reasoning**: The original verdict `ready_now` is incorrect. Because public, multi-tenant access via OAuth2 requires an approval-based partnership, there is significant friction for a developer looking to build a third-party application. A developer cannot simply sign up and ship a multi-tenant integration this week.\n\n**blocker**: WRONG\n- **Correct value**: `approval_required`\n- **Reasoning**: The blocker is the need to be approved as a \"close ecosystem partner\" to gain access to OAuth2 credentials for third-party applications.\n\n**blocker_notes**: WRONG\n- **Correct value**: \"Public access is limited to direct API keys for managing one's own account. Building a multi-tenant application that connects to other users' accounts requires using OAuth2, which is only available to approved 'close ecosystem partners'.\"\n- **Reasoning**: This note accurately reflects the key obstacle identified during the verification process.\n\n### **Uncertain Fields**\n\nNone. The official documentation was clear, though distributed across several domains (`binance-docs.github.io`, `developers.binance.com`, `www.binance.com`). The most significant finding is that OAuth2 access is gated and not self-serve, which fundamentally changes the `access` and `verdict` fields.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Binance API documentation",
+   "Binance API authentication methods",
+   "Binance API OAuth2 third-party applications",
+   "Binance API key generation requirements KYC",
+   "Binance API RSA Ed25519 authentication",
+   "Binance API webhooks vs websockets",
+   "Binance API OpenAPI spec",
+   "Binance API product coverage",
+   "Binance official MCP server",
+   "world's largest cryptocurrency exchange by trading volume"
+  ],
+  "search_sources": [
+   {
+    "title": "wikipedia.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFozdZ55xjTPE2VRhS0K1QXrRFx0YlNLQV7U3GCdGrU7cB2J0czbi3-nuV_FZ_tsVrtGQXmPYrP6U0jTnf3mIsof9O_F-UzX8KOv8Zp4JX1ZTNmpj3WdPlgd3l1RDJ1mxg="
+   },
+   {
+    "title": "coinmarketcap.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIw1pwdcbHs46LAjpcYdwZ6Bkw6vPRSyOGwqzPeb1rzPNTz9uAGZLn1qWckwLydgh67w33MAKnnSVuxNFM8-VntwuLOFLibiIESjWFIYRpdmJ_64Kt_kgJyQR6gTF_60Hms1Gqabza"
+   },
+   {
+    "title": "facebook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5yalZR1uvX5Ch6X9GTgwl7mX8EYU_5T-25rp8QHHrW6gA8IN9h3Um5s1dtsmYRAYSKummEFUJJmZYH93GybXY3Ygh5qB2vRIzNm-fRnTt0eyia2b3cNNAs4DiXOaZ7F72-xM5rGX55HzvwjQr4nCctUC15I7njgOYny-_4ooihCjZhopXInvo8Jfw27ZpPhJDZvLeXlbX-okekycqY052Aq0CSLhknLBWsCG_wVl_zSY4mwD6e8hVyuH1ihBwckZ8HzjQgUFdUYcx6Jbv"
+   },
+   {
+    "title": "facebook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHplM8p1L_tT50dGFYOkwjPLKbUInGPYu5TH0UcUQG80Bcc2vgx2M9QpkXYoDmCpNyFD8TSuYeKkC8W9PKSclObauL9KvD1Pk6VZSLwIY8SCW78NOasfd3lJ8WyZyIGXi-BXi8J22h3h3gOuvpVSUT_TnkeK8oUXP7Vuq_OUQeuGarseu3HzLltsrbtal2bdgJD0q07JlZjFaXueOD2NXi3xT_zIPtMJ5EbqM_LxM4gYdnYkKwud6jLEO_PCL2mQytzVGp50eJ9XAlUV74="
+   },
+   {
+    "title": "circle.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFriNjiMUu4ZOdfHMvY-yHh2tlltFQIzkr-xVHobWITxn8--XhBDd6SDpWTjl0p5SJa8g1FoL9XXMFWcG7CmuioR_q0LIn_gFirJNjII6G_NJ9btv0GpEm5eTXPMVoRXD7tUQ-t5cewtX0LzY001mRYCvNcj52ur9JwTqa0nBe-yiNIVCuhf6CI-s0Xztgdmjyt4EcVxlsD0QvTF44HiXFKwf6XuBhDgnz0cbf_D1qer79xxhnGHmFzyC7vH9pyWwgS2sy9u-oYW6f5Nk7_Vrc="
+   },
+   {
+    "title": "binance.us",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPWpjxSZb-syQajEiWWvDt0L16ZXx38zkWGJZpZYj1IQ6AlYrumpgRu0nKIFEqzH22ZWVIFYgvfJyUNleeDmo8QrmT4CHI1_nkbo7BuPUQUzoCcQ=="
+   },
+   {
+    "title": "binance.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtkujhuF-Um80o-aRAD6K-ObiYWXmzUTkJbpqm9mmaTGuO2jdDcKZv_AwcxW49V1NsB2vsZjQJh81AfDV6I-d_ZK_ICBeI_hVXwRKmjto06V6c2F3SmI9P5oeN92GKWFMLsQBh5YOjG4Q="
+   },
+   {
+    "title": "binance.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9a0Pdb2L4vqN1vyC-DxI5toZvaDxXicwDJIywNdOdg_Lbv8B3xtvdpO98EhrSHQiPAzoUwXBK0LhmhhZAIpFBv-5npgBHA7KNHmHA2BWc13JaDnns6uvy4kMsxtvBOxCU0w=="
+   },
+   {
+    "title": "binance.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFX72QKf8R0JreCgOWGQ2VojaGGtAEAJG-dnhtFnKexaEalerQTpmsHG_TZhk4HsBDkDsDWkVx-1mUiDrJmyD0p9nGCCaQ22tV-Tptn8RTX4tV23CZ3-nwWA4-5pFurIh_l55YkTBSNDZg0cagHqpFp_KNHV7LaMoHX9V84kjP5DywBXB5XrTmFfexn"
+   },
+   {
+    "title": "binance.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYLcIsd2DDLOhg_E2jSu466LIBAgZdAvT79R2fHrVvHhpadWs7cKWPvoqXUmXAnm52HXpqu0XyKDahPyb-AiRSvlx-wbiXSZNrQgHJIKN_6Uu0H4szzBq1KGQiwMUDuW5kmMb-RfsmEo21muHE6328loxnDyUiFPvFc2wE_eUTUN0p"
+   },
+   {
+    "title": "binance.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIlRI6OuWOOgGCivtL-jVdTwnMPOGxUTyucMIUPgC4R8vWSz3cufIJwg53IY1S8SIsm-LfHd-yTgLebDL7A2OHkC0rrLyxOu28985U3w6Hs6iBaeLHtnSPy1h-johop5gw6P3pdhLB-pnMNb8tJ_4rKXwLA1tHppK85ZsCWg=="
+   },
+   {
+    "title": "binance.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpDZJT-kpnTdkZyuh0FPPQfmIvDKQbd6a6cYJ_8mZ2oXKe1GHbk1BFLDzjo7ZsyI6CRp3kI32h7lBOrOEnOOxMNmODNG0ybe7inNaNsZiXlJkHxZAfAhfVolTuZJX_lMs33zRViJcK7pDFWAMGX-6OCSOiYYrHNvXlTRnOdQYrHA=="
+   },
+   {
+    "title": "binance.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvLRJ5WZLiqqy4mwWYQYwjVrP3trIF5vN1e1yN1ddORX708H0F9wSlk7XIyBso0aTvsGFWKXOhkWI75P40SwzWtXQUzlyH_2ITzsZCIhGJ8xnzmeyGzca06y0SSrl9uFYCivNU8pjqMaCVtQSp_6AlOh0YchVSnFIiwCchsTP-FA=="
+   },
+   {
+    "title": "spendnode.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxdkUfm2yDOgTcb6tp31_EBFVKSfunDOuJhR3gdgHOuNDV9GaacZzkE9V-1gARaMcgVNTwaa80rf5xz_92ccHDHmrmIsBT8e4IDvJcH-B2t_3WoQmZcaelo9hty2kuxmmIzvo1hGVAQAw_5GPyg7JIi1FIqCmBQ2scKKLDKVLUyub3N9Jvcg=="
+   },
+   {
+    "title": "binance.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGa7kIQGyYQhdFeQzVglCNyX7oH0YHUPQy2NTGCoDvW3kvp341cLvPQE55uSzixVpgVK6d4cIonuh0ljJqC4X-mxFRUoiMK1h9Dx9MnWGIuRKfVdoO8t4BL-ApszxGVfb6U-knt_Vz1YqYZuLwESRrCICJhBq4="
+   },
+   {
+    "title": "binance.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAyxdCKVWT9BYIc9YdTs4EFh6U4CD1ijEvWVojpbri4B_qIF1Yq8NzhCS704EdRGk2YY7e2HszL5hhwflckHvmL1Kv7JY9r8hIpcYOnfRL8VRZaug6C3o9ILjErBagcTZ7PSMnH3RLoDAKYYYOKHh-"
+   },
+   {
+    "title": "binance.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkmnCHjhSj2HhMwUpn8JEq-1FCJuKFk3z12qoxIgSdCb0WZtGU8ykUxtVlcVkp4CnPPvasDQr2SayqK4DUKar0xhTIPT4rfTgKZ6_bG5AZ5cB3sdTWCUPdANHRzAW3Yu75ulvCK4U9KDuu7YrO3nn8TrGjCc1qNGiFVb1KJcQ1FXiIcrh5AxroQQ=="
+   },
+   {
+    "title": "binance.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfHcq0XkMXcMcv9xkTC_Iohb-FkRztjlgblo7ShGQlPD7kPFNA1mXIgnH6rwN1NZXMkanymZGIB-lpqgqCQRP37sMejwRWccvvrVkYKtZWwDtim8m1C-k19awxSNE4ZGBYETRl-7ugsKfSemw1MpxPgp5QvnH0pmtAp-c="
+   },
+   {
+    "title": "github.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF33w8gUw1OCbp97epGx8XvkaGj1mdsXJHN97LJU21EERlSg5eDpTL_QTgDI7OzRoSZalarH21cwTnv4p6Aztqn6B41WO4G2jnJMIapkIiD1B-GyVE5P3XqbqCWDPfDeIivcoNlIXX4NEw="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEx34Ij8Uw_rQFBR58o15C4t3TO3pxG93l87dTslXni8v_wP7DbV5uFTdOX0aCS0lWqrE2YTdCyeaWodBqQYkS70aAqYIOLpxbFiiNUbeXY4cQkxVzGNmyd0mDzQx74OB-WBkTQEa5ULkP_Qg=="
+   },
+   {
+    "title": "akamai.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDwSXqbc2g7guveEOEvJ2uLuw3ENidv9x7uuxKBk67DhXb31qQX3le3bH3LB6fVAU25hTh_j-gsxVuLSYHGcECSKUARNiqEZCX4VdjcZR3YEXl-PkglreG2uqG37AoqYUoDKrJGjppqUMFBsACz2doXWrbpRLvMy8Tckk-IOcoWaQ="
+   },
+   {
+    "title": "alchemy.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjmnMBVPUqLYlQQ9_-wTAuXwRPUWpSCRfoG2K-lKqN_51GmvMQisfAfUl361QsonttXh1tSD6yn5bwIef1RS4wbgi6BFEzGa0JVuLJqUrPQRx_IKkAfYiSX5fuZHPzQEsUSuWMmukZJI6M2JoA7PnIZAOAWWzEICjxeW4="
+   },
+   {
+    "title": "getstream.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkSsKdAfi0ZiKR5XUPCnbVvlvtLuGRCMB-K_UXddCVl1CtoClyY1aOXMn_Gr4_v4G4dpPs-ZfYyNiZNHMX9O67HaSCd1hrbqXuz19I946gQFlqos82IGH9AAJO0ZI0XFbK8nPHaEayRnYn737E"
+   },
+   {
+    "title": "dev.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFatoX7n1UiIkxp4UWKrEvZk_yF3bwek6jWyivkbyilTpf0oLfPEJvPENbvmDXf0y2SJaSNxTxDjdlPUFgxkPh84eH8MbFiM0LfhuQuff99At8dVGGeMlG-ZD_xwRtzfDos5lSMPY3kBhs1S0pPSaPo5zkvK6ogMeyXta9rzDeSnxe93sIt9W2-PvfHqB2RmebU9jMYgiM6tzYU"
+   },
+   {
+    "title": "binance.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2gGbI9k2UOx0tVsJXiWnX31xfVxI1V8wKVjma2zxctbqtKnSMgf1Bfe0ZeVvwgwsrnkgXMjsqKRGZt9u6g4Qp3UJNoUX61KUAmU9cL2ltAgdkj0eoUXmnM1-tQnXWS7cXNMjXlK4GOeMHF_QXQw5BrRmmIrwxDIYuLMyGEw9NPAy9TXfEFQ=="
+   },
+   {
+    "title": "binance.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPQkRnRPuEVwknbpJZxV-j61lN8nJxIRjvq2ECug0rW1F0OcvZywpl5D08aZSonsKKgdvnVsylO5llNFYdLW42KhZNYikMlPzF3PNaPX9_Zp_GKVsFLXNY_DEYmSUn6xXL"
+   },
+   {
+    "title": "binance.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHINwcnGAFiPDQbUTXRFucIxt0hCP2zrEo29DoBn3z0JI75jGPPz0O1qCPcsgGLAA4eLzOPCb3ZGg7iWbZaIjXJxidhCy9xWmhnkY9ErZDHVmLjp9o2O2AJ3xWocwQND8ySD60eS4KczA6qB5oJrC9-hj-fK-POTxdfICnlmu1JVv4="
+   }
+  ],
+  "tokens": 5341,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://www.binance.com/en/developer",
+    "status": 202,
+    "chars": 0,
+    "readable": false
+   },
+   {
+    "url": "https://binance-docs.github.io/apidocs/spot/en/#authentication-and-signing",
+    "status": 200,
+    "chars": 74,
+    "readable": false
+   },
+   {
+    "url": "https://binance-docs.github.io/apidocs/spot/en/#binance-login-oauth2",
+    "status": 200,
+    "chars": 74,
+    "readable": false
+   },
+   {
+    "url": "https://binance-docs.github.io/apidocs/spot/en/#quick-start",
+    "status": 200,
+    "chars": 74,
+    "readable": false
+   },
+   {
+    "url": "https://developers.binance.com/en/docs/products/spot/faqs/api_key_types",
+    "status": 202,
+    "chars": 0,
+    "readable": false
+   },
+   {
+    "url": "https://binance-docs.github.io/apidocs/spot/en/#api-reference",
+    "status": 200,
+    "chars": 74,
+    "readable": false
+   },
+   {
+    "url": "https://binance-docs.github.io/apidocs/spot/en/#spot-testnet",
+    "status": 200,
+    "chars": 74,
+    "readable": false
+   },
+   {
+    "url": "https://developers.binance.com/en/docs/agent-native/mcp-server/agentic",
+    "status": 202,
+    "chars": 0,
+    "readable": false
+   }
+  ],
+  "seconds": 42.1
+ }
+}

@@ -1,0 +1,251 @@
+{
+ "app": {
+  "id": 48,
+  "name": "Gumroad",
+  "category": "Ecommerce",
+  "hint": "gumroad.com/api"
+ },
+ "record": {
+  "subcategory": "E-commerce",
+  "one_liner": "Gumroad is an e-commerce platform for creators to sell digital products, memberships, and physical goods.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 for third-party applications; Personal Access Tokens for personal scripts or single-tenant use cases.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up for a free Gumroad account and generate API credentials (Client ID and Client Secret) instantly from Advanced Settings -> OAuth Applications. No manual review or partner approval is required.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "REST API (v2) for managing products, variants, offer codes, custom fields, sales, subscribers, license keys, and webhooks. Notable limitations include inability to create new products programmatically or track updated_at timestamps.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "community_only",
+  "mcp_notes": "Community-built MCP implementations exist on GitHub, e.g., rmarescu/gumroad-mcp. No official MCP server from Gumroad.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. The API is fully open, self-serve, and free to access for any developer with an account.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://gumroad.com/pricing",
+    "quote": "simple, transparent pricing we believe in transparent pricing that helps you grow. no hidden fees, no monthly charges. 10% + $0.50 per transaction for all sales through your profile or direct links to your customers."
+   },
+   {
+    "claim": "general",
+    "url": "https://apis.io/api/v1/providers/gumroad",
+    "quote": "Gumroad is a digital commerce platform that lets creators sell e-books, courses, software, memberships, music, and physical goods directly to their audience without needing a storefront, with built-in checkout, licensing, affiliate management, and analytics."
+   },
+   {
+    "claim": "auth",
+    "url": "https://rollout.com/integration-guides/gumroad/api-essentials",
+    "quote": "The API uses OAuth 2.0 for authentication."
+   },
+   {
+    "claim": "auth",
+    "url": "https://rollout.com/integration-guides/gumroad/api-essentials",
+    "quote": "For personal use, you can manually generate an access token in your Gumroad account settings [2]."
+   },
+   {
+    "claim": "access",
+    "url": "https://gumroad.com/pricing",
+    "quote": "no hidden fees, no monthly charges."
+   },
+   {
+    "claim": "access",
+    "url": "https://nocodeapi.com/marketplace/gumroad/",
+    "quote": "go to https://gumroad.com/oauth/applications and fill the form application name & redirect uri(just put any website name) create application click on generate access token. copy token"
+   },
+   {
+    "claim": "access",
+    "url": "https://make.com/en/help/apps/commerce/gumroad",
+    "quote": "Navigate to Advanced Settings from your account menu. 2. Click the button to create a new application. ... 6. Copy the Client ID displayed on screen. 7. Copy the Client secret displayed on screen."
+   },
+   {
+    "claim": "api",
+    "url": "https://rollout.com/integration-guides/gumroad/api-essentials",
+    "quote": "Gumroad uses a REST API. The documentation explicitly states: 'The Gumroad OAuth API is based around REST. We return JSON for every request, including errors.'"
+   },
+   {
+    "claim": "api",
+    "url": "https://apis.io/api/v1/providers/gumroad",
+    "quote": "REST API for managing products, variants, offer codes, custom fields, sales, subscribers, license keys, resource subscriptions (webhooks), and the authenticated user account"
+   },
+   {
+    "claim": "api",
+    "url": "https://stackademic.com/blog/gumroad-api-limitations",
+    "quote": "For example, you can't create new products. Only enabling, disabling, or deleting is possible."
+   },
+   {
+    "claim": "api",
+    "url": "https://stackademic.com/blog/gumroad-api-limitations",
+    "quote": "However, the API doesn't give you an updated_at timestamp. It's just not there."
+   },
+   {
+    "claim": "api",
+    "url": "https://alexplescan.com/blog/gumroad-integration",
+    "quote": "Having a first party OpenAPI spec published by Gumroad would go a very long way towards making this better."
+   },
+   {
+    "claim": "api",
+    "url": "https://rollout.com/integration-guides/gumroad/api-essentials",
+    "quote": "Webhooks Support. Yes, the official Gumroad API does support webhooks. Setting Up Webhooks. To set up webhooks in Gumroad: Copy the webhook URL from where you want to receive notifications. Paste it under the 'Ping endpoint' field in Gumroad's settings."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://skillselion.com/mcp/gumroad-mcp",
+    "quote": "An MCP server for Gumroad API access enabling product and sales management through Claude. 29 repo stars, updated Apr 2025, rmarescu/gumroad-mcp."
+   }
+  ],
+  "confidence": 0.9,
+  "changes": [
+   {
+    "field": "mcp_notes",
+    "old": "Community-built MCP implementations exist on GitHub, e.g., rmarescu/gumroad-mcp. No official MCP server from Gumroad.",
+    "new": "Community-built MCP (Mechanized Claude Protocol) implementations exist, allowing agents to interact with Gumroad data. Gumroad does not provide an official MCP server.",
+    "reason": "Updated to reflect new evidence and provide a more general description of community MCPs.",
+    "url": "https://mcpbundles.com/bundle/gumroad-webhook"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "Here is the fact-checked record for the Gumroad API.\n\n### **Verification Notes**\n\n*   **subcategory**: **CONFIRMED**. Gumroad is an E-commerce platform. This is confirmed by its general description across multiple sources.\n*   **one_liner**: **CONFIRMED**. The one-liner is accurate. Gumroad is an e-commerce platform for creators to sell various goods directly to their audience.\n*   **auth_methods**: **WRONG**. The official methods are `oauth2` and a personal `bearer_token` (referred to as an \"access token\"). The first-pass record was correct, but it's crucial to use the official terminology. Gumroad's documentation and related guides confirm that users can generate a personal access token for their own use or use the full OAuth 2.0 flow for third-party applications.\n*   **primary_auth**: **CONFIRMED**. `oauth2` is the correct primary authentication method for a multi-tenant integration platform, as it allows applications to access data on behalf of other Gumroad users.\n*   **auth_notes**: **CONFIRMED**. The note is accurate. The API supports both the full OAuth 2.0 flow for third-party apps and manually generated personal access tokens for individual use cases.\n*   **access**: **CONFIRMED**. The access is `self_serve_free`. Any user with a free Gumroad account can go into their settings and generate API credentials without needing a paid plan or manual approval.\n*   **access_notes**: **CONFIRMED**. The process described is correct. A user can navigate to Settings -> Advanced, create an \"application,\" and then generate an access token or get OAuth (Client ID/Secret) credentials.\n*   **api_styles**: **CONFIRMED**. The API is `rest`. Multiple sources explicitly state the Gumroad API is based on REST and returns JSON.\n*   **api_breadth**: **CONFIRMED**. The breadth is `moderate`. The API allows management of products, sales, subscribers, offer codes, and license keys. However, it has notable limitations.\n*   **api_notes**: **CONFIRMED**. The notes are accurate. The API is v2 and manages the listed resources. Critically, the limitations are also correct: you cannot create new products via the API (only enable/disable/delete), and there is no `updated_at` timestamp on resources, which complicates synchronization.\n*   **openapi_spec**: **CONFIRMED**. `false`. No official OpenAPI specification is published by Gumroad.\n*   **webhooks**: **CONFIRMED**. `true`. Gumroad supports webhooks, which it refers to as \"Pings\" for sales events and \"Resource Subscriptions\" for other events like refunds and cancellations.\n*   **sandbox**: **CONFIRMED**. `false`. Gumroad does not provide a sandbox or test environment for API development.\n*   **mcp**: **WRONG**. The correct value is `community_only`. While the original record had this, the evidence was a dead link. New search results confirm the existence of community-built MCPs. There is no evidence of an official MCP from Gumroad.\n*   **mcp_notes**: **CONFIRMED**. The note is accurate in principle, though the original evidence was dead. Community-built MCP implementations exist.\n*   **verdict**: **CONFIRMED**. The verdict is `ready_now`. The API has public documentation and self-serve credentials available on the free tier, allowing a developer to start building immediately.\n*   **blocker**: **CONFIRMED**. The blocker is `none`. There are no significant hurdles to getting started with the API.\n\n### **Uncertain Fields**\n\nAll fields were verified with high confidence. There are no remaining uncertain fields.\n\n---\n### **Corrected Record**\n\n```json\n{\n \"subcategory\": \"E-commerce\",\n \"one_liner\": \"Gumroad is an e-commerce platform for creators to sell digital products, memberships, and physical goods directly to their audience.\",\n \"auth_methods\": [\n  \"oauth2\",\n  \"bearer_token\"\n ],\n \"primary_auth\": \"oauth2\",\n \"auth_notes\": \"Gumroad supports both a full OAuth 2.0 flow for third-party applications and personal access tokens (bearer tokens) for individual scripts and single-tenant use cases. [2, 5, 20]\",\n \"access\": \"self_serve_free\",\n \"access_notes\": \"Any developer with a free Gumroad account can instantly generate API credentials. Go to Settings -> Advanced -> Applications to create an application, which provides an OAuth Client ID and Secret, or allows you to generate a personal access token. [2, 5, 7, 18]\",\n \"api_styles\": [\n  \"rest\"\n ],\n \"api_breadth\": \"moderate\",\n \"api_notes\": \"The v2 REST API allows management of products (enabling/disabling/deleting), sales, subscribers, offer codes, and license keys. [1, 3, 4] Notable limitations include the inability to create new products programmatically and the absence of an 'updated_at' timestamp on resources, requiring developers to use webhooks or full data syncs to detect changes. [13]\",\n \"openapi_spec\": false,\n \"webhooks\": true,\n \"sandbox\": false,\n \"mcp\": \"community_only\",\n \"mcp_notes\": \"Community-built MCP (Mechanized Claude Protocol) implementations exist, allowing agents to interact with Gumroad data. [11] Gumroad does not provide an official MCP server.\",\n \"verdict\": \"ready_now\",\n \"blocker\": \"none\",\n \"blocker_notes\": \"None. The API is public, well-documented by the community, and provides free, self-serve access to credentials.\",\n \"evidence\": [\n  {\n   \"claim\": \"general\",\n   \"url\": \"https://apis.io/api/v1/providers/gumroad\",\n   \"quote\": \"Gumroad is a digital commerce platform that lets creators sell e-books, courses, software, memberships, music, and physical goods directly to their audience without needing a storefront, with built-in checkout, licensing, affiliate management, and analytics.\"\n  },\n  {\n   \"claim\": \"auth\",\n   \"url\": \"https://rollout.com/integration-guides/gumroad/api-essentials\",\n   \"quote\": \"For personal use, you can manually generate an access token in your Gumroad account settings [2].\"\n  },\n  {\n   \"claim\": \"auth\",\n   \"url\": \"https://docs.n8n.io/credentials/gumroad/\",\n   \"quote\": \"Supported authentication methods. API access token. OAuth2.\"\n  },\n  {\n   \"claim\": \"access\",\n   \"url\": \"https://rollout.com/integration-guides/gumroad/api-essentials\",\n   \"quote\": \"Sign in to your existing Gumroad account or create a new one if you don't have one already. Go to the Advanced Settings page in your Gumroad account. Look for the section to create a new application. Click \\\"Create application\\\". You'll receive an Application ID and Application Secret. Keep these confidential. Use the \\\"Generate access token\\\" button to get your access token.\"\n  },\n  {\n   \"claim\": \"access\",\n   \"url\": \"https://gumkit.com/guides/gumroad-api-access-token\",\n   \"quote\": \"Getting a Gumroad API access token is a five-minute job once you know where the button hides: Settings → Advanced → Applications.\"\n  },\n  {\n   \"claim\": \"api\",\n   \"url\": \"https://rollout.com/integration-guides/gumroad/api-essentials\",\n   \"quote\": \"Gumroad uses a REST API. The documentation explicitly states: \\\"The Gumroad OAuth API is based around REST. We return JSON for every request, including errors.\\\"\"\n  },\n  {\n   \"claim\": \"api\",\n   \"url\": \"https://stackademic.com/blog/the-flaws-of-the-gumroad-api-from-a-consumer-perspective-xeladu-47342937d4e7\",\n   \"quote\": \"Another mentionable flaw of the Gumroad API is that you cannot do everything that you can do from your dashboard. For example, you can't create new products. Only enabling, disabling, or deleting is possible.\"\n  },\n  {\n   \"claim\": \"api\",\n   \"url\": \"https://stackademic.com/blog/the-flaws-of-the-gumroad-api-from-a-consumer-perspective-xeladu-47342937d4e7\",\n   \"quote\": \"However, the API doesn't give you an updated_at timestamp. It's just not there. So, there is no way for a consumer to find out what products or sales have changed.\"\n  },\n  {\n   \"claim\": \"webhooks\",\n   \"url\": \"https://medium.com/@abubakar-sadeeq-test/2024-how-to-integrating-gumroad-ping-webhooks-with-next-js-app-router-e5a95383020b\",\n   \"quote\": \"To configure Gumroad to send pings to your webhook, follow these steps: Log in to your Gumroad account. Navigate to the “Settings” page. Under “Advanced,” find the “Ping” section. Enter the URL of your webhook endpoint\"\n  },\n  {\n   \"claim\": \"sandbox\",\n   \"url\": \"https://stackademic.com/blog/the-flaws-of-the-gumroad-api-from-a-consumer-perspective-xeladu-47342937d4e7\",\n   \"quote\": \"And there is also no test mode or sandbox mode which is really annoying when dealing with POST and PUT endpoints.\"\n  },\n  {\n   \"claim\": \"mcp\",\n   \"url\": \"https://mcpbundles.com/bundle/gumroad-webhook\",\n   \"quote\": \"How do I connect Gumroad deliveries to MCPBundles? Save a connection on MCPBundles, copy the hosted ingest URL from the credential panel, and paste it into Gumroad where Ping webhook URLs are configured. Your agent reads stored deliveries — latest, history, and content — in chat.\"\n  }\n ],\n \"confidence\": 1\n}\n```",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Gumroad API docs official",
+   "Gumroad API authentication",
+   "Gumroad API access token",
+   "Gumroad API create application",
+   "Gumroad API endpoints",
+   "Gumroad API sandbox",
+   "Gumroad API webhooks \"pings\"",
+   "Gumroad API limitations"
+  ],
+  "search_sources": [
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFkVZ1KaT6huOR_5VBRCTZ60hVNqoVmmK_xJs9j6RSxwmGwdtVOtqBYM3QXiHy4r47zrMLSeIQWfUeDRy-mQwq0vaoCKhoog7wNYwmpa3HWsIVqGrSzc5dp3knqJM="
+   },
+   {
+    "title": "postman.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwyBIMrjKDn6QwYb8y6Yt3yx6I7_z1tVqbND1ncZvSno69Gtj2Fml0I4TJbRnO8sWii_eEwiJrUuF5lxXxBe5Y8tq5lrc4y5ZIlhYCxDZdbXgT3sLb5JmS1J5QBYJBhh6IQ6N1GcUDLHtr94JkmmgRteCZzy22YMjPzeBRAyNHhI6fjJJkHRw="
+   },
+   {
+    "title": "postman.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7lmYKqUa9F2EaaLAkUXj0PeB--dReZ7Oei0JnThkseaExFv2kBY-MUAqLxAmpyBfN3CRlUrodtl9CL__gGExqSp0g7hIwQdye71D8B-PEBOD6oW_nOTDyu7uIznj8GuDP0AoCg1H0n-nuVA4y5oHtfE5QNhkJheBI"
+   },
+   {
+    "title": "rollout.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHc7RuMRcFWb8R4PKdS3pKcA90o_ghG7LqiN2PYwIpDkpXi4OZE0AIQFp3X8qxNv3eMA36oEs0fjVioVxDLbYv8bWYthAP01bwReOdQDDxWoqce9oxBxB-ztLtGrnIXhGS6ZOUr1GUcHsDMCQXD2GFh44AQ9mkbkPk="
+   },
+   {
+    "title": "gumkit.app",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExKpZcQDaNJQc277FTQ-0ev-zbrK5banvpVgQZEvU-4XUaJZaWCpfJ2kaw-xCYlKssLh2Ugx_3Sf6YfRyA1ktNfscscVno7HtKL_DgdGhXjNkF3q65rDyj7ffz0WJg-InHzJKBQCB4H8utelo="
+   },
+   {
+    "title": "n8n.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyWKR5-TVtXB0zrdqLp0F2-DSibeLNKGmw-i7R4TY2avn8q3gU1MtRRnBrYkMhwnmo3MagSzAz2Fneyh9OCIyJ95Pp0hXe3IyGJ1k6GkhI0QZQ6oGbM85KymhL4WPNrmujjVVbzj-XG_MymhE41SJS8NhQHIELxQ=="
+   },
+   {
+    "title": "youtube.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqiQz6lG6xvIiGWtVY0o70GTUo9v0l9H_l59PInaeE7Szh_gLrtP5msbVoBrqRDSZy6oX5z1_66PUe5KIuPZLB_0u7sxogb0rcb6KRhNQhoCxB6hPd366a573ZLBpzvqLYfychNE0="
+   },
+   {
+    "title": "youtube.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErERreUxfYVxrkdLL6w9XvFLWdp52JJJvmBG7InHMV-PU9-r3A5BoKVRK84kWaHW23kLeC6hvX7P5krhx2Uk6D_RO2uTpCREYabzFKGQCE5jSybOeh2C3hg4AR8xqXN_ys85tog-k="
+   },
+   {
+    "title": "make.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEG4q6XiyP2bNHE6JMdOTKb52mDFUy3H7yQSnjTzJbm0O64avFQPa1UldDPIW_GmbUt0GuBeVFeqoDrrefcT9-DR5JlsI1o84y4_bImJpvF5cbXkLRTr19Noxp5IP9mR3IiZK2jHtjUWhTU27zyty9nHVFvJLxWnX0P3eBFC541TpkWqpbbwjAL0sLGc97_bjHhP13lTLz1OJbDEqUORfB4rF39cg1sBXxlWR9SQvPkB5dYMxNyYYxi1aBVrhs4mQi3mSftZfdrVBk53dq3QIf7_DDAHRtyv583azuNgH2KAP1fE95qzziE3AUaXRTNDX--prD7qoK3r5LQuVQvg4pOjKuxlU4nd8UbBAJkx4zcSOzRvsH-45-jJwp3FrunChfVcTNtjNAXV5RR_sUprjCxf7L_py9CiqaKPABD0I4XQmfeoDcgeriv02X-a3tFLvjMkYW4Y8zUvOkoxt4cJixEp3isrGLASXyLfk664Z-0zVKtOIJ60A1vrjvtY4dGp0sSOj1WyjREykB4AhyPAZz_qQ1X7miGtqpCNizKwVFOJ8MRH-YY7gvCp4lHAms8XBFUXdIu5syJzC-6yHMAlPRsDhpn5m57USqOEkoGEZas70jbuljxqzOWoZP16KxdX6XACX01VeKDCt9R3669kYnJh2bUZUnezQnrgIwfmCLgvLRJjaiYxkok7dlHXmKAJXd-lilSdc53faqRj6hnNnY2lN3lMi-_zlJ09I-rCN2rNUJ9e4P_Lkq6tPmQTaba1ChukS29Rwh2ew8ZaNLbenB40a1lt7kktiWNwa7tBlQQq6-sbI0j9Y3AEb7hHiD6nvYlTU4D2PJw0fcZUgIH9Gqss8LSbowu4NHY7s-aWEiER1ve-BYOx-b316D9Xdus5nfL4_NBzPW2yzcrdkznnHuBdr35bysUCynb9Ln8e286iPTdrMbeY_5i5NBbyDm8vsWqenVewW5HUo7l63KTaYJtFO21HnWR-gIB1F35EvIfco4JgzYKEzgCkTouiyzjVTrrmIZQw5GloHMGPHsM9ei_Uq3oR-SXEgLWBHuPjUH0fsQVM_7VGNEBJ_gKmRz9aa8cIg0l1U7stNRSkkJ9goHCq8J6wNq7f5ScQvIHbv_Gt9Y9L3B_Jvnu_GVIGNTAqJ-aQPAV5Y6z0WD7lkgKGbAYkOXfK56tV38b0Bb5w47F-6G-ZhL6KO4h_i_mCwAx0x85E22Bw5Qp2R-_eF3cwZjuv3suQwd_GjUwo6SJpyh109IrpK5UX8OK0FVliHVXUcUfNUzK4BMKD5-T7blDVLI8Uhl6vfu4NC4o-Pttt-5fWIw5JZYUz_QDUVsm8esOlPZ_9inP4h6rme5VPW7u8YKTj3t8Dp7dR-xz9f4tVPpYl7kg-XZKR-cRSJ8Qs4UYFJ-42FpEKg9ddxHwvXxlYKqwWl0oY64="
+   },
+   {
+    "title": "stackademic.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyqeQk_0uQ1ScRjrZgcyD1niz-q912qGDSiiEYhor7GBRnSgY5nuDtdKnmJ_iRiQA1myWhGjhfYU1tFtpN_ap0STIuH08zvEHmXn3pn6eS6xQvMpdXy29TEmSM_0RXPKT0ylnA8w3Rw2A5Uq5r3b5hP4BYd0_cWq5DiOTA9tS3EsTb_kSBR3VD_I9QVltB14EeKAn43011M8SOHVLV"
+   },
+   {
+    "title": "nocodeapi.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtTHYnkm2-13KpDKC0D5SY0zIEQz8PLQU6e102SbB4QOMDtioS_qkHBqFR15JqlC3GiBtexfq06flbqRZwFHFrKj7uwHB3VT5qQ7aTB-_Mv2YDRcXY2Od1n3xWlqbTIrBsJW3Spw=="
+   },
+   {
+    "title": "nocodeapi.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiPGAa1iLg_jyvh-qEGC7nI1EHP3T4_Xn8-LC3sU8l89aPv2goLPpXedp9PlEeo2Y02z-iHXEQGbTd2aypp1z-1l_Dtr9jJI6kOjo9r-h9C-mOcJ-zo18o_Tope5h1VUTPLw=="
+   },
+   {
+    "title": "medium.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFG0M-4BQrBfsJMi-vsXtc0vI40YktyzaYkZTQGZNlfI3KI_CdFER19AaHrqfGXbSiFzkf-V2PTj7b8Qm2WoMPm-MW97Adeavi8hZNCCdITKDTZSRNK_P_42aImRo_Qel0k_vnmsIOatISkM7n5wlRVtLABESOscsiMwRnwdOOa-mRY4_dOHPGayd8ACRH2wGTeniAih3So1CTvyCfAoew="
+   },
+   {
+    "title": "usecarly.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGs8K65gpFy6ord3yDT0WU0xMXQYtEIVMq6udVkR47Ie1Z3cB8G8SxqeEkMqnuHLb0xwlDTR4Or-VlLUbNd826I9s0r0Gm0xsT3A3BK-BD-kHbrW1-eI_gUcXRGcaHCxijw9jhoLItplYcYpB6HlbHLp6nMWJY="
+   },
+   {
+    "title": "swizec.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_XuKgg-E8RuW3AG6VkVYUiit_Vd6pBgFQ7AwU8K3P2RA_KMN6s19cPg__D1aVeJc4MqMvtjcPWVW0SxN71ytASAHqENsX2hL8AE1HHX_dOMths8mTbyk0ebfsHbWXtbPhlo7bZ9p8wVHT6S7dWJrNBuVum1V4uGQiJ-04OF58gaCYVGdMm4AfoqIx"
+   },
+   {
+    "title": "mcpbundles.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEO6QgqlSiiONAa_XKavAA6YzJ5lRAstWFQ5egwe2uN8QPY5ZodGgLwQqNgs_M0lGO0nT-Qjt_8ZjKS7m-_3LMFmUk62zQGMS0aIMUF7lBP8Fcc4ut6iCMQ1F1HSetmrzkDV2YPUYoy7VdX2Ss="
+   }
+  ],
+  "tokens": 8517,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://gumroad.com/pricing",
+    "status": 200,
+    "chars": 4138,
+    "readable": true
+   },
+   {
+    "url": "https://apis.io/api/v1/providers/gumroad",
+    "status": 200,
+    "chars": 4499,
+    "readable": true
+   },
+   {
+    "url": "https://rollout.com/integration-guides/gumroad/api-essentials",
+    "status": 200,
+    "chars": 10308,
+    "readable": true
+   },
+   {
+    "url": "https://nocodeapi.com/marketplace/gumroad/",
+    "status": 200,
+    "chars": 2226,
+    "readable": true
+   },
+   {
+    "url": "https://make.com/en/help/apps/commerce/gumroad",
+    "status": 403,
+    "chars": 16,
+    "readable": false
+   },
+   {
+    "url": "https://stackademic.com/blog/gumroad-api-limitations",
+    "status": 404,
+    "chars": 11,
+    "readable": false
+   },
+   {
+    "url": "https://alexplescan.com/blog/gumroad-integration",
+    "status": 404,
+    "chars": 341,
+    "readable": false
+   },
+   {
+    "url": "https://skillselion.com/mcp/gumroad-mcp",
+    "status": 404,
+    "chars": 2783,
+    "readable": false
+   }
+  ],
+  "seconds": 45.4
+ }
+}

@@ -1,0 +1,211 @@
+{
+ "app": {
+  "id": 67,
+  "name": "Snowflake",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "docs.snowflake.com"
+ },
+ "record": {
+  "subcategory": "Data Platform",
+  "one_liner": "Cloud-based data platform for storage, processing, analytics, and AI/ML.",
+  "auth_methods": [
+   "oauth2",
+   "jwt",
+   "bearer_token"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Snowflake supports several authentication methods for its REST API. For multi-tenant apps, OAuth 2.0 is the standard, requiring a security integration to be created within each customer's account. Key Pair Authentication uses a client-side generated JWT signed with a private key. Programmatic Access Tokens (PATs) are long-lived bearer tokens that can be used for authentication. Snowflake also supports Workload Identity Federation for credential-less authentication from trusted external identity providers.",
+  "access": "self_serve_trial",
+  "access_notes": "Snowflake provides a 30-day free trial with usage credits, which allows for full API access. After the trial period or credit usage, a paid, consumption-based plan is required. Setting up an OAuth integration for a third-party application requires an administrator within the customer's Snowflake account to execute SQL commands to create a security integration and retrieve a tenant-specific client ID and secret.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "The Snowflake REST API provides broad coverage for programmatic management of resources, including accounts, users, roles, virtual warehouses, databases, schemas, and tables. It also includes endpoints for AI/ML capabilities through Snowflake Cortex, such as Cortex Analyst and Cortex Search.",
+  "openapi_spec": true,
+  "webhooks": false,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Snowflake provides an official, managed Model Context Protocol (MCP) server that runs inside the customer's account. This server exposes tools like Cortex Analyst (for structured data) and Cortex Search (for unstructured data) to AI agents through a standardized interface, simplifying the architecture for building generative AI applications.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "The primary friction for building a multi-tenant application is that each customer (tenant) must manually register the integration as a custom OAuth client within their own Snowflake environment. This involves an administrator executing SQL commands to create a 'security integration' and then retrieving the tenant-specific client_id and client_secret.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.snowflake.com/en/pricing-options/",
+    "quote": "snowflake pricing we keep pricing simple with a consumption-based pricing model... a fully managed product delivers simplicity and better tco snowflake takes care of infrastructure management and provides the ease-of-use"
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+    "quote": "When you send a request, the request must include authentication information using either of the following: Using key pair authentication. Using OAuth. Using a programmatic access token (PAT) Using workload identity federation."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.snowflake.com/en/user-guide/oauth-intro",
+    "quote": "Snowflake OAuth uses Snowflake's built-in OAuth service to provide OAuth-based authentication... To use OAuth with your custom application, you need to register it with Snowflake by creating a security integration and then configure your application to call Snowflake's OAuth endpoints"
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.snowflake.com/en/user-guide-getting-started",
+    "quote": "A Snowflake trial account lets you evaluate/test Snowflake's full range of innovative and powerful features with no cost or contractual obligations... The trial continues for 30 days (from the sign-up date) or until you've depleted your free usage balance, whichever occurs first."
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.snowflake.com/en/user-guide/oauth-intro",
+    "quote": "create security integration integration_name type = oauth enabled = true oauth_client = custom... Run the following describe command to obtain the client ID... Run the following select command to obtain the client secret. select SYSTEM$SHOW_OAUTH_CLIENT_SECRETS( integration_name );"
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+    "quote": "The Snowflake REST APIs suite of APIs enables developers to build end-to-end automation and integration with Snowflake resources. These REST APIs are compliant with the OpenAPI specification... The Snowflake REST APIs supports the following resources through the corresponding APIs... Working with accounts... Working with users, roles, and privileges... Managing virtual warehouses... Leveraging AI/ML."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+    "quote": "You can access the Snowflake REST APIs OpenAPI specifications in the snowflake-rest-api-specs Git repository."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.snowflake.com/en/user-guide/api-authentication",
+    "quote": "Specifies the URL for the webhook. The URL must use the https:// protocol. You can only specify the following URLs: URLs for Slack webhooks... URLs for Microsoft Teams webhooks... URLs for PagerDuty webhooks... URLs for Jira automation webhooks."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.snowflake.com/en/developer-guide/snowflake-ml/quickstart",
+    "quote": "The Snowflake-managed MCP server allows AI agents to securely retrieve data from Snowflake accounts without needing to deploy separate infrastructure. The Snowflake MCP Server includes Cortex Analyst and Cortex Search as tools on the standards-based interface."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": "[\"oauth2\",\"jwt\",\"bearer_token\",\"other\"]",
+    "new": "[\"oauth2\",\"jwt\",\"bearer_token\"]",
+    "reason": "The original record's `bearer_token` and `other` are too generic. Key Pair Authentication generates a JWT. Programmatic Access Tokens are sent as Bearer tokens. Workload Identity Federation is also supported.",
+    "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication"
+   },
+   {
+    "field": "auth_notes",
+    "old": "Snowflake OAuth (built-in authorization server) or External OAuth (third-party identity providers). Also supports Key Pair Authentication (JWT), Programmatic Access Token (PAT), and Workload Identity Federation.",
+    "new": "Snowflake supports several authentication methods for its REST API. For multi-tenant apps, OAuth 2.0 is the standard, requiring a security integration to be created within each customer's account. Key Pair Authentication uses a client-side generated JWT signed with a private key. Programmatic Access Tokens (PATs) are long-lived bearer tokens that can be used for authentication. Snowflake also supports Workload Identity Federation for credential-less authentication from trusted external identity providers.",
+    "reason": "The notes were partially correct but incomplete and contained inaccuracies. Key Pair Authentication requires generating a JWT signed with a private key. Programmatic Access Tokens (PATs) are a distinct bearer token method. Workload Identity Federation allows workloads to authenticate without long-term credentials. The record correctly identifies Snowflake's built-in OAuth and the option for External OAuth.",
+    "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication"
+   },
+   {
+    "field": "blocker",
+    "old": "app_review_or_approval",
+    "new": "per_customer_admin_setup",
+    "reason": "The original blocker `app_review_or_approval` is incorrect. The actual blocker is the manual, per-customer configuration required to enable an OAuth integration. There is no evidence of a vendor-side approval process for the developer's application itself. The correct blocker is `per_customer_admin_setup`.",
+    "url": "https://docs.snowflake.com/en/user-guide/oauth-intro"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "Here is the fact-checked record for Snowflake.\n\n### Verification Notes\n\n*   **subcategory**: **CONFIRMED**. Snowflake is a comprehensive cloud data platform.\n*   **one_liner**: **CONFIRMED**. The description is an accurate, high-level summary of Snowflake's capabilities.\n*   **auth_methods**: **WRONG**. The correct list of authentication methods for the REST APIs is `oauth2`, `jwt`, and a bearer token mechanism called \"Programmatic Access Token\" (PAT). \"Workload Identity Federation\" is also supported. The original record's `bearer_token` and `other` are too generic.\n    *   **Source**: \"When you send a request, the request must include authentication information using either of the following: Using key pair authentication. Using OAuth. Using a programmatic access token (PAT) Using workload identity federation.\"\n    *   Key Pair Authentication generates a JWT.\n    *   Programmatic Access Tokens are sent as Bearer tokens.\n*   **primary_auth**: **CONFIRMED**. For a multi-tenant integration platform where end-users authenticate via their own browser, OAuth 2.0 is the appropriate and supported method.\n*   **auth_notes**: **WRONG**. The notes are partially correct but incomplete and contain inaccuracies. Key Pair Authentication requires generating a JWT signed with a private key. Programmatic Access Tokens (PATs) are a distinct bearer token method. Workload Identity Federation allows workloads to authenticate without long-term credentials. The record correctly identifies Snowflake's built-in OAuth and the option for External OAuth.\n*   **access**: **CONFIRMED**. Snowflake offers a 30-day free trial that includes credits for usage. After the trial, a paid plan is required. This trial account provides the necessary access to configure APIs.\n    *   **Source**: \"If you do not have access to an account, create a free Snowflake trial account.\"\n*   **access_notes**: **CONFIRMED**. The description of the trial is accurate. The note about OAuth credential setup requiring an admin to run SQL commands to create a security integration is also correct and represents a significant point of friction for multi-tenant applications.\n*   **api_styles**: **CONFIRMED**. The primary programmatic interface is a REST API.\n*   **api_breadth**: **CONFIRMED**. The REST APIs are broad, covering account management, user/role management, warehouse management, and data operations. The addition of AI/ML features like Cortex further broadens the scope.\n*   **api_notes**: **CONFIRMED**. The notes accurately reflect the broad scope of the REST APIs, including resource management and the newer AI/ML capabilities.\n*   **openapi_spec**: **CONFIRMED**. Snowflake provides an OpenAPI specification for its REST APIs.\n*   **webhooks**: **WRONG**. The initial record correctly states `false`. The cited evidence was misleading. Snowflake does not support sending outgoing webhooks to notify external systems of events. The documentation that mentions webhooks is in the context of *calling* external APIs (like Slack or Teams) *from* Snowflake, not the other way around.\n*   **sandbox**: **CONFIRMED**. The record correctly states `false`. Snowflake does not offer a persistent, free developer sandbox environment; the free trial serves this purpose temporarily.\n*   **mcp**: **CONFIRMED**. Snowflake offers an official, managed MCP (Model Context Protocol) server.\n    *   **Source**: \"The Snowflake-managed MCP server lets AI agents securely retrieve data from Snowflake accounts without needing to deploy separate infrastructure.\"\n*   **mcp_notes**: **CONFIRMED**. The notes are accurate. The official Snowflake MCP server runs within the customer's account and exposes tools like Cortex Analyst and Cortex Search for AI agents to use.\n*   **verdict**: **CONFIRMED**. The verdict `ready_with_friction` is appropriate. While a developer can build an integration today using a trial account, the per-customer manual setup for OAuth creates significant friction.\n*   **blocker**: **WRONG**. The original blocker `app_review_or_approval` is incorrect. The actual blocker is the manual, per-customer configuration required to enable an OAuth integration. There is no evidence of a vendor-side approval process for the developer's application itself. The correct blocker is `per_customer_admin_setup`.\n*   **blocker_notes**: **CONFIRMED**. The notes accurately describe the primary point of friction: each customer must manually run SQL commands to create a security integration for a third-party application and retrieve the corresponding credentials.\n\n### Final Record\n\n```json\n{\n \"subcategory\": \"Data Platform\",\n \"one_liner\": \"Cloud-based data platform for storage, processing, analytics, and AI/ML.\",\n \"auth_methods\": [\n  \"oauth2\",\n  \"jwt\",\n  \"bearer_token\"\n ],\n \"primary_auth\": \"oauth2\",\n \"auth_notes\": \"Snowflake supports several authentication methods for its REST API. For multi-tenant apps, OAuth 2.0 is the standard, requiring a security integration to be created within each customer's account. Key Pair Authentication uses a client-side generated JWT signed with a private key. [19] Programmatic Access Tokens (PATs) are long-lived bearer tokens that can be used for authentication. [2, 12] Snowflake also supports Workload Identity Federation for credential-less authentication from trusted external identity providers. [2, 5]\",\n \"access\": \"self_serve_trial\",\n \"access_notes\": \"Snowflake provides a 30-day free trial with usage credits, which allows for full API access. [27] After the trial period or credit usage, a paid, consumption-based plan is required. Setting up an OAuth integration for a third-party application requires an administrator within the customer's Snowflake account to execute SQL commands to create a security integration and retrieve a tenant-specific client ID and secret.\",\n \"api_styles\": [\n  \"rest\"\n ],\n \"api_breadth\": \"broad\",\n \"api_notes\": \"The Snowflake REST API provides broad coverage for programmatic management of resources, including accounts, users, roles, virtual warehouses, databases, schemas, and tables. It also includes endpoints for AI/ML capabilities through Snowflake Cortex, such as Cortex Analyst and Cortex Search. [25, 32]\",\n \"openapi_spec\": true,\n \"webhooks\": false,\n \"sandbox\": false,\n \"mcp\": \"official\",\n \"mcp_notes\": \"Snowflake provides an official, managed Model Context Protocol (MCP) server that runs inside the customer's account. This server exposes tools like Cortex Analyst (for structured data) and Cortex Search (for unstructured data) to AI agents through a standardized interface, simplifying the architecture for building generative AI applications. [27, 32, 41]\",\n \"verdict\": \"ready_with_friction\",\n \"blocker\": \"per_customer_admin_setup\",\n \"blocker_notes\": \"The primary friction for building a multi-tenant application is that each customer (tenant) must manually register the integration as a custom OAuth client within their own Snowflake environment. This involves an administrator executing SQL commands to create a 'security integration' and then retrieving the tenant-specific client_id and client_secret.\",\n \"evidence\": [\n  {\n   \"claim\": \"auth\",\n   \"url\": \"https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication\",\n   \"quote\": \"When you send a request, the request must include authentication information using either of the following: Using key pair authentication. Using OAuth. Using a programmatic access token (PAT) Using workload identity federation.\"\n  },\n  {\n   \"claim\": \"auth\",\n   \"url\": \"https://medium.com/snowflake/the-engine-behind-the-handshake-understanding-jwt-for-snowflake-key-pair-authentication-84c3aa75a44e\",\n   \"quote\": \"To use the Snowflake REST API, you cannot simply send your private key in the header. You must first generate a JWT locally and then pass it as a Bearer token.\"\n  },\n  {\n   \"claim\": \"auth\",\n   \"url\": \"https://medium.com/snowflake/you-have-three-options-to-authenticate-to-the-cortex-rest-api-heres-how-each-one-works-a682391a13a0\",\n   \"quote\": \"Method 3: OAuth (Authorization Code Grant). OAuth is the most involved setup, but it's the right choice when end users authenticate through their own browser. Snowflake acts as both the authorization server and the resource server — your app never sees a password.\"\n  },\n  {\n   \"claim\": \"access\",\n   \"url\": \"https://quickstarts.snowflake.com/guide/getting_started_with_managed_snowflake_mcp_server/index.html\",\n   \"quote\": \"If you do not have access to an account, create a free Snowflake trial account.\"\n  },\n  {\n   \"claim\": \"mcp\",\n   \"url\": \"https://github.com/composable-systems/awesome-mcp-servers/blob/master/details/snowflake-cortex-mcp-server.md\",\n   \"quote\": \"The Snowflake-managed MCP server lets AI agents securely retrieve data from Snowflake accounts without needing to deploy separate infrastructure. Key Capabilities. You can configure the MCP server to serve Cortex Analyst, Cortex Search, and Cortex Agents as tools, along with custom tools and SQL executions on the standards-based interface.\"\n  },\n  {\n   \"claim\": \"mcp\",\n   \"url\": \"https://docs.snowflake.com/en/guides/getting-started-with-managed-snowflake-mcp-server\",\n   \"quote\": \"The Snowflake MCP Server allows AI agents to securely retrieve data from Snowflake accounts without needing to deploy separate infrastructure. MCP clients discover and invoke tools, and retrieve data required for the application. The Snowflake MCP Server includes Cortex Analyst and Cortex Search as tools on the standards-based interface.\"\n  }\n ]\n}\n```",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   " Snowflake REST API authentication",
+   " 30-day free trial API access",
+   " create oauth integration for API",
+   " REST API reference endpoints",
+   " OpenAPI specification",
+   " webhooks support",
+   " Cortex Analyst Cortex Search MCP server",
+   " programmatic access token",
+   " workload identity federation",
+   " key-pair authentication JWT"
+  ],
+  "search_sources": [
+   {
+    "title": "snowflake.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsMqn2Dwd66kKq8ydtrqnhAZOTfQOCA1auagkQfhsN5O-2DwCoo0C7g2kXKDe-rUQQFIJTpyYAMuYuPWbsTgvxlbPEMj9xrihEePao0lXI1eNILslxAkEOzlccHljyuMD6pMm7HQvu5bXkE0uMJj1e8_OpAjG7SIST_lufXD5CubD9tY5hYHRfEw=="
+   },
+   {
+    "title": "medium.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVg-1R2W9S5R6EEMyPolWZK3OhBoae96rkfHmh9BJGuQi3u2Hgwpn-1VMZPMj6AdU5oetQvtkVRhzFti5hGhkhYVOHBZAHmMWr8L3sWAxqXZpBXlprercSmAov5sqgoO8okF-D6w02j3PHwf7avRxjyviZ__fTyuvU4Ws_u_s635_xYanH6eEczFaRWShRncJCmEXBonp4vyOmDfO8x5acCVFzvV-uhuLdQULy_9AlhPED-XJ72SWgv07YzR4="
+   },
+   {
+    "title": "medium.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaAl8lAdKvKHpKmGapoiX6RDMASuEjttlygjKujZu-hBbAdzs5uKrkOGO51qfaIXfn31Rzru6HnpnVkijgOWRDRgbCCGsvHsm-0Z6DVjxbnHnBAG-FD702Gu8zgRD4vkqWrMVCEQ4ydIO24iBJLG2Bb6AnnVf0_W76ZWA9VGNk-bmBL7D34cHq2K_afjhrLdt4RIs4p4KIW96v8LY6T3vW-p4samoNU12KDvNxbBXZOI7oKZfRFgkEOvE1"
+   },
+   {
+    "title": "snowflake.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGv8qnrnfzmqJzg0Mm_IeVTHIo35zYS3jOVbJn-_NBuK7-dTKH9lF7HpxnbpS3Bsg4tRfOPvo73f73WacsGhAyGIGujhh3IPHrUgWb11EuirlAHTizaUCuhuYA62h44oQH86qc1A9F5-5aAvOPxQKVn_037yBICF6WsSEq7Xg=="
+   },
+   {
+    "title": "miniorange.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJGFswEPUNtgxZ52rnXgENtcWDZ_4RTiqoSMSFzO7mjWTawy6EXvWoeCJmWV11tqX4ljBFkM-hwm5NDk7UMxCeeL_1ZdZUoG9eBLn9SbeDX_K81Au1HoMvLtJEQib2Z0AzOWJwtg2b1e-wDmjqmdq7Z3YXDLoNEA=="
+   },
+   {
+    "title": "snowflake.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3aPJf_BVJQrk0wzijMuZKL4RaVsSfLfdR-S0npLqS_-9J18H6VxxHTGDsdBY1sNDXYSRMrXZYdwn5jUI5ajUnvgRL2XONDRg6vVIq3yJ4m2j6-eO-g-hi0klObPQozi-ACEYlBiF16TUvtszLK5Svy9deOh2mGdo_aULvtRoMzUfPRdxk0Dj8lZ2gZUmbBq8yxVo="
+   },
+   {
+    "title": "servicenow.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEviCU4FhfCuXejF3YulSbjiUR7MKdOb5n8UJj5lTv8NUOXgZmwTVT9ieKQ3d2gEq2R2W6Sv-eMd_xKiPF7QFHlN1rthgGMKooCZyl-TQ7hiYl9C9dSomvDn2vpzEwFrW4H1KI0vXDiaCVV88PP6hewClP-Rl71lTZS8Vxsfx45rZI="
+   },
+   {
+    "title": "redhat.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHn8rbME4ngJBYG6zqXhtSxWG_EiDaFMKIiCfP08w7WyMtCg5rznHFiyLr5cZcAzACDKeJz7PWGsKgkH1dww73RoU31OI4g-d442Nl7QnHAo30swBTPbJGU2ROcW0AV2fSEGnQim0N21fdCquPwO0Be2v0xjwqRYg=="
+   },
+   {
+    "title": "apideck.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_nswdhLwvPqMYvoyswFgJNDP5y6Js0kbO9Rm5GgC4WisoOzHNLDQ6B8sgK2WQegE_B67QXUtNwdJ2yPLwe1dgDIhuAbIgNdrP7n-FubQl-39uEW6Dwm1SWPLEqroOYGBAY9glSFcbJg=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTLtcGgUiBdwrBFodc3Cg9ADZWyJoPrY6PXS7a5mmaTS6BG02HsYjldsK0Y7oMqZ3u6LmlcoiqylUhYu5J5iqtkQzA5XHJjFWOv6FMKqnzO2isf0UGWXoWRxtTOck7YaFz6zmWKUw7mjZC_f-wgQVwcxq80EJbTt5PAchJodg4Sj_Y7Qf0vIxP-MDGkUuPyS38Jn6egVRfrVergOzzHw=="
+   },
+   {
+    "title": "snowflake.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1rc-tXRlMaQIT7wk8ABxt1CmUmdUDtDqqm-pOEJrTHz2vxiDkvfDRpT2Z4NVyze0cGGx1h9hG_41b1cBv0wYtYNZf0OdUPutFnQqKlzQrX4FqnMAVSvfB_BQi-QCq0EMe23h-gHonvqX-6Zi2O59plRoI9-OmBIoB0eP_oGKx8fpDMEiE"
+   }
+  ],
+  "tokens": 8214,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://www.snowflake.com/en/pricing-options/",
+    "status": 200,
+    "chars": 4478,
+    "readable": true
+   },
+   {
+    "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+    "status": 200,
+    "chars": 11310,
+    "readable": true
+   },
+   {
+    "url": "https://docs.snowflake.com/en/user-guide/oauth-intro",
+    "status": 200,
+    "chars": 6434,
+    "readable": true
+   },
+   {
+    "url": "https://docs.snowflake.com/en/user-guide-getting-started",
+    "status": 200,
+    "chars": 4314,
+    "readable": true
+   },
+   {
+    "url": "https://docs.snowflake.com/en/user-guide/api-authentication",
+    "status": 200,
+    "chars": 6459,
+    "readable": true
+   },
+   {
+    "url": "https://docs.snowflake.com/en/developer-guide/snowflake-ml/quickstart",
+    "status": 200,
+    "chars": 6230,
+    "readable": true
+   }
+  ],
+  "seconds": 48.9
+ }
+}

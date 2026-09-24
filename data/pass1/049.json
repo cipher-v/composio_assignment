@@ -1,0 +1,272 @@
+{
+ "app": {
+  "id": 49,
+  "name": "Amazon Selling Partner",
+  "category": "Ecommerce",
+  "hint": "developer-docs.amazon.com/sp-api"
+ },
+ "record": {
+  "subcategory": "E-commerce",
+  "one_liner": "Programmatically manage Amazon seller and vendor accounts, automating core retail operations.",
+  "auth_methods": [
+   "oauth2",
+   "signature_hmac"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Login with Amazon (LWA) OAuth 2.0 for access tokens, AWS STS AssumeRole for temporary AWS credentials, AWS Signature Version 4 for request signing, and Restricted Data Token (RDT) for PII access.",
+  "access": "approval_required",
+  "access_notes": "Requires an active Amazon Professional Seller account ($39.99/month). Production use needs developer profile approval, application registration, and strict data protection/architecture reviews for restricted roles.",
+  "api_styles": [
+   "rest",
+   "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Primarily REST-based, with GraphQL for Data Kiosk API. Covers listings, orders, payments, reports, feeds, finances, notifications, and FBA operations.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "community_only",
+  "mcp_notes": "Third-party community MCP servers exist (e.g., amazon-sp-api-mcp-server or AmazonSeller-mcp-server). No official server is provided by Amazon.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "Developers must go through a rigorous developer profile registration, application review, and data protection policy compliance check, alongside maintaining a paid Professional Seller account.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://developer.amazonservices.com/start",
+    "quote": "The Selling Partner API (SP-API) is a REST-based API that helps Amazon selling partners programmatically access their data on orders, shipments, payments, and much more."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer-docs.amazon/sp-api/docs/authorizing-selling-partner-api-applications?ld=ASPTSPAPIDirect&pageName=US%3ASPDS%3ASPAPI-BRIGHTSPOT-grow%2Fapi-amazon-business-b2b-venda-com-sp-api",
+    "quote": "The authorization model for the Selling Partner API is based on Login with Amazon, the Amazon implementation of OAuth 2.0."
+   },
+   {
+    "claim": "auth",
+    "url": "https://dlthub.com/docs/dlt-ecosystem/verified-sources/amazon_sp_api",
+    "quote": "Requests require AWS Signature Version 4 signing and a Login with Amazon (LWA) access token (or Restricted Data Token for restricted operations)."
+   },
+   {
+    "claim": "access",
+    "url": "https://feedvisor.com/resources/amazon-fba/amazon-sandbox/",
+    "quote": "Professional selling plan - SP-API access requires a Professional seller account ($39.99/month)"
+   },
+   {
+    "claim": "access",
+    "url": "https://ppc.land/amazon-cancels-selling-partner-api-fees/",
+    "quote": "Amazon cancels its Selling Partner API usage and annual fees for third-party developers after community feedback, reversing plans announced in November 2025."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer-docs.amazon/sp-api/docs/sp-api-vendor-use-cases",
+    "quote": "Step 1: prepare for registration step 2: create a solution provider portal account step 3: create a developer profile step 4: register a sandbox application ... step 7: register your production application"
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.amazonservices.com/start",
+    "quote": "The Selling Partner API (SP-API) is a REST-based API"
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/sshaw/peddler",
+    "quote": "The Data Kiosk API provides access to Amazon's analytical data through GraphQL queries."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.amazonservices.com/start",
+    "quote": "programmatically access their data on orders, shipments, payments, and much more."
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/amzn/selling-partner-api-models",
+    "quote": "This repository contains OpenAPI models for developers to use when developing software to call Selling Partner APIs."
+   },
+   {
+    "claim": "api",
+    "url": "https://surpass.biz/understanding-amazons-selling-partner-api/",
+    "quote": "Taking advantage of webhooks and notifications provided by the SP-API allows for real-time updates on orders, inventory changes, and other critical business events."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer-docs-amazon-shipping.readme.io/apis/docs/amazon-scpn-authorization-workflow",
+    "quote": "The Selling Partner API provides two sandbox environments that allow you to test your applications without affecting production data or triggering real-world events. The Selling Partner API static sandbox uses pattern matching to return static, mocked responses. The Selling Partner API dynamic sandbox routes requests to a sandbox backend that can return realistic responses based on the request parameters."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://mcp.pizza/server/amazon-sp-api-mcp-server",
+    "quote": "AmazonSeller-mcp-server is an MCP server that enables seamless interaction with the Amazon Selling Partner API."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://developer-docs.amazon/sp-api/docs/sp-api-vendor-use-cases",
+    "quote": "Step 1: prepare for registration step 2: create a solution provider portal account step 3: create a developer profile step 4: register a sandbox application ... step 7: register your production application"
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### 1. Product Overview\nThe Amazon Selling Partner API (SP-API) is an ecommerce suite that enables developers to programmatically manage Amazon seller and vendor accounts, automating core retail operations.\n* **Source URL:** `https://developer.amazonservices.com/start`\n* **Verbatim Quote:** `\"The Selling Partner API (SP-API) is a REST-based API that helps Amazon selling partners programmatically access their data on orders, shipments, payments, and much more.\"`\n\n### 2. Authentication Methods & Multi-Tenant Architecture\nThe Amazon SP-API utilizes a complex, multi-layered authentication mechanism:\n1. **Login with Amazon (LWA) OAuth 2.0:** Used to obtain an access token (via Authorization Code Grant for user-delegated actions or Client Credentials Grant for grantless operations like notifications).\n2. **AWS STS AssumeRole:** Requires assuming an IAM role to obtain temporary AWS credentials.\n3. **AWS Signature Version 4 (SigV4):** Every individual HTTP request must be cryptographically signed using the temporary AWS credentials.\n4. **Restricted Data Token (RDT):** An additional token layer required for accessing restricted operations containing Personally Identifiable Information (PII).\n\nFor a multi-tenant integration platform, the primary authentication method is **OAuth 2.0** via the Login with Amazon workflow. The platform redirects sellers to an Amazon consent page to obtain a long-lived refresh token, which is then securely stored and exchanged for short-lived 60-minute access tokens.\n* **Source URL:** `https://developer-docs.amazon/sp-api/docs/authorizing-selling-partner-api-applications?ld=ASPTSPAPIDirect&pageName=US%3ASPDS%3ASPAPI-BRIGHTSPOT-grow%2Fapi-amazon-business-b2b-venda-com-sp-api`\n* **Verbatim Quote:** `\"The authorization model for the Selling Partner API is based on Login with Amazon, the Amazon implementation of OAuth 2.0.\"`\n* **Source URL:** `https://dlthub.com/docs/dlt-ecosystem/verified-sources/amazon_sp_api`\n* **Verbatim Quote:** `\"Requests require AWS Signature Version 4 signing and a Login with Amazon (LWA) access token (or Restricted Data Token for restricted operations).\"`\n* **Primary Auth Classification:** `oauth2`\n\n### 3. Developer Credentials & Cost Assessment\n* **Cost:** Accessing the SP-API requires an active Amazon Professional Seller account, which costs $39.99/month. In late 2025, Amazon announced plans to introduce a $1,400/year subscription fee and usage-based GET call fees starting in 2026; however, following community feedback, Amazon officially cancelled and reversed this decision in May 2026, keeping the API free of additional usage charges.\n  * **Source URL:** `https://feedvisor.com/resources/amazon-fba/amazon-sandbox/`\n  * **Verbatim Quote:** `\"Professional selling plan - SP-API access requires a Professional seller account ($39.99/month)\"`\n  * **Source URL:** `https://ppc.land/amazon-cancels-selling-partner-api-fees/`\n  * **Verbatim Quote:** `\"Amazon cancels its Selling Partner API usage and annual fees for third-party developers after community feedback, reversing plans announced in November 2025.\"`\n* **Developer Onboarding Steps:** Developers must register a developer profile in the Solution Provider Portal, set up an AWS account with IAM policies, and register their application to receive LWA credentials.\n  * **Source URL:** `https://developer-docs.amazon/sp-api/docs/sp-api-vendor-use-cases`\n  * **Verbatim Quote:** `\"Step 1: prepare for registration step 2: create a solution provider portal account step 3: create a developer profile step 4: register a sandbox application ... step 7: register your production application\"`\n* **Access Classification:** `approval_required` (Production use requires developer profile approval, application registration, and strict data protection/architecture reviews for restricted roles).\n\n### 4. API Style, Breadth, OpenAPI Spec, Webhooks, Sandbox\n* **API Style:** Primarily REST-based, though the Data Kiosk API utilizes GraphQL queries for analytical data.\n  * **Source URL:** `https://developer.amazonservices.com/start`\n  * **Verbatim Quote:** `\"The Selling Partner API (SP-API) is a REST-based API\"`\n  * **Source URL:** `https://github.com/sshaw/peddler`\n  * **Verbatim Quote:** `\"The Data Kiosk API provides access to Amazon's analytical data through GraphQL queries.\"`\n* **API Breadth:** Extremely broad, covering listings, orders, payments, reports, feeds, finances, notifications, and FBA operations.\n  * **Source URL:** `https://developer.amazonservices.com/start`\n  * **Verbatim Quote:** `\"programmatically access their data on orders, shipments, payments, and much more.\"`\n* **OpenAPI Spec:** Official OpenAPI (Swagger) models are publicly available on GitHub.\n  * **Source URL:** `https://github.com/amzn/selling-partner-api-models`\n  * **Verbatim Quote:** `\"This repository contains OpenAPI models for developers to use when developing software to call Selling Partner APIs.\"`\n* **Webhooks:** Supported via the Notifications API, which sends real-time updates to AWS SQS or SNS destinations.\n  * **Source URL:** `https://surpass.biz/understanding-amazons-selling-partner-api/`\n  * **Verbatim Quote:** `\"Taking advantage of webhooks and notifications provided by the SP-API allows for real-time updates on orders, inventory changes, and other critical business events.\"`\n* **Sandbox:** Amazon provides both static (mocked pattern matching) and dynamic (stateful backend simulation) sandbox environments.\n  * **Source URL:** `https://developer-docs-amazon-shipping.readme.io/apis/docs/amazon-scpn-authorization-workflow`\n  * **Verbatim Quote:** `\"The Selling Partner API provides two sandbox environments that allow you to test your applications without affecting production data or triggering real-world events. The Selling Partner API static sandbox uses pattern matching to return static, mocked responses. The Selling Partner API dynamic sandbox routes requests to a sandbox backend that can return realistic responses based on the request parameters.\"`\n\n### 5. Model Context Protocol (MCP) Servers\n* **Availability:** Only third-party community MCP servers exist (e.g., `amazon-sp-api-mcp-server` or `AmazonSeller-mcp-server`). No official server is provided by Amazon.\n  * **Source URL:** `https://mcp.pizza/server/amazon-sp-api-mcp-server`\n  * **Verbatim Quote:** `\"AmazonSeller-mcp-server is an MCP server that enables seamless interaction with the Amazon Selling Partner API.\"`\n* **MCP Classification:** `community_only`\n\n### 6. Buildability Verdict & Main Blocker\n* **Verdict:** `ready_with_friction`\n* **Main Blocker:** `approval_required`. While the API has public documentation, an OpenAPI spec, and sandbox environments, developers cannot immediately access production data. They must go through a rigorous developer profile registration, application review, and data protection policy compliance check, alongside maintaining a paid Professional Seller account ($39.99/month).",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"Amazon Selling Partner API\" cost developer account free tier",
+   "\"Amazon SP-API\" OpenAPI spec github",
+   "\"Amazon Selling Partner API\" MCP server",
+   "\"Amazon Selling Partner API\" webhooks notifications",
+   "\"Selling Partner API\" \"Login with Amazon\" \"SigV4\"",
+   "\"Selling Partner API\" authorization workflow oauth",
+   "\"Selling Partner API\" sandbox environment",
+   "\"Selling Partner API\" openapi spec models github"
+  ],
+  "search_sources": [
+   {
+    "title": "amazonservices.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIZn9Z-N8RrvRQIY7Za_bp-tOGaraOnm9JVsMtR7pFT1CZlvvqYD2HpN3pbgO3u6X_ypH0w5A-048_zDpRtuc99i4sVElTBP8ZUO339Qa9g9WI28BltL_zwBMtccEMpg4="
+   },
+   {
+    "title": "sembricks.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjprihSDOCdcyu4todytZLBw8J_nqN00Ln86uG_tqvargKwcSMMo5Jbu9glAPN3rRtwrShMQGOu1nltC9im2T3dsNOxfEFCyt6KN-SXUhM-z-v_5OnkBQgpwnFeUlw-xhVeRb_w94WAA=="
+   },
+   {
+    "title": "sergiovagni.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrwYUt2zwPOxg7H6lbnzoBdO1_8Y2oOhPcGLcVGqkO5AfnKYAsKxuoamuINy1XQlQjB211kQC49afhm9W6Ok8tK4anV5PfEe2ukWJbH4W4vTrXQU3XU1Nco8L9CRZiUo5lRLSyPkoDXO2W5slup84Wi9xUZA=="
+   },
+   {
+    "title": "aiagc.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrYzsOef3dL7LYwKD3-MSYJ5krc8m9g6piiX_MZ5QtyUpDa6tO5mWuevCrwEQNGZQmk77SHuJ_yX3cvF03hJo0c059BJ5WiG9G-pBN1LuV-oUWzX1UXjinBoKyPBaBwCI7RcMF270ao1lGmQ=="
+   },
+   {
+    "title": "houseblend.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXPudpYfU383auvrU70pg-Kbe-EOkJK1guuAs_mb1J2xAC72hwi4_tXrpVTmRJFpeIb3SFXc3nXyNlBEMnMGgygsR-45wHsxMUoWcpeIruUep9eHpXvf-eIpAmfD_JoO44DeMS1mdNZd6OAWo6UUsxL6pxWGdQniLGS0xvcpZskesi7EAkhYHdy7I="
+   },
+   {
+    "title": "feedvisor.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFscR-NEHwN6WK7TZhkOm-01QfJGuIKlwk26_TOKszciByNWNcdANa3zSU6vIDy_4IzNHIKKR7o3pvhK3G6QGXAz0smeiMfIr3WNDtrSolzKchJ9G1_Sv675pVdvniBDBFgSX07"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGi3ZqOye9KvYfq3P_lsoHbd-Ro21BWoMwzKli-qi4eBx4RcRHYf8E7799lhcF6DX0dwiunTNq5L0tbPQBRY_lbbCrxAYPjgiZ2XzZ-QfMUWZFZd-wYaqkCrsgdfEUc1Mtg8jZcvmZpKESDKeuH"
+   },
+   {
+    "title": "developer-docs.amazon",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH88MWb-gewf5_Jr4aYnfQLL9w6iWco9eZsn0v7CSGboRYnHW-CyDmcED89LAniLwXcHYaZ1YmA2WetBeshNurRJoNCBS-8gafyPU5Dpi17VBpi94F00WVhXu3R0f8ZM0PNIb_SIN_dv41D0su6tfTcvu2HqpOi0hGc8lBIo03WxFLBFyw-uAzorzDCW-tu"
+   },
+   {
+    "title": "readme.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZZRqQWtFGdwDi49P8q6f-vZBNHpKENG0aEAw9k_RzUutsBtYEJ9QlIe_-vIhLdI63iYwd_o2ZtT8V7UbgL3QtPPNQUoM88hXX2EYS4D_Y9klOVU76cEkCFb7rt5rIwIr9HSspBscPWWYcesWdcLqpaNKkVmIwtnAp12PgCsUPyVZ4QUVsJnPFnVifiYCidB8RbOj3Jg=="
+   },
+   {
+    "title": "amazonservices.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxXy5k_XHpmI82IBYhWjPxyzKkDb4ZOgHEGTJ804E-OR3_TN_nOa-iisJ7gdXPQe2npvWqq4yuZlQM25K5ewqVxsQcAPFhrrf0WIl64a8iWEsmauKJtcqcnUdQn0Qme_CO4LrtPgegXXmppHG1QvFf5iDRwrdiBpiswDLLqaAVosCiEQLtDvE-neZ7"
+   },
+   {
+    "title": "spapi.vip",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_VQlcYw8NSX0MPDg1HDb9Y1wAddi4eTjV9Hx1mOJBSBztCryBU521HWEyMm8uzy95J5uoFCe4PvcbyNJVhUpiJ0buiRVl89Gha5zorUJbQkwYhbGnvH3J1ItmiF7F_m6NPUoll-lWQoOzQI-5BqY5iZrnvEcCy7pEEmaFSuO4Gh0SS2QvjKWt0aa1Q9RJ"
+   }
+  ],
+  "tokens": 9801,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Amazon Selling Partner API authentication",
+    "Amazon Selling Partner OAuth",
+    "Amazon Selling Partner API keys",
+    "Amazon Selling Partner API getting started",
+    "Amazon Selling Partner API quickstart",
+    "Amazon Selling Partner API pricing",
+    "Amazon Selling Partner API plans",
+    "Amazon Selling Partner developer program",
+    "Amazon Selling Partner API reference",
+    "Amazon Selling Partner API documentation",
+    "Amazon Selling Partner MCP server"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://github.com/amzn/selling-partner-api-samples",
+    "https://developer-docs.amazon/sp-api/docs/sp-api-vendor-use-cases",
+    "https://developer-docs.amazon/sp-api/docs/authorizing-selling-partner-api-applications?ld=ASPTSPAPIDirect&pageName=US%3ASPDS%3ASPAPI-BRIGHTSPOT-grow%2Fapi-amazon-business-b2b-venda-com-sp-api",
+    "https://developer-docs-amazon-shipping.readme.io/apis/docs/amazon-scpn-authorization-workflow",
+    "https://developer.amazonservices.com/start",
+    "https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits",
+    "https://sell.amazon.com/developers",
+    "https://developer-docs.amazon/sp-api/docs/welcome",
+    "https://spapi.cyou/en/use-other/website-authorization-workflow.html",
+    "https://www.youtube.com/watch?v=D5gMHHMfGbw"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://developer.amazonservices.com/docs/sp-api/docs/authorizing-selling-partner-api-applications",
+     "status": 404
+    },
+    {
+     "url": "https://developer.amazonservices.com/docs/sp-api/docs/selling-partner-api-overview-get-started",
+     "status": 404
+    },
+    {
+     "url": "https://developer.amazonservices.com/docs/sp-api/docs/usage-plans-and-rate-limits",
+     "status": 404
+    },
+    {
+     "url": "https://developer.amazonservices.com/docs/sp-api/docs/api-reference-v2023-11-01-reference",
+     "status": 404
+    },
+    {
+     "url": "https://developer.amazonservices.com/docs/sp-api/docs/website-authorization-workflow",
+     "status": 404
+    },
+    {
+     "url": "https://developer.amazonservices.com/docs/sp-api/docs/selling-partner-appstore-authorization-workflow",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://github.com/amzn/selling-partner-api-samples",
+     "status": 200,
+     "chars": 6343,
+     "readable": true
+    },
+    {
+     "url": "https://developer-docs.amazon/sp-api/docs/sp-api-vendor-use-cases",
+     "status": 200,
+     "chars": 22236,
+     "readable": true
+    },
+    {
+     "url": "https://developer-docs.amazon/sp-api/docs/authorizing-selling-partner-api-applications?ld=ASPTSPAPIDirect&pageName=US%3ASPDS%3ASPAPI-BRIGHTSPOT-grow%2Fapi-amazon-business-b2b-venda-com-sp-api",
+     "status": 200,
+     "chars": 23382,
+     "readable": true
+    },
+    {
+     "url": "https://developer-docs-amazon-shipping.readme.io/apis/docs/amazon-scpn-authorization-workflow",
+     "status": 200,
+     "chars": 15432,
+     "readable": true
+    },
+    {
+     "url": "https://developer.amazonservices.com/start",
+     "status": 200,
+     "chars": 10594,
+     "readable": true
+    },
+    {
+     "url": "https://developer-docs.amazon/sp-api/docs/usage-plans-and-rate-limits",
+     "status": 200,
+     "chars": 31824,
+     "readable": true
+    },
+    {
+     "url": "https://sell.amazon.com/developers",
+     "status": 200,
+     "chars": 13787,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 81.6
+ }
+}

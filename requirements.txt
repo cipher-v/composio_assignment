@@ -1,0 +1,5 @@
+google-genai>=2.25
+google-auth>=2.58
+pydantic>=2.13
+requests>=2.34
+beautifulsoup4>=4.15

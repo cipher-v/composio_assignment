@@ -1,0 +1,61 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.zoho.com/crm/developer/docs/api/v8/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.zoho.com/crm/developer/docs/api/v8/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.zoho.com/crm/developer/docs/api/v8/authentication.html",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "api_key": false
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://www.zoho.com/crm/developer/docs/api/v8/authentication.html']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://www.zoho.com/crm/developer/docs/api/v8/']\n- Auth methods not mentioned on any cited page: ['api_key']",
+ "metrics": {
+  "n_evidence": 4,
+  "alive_rate": 0.75,
+  "dead_rate": 0.25,
+  "blocked_rate": 0.0,
+  "official_rate": 1.0,
+  "readable": 3,
+  "quote_supported_rate": 0.6666666666666666,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

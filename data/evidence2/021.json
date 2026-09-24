@@ -1,0 +1,251 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://slack.com/intl/en-in/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.15
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.slack.dev/reference/methods/oauth.v2.access/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.slack.dev/authentication/sign-in-with-slack/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://hexdocs.pm/slack_open_api/0.0.3/SlackOpenApi.html",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.slack.dev/quickstart/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.79
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://zenzap.co/blog/slack-pricing-guide",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.slack.dev/apps/marketplace/review-guide",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/slackapi/slack-api-specs",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.slack.dev/reference/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.88
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/slackapi/slack-api-specs",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.77
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.slack.dev/reference/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.slack.dev/quickstart/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.79
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://docs.slack.dev/quickstart/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/slackapi/slack-mcp-plugin",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.12
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://docs.slack.dev/quickstart/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.79
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://slack.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.slack.dev/quickstart/developer-sandbox",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.slack.dev/apps/marketplace/review-guide",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://api.slack.com/web",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.78
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.postman.com/slack/workspace/slack-api/overview",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.apimatic.io/blog/slack-api-terminated-openapi-spec/",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://api.slack.com/messaging/webhooks",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.6
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://api.slack.com/automation/mcp",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "bearer_token": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://zenzap.co/blog/slack-pricing-guide', 'https://www.apimatic.io/blog/slack-api-terminated-openapi-spec/']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://slack.com/intl/en-in/pricing', 'https://docs.slack.dev/authentication/sign-in-with-slack/', 'https://docs.slack.dev/apps/marketplace/review-guide', 'https://github.com/slackapi/slack-mcp-plugin', 'https://slack.com/pricing', 'https://docs.slack.dev/quickstart/developer-sandbox', 'https://docs.slack.dev/apps/marketplace/review-guide', 'https://api.slack.com/automation/mcp']\n- Non-vendor sources (prefer official docs): ['https://hexdocs.pm/slack_open_api/0.0.3/SlackOpenApi.html', 'https://github.com/slackapi/slack-api-specs', 'https://github.com/slackapi/slack-api-specs', 'https://github.com/slackapi/slack-mcp-plugin', 'https://www.postman.com/slack/workspace/slack-api/overview']",
+ "metrics": {
+  "n_evidence": 23,
+  "alive_rate": 0.9130434782608695,
+  "dead_rate": 0.08695652173913043,
+  "blocked_rate": 0.0,
+  "official_rate": 0.6956521739130435,
+  "readable": 20,
+  "quote_supported_rate": 0.6,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

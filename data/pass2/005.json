@@ -1,0 +1,204 @@
+{
+ "app": {
+  "id": 5,
+  "name": "Twenty",
+  "category": "CRM and Sales",
+  "hint": "twenty.com (open-source CRM)"
+ },
+ "record": {
+  "subcategory": "Customer Relationship Management (CRM)",
+  "one_liner": "An open-source CRM platform providing auto-generated REST and GraphQL APIs with a developer-first approach to customization.",
+  "auth_methods": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "Authentication is done via API keys passed as a Bearer token in the Authorization header. API keys can be generated in the workspace settings. OAuth 2.0 is also available for building external applications that act on behalf of users.",
+  "access": "self_serve_free",
+  "access_notes": "The self-hosted version runs on your own server via Docker Compose... has no seat fees, and gives you full control over your deployment... and simple pricing start your free trial today without credit card. monthly yearly -25% self-hosting pro $9 /user/month",
+  "api_styles": [
+   "rest",
+   "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Core API — /rest/ and /graphql/ CRUD on records: People, Companies, Opportunities, your custom objects... Metadata API — /rest/metadata/ and /metadata/ Schema management: create/modify/delete objects, fields, and relations.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "community_only",
+  "mcp_notes": "A community-built Model Context Protocol (MCP) server is available on GitHub. It acts as an integration layer for AI assistants and supports both REST and GraphQL APIs, authenticating via API key.",
+  "verdict": "ready_with_friction",
+  "blocker": "unclear_or_sparse_docs",
+  "blocker_notes": "There is no static API reference for Twenty. Each workspace has its own schema — when you add a custom object (say Invoice ), it immediately gets REST and GraphQL endpoints identical to built-in objects like Company or Person .",
+  "evidence": [
+   {
+    "claim": "auth",
+    "url": "https://twenty.com",
+    "quote": "Twenty's API uses API keys for authentication...Once you have an API key, include it in the Authorization header of your HTTP requests. Use the Bearer token scheme. For example: Authorization: Bearer YOUR_API_KEY."
+   },
+   {
+    "claim": "access",
+    "url": "https://twenty.com/pricing",
+    "quote": "The self-hosted version runs on your own server via Docker Compose... has no seat fees, and gives you full control over your deployment..."
+   },
+   {
+    "claim": "api",
+    "url": "https://twenty.com",
+    "quote": "Two APIs. Core API — /rest/ and /graphql/ CRUD on records: People, Companies, Opportunities, your custom objects. Query, filter, traverse relations. Metadata API — /rest/metadata/ and /metadata/ Schema management: create/modify/delete objects, fields, and relations."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/IgorWarzocha/twenty-mcp-server",
+    "quote": "The Twenty MCP Server provides a comprehensive integration layer between AI assistants and the Twenty CRM platform. Built on the Model Context Protocol standard, it offers secure, efficient access to CRM data through both GraphQL and REST APIs."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://twenty.com",
+    "quote": "Schema-per-tenant APIs. There is no static API reference for Twenty. Each workspace has its own schema — when you add a custom object (say Invoice ), it immediately gets REST and GraphQL endpoints identical to built-in objects like Company or Person ."
+   }
+  ],
+  "confidence": 0.95,
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": "[\"oauth2\", \"api_key\", \"bearer_token\"]",
+    "new": "[\"api_key\", \"oauth2\"]",
+    "reason": "The primary method of authentication for the public API is API keys. OAuth is also mentioned as an option for external apps acting on behalf of users. The first-pass record incorrectly listed `oauth2` as primary and included `bearer_token` as a separate method, when API keys are used as Bearer tokens.",
+    "url": "https://twenty.com"
+   },
+   {
+    "field": "primary_auth",
+    "old": "oauth2",
+    "new": "api_key",
+    "reason": "For third-party integrations and automations, API keys are the standard documented method. OAuth 2.0 is available but seems geared towards apps that need to act on behalf of a user who is interactively signing in. For a multi-tenant platform, API keys are more direct.",
+    "url": "https://twenty.com"
+   },
+   {
+    "field": "auth_notes",
+    "old": "Supports OAuth 2.0/2.1 with dynamic client registration (RFC 7591) and workspace API keys passed via Bearer or x-api-key headers.",
+    "new": "Authentication is done via API keys passed as a Bearer token in the Authorization header. API keys can be generated in the workspace settings. OAuth 2.0 is also available for building external applications that act on behalf of users.",
+    "reason": "The notes are a mix of correct and incorrect information. API keys are indeed passed as a Bearer token. OAuth is available for external apps. There is no mention of `x-api-key` headers or RFC 7591 dynamic client registration in the public documentation.",
+    "url": "https://twenty.com"
+   },
+   {
+    "field": "openapi_spec",
+    "old": "true",
+    "new": "false",
+    "reason": "The first-pass value of `true` is misleading. There is no single, static OpenAPI specification. Instead, a unique API reference (which could be an OpenAPI spec) is auto-generated for each workspace based on its specific schema.",
+    "url": "https://twenty.com"
+   },
+   {
+    "field": "mcp",
+    "old": "official",
+    "new": "community_only",
+    "reason": "The first-pass record claimed an \"official\" MCP server. The only discovered MCP server is a third-party, community-built project. There is no evidence of a vendor-maintained MCP server.",
+    "url": "https://github.com/IgorWarzocha/twenty-mcp-server"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "Every Cloud workspace ships with a native, first-party MCP server, and it is also documented for self-hosted deployments.",
+    "new": "A community-built Model Context Protocol (MCP) server is available on GitHub. It acts as an integration layer for AI assistants and supports both REST and GraphQL APIs, authenticating via API key.",
+    "reason": "The notes are incorrect as they describe an official, first-party server. The server that was found is a third-party project.",
+    "url": "https://github.com/IgorWarzocha/twenty-mcp-server"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### Verification Notes\n\nHere is the field-by-field verification of the record for \"Twenty\".\n\n*   **subcategory**: **CONFIRMED**. The product is consistently described as an \"open-source CRM\".\n*   **one_liner**: **CONFIRMED**. The record's one-liner is accurate. Twenty is an open-source CRM that auto-generates REST and GraphQL APIs based on a user's custom data model, emphasizing a developer-first approach.\n*   **auth_methods**: **WRONG**. The primary method of authentication for the public API is API keys. OAuth is also mentioned as an option for external apps acting on behalf of users. The first-pass record incorrectly listed `oauth2` as primary and included `bearer_token` as a separate method, when API keys are used as Bearer tokens.\n    *   **Correct Value**: `['api_key', 'oauth2']`\n    *   **Source**: \"Twenty's API uses API keys for authentication...Once you have an API key, include it in the Authorization header of your HTTP requests. Use the Bearer token scheme. For example: Authorization: Bearer YOUR_API_KEY.\" and \"For OAuth-based access (external apps acting on behalf of users), see OAuth.\"\n*   **primary_auth**: **WRONG**. For third-party integrations and automations, API keys are the standard documented method. OAuth 2.0 is available but seems geared towards apps that need to act on behalf of a user who is interactively signing in. For a multi-tenant platform, API keys are more direct.\n    *   **Correct Value**: `api_key`\n    *   **Source**: \"Twenty's API uses API keys for authentication. Every request to protected endpoints must include an API key in the header.\"\n*   **auth_notes**: **WRONG**. The notes are a mix of correct and incorrect information. API keys are indeed passed as a Bearer token. OAuth is available for external apps. There is no mention of `x-api-key` headers or RFC 7591 dynamic client registration in the public documentation.\n    *   **Correct Value**: \"Authentication is done via API keys passed as a Bearer token in the Authorization header. API keys can be generated in the workspace settings. OAuth 2.0 is also available for building external applications that act on behalf of users.\"\n    *   **Source**: \"Create an API key in Settings → API & Webhooks → + Create key. Copy it immediately — it's shown once... Authorization: Bearer YOUR_API_KEY.\" and \"Remote servers authenticate with OAuth: a browser opens so you can sign in and click...\"\n*   **access**: **CONFIRMED**. Twenty is open-source and can be self-hosted for free, which includes full API access. This fits the `self_serve_free` definition. The cloud version also offers a free trial. [Pricing Page]\n    *   **Source**: \"Twenty is licensed under AGPL-3.0, and the full source is on GitHub. You can self-host it on your own infrastructure and run it for internal commercial use with no restrictions.\" and \"Run Twenty on your own infrastructure with a single Docker Compose command. Full control over your data, updates on your schedule.\"\n*   **access_notes**: **CONFIRMED**. The description is accurate. It is free to self-host. The pricing page confirms the free trial for the cloud version and paid plan costs. [Pricing Page]\n    *   **Source**: \"The self-hosted version runs on your own server via Docker Compose... has no seat fees, and gives you full control over your deployment...\" and \"simple pricing start your free trial today without credit card. monthly yearly -25% self-hosting pro $9 /user/month\" [Pricing Page]\n*   **api_styles**: **CONFIRMED**. Twenty provides both REST and GraphQL APIs.\n    *   **Source**: \"Twenty CRM provides support for powerful APIs, including GraphQL and REST.\"\n*   **api_breadth**: **CONFIRMED**. The API is broad, covering not only CRUD operations on all data objects (standard and custom) but also metadata/schema management.\n    *   **Source**: \"It auto-generates both a REST API and a GraphQL API from your workspace data model, exposing a Core API for records (People, Companies, Opportunities, Notes, Tasks, and custom objects) and a Metadata API for schema (objects, fields, and relations).\"\n*   **api_notes**: **CONFIRMED**. The notes accurately describe the Core API for record management and the Metadata API for schema management.\n    *   **Source**: \"Core API — /rest/ and /graphql/ CRUD on records: People, Companies, Opportunities, your custom objects... Metadata API — /rest/metadata/ and /metadata/ Schema management: create/modify/delete objects, fields, and relations.\"\n*   **openapi_spec**: **WRONG**. The first-pass value of `true` is misleading. There is no single, static OpenAPI specification. Instead, a unique API reference (which could be an OpenAPI spec) is auto-generated for each workspace based on its specific schema.\n    *   **Correct Value**: `false` (in the sense of a single, static, public spec)\n    *   **Source**: \"There is no static API reference for Twenty. Each workspace has its own schema... Your workspace-specific API documentation is available under Settings → API & Webhooks after creating an API key.\"\n*   **webhooks**: **CONFIRMED**. Twenty supports *outbound* webhooks, which can be configured in the UI to notify external systems of events. Workflows can also be triggered by *inbound* webhooks.\n    *   **Source**: \"In Twenty's settings (or via the API), create a webhook subscription: Via Twenty UI: Settings → Webhooks → Add webhook.\" and \"Webhook triggers allow external services to start your workflows by sending data to a unique URL.\"\n*   **sandbox**: **CONFIRMED**. A developer can run a local server using Docker for development and testing, which functions as a sandbox. The cloud version's free trial also serves this purpose.\n    *   **Source**: \"Your app needs a Twenty server to sync into. The server is a full Twenty instance — UI, GraphQL API, PostgreSQL — running locally in Docker.\"\n*   **mcp**: **WRONG**. The first-pass record claimed an \"official\" MCP server. The only discovered MCP server is a third-party, community-built project. There is no evidence of a vendor-maintained MCP server.\n    *   **Correct Value**: `community_only`\n    *   **Source**: The discovered \"Twenty MCP Server\" is hosted on a personal GitHub account (`IgorWarzocha/twenty-mcp-server`), not the official `twentyhq` organization, indicating it is a community project.\n*   **mcp_notes**: **WRONG**. The notes are incorrect as they describe an official, first-party server. The server that was found is a third-party project.\n    *   **Correct Value**: \"A community-built Model Context Protocol (MCP) server is available on GitHub. It acts as an integration layer for AI assistants and supports both REST and GraphQL APIs, authenticating via API key.\"\n    *   **Source**: \"The Twenty MCP Server provides a comprehensive integration layer between AI assistants and the Twenty CRM platform. Built on the Model Context Protocol standard, it offers secure, efficient access to CRM data through both GraphQL and REST APIs.\"\n*   **verdict**: **CONFIRMED**. The verdict `ready_with_friction` is appropriate. While API access is self-serve via self-hosting or a trial, the lack of a static API reference and the per-tenant schema generation introduces friction, as a developer must first set up an instance and generate keys to see their specific API documentation.\n    *   **Source**: \"There is no static API reference for Twenty. Each workspace has its own schema... Your workspace-specific API documentation is available under Settings → API & Webhooks after creating an API key.\"\n*   **blocker**: **CONFIRMED**. The blocker `unclear_or_sparse_docs` is accurate in the sense that documentation cannot be fully consumed publicly before signup/setup.\n    *   **Source**: \"There is no static API reference for Twenty. Each workspace has its own schema...\"\n*   **blocker_notes**: **CONFIRMED**. The notes accurately state that the API schema is generated per-tenant, meaning there is no single public API reference to build against without first creating a workspace.\n    *   **Source**: \"There is no static API reference for Twenty. Each workspace has its own schema — when you add a custom object (say Invoice ), it immediately gets REST and GraphQL endpoints identical to built-in objects like Company or Person .\"\n\n### Uncertain Fields\n\nNone. The available documentation was sufficient to verify all fields.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "twenty.com developer documentation",
+   "twenty crm api authentication",
+   "twenty crm api tutorial",
+   "twenty crm webhooks",
+   "twenty crm openapi",
+   "twenty crm self-hosting api"
+  ],
+  "search_sources": [
+   {
+    "title": "opensourcealternatives.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWUHgo7UlWzzi-vBV5zGU0oQ1h6oWHzvw-RRpH9MB_3xPPxQbczjLaLtqgZsD0mbn-2zzj66VDQCP5Dq4A0f8Kb-l4ij3d_DuwbK8F6eQub0VErmTg-bkb19V7gwKAtYjS5L4gK05v9IEAvq4="
+   },
+   {
+    "title": "sentisight.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2BP1i1qiKAIgr3W4ob3J2jADeS4lgkB-APT-0OzIETOL1WbiG_BnaQsC5vodrWgY28IHHhB1TsIXOVbrb7cD-zfkKx_DxI3koPl1HOzzlb8pg03Tuoq3EE_ZcV1n_P-hQq_KKAcAgoFvHBCW5cazkNbVsRTre00ABBGGW67oZ7HHwSpxI0Qdsj03U01D2-6YlfvKl5_M3Cx-JOk_skX8j3sHA292A0Q=="
+   },
+   {
+    "title": "almaswebconsulting.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlKf1t1es12DhtSQMbSi3VK51PW3bnIdaAAqmlcKTPE4MHi-P5WO587W1CCQHYWdEUmU3rw8mjKPc_tx584Y_ogs8-nPWKb1Hxs89j5Ztdu2qNjuMmBiWIdPANs4huVDA8rsexl0YyQfUx3404VaB3k4JdZTHOpO-jpxy-w17ftWQ="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGllsvcPucfyPPjRZFUNBkMt7ChjfE8nXe8d55q4B0pCWF7-yLdH2SiJZH-KPvqB0O7AGNqIckqBVaKlgRmBmg8iZioCd_08tGGLUsv9P_bjVbPWSOtjzbllKAKEaRYMXgjY2bZ7T4F"
+   },
+   {
+    "title": "twenty.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdU0eA1bOnyBlLYje5DONq3ZHNTIImXyVUiitLw464F2qS15zZRTEt369oHf--AGgnu-YuGuDJsFwer0vKq4_OCHnmje_LWATe3R0rIpr9-bC0r7H4rjMAy7SjnRMl-pCASiU218I5LA=="
+   },
+   {
+    "title": "twenty.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2jo2YvKPVcYKbzRP1J_MSfEVHuH-0ZcJz-gYYh-wdygS00sPcnTJeD77QoD_ngnttq-sNUKUl2bPkw-WdqVA56f9uq4RoG5amJCMfl01uMVSf-HInv9Hi65vNfUdZadWJAWgBoVuTE7ZPAo5NDM4="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3OEkunoUJ9PEN6kUKzhS3wjI4os87Td386lw3LwV3_dcnjHCJyAv3lAfHuSjIFnMN6V-E9a-QsSpibo2Erazn9hz86ocqzAOqvyIqdZQ1SQ7oBU8I0Pai2GpM8Fuezq5RnRM3EyCcEyBe"
+   },
+   {
+    "title": "twenty.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1G7WKuZYR892z3u-Zn1d-B8lumxz0SOyaReld1X_INJzBcTrNe_ACeUehDHmfR59CQNGYte7nUnBHPUwv_M_CRIhqwOBs6EPFKVWiqu5gbJ9YrD5u_4rNRYZVLpYsfH2fjUj1XMKDfo1Fz1zTaTMO0buGTQUAISF_HltZQLhGSocNuoEo"
+   },
+   {
+    "title": "hashnode.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_tHrEkhNUfCcHF09P_uxRdx1qtZdySWGaZhXdd9jBqO6XC32MQOBX-lvxwH58IydrI8RHp8NBvSiEQXvq6lqq4Myxg0LCX5qjHwF8N0ikizAk4cd2m4FA6F9RTEY7dDn6dhDghSs36O6aQd23WTszx6uy2m8W2qoStJ94IrgKddupP1fZT315HFKMCPU8gaiCrZ97TYluqN4="
+   },
+   {
+    "title": "twenty.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyy2yZAv5bUzQIc1DEEh8ldeoBBuA-kZxwGYTs_qa6cYpYMKJGTjbskWNCAAUs0F6AEErMtpQ4dwXlmwnuCzOaVxpirqZUvagBna8GSD3xTAyDQ_Of1u16fGrdgSx8n865trn7vfSy5MTmjT6CEddrPvFdBWvVErXxzkc08cvwlCSVnRA4TzMt"
+   },
+   {
+    "title": "dev.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxa3t44LxxhdOgaHbmWJkK6bWsMZZ1QWR3vXztSydj42j-14m_F1WVdF-z-RIKfA5tzOrbunUuCT1hGfrJDODMxS8lx5tf_PZpGUUQOmA0oSRYo3AO1hTJHVqaZna8vB1cCQ-ibc0PKVI3oaIBGHHSND58JZOQdvNFMs5iKk5cRD001faIpieVbmllS4g4KCe7"
+   },
+   {
+    "title": "twenty.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIpkVntguzS7F5qNnY3Uk6XaXJB4qhNcJDznLA1AAWoAtePKg-a4GtDLNOXJ9WCq6eF0JNAuIV79N2hDAjEpAL3tkwseaODXJD8CIHgMc3LhpRVSYHw5_9ruYFMvNMWLR5j0lvIejQOOWz"
+   },
+   {
+    "title": "twenty.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtJkpqSxpUN5eVBTZzqXjNf-HmJK6fZ4Zm1FDxoUC2lPW00kMgJeTT3rrTKiJrvj-GmjQKR-phC3IDpZVleXSA9czU7kvxmWoRKbKsnGk_5jaPGr9KiP3OrROwDRV3rtlgID0aICCZi0o1qg=="
+   },
+   {
+    "title": "getworkify.app",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHH6_tZsJm6p4bsUI-hfJ8Ka2vrtAzeGpaE49nFcUQXNvU9AOvg0KSHgu2AaK6x3RK7PTC63PPZ8c6KcOXjzmSAGz1Y13wdofoFF49xzW1l8lNHBrh4T8dvoYLI225BwZH0tqAhV53LtKilDmsm5DJ7z_un9ZCi"
+   },
+   {
+    "title": "twenty.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGL7BEcRN_L7k1-xJGNHqIGJgV-9O4rcEy629X9vaRSe8NNz7yozqN2UxCfF_nLkk7YM6qLdNLHx8hd18zc5wrXsbDyBGsCXqNyW1I1nZxj7vDOogbGtAOsORPG0am9HAN_Ujkxaf9m7fbH8yIBD4piFp-Ik32pSYFygFcRDL47AtKHd-kLqwewLib2k0WWm5_y5Ul0DupYinyE8VlYNWA="
+   },
+   {
+    "title": "lobehub.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHESeNtP7t7GbWcQpvq6eoMFHI1-IDZME0kjI-wCFiX0fDFeiM2J_6Q5SdDGa5Mx4M-fJ-QWB1G-CQJvlHy8yD36OCgj70pWyse_ds30XGG4RlvkHcwKWfQA-KKDZzhcvVjmvhN4MND3Zf8xesrnW1J1g=="
+   }
+  ],
+  "tokens": 6834,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://twenty.com",
+    "status": 200,
+    "chars": 11653,
+    "readable": true
+   },
+   {
+    "url": "https://twenty.com/pricing",
+    "status": 200,
+    "chars": 5691,
+    "readable": true
+   }
+  ],
+  "seconds": 56.0
+ }
+}

@@ -1,0 +1,271 @@
+{
+ "app": {
+  "id": 92,
+  "name": "Otter AI",
+  "category": "AI, Research and Media-native",
+  "hint": "help.otter.ai (MCP server)"
+ },
+ "record": {
+  "subcategory": "AI Meeting Assistant",
+  "one_liner": "AI-powered meeting assistant that records, transcribes, and summarizes voice conversations.",
+  "auth_methods": [
+   "bearer_token",
+   "oauth2"
+  ],
+  "primary_auth": "bearer_token",
+  "auth_notes": "Public REST API uses static personal tokens (bearer_token). Official remote MCP server uses OAuth2 with Dynamic Client Registration.",
+  "access": "partner_or_sales",
+  "access_notes": "Full REST API requires an Enterprise subscription and coordination with an account manager. The official remote MCP server is self-serve and available on all plans, including free.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "REST API allows programmatic access to retrieve channels, conversations, transcripts, audio, action items, insights, outlines, and workspace details.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Official remote MCP server at https://mcp.otter.ai/mcp. Community implementations exist but are superseded.",
+  "verdict": "needs_outreach",
+  "blocker": "enterprise_only",
+  "blocker_notes": "The full REST API and webhook capabilities are strictly gated behind the Enterprise plan and require manual provisioning by an Otter account manager.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://withone.ai",
+    "quote": "Otter.ai is a meeting assistant platform that provides real-time transcription, recording, summaries, and searchable notes for voice conversations, allowing teams and developers to capture meeting content, automate follow-up workflows, and integrate conversation data into collaboration and productivity tools."
+   },
+   {
+    "claim": "auth",
+    "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+    "quote": "All API requests require authentication using Bearer token authentication... include your api key in the authorization header for every request: authorization: bearer your_api_key"
+   },
+   {
+    "claim": "auth",
+    "url": "https://integrations.sh",
+    "quote": "The server supports OAuth Dynamic Client Registration (RFC 7591), so the client registers itself automatically — no developer-portal app, client_id , or client_secret to create."
+   },
+   {
+    "claim": "access",
+    "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+    "quote": "getting started: otter's public api is available for all enterprise workspaces. if you do not see this feature for your workspace, contact your otter account manager."
+   },
+   {
+    "claim": "access",
+    "url": "https://otter.ai/pricing",
+    "quote": "otter api & webhooks"
+   },
+   {
+    "claim": "access",
+    "url": "https://usecarly.com",
+    "quote": "Otter MCP is available on every Otter plan, including free Basic. Connect it from Claude's Customize → Connectors with an OAuth login."
+   },
+   {
+    "claim": "api",
+    "url": "https://integrations.sh",
+    "quote": "Otter.ai exposes an authenticated Enterprise REST API at https://api.otter.ai/v1 using bearer API keys"
+   },
+   {
+    "claim": "api",
+    "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+    "quote": "otter.ai’s public api provides programmatic access to retrieve channels, conversations, transcripts, audio, action items, insights, outlines, and workspace details from your otter account."
+   },
+   {
+    "claim": "api",
+    "url": "https://apitracker.io",
+    "quote": "OpenAPI/Swagger specs. -"
+   },
+   {
+    "claim": "api",
+    "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+    "quote": "Webhooks are the recommended way to build export integrations with Otter. Instead of constantly polling the API to check for new conversations or action items, webhooks push real-time notifications to your application the moment events occur."
+   },
+   {
+    "claim": "api",
+    "url": "https://apitracker.io",
+    "quote": "Sandbox environment. -"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://usecarly.com",
+    "quote": "backed by its official remote MCP server at https://mcp.otter.ai/mcp (launched March 13, 2026)."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+    "quote": "Connect AI models to Otter using Model Context Protocol (MCP)."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/bcharleson/otter-cli",
+    "quote": "Agent-native CLI + MCP server for the Otter.ai API — 31 commands, dual-mode for humans and AI agents"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://usecarly.com",
+    "quote": "Pre-official community projects (DarrenZal/otter-mcp, bcharleson/otter-cli) still exist but are history now — the official server supersedes them."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+    "quote": "getting started: otter's public api is available for all enterprise workspaces. if you do not see this feature for your workspace, contact your otter account manager."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://usecarly.com",
+    "quote": "the connector is read-only, and like every Claude integration it only works inside a conversation you start — nothing fires when a meeting ends."
+   }
+  ],
+  "confidence": 0.9
+ },
+ "notes": "### Product Overview\nOtter.ai is an AI-powered meeting assistant and conversation intelligence platform that records, transcribes, and summarizes voice conversations (such as meetings, interviews, and lectures). \n* **Source:** https://withone.ai\n* **Verbatim Quote:** `\"Otter.ai is a meeting assistant platform that provides real-time transcription, recording, summaries, and searchable notes for voice conversations, allowing teams and developers to capture meeting content, automate follow-up workflows, and integrate conversation data into collaboration and productivity tools.\"`\n\n---\n\n### Public API Authentication & Multi-Tenant Usage\n* **Authentication Methods:** The Public REST API strictly utilizes static personal tokens passed via the authorization header.\n  * **Source:** https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API\n  * **Verbatim Quote:** `\"All API requests require authentication using Bearer token authentication... include your api key in the authorization header for every request: authorization: bearer your_api_key\"`\n* **Multi-Tenant Integration Platform Usage:** For a standard multi-tenant integration platform targeting the full REST API, the primary authentication method is **`bearer_token`** (manually generated API keys), as there are no public self-serve OAuth2 applications available for the REST API. However, if integrating via Otter's official remote MCP server, the primary method is **`oauth2`** utilizing Dynamic Client Registration.\n  * **Source:** https://integrations.sh\n  * **Verbatim Quote:** `\"The server supports OAuth Dynamic Client Registration (RFC 7591), so the client registers itself automatically — no developer-portal app, client_id , or client_secret to create.\"`\n\n---\n\n### Credential Acquisition & Cost\n* **Public REST API (`partner_or_sales`):** Credentials are not self-serve. They require an Enterprise subscription and direct coordination with an account manager.\n  * **Source:** https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API\n  * **Verbatim Quote:** `\"getting started: otter's public api is available for all enterprise workspaces. if you do not see this feature for your workspace, contact your otter account manager.\"`\n  * **Source:** https://otter.ai/pricing\n  * **Verbatim Quote:** Under Enterprise tier: `\"otter api & webhooks\"`\n* **MCP Server (`self_serve_free`):** Access to the official remote MCP server is completely self-serve and available to all users at no cost, including those on the free tier.\n  * **Source:** https://usecarly.com\n  * **Verbatim Quote:** `\"Otter MCP is available on every Otter plan, including free Basic. Connect it from Claude's Customize → Connectors with an OAuth login.\"`\n\n---\n\n### API Style, Breadth, OpenAPI Spec, Webhooks, & Sandbox\n* **API Style:** REST API.\n  * **Source:** https://integrations.sh\n  * **Verbatim Quote:** `\"Otter.ai exposes an authenticated Enterprise REST API at https://api.otter.ai/v1 using bearer API keys\"`\n* **API Breadth:** The API allows developers to programmatically retrieve workspace details, channels, conversations, transcripts, audio files, action items, outlines, and insights.\n  * **Source:** https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API\n  * **Verbatim Quote:** `\"otter.ai’s public api provides programmatic access to retrieve channels, conversations, transcripts, audio, action items, insights, outlines, and workspace details from your otter account.\"`\n* **OpenAPI Spec:** No official public OpenAPI specification is provided by the vendor.\n  * **Source:** https://apitracker.io\n  * **Verbatim Quote:** `\"OpenAPI/Swagger specs. -\"`\n* **Webhooks:** Supported for real-time event notifications, recommended for export integrations.\n  * **Source:** https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API\n  * **Verbatim Quote:** `\"Webhooks are the recommended way to build export integrations with Otter. Instead of constantly polling the API to check for new conversations or action items, webhooks push real-time notifications to your application the moment events occur.\"`\n* **Sandbox:** No sandbox or test environment is available.\n  * **Source:** https://apitracker.io\n  * **Verbatim Quote:** `\"Sandbox environment. -\"`\n\n---\n\n### Model Context Protocol (MCP) Servers\n* **MCP Status:** **`official`**\n* **Official Server:** Otter hosts an official remote MCP server at `https://mcp.otter.ai/mcp` that connects user meeting data directly to AI models via OAuth.\n  * **Source:** https://usecarly.com\n  * **Verbatim Quote:** `\"backed by its official remote MCP server at https://mcp.otter.ai/mcp (launched March 13, 2026).\"`\n  * **Source:** https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server\n  * **Verbatim Quote:** `\"Connect AI models to Otter using Model Context Protocol (MCP).\"`\n* **Community Servers:** Third-party community implementations exist (such as `bcharleson/otter-cli`), but they are considered legacy and have been superseded by the official vendor-hosted server.\n  * **Source:** https://github.com/bcharleson/otter-cli\n  * **Verbatim Quote:** `\"Agent-native CLI + MCP server for the Otter.ai API — 31 commands, dual-mode for humans and AI agents\"`\n  * **Source:** https://usecarly.com\n  * **Verbatim Quote:** `\"Pre-official community projects (DarrenZal/otter-mcp, bcharleson/otter-cli) still exist but are history now — the official server supersedes them.\"`\n\n---\n\n### Buildability Verdict & Main Blocker\n\nDepending on the integration path Composio chooses to pursue, there are two distinct verdicts:\n\n#### Path A: Full-Featured REST API Integration\n* **Verdict:** **`needs_outreach`**\n* **Access Category:** **`partner_or_sales`**\n* **Main Blocker:** The full REST API and webhook capabilities are strictly gated behind the Enterprise plan and require manual provisioning by an Otter account manager.\n* **Source:** https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API\n* **Verbatim Quote:** `\"getting started: otter's public api is available for all enterprise workspaces. if you do not see this feature for your workspace, contact your otter account manager.\"`\n\n#### Path B: Official Remote MCP Server Proxying\n* **Verdict:** **`ready_with_friction`**\n* **Access Category:** **`self_serve_free`**\n* **Main Blocker / Hurdle:** While a read-only toolkit can be built immediately by proxying Otter's official remote MCP server (which supports self-serve OAuth with Dynamic Client Registration on the free tier), the integration is heavily restricted to read-only search and retrieval capabilities. It cannot perform write actions or trigger workflows when a meeting ends.\n* **Source:** https://usecarly.com\n* **Verbatim Quote:** `\"the connector is read-only, and like every Claude integration it only works inside a conversation you start — nothing fires when a meeting ends.\"`",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"otter mcp server\"",
+   "\"otter.ai public api\"",
+   "\"otter-cli\" bcharleson mcp",
+   "\"otter.ai\" openapi spec webhooks sandbox",
+   "\"Otter.ai\" API OAuth2",
+   "\"Otter.ai\" developer docs OAuth"
+  ],
+  "search_sources": [
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIHOYwJjK-_H8JJjR_d-kA7EHCt8-TLYtmrvucF5rfVjKyiR7lLOOf8vZX7vN2Vm-qD6fJD0plgVJplCkpIlSHCQUgZ7woKprzQcsCFNmkFLwCHG0BL8XsafsGiOMvjFa9BMmsCfczTxenJXutZQ=="
+   },
+   {
+    "title": "withone.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHsqFn4SZhTBJQGUU5ofdD4n7DoRLrenIxW8zxxkwd3GV7doRbDphm35s0O5gt6G7SDRer445nBx5mOf6aMSi097BAUXFbO-czB5CkUVZxvA6gqiYanNo="
+   },
+   {
+    "title": "withone.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFY7RyuoraCIzQqfBpTlHIfWJ29ZIeE_gkJTPIEgJccIT7LYIu6-1yLoP8XTjJKWm6jyfSEX95Ft_bSPZop55anYPmFEAbuCnAeKyOkpnCsUmWr"
+   },
+   {
+    "title": "apitracker.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEphJoCA0I8BSFXnPIBphzf4DddYQpfAENgg-nrPKFe8YWxAm0dqH2YnnGjHYTPPGRY2isn-9u7RGhPVlTIPL_FyEz3lMMg9rLfpNopmatmudRGnq-4rz3UiKf5"
+   },
+   {
+    "title": "integrations.sh",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjRpvDN3Fb6jZsDxq7bv28waRzjcjsb6O2YwVw1EmTtwZ4bfS9zTIhlY9TyR5YJsXVqa2UHKHtPD86vXEBd56tw8TxdgOT1VB0Z-VcjxCdiO7Lhi0ReX07OjOKfw=="
+   },
+   {
+    "title": "otter.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHG5IBl2sP40iodJ00bXhjBcvu530nb6DqPCAatKQ8i-SHAJKIezV7-hcqJcetg5EBq25ejANlgW565vZKP8iKDj5d9y0n7L8rHCCJpHZjQodozr9ycBS1ErKjnD6lCAGqDUaXfs8w03JZrcz2ECt3FdKuXE1GSsAHq_1mGCrjlIv_SWBJli1tO97fmv-C5qL324HgBbj0rGo0Z"
+   },
+   {
+    "title": "apitracker.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFaQa9oEA6_b6wrZ5yw5ybYp4AvIehjo4auUHCwIal3ul9kAmQPWP4RyqaK57GICbCE-GVKDT0NHJ5xpkRVOZVPCKQTurep_ARn38G13570ANZ09Nc1CtJ0o0t5"
+   },
+   {
+    "title": "composio.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-pXUqVlWU6_BiZ20CAzfqx-S6R5_jFG24jGZTGEQMKbwj18BY0H4QxqMgQEg5mAeTRNOnUNVAQbpVw0RhPnACvWOO-hVNECetDeI_LhaQw1Z5ad2v-sjpwVC7fHO7eYaZl703bqS3dPxKa2PBjLenrr9OlikvSGMDknlq"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWFjVZ5Zau44PAFi5LtBpBHDh4nK0HUG_yVV4ZdM0De3NB6zldQkcS7wRwF-ot0NkYDYBaEgwKizBvTBXS1DR01-QDMGOvOYYH9qeLlvSjjFJAkIlrn_-GxxW_970UzvZX5xAJf2EttDQHVSfN3As_3Mx1cHs0p5S8qzY="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdxG2LSTLGQAcVsn1Fzy3j2duXnpySsxPfXZAjbKUHm49M2lPEgjHTvSiSgbABLP_3407m_TWLaZxYUgd2Qo8envz-XkJQx1TLncFy7sN62cW4DltkZ4uDKZ_2xpn6FNnIC0mpk8AqrMDlEVAGyYY8Ul6SxQ=="
+   }
+  ],
+  "tokens": 13321,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "Otter AI API authentication URL",
+    "Otter AI API keys URL",
+    "Otter AI OAuth URL",
+    "Otter AI API getting started URL",
+    "Otter AI API quickstart URL",
+    "Otter AI API pricing URL",
+    "Otter AI API access plans URL",
+    "Otter AI developer program URL",
+    "Otter AI partner program URL",
+    "Otter AI API reference index URL",
+    "Otter AI API documentation URL",
+    "Otter AI MCP server URL",
+    "help.otter.ai",
+    "Otter.ai Public API",
+    "Otter MCP Server",
+    "developer-guides.tryotter.com",
+    "Otter AI pricing API access",
+    "Otter AI developer program",
+    "Otter AI API reference"
+   ],
+   "candidates": 6,
+   "live_urls": [
+    "https://otter.ai/pricing",
+    "https://connect.tryotter.com/docs/",
+    "https://otter.ai/partners",
+    "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+    "https://otter.ai/partner-program",
+    "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+    "https://github.com/bcharleson/otter-cli",
+    "https://github.com/bcharleson/otter-cli/blob/main/CLAUDE.md",
+    "https://semarize.com/resources/get-your-data/otter",
+    "https://manufact.com/mcp-catalog/otter-ai",
+    "https://gtm-docs-registry.vercel.app/tools/otter-ai/docs"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://help.otter.ai/hc/en-us/articles/19129596377363-Otter-ai-Public-API",
+     "status": 404
+    },
+    {
+     "url": "https://mcp.otter.ai/mcp",
+     "status": 401
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://otter.ai/pricing",
+     "status": 200,
+     "chars": 10612,
+     "readable": true
+    },
+    {
+     "url": "https://connect.tryotter.com/docs/",
+     "status": 200,
+     "chars": 2422,
+     "readable": true
+    },
+    {
+     "url": "https://otter.ai/partners",
+     "status": 200,
+     "chars": 36,
+     "readable": false
+    },
+    {
+     "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+     "status": 200,
+     "chars": 22584,
+     "readable": true
+    },
+    {
+     "url": "https://otter.ai/partner-program",
+     "status": 200,
+     "chars": 3481,
+     "readable": true
+    },
+    {
+     "url": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+     "status": 200,
+     "chars": 11684,
+     "readable": true
+    },
+    {
+     "url": "https://github.com/bcharleson/otter-cli",
+     "status": 200,
+     "chars": 5611,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 79.8
+ }
+}

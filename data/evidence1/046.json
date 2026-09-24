@@ -1,0 +1,191 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://developers.squarespace.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.65
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://developers.squarespace.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.33
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.71
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.squarespace.com/commerce-apis/oauth",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developers.squarespace.com/commerce-apis/oauth",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.78
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.squarespace.com/assets/pricing.txt",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.17
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://apis.io/plans/squarespace/squarespace-plans-pricing/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.87
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://support.squarespace.com/hc/en-us/articles/41325887099533-Developer-Tools-APIs-at-Squarespace",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.11
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://mcp.mcpbundles.com/bundle/squarespace",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.squarespace.com/commerce-apis/overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.squarespace.com/commerce-apis/overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.12
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.squarespace.com/commerce-apis/overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.47
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://mcp.mcpbundles.com/bundle/squarespace",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://mcp.mcpbundles.com/bundle/squarespace",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://mcp.mcpbundles.com/bundle/squarespace",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://developers.squarespace.com/commerce-apis/oauth",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.78
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://apis.io/plans/squarespace/squarespace-plans-pricing/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.87
+  }
+ ],
+ "auth_support": {
+  "api_key": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://developers.squarespace.com/', 'https://www.squarespace.com/assets/pricing.txt', 'https://support.squarespace.com/hc/en-us/articles/41325887099533-Developer-Tools-APIs-at-Squarespace', 'https://developers.squarespace.com/commerce-apis/overview', 'https://developers.squarespace.com/commerce-apis/overview']\n- Non-vendor sources (prefer official docs): ['https://apis.io/plans/squarespace/squarespace-plans-pricing/', 'https://mcp.mcpbundles.com/bundle/squarespace', 'https://mcp.mcpbundles.com/bundle/squarespace', 'https://mcp.mcpbundles.com/bundle/squarespace', 'https://mcp.mcpbundles.com/bundle/squarespace', 'https://apis.io/plans/squarespace/squarespace-plans-pricing/']",
+ "metrics": {
+  "n_evidence": 17,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.6470588235294118,
+  "readable": 13,
+  "quote_supported_rate": 0.6153846153846154,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

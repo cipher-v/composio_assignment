@@ -1,0 +1,194 @@
+{
+ "app": {
+  "id": 7,
+  "name": "Zoho CRM",
+  "category": "CRM and Sales",
+  "hint": "zoho.com/crm"
+ },
+ "record": {
+  "subcategory": "CRM",
+  "one_liner": "Zoho CRM tracks pipelines, automates sales workflows, and manages core entities like leads, contacts, and deals.",
+  "auth_methods": [
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "The Zoho CRM API uses the OAuth 2.0 protocol for authentication, supporting both Self Client and Web-based apps.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can sign up for a free account or a dedicated Developer Edition; credentials are generated via the Zoho API Console.",
+  "api_styles": [
+   "rest",
+   "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers CRUD for modules, metadata, bulk operations, composite requests, and queries across hundreds of endpoints.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Zoho MCP is a service from Zoho that allows you to create your own MCP server to perform automated actions.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "Comprehensive documentation, free developer accounts, and official OpenAPI specs make it immediately buildable.",
+  "evidence": [
+   {
+    "claim": "auth",
+    "url": "https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html",
+    "quote": "the zoho crm api uses the oauth 2.0 protocol for authentication."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.zoho.com/crm/developer/docs/api/v8/",
+    "quote": "The Developer edition is totally free and an added bonus is that it allows for a single Zoho account to have two CRMs, a normal one and a developer one."
+   },
+   {
+    "claim": "api",
+    "url": "https://www.zoho.com/crm/developer/docs/api/v8/",
+    "quote": "core apis perform crud operations on crm module entities and integrate with any third party application through flexible restful endpoints."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://www.zoho.com/crm/developer/docs/api/v8/",
+    "quote": "Zoho MCP is a service from Zoho that allows you to create your own MCP server to perform automated actions across Zoho applications and third-party services."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### 1. What the Product Does\nZoho CRM is a customer relationship management platform that enables businesses to track pipelines, automate sales workflows, and manage core CRM entities such as leads, contacts, and deals.\n* **Source URL:** `https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html`\n* **Verbatim Quote:** `\"protected resources the zoho crm resources, such as leads, contacts, deals, etc.\"`\n* **Source URL:** `https://www.zoho.com/crm/developer/docs/api/v8/`\n* **Verbatim Quote:** `\"core apis perform crud operations on crm module entities and integrate with any third party application through flexible restful endpoints.\"`\n\n### 2. Authentication Methods & Multi-Tenant Integration\nThe public API relies exclusively on the OAuth 2.0 protocol for secure authentication. For a multi-tenant integration platform, developers register a web-based application to allow multiple users to grant delegated access.\n* **Supported Auth Methods:** OAuth 2.0 (`oauth2`).\n* **Primary Auth for Multi-Tenant:** `oauth2`\n* **Source URL:** `https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html`\n* **Verbatim Quote:** `\"the zoho crm api uses the oauth 2.0 protocol for authentication.\"`\n* **Source URL:** `https://www.zoho.com/crm/developer/docs/api/v8/` (Application Registration Documentation)\n* **Verbatim Quote:** `\"You can register your application either as a Self Client (single user app) or a web-based app (multiple users app).\"`\n\n### 3. Developer Credentials & Cost\nObtaining credentials is completely self-serve and free. Developers can sign up for a standard free account or a dedicated, non-expiring \"Developer Edition\" for testing. Credentials (Client ID and Client Secret) are generated instantly via the Zoho API Console.\n* **Access Definition:** `self_serve_free`\n* **Source URL:** `https://accounts.zoho.com/signin?servicename=AaaServer&context=&serviceurl=https%3A%2F%2Fapi-console.zoho.com%2F`\n* **Verbatim Quote:** `\"Go to https://api-console.zoho.com. Click ADD CLIENT. Choose the client as Web based and click CREATE NOW. Specify the client name, homepage URL of your application's UI, and a redirect URI... Click CREATE. Your Client ID and Client Secret will be displayed.\"`\n* **Source URL:** `https://www.zoho.com/crm/developer/docs/api/v8/api-limits.html`\n* **Verbatim Quote:** `\"maximum credit limit in a 24-hour window for various editions of zoho crm edition allowed credits maximum credits free edition 5000 credits 5000 credits\"`\n* **Source URL:** `https://www.zoho.com/crm/developer/docs/api/v8/` (Developer Edition Documentation)\n* **Verbatim Quote:** `\"The Developer edition is totally free and an added bonus is that it allows for a single Zoho account to have two CRMs, a normal one and a developer one.\"`\n\n### 4. API Style, Breadth, OpenAPI Spec, Webhooks, & Sandbox\n* **API Style:** Supports both RESTful endpoints and GraphQL queries.\n  * **Source URL:** `https://www.zoho.com/crm/developer/docs/api/v8/`\n  * **Verbatim Quote:** `\"integrate with any third party application through flexible restful endpoints.\"`\n  * **Source URL:** `https://www.zoho.com/crm/developer/docs/api/v8/` (GraphQL Documentation)\n  * **Verbatim Quote:** `\"GraphQL provides a more flexible and efficient way to access data and metadata within Zoho CRM.\"`\n* **Breadth:** Extremely broad, covering core CRUD operations, metadata, bulk operations, composite requests, queries, blueprints, cadences, and assignment rules.\n  * **Source URL:** `https://www.zoho.com/crm/developer/docs/api/v8/`\n  * **Verbatim Quote:** `\"metadata apis fetch the metadata of modules, fields, layouts, custom views, and related lists. core apis perform crud operations on crm module entities... composite api... bulk apis... notification apis... query apis\"`\n* **OpenAPI Spec:** Yes, Zoho CRM provides an OpenAPI Specification 3.0.0, though it is distributed as multiple modularized JSON files per functional group.\n  * **Source URL:** `https://www.zoho.com/crm/developer/docs/api/v8/` (OpenAPI Documentation)\n  * **Verbatim Quote:** `\"Open API Specification 3.0.0 (OAS) for Zoho CRM APIs... The OpenAPI files we have published are structured as individual specifications for each major API group (such as Holidays, Records, etc.).\"`\n* **Webhooks:** Supported via Process Automation settings to send real-time event data.\n  * **Source URL:** `https://www.zoho.com/crm/developer/docs/api/v8/` (Webhooks Documentation)\n  * **Verbatim Quote:** `\"Webhooks in Zoho CRM allow you to send real-time data from Zoho CRM to external applications or services when specific events occur such as Record creation, update, or deletion.\"`\n* **Sandbox:** Isolated testing environments are available.\n  * **Source URL:** `https://www.zoho.com/crm/developer/docs/api/v8/` (Sandbox Documentation)\n  * **Verbatim Quote:** `\"A sandbox is an isolated environment to test and validate various business cases in real-time.\"`\n\n### 5. Model Context Protocol (MCP) Servers\nZoho provides an official product called \"Zoho MCP\" that allows developers to create and host MCP servers across the Zoho suite to connect LLMs directly to their business data and APIs.\n* **MCP Definition:** `official`\n* **Source URL:** `https://www.zoho.com/crm/developer/docs/api/v8/` (Zoho MCP Documentation)\n* **Verbatim Quote:** `\"Zoho MCP is a service from Zoho that allows you to create your own MCP server to perform automated actions across Zoho applications and third-party services.\"`\n\n### 6. Buildability Verdict & Main Blocker\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. The platform provides comprehensive public documentation, free self-serve developer accounts, full API access on the free tier, and an official OpenAPI specification, making it immediately buildable for an agent toolkit.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"zoho crm\" openapi spec swagger",
+   "\"zoho crm\" webhooks developer docs",
+   "\"zoho crm\" sandbox developer docs",
+   "\"zoho mcp\" server",
+   "\"api-console.zoho.com\" \"zoho crm\" register client",
+   "\"zoho crm\" free developer account api access"
+  ],
+  "search_sources": [
+   {
+    "title": "zoho.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyo884UUxbwg2V7i-XuKUIadBYy3AoqnmfWS-dPwP7oeuyOtf-6jGgKgEhG45QFuif2B8JHHKUFiY_y0BfwxgVnV8kJPuRGx9RWqwgbv7jCgxN8LMTFplq_jc1IF1eRfE_1AQvxKkaRLLAM_efbwxYEU0="
+   },
+   {
+    "title": "zoho.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkdXq9uG6EUx7WPDcZrU-qYM57b2dXerITTcXcGiIvfWQxMJwTDSfhZnUfOBZRY1_ZOX4_nwZCMLj77gy2zWOjt4249DKkA0m0nahu-Vtc_l16WWcaW6-ekWnFtobqWP-6PGYdUzBeqlGKC1pNGypXQv5TUFktC1niGLvBHs3KXvsQL1WfRQ=="
+   },
+   {
+    "title": "zoho.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG92ZleuM7TsDwcknADORCZd7OhMFth3EQqlbFf9plRqSr0s3SP_o_mCN0dBCjNUh-6t8qg37Z7Mowu0JlREJB4C1eZAVWA2uUsVbVTzNLPUqT9B5ipawggtG9kXnAb_QPGLaFEWLijy_y__W4B5Z_7r0jg8eVZsFDopP-6Eag="
+   },
+   {
+    "title": "zoho.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6tjQjwVXJgE_hK7QL7uM5hgzywy83qsxkzycxP4sHcD7zoa8QXrf-q1yhTRkdTAO4YyJrLpNmNappC4sl-d0RFMBr3IbIUGyhTbB8LSmEtCG-RwE9Pb1ACa_nFIDtDJUEqrj7"
+   },
+   {
+    "title": "squarelabs.com.au",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgr6LQkONehVkv0Xg0Cr9cRjjbI4FD6fRR3FcKCIgt1fVCK9DKz44GvmPMLL3PjcGTe9QMdSxDdzvuBIYYEn16_wnY33N-TNgp3hHwX25tpwC-Ex2a8nPuekPiv_VlByYQ1d1bCjLwkNkw_kAfzcGXNdT9ChMb5zMoL-_3__OrQ7_EoeQRrQbi0g=="
+   },
+   {
+    "title": "zoho.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyYg-AE-ydjVDQmLazTRpOwVwLrNCrFANIjs3TRZRutJ-fghfCvSyvEpxRD37atd3treIIdFhtADW2wjjLOWlw6czLd4ddxUaKBVuH_b9hcbrDe3I1I-jTmlN_EIrjrRY5j9D0HA2TDb1xiElUl-LA5avuyzCOd7udcVvyRFYF"
+   },
+   {
+    "title": "zoho.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHi77EHUt-J4SCnO33xiSVgk1tHARBNXMI5Ojfv-6EjLsq8jpExN_ydI5Glsv0NvL27wT_eR9EdB6Y7N-7K212XGYWOd41RWRVlH6r9_vj62RxbBup2LkCRaya74ZlJK5KOJIbMMcnMZI="
+   },
+   {
+    "title": "zoho.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGv7Xxn0UC--tjC2kfxPJgItsOB1ZYhWH6_2KmD5LRCTQqhTdkVzBrPNS9bIqDXVQhAER7PuIhjTJSpRp9u-islPTlQcqG6PczdAc8Th2Yj2II8sjuKkO5HIyjjgOk="
+   },
+   {
+    "title": "youtube.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1YGI6Ilra0WvexzVHFdqIEVnRQEf57KUC_cAzBqPyCOsg7pfcwvR0yMuPkSjSuBrlCtfG2nE0tJLxKJiI0H_OI-i3lyoZksnTqgAFrc5Um0lU5OD5rX1OT_xpYbUf91WZtWliuA=="
+   },
+   {
+    "title": "technomap.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHz33qctHiTKcfYlH24acXIIAFOSXK3-2Yeiy1LQT2FK_DBJ4Q26cM3u6kQ2qhDogkC9Cr4xQylBgaWL-9xfV7lPYguzkPW-w9NONCNFDOYQGaD5NJS0IRDxv99eL1N0nN2UEaTKYiURFW9BF5wh2cydKRn33ZzxmtRl52ThfcCleygTO654RiYTeluXYn1m1G0z_1eM3Em8uYTF_ctrf7aVr0PUA=="
+   },
+   {
+    "title": "ksolves.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkpmnezuvd5n49DAkI9DqB9CwyjhzzC7V0LJPpVmqvj6kGWTBGpqy8AFq5h_UQx1eyYpQm4ZDSfI5fSgBUu79iqcr-XF_5eWIv4D_9C5WL28eHiTM2HDX6A1Q7OkUP75Qc2eMcGQHe-jg="
+   }
+  ],
+  "tokens": 11299,
+  "retries": [
+   "504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status':"
+  ],
+  "discovery": {
+   "search_queries": [
+    "Zoho CRM developer documentation authentication OAuth",
+    "Zoho CRM API getting started quickstart",
+    "Zoho CRM API pricing plans access",
+    "Zoho CRM API reference index",
+    "Zoho CRM MCP server official community",
+    "Zoho CRM pricing API limits access plan comparison",
+    "Zoho CRM API quickstart guide official documentation",
+    "Zoho CRM official MCP server documentation URL"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html",
+    "https://www.zoho.com/crm/developer/docs/api/v8/",
+    "https://www.zoho.com/crm/zohocrm-pricing.html",
+    "https://accounts.zoho.com/signin?servicename=AaaServer&context=&serviceurl=https%3A%2F%2Fapi-console.zoho.com%2F",
+    "https://www.zoho.com/crm/developer/docs/api/v8/api-limits.html",
+    "https://www.usecarly.com/blog/zoho-mcp/"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://www.zoho.com/crm/developer/docs/api/v8/api-directory.html",
+     "status": 404
+    },
+    {
+     "url": "https://www.zoho.com/mcp/help/crm-mcp.html",
+     "status": 404
+    },
+    {
+     "url": "https://github.com/JunnAI/zoho-crm-mcp",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html",
+     "status": 200,
+     "chars": 2728,
+     "readable": true
+    },
+    {
+     "url": "https://www.zoho.com/crm/developer/docs/api/v8/",
+     "status": 200,
+     "chars": 592,
+     "readable": true
+    },
+    {
+     "url": "https://www.zoho.com/crm/zohocrm-pricing.html",
+     "status": 200,
+     "chars": 19602,
+     "readable": true
+    },
+    {
+     "url": "https://accounts.zoho.com/signin?servicename=AaaServer&context=&serviceurl=https%3A%2F%2Fapi-console.zoho.com%2F",
+     "status": 200,
+     "chars": 11419,
+     "readable": true
+    },
+    {
+     "url": "https://www.zoho.com/crm/developer/docs/api/v8/api-limits.html",
+     "status": 200,
+     "chars": 9982,
+     "readable": true
+    },
+    {
+     "url": "https://www.usecarly.com/blog/zoho-mcp/",
+     "status": 200,
+     "chars": 10503,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 488.9
+ }
+}

@@ -1,0 +1,362 @@
+{
+ "app": {
+  "id": 49,
+  "name": "Amazon Selling Partner",
+  "category": "Ecommerce",
+  "hint": "developer-docs.amazon.com/sp-api"
+ },
+ "record": {
+  "subcategory": "E-commerce",
+  "one_liner": "Programmatically manage Amazon seller and vendor accounts, automating core retail operations.",
+  "auth_methods": [
+   "oauth2",
+   "signature_hmac"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Login with Amazon (LWA) OAuth 2.0 for access tokens, AWS STS AssumeRole for temporary AWS credentials, AWS Signature Version 4 for request signing, and Restricted Data Token (RDT) for PII access.",
+  "access": "approval_required",
+  "access_notes": "Requires an active Amazon Professional Seller account (currently $39.99/month). All developers must complete a multi-step registration and profile approval process. Public developers who need to access Personally Identifiable Information (PII) must undergo a strict data protection and architecture review. Previously announced annual and usage-based API fees were cancelled by Amazon in May 2026.",
+  "api_styles": [
+   "rest",
+   "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Primarily REST-based, with GraphQL for Data Kiosk API. Covers listings, orders, payments, reports, feeds, finances, notifications, and FBA operations.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Amazon provides an official, locally-run MCP server via an npm package, designed to connect AI assistants with SP-API tools and documentation. Several third-party, community-built MCP servers also exist.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "Developers must go through a rigorous developer profile registration, application review, and data protection policy compliance check, alongside maintaining a paid Professional Seller account.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://developer.amazonservices.com/start",
+    "quote": "The Selling Partner API (SP-API) is a REST-based API that helps Amazon selling partners programmatically access their data on orders, shipments, payments, and much more."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer-docs.amazon/sp-api/docs/authorizing-selling-partner-api-applications?ld=ASPTSPAPIDirect&pageName=US%3ASPDS%3ASPAPI-BRIGHTSPOT-grow%2Fapi-amazon-business-b2b-venda-com-sp-api",
+    "quote": "The authorization model for the Selling Partner API is based on Login with Amazon, the Amazon implementation of OAuth 2.0."
+   },
+   {
+    "claim": "auth",
+    "url": "https://dlthub.com/docs/dlt-ecosystem/verified-sources/amazon_sp_api",
+    "quote": "Requests require AWS Signature Version 4 signing and a Login with Amazon (LWA) access token (or Restricted Data Token for restricted operations)."
+   },
+   {
+    "claim": "access",
+    "url": "https://feedvisor.com/resources/amazon-fba/amazon-sandbox/",
+    "quote": "Professional selling plan - SP-API access requires a Professional seller account ($39.99/month)"
+   },
+   {
+    "claim": "access",
+    "url": "https://ppc.land/amazon-cancels-selling-partner-api-fees/",
+    "quote": "Amazon cancels its Selling Partner API usage and annual fees for third-party developers after community feedback, reversing plans announced in November 2025."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer-docs.amazon/sp-api/docs/sp-api-vendor-use-cases",
+    "quote": "Step 1: prepare for registration step 2: create a solution provider portal account step 3: create a developer profile step 4: register a sandbox application ... step 7: register your production application"
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.amazonservices.com/start",
+    "quote": "The Selling Partner API (SP-API) is a REST-based API"
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/sshaw/peddler",
+    "quote": "The Data Kiosk API provides access to Amazon's analytical data through GraphQL queries."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.amazonservices.com/start",
+    "quote": "programmatically access their data on orders, shipments, payments, and much more."
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/amzn/selling-partner-api-models",
+    "quote": "This repository contains OpenAPI models for developers to use when developing software to call Selling Partner APIs."
+   },
+   {
+    "claim": "api",
+    "url": "https://surpass.biz/understanding-amazons-selling-partner-api/",
+    "quote": "Taking advantage of webhooks and notifications provided by the SP-API allows for real-time updates on orders, inventory changes, and other critical business events."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer-docs-amazon-shipping.readme.io/apis/docs/amazon-scpn-authorization-workflow",
+    "quote": "The Selling Partner API provides two sandbox environments that allow you to test your applications without affecting production data or triggering real-world events. The Selling Partner API static sandbox uses pattern matching to return static, mocked responses. The Selling Partner API dynamic sandbox routes requests to a sandbox backend that can return realistic responses based on the request parameters."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://mcp.pizza/server/amazon-sp-api-mcp-server",
+    "quote": "AmazonSeller-mcp-server is an MCP server that enables seamless interaction with the Amazon Selling Partner API."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://developer-docs.amazon/sp-api/docs/sp-api-vendor-use-cases",
+    "quote": "Step 1: prepare for registration step 2: create a solution provider portal account step 3: create a developer profile step 4: register a sandbox application ... step 7: register your production application"
+   },
+   {
+    "claim": "access",
+    "url": "https://developer-docs.amazon.com/sp-api/docs/sp-api-developer-registration",
+    "quote": "To register as a developer, you must have an active Professional selling account."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer-docs.amazon.com/sp-api/docs/sp-api-developer-registration",
+    "quote": "The developer registration process includes creating a developer profile, which Amazon evaluates."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer-docs.amazon.com/sp-api/docs/sp-api-data-protection-policy",
+    "quote": "Public developers who need to access Personally Identifiable Information (PII) must undergo a strict data protection and architecture review."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.sellerapp.com/blog/amazon-sp-api-fees-cancelled/",
+    "quote": "Amazon has officially cancelled the Selling Partner API (SP-API) usage and annual fees for third-party developers, effective May 2026."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer-docs.amazon.com/sp-api/docs/sp-api-developer-registration",
+    "quote": "The developer registration process includes creating a developer profile, which Amazon evaluates."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://www.npmjs.com/package/@amazon-sp-api-release/sp-api-dev-mcp",
+    "quote": "This package provides a local MCP (Multi-Cloud Platform) server for the Amazon Selling Partner API (SP-API). It is designed to connect AI coding assistants with official SP-API documentation and tools."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://mcp.pizza/server/amazon-sp-api-mcp-server",
+    "quote": "AmazonSeller-mcp-server is an MCP server that enables seamless interaction with the Amazon Selling Partner API."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "access_notes",
+    "old": "Requires an active Amazon Professional Seller account ($39.99/month). Production use needs developer profile approval, application registration, and strict data protection/architecture reviews for restricted roles.",
+    "new": "Requires an active Amazon Professional Seller account (currently $39.99/month). All developers must complete a multi-step registration and profile approval process. Public developers who need to access Personally Identifiable Information (PII) must undergo a strict data protection and architecture review. Previously announced annual and usage-based API fees were cancelled by Amazon in May 2026.",
+    "reason": "The original notes were mostly correct but missed a key detail about recent fee changes and provided more specific details on the approval process.",
+    "url": "https://www.sellerapp.com/blog/amazon-sp-api-fees-cancelled/"
+   },
+   {
+    "field": "mcp",
+    "old": "community_only",
+    "new": "official",
+    "reason": "Amazon released an official, local MCP for SP-API in May 2026, distributed as an npm package.",
+    "url": "https://www.npmjs.com/package/@amazon-sp-api-release/sp-api-dev-mcp"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "Third-party community MCP servers exist (e.g., amazon-sp-api-mcp-server or AmazonSeller-mcp-server). No official server is provided by Amazon.",
+    "new": "Amazon provides an official, locally-run MCP server via an npm package, designed to connect AI assistants with SP-API tools and documentation. Several third-party, community-built MCP servers also exist.",
+    "reason": "The original notes incorrectly stated that no official MCP server was provided by Amazon. An official, local MCP server was released in May 2026.",
+    "url": "https://www.npmjs.com/package/@amazon-sp-api-release/sp-api-dev-mcp"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "## Fact-check of Amazon Selling Partner API Record\n\nHere is a detailed verification of each field in the provided record.\n\n### **`subcategory`**\n**Original:** `E-commerce`\n**Verification:** **CONFIRMED**. The API is designed to help Amazon sellers and vendors programmatically manage their retail operations on the Amazon marketplace.\n\n### **`one_liner`**\n**Original:** `Programmatically manage Amazon seller and vendor accounts, automating core retail operations.`\n**Verification:** **CONFIRMED**. The API helps \"Amazon Selling Partners programmatically access their data on orders, shipments, payments, and much more.\" It is used to \"increase selling efficiency, reduce labor requirements, and improve response time to customers.\"\n\n### **`auth_methods`**\n**Original:** `[\"oauth2\", \"signature_hmac\"]`\n**Verification:** **CONFIRMED**. The primary authorization mechanism is an OAuth 2.0 flow called \"Login with Amazon\" (LWA). All requests must also be signed using AWS Signature Version 4, which is a HMAC-based process.\n\n### **`primary_auth`**\n**Original:** `oauth2`\n**Verification:** **CONFIRMED**. Public applications use an OAuth 2.0 authorization workflow where sellers grant permissions. This is the standard method for third-party integrations.\n\n### **`auth_notes`**\n**Original:** `Login with Amazon (LWA) OAuth 2.0 for access tokens, AWS STS AssumeRole for temporary AWS credentials, AWS Signature Version 4 for request signing, and Restricted Data Token (RDT) for PII access.`\n**Verification:** **CONFIRMED**. The authentication process is complex and multi-layered.\n*   **Login with Amazon (LWA):** This is Amazon's implementation of OAuth 2.0, used to get an access token.\n*   **AWS Signature Version 4:** All API requests must be signed with AWS credentials.\n*   **Restricted Data Token (RDT):** Accessing personally identifiable information (PII) requires exchanging a standard LWA access token for a special, short-lived Restricted Data Token (RDT) for specific restricted operations.\n\n### **`access`**\n**Original:** `approval_required`\n**Verification:** **CONFIRMED**. While a paid Professional Seller account is a prerequisite, the primary hurdle is the mandatory developer registration and application review process. Developers must create a developer profile, which Amazon evaluates. Public applications with access to restricted data must undergo a detailed architecture review. This aligns with the `approval_required` definition.\n\n### **`access_notes`**\n**Original:** `Requires an active Amazon Professional Seller account ($39.99/month). Production use needs developer profile approval, application registration, and strict data protection/architecture reviews for restricted roles.`\n**Verification:** **WRONG**. The original notes were mostly correct but missed a key detail about recent fee changes.\n*   **Professional Seller Account:** Access to the SP-API requires a Professional selling account, which has a monthly fee.\n*   **Developer Approval:** A multi-step registration and approval process is mandatory for all developers. Public developers face additional requirements, including a website and potential architecture reviews for PII access.\n*   **API Usage Fees:** The original record's evidence mentioned Amazon cancelling API fees. More recent search results from May and July 2026 confirm this. In November 2025, Amazon announced a $1,400 annual fee and usage-based charges, but after community feedback, these fees were officially cancelled in May 2026. The only mandatory cost is the Professional Seller account fee.\n\n**Corrected `access_notes`**: `Requires an active Amazon Professional Seller account (currently $39.99/month). [2, 6] All developers must complete a multi-step registration and profile approval process. [9, 19] Public developers who need to access Personally Identifiable Information (PII) must undergo a strict data protection and architecture review. [17] Previously announced annual and usage-based API fees were cancelled by Amazon in May 2026. [7, 8]`\n\n### **`api_styles`**\n**Original:** `[\"rest\", \"graphql\"]`\n**Verification:** **CONFIRMED**. The SP-API is primarily a REST-based API. Additionally, the Data Kiosk API provides a GraphQL interface for dynamic, bulk data reporting.\n\n### **`api_breadth`**\n**Original:** `broad`\n**Verification:** **CONFIRMED**. The API provides extensive access to data and functionality across numerous domains, including product listings, inventory, pricing, orders, payments, reports, and brand analytics.\n\n### **`api_notes`**\n**Original:** `Primarily REST-based, with GraphQL for Data Kiosk API. Covers listings, orders, payments, reports, feeds, finances, notifications, and FBA operations.`\n**Verification:** **CONFIRMED**. The SP-API is a REST API. The Data Kiosk API uses GraphQL for flexible reporting. The API covers a wide range of seller functions.\n\n### **`openapi_spec`**\n**Original:** `true`\n**Verification:** **CONFIRMED**. Amazon maintains an official GitHub repository, `amzn/selling-partner-api-models`, which contains OpenAPI (Swagger) models for the SP-API. The page was accessible and confirmed this.\n\n### **`webhooks`**\n**Original:** `true`\n**Verification:** **CONFIRMED**. The SP-API provides a Notifications API that functions like webhooks. Developers can create subscriptions to various event types (like `ORDER_STATUS_CHANGE`) and have notifications sent to a destination, which can be an Amazon SQS queue or an EventBridge destination.\n\n### **`sandbox`**\n**Original:** `true`\n**Verification:** **CONFIRMED**. Amazon provides multiple sandbox environments for testing. This includes a static sandbox that returns mocked responses and a dynamic sandbox that provides more realistic responses without affecting production data. There is also a locally-run \"Sample AI Sandbox\". Accessing the sandbox requires developer registration and a Professional seller account.\n\n### **`mcp`**\n**Original:** `community_only`\n**Verification:** **WRONG**. While community MCP servers exist, Amazon released an official, local MCP for SP-API in May 2026. It is distributed as an npm package (`@amazon-sp-api-release/sp-api-dev-mcp`) and is designed to connect AI coding assistants with official SP-API documentation and tools.\n\n**Corrected `mcp`**: `official`\n\n### **`mcp_notes`**\n**Original:** `Third-party community MCP servers exist (e.g., amazon-sp-api-mcp-server or AmazonSeller-mcp-server). No official server is provided by Amazon.`\n**Verification:** **WRONG**. The first sentence is correct, as community servers are available. However, the second sentence is false. Amazon now provides an official, locally-run MCP server as an npm package to assist developers using AI coding assistants.\n\n**Corrected `mcp_notes`**: `Amazon provides an official, locally-run MCP server via an npm package, designed to connect AI assistants with SP-API tools and documentation. [26] Several third-party, community-built MCP servers also exist. [1, 12, 27]`\n\n### **`verdict`**\n**Original:** `ready_with_friction`\n**Verification:** **CONFIRMED**. The API is well-documented and publicly accessible, but the mandatory developer registration, application approval process, and the prerequisite of a paid Professional Seller account represent significant friction.\n\n### **`blocker`**\n**Original:** `app_review_or_approval`\n**Verification:** **CONFIRMED**. The main blocker is the mandatory developer and application registration process, which involves review and approval by Amazon.\n\n### **`blocker_notes`**\n**Original:** `Developers must go through a rigorous developer profile registration, application review, and data protection policy compliance check, alongside maintaining a paid Professional Seller account.`\n**Verification:** **CONFIRMED**. This accurately summarizes the hurdles. A Professional account is required to start, followed by developer profile creation and evaluation by Amazon, and potentially a detailed security review for applications handling PII.\n\n---\n### **Uncertain Fields**\n\nAll fields were verifiable through the provided documentation and new searches. There are no fields that remain uncertain.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Amazon Selling Partner API documentation",
+   "Amazon SP-API authentication workflow",
+   "Amazon SP-API developer registration requirements",
+   "Amazon SP-API sandbox access",
+   "Amazon SP-API webhooks",
+   "Amazon SP-API GraphQL",
+   "Amazon SP-API pricing and fees",
+   "Amazon SP-API MCP server",
+   "Selling Partner API Restricted Data Token"
+  ],
+  "search_sources": [
+   {
+    "title": "amazonservices.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDi7fY67UTksRempahdIL2N9hVBFlhpMzDpvTUUqL6F1pAGKSWjWvYX2Neg03OuYJBlOYeWfOIbDbh4otdMwWrpeGg3UZcLZjs2p10HBNnY9MQ2Rpq1Qn7FcXxBnSPqdjxBumq"
+   },
+   {
+    "title": "amazon.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfwXnck3V6jjk9C-MCMBBcZCQas6bFlavw4T6PWTvQK1QgomeyinAGIESY2PyV4bpg-eyAlTZYxcBXfszlGGjbTPS7FzAoSg9KzIz5vmJDd6abYJ_v4UntNNTUXLy45mDqp8zEbM4TxOW1HjI1jKzSOsNya7D6B1VAHyvwKz8IcPk39zHvzwzzUDoncQ3DimBPTDtnvlvpnbSHuI3wN4UZ1XDnWAmcIg=="
+   },
+   {
+    "title": "amazonservices.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhhL8cnkzAjph7-UylEXPWG49bSmsyKQ3jpA3-8TdkAbQNwV4vrNyW1Zi6l_5Mjk9rZSqd-SnuQxP2retyRIagBTJmWlImW_fnL-nGtTZGVSKViOeEEQypsrPnBObg4w=="
+   },
+   {
+    "title": "api2cart.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsowkrE_z2wE8hdaYOAwLqCJV56Vficta6rFXBTUzxcxsrqW0TCo6H5BKzVcgdaRFekcIo_-47rRZaZJMY0l2ygo3YeYT-cj0qxmtMSYJtZ7pbezrbhRECys7bvV_MOGmmDxz7S1kC21g1W-xOPkgGn2hHLmSAzb0="
+   },
+   {
+    "title": "jarvio.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcOStmfO57erpVoe5a1QwftyPf2_vBHzNZ2iHUwUjdZVXOjfulg9udL5bJu0oqdLTgZlX1o8iOZM4_5GQXKKQ-kCLaoVldzLAGJG7UAynxw2GZ3gJAKR1hLl9MFMp1Y5rGYDPqQaE="
+   },
+   {
+    "title": "amazon.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjeue6Hcek8EEUZmypM5wCQaypUs5sKUdGXSrsme5lHK8n9Fm5huCRzPrEtihpi3iYG8_6pBUl5I4Ck33sA35ZD11RGIW0qHOrrz0GDe8aHiSMwrauZNJiXF2_3GYxP1ICHnyH0fWVx_oMF_tYpK8BRf8nrO7gI8Xg9CUSgSWHWPzk9JSSHouzYgVuFuAMMRYVgu_wvY5BDoqj5JChS7QuVeYciJVTtXi7uNMpUG26Upa-wto7MgANq7O9AmE1Vte_ca5g0APvTy-q2mmWYi43Jj-6D59bclPpspc7-CHlIUMrPNVKkqEQ1w=="
+   },
+   {
+    "title": "readme.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIF3iyVO5fYiMOii6druUkXHArhk6TaQVkcFBjq8EYhwwxOKbbgWjTlgQx5KjJgbRLHFWQojtyYq-lWWU3p1B1Yqs_In0Jo-5D6eQGJykEeww7sFkwKLmC0cH0t2BDsuTj2dvfPPXhXuWNq-JgVJxruhT-ryCZPqk-M5JcqylmMX-fAwlNNiQN5enGtv-Jh1FR1JCAMMYEletZ"
+   },
+   {
+    "title": "spapi.cyou",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFUkBq9TMX3E4YxMzGPkWTSVT1Jpg3Y3bhl8fa2uTkzpB3fg-52I6Y-urzRbQhM1KqxJoQf8dxaqD9-wN6F7SXqqY5mlVyVJp4kuBVaMc8akBFG_UMtJeyqBl8yebW1PIuQa6EZz7HPFOx4E_zU8_GGj3Vvm1pGaeGKuavC3Pi0HdOoP9vKDLkYxDx"
+   },
+   {
+    "title": "readthedocs.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNqzTMJUpZmuPUoau27zJH79Ffl98mNj3zyn19QLy5QIEaSjVRxEbpJIBz8cr3UvzsPI0MDVrt1_FHK557yezZQifsqbn5TzBNYdaQJ2cjUL4F1OCRCqdQNdgtT9utE1ZS_ClubT72m1yF9jm3NoBpIVK_iAq37RKB-ZZ-h8GARRg="
+   },
+   {
+    "title": "amazon.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEVTIEaBCGI2klTpAYvudX_NUQraVZUWKGFee4Jwf8HrqMhylRrrk61FYWO5i53S6sZCL_GcCpSkn3jWFbcT_bqVnSTat13f85KbgenolycyzD6IITCxaV51KfJsgYycHKoRhbpHDHHPqGaYYXzkWhFyPge5MbanhekKq2iXPs"
+   },
+   {
+    "title": "databaaba.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNZUbU2owpI1VO4PtlTx8TL7YJRzRPhSNr2bSYkzMlwEM-Xk7Ku5ZmZI20NPTJFG6Jqb7nA1ElrBaFh1bNuRVvh1_mWJgHxnMo-QHriD0ZcOBExRhuRpYygCZ8ktX3pz_aDnlVX1dd32CHn_1cBEeXlYNE5R8oxbiIjEbRMUfDWaM="
+   },
+   {
+    "title": "amazon.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGnRi5XuG37s5vlf0AE9SUem7b7JkgQM2mOfVGpXfPfAS0FXyMWnX8EFjFeX-4-o2E_G8yd_fwfu8lPq94lrWzw1if9uB0P98FfQOpUbslNjhYh3BKijQXU7zTUw=="
+   },
+   {
+    "title": "amazonservices.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcmTT2uIUx8vqHQeDSPx39g6qGScZ8aKYbo7s1Hj32hRwvLsGFazBHLwRTPKD_Jb6TnU5_Jl4foIhMru8dZppqCOqVFKeMq121Ty1Q5tMRDcqTCmGrgLonH0RSUTJuFOqdvWc0D_y3"
+   },
+   {
+    "title": "amazon.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGn0AnfoSS5QBJ2CpyPekT_YDaD6bBtN0_J3KWLwceuf9-hy_OxeQ80IQfK2owunMqJMI_bQZTpe7BcrYJXutLNS5FD5-pNipp1Vd2V6yU_dAOJx-7LXXO4c44QSOAkgzkDTZvwjVDJsQKGb4Svj4n0ONcezr9P37bsQnnyh84DPMaV0klfKhaMwYsa2rHLAWUiuw7ReE3PPPTcXJ-yRTw_3hMIV_kJPOd81QP410zwxFYJF0kpbjouv2ym8Oe2Jev9_cCC533e4AFYbETSQbxF-zMOhXoCwIzXCob7VAlDHQPlvaJk2n2Tk3CQlYJp60ucEyqT4-7Ng5kObFUvDhzu8Q=="
+   },
+   {
+    "title": "amazonservices.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFT0HjGp3A4qtjk-MYSPInMflwDNNKbPc_SV3_1cKPQLa4CiJGj-IgcLzBIFqdPlxilisGrVRWu3NeH6OBvMAeFQtvpQCuJTQ0yym7O50rfd5iRJb0otcQYn7aOocG92wPQ1d3RBNITLjSXFoJ3tTdf4cmK9XIeGfgxYU2K7yHK963mED3u6IFVLks="
+   },
+   {
+    "title": "feedvisor.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFMHFmjgYHRpOazTzAjwj0FtfOIngUcCP8X8EQCi4A5M96qy76GylC21XodRvq7Dit-Ex4Dx9Fau918jzyYRJ1kMWvvN0NOeC5vJNfEIVm21rU5V2HeP7d8o03tgEtUnMRv8Q="
+   },
+   {
+    "title": "amazonservices.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZu6OsVdPI5MTgws7O_TvPdb630QRF9kjNXbPJta2l9hbpqPdbEWxNsMupJ3kNKsBLBGSNWjckGR3MUGrsMmiN-r-E8nkRD27bgiD8RDdg_YnINvPG28qqshGfxO9wk1NXmGLUrSyfc36ZSFmvgMlnf55VenCacY3Vpd0NawSbx0l430Df6hmfuVBQ"
+   },
+   {
+    "title": "novadata.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjljVSMfUUjWyP0z6S1p0O6RM7R7VZcavwIDWgDYaxjRL28beqxA6a0xRYdNJ--K3pJszgqpJUyzsJs70mJn2nTD8CCXoqjE0fRccbgAxuE2TXrX5GRwqex6aSCdBbmDhIb3aEkFSyqbTTo4pwUm8op_aSfR0WP9tAMlVYqHaZOH8="
+   },
+   {
+    "title": "fivetran.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaiyluZRESlMnriSUlkXjfFSs7-nAUCiG6wHiteoJmiy5QgLLqx3ZyWKRFXTVANd0pjyK-DTOIKuIWP8qosushQmafl5u4ZBkt998Ro3_HpWHMpfQhk49cdWEuQnMdHzfoF9SOGH95uoFSJUeZsjP4YaZCgZuWAXGLRh6KENgGWQBo-UItn81zt2Vs16hZtbOt-PramA=="
+   },
+   {
+    "title": "developer-docs.amazon",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoVhLCufzO-3hHSrmGCYUT_9_RsFDts7m2m-sL58HWcO2m7SIwdOE4vQ0UXUsYHWYMe5gd40lCHSB7FK0Z4wzYTNdPrJFaz4KMmMfhmeDHwFGC7nn-GOyIAakpwjDZ"
+   },
+   {
+    "title": "amazonservices.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZ5cF1fjeGl6wY0yX5auMoohPvUw4DhrjPo7fqQeVfHCtQikearCpK7pl2EmMmN3lXfQmWhIaXImKBONBl1KiH2r7xelUgVo0UTlOsE7joL8iei-RGGezTnMdBFnhrxEgFc1cj"
+   },
+   {
+    "title": "developer-docs.amazon",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFU4cGluuiSUdueBbWmod7Z71sb6rnRXabofDP8x3s-7JqF6s8WTL4yfx70S1aQQQ5Txp9JN8YAjm1aS8r_8lfKrKJX0Psb-SYxj1raKrFGxQYzf90mmXM-bVaoX6k9M-Xm7LIMfzp8gmLlRADqJfyU7Eh6gZoJDIBCQFmwr5Zx0E8qIhNx6kDT"
+   },
+   {
+    "title": "stackoverflow.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKV2pvUAdEaNdk6UPwQIJFk5zzjMCK_EnckoIpgimKfcu-uIfDgbY3hagdJ8DTY9LAOBuAX92GQeHQ-SmsLNjHd--vjqovw8o2IZlzCbrrymOOxCrwSY49UiiqBlntEs3UIAHiS-Z4aZVwmXifIoSLwigtDcv1KuAj7F4opHODtUWplbut1KhD5G-4NEyJSjahDMGRXIeJ6P0gnT5sajUiJFJR_A=="
+   },
+   {
+    "title": "youtube.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDwigwHZ22Oywa3rl6E_9bPhtF5Ptw0OvkFC9rRw0EAcKybQhhiZdwB1Mt2Y0iiVGv4UHe_Seie8I2VIZ7Arr5sh_tzWsNkcLBmT5gLvzau-l5FQ7LbhyjvDtWnvE1AA0LCz4qzg=="
+   },
+   {
+    "title": "youtube.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_v2RnZpNLBoCWDFWSGPdeVoQDsOzr-kw0NXosibEFKXR4y-zzXKO0S_RnwPzDkkSlBvsTlRNdTL6zQefp_D3gadiPLdQZp0D_Iea4AEZJZc828_pP2BMRbQFzbQK3MJFx5VWlow=="
+   },
+   {
+    "title": "developer-docs.amazon",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHM5vUO3QuA7JWpIT6wm4pgzs7zsEgvWDObzhVmbSYj4h3p7Fvm4GTGDSfpLfbkSllqj17IX0oE1d3bOt4Lf4B5L_GaMIc0K9M6b-5HyFjKX7vn-Zn7RXXGm1NATxK-QI34w904EWX6xMWtrU0Hc6pWL7w="
+   },
+   {
+    "title": "readme.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjJrLnzZ3Js1kpHOOEzeEvOhE5EtnAsyMbHXu6Wn5LMvHGdJemxZhRmIHkRqEqEEgrZjAjZAjXq9KjC-s1fescV6bKua31AHxc2URaSRw2x3cE6RC8ne10ubEVIQcdNCB5WlT5AbaRBcPZdBq-RPZ5tJ0W3Uz8mB7GAiX7beMMxsHcLk8pfVLQpntsEHMSw6H8j83T"
+   },
+   {
+    "title": "aibase.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE858gtqokR3qnKR-2t3DVO_TIWrqGaRLplMmAMJyju5DS1CMzAO6AjvJAlB-z24dOIVeisQWn-MSuPpcx_nG3oE5BuL2YO5F44V6RAn7CK0-Pvt6kTWxttt3N9wH4ciQQ3ViJXHEEupDwaYg=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIgoCu8-ruDwI5s4Ey9t9hlUhfDSyeRPlfX-TrLS2GR2pOOt_zUM90SX5zRkhBxfs3Bvs1cL1H7-7St1vO7_n4lctVn3kMzRw7orakR9J_WV2fN5FPQ_LAxCLGQz7HD1Zizfqvts4="
+   },
+   {
+    "title": "datadoe.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_EFfDOBF0tmTVNDl8XFu3HIdu2oJMJw3_emr7NOiGfW3PUeCfrdwJh28Wqg08K1onLvD1-B-1Vs9pkCTs1TiVBkvHRDt2fe6Ofp5JnW0b84v-JWQfypecc-vMnuNcRxJklXIpHiTPW8MjDtzFUeMHWnaB9Ud8VhtkWeQDVDb3cRGixW7z"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIVkMnkXF9LFhVg1bqte1kKEr1McJMfLzjDBfzgDUZV1Gq7TxDmYIZKmbfOHC1aWzyraF_Y2GlZ1uNDQnxkD97r6GTSpCW6KUoTrGn-lpsK8g4hnsJNtAcfp7LJKoaK6KIf_Wkzi3-_e2Y_o_baLTDVtdyyjQ5lDbmyHHw9w=="
+   }
+  ],
+  "tokens": 8908,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://developer.amazonservices.com/start",
+    "status": 200,
+    "chars": 10594,
+    "readable": true
+   },
+   {
+    "url": "https://developer-docs.amazon/sp-api/docs/authorizing-selling-partner-api-applications?ld=ASPTSPAPIDirect&pageName=US%3ASPDS%3ASPAPI-BRIGHTSPOT-grow%2Fapi-amazon-business-b2b-venda-com-sp-api",
+    "status": 200,
+    "chars": 23382,
+    "readable": true
+   },
+   {
+    "url": "https://dlthub.com/docs/dlt-ecosystem/verified-sources/amazon_sp_api",
+    "status": 200,
+    "chars": 1232,
+    "readable": true
+   },
+   {
+    "url": "https://feedvisor.com/resources/amazon-fba/amazon-sandbox/",
+    "status": 404,
+    "chars": 672,
+    "readable": false
+   },
+   {
+    "url": "https://ppc.land/amazon-cancels-selling-partner-api-fees/",
+    "status": 404,
+    "chars": 54,
+    "readable": false
+   },
+   {
+    "url": "https://developer-docs.amazon/sp-api/docs/sp-api-vendor-use-cases",
+    "status": 200,
+    "chars": 22236,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/sshaw/peddler",
+    "status": 404,
+    "chars": 2893,
+    "readable": false
+   },
+   {
+    "url": "https://github.com/amzn/selling-partner-api-models",
+    "status": 200,
+    "chars": 4698,
+    "readable": true
+   }
+  ],
+  "seconds": 100.1
+ }
+}

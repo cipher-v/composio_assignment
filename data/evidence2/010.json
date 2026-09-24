@@ -1,0 +1,173 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://dealcloud.com",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": true,
+   "claim": "access",
+   "url": "https://g2.com",
+   "status": 403,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://dealcloud.com",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://releasebot.io",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.intapp.com/dealcloud/api/latest/authentication/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.intapp.com/dealcloud/api/latest/authentication/#oauth2-client-credentials-flow",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.intapp.com/dealcloud/api/latest/authentication/#api-key-authentication",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.intapp.com/dealcloud/api/latest/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.intapp.com/dealcloud/api/latest/swagger/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.intapp.com/dealcloud/api/latest/swagger/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://docs.intapp.com/dealcloud/release-notes/latest/2024-03-21-release-notes/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://docs.intapp.com/dealcloud/release-notes/latest/2024-03-21-release-notes/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.intapp.com/dealcloud/api/latest/publications/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.intapp.com/dealcloud/api/latest/automations/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.intapp.com/dealcloud/api/latest/sandbox/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "oauth2": false,
+  "api_key": false,
+  "basic": false,
+  "jwt": false
+ },
+ "lint": [],
+ "summary_for_verifier": "- Bot-walled / login pages our crawler could not read (verify via search): ['https://g2.com']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://dealcloud.com', 'https://dealcloud.com', 'https://releasebot.io']\n- Non-vendor sources (prefer official docs): ['https://releasebot.io', 'https://docs.intapp.com/dealcloud/api/latest/authentication/', 'https://docs.intapp.com/dealcloud/api/latest/authentication/#oauth2-client-credentials-flow', 'https://docs.intapp.com/dealcloud/api/latest/authentication/#api-key-authentication', 'https://docs.intapp.com/dealcloud/api/latest/', 'https://docs.intapp.com/dealcloud/api/latest/swagger/', 'https://docs.intapp.com/dealcloud/api/latest/swagger/', 'https://docs.intapp.com/dealcloud/release-notes/latest/2024-03-21-release-notes/', 'https://docs.intapp.com/dealcloud/release-notes/latest/2024-03-21-release-notes/', 'https://docs.intapp.com/dealcloud/api/latest/publications/', 'https://docs.intapp.com/dealcloud/api/latest/automations/', 'https://docs.intapp.com/dealcloud/api/latest/sandbox/']\n- Auth methods not mentioned on any cited page: ['oauth2', 'api_key', 'basic', 'jwt']",
+ "metrics": {
+  "n_evidence": 15,
+  "alive_rate": 0.9333333333333333,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.06666666666666667,
+  "official_rate": 0.13333333333333333,
+  "readable": 3,
+  "quote_supported_rate": 0.0,
+  "lint_issues": 0,
+  "flag_count": 4
+ }
+}

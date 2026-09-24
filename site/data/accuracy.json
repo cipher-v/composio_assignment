@@ -1,0 +1,867 @@
+{
+ "n_apps": 20,
+ "n_fields": 80,
+ "pass1_acc": 0.85,
+ "pass2_acc": 0.85,
+ "per_field": {
+  "primary_auth": {
+   "n": 20,
+   "pass1": 18,
+   "pass2": 19,
+   "pass1_acc": 0.9,
+   "pass2_acc": 0.95
+  },
+  "access": {
+   "n": 20,
+   "pass1": 16,
+   "pass2": 16,
+   "pass1_acc": 0.8,
+   "pass2_acc": 0.8
+  },
+  "mcp": {
+   "n": 20,
+   "pass1": 17,
+   "pass2": 18,
+   "pass1_acc": 0.85,
+   "pass2_acc": 0.9
+  },
+  "verdict": {
+   "n": 20,
+   "pass1": 17,
+   "pass2": 15,
+   "pass1_acc": 0.85,
+   "pass2_acc": 0.75
+  }
+ },
+ "apps_all_correct_pass1": 13,
+ "apps_all_correct_pass2": 12,
+ "rows": [
+  {
+   "id": 3,
+   "name": "Pipedrive",
+   "fields": {
+    "primary_auth": {
+     "truth": "oauth2",
+     "pass1": "oauth2",
+     "pass2": "oauth2",
+     "ok1": true,
+     "ok2": true
+    },
+    "access": {
+     "truth": "self_serve_free",
+     "pass1": "approval_required",
+     "pass2": "self_serve_free",
+     "ok1": false,
+     "ok2": true
+    },
+    "mcp": {
+     "truth": "official",
+     "pass1": "official",
+     "pass2": "official",
+     "ok1": true,
+     "ok2": true
+    },
+    "verdict": {
+     "truth": "ready_now",
+     "pass1": "ready_with_friction",
+     "pass2": "ready_now",
+     "ok1": false,
+     "ok2": true
+    }
+   },
+   "note": "access: Pipedrive docs: private app 'can be shared with any company in Pipedrive via its direct, unlisted installation link' - no approval needed (pipedrive.readme.io/docs/marketplace-registering-a-private-app); verdict: Free dev sandbox + unlisted OAuth app installable by any company",
+   "source": {
+    "primary_auth": "agreed",
+    "access": "adjudicated",
+    "mcp": "agreed",
+    "verdict": "adjudicated"
+   }
+  },
+  {
+   "id": 6,
+   "name": "Podio",
+   "fields": {
+    "primary_auth": {
+     "truth": "oauth2",
+     "pass1": "oauth2",
+     "pass2": "oauth2",
+     "ok1": true,
+     "ok2": true
+    },
+    "access": {
+     "truth": "self_serve_free",
+     "pass1": "self_serve_free",
+     "pass2": "self_serve_free",
+     "ok1": true,
+     "ok2": true
+    },
+    "mcp": {
+     "truth": "official",
+     "pass1": "official",
+     "pass2": "official",
+     "ok1": true,
+     "ok2": true
+    },
+    "verdict": {
+     "truth": "ready_now",
+     "pass1": "ready_now",
+     "pass2": "ready_now",
+     "ok1": true,
+     "ok2": true
+    }
+   },
+   "note": "",
+   "source": {
+    "primary_auth": "agreed",
+    "access": "agreed",
+    "mcp": "agreed",
+    "verdict": "agreed"
+   }
+  },
+  {
+   "id": 11,
+   "name": "Zendesk",
+   "fields": {
+    "primary_auth": {
+     "truth": "oauth2",
+     "pass1": "oauth2",
+     "pass2": "oauth2",
+     "ok1": true,
+     "ok2": true
+    },
+    "access": {
+     "truth": "approval_required",
+     "pass1": "approval_required",
+     "pass2": "approval_required",
+     "ok1": true,
+     "ok2": true
+    },
+    "mcp": {
+     "truth": "community_only",
+     "pass1": "community_only",
+     "pass2": "community_only",
+     "ok1": true,
+     "ok2": true
+    },
+    "verdict": {
+     "truth": "ready_with_friction",
+     "pass1": "ready_with_friction",
+     "pass2": "ready_with_friction",
+     "ok1": true,
+     "ok2": true
+    }
+   },
+   "note": "mcp: No Zendesk-owned doc for a Zendesk MCP server; Zendesk docs only cover an MCP *client* (support.zendesk.com/hc/en-us/articles/10497779528730). The only 'official server' claim is a third-party blog. Listed servers are Swifteq/GitHub community.",
+   "source": {
+    "primary_auth": "agreed",
+    "access": "agreed",
+    "mcp": "adjudicated",
+    "verdict": "agreed"
+   }
+  },
+  {
+   "id": 17,
+   "name": "Plain",
+   "fields": {
+    "primary_auth": {
+     "truth": "api_key",
+     "pass1": "api_key",
+     "pass2": "api_key",
+     "ok1": true,
+     "ok2": true
+    },
+    "access": {
+     "truth": "self_serve_trial",
+     "pass1": "self_serve_trial",
+     "pass2": "self_serve_trial",
+     "ok1": true,
+     "ok2": true
+    },
+    "mcp": {
+     "truth": "official",
+     "pass1": "official",
+     "pass2": "official",
+     "ok1": true,
+     "ok2": true
+    },
+    "verdict": {
+     "truth": "ready_with_friction",
+     "pass1": "ready_with_friction",
+     "pass2": "ready_with_friction",
+     "ok1": true,
+     "ok2": true
+    }
+   },
+   "note": "",
+   "source": {
+    "primary_auth": "agreed",
+    "access": "agreed",
+    "mcp": "agreed",
+    "verdict": "agreed"
+   }
+  },
+  {
+   "id": 22,
+   "name": "Twilio",
+   "fields": {
+    "primary_auth": {
+     "truth": "basic",
+     "pass1": "basic",
+     "pass2": "oauth2",
+     "ok1": true,
+     "ok2": false
+    },
+    "access": {
+     "truth": "self_serve_trial",
+     "pass1": "self_serve_trial",
+     "pass2": "self_serve_trial",
+     "ok1": true,
+     "ok2": true
+    },
+    "mcp": {
+     "truth": "official",
+     "pass1": "official",
+     "pass2": "none_found",
+     "ok1": true,
+     "ok2": false
+    },
+    "verdict": {
+     "truth": "ready_with_friction",
+     "pass1": "ready_with_friction",
+     "pass2": "ready_with_friction",
+     "ok1": true,
+     "ok2": true
+    }
+   },
+   "note": "primary_auth: twilio.com/docs/usage/requests-to-twilio: 'Use your API key as the username and your API key secret as the password'. Twilio Connect OAuth is legacy/niche.; mcp: twilio.com/docs/ai/mcp: 'The Twilio Model Context Protocol (MCP) server gives AI coding agents direct, structured access to Twilio's full API'",
+   "source": {
+    "primary_auth": "adjudicated",
+    "access": "agreed",
+    "mcp": "adjudicated",
+    "verdict": "agreed"
+   }
+  },
+  {
+   "id": 29,
+   "name": "Aircall",
+   "fields": {
+    "primary_auth": {
+     "truth": "oauth2",
+     "pass1": "oauth2",
+     "pass2": "oauth2",
+     "ok1": true,
+     "ok2": true
+    },
+    "access": {
+     "truth": "partner_or_sales",
+     "pass1": "partner_or_sales",
+     "pass2": "paid_plan",
+     "ok1": true,
+     "ok2": false
+    },
+    "mcp": {
+     "truth": "community_only",
+     "pass1": "community_only",
+     "pass2": "community_only",
+     "ok1": true,
+     "ok2": true
+    },
+    "verdict": {
+     "truth": "ready_with_friction",
+     "pass1": "ready_with_friction",
+     "pass2": "ready_with_friction",
+     "ok1": true,
+     "ok2": true
+    }
+   },
+   "note": "access: developer.aircall.io OAuth tutorial: 'OAuth credentials - If you haven't received them yet, apply to the Tech Partner program.'",
+   "source": {
+    "primary_auth": "agreed",
+    "access": "adjudicated",
+    "mcp": "agreed",
+    "verdict": "agreed"
+   }
+  },
+  {
+   "id": 32,
+   "name": "Meta Ads",
+   "fields": {
+    "primary_auth": {
+     "truth": "oauth2",
+     "pass1": "oauth2",
+     "pass2": "oauth2",
+     "ok1": true,
+     "ok2": true
+    },
+    "access": {
+     "truth": "approval_required",
+     "pass1": "approval_required",
+     "pass2": "approval_required",
+     "ok1": true,
+     "ok2": true
+    },
+    "mcp": {
+     "truth": "official",
+     "pass1": "community_only",
+     "pass2": "official",
+     "ok1": false,
+     "ok2": true
+    },
+    "verdict": {
+     "truth": "ready_with_friction",
+     "pass1": "ready_with_friction",
+     "pass2": "ready_with_friction",
+     "ok1": true,
+     "ok2": true
+    }
+   },
+   "note": "mcp: developers.facebook.com/blog/post/2026/07/16/meta-ads-mcp-server/ - Meta-hosted server at mcp.facebook.com/ads",
+   "source": {
+    "primary_auth": "agreed",
+    "access": "agreed",
+    "mcp": "adjudicated",
+    "verdict": "agreed"
+   }
+  },
+  {
+   "id": 36,
+   "name": "Klaviyo",
+   "fields": {
+    "primary_auth": {
+     "truth": "oauth2",
+     "pass1": "oauth2",
+     "pass2": "oauth2",
+     "ok1": true,
+     "ok2": true
+    },
+    "access": {
+     "truth": "self_serve_free",
+     "pass1": "self_serve_free",
+     "pass2": "self_serve_free",
+     "ok1": true,
+     "ok2": true
+    },
+    "mcp": {
+     "truth": "official",
+     "pass1": "official",
+     "pass2": "official",
+     "ok1": true,
+     "ok2": true
+    },
+    "verdict": {
+     "truth": "ready_now",
+     "pass1": "ready_now",
+     "pass2": "ready_with_friction",
+     "ok1": true,
+     "ok2": false
+    }
+   },
+   "note": "verdict: Klaviyo OAuth docs: 'Your app does not have to be listed to share and use your installation URL' - free account, no gate",
+   "source": {
+    "primary_auth": "agreed",
+    "access": "agreed",
+    "mcp": "agreed",
+    "verdict": "adjudicated"
+   }
+  },
+  {
+   "id": 41,
+   "name": "Shopify",
+   "fields": {
+    "primary_auth": {
+     "truth": "oauth2",
+     "pass1": "oauth2",
+     "pass2": "oauth2",
+     "ok1": true,
+     "ok2": true
+    },
+    "access": {
+     "truth": "approval_required",
+     "pass1": "self_serve_free",
+     "pass2": "approval_required",
+     "ok1": false,
+     "ok2": true
+    },
+    "mcp": {
+     "truth": "official",
+     "pass1": "community_only",
+     "pass2": "official",
+     "ok1": false,
+     "ok2": true
+    },
+    "verdict": {
+     "truth": "ready_with_friction",
+     "pass1": "ready_with_friction",
+     "pass2": "ready_with_friction",
+     "ok1": true,
+     "ok2": true
+    }
+   },
+   "note": "access: shopify.dev/docs/apps/launch/distribution: public distribution (needed for multiple stores) 'requires Shopify approval'; mcp: shopify.dev documents Shopify's own Dev MCP and Storefront MCP servers",
+   "source": {
+    "primary_auth": "agreed",
+    "access": "adjudicated",
+    "mcp": "adjudicated",
+    "verdict": "agreed"
+   }
+  },
+  {
+   "id": 50,
+   "name": "fanbasis",
+   "fields": {
+    "primary_auth": {
+     "truth": "api_key",
+     "pass1": "api_key",
+     "pass2": "api_key",
+     "ok1": true,
+     "ok2": true
+    },
+    "access": {
+     "truth": "self_serve_free",
+     "pass1": "self_serve_free",
+     "pass2": "self_serve_free",
+     "ok1": true,
+     "ok2": true
+    },
+    "mcp": {
+     "truth": "official",
+     "pass1": "official",
+     "pass2": "official",
+     "ok1": true,
+     "ok2": true
+    },
+    "verdict": {
+     "truth": "ready_now",
+     "pass1": "ready_now",
+     "pass2": "ready_now",
+     "ok1": true,
+     "ok2": true
+    }
+   },
+   "note": "",
+   "source": {
+    "primary_auth": "agreed",
+    "access": "agreed",
+    "mcp": "agreed",
+    "verdict": "agreed"
+   }
+  },
+  {
+   "id": 54,
+   "name": "MrScraper",
+   "fields": {
+    "primary_auth": {
+     "truth": "bearer_token",
+     "pass1": "bearer_token",
+     "pass2": "bearer_token",
+     "ok1": true,
+     "ok2": true
+    },
+    "access": {
+     "truth": "self_serve_free",
+     "pass1": "self_serve_free",
+     "pass2": "self_serve_free",
+     "ok1": true,
+     "ok2": true
+    },
+    "mcp": {
+     "truth": "official",
+     "pass1": "official",
+     "pass2": "official",
+     "ok1": true,
+     "ok2": true
+    },
+    "verdict": {
+     "truth": "ready_now",
+     "pass1": "ready_now",
+     "pass2": "ready_now",
+     "ok1": true,
+     "ok2": true
+    }
+   },
+   "note": "primary_auth: docs.mrscraper.com calls it an 'API Token' ('API Tokens allow you to securely access the MrScraper API'); rubric: static tokens not called API key = bearer_token. Blind checker was wrong here.",
+   "source": {
+    "primary_auth": "adjudicated",
+    "access": "agreed",
+    "mcp": "agreed",
+    "verdict": "agreed"
+   }
+  },
+  {
+   "id": 59,
+   "name": "Waterfall.io",
+   "fields": {
+    "primary_auth": {
+     "truth": "api_key",
+     "pass1": "api_key",
+     "pass2": "api_key",
+     "ok1": true,
+     "ok2": true
+    },
+    "access": {
+     "truth": "partner_or_sales",
+     "pass1": "partner_or_sales",
+     "pass2": "partner_or_sales",
+     "ok1": true,
+     "ok2": true
+    },
+    "mcp": {
+     "truth": "none_found",
+     "pass1": "none_found",
+     "pass2": "community_only",
+     "ok1": true,
+     "ok2": false
+    },
+    "verdict": {
+     "truth": "needs_outreach",
+     "pass1": "needs_outreach",
+     "pass2": "needs_outreach",
+     "ok1": true,
+     "ok2": true
+    }
+   },
+   "note": "access: waterfall.io only offers 'Book a Call' / 'Book a demo'; no self-serve signup or free credits found. Blind checker's 'free credits' came from unverified search snippets.; mcp: No MCP page in docs.waterfall.io/llms.txt and no server found in search; verdict: Sales-led access (book a call) before any API key",
+   "source": {
+    "primary_auth": "agreed",
+    "access": "adjudicated",
+    "mcp": "adjudicated",
+    "verdict": "adjudicated"
+   }
+  },
+  {
+   "id": 61,
+   "name": "GitHub",
+   "fields": {
+    "primary_auth": {
+     "truth": "oauth2",
+     "pass1": "oauth2",
+     "pass2": "oauth2",
+     "ok1": true,
+     "ok2": true
+    },
+    "access": {
+     "truth": "self_serve_free",
+     "pass1": "self_serve_free",
+     "pass2": "self_serve_free",
+     "ok1": true,
+     "ok2": true
+    },
+    "mcp": {
+     "truth": "official",
+     "pass1": "official",
+     "pass2": "official",
+     "ok1": true,
+     "ok2": true
+    },
+    "verdict": {
+     "truth": "ready_now",
+     "pass1": "ready_now",
+     "pass2": "ready_now",
+     "ok1": true,
+     "ok2": true
+    }
+   },
+   "note": "",
+   "source": {
+    "primary_auth": "agreed",
+    "access": "agreed",
+    "mcp": "agreed",
+    "verdict": "agreed"
+   }
+  },
+  {
+   "id": 62,
+   "name": "Vercel",
+   "fields": {
+    "primary_auth": {
+     "truth": "oauth2",
+     "pass1": "oauth2",
+     "pass2": "oauth2",
+     "ok1": true,
+     "ok2": true
+    },
+    "access": {
+     "truth": "self_serve_free",
+     "pass1": "self_serve_free",
+     "pass2": "paid_plan",
+     "ok1": true,
+     "ok2": false
+    },
+    "mcp": {
+     "truth": "official",
+     "pass1": "official",
+     "pass2": "official",
+     "ok1": true,
+     "ok2": true
+    },
+    "verdict": {
+     "truth": "ready_now",
+     "pass1": "ready_now",
+     "pass2": "ready_with_friction",
+     "ok1": true,
+     "ok2": false
+    }
+   },
+   "note": "access: Any Vercel account (incl. free Hobby) can create access tokens (vercel.com/docs/rest-api/authentication); fact-checker's 'paid_plan' is wrong; verdict: Free tokens + OAuth integrations, broad REST API, official MCP",
+   "source": {
+    "primary_auth": "agreed",
+    "access": "adjudicated",
+    "mcp": "agreed",
+    "verdict": "adjudicated"
+   }
+  },
+  {
+   "id": 77,
+   "name": "ClickUp",
+   "fields": {
+    "primary_auth": {
+     "truth": "oauth2",
+     "pass1": "oauth2",
+     "pass2": "oauth2",
+     "ok1": true,
+     "ok2": true
+    },
+    "access": {
+     "truth": "self_serve_free",
+     "pass1": "self_serve_free",
+     "pass2": "self_serve_free",
+     "ok1": true,
+     "ok2": true
+    },
+    "mcp": {
+     "truth": "official",
+     "pass1": "official",
+     "pass2": "official",
+     "ok1": true,
+     "ok2": true
+    },
+    "verdict": {
+     "truth": "ready_now",
+     "pass1": "ready_now",
+     "pass2": "ready_now",
+     "ok1": true,
+     "ok2": true
+    }
+   },
+   "note": "",
+   "source": {
+    "primary_auth": "agreed",
+    "access": "agreed",
+    "mcp": "agreed",
+    "verdict": "agreed"
+   }
+  },
+  {
+   "id": 80,
+   "name": "Harvest",
+   "fields": {
+    "primary_auth": {
+     "truth": "oauth2",
+     "pass1": "oauth2",
+     "pass2": "oauth2",
+     "ok1": true,
+     "ok2": true
+    },
+    "access": {
+     "truth": "self_serve_free",
+     "pass1": "self_serve_free",
+     "pass2": "self_serve_free",
+     "ok1": true,
+     "ok2": true
+    },
+    "mcp": {
+     "truth": "official",
+     "pass1": "official",
+     "pass2": "official",
+     "ok1": true,
+     "ok2": true
+    },
+    "verdict": {
+     "truth": "ready_now",
+     "pass1": "ready_now",
+     "pass2": "ready_now",
+     "ok1": true,
+     "ok2": true
+    }
+   },
+   "note": "",
+   "source": {
+    "primary_auth": "agreed",
+    "access": "agreed",
+    "mcp": "agreed",
+    "verdict": "agreed"
+   }
+  },
+  {
+   "id": 82,
+   "name": "Plaid",
+   "fields": {
+    "primary_auth": {
+     "truth": "api_key",
+     "pass1": "api_key",
+     "pass2": "api_key",
+     "ok1": true,
+     "ok2": true
+    },
+    "access": {
+     "truth": "self_serve_free",
+     "pass1": "approval_required",
+     "pass2": "self_serve_free",
+     "ok1": false,
+     "ok2": true
+    },
+    "mcp": {
+     "truth": "official",
+     "pass1": "official",
+     "pass2": "official",
+     "ok1": true,
+     "ok2": true
+    },
+    "verdict": {
+     "truth": "ready_with_friction",
+     "pass1": "ready_with_friction",
+     "pass2": "ready_now",
+     "ok1": true,
+     "ok2": false
+    }
+   },
+   "note": "access: Free self-serve Sandbox keys (plaid.com/docs); full Production needs Plaid review, counted as friction in verdict; verdict: Production access requires an application/review by Plaid and end users must go through Plaid Link",
+   "source": {
+    "primary_auth": "agreed",
+    "access": "adjudicated",
+    "mcp": "agreed",
+    "verdict": "adjudicated"
+   }
+  },
+  {
+   "id": 84,
+   "name": "Paygent Connect",
+   "fields": {
+    "primary_auth": {
+     "truth": "api_key",
+     "pass1": "api_key",
+     "pass2": "api_key",
+     "ok1": true,
+     "ok2": true
+    },
+    "access": {
+     "truth": "partner_or_sales",
+     "pass1": "self_serve_free",
+     "pass2": "self_serve_free",
+     "ok1": false,
+     "ok2": false
+    },
+    "mcp": {
+     "truth": "none_found",
+     "pass1": "official",
+     "pass2": "none_found",
+     "ok1": false,
+     "ok2": true
+    },
+    "verdict": {
+     "truth": "needs_outreach",
+     "pass1": "ready_now",
+     "pass2": "ready_now",
+     "ok1": false,
+     "ok2": false
+    }
+   },
+   "note": "access: No product called 'Paygent Connect' tied to NMI could be found; NMI gateway credentials are issued via a merchant account/reseller. Low confidence - Gemini's 'free self-serve' is unsupported.; mcp: No Paygent/NMI MCP server found; Gemini first pass 'official' unsupported; verdict: Product identity unclear; credentials only via merchant/reseller relationship",
+   "source": {
+    "primary_auth": "agreed",
+    "access": "adjudicated",
+    "mcp": "adjudicated",
+    "verdict": "adjudicated"
+   }
+  },
+  {
+   "id": 92,
+   "name": "Otter AI",
+   "fields": {
+    "primary_auth": {
+     "truth": "oauth2",
+     "pass1": "bearer_token",
+     "pass2": "oauth2",
+     "ok1": false,
+     "ok2": true
+    },
+    "access": {
+     "truth": "partner_or_sales",
+     "pass1": "partner_or_sales",
+     "pass2": "self_serve_free",
+     "ok1": true,
+     "ok2": false
+    },
+    "mcp": {
+     "truth": "official",
+     "pass1": "official",
+     "pass2": "official",
+     "ok1": true,
+     "ok2": true
+    },
+    "verdict": {
+     "truth": "ready_with_friction",
+     "pass1": "needs_outreach",
+     "pass2": "ready_now",
+     "ok1": false,
+     "ok2": false
+    }
+   },
+   "note": "primary_auth: Otter's own remote MCP server (mcp.otter.ai) signs users in with OAuth - the path an integration would use; access: Otter REST API is Enterprise-only: 'contact your Otter account manager to enable access' (help.otter.ai public API article); verdict: Official OAuth MCP usable today; full REST API needs Enterprise",
+   "source": {
+    "primary_auth": "adjudicated",
+    "access": "adjudicated",
+    "mcp": "agreed",
+    "verdict": "adjudicated"
+   }
+  },
+  {
+   "id": 99,
+   "name": "YouTube Transcript",
+   "fields": {
+    "primary_auth": {
+     "truth": "api_key",
+     "pass1": "oauth2",
+     "pass2": "api_key",
+     "ok1": false,
+     "ok2": true
+    },
+    "access": {
+     "truth": "self_serve_free",
+     "pass1": "self_serve_free",
+     "pass2": "self_serve_free",
+     "ok1": true,
+     "ok2": true
+    },
+    "mcp": {
+     "truth": "official",
+     "pass1": "official",
+     "pass2": "official",
+     "ok1": true,
+     "ok2": true
+    },
+    "verdict": {
+     "truth": "ready_now",
+     "pass1": "ready_now",
+     "pass2": "ready_now",
+     "ok1": true,
+     "ok2": true
+    }
+   },
+   "note": "primary_auth: transcriptapi.com: key sent as 'Authorization: Bearer API_KEY', vendor calls it an API key; no OAuth",
+   "source": {
+    "primary_auth": "adjudicated",
+    "access": "agreed",
+    "mcp": "agreed",
+    "verdict": "agreed"
+   }
+  }
+ ],
+ "method": "blind independent check (Claude, live docs); disputes re-checked against vendor docs and decided by Claude (human delegated)",
+ "truth_sources": {
+  "agreed": 55,
+  "human": 0,
+  "adjudicated": 25,
+  "claude_unresolved": 0
+ }
+}

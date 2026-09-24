@@ -1,0 +1,221 @@
+{
+ "app": {
+  "id": 14,
+  "name": "Front",
+  "category": "Support and Helpdesk",
+  "hint": "front.com"
+ },
+ "record": {
+  "subcategory": "Helpdesk / ticketing",
+  "one_liner": "An all-in-one customer communication and support platform featuring email management, shared inboxes, and an AI platform.",
+  "auth_methods": [
+   "oauth2",
+   "api_key",
+   "bearer_token"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 Authorization Code grant type with PKCE for public apps; API tokens/Bearer tokens for private use.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can sign up for a free development account on Front's developer portal, which provides a sandbox environment limited to 3 teammates.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Core API covers accounts, custom fields, analytics, channels, drafts, messages, comments, attachments, rules, tags, teammates, and inboxes.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Front hosts an official MCP server at mcp.frontapp.com/mcp using an OAuth-authenticated endpoint.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "Front provides a free self-serve developer sandbox, standard OAuth 2.0, an official OpenAPI spec, and an official MCP server.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://front.com/pricing",
+    "quote": "...customer service all-in-one support platform email management collaborative shared inboxes client communication personalized service at scale ai platform..."
+   },
+   {
+    "claim": "api",
+    "url": "https://dev.frontapp.com/reference/introduction",
+    "quote": "...here is front's core api, a backend api that gives comprehensive control over all entities in front from contacts to comments."
+   },
+   {
+    "claim": "auth",
+    "url": "https://dev.frontapp.com/reference/introduction",
+    "quote": "front supports oauth2.0 as well as api tokens. to learn about authenticating with front, see our guide on authentication ."
+   },
+   {
+    "claim": "auth",
+    "url": "https://dev.frontapp.com/docs/authentication",
+    "quote": "There are two ways to get a Bearer token — through API tokens in your settings or through an OAuth implementation... We require that public integrations use OAuth unless there is a reason they cannot. OAuth integrations are part of our application framework and can be easily installed by customers using the Front App Store..."
+   },
+   {
+    "claim": "auth",
+    "url": "https://dev.frontapp.com/docs/oauth",
+    "quote": "Front's OAuth implementation only supports the authorization code grant type which defines a flow to get a temporary authorization token which can then be exchanged to get an API and refresh token."
+   },
+   {
+    "claim": "access",
+    "url": "https://dev.frontapp.com/docs/partnering-with-front",
+    "quote": "If you don't already have an account, you'll want to sign up for a free development account... You'll get access to a free developer environment that will provide everything you need to begin building with our APIs. Developer accounts are limited to 3 teammates..."
+   },
+   {
+    "claim": "access",
+    "url": "https://dev.frontapp.com/docs/partnering-with-front",
+    "quote": "We'll use your form submission to first test your integration and let you know if everything looks good. Once your integration has been technically approved, our team will use the image and marketing details you submit in the form to launch your integration..."
+   },
+   {
+    "claim": "api",
+    "url": "https://dev.frontapp.com/reference/introduction",
+    "quote": "The api is designed to communicate with your server using json. all responses coming from the api will send data in a valid json object. if you need to send data to the api, your request should set the content-type http heade"
+   },
+   {
+    "claim": "api",
+    "url": "https://dev.frontapp.com/docs/partnering-with-front",
+    "quote": "OpenAPI spec. You can view the Core API spec file on GitHub."
+   },
+   {
+    "claim": "api",
+    "url": "https://dev.frontapp.com/docs/partnering-with-front",
+    "quote": "Front offers two methods for configuring webhooks: By adding a webhook feature to an app (application webhooks) By setting up a webhook through rules (rule webhooks)"
+   },
+   {
+    "claim": "api",
+    "url": "https://dev.frontapp.com/docs/partnering-with-front",
+    "quote": "The developer account will provide you with an environment that does not include production data so it will be safer to test in."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://dev.frontapp.com/docs/mcp-server",
+    "quote": "Front's MCP server ( mcp.frontapp.com/mcp ) lets AI agents act on Front conversation data using a single OAuth-authenticated endpoint. Agents authenticate as a specific Front user, with permissions matching that user's role (user-scoped authorization)."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://dev.frontapp.com/docs/mcp-server",
+    "quote": "Open beta. This feature is in open beta. Everyone has access, but bug fixes, improvements, and other details are still being worked on."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### 1. Product Overview\nFront is a customer communication and operations hub designed for support and helpdesk teams. It provides an all-in-one support platform featuring email management, collaborative shared inboxes, client communication at scale, and an AI platform. Its Core API allows developers to programmatically manage and control all backend entities.\n* **Source URL:** https://front.com/pricing\n* **Verbatim Quote:** `\"...customer service all-in-one support platform email management collaborative shared inboxes client communication personalized service at scale ai platform...\"`\n* **Source URL:** https://dev.frontapp.com/reference/introduction\n* **Verbatim Quote:** `\"...here is front's core api, a backend api that gives comprehensive control over all entities in front from contacts to comments.\"`\n\n### 2. Authentication Methods & Multi-Tenant Integration\nFront supports two main authentication methods for its Core API: static API tokens and OAuth 2.0. For a multi-tenant integration platform, OAuth 2.0 is the required primary authentication method.\n* **Auth Methods:** \n  * **api_key / bearer_token:** Front supports company-scoped API tokens for private or single-instance testing.\n  * **oauth2:** Front supports OAuth 2.0 using the Authorization Code grant type with PKCE compatibility.\n* **Primary Auth for Multi-Tenant:** `oauth2`\n* **Source URL:** https://dev.frontapp.com/reference/introduction\n* **Verbatim Quote:** `\"front supports oauth2.0 as well as api tokens. to learn about authenticating with front, see our guide on authentication .\"`\n* **Source URL:** https://dev.frontapp.com/docs/authentication\n* **Verbatim Quote:** `\"There are two ways to get a Bearer token — through API tokens in your settings or through an OAuth implementation... We require that public integrations use OAuth unless there is a reason they cannot. OAuth integrations are part of our application framework and can be easily installed by customers using the Front App Store...\"`\n* **Source URL:** https://dev.frontapp.com/docs/oauth\n* **Verbatim Quote:** `\"Front's OAuth implementation only supports the authorization code grant type which defines a flow to get a temporary authorization token which can then be exchanged to get an API and refresh token.\"`\n\n### 3. Developer Credentials & Cost\n* **Access Category:** `self_serve_free`\n* **Process:** Any developer can sign up for a free developer account directly on Front's developer portal. This provides a sandbox environment with full API access and allows the creation of OAuth applications without requiring a paid subscription or upfront approval. While publishing a public integration to the App Store requires a technical review and approval, obtaining credentials to build and test is entirely self-serve and free.\n* **Source URL:** https://dev.frontapp.com/docs/partnering-with-front\n* **Verbatim Quote:** `\"If you don't already have an account, you'll want to sign up for a free development account... You'll get access to a free developer environment that will provide everything you need to begin building with our APIs. Developer accounts are limited to 3 teammates...\"`\n* **Source URL:** https://dev.frontapp.com/docs/partnering-with-front\n* **Verbatim Quote:** `\"We'll use your form submission to first test your integration and let you know if everything looks good. Once your integration has been technically approved, our team will use the image and marketing details you submit in the form to launch your integration...\"`\n\n### 4. API Architecture & Features\n* **API Style:** REST (communicates via JSON over HTTPS).\n* **API Breadth:** Very broad; covers accounts, custom fields, analytics, channels, drafts, messages, comments, attachments, rules, tags, teammates, and inboxes.\n* **OpenAPI Spec:** Yes, available publicly on GitHub.\n* **Webhooks:** Yes, supports both application webhooks (for apps/integrations) and rule webhooks.\n* **Sandbox:** Yes, provided automatically via the free developer account.\n* **Source URL:** https://dev.frontapp.com/reference/introduction\n* **Verbatim Quote:** `\"The api is designed to communicate with your server using json. all responses coming from the api will send data in a valid json object. if you need to send data to the api, your request should set the content-type http heade\"`\n* **Source URL:** https://dev.frontapp.com/docs/partnering-with-front\n* **Verbatim Quote:** `\"OpenAPI spec. You can view the Core API spec file on GitHub.\"`\n* **Source URL:** https://dev.frontapp.com/docs/partnering-with-front\n* **Verbatim Quote:** `\"Front offers two methods for configuring webhooks: By adding a webhook feature to an app (application webhooks) By setting up a webhook through rules (rule webhooks)\"`\n* **Source URL:** https://dev.frontapp.com/docs/partnering-with-front\n* **Verbatim Quote:** `\"The developer account will provide you with an environment that does not include production data so it will be safer to test in.\"`\n\n### 5. Model Context Protocol (MCP) Servers\n* **MCP Category:** `official`\n* **Details:** Front hosts an official MCP server currently in open beta. It allows AI agents to interact with Front conversation data via a single OAuth-authenticated endpoint using Streamable HTTP transport. It uses user-scoped authorization, meaning the agent inherits the exact permissions of the authorizing user.\n* **Source URL:** https://dev.frontapp.com/docs/mcp-server\n* **Verbatim Quote:** `\"Front's MCP server ( mcp.frontapp.com/mcp ) lets AI agents act on Front conversation data using a single OAuth-authenticated endpoint. Agents authenticate as a specific Front user, with permissions matching that user's role (user-scoped authorization).\"`\n* **Source URL:** https://dev.frontapp.com/docs/mcp-server\n* **Verbatim Quote:** `\"Open beta. This feature is in open beta. Everyone has access, but bug fixes, improvements, and other details are still being worked on.\"`\n\n### 6. Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. Front provides comprehensive public documentation, a free self-serve developer sandbox, standard OAuth 2.0 authentication, an official OpenAPI specification, and even an official MCP server. An AI agent toolkit can be built immediately.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"dev.frontapp.com/docs/authentication\"",
+   "\"dev.frontapp.com/docs/mcp-server\"",
+   "\"dev.frontapp.com/docs/oauth\"",
+   "\"front.com/pricing\" api access",
+   "\"dev.frontapp.com\" webhooks",
+   "\"dev.frontapp.com\" openapi spec json yaml",
+   "\"dev.frontapp.com\" sandbox developer account",
+   "\"dev.frontapp.com\" \"partnering-with-front\"",
+   "\"dev.frontapp.com\" \"openapi\"",
+   "\"dev.frontapp.com/llms.txt\""
+  ],
+  "search_sources": [
+   {
+    "title": "front.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEetpITbO47AXtxzS9iBcVrwnNLnFKk9iADmn2nXRA2f1bSqOke94AndBTVkK_O3uQo3tNWnm5lIcbxu-3y-K2dXQyE7s3fTlJ3Uo0kDQKgCw4TJMS6X6kwaRbXGHy1VQcnZVnkg6qJZkbJIH2C2O98FkTBBBlCfT2NXrCVf00I5FrzKBTktoBelc5f-gS6Mkm8XVUWU16XEw=="
+   },
+   {
+    "title": "frontapp.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQ1Dc8n-SyyaqoP4VLxDx4jrYwgQ7qoUmEb39Di3uusuDMm17WG68Krz_1wUvhieHzv9XbeEgrtBmC6Z0RlN146kwoCKph6gwsfUblob-C_a65NyqG8e-JPxjr68PN_Kw="
+   },
+   {
+    "title": "frontapp.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJfL8wIO3g_EovQZiNV6S7R37GAZxFg7eFjCkVt6UtzA64aBCL4HwbZZiq_jwLa5kqS6WQE7BlwWBUyYZQ2eZIpK9rUJBmh-1njGGtk3iS6fGGVAHcSyJ7PyO83EYXjz_5WCEY-XlC8JuV"
+   },
+   {
+    "title": "front.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRdm9ygis1GHe1sw1hULlpJU3RocVyOueAt4RvHwdIkZ5lFpMlgO2hKh0dH0JzUkjldweuPWudv3pWAUwG17lc0HUxL-1rwqhRtExx4zK8UHBcn3FtB9kUNuUxZ9Ch-ngJ_BFfXUGtxaZ4CkteGkZDfXNJh4YyilA2DxrXHqWJaB60QNmuitAtZigYyaWw54inhw=="
+   },
+   {
+    "title": "front.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENjeyHitR4EE6YyTolxhxBGWRXAR1e8jApXEg8lV65vOsDL_u74BrJTbcmlPb7f-Gs88oKepfvzeNSUU4PUuLV7JXx6LHYao8fIrDXIrwTo2vnZFb9-hAfDeGPesvI6rjNmxdNFymnI0g9iD81O7mFBe300f1jrX2oMkBIAC12yVtKPuxz4BWiDzekqW3VayytfFvWVDD-waRtlKzLcj4YPHjO2QwT1DQMkt7Yhxc24WyHm2hnfmlCEQo9G5cIFRU72A=="
+   },
+   {
+    "title": "front.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2MWU7XwXYai26cD0bEkZClTpn3EA8mMy-kWfF4SpANcE4iwiqb161yPloOB6oSHOYKYnMehPn-U0Sl2lu1rnfTm7CkP-qjV-CDcMeII-sjZkdDN9DCn6lAYJmqtK-SHqvcikQ8vWNgPcC-0La0bTg"
+   }
+  ],
+  "tokens": 8514,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Front developer documentation authentication API keys OAuth",
+    "Front developer documentation getting started quickstart",
+    "Front pricing API access plans developer program",
+    "Front API reference index",
+    "Front MCP server official community"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://dev.frontapp.com/docs/authentication",
+    "https://dev.frontapp.com/reference/getting-started",
+    "https://front.com/pricing",
+    "https://dev.frontapp.com/reference/introduction",
+    "https://dev.frontapp.com/docs/mcp-server",
+    "https://dev.frontapp.com/docs/oauth",
+    "https://dev.frontapp.com/docs/partnering-with-front",
+    "https://hiverhq.com/blog/front-pricing"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://dev.frontapp.com/docs/api-tokens",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://dev.frontapp.com/docs/authentication",
+     "status": 200,
+     "chars": 6269,
+     "readable": true
+    },
+    {
+     "url": "https://dev.frontapp.com/reference/getting-started",
+     "status": 200,
+     "chars": 9039,
+     "readable": true
+    },
+    {
+     "url": "https://front.com/pricing",
+     "status": 200,
+     "chars": 13490,
+     "readable": true
+    },
+    {
+     "url": "https://dev.frontapp.com/reference/introduction",
+     "status": 200,
+     "chars": 11561,
+     "readable": true
+    },
+    {
+     "url": "https://dev.frontapp.com/docs/mcp-server",
+     "status": 200,
+     "chars": 25466,
+     "readable": true
+    },
+    {
+     "url": "https://dev.frontapp.com/docs/oauth",
+     "status": 200,
+     "chars": 9968,
+     "readable": true
+    },
+    {
+     "url": "https://dev.frontapp.com/docs/partnering-with-front",
+     "status": 200,
+     "chars": 8374,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 131.2
+ }
+}

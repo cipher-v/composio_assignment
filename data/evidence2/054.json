@@ -1,0 +1,100 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://request.composio.dev/boards/tool-requests/posts/mrscraper",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.7
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://mrscraper.com/blog/best-web-scraping-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://mrscraper.com/docs/web-scraper-api",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://mrscraper.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.77
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://mrscraper.com/docs/web-scraper-api",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://mrscraper.com/docs/web-scraper-api",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://mrscraper.com/docs/web-scraper-api",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://mrscraper.com/docs/web-scraper-api",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "bearer_token": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://mrscraper.com/docs/web-scraper-api', 'https://mrscraper.com/docs/web-scraper-api', 'https://mrscraper.com/docs/web-scraper-api', 'https://mrscraper.com/docs/web-scraper-api', 'https://mrscraper.com/docs/web-scraper-api']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://mrscraper.com/blog/best-web-scraping-api']\n- Non-vendor sources (prefer official docs): ['https://request.composio.dev/boards/tool-requests/posts/mrscraper']",
+ "metrics": {
+  "n_evidence": 8,
+  "alive_rate": 0.375,
+  "dead_rate": 0.625,
+  "blocked_rate": 0.0,
+  "official_rate": 0.875,
+  "readable": 3,
+  "quote_supported_rate": 0.6666666666666666,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

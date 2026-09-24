@@ -1,0 +1,237 @@
+{
+ "app": {
+  "id": 43,
+  "name": "BigCommerce",
+  "category": "Ecommerce",
+  "hint": "developer.bigcommerce.com"
+ },
+ "record": {
+  "subcategory": "E-commerce Platform",
+  "one_liner": "BigCommerce is a SaaS e-commerce platform for building, managing, and scaling online stores with comprehensive features.",
+  "auth_methods": [
+   "bearer_token",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 Authorization Code Grant for marketplace applications (app-level credentials); static bearer tokens for store-level custom scripts.",
+  "access": "approval_required",
+  "access_notes": "Developers can sign up for a free Developer Portal account and create a free trial store for testing. Public multi-tenant integrations require app review and a $99 submission fee for the BigCommerce App Marketplace.",
+  "api_styles": [
+   "rest",
+   "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Primarily REST for store management (products, orders, customers, etc.) and Storefront operations, with a GraphQL Storefront API. Covers catalogs, carts, checkouts, orders, customers, price lists, promotions, shipping, and system logs.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "BigCommerce officially provides a native Storefront MCP server. Community-built MCP servers also exist.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "The main blocker is the mandatory App Marketplace review process and the $99 app submission fee required to take a multi-tenant OAuth application live for production merchants.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://docs.bigcommerce.com/developer/api-reference/rest/admin/overview",
+    "quote": "Server-side REST APIs for managing store data and operations. These are the primary APIs for building integrations, automating store processes, and managing resources like products, orders, customers, and content."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts",
+    "quote": "BigCommerce offers three types of OAuth-based API accounts to developers who wish to use BigCommerce's REST APIs: store-level credentials, app-level credentials, and account-level credentials."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide/auth",
+    "quote": "The app sends POST request to BigCommerce to request a unique access_token for the store. BigCommerce responds with either an error or an access_token unique to the merchant's store"
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/quick-start",
+    "quote": "To get started with developing BigCommerce apps, you will first need to create a Developer Portal account. You will use your Developer Portal account to register and submit your app for review. You will also need to start a free store trial to test your app."
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.bigcommerce.com/developer/docs/overview/quick-start",
+    "quote": "Create a sandbox store. Sign up for a free BigCommerce trial store to test API calls and build integrations without affecting live data."
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.bigcommerce.com/developer/api-reference/rest/admin/management/pricing",
+    "quote": "A fee of $99 is required for each submission from our Standard Technology level partners, however this fee will be waived for Preferred or Elite tier apps."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.bigcommerce.com/developer/api-reference/rest/admin/overview",
+    "quote": "You can download generated OpenAPI specification files for API references in JSON or YAML."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.bigcommerce.com/developer/api-reference/rest/admin/overview",
+    "quote": "Real-time event notifications via webhooks."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.bigcommerce.com/developer/api-reference/rest/admin/overview",
+    "quote": "BigCommerce Storefront MCP is now available to every store on the platform... BigCommerce's Storefront MCP server gives AI agents purpose-built commerce tools to do exactly that: interact with a BigCommerce storefront through natural language on behalf of any shopper."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://docs.bigcommerce.com/developer/api-reference/rest/admin/management/pricing",
+    "quote": "A fee of $99 is required for each submission from our Standard Technology level partners, however this fee will be waived for Preferred or Elite tier apps."
+   }
+  ],
+  "confidence": 0.9
+ },
+ "notes": "### Product Overview\nBigCommerce is a robust SaaS e-commerce platform that enables merchants to build, manage, and scale online stores. It provides comprehensive built-in capabilities for managing product catalogs, processing orders, tracking inventory, segmenting customers, and handling checkouts.\n\n*   **Source URL:** `https://docs.bigcommerce.com/developer/api-reference/rest/admin/overview`\n*   **Verbatim Quote:** `\"Server-side REST APIs for managing store data and operations. These are the primary APIs for building integrations, automating store processes, and managing resources like products, orders, customers, and content.\"`\n\n---\n\n### API Authentication Methods & Multi-Tenant Choice\nBigCommerce provides three primary types of OAuth-based API accounts:\n1.  **Store-level credentials:** Static access tokens (`bearer_token`) generated manually within a single store's control panel for custom or private scripts.\n2.  **App-level credentials:** OAuth 2.0 Authorization Code Grant (`oauth2`) used for marketplace applications.\n3.  **Account-level credentials:** Tokens providing access across multiple stores owned by a single parent account.\n\nFor a multi-tenant integration platform (like Composio), **`oauth2`** (App-level credentials) is the primary authentication method. This allows the platform to dynamically request a unique, permanent access token whenever a merchant installs the application.\n\n*   **Source URL:** `https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts`\n*   **Verbatim Quote:** `\"BigCommerce offers three types of OAuth-based API accounts to developers who wish to use BigCommerce's REST APIs: store-level credentials, app-level credentials, and account-level credentials.\"`\n*   **Source URL:** `https://docs.bigcommerce.com/developer/docs/integrations/apps/guide/auth`\n*   **Verbatim Quote:** `\"The app sends POST request to BigCommerce to request a unique access_token for the store. BigCommerce responds with either an error or an access_token unique to the merchant's store\"`\n\n---\n\n### Developer Credentials & Cost\n*   **Access Classification:** `approval_required`\n*   **Credential Acquisition Process:** A developer can sign up for a free Developer Portal account to register applications and obtain a Client ID and Client Secret. For testing, developers can create a free trial store or apply to the BigCommerce Technology Partner Program to get a non-transactional sandbox store. \n*   **Costs & Approvals:** While local development and testing as a \"Draft\" app are free, deploying a multi-tenant integration publicly requires submitting the app for review to be listed on the BigCommerce App Marketplace. This review process requires a non-refundable **$99 app submission fee** for Standard Technology partners.\n\n*   **Source URL:** `https://docs.bigcommerce.com/developer/docs/integrations/apps/quick-start`\n*   **Verbatim Quote:** `\"To get started with developing BigCommerce apps, you will first need to create a Developer Portal account. You will use your Developer Portal account to register and submit your app for review. You will also need to start a free store trial to test your app.\"`\n*   **Source URL:** `https://docs.bigcommerce.com/developer/docs/overview/quick-start`\n*   **Verbatim Quote:** `\"Create a sandbox store. Sign up for a free BigCommerce trial store to test API calls and build integrations without affecting live data.\"`\n*   **Source URL:** `https://docs.bigcommerce.com/developer/api-reference/rest/admin/management/pricing`\n*   **Verbatim Quote:** `\"A fee of $99 is required for each submission from our Standard Technology level partners, however this fee will be waived for Preferred or Elite tier apps.\"`\n\n---\n\n### API Style & Technical Details\n*   **API Style:** Primarily REST (for Store Management and Storefront operations) alongside a GraphQL Storefront API.\n*   **Breadth:** Extremely broad, covering catalogs, carts, checkouts, orders, customers, price lists, promotions, shipping, and system logs.\n*   **OpenAPI Spec:** Yes, BigCommerce provides fully generated OpenAPI specification files downloadable directly from the documentation.\n*   **Webhooks:** Yes, supports real-time event notifications.\n*   **Sandbox:** Yes, available via free trial stores or the partner program.\n\n*   **Source URL:** `https://docs.bigcommerce.com/developer/api-reference/rest/admin/overview`\n*   **Verbatim Quote:** `\"You can download generated OpenAPI specification files for API references in JSON or YAML.\"`\n*   **Source URL:** `https://docs.bigcommerce.com/developer/api-reference/rest/admin/overview`\n*   **Verbatim Quote:** `\"Real-time event notifications via webhooks.\"`\n\n---\n\n### Model Context Protocol (MCP) Servers\n*   **MCP Classification:** `official`\n*   **Details:** BigCommerce officially provides a native **Storefront MCP server** that allows AI agents to interact directly with storefronts (searching catalogs, managing carts, and generating checkout URLs). Additionally, several community-built MCP servers exist (such as those hosted by Pipedream and CData).\n\n*   **Source URL:** `https://docs.bigcommerce.com/developer/api-reference/rest/admin/overview`\n*   **Verbatim Quote:** `\"BigCommerce Storefront MCP is now available to every store on the platform... BigCommerce's Storefront MCP server gives AI agents purpose-built commerce tools to do exactly that: interact with a BigCommerce storefront through natural language on behalf of any shopper.\"`\n\n---\n\n### Buildability Verdict\n*   **Verdict:** `ready_with_friction`\n*   **Main Blocker:** The primary hurdle is the mandatory **App Marketplace review process and the $99 app submission fee** required to take a multi-tenant OAuth application live for production merchants. While a developer can build and test the toolkit immediately using a free trial/sandbox store and a \"Draft\" app configuration, full public multi-tenant deployment cannot bypass the marketplace approval queue.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"BigCommerce\" developer account cost free sandbox",
+   "\"BigCommerce\" API authentication methods oauth2 store api credentials",
+   "\"BigCommerce\" openapi spec download",
+   "\"BigCommerce\" MCP server Model Context Protocol",
+   "\"BigCommerce\" \"Developer Portal\" sign up cost",
+   "\"BigCommerce\" app approval requirements review",
+   "\"BigCommerce\" app submission fee amount",
+   "\"BigCommerce\" app review fee cost"
+  ],
+  "search_sources": [
+   {
+    "title": "litextension.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9k3DaSBB7pbJZFng7lMJYBQkoy-oS30cf2aFmri1lHJ03cCoBbyMKTMgJMWL8BM4aF6SS9kIsdLoVw4ZgFNxfJmnf7eTbWRb_W6Kx4ZQaR0JFaTcTXsXiRhxfx5KljBp_K5STOUxUpFx2Q9U="
+   },
+   {
+    "title": "medium.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2EoqSaleIpMGxBQSTCvGNv68zWFr2cKJhnicQ_glgDEBhtD-P409Opl4tEE3cUsK7cV7aA_iXd9YLok2_hwfKr9esrKUh8n7m8WFQzv5aIDnLFe1Yd96-ANtqlOIlsZpNrrMHZO8Eqtw1eiGyD8Mw_YMgKWKZrBhYDPtn7eDFpawTck2oMkNcA0X25rNXzogWoq59KD4EhGHxMRsP"
+   },
+   {
+    "title": "bigcommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEo6W3hARv3L3lLQ2R90M74xcvxx9evpzBANlbo8MQ8W4e9Lp2vW_vdaXD_C0y3g2y27NdiO4ul27oV0z-oPQQcd5SlHlWmTGYHV9J755Csc4Sl03R8M_WO48QdOg9rWY0GXD58gRkYbDVFZyMz3Mx3tGWcg3NPxl_5ExHzLyalETtfQcme3xTim4XRlmbkkqTsqVw="
+   },
+   {
+    "title": "bigcommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEilBLs1O68ZV4eDgpU-GtixYzRGRaT9i3R8hukansZ7VYsVN1tIOGTU8Rj4Z4U8xk15TONp3jXeT00-d5giu0E6-1JgYX7qZiIKkvnlp-HCivn0s1WQ-X2SYadPk31eWBce6OZDm9xdyfOZ0yN2VfNeNQrtIT3OPN3s2846OObSqprfHwIXO8WEYOPZQQ="
+   },
+   {
+    "title": "bigcommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9RPMzwgql_o99soSHY5pDL2uVNfpo2vUdcPGNnkO5NkrBQDPeryhqHl9HzL0ZcLIm0-MFGVCWpz1CIV5vo2bpCXYH5HWdSQU-FktKAOqajpOrH_ATmqcL"
+   },
+   {
+    "title": "getshogun.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnELOFGhLatfVXcDBlDKysS2RBm_ULUEEstkLAZqcyAHGF6YjRkIzf1GZDEIaPwQx9Al0S9MbIlMkVY6nUiQCvpDnfVUF-6M_V5sYUxWoxARgLyYzZ5VGLsVJRiXp0k9jpW8JdWHePvgXnNw=="
+   }
+  ],
+  "tokens": 9619,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "BigCommerce API authentication URL",
+    "BigCommerce OAuth URL",
+    "BigCommerce API keys URL",
+    "BigCommerce API getting started URL",
+    "BigCommerce developer quickstart URL",
+    "BigCommerce API pricing URL",
+    "BigCommerce developer program URL",
+    "BigCommerce plans API access URL",
+    "BigCommerce API reference index URL",
+    "BigCommerce API documentation URL",
+    "BigCommerce MCP server official",
+    "BigCommerce MCP server community"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts",
+    "https://docs.bigcommerce.com/developer/api-reference/rest/admin/overview",
+    "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide/auth",
+    "https://docs.bigcommerce.com/developer/docs/archive/start/making-requests",
+    "https://docs.bigcommerce.com/developer/docs/integrations/apps/quick-start",
+    "https://docs.bigcommerce.com/developer/api-reference/rest/admin/management/pricing",
+    "https://docs.bigcommerce.com/developer/docs/overview/quick-start",
+    "https://docs.bigcommerce.com/developer/learn/courses/checkout-orders-rest-api/management-api/management-api"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://developer.bigcommerce.com/docs/api-guides/authentication",
+     "status": 0
+    },
+    {
+     "url": "https://developer.bigcommerce.com/docs/getting-started/quick-start",
+     "status": 0
+    },
+    {
+     "url": "https://developer.bigcommerce.com/docs/api-reference/store-management/price-lists",
+     "status": 0
+    },
+    {
+     "url": "https://developer.bigcommerce.com/docs/api-reference",
+     "status": 404
+    },
+    {
+     "url": "https://developer.bigcommerce.com/docs/mcp/overview",
+     "status": 404
+    },
+    {
+     "url": "https://developer.bigcommerce.com/docs/api-reference/store-management/api-accounts",
+     "status": 0
+    },
+    {
+     "url": "https://developer.bigcommerce.com/docs/api-guides/developer-workflow/implementing-oauth",
+     "status": 404
+    },
+    {
+     "url": "https://developer.bigcommerce.com/docs/getting-started/apps-quick-start",
+     "status": 0
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts",
+     "status": 200,
+     "chars": 43660,
+     "readable": true
+    },
+    {
+     "url": "https://docs.bigcommerce.com/developer/api-reference/rest/admin/overview",
+     "status": 200,
+     "chars": 75705,
+     "readable": true
+    },
+    {
+     "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide/auth",
+     "status": 200,
+     "chars": 21437,
+     "readable": true
+    },
+    {
+     "url": "https://docs.bigcommerce.com/developer/docs/archive/start/making-requests",
+     "status": 200,
+     "chars": 13863,
+     "readable": true
+    },
+    {
+     "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/quick-start",
+     "status": 200,
+     "chars": 19100,
+     "readable": true
+    },
+    {
+     "url": "https://docs.bigcommerce.com/developer/api-reference/rest/admin/management/pricing",
+     "status": 200,
+     "chars": 74800,
+     "readable": true
+    },
+    {
+     "url": "https://docs.bigcommerce.com/developer/docs/overview/quick-start",
+     "status": 200,
+     "chars": 17547,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 55.8
+ }
+}

@@ -1,0 +1,380 @@
+{
+ "app": {
+  "id": 41,
+  "name": "Shopify",
+  "category": "Ecommerce",
+  "hint": "shopify.dev"
+ },
+ "record": {
+  "subcategory": "E-commerce platform",
+  "one_liner": "Shopify is a comprehensive e-commerce platform to build online stores, manage products, inventory, and orders.",
+  "auth_methods": [
+   "oauth2",
+   "api_key"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 Authorization Code Grant Flow for standalone/API-only apps (multi-tenant); Client Credentials Grant Flow for apps within developer's own organization; OAuth 2.0 with PKCE for customer-facing authentication.",
+  "access": "approval_required",
+  "access_notes": "Any developer can sign up for the Shopify Partner Program for free to get API credentials and create unlimited free development stores for testing. However, for an app to be installed on multiple merchant stores, it must be distributed as a \"Public\" app (either listed or unlisted) and pass Shopify's app review process. Custom apps are limited to a single merchant or a single Plus Organization.",
+  "api_styles": [
+   "graphql",
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Strictly GraphQL-first for new integrations, covering all aspects of store management (products, customers, orders, inventory). Legacy REST Admin API is deprecated.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Shopify provides official MCP servers: the Storefront MCP is enabled by default on stores for AI shopping agents, and the Dev MCP is a local tool for developers. Additionally, community-built MCP servers exist that wrap the Admin API for store management tasks.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "While Shopify provides excellent documentation and free developer access, it requires a per-customer configuration hurdle (collecting merchant's unique shop domain for OAuth) and new apps are restricted to the GraphQL Admin API, requiring dynamic GraphQL handling.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.shopify.com/pricing",
+    "quote": "sell online, in person, and in ai chats"
+   },
+   {
+    "claim": "auth",
+    "url": "https://shopify.dev/docs/apps/build/authentication-authorization/authenticate-standalone-apps?lang=node",
+    "quote": "because they can't use id tokens , they authenticate using the oauth authorization code grant flow: redirect the merchant to shopify, get their approval, and exchange a code for an access token."
+   },
+   {
+    "claim": "auth",
+    "url": "https://shopify.dev/docs/apps/build/authentication-authorization/authenticate-standalone-apps?lang=node",
+    "quote": "if your app only acts on stores in your own shopify organization, use the client credentials grant instead. it skips the merchant authorization flow."
+   },
+   {
+    "claim": "auth",
+    "url": "https://shopify.dev/docs/storefronts/headless/building-with-the-customer-account-api/authenticate-customers?extension=javascript",
+    "quote": "this tutorial shows you how to implement oauth 2.0 with pkce (proof key for code exchange) ) to authenticate customers, store their access tokens, and query their order information."
+   },
+   {
+    "claim": "access",
+    "url": "https://shopify.com/partners",
+    "quote": "The Shopify Partner Program is a global partner community that is free to join and lets you access unlimited test stores, programs, incentives, expertise, and tools."
+   },
+   {
+    "claim": "access",
+    "url": "https://shopify.dev/docs/apps/build/authentication-authorization/authenticate-standalone-apps?lang=node",
+    "quote": "app credentials you have your app's client id and client secret from the dev dashboard."
+   },
+   {
+    "claim": "access",
+    "url": "https://shopify.dev/docs/apps/store/review",
+    "quote": "After you submit your public app for review, it moves to the Submitted status... After your app has been approved by the app review team, you'll receive an email confirming that your app has moved to the Published status"
+   },
+   {
+    "claim": "api",
+    "url": "https://shopify.dev/docs/api/admin-rest",
+    "quote": "the rest admin api is a legacy api as of october 1, 2024. starting april 1, 2025, all new public apps must be built exclusively with the graphql admin api ."
+   },
+   {
+    "claim": "api",
+    "url": "https://shopify.dev/docs/api/admin-graphql",
+    "quote": "GraphQL Admin API reads and writes products, customers, orders, inventory, and the rest of the data behind the Shopify admin."
+   },
+   {
+    "claim": "api",
+    "url": "https://shopify.dev/docs/storefronts/headless/building-with-the-storefront-api/getting-started",
+    "quote": "This schema is generated using the Storefront API's introspection query, and is available at @shopify/hydrogen-react/storefront.schema.json."
+   },
+   {
+    "claim": "api",
+    "url": "https://shopify.dev/docs/apps/store/review",
+    "quote": "GDPR Webhooks: You must provide endpoints for the mandatory GDPR webhooks (Customer Data Request, Customer Redact, Shop Redact)."
+   },
+   {
+    "claim": "api",
+    "url": "https://shopify.com/partners",
+    "quote": "lets you access unlimited test stores, programs, incentives, expertise, and tools."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://shopify.dev/docs/api/mcp/storefront",
+    "quote": "The Storefront MCP is enabled by default on every store and allows AI agents to query catalog and policy information."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://shopify.dev/docs/api/mcp/dev",
+    "quote": "The Dev MCP is a local server for developers to connect their coding assistants to Shopify's documentation and API schemas."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": "[\"oauth2\"]",
+    "new": "[\"oauth2\", \"api_key\"]",
+    "reason": "While OAuth 2.0 is primary, Shopify also uses API keys (access tokens) for Admin and Storefront APIs, which function as static keys.",
+    "url": "https://shopify.dev/docs/api/admin-rest/latest/authentication/access-tokens"
+   },
+   {
+    "field": "access",
+    "old": "self_serve_free",
+    "new": "approval_required",
+    "reason": "Although developer accounts are free, installing an app on multiple merchant stores requires a mandatory app review process, fitting 'approval_required'.",
+    "url": "https://shopify.dev/docs/apps/store/review"
+   },
+   {
+    "field": "access_notes",
+    "old": "Any developer can sign up for the Shopify Partner Program for free and create an app to obtain Client ID and Client Secret. Unlimited free development stores are available for testing. App review is only required for public listing on the Shopify App Store.",
+    "new": "Any developer can sign up for the Shopify Partner Program for free to get API credentials and create unlimited free development stores for testing. However, for an app to be installed on multiple merchant stores, it must be distributed as a \"Public\" app (either listed or unlisted) and pass Shopify's app review process. Custom apps are limited to a single merchant or a single Plus Organization.",
+    "reason": "The original note incorrectly stated that app review is only for public listing. Review is required for any multi-merchant app distribution.",
+    "url": "https://shopify.dev/docs/apps/store/review"
+   },
+   {
+    "field": "api_styles",
+    "old": "[\"graphql\"]",
+    "new": "[\"graphql\", \"rest\"]",
+    "reason": "While GraphQL is preferred for new apps, the REST Admin API still exists and is functional for existing and some custom apps.",
+    "url": "https://shopify.dev/docs/api/admin-rest"
+   },
+   {
+    "field": "mcp",
+    "old": "community_only",
+    "new": "official",
+    "reason": "Shopify provides official MCP servers (Storefront MCP and Dev MCP), contradicting the 'community_only' claim.",
+    "url": "https://shopify.dev/docs/api/mcp/storefront"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "Multiple community-built MCP servers exist on GitHub for Shopify's Storefront and Admin APIs, but no official server from Shopify.",
+    "new": "Shopify provides official MCP servers: the Storefront MCP is enabled by default on stores for AI shopping agents, and the Dev MCP is a local tool for developers. Additionally, community-built MCP servers exist that wrap the Admin API for store management tasks.",
+    "reason": "The original note incorrectly stated there are no official MCP servers from Shopify. Official servers exist for Storefront and Dev purposes.",
+    "url": "https://shopify.dev/docs/api/mcp/storefront"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### **Fact-Checking Analysis**\n\nHere is the field-by-field verification of the provided record for \"Shopify\".\n\n---\n\n#### **`subcategory`**\n*   **Original:** `E-commerce platform`\n*   **Verification:** **CONFIRMED**. Shopify is widely recognized as a comprehensive platform for creating and managing online stores.\n\n---\n\n#### **`one_liner`**\n*   **Original:** `Shopify is a comprehensive e-commerce platform to build online stores, manage products, inventory, and orders.`\n*   **Verification:** **CONFIRMED**. The platform's APIs allow developers to build apps and integrations that access products, customers, orders, inventory, and more.\n\n---\n\n#### **`auth_methods`**\n*   **Original:** `[ \"oauth2\" ]`\n*   **Verification:** **WRONG**. While OAuth 2.0 is the primary method for apps, Shopify also uses API keys (referred to as access tokens but used like static keys) for its Admin and Storefront APIs. The `X-Shopify-Access-Token` and `X-Shopify-Storefront-Access-Token` headers function as API key authentication. Therefore, `apiKey` should also be listed.\n*   **Correct Value:** `[ \"oauth2\", \"apiKey\" ]`\n\n---\n\n#### **`primary_auth`**\n*   **Original:** `oauth2`\n*   **Verification:** **CONFIRMED**. For third-party, multi-tenant apps, OAuth 2.0 is the standard and required flow for a user (merchant) to grant permissions to an application.\n\n---\n\n#### **`auth_notes`**\n*   **Original:** `OAuth 2.0 Authorization Code Grant Flow for standalone/API-only apps (multi-tenant); Client Credentials Grant Flow for apps within developer's own organization; OAuth 2.0 with PKCE for customer-facing authentication.`\n*   **Verification:** **CONFIRMED**. The documentation confirms these three distinct OAuth flows:\n    *   **Authorization Code Grant:** For standalone apps where a merchant grants approval.\n    *   **Client Credentials Grant:** Mentioned for apps acting only on stores within the developer's own organization.\n    *   **OAuth 2.0 with PKCE:** Used for the Customer Account API to authenticate end customers securely.\n\n---\n\n#### **`access`**\n*   **Original:** `self_serve_free`\n*   **Verification:** **WRONG**. This is the most significant error in the original record. While a developer can sign up for a free Partner account and get API credentials for development stores, they cannot install that app on multiple, unaffiliated merchant stores without undergoing an app review. Even \"unlisted\" public apps, which are not discoverable in the app store search, require review to be installable via a direct link. This mandatory review process for multi-merchant access fits the definition of `approval_required`.\n*   **Correct Value:** `approval_required`\n\n---\n\n#### **`access_notes`**\n*   **Original:** `Any developer can sign up for the Shopify Partner Program for free and create an app to obtain Client ID and Client Secret. Unlimited free development stores are available for testing. App review is only required for public listing on the Shopify App Store.`\n*   **Verification:** **WRONG**.\n    *   \"Any developer can sign up for the Shopify Partner Program for free...\" - **CONFIRMED**. The program is free to join.\n    *   \"...and create an app to obtain Client ID and Client Secret.\" - **CONFIRMED**. This is a standard part of the app creation process in the Partner Dashboard.\n    *   \"Unlimited free development stores are available for testing.\" - **CONFIRMED**. Partners can create unlimited development stores for testing purposes.\n    *   \"App review is only required for public listing on the Shopify App Store.\" - **WRONG**. This is incorrect. An app review is required for any app intended for installation on multiple merchant stores, even if it is \"unlisted\". A \"Custom\" app can be installed on a single store without review, but creating duplicates to bypass the review is against the terms of service.\n*   **Correct Value:** Any developer can sign up for the Shopify Partner Program for free to get API credentials and create unlimited free development stores for testing. However, for an app to be installed on multiple merchant stores, it must be distributed as a \"Public\" app (either listed or unlisted) and pass Shopify's app review process. Custom apps are limited to a single merchant or a single Plus Organization.\n\n---\n\n#### **`api_styles`**\n*   **Original:** `[ \"graphql\" ]`\n*   **Verification:** **WRONG**. While GraphQL is the primary and required API for new public apps, the REST Admin API still exists and is functional for existing and some custom apps, although it is considered legacy. Therefore, `rest` should also be included.\n*   **Correct Value:** `[ \"graphql\", \"rest\" ]`\n\n---\n\n#### **`api_breadth`**\n*   **Original:** `broad`\n*   **Verification:** **CONFIRMED**. The APIs cover a wide range of e-commerce functions, including store management, products, customers, orders, inventory, fulfillment, storefronts, and payments.\n\n---\n\n#### **`api_notes`**\n*   **Original:** `Strictly GraphQL-first for new integrations, covering all aspects of store management (products, customers, orders, inventory). Legacy REST Admin API is deprecated.`\n*   **Verification:** **CONFIRMED**. As of April 1, 2025, all new public apps must be built exclusively with the GraphQL Admin API. The REST Admin API was designated a legacy API on October 1, 2024. The GraphQL API provides comprehensive access to store data.\n\n---\n\n#### **`openapi_spec`**\n*   **Original:** `false`\n*   **Verification:** **CONFIRMED**. Shopify does not officially publish or maintain an OpenAPI specification for its current APIs. While community-created specs exist, there is no official vendor-supported one.\n\n---\n\n#### **`webhooks`**\n*   **Original:** `true`\n*   **Verification:** **CONFIRMED**. Shopify has extensive support for webhooks, which are a primary method for apps to receive near-real-time notifications about events in a store, such as order creation or product updates.\n\n---\n\n#### **`sandbox`**\n*   **Original:** `true`\n*   **Verification:** **CONFIRMED**. Shopify Partners can create an unlimited number of free \"development stores\" which serve as sandboxes for building and testing apps.\n\n---\n\n#### **`mcp`**\n*   **Original:** `community_only`\n*   **Verification:** **WRONG**. Shopify provides at least two official MCP servers. The **Storefront MCP** is live by default on every store and allows AI agents to query catalog and policy information. The **Dev MCP** is a local server for developers to connect their coding assistants to Shopify's documentation and API schemas. Community servers exist to wrap the Admin API, which is a capability not covered by the official servers.\n*   **Correct Value:** `official`\n\n---\n\n#### **`mcp_notes`**\n*   **Original:** `Multiple community-built MCP servers exist on GitHub for Shopify's Storefront and Admin APIs, but no official server from Shopify.`\n*   **Verification:** **WRONG**. The statement that there is \"no official server from Shopify\" is false. Shopify maintains the Storefront MCP and the Dev MCP. Community-built servers do exist, but they primarily fill the gap for the Admin API, not the Storefront API.\n*   **Correct Value:** Shopify provides official MCP servers: the Storefront MCP is enabled by default on stores for AI shopping agents, and the Dev MCP is a local tool for developers. Additionally, community-built MCP servers exist that wrap the Admin API for store management tasks.\n\n---\n\n#### **`verdict`**\n*   **Original:** `ready_with_friction`\n*   **Verification:** **CONFIRMED**. The mandatory app review process to get access to multiple merchant stores is a significant hurdle that prevents a `ready_now` verdict. This fits the definition of `ready_with_friction` with the blocker `approval_required`.\n\n---\n\n#### **`blocker`**\n*   **Original:** `app_review_or_approval`\n*   **Verification:** **CONFIRMED**. As established in the `access` field verification, an app review is mandatory for an app to be installed on more than one store (unless it's a custom app for a single Plus organization).\n\n---\n\n#### **`blocker_notes`**\n*   **Original:** `While Shopify provides excellent documentation and free developer access, it requires a per-customer configuration hurdle (collecting merchant's unique shop domain for OAuth) and new apps are restricted to the GraphQL Admin API, requiring dynamic GraphQL handling.`\n*   **Verification:** **CONFIRMED**. The notes are accurate. The OAuth flow requires redirecting the merchant to their unique shop domain (`{shop_name}.myshopify.com`) for authorization. New public apps are indeed required to use the GraphQL Admin API, which is a shift from the more static nature of REST.\n\n---\n### **Uncertain Fields**\n\nAll fields were verifiable with the provided documentation and search results. There are no fields that remain uncertain.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Shopify Partner Program free join",
+   "Shopify app review process for unlisted apps",
+   "Shopify API authentication methods",
+   "Shopify REST API deprecation",
+   "Shopify create development store",
+   "Shopify API access for developers",
+   "Shopify official MCP server",
+   "Shopify webhooks documentation",
+   "Does Shopify have an OpenAPI spec"
+  ],
+  "search_sources": [
+   {
+    "title": "oyecommerz.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEg3rC5las5lio__tODrgPi1I-9d8gpirqrkFPcwX1mfVxjGxXumE93TwwCj5Q-xN-O9YPCF3wTNzHvUHolmhkiFmlBsCR5LN2VLAUBZFmvDpPyyIFeVkpJOsCCL5m9enoDdImAEf8aqY4W9p-duCQXvCcyudC-"
+   },
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoCx7AqIqW63ln_Ed8qSvbolor_sjKdOBbqGGh7Xzam3IH1HFbrao58r2M1ofFZysxQKNB7XebQtPh2r3akaVxTz95uzAzi_Bv9xc7bCHfC7qJtYE472roYUMf0QnRb_xaYYQr85cyMBQ="
+   },
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEStkl-vCtcGp-JFfk0mxJhwRi4Wdhq56FRJXvu52FXvjEAfGRna8oQDfERmvEbPI7nNugaMstegm2-kUrIzdKAR4XMCtks3T7PVwJ1ksM3KA_uqXXbmQRwUJQzt-d_D1nUO2KmsYsjdjkrfVPc2eqQVGOr"
+   },
+   {
+    "title": "eseospace.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhRgoFCD8F2HWUv7yAhjFzN-Ppehnjynp0aLF65sBaITmEz04L0LtiQRAPr4lqkUUf08GGr0NveEwbHtaCUCzkVAZSJIPv-zPYUon-z9AkHFQkhRuKTMBLqo60Loj3rAZ4LXkSHTle4cByx6NVb4Preg=="
+   },
+   {
+    "title": "praella.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIyaYjQQZxih4u3H3_giJnZgmWS2vsZ9sEg2WkE974dh1dSXDmK0qTBi3OxfQFFESoRv7l3Ful4E63QWGrkOBcX0mfSrkI3VjCtDKgjZmEce4yNsP-T6YF5A4MTMjjrDahad0PNmtz6rbIyNVqRcIoLk7I_KSXZm7PqeSCmSkMFeqUwNiGf6a_xRTAZUjCX15npcMQxnvY1mHAslmb30Dy"
+   },
+   {
+    "title": "shopifyacademy.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExg40FG0i5mhXZBC4rEbcE4iPo-DSlWg1kTUaycKZ1WEXbmKH-q-LfL8RsGmNxe32NUhQZCqTDiMtE524diSrFOaywOqktQIsWEKSKcACl53cOQirfiu_Z1mvN3iYgt15i1VhI-pU8bBvE11teKdR_FWFo6TOZnE3pvSRv_q0="
+   },
+   {
+    "title": "shopify.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7-Mbdy8hWD4IUhM5heXRXI4mQTLQiMQ6q22UhvGuNJwUGIVtFjWDufaK7xBUuOKlCgZ_Lko7MXBm09FBvmYAVpJ_z4ar71T0RwFiz11-75Bj00VENNSnC1ERsMN_V4QA5iEEsKGXLoxdIQLjTSHgLy_NAiivY7DPEvrzC7IcOimmT1c2nmBs880GtMcMmJu8XH9jVToOLTIw="
+   },
+   {
+    "title": "shopify.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0ji-tL0rOB_EkR9JxPEV_Re5ud1UnjTB3mllu-hHkaalfSmq9UeONiihv0SH9AkV1bdnsFxT8YjhzLw8hCCQtk6jZ8238IMzYir2uUvp7hHx6_dlmU_BAwp8YZnXai_q-xfdqubacE1Bw6MkEV8txYzzcBeyiluEXCAFotJXtMA3aT2GaE0ZwvfUerA=="
+   },
+   {
+    "title": "shopify.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUoGtYgYwAsehVDlOEyLYFWiZlhPDEmVz8IHWNYc-CZMUFl7FplXSkClTpDmt7qA_romrXKyLlVLDsldeXRR3Pr8tnZU4W8b2jdXdQAS_8dRm4ADaR9DHtccfuOVChv1s0oAYX__u_sFvqgHS0"
+   },
+   {
+    "title": "shopify.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUPpDRLIkVCmkTRnoFndDJhSSHdXdbdBjJsd2aYwhKW49vH5B3DGUFumQm3NeW6Na9npmvb7eB25dGiAiFnq7fjTyPHIvJ7BJf-ulzvWgFWmHFOnPOe3z0ohrQflnIFocFmCGmUymmpUk5fzwt8uwdP2XDsXM="
+   },
+   {
+    "title": "digiteon.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUi9TGYx23H2xt8TZHtVpK2m6MAe0Dg68AS2y60jcMYx4SzzU5c8ZvjNre8YlWm2UOEHeiv-rojMZMZmGz0L5CEfNXQ0ZukMtQqc5NEJaTqZGwkowFGYz8wy4_Zpm3oPgCfPls9bltRMICV-QCvCGrb-F8_fO-51jPLCTNFnzRzqqcsXGr4_QSf42iUokn"
+   },
+   {
+    "title": "lucentinnovation.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7NfGFHdmo0QjyrJeonjsl_t2m__Y4jiae_a939zdENWKN65FcEy8-ygBFpHFk23YcApF8REhDaGkiOrz36WafTydn9j_VUtyHo2icodb_l1-Djh8Fsit2KOAVSgpiPdsiQa1lb0tqVq_5x-VjwcNMnANI8W3Ld5dfDfaHaoiYz7-bHqzJqu3psNadfZ-GIxjvsWd4lDg="
+   },
+   {
+    "title": "popupsmart.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDJhFfrBl2YEaj6iVdYsp7bhCcWQT9iOftmsIupFZm38tQrNV0l4WnAHzXwKCxG5bstbgv19wzmyyXojYeBnAnxWd6phsEUhKmWsCt_yzAmEkpMHMumVzpCzJhncSCEbDUPWf5knWYlyIvF-O2PARa8tPV9Twb15jB9g=="
+   },
+   {
+    "title": "refersion.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFM1zanmt9-Fy54FKNjH0pKL9LNi_42Fgw7uJqEHTpBIJRVJwSPng7oxR6zffo4r-JSD9rDKiQdr0lH-Itj2M9R9iAUI1bSz9JzOA90R6A8svxdlPZOgMruWClWcYFBj29PA7-cKXmYI_Vn8w=="
+   },
+   {
+    "title": "shopify.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFn3v8oJrNzsLhqiIhA-Qsq5tW9Ue8Jt3ulOHXJdxjh5-v-JDJCSC7PY4rTn2o1dEw9CS76a8Ev2R86s0GnQtZEAbxfxP9bRtH0fKwB4staqTBTiCwsB-ImcvTyZVrbUJPXjb7qw_OyIjQ3fb5DWP8QXYeh"
+   },
+   {
+    "title": "froonze.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEio3iz-m6BWtyaOJ5ren-9cGiovXs0ez0dzPDrUweNRWl2erQ9-BlhVzRSFz8-LTdY7INAILB1X6U07UcOYSzGKUTiTEYfjAdrF8E8p5J4ZXo1McIZu9TAfcixD_vpQcH83dlpeeOW-jHYft3uVFQIcg=="
+   },
+   {
+    "title": "shopify.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFG7dsuii6rcy-cZKTQpOk_COUeG1dhSwzO7lAfnrfvlmLS8WK44ac1oEQ0wzNJoE9bG0yYYSU5MJok7IY33x4UmFz4FtUV4vYC1D9InYzEfxdmMWYSIb-cNxLL8GMxeE4Jx8Bx5pXumJN1J6g_Z7bpcrcVp3sN-A7nK8x--Oclfdbs5D9H_lS5uUB8j5Sx"
+   },
+   {
+    "title": "shopify.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSqyeAfDxa_oBRPoX9cbxLDbbrvnuaGKpHs1wWgD6AnL1uU9_Y1i3dhcsvG0clCufwXX7tMfaPzzTACsOBaHcuvRNOCXTgYAYvJd-uQ5DW5dtKZPjdk-ch6o-PmO0RRN-xEAn60Kv6hJeHP830Fl8Ry0ACv5s1"
+   },
+   {
+    "title": "lazertechnologies.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRgyFlWWUfpgiEj7LwEkfDg2YUNtBjFbeIa4BWTlopE85tIi0Bv3CONsXcpQVRBHeVUrTmrKYzDZjWVOPcK86SKsqFTaR0AU4KU6JxgDrmakoyEUR3bPEGAerhJiq1S9DwGfiotQfD5_i09FiILRoY4E5UVnEbsXpFKlHlJ7u5J8tKlNiOVDD-8avcr5e83sq1fNDWb4wmaigV2RnyRZI="
+   },
+   {
+    "title": "totalcommerce.partners",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzKguwi-kGfKnwJJmWxhHa48fveQTgXZt8r_7ISvFrpASTGGXKMxeFlxayoX9pqlRIHs4STt4mp_JfyJw8QebAesqca6wyaK4h6mK95FzAZZGkj0JXboNa5JMJBu70sRHtme7ScaJP5-BOkZjoBal2W9qERihYY7RH0ILH7TFYC2xBNxxq3JHPRFPzkg6v4YOdG7lXfGv0V6ZO52EpNthQHZDEsWTvEO8rNNC68Uo="
+   },
+   {
+    "title": "shopify.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8geTvl04lp8lpyqo5BXqSAqHpjKs-FhznsCrjdh7RU3KCikjuOd4t22jDYv0dx1oyWurDCfbsgNjNICUNrCMTwtUrlYdfcpSZHlSPt5_D6-eZz8_D2I_L273SLhvl4rJVaT-MbSPOWg3ylJwxJloYpxMx"
+   },
+   {
+    "title": "shopify.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmAxYuSQTiOb1421Zyh2jIKTb0_pO4UoTaiY9lMRHQtmWp_Phw414NHzTUt2U39NquR9AQcJuiW6sh_Wt8CU2D96SYtJ-3pTP0xcWNa9ebMwS76tCWsyEUfM_ERF64oongwNM="
+   },
+   {
+    "title": "storetasker.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVTLqusB3dqWXkfo32OBQ99_tSu1tx29ZR6ScX3YyxKEN_Y93hQJuI4Zrw16pJ6LC7zK23MOx2P0H7farax_pEnZEMykok0vbTaKYEs0L_DMsw5icvVPYUlyUoGzKZ7j9Mf-JNgkM-AQJ8-6R63XpaeU389kRNGlDOqw9rE-bFHX_ChKMeVMTMjd-tF0-YjL1nZAkDwBn2WgGABA=="
+   },
+   {
+    "title": "rixxo.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdgrOijZaTP-Ot_RNu-QVCaloohXNF0SU7uGUdBJNzg8EWBM1XJBkYoW3neXbl-qCN4itC8PPrg0DIdaJRJM7OmtQQfSqZBuMz9Sy_kkQ2pHD54HAdUl-UFvlK6WUwLecQwX8-0jb9q_Clr91xH3xvUrKE1WhEi5asH5hLs_kkgxv5SVP92GlR6y8ohHnHWHKFwDGXgXfKiqxfdA4="
+   },
+   {
+    "title": "shopify.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcHn_YljHuHZYVL1g35UmcKr6_dLCQ_nR32VxXiNda5T8Iax-79XPBiEWXI8ifzhKdVxSLHvEOVztOgdblsSMACpqIg1enzexsW36vj32bKHcb1dd7zWlqyB7p2W1IPaNd9exUHSvb-PRKx_BF8fZzVgBw4ofTQzPw7XKjMNgw4-1bDt3CSg=="
+   },
+   {
+    "title": "reddit.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8AX93BbSlfxCtNl3ZxEBQi-vGUg-TVFKwG-irrlwPTIo4aX3I34m01ClUfpRHnw7EihLe2Jm6v5TtsNygayHcsOZTYrh0tzDL4nHw6n8jUNWYPa0j-0Ecjp9zFyGnSYexTBHhq3gJQ33HRruy3fT3m9P-iLycCz2RK6TKD0CpH8yQCDrXpTniT83m-lgTjOrwiSX_sGbNhzBUoCfdW20="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFA3paw1nTnCcdbhkDqrXqJL84ZYLJZ4aLGp0_fArT36lmBU7xACHP3_Ao4FMj1M72K1vNKdSLCsWnMG5Li1B3McB6fMhNJIcVKtlc-EVcn7Q3jW3jt6EDc__rW_NOwreCHKyLKw8-VyQ=="
+   },
+   {
+    "title": "shopify.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbQU8aICkqj67zlwtLXmvejE12xUItGeWlYYSS1ugxWB_N3QYLwasbJ962syWDDNbv3TGEvp2C7iMLAPe-zMrEnDKX2_KQTgaAa1DbrZw7hw49FKDm02TETEvnvD9btMngsA55550WN94KTL1DeK1ulwRp027jAndFGj_cWDJx6xhSDXv_-Q=="
+   },
+   {
+    "title": "shopify.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1vhmEhfKyvSAMUcQMdfDbj7SZaLr1DPHnEkLscXRPM5i0uwNfK4wuXxTPw0XUmhjQKlZJ56-EhIdXknAZPDk8_bpVqqv1ZMscB9SZ4xgibJh-NbE0gha5MBYZic8F0t7pGG6xC20Y"
+   },
+   {
+    "title": "alumio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_PZobvRcC7DgcIr6s2lfFtdbPTjK0YoBKkcGWF2-aS1dVfi8GFGZL6Wy3vzJkiiKchzvf84SZtdmJ0xNIbrbana9XgJOianxsUqjxnDiyS6oRihLnstKkE5ETuOmGwQj4R7wEkMzvff1cQH0kDe5VkEeMFo8="
+   },
+   {
+    "title": "shopify.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWrEsan2MYZNedtgPZ1lixXGi5KukZJ2T-SxGHKV0YQcMJ_5s0VRRc-poJF2q0MXvogwSLpE5mOdDNMZe7Z6Z5PwAqNUk7Yww14jBu9EYYL_I5L3YmmNGiyvoS3YZhqXKdAsiAkqP1LEK5qHmvTRpQdUIZelRy_t1-h7c="
+   },
+   {
+    "title": "shopify.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzWf0nALvLbNv5hhADdRb-TdjTumSU9HPNxDA4WPgOm03-zbp3jydBLeTDiFd7Y8EvrLsRgtP57uRM_KrR1kOhVUqltyk9p4XK0Py834-s-BppaXg6Vm8ljiHw07WzqNWwrJsjcpKw28aUUiN8VNli"
+   },
+   {
+    "title": "praella.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhn0DeEo7LPf_76S_2BIWCBN6Mqfm4FAXTiezPqJWQgGFdq6Nm1AMM6XS3rJrJvn_OAcZe5bvdxxCniGLqQwfd6g4d7WKx9q_N3Wv2K82oGR9hA4MeHCW0imBFy7Wh1v6FkLk-yZp6C0peH3_xEZ3GPgkMgo8pmtHX2YS0gZM5PgvySUmAgBown1ptA8xklXeVOQ=="
+   },
+   {
+    "title": "github.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-K-533ky7PwjXuzs-Z1txH3q9ocQC5ZPfA_kjI0ObjYnZVLL7-Ihq9wy3nK5QEPzv2k3oJQPr0JRP9sQZrcqfkd8g_p5YBf-VWj-y3lxpb5kJFeJLMRPscQ85rVnmUKrVsIAbU8kVMZoW7kKXfzAk8S57f08_f85b98MKAdVZUUI="
+   },
+   {
+    "title": "gamut.so",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5vfLIag1Ew-CBmN0tUojFeIrI2xf4z4LbghvwG50T297osGfHzvmmsB69Jt9xkCz5LJMzRIjL1JIlMz7ogtXNoMZty-PAtIWhrmAo1Co5KU6X0xTNSEsxd3tO2DXcwSy9vSq_CTI="
+   },
+   {
+    "title": "tripleminds.co",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3XmRGxICYj_fKIulbRQei4Ph4m71vJ7ghhzKkMqDFQLzm3QQU07bK0_M8k8--VCCdkxX5297YyYDZQwiP-1hYHIxpH5y3wNVmFJq339Ky3jBH64n-qpBLsrVdvTJgGe76fj_pUKGTrM9ITL-Aw_zY8aF7GwZJ88ppnuvIcNohxnFG2NwhIw2Q0Q=="
+   },
+   {
+    "title": "shopify.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUIkq9nnDYDqR5Kah5q5htQrerU8cUzAUYH6U58-z3TX7SCb00H51IsL5Bx-jKf5zD0Sfnk0qiH6AUzmfiY_eKyHcGvPaANr1YO00aHJrkprIRQxfdNdg54KEmdGi3r4SKwC8P4r328gyVPNFxmNTB-Ijcfnv_X0G9278cuVTbWw=="
+   },
+   {
+    "title": "shopify.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGq3mLKxC8wAa2QfI6OVBt-ZWKcw__Qeo0wb0xmospOdMYQRsJ_IAawT9P0r7kze61Zb9BNiOsj0gL41dH6doCGLMqsE3s8lZkHGi4Xr-RK9wRu4fpT9DKRsi6qF5VR5EPn6R8XMT_DqwlCGTjbbnOvecnOdFRwmc7RZ_qzOI4OUs8="
+   },
+   {
+    "title": "mcpservers.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBErdNYhd6vFEgXrv3kcW_FT0VFNO0TqmzD-j0l5hfxWsEIaC_2-ao1hhx90UyRu8H0wcSsAJ_Pl1o40adgRFOVOkMdsEPEmmzmVPQsRmZc2qLQqvUTrGga0mcH1DuzNHO2kfFeoG01U9DQ9Q="
+   }
+  ],
+  "tokens": 12812,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://www.shopify.com/pricing",
+    "status": 200,
+    "chars": 17338,
+    "readable": true
+   },
+   {
+    "url": "https://shopify.dev/docs/apps/build/authentication-authorization/authenticate-standalone-apps?lang=node",
+    "status": 200,
+    "chars": 150602,
+    "readable": true
+   },
+   {
+    "url": "https://shopify.dev/docs/storefronts/headless/building-with-the-customer-account-api/authenticate-customers?extension=javascript",
+    "status": 200,
+    "chars": 106364,
+    "readable": true
+   },
+   {
+    "url": "https://shopify.com/partners",
+    "status": 200,
+    "chars": 6879,
+    "readable": true
+   },
+   {
+    "url": "https://shopify.dev/docs/apps/store/review",
+    "status": 200,
+    "chars": 4048,
+    "readable": true
+   },
+   {
+    "url": "https://shopify.dev/docs/api/admin-rest",
+    "status": 200,
+    "chars": 22940,
+    "readable": true
+   },
+   {
+    "url": "https://shopify.dev/docs/api/admin-graphql",
+    "status": 200,
+    "chars": 17374,
+    "readable": true
+   },
+   {
+    "url": "https://shopify.dev/docs/storefronts/headless/building-with-the-storefront-api/getting-started",
+    "status": 200,
+    "chars": 4585,
+    "readable": true
+   }
+  ],
+  "seconds": 91.4
+ }
+}

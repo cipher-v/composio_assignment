@@ -1,0 +1,151 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://developers.pinterest.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.5
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.pinterest.com/docs/getting-started/connect-app/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.79
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.pinterest.com/docs/getting-started/connect-app/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.92
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developers.pinterest.com/docs/getting-started/connect-app/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.85
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.blotato.com/blog/pinterest-api-pricing",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.75
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://data365.co/blog/pinterest-api-pricing",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.82
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/pinterest/api-description",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.45
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.pinterest.com/docs/getting-started/connect-app/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.92
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://rollout.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://developers.pinterest.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://mcp.so",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://www.blotato.com/blog/pinterest-api-pricing",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.85
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://data365.co/blog/pinterest-api-pricing",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.55
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "bearer_token": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://github.com/pinterest/api-description', 'https://mcp.so']\n- Non-vendor sources (prefer official docs): ['https://www.blotato.com/blog/pinterest-api-pricing', 'https://data365.co/blog/pinterest-api-pricing', 'https://github.com/pinterest/api-description', 'https://rollout.com/', 'https://mcp.so', 'https://www.blotato.com/blog/pinterest-api-pricing', 'https://data365.co/blog/pinterest-api-pricing']",
+ "metrics": {
+  "n_evidence": 13,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.46153846153846156,
+  "readable": 12,
+  "quote_supported_rate": 0.8333333333333334,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

@@ -1,0 +1,131 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://supabase.com/docs/guides/getting-started",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://supabase.com/docs/reference/api/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.64
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://supabase.com/docs/reference/api/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.86
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://supabase.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.45
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://supabase.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.12
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://supabase.com/docs/reference/api/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://supabase.com/docs/reference/api/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://supabase.com/docs/reference/api/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://supabase.com/docs/reference/api/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.08
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://supabase.com/docs/guides/database/webhooks",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://supabase.com/docs/guides/ai/mcp",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "bearer_token": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://supabase.com/docs/guides/ai/mcp']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://supabase.com/docs/guides/getting-started', 'https://supabase.com/pricing', 'https://supabase.com/pricing', 'https://supabase.com/docs/reference/api/introduction', 'https://supabase.com/docs/reference/api/introduction', 'https://supabase.com/docs/reference/api/introduction', 'https://supabase.com/docs/reference/api/introduction']",
+ "metrics": {
+  "n_evidence": 11,
+  "alive_rate": 0.9090909090909091,
+  "dead_rate": 0.09090909090909091,
+  "blocked_rate": 0.0,
+  "official_rate": 1.0,
+  "readable": 10,
+  "quote_supported_rate": 0.3,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

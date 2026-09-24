@@ -1,0 +1,60 @@
+{
+ "items": [
+  {
+   "blocked": true,
+   "claim": "auth",
+   "url": "https://developer.salesforce.com/",
+   "status": 403,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": true,
+   "claim": "access",
+   "url": "https://developer.salesforce.com/signup",
+   "status": 403,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": true,
+   "claim": "api",
+   "url": "https://developer.salesforce.com/",
+   "status": 403,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/salesforcecli/mcp",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.73
+  }
+ ],
+ "auth_support": {
+  "oauth2": false
+ },
+ "lint": [],
+ "summary_for_verifier": "- Bot-walled / login pages our crawler could not read (verify via search): ['https://developer.salesforce.com/', 'https://developer.salesforce.com/signup', 'https://developer.salesforce.com/']\n- Non-vendor sources (prefer official docs): ['https://github.com/salesforcecli/mcp']\n- Auth methods not mentioned on any cited page: ['oauth2']",
+ "metrics": {
+  "n_evidence": 4,
+  "alive_rate": 0.25,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.75,
+  "official_rate": 0.75,
+  "readable": 1,
+  "quote_supported_rate": 1.0,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

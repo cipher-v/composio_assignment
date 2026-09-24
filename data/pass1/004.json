@@ -1,0 +1,204 @@
+{
+ "app": {
+  "id": 4,
+  "name": "Attio",
+  "category": "CRM and Sales",
+  "hint": "attio.com"
+ },
+ "record": {
+  "subcategory": "Customer Relationship Management (CRM)",
+  "one_liner": "A highly customizable, data-driven CRM platform designed to manage contacts, companies, deals, pipelines, and workflows in real time.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token",
+   "basic"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 flow is preferred for multi-workspace apps; workspace API keys (bearer tokens) and HTTP Basic Authentication are supported for single workspaces.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can sign up for a free account ($0/month) with no credit card required. API keys and OAuth app creation are available via the Developer Console.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Exposes the entire workspace surface area including objects, attributes, records, lists, entries, notes, tasks, comments, threads, meetings, call recordings, transcripts, files, workspace members, and webhooks via api.attio.com/v2.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Attio hosts an official, production-ready MCP server at https://mcp.attio.com/mcp and a documentation MCP server at https://docs.attio.com/mcp.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "Publishing the integration app to make it available to multiple external tenants requires explicit app review and approval from Attio.",
+  "evidence": [
+   {
+    "claim": "auth",
+    "url": "https://docs.attio.com",
+    "quote": "In order to make requests to the Attio REST API, you need to generate an access token. There are two ways to generate an access token: By implementing an OAuth 2.0 flow; By generating an API key for your workspace. You should prefer the OAuth 2.0 flow if building an app for multiple workspaces."
+   },
+   {
+    "claim": "access",
+    "url": "https://attio.com/pricing",
+    "quote": "Free $ 0 0 per user/month... Start today, no credit card required... API and webhook access app sdk mcp server"
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.attio.com/docs/overview",
+    "quote": "REST API this allows developers to build apps that read and write information to and from Attio workspaces. You can also subscribe to events in realtime using webhooks."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.attio.com/mcp/overview",
+    "quote": "Attio MCP is Attio's hosted MCP server that gives AI tools secure access to your Attio workspace. It's designed to work seamlessly with popular AI assistants like Claude, ChatGPT, Cursor, and more."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://attio.com",
+    "quote": "You shall not publish or otherwise make available by any means, any Integration App unless the Integration App and any marketplace store Attio may provide in which such Integration App may be published has been first approved by Attio"
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Product Overview\nAttio is a highly customizable, data-driven Customer Relationship Management (CRM) platform designed to help teams manage contacts, companies, deals, pipelines, and workflows in real time. It features automatic data enrichment, real-time contact syncing, call intelligence, advanced reporting, and an AI context layer.\n* **Source URL:** `https://docs.attio.com/docs/overview`\n* **Verbatim Quote:** `\"Attio is a revolutionary crm platform which is highly customisable, incredibly powerful and data-driven. In these guides, you can find everything you need to build powerful integrations, automations and data pipelines on top of Attio.\"`\n* **Source URL:** `https://attio.com/pricing`\n* **Verbatim Quote:** `\"Orchestrate revenue agents with workflows... Data model sync and structure your data... Enrichment auto-enrich every record... Reporting & forecasts insights in real time\"`\n\n---\n\n### Authentication Methods\nAttio provides multiple authentication methods for interacting with its public API:\n1. **Workspace API Keys / Access Tokens:** Non-interactive bearer tokens scoped to a single workspace that do not expire.\n2. **OAuth 2.0:** Standard OAuth 2.0 Authorization Code flow that issues long-lived access tokens for multi-tenant applications.\n3. **HTTP Basic Authentication:** Supported as a fallback where the token is passed as the username and the password field is left blank.\n\nFor a multi-tenant integration platform like Composio, **OAuth 2.0** is the required choice.\n* **Primary Auth:** `oauth2`\n* **Source URL:** `https://docs.attio.com` *(REST API Authentication Guide)*\n* **Verbatim Quote:** `\"In order to make requests to the Attio REST API, you need to generate an access token. There are two ways to generate an access token: By implementing an OAuth 2.0 flow; By generating an API key for your workspace. You should prefer the OAuth 2.0 flow if building an app for multiple workspaces.\"`\n* **Source URL:** `https://docs.attio.com` *(REST API Authentication Guide)*\n* **Verbatim Quote:** `\"We also support HTTP Basic Authentication, where the username is the token and the password is left blank. However, we recommend using Bearer authentication where possible.\"`\n\n---\n\n### Developer Credentials & Cost\n* **Access Level:** `self_serve_free`\n* **Cost / Plan:** Attio offers a fully functional Free tier ($0) that includes complete API, webhook, App SDK, and MCP server access with no credit card required.\n* **Credential Acquisition:** A developer can sign up for a free account, navigate to the Developer Console, create a new application to define a unique slug, and enable the OAuth 2.0 toggle to obtain a Client ID and Client Secret.\n* **Approval / Review Requirement:** While creating and testing an app locally or within a single workspace is completely self-serve, publishing the integration app to make it available to multiple external tenants requires explicit app review and approval from Attio.\n* **Source URL:** `https://attio.com/pricing`\n* **Verbatim Quote:** `\"Free $ 0 0 per user/month... Start today, no credit card required... API and webhook access app sdk mcp server\"`\n* **Source URL:** `https://docs.attio.com` *(OAuth Tutorial)*\n* **Verbatim Quote:** `\"In the Developer console, select New app in the sidebar. Give your app a name, then set its slug... Head to the OAuth tab in your app's settings and enable OAuth 2.0 via the toggle at the top of the page. Next, configure the redirect URIs for your app.\"`\n* **Source URL:** `https://attio.com` *(Attio Customer Agreement)*\n* **Verbatim Quote:** `\"You shall not and shall procure that Your User(s) shall not publish or otherwise make available by any means, any Integration App unless the Integration App and an App Marketplace for its publication has been first approved by Attio (which approval will be at Attio's sole discretion)\"`\n\n---\n\n### API Technical Details\n* **API Style:** REST API (exchanging JSON over HTTPS via `https://api.attio.com/v2`).\n* **API Breadth:** Extremely broad. It exposes the entire workspace surface area, including objects, attributes, records, lists, entries, notes, tasks, comments, threads, meetings, call recordings, transcripts, files, workspace members, and webhooks.\n* **OpenAPI Spec:** Yes, OpenAPI specifications are provided directly within the documentation filesystem.\n* **Webhooks:** Yes, developers can subscribe to real-time workspace events via webhooks.\n* **Sandbox:** There is no dedicated automated sandbox environment, but Attio officially recommends creating a separate free workspace to serve as a development sandbox.\n* **Source URL:** `https://docs.attio.com/docs/overview`\n* **Verbatim Quote:** `\"REST API this allows developers to build apps that read and write information to and from Attio workspaces. You can also subscribe to events in realtime using webhooks.\"`\n* **Source URL:** `https://docs.attio.com/mcp`\n* **Verbatim Quote:** `\"contains only the attio docs documentation pages and openapi specs.\"`\n* **Source URL:** `https://docs.attio.com` *(Quickstart Guide)*\n* **Verbatim Quote:** `\"We recommend creating a separate workspace for development that isn't your main production Attio workspace.\"`\n\n---\n\n### Model Context Protocol (MCP) Servers\n* **MCP Status:** `official`\n* **Official Server:** Attio hosts an official, production-ready MCP server at `https://mcp.attio.com/mcp` that uses OAuth authentication and exposes ~41 tools covering records, lists, notes, tasks, comments, meetings, emails, and reporting (including a read-only SQL tool). They also host a Documentation MCP server at `https://docs.attio.com/mcp` to allow agents to search public documentation.\n* **Community Servers:** Community-built alternatives exist on GitHub (e.g., `kesslerio/attio-mcp-server`), which provide localized attribute mapping and configuration.\n* **Source URL:** `https://docs.attio.com/mcp/overview`\n* **Verbatim Quote:** `\"Attio MCP is Attio's hosted MCP server that gives AI tools secure access to your Attio workspace. It's designed to work seamlessly with popular AI assistants like Claude, ChatGPT, Cursor, and more.\"`\n* **Source URL:** `https://docs.attio.com/sdk/guides/ai`\n* **Verbatim Quote:** `\"The Attio Documentation MCP. Attio provides an MCP server so that agents may autonomously search our documentation. The URL for the MCP server is: https://docs.attio.com/mcp .\"`\n* **Source URL:** `https://github.com/kesslerio/attio-mcp-server`\n* **Verbatim Quote:** `\"The Attio MCP server now automatically discovers and maintains attribute mappings\"`\n\n---\n\n### Buildability Verdict\n* **Verdict:** `ready_with_friction`\n* **Main Blocker:** `app_review`\n* **Detailed Reason:** A developer can immediately sign up for a free account, create an OAuth app, and build a fully functional integration this week. However, the toolkit cannot be distributed to multiple production tenants without undergoing Attio's formal app review and marketplace approval process.\n* **Source URL:** `https://attio.com` *(Attio Customer Agreement)*\n* **Verbatim Quote:** `\"You shall not publish or otherwise make available by any means, any Integration App unless the Integration App and any marketplace store Attio may provide in which such Integration App may be published has been first approved by Attio\"`",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"Attio\" API authentication OAuth",
+   "\"Attio\" developer console create app credentials",
+   "\"Attio\" MCP server official documentation",
+   " authentication",
+   " \"Developer console\"",
+   " \"New app\"",
+   "\"Attio\" \"Developer console\" free tier",
+   "\"Attio\" \"create a new integration\" workspace settings",
+   "\"Attio\" \"publish\" integration app review approval",
+   " \"publish\" app",
+   "\"Attio\" \"Developer console\" \"New app\"",
+   "\"Attio\" OAuth client credentials self-serve"
+  ],
+  "search_sources": [
+   {
+    "title": "unified.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEA8hxkP2AwjctrpTVB26HbBsmSoRQstdAvvgqM08IVsB_7xkhmdqwJcZkmVrtyyHCY9655fRVAMG53KYVNZDZMOX3f2DgEfISQT-5gzJe8WaGAt0XUuywy5IAMTlimfFLSsFpvoBfSOZQptF-Nzh9Ga2nPJjAhbBuBaw=="
+   },
+   {
+    "title": "unified.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEt1pm_4z483w-N3r3VM3D83UHa78bah2TjmI1jtlsPpUvAG1TWy2jYcwMGLsaOUVz7fnn5VxutPjX1I_yb20ac7NqkYwajvx1ACHNTYsTN0NzDtKRVbS4U4Y9dWbjwOHz9Z1pMlIEhPOiWC3zmpmdg4H53Hsmp0vxKkK4="
+   },
+   {
+    "title": "attio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsh4ec7xkxkCJPS3j6fOykzxhqPWWcIViWSMjNmPBHf-9uIiU6lYksQbDsb2FxU6hP60pPdhLwAacXlprC9X7hfx1pkSBrRfdj8iDrRcJDEHOE27lTM3kbt1CknKB5xcFvCw4UGU4hw8s8qA2WipQHEh1WxI2kUEoCoeI6ZAyXQA=="
+   },
+   {
+    "title": "attio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH99PNOOr6YrK4eigp7DQt9RNYLjx_3mTctNWZTDPBIT-rX1frdpfD5_AUr7W_SICD09KJEsijb1UNhanzATT_0YU8SRQOi2_p-WieAtUI2z8CX932aCLv5aO27mGpk2eqFagYYBUirSNMC4w=="
+   },
+   {
+    "title": "withampersand.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXFrJdOCwrbzKmI8EZQ0ZGbqSYwpCFZAH1V8knxbB4dKvsDatFItwjyRJ4Xr82lEe26ADJg0HWD4Jvu-M4xxDnUnYIkZqLd9YeRO7r1IaeeZchVCdd91wgALCFk17v6luX4vztknGa-8Wj07JKkw=="
+   },
+   {
+    "title": "attio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVQXTLI5GuagwkovGftEDVPe-MeNCifaN644i-iyR2GAOFJEIFXgme1BwQvuN-_35ARQUX4aYM7sXUu5MNnFck5sCMo-aQidKig26SKEAw4bibcqEApYlscSvHDtndj-wPodo3gmI="
+   },
+   {
+    "title": "attio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFg2jDg3SKsw8INnjU8pMlBSbwn6MF008Wq2uJtpNFKEuso1TU2zH6E0qKpBMeyfAAQJVHWXP4irMBN1ztE1HNbUIfoq2yxBy1v0V9FMyK4tkAZkA1ID8kR5eCI5r3k"
+   },
+   {
+    "title": "reply.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWY6C4ngijd6BnT7OwqS6JeZL3UwX93ZUTmjnPgVVZ65GPEBKe8YxV5uwb0s5Hkr5yzclJ9PywXaPw_REhwL4xvAhmWQcYp-IzZYge3p17mP5EfsGYpAfncJc="
+   },
+   {
+    "title": "folk.app",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGk5VenaugdCU-9etIGwVtYAgRF7znye8nWZT63qThF5mv3NK7bjhkgDNcO8s9QcVoED8f6Qc7j8W583EWBZVE3us3UoblLyJXIu2FxMdtbYazsuYo-nJH-hK8qCuM8zpRa"
+   },
+   {
+    "title": "truto.one",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDcBo002UpH7oh0AnTnI8dptzO2Pe36nNhBKzAxE217huMcOA41T7Cl7m2Hwc5O4zyH2fSUYvDaVJ2GwXil3nDKTmCz-o7wLtjKWUsx31ASSNUZuQuwfXWiIMWy26kKwzTra3iYqH90fW2pbji6Oqpc6uS"
+   },
+   {
+    "title": "composio.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZ2OXRpisrJGhEBnbJf3Hs6VXzOU_XfE83KrMZ2w4L_rY7ILwdGxgKxdQU19ewZkjC6wLvcZaVSakCUKoQa3nUoD6MdmwIGqoJk3REe2_v-gW9vW4pjYlW0t3ng6Y="
+   }
+  ],
+  "tokens": 13041,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Attio developer documentation authentication API keys OAuth",
+    "Attio developer documentation getting started quickstart",
+    "Attio pricing API access developer program",
+    "Attio API reference index",
+    "Attio MCP server official community",
+    " authentication oauth api keys",
+    " reference index",
+    " pricing api access",
+    "official Attio MCP server documentation URL"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://docs.attio.com/docs/overview",
+    "https://attio.com/pricing",
+    "https://docs.attio.com/mcp",
+    "https://docs.attio.com/mcp/overview",
+    "https://docs.attio.com/sdk/guides/ai",
+    "https://attio.com/help/reference/how-to-guides/attio-mcp-prompts-and-best-practices",
+    "https://blog.axway.com/learning-center/digital-security/keys-oauth/api-keys-oauth",
+    "https://www.folk.app/articles/attio-mcp",
+    "https://www.gosearch.ai/blog/introducing-the-attio-mcp-server-in-gosearch/",
+    "https://mcpservers.org/servers/attio-mcp"
+   ],
+   "bad_candidates": [],
+   "pages_read": [
+    {
+     "url": "https://docs.attio.com/docs/overview",
+     "status": 200,
+     "chars": 1759,
+     "readable": true
+    },
+    {
+     "url": "https://attio.com/pricing",
+     "status": 200,
+     "chars": 11760,
+     "readable": true
+    },
+    {
+     "url": "https://docs.attio.com/mcp",
+     "status": 200,
+     "chars": 6967,
+     "readable": true
+    },
+    {
+     "url": "https://docs.attio.com/mcp/overview",
+     "status": 200,
+     "chars": 17183,
+     "readable": true
+    },
+    {
+     "url": "https://docs.attio.com/sdk/guides/ai",
+     "status": 200,
+     "chars": 9974,
+     "readable": true
+    },
+    {
+     "url": "https://attio.com/help/reference/how-to-guides/attio-mcp-prompts-and-best-practices",
+     "status": 200,
+     "chars": 12271,
+     "readable": true
+    },
+    {
+     "url": "https://blog.axway.com/learning-center/digital-security/keys-oauth/api-keys-oauth",
+     "status": 200,
+     "chars": 16225,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 90.8
+ }
+}

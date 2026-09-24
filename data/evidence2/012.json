@@ -1,0 +1,71 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.78
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.78
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.intercom.com/docs/references/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.83
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://growthmethod.com/intercom-mcp-server/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.56
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/oauth-scopes",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.86
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "bearer_token": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Non-vendor sources (prefer official docs): ['https://growthmethod.com/intercom-mcp-server/']",
+ "metrics": {
+  "n_evidence": 5,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.8,
+  "readable": 5,
+  "quote_supported_rate": 1.0,
+  "lint_issues": 0,
+  "flag_count": 1
+ }
+}

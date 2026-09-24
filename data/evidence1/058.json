@@ -1,0 +1,120 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://github.com/sherlock-project/sherlock",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://sherlockproject.xyz/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.78
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://bellingcat.gitbook.io/toolkit/more/all-tools/sherlock",
+   "status": 0,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://apify.com/misceres/sherlock/api",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.53
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://bellingcat.gitbook.io/toolkit/more/all-tools/sherlock",
+   "status": 0,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://apify.com/misceres/sherlock/api",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://bellingcat.gitbook.io/toolkit/more/all-tools/sherlock",
+   "status": 0,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.apify.com/api/v2",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/Burnsedia/sherlock-mcp",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.64
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://bellingcat.gitbook.io/toolkit/more/all-tools/sherlock",
+   "status": 0,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "api_key": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://bellingcat.gitbook.io/toolkit/more/all-tools/sherlock', 'https://bellingcat.gitbook.io/toolkit/more/all-tools/sherlock', 'https://bellingcat.gitbook.io/toolkit/more/all-tools/sherlock', 'https://bellingcat.gitbook.io/toolkit/more/all-tools/sherlock']\n- Non-vendor sources (prefer official docs): ['https://apify.com/misceres/sherlock/api', 'https://apify.com/misceres/sherlock/api', 'https://docs.apify.com/api/v2', 'https://github.com/Burnsedia/sherlock-mcp']",
+ "metrics": {
+  "n_evidence": 10,
+  "alive_rate": 0.6,
+  "dead_rate": 0.4,
+  "blocked_rate": 0.0,
+  "official_rate": 0.2,
+  "readable": 6,
+  "quote_supported_rate": 1.0,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

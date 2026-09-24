@@ -1,0 +1,161 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.smartsheet.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.5
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.smartsheet.com/api/smartsheet/guides/advanced-topics/oauth",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.75
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.smartsheet.com/api/smartsheet/guides/advanced-topics/oauth",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.smartsheet.com/api/resource_management/getting-started",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.86
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developers.smartsheet.com/api/smartsheet/openapi",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developers.smartsheet.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.smartsheet.com/api/resource_management/getting-started",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.smartsheet.com/api/smartsheet/guides/advanced-topics/oauth",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.82
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.smartsheet.com/api/smartsheet/openapi",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.smartsheet.com/api/smartsheet/guides/advanced-topics/oauth",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.smartsheet.com/api/advanced-topics/oauth",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://developers.smartsheet.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.47
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://developers.smartsheet.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://developers.smartsheet.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "bearer_token": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://developers.smartsheet.com/api/advanced-topics/oauth']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://developers.smartsheet.com/api/smartsheet/guides/advanced-topics/oauth', 'https://developers.smartsheet.com/', 'https://developers.smartsheet.com/', 'https://developers.smartsheet.com/', 'https://developers.smartsheet.com/']",
+ "metrics": {
+  "n_evidence": 14,
+  "alive_rate": 0.9285714285714286,
+  "dead_rate": 0.07142857142857142,
+  "blocked_rate": 0.0,
+  "official_rate": 1.0,
+  "readable": 11,
+  "quote_supported_rate": 0.5454545454545454,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

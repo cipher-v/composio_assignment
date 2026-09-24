@@ -1,0 +1,100 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.frontegg.com/integrations/pitchbook",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": true,
+   "claim": "access",
+   "url": "https://pitchbook.com/help-center/api",
+   "status": 403,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": true,
+   "claim": "api",
+   "url": "https://pitchbook.com/help-center/api",
+   "status": 403,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": true,
+   "claim": "general",
+   "url": "https://pitchbook.com/",
+   "status": 403,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "api_key": false
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://www.frontegg.com/integrations/pitchbook']\n- Bot-walled / login pages our crawler could not read (verify via search): ['https://pitchbook.com/help-center/api', 'https://pitchbook.com/help-center/api', 'https://pitchbook.com/']\n- Non-vendor sources (prefer official docs): ['https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview', 'https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview', 'https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview', 'https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview']\n- Auth methods not mentioned on any cited page: ['api_key']",
+ "metrics": {
+  "n_evidence": 8,
+  "alive_rate": 0.5,
+  "dead_rate": 0.125,
+  "blocked_rate": 0.375,
+  "official_rate": 0.375,
+  "readable": 0,
+  "quote_supported_rate": null,
+  "lint_issues": 0,
+  "flag_count": 4
+ }
+}

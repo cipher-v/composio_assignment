@@ -1,0 +1,151 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.fathom.ai/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.08
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.fathom.ai/sdks/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.85
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.fathom.ai/oauth",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.82
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developers.fathom.ai/quickstart",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developers.fathom.ai/oauth",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.86
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.fathom.ai/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.fathom.ai/quickstart",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.42
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.fathom.ai/quickstart",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.fathom.ai/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://www.fathom.ai/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.33
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://developers.fathom.ai/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/Dot-Fun/fathom-mcp",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://developers.fathom.ai/oauth",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  }
+ ],
+ "auth_support": {
+  "api_key": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://www.fathom.ai/pricing', 'https://www.fathom.ai/pricing', 'https://developers.fathom.ai/quickstart', 'https://developers.fathom.ai/quickstart', 'https://www.fathom.ai/pricing', 'https://developers.fathom.ai/']\n- Non-vendor sources (prefer official docs): ['https://github.com/Dot-Fun/fathom-mcp']",
+ "metrics": {
+  "n_evidence": 13,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.9230769230769231,
+  "readable": 13,
+  "quote_supported_rate": 0.5384615384615384,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

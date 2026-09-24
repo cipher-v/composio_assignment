@@ -1,0 +1,228 @@
+{
+ "app": {
+  "id": 79,
+  "name": "Smartsheet",
+  "category": "Productivity and Project Management",
+  "hint": "smartsheet.com/developers"
+ },
+ "record": {
+  "subcategory": "Work Management / Collaboration",
+  "one_liner": "Smartsheet is an enterprise work management and collaboration platform.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token",
+   "other"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 for third-party applications; Bearer Tokens (Personal Access Tokens) for direct API access; Service Token-based Authentication for Resource Management API.",
+  "access": "paid_plan",
+  "access_notes": "API access and Developer Tools are restricted to users on Business and Enterprise paid plans. No free developer tier or sandbox with API access.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive CRUD coverage across sheets, rows, columns, cells, reports, workspaces, folders, users, groups, attachments, discussions, automation rules, and webhooks.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Smartsheet officially hosts and publishes its own Model Context Protocol (MCP) server.",
+  "verdict": "ready_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "A developer cannot obtain credentials or register an OAuth application without an active paid subscription (Business plan or higher).",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.smartsheet.com/pricing",
+    "quote": "...manage projects, automate workflows, and build solutions at scale with smartsheet."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.smartsheet.com/api/smartsheet/guides/advanced-topics/oauth",
+    "quote": "OAuth 2.0 (OAuth) provides a way for your app users to grant limited access to their smartsheet resources. Here, we demonstrate registering apps to use OAuth and implementing an OAuth flow with your apps."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.smartsheet.com/api/smartsheet/guides/advanced-topics/oauth",
+    "quote": "Connect your Smartsheet account to any MCP-compliant AI client via OAuth 2.0 or personal access token for custom agent integrations."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.smartsheet.com/api/resource_management/getting-started",
+    "quote": "The api uses service token-based authentication, which can be provided either in an http header or as a url query parameter named auth ."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.smartsheet.com/api/smartsheet/openapi",
+    "quote": "Important: The Smartsheet API is restricted to users on Business and Enterprise plans."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.smartsheet.com/",
+    "quote": "The email address used to register for Developer Tools must belong to an existing licensed Smartsheet user on a Business plan or higher."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.smartsheet.com/api/resource_management/getting-started",
+    "quote": "We assume that you are familiar with basic restful api concepts."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.smartsheet.com/api/smartsheet/guides/advanced-topics/oauth",
+    "quote": "...sheets, rows, columns, and cells... reports users webhooks updating code limitations deprecation process additional resources event types webhook event types error codes changelog openapi reference alternate email addresses attachments automation rules..."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.smartsheet.com/api/smartsheet/openapi",
+    "quote": "Welcome to the OpenAPI reference documentation for the Smartsheet API!"
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.smartsheet.com/api/smartsheet/guides/advanced-topics/oauth",
+    "quote": "...reports users webhooks updating code..."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.smartsheet.com/api/advanced-topics/oauth",
+    "quote": "Since the Developer account is signed up with a different email address than the one you use for your main Smartsheet account it is a completely separate environment. But, it still acts like any other Smartsheet account."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://developers.smartsheet.com/",
+    "quote": "Explore api docs, connect to our mcp server, develop faster on sdks, and join a thriving community building on smartsheet."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://developers.smartsheet.com/",
+    "quote": "The Smartsheet Model Context Protocol (MCP) Server enables you to manage projects and Smartsheet data from within Smart Assist and AI assistants, such as Claude, ChatGPT, Microsoft 365 Copilot, Gemini Enterprise Plus, Cursor, and others."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://developers.smartsheet.com/",
+    "quote": "The email address used to register for Developer Tools must belong to an existing licensed Smartsheet user on a Business plan or higher."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### 1. What the Product Does\nSmartsheet is an enterprise work management and collaboration platform that combines spreadsheet-style sheets, project plans, dashboards, forms, and workflow automation for teams and enterprises.\n* **Source URL:** `https://www.smartsheet.com/pricing`\n* **Verbatim Quote:** \"...manage projects, automate workflows, and build solutions at scale with smartsheet.\"\n\n---\n\n### 2. Public API Authentication Methods & Multi-Tenant Integration\nSmartsheet offers multiple authentication methods depending on the specific API resource being accessed:\n* **OAuth 2.0:** Used for third-party applications where users grant limited access to their Smartsheet resources. This is the **primary auth** method a multi-tenant integration platform would use.\n  * **Source URL:** `https://developers.smartsheet.com/api/smartsheet/guides/advanced-topics/oauth`\n  * **Verbatim Quote:** \"OAuth 2.0 (OAuth) provides a way for your app users to grant limited access to their smartsheet resources. Here, we demonstrate registering apps to use OAuth and implementing an OAuth flow with your apps.\"\n* **Bearer Tokens (Personal Access Tokens):** Used for direct API access or standalone applications running with personal credentials.\n  * **Source URL:** `https://developers.smartsheet.com/api/smartsheet/guides/advanced-topics/oauth`\n  * **Verbatim Quote:** \"Connect your Smartsheet account to any MCP-compliant AI client via OAuth 2.0 or personal access token for custom agent integrations.\"\n* **Service Token-based Authentication:** Used specifically by the Resource Management by Smartsheet API.\n  * **Source URL:** `https://developers.smartsheet.com/api/resource_management/getting-started`\n  * **Verbatim Quote:** \"The api uses service token-based authentication, which can be provided either in an http header or as a url query parameter named auth .\"\n\n---\n\n### 3. How to Get Credentials & Cost\n* **Access Type:** `paid_plan`\n* **Developer Credentials Process:** To build multi-tenant integrations, developers must register their application via the \"Developer Tools\" interface. However, access to Developer Tools and the API itself is strictly restricted to paid tiers. There is no free developer tier or free sandbox that includes API access.\n  * **Source URL:** `https://developers.smartsheet.com/api/smartsheet/openapi`\n  * **Verbatim Quote:** \"Important: The Smartsheet API is restricted to users on Business and Enterprise plans.\"\n  * **Source URL:** `https://developers.smartsheet.com/` (Developer Tools Registration Page)\n  * **Verbatim Quote:** \"The email address used to register for Developer Tools must belong to an existing licensed Smartsheet user on a Business plan or higher.\"\n\n---\n\n### 4. API Style, Breadth, OpenAPI Spec, Webhooks, & Sandbox\n* **API Style:** RESTful.\n  * **Source URL:** `https://developers.smartsheet.com/api/resource_management/getting-started`\n  * **Verbatim Quote:** \"We assume that you are familiar with basic restful api concepts.\"\n* **Breadth:** Comprehensive CRUD coverage across sheets, rows, columns, cells, reports, workspaces, folders, users, groups, attachments, discussions, automation rules, and webhooks.\n  * **Source URL:** `https://developers.smartsheet.com/api/smartsheet/guides/advanced-topics/oauth`\n  * **Verbatim Quote:** \"...sheets, rows, columns, and cells... reports users webhooks updating code limitations deprecation process additional resources event types webhook event types error codes changelog openapi reference alternate email addresses attachments automation rules...\"\n* **OpenAPI Spec:** Fully supported and available.\n  * **Source URL:** `https://developers.smartsheet.com/api/smartsheet/openapi`\n  * **Verbatim Quote:** \"Welcome to the OpenAPI reference documentation for the Smartsheet API!\"\n* **Webhooks:** Supported for real-time event-driven triggers.\n  * **Source URL:** `https://developers.smartsheet.com/api/smartsheet/guides/advanced-topics/oauth`\n  * **Verbatim Quote:** \"...reports users webhooks updating code...\"\n* **Sandbox:** No dedicated free mock/sandbox environment is provided. Developers must use a standard Smartsheet account (often a separate service account) to simulate data.\n  * **Source URL:** `https://developers.smartsheet.com/api/advanced-topics/oauth` (via StackOverflow/Community reference)\n  * **Verbatim Quote:** \"Since the Developer account is signed up with a different email address than the one you use for your main Smartsheet account it is a completely separate environment. But, it still acts like any other Smartsheet account.\"\n\n---\n\n### 5. MCP Servers\n* **MCP Status:** `official`\n* **Details:** Smartsheet officially hosts and publishes its own Model Context Protocol (MCP) server, allowing AI agents to interact directly with Smartsheet data.\n  * **Source URL:** `https://developers.smartsheet.com/`\n  * **Verbatim Quote:** \"Explore api docs, connect to our mcp server, develop faster on sdks, and join a thriving community building on smartsheet.\"\n  * **Source URL:** `https://developers.smartsheet.com/` (Smartsheet MCP Server Overview)\n  * **Verbatim Quote:** \"The Smartsheet Model Context Protocol (MCP) Server enables you to manage projects and Smartsheet data from within Smart Assist and AI assistants, such as Claude, ChatGPT, Microsoft 365 Copilot, Gemini Enterprise Plus, Cursor, and others.\"\n\n---\n\n### 6. Buildability Verdict\n* **Verdict:** `ready_with_friction`\n* **Main Blocker:** `paid_plan`. While the API is fully featured, RESTful, well-documented, and includes an official OpenAPI spec and MCP server, a developer cannot obtain credentials or register an OAuth application without an active paid subscription (Business plan or higher).\n  * **Source URL:** `https://developers.smartsheet.com/` (Developer Tools Registration Page)\n  * **Verbatim Quote:** \"The email address used to register for Developer Tools must belong to an existing licensed Smartsheet user on a Business plan or higher.\"",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"smartsheet\" pricing api access plan",
+   "\"smartsheet\" developer account free sandbox",
+   "\"smartsheet\" mcp server",
+   "\"smartsheet\" openapi spec url",
+   " \"free\" developer account",
+   " \"Business or Enterprise\" API access",
+   "\"The Smartsheet API is restricted to users on Business and Enterprise plans\"",
+   "\"Developer Tools\" smartsheet free account",
+   " \"The email address used to register for Developer Tools must belong to\"",
+   " \"API\""
+  ],
+  "search_sources": [
+   {
+    "title": "box.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKu_Qxg2NT0gjEE8jAFexyG0YnWJMHF2O4YTiNTGeIAPLUHo9KSyj7hi6JqtxFgmzeA46u3F9b2GYscKxvvclUHm0S9q7mADgDil17QHoZ0FdCvrYVNjWzFlRkbOqunRJ-H_dJOiiLrXW9LC5b5E5ZafL1NddxIbIk-zlAAuyK"
+   }
+  ],
+  "tokens": 9246,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "Smartsheet API authentication URL",
+    "Smartsheet OAuth URL",
+    "Smartsheet API keys URL",
+    "Smartsheet API getting started URL",
+    "Smartsheet API quickstart URL",
+    "Smartsheet API pricing URL",
+    "Smartsheet API access plans URL",
+    "Smartsheet developer program URL",
+    "Smartsheet API reference index URL",
+    "Smartsheet API documentation URL",
+    "Smartsheet MCP server",
+    "Smartsheet API authentication documentation URL",
+    "Smartsheet API OAuth documentation URL",
+    "Smartsheet API keys documentation URL",
+    "Smartsheet API getting started documentation URL",
+    "Smartsheet API quickstart documentation URL",
+    "Smartsheet API pricing page URL",
+    "Smartsheet API access plans URL",
+    "Smartsheet developer program URL",
+    "Smartsheet API reference index URL",
+    "Smartsheet MCP server official documentation URL"
+   ],
+   "candidates": 6,
+   "live_urls": [
+    "https://www.smartsheet.com/pricing",
+    "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication",
+    "https://developers.smartsheet.com/api/smartsheet/guides/advanced-topics/oauth",
+    "https://developers.smartsheet.com/api/resource_management/getting-started",
+    "https://developers.smartsheet.com/api/smartsheet/openapi",
+    "https://developers.smartsheet.com/"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://smartsheet.com/developers/basics/authentication",
+     "status": 404
+    },
+    {
+     "url": "https://smartsheet.com/developers/get-started",
+     "status": 404
+    },
+    {
+     "url": "https://smartsheet.com/developers/openapi",
+     "status": 404
+    },
+    {
+     "url": "https://smartsheet.com/developers/ai-mcp",
+     "status": 404
+    },
+    {
+     "url": "https://smartsheet.com/developers/oauth",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://www.smartsheet.com/pricing",
+     "status": 200,
+     "chars": 18614,
+     "readable": true
+    },
+    {
+     "url": "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication",
+     "status": 200,
+     "chars": 5189,
+     "readable": true
+    },
+    {
+     "url": "https://developers.smartsheet.com/api/smartsheet/guides/advanced-topics/oauth",
+     "status": 200,
+     "chars": 13268,
+     "readable": true
+    },
+    {
+     "url": "https://developers.smartsheet.com/api/resource_management/getting-started",
+     "status": 200,
+     "chars": 3606,
+     "readable": true
+    },
+    {
+     "url": "https://developers.smartsheet.com/api/smartsheet/openapi",
+     "status": 200,
+     "chars": 30,
+     "readable": false
+    },
+    {
+     "url": "https://developers.smartsheet.com/",
+     "status": 200,
+     "chars": 1648,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 71.4
+ }
+}

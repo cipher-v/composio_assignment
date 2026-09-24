@@ -1,0 +1,48 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Disputes: which answer do the docs support?</title>
+<style>
+body{font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;margin:0;background:#f9f9f7;color:#0b0b0b}
+header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e1e0d9;padding:10px 20px;display:flex;gap:16px;align-items:center;z-index:2}
+main{padding:16px 20px;max-width:900px;margin:0 auto}
+.intro{background:#fff;border:1px solid #e1e0d9;border-radius:10px;padding:14px 18px;margin-bottom:16px}
+.d{background:#fff;border:1px solid #e1e0d9;border-radius:10px;margin:0 0 12px;padding:12px 16px}
+.d.done{border-color:#0ca30c;box-shadow:0 0 0 1px #0ca30c}
+h3{margin:0 0 6px;font-size:16px} h3 span{font-weight:400;color:#52514e}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:6px 8px;border-radius:8px;cursor:pointer;border:1px solid transparent}
+.opt:hover{background:#f4f3ef} .opt.on{border-color:#2a78d6;background:#eef4fc}
+.opt b{min-width:170px}
+.question{background:#fff8e6;border:1px solid #f3dca5;border-radius:8px;padding:8px 10px;font-size:14px;margin:6px 0} .src{font-size:12px;color:#52514e} .src a{color:#1c5cab;word-break:break-all}
+button{font:inherit;padding:6px 12px;border-radius:6px;border:1px solid #2a78d6;background:#2a78d6;color:#fff;cursor:pointer}
+input.note{width:100%;font:inherit;font-size:13px;margin-top:6px;box-sizing:border-box;padding:4px 6px}
+</style></head><body>
+<header><b>Disputes</b><span id="prog" style="color:#52514e;font-size:13px"></span><span style="margin-left:auto"></span><button onclick="exp()">Export dispute_decisions.json</button></header>
+<main>
+<div class="intro">Three checks answered the same questions for 20 random apps: the <b>Gemini first pass</b>, the <b>Gemini fact-checker</b>, and a <b>blind independent checker (Claude)</b> that never saw Gemini's answers.
+They agreed on <b>__AGREED__ of __TOTAL__</b> answers. Below are only the ones where they <b>disagree</b>.
+For each, open the link if needed and <b>click the answer the docs support</b> (or "none of these" to pick another). Then click Export and save the file into the <code>review</code> folder.</div>
+<div id="m"></div></main>
+<script>
+const ITEMS=__ITEMS__, ENUMS=__ENUMS__, KEY="toolkit-disputes-v1", S=JSON.parse(localStorage.getItem(KEY)||"{}");
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const LBL={primary_auth:"Primary auth",access:"Access",mcp:"MCP server",verdict:"Verdict"};
+const QUESTION={
+ primary_auth:"How does an outside app log in to this product's API? (oauth2 = 'Sign in with X' / connect-your-account flow; api_key = a secret key you paste; basic = username+password or key+secret; bearer_token = a personal access token)",
+ access:"Can any developer get API access themselves for free? (self_serve_free = yes, free; self_serve_trial = only in a free trial; paid_plan = must pay; approval_required = the company must approve you first; partner_or_sales = must become a partner or talk to sales)",
+ mcp:"Does the company ITSELF publish an MCP server (a ready-made connector for AI assistants)? (official = yes, by the company; community_only = only other people made one; none_found = none)",
+ verdict:"Could Composio build this integration today? (ready_now = yes; ready_with_friction = yes, but there's a hurdle like a paid plan or approval; needs_outreach = only after a deal with the company; not_feasible = no)"};
+const k=it=>it.id+":"+it.field;
+function save(){localStorage.setItem(KEY,JSON.stringify(S));prog()}
+function prog(){const d=ITEMS.filter(it=>S[k(it)]&&S[k(it)].value).length;document.getElementById("prog").textContent=`${d} / ${ITEMS.length} resolved`;
+ ITEMS.forEach((it,i)=>document.getElementById("d"+i).classList.toggle("done",!!(S[k(it)]&&S[k(it)].value)))}
+function set(i,v){const it=ITEMS[i];S[k(it)]=Object.assign(S[k(it)]||{},{value:v});save();render(i)}
+function render(i){const it=ITEMS[i],cur=(S[k(it)]||{}).value||"",other=cur&&![it.pass1,it.pass2,it.claude].includes(cur);
+ const vals=[...new Set([it.pass1,it.pass2,it.claude])];
+ const who=v=>[v===it.pass1?"Gemini first pass":"",v===it.pass2?"Gemini fact-checker":"",v===it.claude?"Claude (blind)":""].filter(Boolean).join(" + ");
+ const src=v=>v===it.claude&&it.claude_url?`<div class="src">Claude's source: <a href="${esc(it.claude_url)}" target="_blank">${esc(it.claude_url)}</a> "${esc(it.claude_quote).slice(0,200)}" (${esc(it.claude_conf)})</div>`:
+   (v!==it.claude&&it.gemini_note&&it.gemini_note!=="null"?`<div class="src">Gemini: ${esc(it.gemini_note).slice(0,220)} ${it.gemini_url?`<a href="${esc(it.gemini_url)}" target="_blank">source</a>`:""}</div>`:"");
+ document.getElementById("d"+i).innerHTML=`<h3>${esc(it.name)} <span>&middot; ${LBL[it.field]}</span></h3><div class="question"><b>Question:</b> ${esc(QUESTION[it.field])}</div><div class="src" style="margin:4px 0 6px">The checkers gave different answers. Click the one the source text supports:</div>`+
+  vals.map(v=>`<div class="opt ${cur===v?"on":""}" onclick="set(${i},'${v}')"><b>${esc(v)}</b><div><div style="font-size:13px">${who(v)}</div>${src(v)}</div></div>`).join("")+
+  `<div class="opt ${other?"on":""}"><b>none of these:</b><select onchange="set(${i},this.value)"><option value="">pick...</option>${ENUMS[it.field].map(o=>`<option ${cur===o&&other?"selected":""}>${o}</option>`).join("")}</select></div>
+  <input class="note" placeholder="optional note" value="${esc((S[k(it)]||{}).note||"")}" onchange="S['${k(it)}']=Object.assign(S['${k(it)}']||{},{note:this.value});save()">`;prog()}
+function exp(){const b=new Blob([JSON.stringify({exported:new Date().toISOString(),decisions:S},null,1)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="dispute_decisions.json";a.click()}
+document.getElementById("m").innerHTML=ITEMS.map((_,i)=>`<div class="d" id="d${i}"></div>`).join("")||"<p>No disputes.</p>";ITEMS.forEach((_,i)=>render(i));
+</script></body></html>

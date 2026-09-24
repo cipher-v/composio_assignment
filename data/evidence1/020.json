@@ -1,0 +1,60 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developer.gladly.com/rest/#section/Authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.73
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2NySJpw3zUziEULVfsf1BMho4yOa_Y-n-Yh0YJx5wJQcKXE3yCgUT9BVBEUbRSLIzIQcIVsCGhcFM7ESj27v-Jzz7oYNBKV_StC0NsYGrWY9MRLOjFBsB1WmWjyNmlAX-",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.7
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.gladly.com/rest/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.62
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://www.stackone.com/connectors/gladly/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.54
+  }
+ ],
+ "auth_support": {
+  "basic": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Non-vendor sources (prefer official docs): ['https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2NySJpw3zUziEULVfsf1BMho4yOa_Y-n-Yh0YJx5wJQcKXE3yCgUT9BVBEUbRSLIzIQcIVsCGhcFM7ESj27v-Jzz7oYNBKV_StC0NsYGrWY9MRLOjFBsB1WmWjyNmlAX-', 'https://www.stackone.com/connectors/gladly/']",
+ "metrics": {
+  "n_evidence": 4,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.5,
+  "readable": 4,
+  "quote_supported_rate": 1.0,
+  "lint_issues": 0,
+  "flag_count": 1
+ }
+}

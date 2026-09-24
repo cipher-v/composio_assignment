@@ -1,0 +1,224 @@
+{
+ "app": {
+  "id": 25,
+  "name": "Pumble",
+  "category": "Communications and Messaging",
+  "hint": "pumble.com"
+ },
+ "record": {
+  "subcategory": "Team Chat",
+  "one_liner": "Pumble is a Slack-style team chat app for business communication and collaboration.",
+  "auth_methods": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "API Key Addon uses a custom header 'ApiKey'. OAuth2 is for Pumble Apps/Add-ons, generating access tokens for users and bots.",
+  "access": "self_serve_free",
+  "access_notes": "Pumble offers a free tier for workspaces. A CAKE.com developer account is free to create. Public marketplace listings require a review (up to two weeks), but private add-ons can be published immediately without review.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Broad coverage including messaging, channels, users, file operations, search, and scheduling. The API-key addon is a plain REST API.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Pumble officially publishes and supports an MCP server for connecting AI agents to its team chat.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. Fully self-serve free developer accounts, testing environment, comprehensive REST APIs, official SDK, and immediate private deployment capabilities are available.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://work-management.org",
+    "quote": "Pumble is a business communication platform developed by CAKE.com. It helps teams organize conversations through channels, direct messages, threads, file sharing, calls, and meetings. At its core, Pumble is a Slack-style team chat app."
+   },
+   {
+    "claim": "auth",
+    "url": "https://github.com/infralayers/pumble-mcp",
+    "quote": "Auth: header ApiKey: <your-api-key> on every request (OpenAPI securitySchemes.ApiKeyAuth , in: header , name: ApiKey )."
+   },
+   {
+    "claim": "auth",
+    "url": "https://github.io/pumble-sdk",
+    "quote": "When your app is installed in a workspace the bot user will be created and your app will receive an authorization code that, when used, will generate access tokens for both the user who installed your app and the bot."
+   },
+   {
+    "claim": "auth",
+    "url": "https://lobehub.com",
+    "quote": "pumble-mcp exposes the entire platform — 33 tools across messaging, files, channels, users, search, scheduling, and real-time events — using OAuth2 and the full Pumble SDK"
+   },
+   {
+    "claim": "access",
+    "url": "https://pumble.com/pricing",
+    "quote": "Unlimited users • Unlimited chat history • Free forever."
+   },
+   {
+    "claim": "access",
+    "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html",
+    "quote": "Before publishing your first Pumble add-on, you need a CAKE.com developer account. Here's how to create one: Go to the CAKE.com developer page; Click Sign up and enter your email address;"
+   },
+   {
+    "claim": "access",
+    "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html",
+    "quote": "Once completed, submit for review. The review process typically takes up to two weeks."
+   },
+   {
+    "claim": "access",
+    "url": "https://dev-docs.marketplace.cake.com/pumble/build/private-addon-deployment.html",
+    "quote": "No Review Process: Immediate publication post-submission."
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/infralayers/pumble-mcp",
+    "quote": "The API-key addon is a plain REST API and doesn't need that machinery."
+   },
+   {
+    "claim": "api",
+    "url": "https://lobehub.com",
+    "quote": "pumble-mcp exposes the entire platform — 33 tools across messaging, files, channels, users, search, scheduling, and real-time events — using OAuth2 and the full Pumble SDK"
+   },
+   {
+    "claim": "api",
+    "url": "https://pumble-api-keys.addons.marketplace.cake.com/api-docs/",
+    "quote": "Confirmed live interactive documentation page."
+   },
+   {
+    "claim": "api",
+    "url": "https://github.io/pumble-sdk",
+    "quote": "Pumble will notify your app on every event and trigger on the installed workspaces through the public HTTP endpoints defined in the manifest. So you will need to have a running HTTP server to be able to receive events and triggers from Pumble. It is possible to have Pumble communicate with your app via websockets, by setting socketMode to true in your manifest.json ."
+   },
+   {
+    "claim": "api",
+    "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html",
+    "quote": "A developer account will allow us to publish, manage and monetize our add-ons as well as provide us with a testing environment and workspace where the add-on can be installed and tested during development."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://pumble.com/learn/pumble/connecting-pumble-with-ai-agents-mcp/",
+    "quote": "pairing your team communication app with ai opens up new avenues for collaboration, which is exactly what the pumble mcp server delivers. pumble’s mcp server is ideal for sales, engineering, and marketing teams looking to automate routine, time-consuming tasks."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html",
+    "quote": "A developer account will allow us to publish, manage and monetize our add-ons as well as provide us with a testing environment and workspace where the add-on can be installed and tested during development."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### 1. Product Overview\nPumble is a business communication and collaboration platform designed as a Slack-style team chat application. It enables teams to manage channels, direct messages, threaded conversations, file sharing, and voice/video calls.\n* **Source URL:** [work-management.org](https://work-management.org)\n* **Verbatim Quote:** `\"Pumble is a business communication platform developed by CAKE.com. It helps teams organize conversations through channels, direct messages, threads, file sharing, calls, and meetings. At its core, Pumble is a Slack-style team chat app.\"`\n\n### 2. Authentication Methods & Multi-Tenant Integration\nPumble provides two primary authentication methods for interacting with its platform:\n1. **API Key Addon:** A workspace-specific token passed via a custom header (`ApiKey`).\n   * **Source URL:** [github.com/infralayers/pumble-mcp](https://github.com/infralayers/pumble-mcp)\n   * **Verbatim Quote:** `\"Auth: header ApiKey: <your-api-key> on every request (OpenAPI securitySchemes.ApiKeyAuth , in: header , name: ApiKey ).\"`\n2. **OAuth2 (Pumble Apps / Add-ons):** An app-based authorization flow that generates access tokens for users and bots upon installation.\n   * **Source URL:** [github.io/pumble-sdk](https://github.io/pumble-sdk)\n   * **Verbatim Quote:** `\"When your app is installed in a workspace the bot user will be created and your app will receive an authorization code that, when used, will generate access tokens for both the user who installed your app and the bot.\"`\n\n* **Primary Auth for Multi-Tenant Integration:** `oauth2` (via Pumble Apps / Add-ons) is the standard method for a multi-tenant integration platform to securely handle multiple workspaces.\n   * **Source URL:** [lobehub.com](https://lobehub.com)\n   * **Verbatim Quote:** `\"pumble-mcp exposes the entire platform — 33 tools across messaging, files, channels, users, search, scheduling, and real-time events — using OAuth2 and the full Pumble SDK\"`\n\n### 3. Developer Credentials & Cost Assessment\n* **Access Tier:** `self_serve_free`\n* **Cost & Setup:** Pumble offers a generous free tier for workspaces, and creating a developer account on CAKE.com is completely free.\n   * **Source URL:** [pumble.com/pricing](https://pumble.com/pricing)\n   * **Verbatim Quote:** `\"Unlimited users • Unlimited chat history • Free forever.\"`\n   * **Source URL:** [dev-docs.marketplace.cake.com](https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html)\n   * **Verbatim Quote:** `\"Before publishing your first Pumble add-on, you need a CAKE.com developer account. Here's how to create one: Go to the CAKE.com developer page; Click Sign up and enter your email address;\"`\n* **Approval Process:** Public marketplace listings require a review process that takes up to two weeks, but developers can immediately publish and test private add-ons without any review.\n   * **Source URL:** [dev-docs.marketplace.cake.com](https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html)\n   * **Verbatim Quote:** `\"Once completed, submit for review. The review process typically takes up to two weeks.\"`\n   * **Source URL:** [dev-docs.marketplace.cake.com](https://dev-docs.marketplace.cake.com/pumble/build/private-addon-deployment.html)\n   * **Verbatim Quote:** `\"No Review Process: Immediate publication post-submission.\"`\n\n### 4. API Characteristics & Capabilities\n* **API Style:** REST API.\n   * **Source URL:** [github.com/infralayers/pumble-mcp](https://github.com/infralayers/pumble-mcp)\n   * **Verbatim Quote:** `\"The API-key addon is a plain REST API and doesn't need that machinery.\"`\n* **API Breadth:** Broad coverage including messaging, channels, users, file operations, search, and scheduling.\n   * **Source URL:** [lobehub.com](https://lobehub.com)\n   * **Verbatim Quote:** `\"pumble-mcp exposes the entire platform — 33 tools across messaging, files, channels, users, search, scheduling, and real-time events — using OAuth2 and the full Pumble SDK\"`\n* **OpenAPI Spec:** Available for the API Key addon.\n   * **Source URL:** [pumble-api-keys.addons.marketplace.cake.com/api-docs/](https://pumble-api-keys.addons.marketplace.cake.com/api-docs/)\n   * **Verbatim Quote:** Confirmed live interactive documentation page.\n* **Webhooks & Real-Time Events:** Supported via HTTP endpoints defined in the app manifest or via WebSockets (Socket Mode).\n   * **Source URL:** [github.io/pumble-sdk](https://github.io/pumble-sdk)\n   * **Verbatim Quote:** `\"Pumble will notify your app on every event and trigger on the installed workspaces through the public HTTP endpoints defined in the manifest. So you will need to have a running HTTP server to be able to receive events and triggers from Pumble. It is possible to have Pumble communicate with your app via websockets, by setting socketMode to true in your manifest.json .\"`\n* **Sandbox / Testing Environment:** Provided automatically with a developer account.\n   * **Source URL:** [dev-docs.marketplace.cake.com](https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html)\n   * **Verbatim Quote:** `\"A developer account will allow us to publish, manage and monetize our add-ons as well as provide us with a testing environment and workspace where the add-on can be installed and tested during development.\"`\n\n### 5. Model Context Protocol (MCP) Servers\n* **MCP Status:** `official`\n* **Details:** Pumble officially publishes and supports an MCP server for connecting AI agents to its team chat.\n   * **Source URL:** [pumble.com/learn/pumble/connecting-pumble-with-ai-agents-mcp/](https://pumble.com/learn/pumble/connecting-pumble-with-ai-agents-mcp/)\n   * **Verbatim Quote:** `\"pairing your team communication app with ai opens up new avenues for collaboration, which is exactly what the pumble mcp server delivers. pumble’s mcp server is ideal for sales, engineering, and marketing teams looking to automate routine, time-consuming tasks.\"`\n\n### 6. Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. The platform provides fully self-serve free developer accounts, a dedicated testing environment, comprehensive REST APIs, an official SDK, and immediate private deployment capabilities.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"pumble\" api documentation auth oauth2 api key",
+   "\"pumble\" developer account pricing free tier api",
+   "",
+   "\"pumble\" mcp server github",
+   "\"pumble\" \"developer account\" cake.com",
+   "\"pumble\" \"api-keys.addons.marketplace.cake.com\"",
+   " \"Authentication\"",
+   " \"OAuth\"",
+   "\"pumble-cli\" login create"
+  ],
+  "search_sources": [
+   {
+    "title": "cake.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEA3J3NOFkCYSAwXh99s4eek0la05ugK6iKPPzJjmLx5bS87CgKnLRf9gIjWIr5Ikp0I2pCiTrxzxhIvHKbeJe6xvjOL7xcOQ0O3LEmr0skFcUqlGGgMEi6I1t9KkBa_LC-CRYTRym8qAzUdp39zqJXs-0q3u6cnPyMx7OEy1QTkp852FE="
+   },
+   {
+    "title": "lobehub.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG24YEo4aQg-Al49wGfQUJODUfOQxjrfuJyeLWyEKW5cwDGwk9ZA4dczmzjZP7KH2FvF2SslpVniXDlhNW7IJYDKTCQgzWb2dQu6LULsQZ4sQp4rhHhgOR94sWwaF6yD4huSW1Ijh8WOqTBfdRu9Q=="
+   },
+   {
+    "title": "github.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCjXZl0hV_qBUo79WsQKm85pDYtnsjp3P3aMvm8h5MyrehhTO6rHJYlY9dnJxM84Ox_Y5ILze4j6T1s2LqXx55R1lKZkri1B_YGWz99AjVEDSjlsoMoAVNKyIkqbSPbuDwzO3fPO50zkEQ_4vjgbeZ0zZYPcCPgU3I"
+   }
+  ],
+  "tokens": 11711,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Pumble API authentication",
+    "Pumble API keys",
+    "Pumble OAuth",
+    "Pumble API getting started",
+    "Pumble API quickstart",
+    "Pumble developer guide",
+    "Pumble API pricing",
+    "Pumble API access plans",
+    "Pumble developer program",
+    "Pumble partner program",
+    "Pumble API reference",
+    "Pumble API documentation",
+    "Pumble MCP server"
+   ],
+   "candidates": 0,
+   "live_urls": [
+    "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration/",
+    "https://pumble.com/pricing",
+    "https://pumble-api-keys.addons.marketplace.cake.com/api-docs/",
+    "https://pumble.com/learn/pumble/connecting-pumble-with-ai-agents-mcp/",
+    "https://pumble.com/help/workspace-administration/workspace-settings/single-sign-on-sso/",
+    "https://pumble.com/help/getting-started/onboarding-for-new-users/start-using-pumble-quick-start-guide/",
+    "https://pumble.com/help/tutorials/set-up-pumble/how-to-get-started-with-pumble/",
+    "https://pumble.com/integrations",
+    "https://dev-docs.marketplace.cake.com/pumble/build/api-client.html",
+    "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html"
+   ],
+   "bad_candidates": [],
+   "pages_read": [
+    {
+     "url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration/",
+     "status": 200,
+     "chars": 4504,
+     "readable": true
+    },
+    {
+     "url": "https://pumble.com/pricing",
+     "status": 200,
+     "chars": 22822,
+     "readable": true
+    },
+    {
+     "url": "https://pumble-api-keys.addons.marketplace.cake.com/api-docs/",
+     "status": 200,
+     "chars": 22,
+     "readable": false
+    },
+    {
+     "url": "https://pumble.com/learn/pumble/connecting-pumble-with-ai-agents-mcp/",
+     "status": 200,
+     "chars": 15266,
+     "readable": true
+    },
+    {
+     "url": "https://pumble.com/help/workspace-administration/workspace-settings/single-sign-on-sso/",
+     "status": 200,
+     "chars": 4205,
+     "readable": true
+    },
+    {
+     "url": "https://pumble.com/help/getting-started/onboarding-for-new-users/start-using-pumble-quick-start-guide/",
+     "status": 200,
+     "chars": 7794,
+     "readable": true
+    },
+    {
+     "url": "https://pumble.com/help/tutorials/set-up-pumble/how-to-get-started-with-pumble/",
+     "status": 200,
+     "chars": 2647,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 152.3
+ }
+}

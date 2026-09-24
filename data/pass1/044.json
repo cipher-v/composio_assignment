@@ -1,0 +1,202 @@
+{
+ "app": {
+  "id": 44,
+  "name": "Salesforce Commerce Cloud",
+  "category": "Ecommerce",
+  "hint": "developer.salesforce.com/docs/commerce"
+ },
+ "record": {
+  "subcategory": "E-commerce platform",
+  "one_liner": "Salesforce Commerce Cloud is a cloud-based commerce platform for unified, intelligent buying experiences across all channels.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 (Account Manager) for Admin and Data APIs (SCAPI/OCAPI) using Client ID and Secret. OAuth 2.0 (SLAS) for Shopper-facing APIs. Bearer Token used in Authorization header after exchanging credentials for an access token.",
+  "access": "partner_or_sales",
+  "access_notes": "No public, self-serve free tier or trial for B2C Commerce. Access requires joining the Salesforce Partner Network or being an employee of a customer. On-Demand Sandboxes (ODS) are usage-based and require a paid contract or partner status.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "RESTful (SCAPI and OCAPI) APIs covering product catalogs, inventory, orders, customers, promotions, and site management.",
+  "openapi_spec": true,
+  "webhooks": false,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Official MCP server for B2C developer tooling: https://salesforcecommercecloud.github.io/b2c-developer-tooling/mcp/",
+  "verdict": "needs_outreach",
+  "blocker": "partnership_or_sales",
+  "blocker_notes": "No self-serve, free developer access to the B2C Commerce platform. A developer cannot sign up and obtain working API credentials without being a verified partner or a paying customer.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.salesforce.com/in/commerce/pricing/?bc=OTH",
+    "quote": "Commerce Cloud B2C Premium for businesses selling to consumers... choose the right commerce solution for your business needs."
+   },
+   {
+    "claim": "auth",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYQA7Z_WJLy3GiFUHB5_iDusk-a9qBdW0MBvP_zI4lQKpop8RYRCM4wTF6w2H3XMKac2hGYmaJyQ0vmgzaXYaNnQ0K16n3dxMd-9VWTM-TZLptEd8Ys9xyxXH8pNhg7-KzAdZ5GXZLK9Wnfy4CT0XF1KCXAein74_S5jBT8pwDfNBSebtW5kwdY_D1cXp6XbWD4QmyRGCJKGq8A8wQn44=",
+    "quote": "The SCAPI Schema API uses an Account Manager OAuth 2.0 bearer token for authentication... you must use a client ID and client secret from Account Manager to request an access token."
+   },
+   {
+    "claim": "access",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJGy4XdRXC8qNxD4vcGkgpSYyxzqNLWdJv32LbQGD7V7e5zHI1VOvHV57N1GWPEayYL1QTC3PcqZnD83k4ErYTWneZpxowGBepidNt428DcVGpiG2sQYJmuQmblQJ3M_dwQagphhGkVov3gYGTgx4bFVCyZHrUJMAtVW1Z4Z5L8hw==",
+    "quote": "B2C Commerce: The process is complex because sandboxes are not publicly available... if you work for a B2C Commerce partner company, you get access to ODS."
+   },
+   {
+    "claim": "access",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8MgDs4Bnq5XZu5PfRiSjRaDEtgJnBpze1t5iCLAH5o1dMdr3A0FETfgD-SrQ7g0CU4b2snB7P5TkQI29jkL5Q8r4ORM8weRiuNJAL7AWxO4O4Ko80Fa_Q2tnNJ_WogmVmVCNRgmgr733PAJWKf_tg04f24HJApStq-wS587YSkicxdwbr9Y1LZZb7",
+    "quote": "To obtain a trial sandbox please reach out to either your Commerce Cloud Account Executive (customers) or your Partner Manager (partners)."
+   },
+   {
+    "claim": "api",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHV4tWTwqx7qwvWgR9YSF0nYrA7PZr_VkChhT_2M2Qxo0DFV0rnhjYdkndO6fBnzk88NlxM0nKRObJ3uBt6voFpx-dibnk2gXKFzsDjleM8u6hOePZqvdSQOHJOdu-JjxFNq4ty_AvVRrtOCyrp69R_mD8g_cgvJseLF9OrqvwUx-9J3ndamsFJpdPu0gmZLAe3kJ49jWEdcwltZ6H-vWk=",
+    "quote": "Converted SCAPI RAML specifications to OpenAPI Specification (OAS) format... OAS tooling aids in generating client libraries."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/mcp/",
+    "quote": "B2C Commerce tools, documentation, and skills for your assistant... npx -y @salesforcecommercecloud/b2c-dx-mcp."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGZxp3XVhu3P1ldIbtG-N0sfxU9jqEif0coxr71LAveWQmziw8fsJKgv4D-SNaLiJwaCBARt5fNSqqFpQpTLQp26r4BD_J7gLVMD2LDHovVnmfaRSrQwhR--nKjSV9dFwBBQtI9BbW9-JPdF7izk2VuO-t3e2E5yxXZ4Q==",
+    "quote": "TCTG's SFCC MCP Server turns AI from scattered experiments into a safe, shared engine."
+   }
+  ],
+  "confidence": 0.9
+ },
+ "notes": "### Research Notes: Salesforce Commerce Cloud\n\n#### **What the product does**\nSalesforce Commerce Cloud (SFCC) is a multi-tenant, cloud-based commerce platform that enables brands to create unified, intelligent buying experiences across all channels (mobile, social, web, and store). It consists of two primary stacks: **B2C Commerce** (formerly Demandware) and **B2B/D2C Commerce** (built on the Salesforce Core platform).\n*   **Source:** [Salesforce.com](https://www.salesforce.com/in/commerce/pricing/?bc=OTH) - \"Commerce Cloud B2C Premium for businesses selling to consumers... choose the right commerce solution for your business needs.\"\n\n#### **Public API Auth Methods**\nA multi-tenant integration platform would primarily use **OAuth 2.0**.\n*   **OAuth 2.0 (Account Manager):** Used for Admin and Data APIs (SCAPI/OCAPI). Requires a Client ID and Secret managed via the Salesforce B2C Account Manager.\n*   **OAuth 2.0 (SLAS - Shopper Login and API Access Service):** Used for Shopper-facing APIs to manage guest and registered customer sessions.\n*   **Bearer Token:** Used in the `Authorization` header after exchanging credentials for an access token.\n*   **Source:** [Salesforce Developers](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYQA7Z_WJLy3GiFUHB5_iDusk-a9qBdW0MBvP_zI4lQKpop8RYRCM4wTF6w2H3XMkac2hGYmaJyQ0vmgzaXYaNnQ0K16n3dxMd-9VWTM-TZLptEd8Ys9xyxXH8pNhg7-KzAdZ5GXZLK9Wnfy4CT0XF1KCXAein74_S5jBT8pwDfNBSebtW5kwdY_D1cXp6XbWD4QmyRGCJKGq8A8wQn44=) - \"The SCAPI Schema API uses an Account Manager OAuth 2.0 bearer token for authentication... you must use a client ID and client secret from Account Manager to request an access token.\"\n\n#### **Developer Access & Cost**\nAccess to the B2C Commerce stack is highly restricted and not self-serve for independent developers.\n*   **Free Tier / Trial:** There is no public, self-serve free tier or trial for B2C Commerce. While B2B Commerce can be enabled in a free Salesforce Developer Edition org, B2C requires a partner or customer relationship.\n*   **Sandboxes:** B2C uses \"On-Demand Sandboxes\" (ODS), which are usage-based and require a paid contract or partner status.\n*   **Partner/Sales:** Developers must join the Salesforce Partner Network (Link program) or be an employee of a customer to obtain credentials.\n*   **Source:** [Salesforce Ben](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJGy4XdRXC8qNxD4vcGkgpSYyxzqNLWdJv32LbQGD7V7e5zHI1VOvHV57N1GWPEayYL1QTC3PcqZnD83k4ErYTWneZpxowGBepidNt428DcVGpiG2sQYJmuQmblQJ3M_dwQagphxkVov3gYGTgx4bFVCyZHrUJMAtVW1Z4Z5L8hw==) - \"B2C Commerce: The process is complex because sandboxes are not publicly available... if you work for a B2C Commerce partner company, you get access to ODS.\"\n*   **Source:** [Rhino Inquisitor](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8MgDs4Bnq5XZu5PfRiSjRaDEtgJnBpze1t5iCLAH5o1dMdr3A0FETfgD-SrQ7g0CU4b2snB7P5TkQI29jkL5Q8r4ORM8weRiuNJAL7AWxO4O4Ko80Fa_Q2tnNJ_WogmVmVCNRgmgr733PAJWKf_tg04f24HJApStq-wS587YSkicxdwbr9Y1LZZb7) - \"To obtain a trial sandbox please reach out to either your Commerce Cloud Account Executive (customers) or your Partner Manager (partners).\"\n\n#### **API Style & Breadth**\n*   **Style:** RESTful (SCAPI and OCAPI).\n*   **Breadth:** Extremely broad, covering product catalogs, inventory, orders, customers, promotions, and site management.\n*   **OpenAPI Spec:** Yes, Salesforce provides OpenAPI (OAS 3.0) specifications for SCAPI.\n*   **Webhooks:** SFCC uses \"Hooks\" (custom script-based triggers) and \"Event Notifications\" rather than standard self-serve webhooks.\n*   **Source:** [Salesforce Developers](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHV4tWTwqx7qwvWgR9YSF0nYrA7PZr_VkChhT_2M2Qxo0DFV0rnhjYdkndO6fBnzk88NlxM0nKRObJ3uBt6voFpx-dibnk2gXKFzsDjleM8u6hOePZqvdSQOHJOdu-JjxFNq4ty_AvVRrtOCyrp69R_mD8g_cgvJseLF9OrqvwUx-9J3ndamsFJpdPu0gmZLAe3kJ49jWEdcwltZ6H-vWk=) - \"Converted SCAPI RAML specifications to OpenAPI Specification (OAS) format... OAS tooling aids in generating client libraries.\"\n\n#### **MCP Servers**\n*   **Official:** Salesforce maintains an official MCP server for B2C developer tooling.\n*   **Source:** [GitHub (SalesforceCommerceCloud)](https://salesforcecommercecloud.github.io/b2c-developer-tooling/mcp/) - \"B2C Commerce tools, documentation, and skills for your assistant... npx -y @salesforcecommercecloud/b2c-dx-mcp.\"\n*   **Community:** Third-party MCP servers exist for broader Business Manager operations.\n*   **Source:** [The Commerce Team](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGZxp3XVhu3P1ldIbtG-N0sfxU9jqEif0coxr71LAveWQmziw8fsJKgv4D-SNaLiJwaCBARt5fNSqqFpQpTLQp26r4BD_J7gLVMD2LDHovVnmfaRSqwhR--nKjSV9dFwBBQtI9BbW9-JPdF7izk2VuO-t3e2E5yxXZ4Q==) - \"TCTG's SFCC MCP Server turns AI from scattered experiments into a safe, shared engine.\"\n\n#### **Buildability Verdict**\n**Verdict:** `needs_outreach`\n**Main Blocker:** There is no self-serve, free developer access to the B2C Commerce platform. A developer cannot sign up and obtain working API credentials without being a verified partner or a paying customer. While the API is well-documented and an official MCP server exists, the infrastructure is gated behind sales and enterprise contracts.\n\n| Category | Status |\n| :--- | :--- |\n| **Access** | `partner_or_sales` |\n| **Primary Auth** | `oauth2` |\n| **MCP** | `official` |\n| **Verdict** | `needs_outreach` |",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "Salesforce Commerce Cloud free developer sandbox access",
+   "Salesforce Commerce Cloud API authentication oauth2 multi-tenant",
+   "Salesforce Commerce Cloud SCAPI OpenAPI spec download",
+   "Salesforce Commerce Cloud webhooks documentation",
+   "Salesforce Commerce Cloud MCP server official"
+  ],
+  "search_sources": [
+   {
+    "title": "salesforceben.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJGy4XdRXC8qNxD4vcGkgpSYyxzqNLWdJv32LbQGD7V7e5zHI1VOvHV57N1GWPEayYL1QTC3PcqZnD83k4ErYTWneZpxowGBepidNt428DcVGpiG2sQYJmuQmblQJ3M_dwQagphxkVov3gYGTgx4bFVCyZHrUJMAtVW1Z4Z5L8hw=="
+   },
+   {
+    "title": "stackexchange.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcsF2ljnQDbAg8Oxn3jZXi1UlenykMTCpLXTF-2OCUlYP3Az8trT-P7atQPdFWrxq9Ax2CH1DWPc20teyZqxyCoxKOcQCgm1D_Dyz7QiaXssXcKPQRcYKvaQ2kyjKCSYygvml7tAjbdZ3O0ix1oCHKwEGBnhYCcY9PhtL1Y5uPIYVzXNMb5DZI9ov43ehs7eC4hae4vkS8Lg1bCDj8pbfWXeN8JHibHBg="
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHx7zGlOdpoSnGqotRHll4szX6Lyx9khhsznXCKKI-6YFBXMWlkx4IrFwjkr8ipFYeS4G0Sc7WSMJ46bWjmUiTd4Zqdqf34qNkqtkmN4KqjsW2yNTcmHynb3c1E0_j-i0BtoyFPU6AuFVhKdmxkILLZQk0G5st6nT04zP1P6s4vto62GsbGIhzpBL-DsKvQRL-mDDF0S2Y3tSA="
+   },
+   {
+    "title": "rhino-inquisitor.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8MgDs4Bnq5XZu5PfRiSjRaDEtgJnBpze1t5iCLAH5o1dMdr3A0FETfgD-SrQ7g0CU4b2snB7P5TkQI29jkL5Q8r4ORM8weRiuNJAL7AWxO4O4Ko80Fa_Q2tnNJ_WogmVmVCNRgmgr733PAJWKf_tg04f24HJApStq-wS587YSkicxdwbr9Y1LZZb7"
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqaafJOVuOh_yLLQOLX72dIk-XrOvfGuaKQMMlP9McLa4KlVbPQhVGZhKvQ_W07vtN2oxhfzTVemmkkjvPati3oMrwKmvDzhVS4hDBg3XmUUgYKAJdbzkewaRBPsbWkj1J8X3ZoyFikkjespv-G0H4WFEJ4GIL37p96U44uvvKYhmaDCXI9lTlQDCAeVKaRz259OQ="
+   },
+   {
+    "title": "stackexchange.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0QI4vbAkbeEr6cz4SZFdnQdy5b1Lg9zIr3jHMwVkJSz8C-fjy7KFywyIGUwgnT1PzJwqPAOLhffmcxJ2mJAG6l1iUyikZj9IQuJMZEfkFqg1HYBaWqy0wfoEbA6dLMhyrisUuVEIdcyzTWl72ekF7svq6WMT8ktJE-OtTjRiLTLXLJYwxUvWpWjnOBP3UK950elXWED34E8grXwHkA-k="
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQ7QbJ3CI_tlO7iCWRkHwXo0RtZlAzsHzICS-wUwmeuuqAzNQFib5UYMAppleXrpN6-MbhiV57xj5FHf2TohNACMdO99W7yXu3jr2q40Q1qD_3rH0WvCev2lyxnJjQFqZCKrEV7thK-VVuFh1ipF51gYcdMMqoLU9-LS7Vxf8wDEV_4DJsYFNlu0aryjkO8Q=="
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFelHa0sTyEKoodEAsRoFQhsSfFpzz7sIl7vg-SXlu7Msgvw1p88VxqgaW1ZiZxYkEb8JvB9jEpxQBLfc3Ho-ZTdTuzVi5W4FcnGxGmb8HgXIUAI2lyuDwcs5XYrx682pc2szkToV0wf3KnQU54rpFqcUpBWDcNsFRuwdx8f2PIyCVANoORsjk="
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpszKLi8kjcOYcyQFhbi1LVJOcRJZWjnxolhj_wXOR0yTWfQo1LDl9QF4BAecv-V9hjcgNUN3huIRNV5V77JwrgjZLuFyV7gntGAcWJYqq_UB2v3rW2G9Lhop-NM5W6DtPaGLkfEMAIxtBZ2ngSOwlzH4I43If"
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkVc1kpCguOv2C5skbNZnZtm2dAILNtZZGeSSw463WoTrfqcotOim-yAaTZJ34V75fqOmwTOLZxoBZQSJJTWIG3GSXrIwT94wCMezv0D_0a2KB6E8EUkiPX6OZkwN2yG5bu1CQDVW0zZdIo_hO18Yn4bGwQsUfVpM8NZNs"
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHV4tWTwqx7qwvWgR9YSF0nYrA7PZr_VkChhT_2M2Qxo0DFV0rnhjYdkndO6fBnzk88NlxM0nKRObJ3uBt6voFpx-dibnk2gXKFzsDjleM8u6hOePZqvdSQOHJOdu-JjxFNq4ty_AvVRrtOCyrp69R_mD8g_cgvJseLF9OrqvwUx-9J3ndamsFJpdPu0gmZLAe3kJ49jWEdcwltZ6H-vWk="
+   },
+   {
+    "title": "mcpservers.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcgrTgTMF9IFT_rZlvCulewjxl1X-d5tDQ1Rjf9A4edQgskyX3zf45Wgz0x3kx9ybWREAdld5zBMTCULNOJF-gO2j402SFl1UdlmYEmB0pd40EYUzhzsbuc2xZS-uVXSlLEEJJqMuO6vIVCEPcuPyuYGOFCGYibetLPEFngQ6r"
+   },
+   {
+    "title": "cequence.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfXXcw1f8R_CfWB6TSkzYMk9eWZC4_sAGBFvQt2sJHiE6aau1VeXEKmB2YEv1EhPff_DKFap-Ndb6y7kjdaA9PdIIfkQVzGUF_wQ-5N8LJtbt9RwHkRTXfZHFEVs-grdHmtjP_6RSHzjCyjwTqMUeqB6XwLKoCp7V0G4sqA1p7GhvSa_D-PZDnZL935aW1ABDdLGKkNoYw"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTlIoF9KKlqzYqSLj5IJjeah6k6am0DBpXR672SwsjQvaI02Z5dcO5A5kL5aws1FolCWJbpltSLjyTsGImzt9e1rjJdO2svmCuI_NTsYk9z2xX7oYRHm4saIz1VNd6PxIiAw=="
+   },
+   {
+    "title": "reddit.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNyru1K9lOs5B4t8mtX9AmcToOWq1ITHiimhUcqbqXG9AbvXzFE7bx1iHuVQpUJkaHZq3rKO_Q70CQyThTRdq-PtjiFoHPEI_IRs96bBeqHMeDvYaEwNWvBdED7RS8s3qxX7B2vDGH75LChyXxSQ1OFN7QWB_C-8ha-eNq2WNarxNymoGgdkRd_M2-lmHY"
+   },
+   {
+    "title": "thecommerceteam.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGZxp3XVhu3P1ldIbtG-N0sfxU9jqEif0coxr71LAveWQmziw8fsJKgv4D-SNaLiJwaCBARt5fNSqqFpQpTLQp26r4BD_J7gLVMD2LDHovVnmfaRSqwhR--nKjSV9dFwBBQtI9BbW9-JPdF7izk2VuO-t3e2E5yxXZ4Q=="
+   }
+  ],
+  "tokens": 5108,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "Salesforce Commerce Cloud authentication API keys OAuth developer documentation",
+    "Salesforce Commerce Cloud getting started quickstart developer documentation",
+    "Salesforce Commerce Cloud pricing API access developer program",
+    "Salesforce Commerce Cloud API reference index developer documentation",
+    "Salesforce Commerce Cloud MCP server"
+   ],
+   "candidates": 5,
+   "live_urls": [
+    "https://www.salesforce.com/commerce/pricing/?bc=OTH",
+    "https://salesforcecommercecloud.github.io/b2c-developer-tooling/mcp/",
+    "https://www.salesforce.com/in/commerce/pricing/?bc=OTH"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/scapi-authentication-authorization.html",
+     "status": 403
+    },
+    {
+     "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/b2c-commerce-quick-start.html",
+     "status": 403
+    },
+    {
+     "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/api/scapi/overview",
+     "status": 403
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://www.salesforce.com/commerce/pricing/?bc=OTH",
+     "status": 200,
+     "chars": 5026,
+     "readable": true
+    },
+    {
+     "url": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/mcp/",
+     "status": 200,
+     "chars": 13846,
+     "readable": true
+    },
+    {
+     "url": "https://www.salesforce.com/in/commerce/pricing/?bc=OTH",
+     "status": 200,
+     "chars": 5029,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 60.4
+ }
+}

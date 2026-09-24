@@ -1,0 +1,224 @@
+{
+ "app": {
+  "id": 34,
+  "name": "GoHighLevel",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "highlevel.stoplight.io"
+ },
+ "record": {
+  "subcategory": "CRM / Marketing Automation",
+  "one_liner": "GoHighLevel is an all-in-one CRM and marketing automation platform for agencies, consolidating lead generation, funnels, and scheduling.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 for public marketplace apps and multi-tenant integrations; Private Integration Token (Bearer Token) for internal, single-tenant, or location-specific integrations.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can sign up for a free Developer Account at the HighLevel Marketplace to create an app and generate ClientId/ClientSecret. A free Sandbox environment is available for testing. Production API access for end-users requires a paid plan (Unlimited plan or higher, $297/mo).",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST API covering Contacts, Conversations, Calendars, Opportunities, Payments, Users, Blogs, and more.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "GoHighLevel hosts the \"LeadConnector MCP server\" for AI agents to interact with CRM data. Endpoints: Claude: https://services.leadconnectorhq.com/mcp/anthropic/v2, OpenAI/Generic: https://services.leadconnectorhq.com/mcp/openai/v2/",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. The developer portal and sandbox are self-serve and free. The only hurdle is that end-users must be on a $297/mo plan to use the resulting integration in production.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://marketplace.gohighlevel.com/docs/",
+    "quote": "Complete REST API documentation for the HighLevel CRM platform. Build powerful integrations with our comprehensive developer resources."
+   },
+   {
+    "claim": "general",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyJy6g-9Zfq2ghnbBq0YfM3Xkhd4MSpFbIa_Ien4y_M2JKegZ8rmIkcfoGtjHB0wodvDp2Wus2dcoZCSDPT0VPnk_mVsnJrVRe3wOcsztL7niyAansLRuxtPCjCeihVtR6zWRUJTGDn9YccSzS8NAezw==",
+    "quote": "Every core feature is included at this tier: the CRM, the website and funnel builder, workflow automation, booking calendars, and reputation management."
+   },
+   {
+    "claim": "auth",
+    "url": "https://marketplace.gohighlevel.com/docs/oauth-20",
+    "quote": "HighLevel supports: ... OAuth 2.0 for public integrations and Marketplace apps requiring user authorization."
+   },
+   {
+    "claim": "auth",
+    "url": "https://marketplace.gohighlevel.com/docs/",
+    "quote": "curl -X GET ... -H 'Authorization: Bearer your_token'"
+   },
+   {
+    "claim": "access",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZuq3NMJxZn0O2DqTJO1M_HYUkFT9JQ45voHbJwN_KiWdb9nO8aLWmXMpe380_NwJju4n2ibxt7Pufot1PG8GX01cQ2DgE77xH13kP9FWjckIY_BBRI3i7lteSr1h631fxWzMgwhdGtM3iJTqcF_OjjhGcuMv4T5-JCrior6_EqFFxpTiwXjOSnuhZHLk=",
+    "quote": "The HighLevel Sandbox account is designed to give partners, developers, and customers a safe, non-production environment to explore, build, and test."
+   },
+   {
+    "claim": "access",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyJy6g-9Zfq2ghnbBq0YfM3Xkhd4MSpFbIa_Ien4y_M2JKegZ8rmIkcfoGtjHB0wodvDp2Wus2dcoZCSDPT0VPnk_mVsnJrVRe3wOcsztL7niyAansLRuxtPCjCeihVtR6zWRUJTGDn9YccSzS8NAezw==",
+    "quote": "Starter doesn't include rebilling or API access... Unlimited... includes basic API access."
+   },
+   {
+    "claim": "api",
+    "url": "https://marketplace.gohighlevel.com/docs/",
+    "quote": "Access all HighLevel platform features through our REST API... Real-time notifications for 50+ events."
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/GoHighLevel/highlevel-api-docs",
+    "quote": "This repository contains... Markdown and OpenAPI-based documentation for easy readability and automation."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHc90fT9Hrg5fwDYmvBQrv-9F1o2fjbGviQNJ3ljiviFiueoulr88WuteY1XYvKXAbnI1e6aKqpDkzwq4W96o8RGnserytrz7xkcKfse9lnvaSqZhgR_2N9BzXz8OMZyQb_1eRprPArpGve8XGJ0w==",
+    "quote": "The LeadConnector MCP server gives AI assistants a standardized way to work with your LeadConnector data... Claude connects at https://services.leadconnectorhq.com/mcp/anthropic/v2."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Research Notes: GoHighLevel (GHL)\n\n#### **What the product does**\nGoHighLevel is an all-in-one CRM and marketing automation platform designed primarily for agencies. It consolidates tools for lead generation, funnel building, email/SMS marketing, appointment scheduling, and pipeline management into a single white-labelable interface.\n*   **Source:** [marketplace.gohighlevel.com/docs/](https://marketplace.gohighlevel.com/docs/) — \"Complete REST API documentation for the HighLevel CRM platform. Build powerful integrations with our comprehensive developer resources.\"\n*   **Source:** [clickfunnels.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyJy6g-9Zfq2ghnbBq0YfM3Xkhd4MSpFbIa_Ien4y_M2JKegZ8rmIkcfoGtjHB0wodvDp2Wus2dcoZCSDPT0VPnk_mVsnJrVRe3wOcsztL7niyAansLRuxtPCjCeihVtR6zWRUJTGDn9YccSzS8NAezw==) — \"Every core feature is included at this tier: the CRM, the website and funnel builder, workflow automation, booking calendars, and reputation management.\"\n\n#### **API Auth Methods**\nGoHighLevel supports two primary authentication methods for its V2 API:\n1.  **OAuth 2.0:** Used for public marketplace apps and multi-tenant integrations. It supports PKCE.\n2.  **Private Integration Token (Bearer Token):** Used for internal, single-tenant, or location-specific integrations.\n*   **Multi-tenant Integration Choice:** **OAuth 2.0**.\n*   **Source:** [marketplace.gohighlevel.com/docs/oauth-20](https://marketplace.gohighlevel.com/docs/oauth-20) — \"HighLevel supports: ... OAuth 2.0 for public integrations and Marketplace apps requiring user authorization.\"\n*   **Source:** [marketplace.gohighlevel.com/docs/](https://marketplace.gohighlevel.com/docs/) — \"curl -X GET ... -H 'Authorization: Bearer your_token'\"\n\n#### **Developer Access & Cost**\n*   **Access Category:** `self_serve_free` (for development).\n*   **Credential Process:** Developers can sign up for a free Developer Account at the HighLevel Marketplace. Once signed in, they can create an app to generate a `ClientId` and `ClientSecret`.\n*   **Sandbox:** A free Sandbox environment is available for testing, limited to 2 sub-accounts and a 6-month active duration.\n*   **Production Cost:** While the developer portal is free, **production API access** for end-users requires a paid plan. The \"Starter\" plan ($97/mo) does **not** include API access; users must be on the \"Unlimited\" plan ($297/mo) or higher.\n*   **Source:** [gohighlevel.com (Sandbox Policy)](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZuq3NMJxZn0O2DqTJO1M_HYUkFT9JQ45voHbJwN_KiWdb9nO8aLWmXMpe380_NwJju4n6ibxt7Pufot1PG8GX01cQ2DgE77xH13kP9FWjckIY_BBRI3i7lteSr1h631fxWzMgwhdGtM3iJTqcF_OjjhGcuMv4T5-JCrior6_EqFFxpTiwXjOSnuhZHLk=) — \"The HighLevel Sandbox account is designed to give partners, developers, and customers a safe, non-production environment to explore, build, and test.\"\n*   **Source:** [clickfunnels.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyJy6g-9Zfq2ghnbBq0YfM3Xkhd4MSpFbIa_Ien4y_M2JKegZ8rmIkcfoGtjHB0wodvDp2Wus2dcoZCSDPT0VPnk_mVsnJrVRe3wOcsztL7niyAansLRuxtPCjCeihVtR6zWRUJTGDn9YccSzS8NAezw==) — \"Starter doesn't include rebilling or API access... Unlimited... includes basic API access.\"\n\n#### **API Details**\n*   **Style:** REST.\n*   **Breadth:** Comprehensive, covering Contacts, Conversations, Calendars, Opportunities, Payments, Users, Blogs, and more.\n*   **OpenAPI Spec:** Available via the official GitHub repository and Stoplight-based developer portal.\n*   **Webhooks:** Supported with over 50 event types.\n*   **Source:** [marketplace.gohighlevel.com/docs/](https://marketplace.gohighlevel.com/docs/) — \"Access all HighLevel platform features through our REST API... Real-time notifications for 50+ events.\"\n*   **Source:** [github.com/GoHighLevel/highlevel-api-docs](https://github.com/GoHighLevel/highlevel-api-docs) — \"This repository contains... Markdown and OpenAPI-based documentation for easy readability and automation.\"\n\n#### **MCP Servers**\n*   **Status:** **Official**.\n*   **Details:** GoHighLevel hosts the \"LeadConnector MCP server,\" which allows AI agents to interact with CRM data.\n*   **Endpoints:** \n    *   Claude: `https://services.leadconnectorhq.com/mcp/anthropic/v2`\n    *   OpenAI/Generic: `https://services.leadconnectorhq.com/mcp/openai/v2/`\n*   **Source:** [gohighlevel.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHc90fT9Hrg5fwDYmvBQrv-9F1o2fjbGviQNJ3ljiviFiueoulr88WuteY1XYvKXAbnI1e6aKqpDkzwq4W96o8RGnserytrz7xkcKfse9lnvaSqZhgR_2N9BzXz8OMZyQb_1eRprPArpGve8XGJ0w==) — \"The LeadConnector MCP server gives AI assistants a standardized way to work with your LeadConnector data... Claude connects at https://services.leadconnectorhq.com/mcp/anthropic/v2.\"\n\n#### **Buildability Verdict**\n*   **Verdict:** `ready_now`\n*   **Main Blocker:** None. The developer portal and sandbox are self-serve and free. The only hurdle is that end-users must be on a $297/mo plan to use the resulting integration in production.\n\n| Feature | Status |\n| :--- | :--- |\n| **Auth** | OAuth 2.0 |\n| **Access** | `self_serve_free` |\n| **API Style** | REST |\n| **MCP** | Official |\n| **Verdict** | `ready_now` |",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "GoHighLevel developer account cost free tier",
+   "GoHighLevel API access requirements paid plan",
+   "GoHighLevel sandbox account for developers",
+   "GoHighLevel LeadConnector MCP server official",
+   "GoHighLevel API OpenAPI spec download"
+  ],
+  "search_sources": [
+   {
+    "title": "gohighlevel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFltL5tH4RAA_PLdgN8MLV9n0GHY1fCKdf7OdnUpdegYYAkfWR_hxNqBjglcuAmtVjI6Pf6qL1t248XfNuFQw28nNmcFA8-KrE-Qzr7yWod6rCDRAuTcOp5fMB_VkDkx31S6GhI1hAxzf-lZiuML4AWUzHSzcz6ndI0VVAH6w6Tb7jnXVJCwRX7q0keTb-ax75UZbVAFBvUMccl"
+   },
+   {
+    "title": "reddit.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlDSqF0Ud-WH5mK6Ag63x6b9z_qLrqatifRIj5ItAV2qZmxHlT8yRFGmY-jlj86EPbCQ-ASeq2BA_EVn6eq3KbeZ1Ajm72zAnzsHjXkfhFE__HM3yv-U2bh2agTFrCzsbH_938BhaS2H4WYuKGNRn5xWGRHVerD8KzE4J18HCY5iSjGOBP2YaB_3mXv0UDDrejeHbmroY="
+   },
+   {
+    "title": "clickfunnels.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyJy6g-9Zfq2ghnbBq0YfM3Xkhd4MSpFbIa_Ien4y_M2JKegZ8rmIkcfoGtjHB0wodvDp2Wus2dcoZCSDPT0VPnk_mVsnJrVRe3wOcsztL7niyAansLRuxtPCjCeihVtR6zWRUJTGDn9YccSzS8NAezw=="
+   },
+   {
+    "title": "gohighlevel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZuq3NMJxZn0O2DqTJO1M_HYUkFT9JQ45voHbJwN_KiWdb9nO8aLWmXMpe380_NwJju4n6ibxt7Pufot1PG8GX01cQ2DgE77xH13kP9FWjckIY_BBRI3i7lteSr1h631fxWzMgwhdGtM3iJTqcF_OjjhGcuMv4T5-JCrior6_EqFFxpTiwXjOSnuhZHLk="
+   },
+   {
+    "title": "topghlsnapshots.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9azmR4h_YjFnC3Kt7WNMCZT-suDTBZmgleygSG0IxXhhXnIvKDE94975010-BolLaJ8X8_qFiFkvwt5leEBL-EnqyeW70gU0QnoVlVwquosO8638iWxEnEeTWWcZPC5et784CYcRG7NiAZQ=="
+   },
+   {
+    "title": "saleoid.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7KFJCvCmh8Uo5RshvSMMoCh4jYam_5ORLHo7IcxdkZIe0XwHxx_b8lHCAQr-yaK2gXiTfIxu3fnu-NtimsTtsgYGpal59M_i70GUuRf72oCJZMB7FQrnIuZ7FPd7gZ-slkfy3nH8G8Q=="
+   },
+   {
+    "title": "daily.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEh_hmrNcg8XKQbK_O64dsORTn1eUmEeE8WWbth-VAq8hSOCSDfv69NzPR1XMhdrx5606LQ8NE6tnClUhe1t-RNsa81ewe29X3xlyoIF1TZwd4mkzt09leBjBJ0uunwlDQ7XOkTSSUz88dmdBYeWJwsH-Lq8AXTDOfu51QjDDtP7cwTfUXZHoshy8ptiKPD_epLJjywGps1FawZyNBJ_2mFGWAGS68oCmKMv8ttUp7BIUYL5G51pnh8hlAYv--x"
+   },
+   {
+    "title": "gohighlevel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVEWderGRVWTy0OH_aqulJRNFantULbgS8HXM3JvxdlHFc6hA4-X0fD5EVADCckqc0uMf4jgbVJzMi4RL_gmSMvxL_em-r9KyYQjbip9pKFXfltg7TcfYp9YKSYEBMp5IHVjOb"
+   },
+   {
+    "title": "wealthmcp.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzaa0Ps5043czaZABnxdGo4bYlWutms7hCdPNXRpPw-HyidFNZaFYo79D9EVDmxow796JTrOVbWRm0ptSxb3H63mEbET-VDnoh1DrNxv6XCRhVkjWgYLNBM-AMgL51k_DtEAXEjYc="
+   },
+   {
+    "title": "usecarly.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERuMRtJvZakLiNzNVvhWgxRPDcfoQvHXIQb_i8Okfqh_xkpsHUfk-1e-OKQU8oS5JrNp6-ua0qw0PcuiYrbOYz4LFVI9_YHl5Uz3XlqLUMQ_zgBfIgbLskBRYJHGilsyCjbO_EHrphn_Y="
+   },
+   {
+    "title": "gohighlevel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHc90fT9Hrg5fwDYmvBQrv-9F1o2fjbGviQNJ3ljiviFiueoulr88WuteY1XYvKXAbnI1e6aKqpDkzwq4W96o8RGnserytrz7xkcKfse9lnvaSqZhgR_2N9BzXz8OMZyQb_1eRprPArpGve8XGJ0w=="
+   },
+   {
+    "title": "gohighlevel.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtfLe_tO9mXcup0MgOWxeuxZsCSQh_Y8bGh_6fmdJBZpM-fIwc4vnFDINxYON2iz0fm8ex5RQDrcJ910jnOh3JmwSfuv2Ln3aNejZ5IfrKZVSHyuO0ocayPSEGXz4GTbSF6bQ9vbQ="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF16dmhPnYpIbyAB7AIPHaQ0xm5iQcqBwSbPvjmy5pnvAKEZUrFiLbKF6AY60PHwpu9yvZ3w_q8uepCjb0T-3aXIsWNPRM8QUL-8awOlONmvZlskCILYxqzFX5J_bpO547kGxKnv_A5pHSLciE="
+   }
+  ],
+  "tokens": 4799,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "GoHighLevel authentication API keys OAuth OR",
+    "GoHighLevel getting started quickstart API OR",
+    "GoHighLevel API pricing plans",
+    "GoHighLevel API access partner program",
+    "GoHighLevel API reference index OR",
+    "GoHighLevel MCP server"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://marketplace.gohighlevel.com/docs/oauth-20",
+    "https://marketplace.gohighlevel.com/docs/getting-started",
+    "https://www.gohighlevel.com/404",
+    "https://marketplace.gohighlevel.com/docs/",
+    "https://marketplace.gohighlevel.com/docs/leadconnector-mcp-server",
+    "https://marketplace.gohighlevel.com/docs/private-integrations",
+    "https://marketplace.gohighlevel.com/docs/external-authentication",
+    "https://marketplace.gohighlevel.com/docs/Authorization/OAuth2.0/",
+    "https://marketplace.gohighlevel.com/docs/Authorization/PrivateIntegrationsToken/",
+    "https://marketplace.gohighlevel.com/docs/oauth/ExternalAuthentication/",
+    "https://marketplace.gohighlevel.com/docs/oauth/GettingStarted/",
+    "https://help.gohighlevel.com/support/solutions/articles/48001060529-highlevel-api-documentation",
+    "https://partners.gohighlevel.com/",
+    "https://marketplace.gohighlevel.com/docs/other/mcp/",
+    "https://github.com/drausal/gohighlevel-mcp"
+   ],
+   "bad_candidates": [],
+   "pages_read": [
+    {
+     "url": "https://marketplace.gohighlevel.com/docs/oauth-20",
+     "status": 200,
+     "chars": 43,
+     "readable": false
+    },
+    {
+     "url": "https://marketplace.gohighlevel.com/docs/getting-started",
+     "status": 200,
+     "chars": 43,
+     "readable": false
+    },
+    {
+     "url": "https://www.gohighlevel.com/404",
+     "status": 200,
+     "chars": 461,
+     "readable": true
+    },
+    {
+     "url": "https://marketplace.gohighlevel.com/docs/",
+     "status": 200,
+     "chars": 2110,
+     "readable": true
+    },
+    {
+     "url": "https://marketplace.gohighlevel.com/docs/leadconnector-mcp-server",
+     "status": 200,
+     "chars": 43,
+     "readable": false
+    },
+    {
+     "url": "https://marketplace.gohighlevel.com/docs/private-integrations",
+     "status": 200,
+     "chars": 43,
+     "readable": false
+    },
+    {
+     "url": "https://marketplace.gohighlevel.com/docs/external-authentication",
+     "status": 200,
+     "chars": 43,
+     "readable": false
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 45.6
+ }
+}

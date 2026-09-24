@@ -1,0 +1,162 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.cloudflare.com/en-gb/plans/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.38
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.cloudflare.com/api/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.cloudflare.com/api/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.cloudflare.com/blog/cloudflare-oauth-for-all",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.cloudflare.com/blog/cloudflare-oauth-for-all",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developers.cloudflare.com/fundamentals/oauth/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developers.cloudflare.com/fundamentals/oauth/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.cloudflare.com/plans/developer-platform/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.cloudflare.com/api/overview/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.cloudflare.com/blog/cloudflare-mcp-servers",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.cloudflare.com/blog/introducing-openapi-schemas-cloudflare-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.cloudflare.com/api/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.cloudflare.com/api/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://www.cloudflare.com/blog/cloudflare-mcp-servers",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "bearer_token": true,
+  "api_key": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://www.cloudflare.com/en-gb/plans/', 'https://developers.cloudflare.com/api/', 'https://developers.cloudflare.com/api/', 'https://www.cloudflare.com/blog/cloudflare-oauth-for-all', 'https://www.cloudflare.com/blog/cloudflare-oauth-for-all', 'https://developers.cloudflare.com/fundamentals/oauth/', 'https://developers.cloudflare.com/fundamentals/oauth/', 'https://www.cloudflare.com/plans/developer-platform/', 'https://developers.cloudflare.com/api/overview/', 'https://www.cloudflare.com/blog/cloudflare-mcp-servers', 'https://www.cloudflare.com/blog/introducing-openapi-schemas-cloudflare-api', 'https://www.cloudflare.com/blog/cloudflare-mcp-servers']",
+ "metrics": {
+  "n_evidence": 14,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 1.0,
+  "readable": 14,
+  "quote_supported_rate": 0.14285714285714285,
+  "lint_issues": 0,
+  "flag_count": 1
+ }
+}

@@ -1,0 +1,112 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://stripe.com/in/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.9
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.stripe.com/api/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.61
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.stripe.com/stripe-apps/api-authentication/oauth",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://stripe.com/in/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.stripe.com/api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.92
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.stripe.com/api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.48
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/stripe/openapi",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.75
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.stripe.com/quickstarts",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://docs.stripe.com/mcp",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.03
+  }
+ ],
+ "auth_support": {
+  "api_key": true,
+  "bearer_token": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://stripe.com/in/pricing', 'https://docs.stripe.com/api', 'https://docs.stripe.com/mcp']\n- Non-vendor sources (prefer official docs): ['https://github.com/stripe/openapi']",
+ "metrics": {
+  "n_evidence": 9,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.8888888888888888,
+  "readable": 9,
+  "quote_supported_rate": 0.6666666666666666,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

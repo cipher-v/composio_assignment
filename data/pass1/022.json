@@ -1,0 +1,175 @@
+{
+ "app": {
+  "id": 22,
+  "name": "Twilio",
+  "category": "Communications and Messaging",
+  "hint": "twilio.com"
+ },
+ "record": {
+  "subcategory": "Cloud Communications",
+  "one_liner": "Twilio provides APIs for integrating SMS, WhatsApp, voice calls, email, and verification into software applications.",
+  "auth_methods": [
+   "basic",
+   "api_key",
+   "oauth2"
+  ],
+  "primary_auth": "basic",
+  "auth_notes": "OAuth 2.0 apps are strictly single-tenant. Multi-tenant platforms must collect individual Account SID and Auth Token or API Keys via HTTP Basic.",
+  "access": "self_serve_trial",
+  "access_notes": "Developers can sign up for a free trial without a credit card. The trial expires after 30 days, requiring an upgrade to a usage-based paid plan.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extremely broad REST API covering messaging, voice, video, conversations, flex, serverless, and identity. Officially open-sourced OpenAPI spec available.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Official Twilio Skills and MCP for AI coding agents available on GitHub.",
+  "verdict": "ready_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "Trial expires after 30 days requiring a paid plan, and multi-tenant integration requires collecting individual customer credentials due to single-tenant OAuth limitations.",
+  "evidence": [
+   {
+    "claim": "auth",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZ-FIDzpqbHt5_Glt7zHFVGQUC07yTMOS4dLYk-y0CBCXSZqBaqLXUX4cv9QeL3kXQZZNf7UTdFMdSTtCkp4LYnNUQSUkRnrH__K0se_4r-jlosbBwCsL6PVITJtLkV_09gjbv2MY",
+    "quote": "View your Account SID and Auth Token for API authentication."
+   },
+   {
+    "claim": "access",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFj-dc4XCjgh85SH4jeeymicTfh-sS4c-K22dEhWsKAiTa_pk8uVrfqqcqoCjs9MVK6zmOdVAYGgogWOHcdO5QRvdhpMhCB65rrf-s04gU6VSVoKRmLfypJpuM7GIJWqhbdOR8=",
+    "quote": "Trial accounts expire after 30 days. Upgrade your account before your trial expires to keep building."
+   },
+   {
+    "claim": "api",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG95a8ElCUGoKPShUbR5l52Svn1z9XYAFSRmu2VIUBx8WPgGmsZYXn_UD6LUm_QZwjOlzHKiVJWAEleIP19BSM7xHxqoh6QuWvhN6EFD_EAd5ERUyRJKOExHbg",
+    "quote": "securely authenticate Twilio REST API requests, and best practices for accessing Twilio."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF95TCg2NVwRt-YBIDhY6wwX0Had6rjKZtNvGWqpiNEV33JsYSvQlqCqvl1G7nEUX5TEMrjnRpSRL4zhJrW6XXdiNugCxnqVygoIiDTZycFBhqn-mCDRw==",
+    "quote": "Official Twilio Skills and MCP for AI coding agents. Works across Claude Code, Cursor, Codex, and any tool supporting the Agent Skills standard."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### 1. Product Overview\nTwilio is a cloud communications platform that provides APIs and SDKs for integrating communication channels—such as SMS, MMS, RCS, WhatsApp, programmable voice calls, email (via SendGrid), and phone number verification—directly into software applications.\n* **Source URL:** [hookdeck.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHXCzc3RnP5dN6euIsdlkRBOYIFUBBcVybUvmzNzKBLs6vCFyQVZHHAItj6iMX4n19rdWtE5wvsw9jr-_AAKh2d1lBkxDkgKXVTj4ibI0vpnTsHKQ1RZEVGN-6lEsJaWfCQASdFY3BITQbgg_N3HRmRWKG39oir_2zxSgWZ4txVNJKVw2NzUB7apjV3PxdioIoSOYO)\n* **Verbatim Quote:** `\"Twilio is the leading cloud communications platform, powering SMS, MMS, voice calls, WhatsApp messaging, and more for millions of developers worldwide.\"`\n\n---\n\n### 2. Authentication Methods & Multi-Tenant Integration\nTwilio supports several authentication mechanisms across its public APIs:\n* **Account SID and Auth Token:** Authenticated via standard HTTP Basic Auth.\n  * **Source URL:** [twilio.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZ-FIDzpqbHt5_Glt7zHFVGQUC07yTMOS4dLYk-y0CBCXSZqBaqLXUX4cv9QeL3kXQZZNf7UTdFMdSTtCkp4LYnNUQSUkRnrH__K0se_4r-jlosbBwCsL6PVITJtLkV_09gjbv2MY)\n  * **Verbatim Quote:** `\"View your Account SID and Auth Token for API authentication.\"`\n* **API Keys:** Uses an API Key SID as the username and an API Key Secret as the password via HTTP Basic Auth.\n  * **Source URL:** [twilio.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG95a8ElCUGoKPShUbR5l52Svn1z9XYAFSRmu2VIUBx8WPgGmsZYXn_UD6LUm_QZwjOlzHKiVJWAEleIP19BSM7xHxqoh6QuWvhN6EFD_EAd5ERUyRJKOExHbg)\n  * **Verbatim Quote:** `\"API Keys provide a simple way to authenticate API requests.\"`\n* **OAuth 2.0:** Supports Client Credentials and Authorization Code grant types for account-level and organization-level APIs.\n  * **Source URL:** [twilio.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwfMwY0tAtcphQdDv5rgJRU22ACpNwpNgpPhQoGsiHK79k_7vInJ8keZafBPGgP997HKVFB3ZY-MNFgKcuZKN9OmsnYUzIt1LZUCehPewgooI-CMgj5Y5fanHIwehfPDI0AE3GyeDVYMGVExp8rQ==)\n  * **Verbatim Quote:** `\"Twilio supports two OAuth 2.0 grant types: Client Credentials and Authorization Code.\"`\n\n**Primary Auth for Multi-Tenant Integration:** `basic` (or `api_key`)\nWhile Twilio supports OAuth 2.0, its OAuth applications are strictly single-tenant (account-level). A multi-tenant integration platform cannot create a single public OAuth app for all external customers to authorize. Instead, the platform must collect individual static credentials (`Account SID` + `Auth Token` or `API Key`) from each customer.\n* **Source URL:** [twilio.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRMXM2V25BJUVA4CLyesZlM5uS5yTFmm05aH1XfZ_ZU7I20ThxsHUvOkYvH9Nvex_DpYrmLyZUFipvxSlTP7SQQ47DL0owArpsRK6kY9BQAtaf5IrCYK1ZMWQLu_YYuDcQ6BeREoBGakLV)\n* **Verbatim Quote:** `\"Account-level OAuth apps only work for the account they were created in, not for its subaccounts. Create a separate OAuth app for each subaccount that needs an account-level OAuth app.\"`\n\n---\n\n### 3. Credentials Acquisition & Cost\n* **Acquisition Process:** Any developer can sign up on twilio.com to instantly create a free trial account without providing a credit card.\n  * **Source URL:** [twilio.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFj-dc4XCjgh85SH4jeeymicTfh-sS4c-K22dEhWsKAiTa_pk8uVrfqqcqoCjs9MVK6zmOdVAYGgogWOHcdO5QRvdhpMhCB65rrf-s04gU6VSVoKRmLfypJpuM7GIJWqhbdOR8=)\n  * **Verbatim Quote:** `\"You can sign up for a Twilio free trial account without a credit card.\"`\n* **Cost & Expiry:** The trial account is strictly time-limited to 30 days and includes product-specific free units (e.g., 100 SMS, 3,000 emails, 75 voice minutes). Once the 30 days expire or units are exhausted, developers must upgrade to a paid account operating on usage-based pay-as-you-go pricing.\n  * **Source URL:** [twilio.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFj-dc4XCjgh85SH4jeeymicTfh-sS4c-K22dEhWsKAiTa_pk8uVrfqqcqoCjs9MVK6zmOdVAYGgogWOHcdO5QRvdhpMhCB65rrf-s04gU6VSVoKRmLfypJpuM7GIJWqhbdOR8=)\n  * **Verbatim Quote:** `\"Trial accounts expire after 30 days. Upgrade your account before your trial expires to keep building.\"` and `\"your trial includes transparent, product-specific free units — such as 100 SMS messages, 3,000 emails, and 75 voice minutes\"`\n  * **Source URL:** [twilio.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnqFxckHYZepKSm1ByeOSPDl8e0NdXThOR6RAHsPRapZEMlYVBDkhIVDwnc_97g6PyNSxsqS54UGIgtoQtnbhCGpmIWf3EvnDqQuKsMmrD96jVrcr7bicioNufqJMp)\n  * **Verbatim Quote:** `\"Pay as you go with usage-based pricing.\"`\n* **Access Definition:** `self_serve_trial`\n\n---\n\n### 4. API Technical Details\n* **API Style:** REST API.\n  * **Source URL:** [twilio.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG95a8ElCUGoKPShUbR5l52Svn1z9XYAFSRmu2VIUBx8WPgGmsZYXn_UD6LUm_QZwjOlzHKiVJWAEleIP19BSM7xHxqoh6QuWvhN6EFD_EAd5ERUyRJKOExHbg)\n  * **Verbatim Quote:** `\"securely authenticate Twilio REST API requests, and best practices for accessing Twilio.\"`\n* **API Breadth:** Extremely broad, covering messaging, voice, video, conversations, flex, serverless, and identity management.\n* **OpenAPI Spec:** Yes, officially open-sourced and actively maintained on GitHub (`twilio/twilio-oai`).\n  * **Source URL:** [twilio.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbcZIiAiqCPvq3PttM1Y_2PqLTLJGnetH_d4ut15YnQBDghg7YuSIWJn6C5IgjfCTzPJjQ5tr8S9_w5JmIWo1ueJpcovDm8KWL5OF1gbfjlXsFrD6pTESwNCtc-xsMlv-AMBYpFiIXeOBurtaffWa9O8KAiibC6g4nY3iiXidfkxxP2zh38rADjRUxFEhp3h-GmFEsZIFaAuJV)\n  * **Verbatim Quote:** `\"Today, we are thrilled to share the news that we have officially open-sourced the OpenAPI specification for every Twilio API.\"`\n  * **Source URL:** [github.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGU6XqHsh_BGYE1riTDEfwMWC3lC7FFnzPP4k9amjcYLRP5bRlmrGZVgRB9VEoeny_D2Rgn7wuL-872ddQq-ntLsX-CNdl5AaP7YnsmxUHfoN1UOBOa90u8HqM4dpYm)\n  * **Verbatim Quote:** `\"This repository contains OpenAPI documents for Twilio's API. Files can be found in the json/ and yaml/ directories.\"`\n* **Webhooks:** Yes, Twilio utilizes HTTP callbacks (webhooks) for event notifications and status updates. Payloads are formatted as form data rather than JSON.\n  * **Source URL:** [twilio.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGllfAWxqAk9kv8v1Q1oBRz84G5OOOpF0F8NEu69HpmTOVE6Wo9-YOgn9IlEWEgjLePfxZOz5n0I7du8FVKutNOShFYwR4UlThX-qkqXNXYjt2mvcDb8c_aOWwr-ME9nPw3rO4KWw==)\n  * **Verbatim Quote:** `\"After certain events occur in Twilio, Twilio sends an HTTP request to a webhook URL you provided to Twilio for your web app. This request is called a webhook or callback.\"`\n  * **Source URL:** [hookdeck.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHXCzc3RnP5dN6euIsdlkRBOYIFUBBcVybUvmzNzKBLs6vCFyQVZHHAItj6iMX4n19rdWtE5wvsw9jr-_AAKh2d1lBkxDkgKXVTj4ibI0vpnTsHKQ1RZEVGN-6lEsJaWfCQASdFY3BITQbgg_N3HRmRWKG39oir_2zxSgWZ4txVNJKVw2NzUB7apjV3PxdioIoSOYO)\n  * **Verbatim Quote:** `\"Twilio webhooks use application/x-www-form-urlencoded format - not JSON.\"`\n* **Sandbox:** Yes, the trial account serves as a sandbox environment with specific functional constraints.\n  * **Source URL:** [twilio.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCEDPTxL7LfcWjDAdnqBGuPGFRpuBcO7fVa_5Sx45PUn3c_duSSwHyEKfre3TTmVM13AGYc0-NgYkVF8pIRCq6BzHGPQxqL9lSTm_GPfgRiHMkPsn_qKkEFBPQkOVnQabS4FWiJLE0yhurVgiei2ZZGDKXY_iS3JgUhOgeYUGrca6BMubwa7rIXA==)\n  * **Verbatim Quote:** `\"You can call or message only verified recipients from a trial account.\"`\n\n---\n\n### 5. Model Context Protocol (MCP) Servers\n* **MCP Server Availability:** `official`\n* Twilio provides an official MCP server (currently in public beta) that allows AI agents to search documentation and interact directly with Twilio APIs.\n  * **Source URL:** [github.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF95TCg2NVwRt-YBIDhY6wwX0Had6rjKZtNvGWqpiNEV33JsYSvQlqCqvl1G7nEUX5TEMrjnRpSRL4zhJrW6XXdiNugCxnqVygoIiDTZycFBhqn-mCDRw==)\n  * **Verbatim Quote:** `\"Official Twilio Skills and MCP for AI coding agents. Works across Claude Code, Cursor, Codex, and any tool supporting the Agent Skills standard.\"`\n  * **Source URL:** [github.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWpTcamn5GVpMraMhvZo8Kogue4_CuZ3QDf3Fv0ktuSNGycHFx35GlRNLlewzIb3_dbHZq8AfqbAIENJ7CQIeEeopuea3CGYXq58NRDwqnOEvi6aRYDorCrlYUBg==)\n  * **Verbatim Quote:** `\"This is a monorepo for the Model Context Protocol server that exposes all of Twilio APIs.\"`\n\n---\n\n### 6. Buildability Verdict\n* **Verdict:** `ready_with_friction`\n* **Main Blocker / Hurdle:** `trial_expiry` and `per_customer_credential_collection`. \nWhile Twilio provides comprehensive public documentation, an official OpenAPI specification, and an official MCP server, developers face a strict 30-day trial expiration hurdle before needing a paid plan. Furthermore, because Twilio's OAuth 2.0 implementation is single-tenant (account-level), a multi-tenant platform cannot utilize a unified public OAuth app and must collect individual static credentials (Account SID + Auth Token / API Key) from each customer.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"twilio\" oauth apps multi tenant public oauth",
+   "\"twilio\" openapi spec github",
+   "\"twilio\" free tier trial pricing api access",
+   "\"twilio\" mcp server github",
+   "",
+   "\"organization oauth apps\" twilio docs",
+   "\"Twilio Connect\" overview docs",
+   "\"Account OAuth apps\" twilio multi tenant",
+   "twilio oauth 2.0 public application third party",
+   "twilio webhooks documentation",
+   "\"Twilio Connect\" deprecated",
+   "\"Twilio Connect\" vs \"OAuth 2.0\" twilio",
+   "\"do twilio trial accounts expire\"",
+   "twilio trial account limitations expiration"
+  ],
+  "search_sources": [
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrEciPXf3KUI-4TvIsJIy1tmeo7Bpm1BlAvrEtyiBp7scEKVhfKYNBGwyXwpDpecJozU0B3wqSTdHlw0f13Tli6SV4VVNKSdN5XsWNPLVLATAs8DE3VyRNgVOBSI9kyxgiAhmCT-k8df11XFIXYERN2uHnFw=="
+   },
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFj-dc4XCjgh85SH4jeeymicTfh-sS4c-K22dEhWsKAiTa_pk8uVrfqqcqoCjs9MVK6zmOdVAYGgogWOHcdO5QRvdhpMhCB65rrf-s04gU6VSVoKRmLfypJpuM7GIJWqhbdOR8="
+   },
+   {
+    "title": "fusionauth.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfQowmv3RLI9KNrE_SpzcgnXcuLUIF_d_EG2YDoN9ch-npbk-swHF4poC5BAjPsmoJ4RgswPyG8Y5gCqbXtWNjfLBPDYXMltT9uKiS5RQUALNGdAmGGYtkDhR35GhKp6Vew8ur6e92sXvZUUiDZ55HHnBGIvdoXpc="
+   }
+  ],
+  "tokens": 16218,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Twilio developer documentation authentication API keys OAuth page",
+    "Twilio getting started quickstart guide",
+    "Twilio pricing API access developer program",
+    "Twilio API reference index",
+    "Twilio MCP server official community"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://www.twilio.com/docs/iam/api-keys",
+    "https://www.twilio.com/docs/usage",
+    "https://www.twilio.com/en-us/pricing",
+    "https://www.twilio.com/docs/usage/api",
+    "https://www.twilio.com/docs/ai/mcp",
+    "https://www.twilio.com/docs/messaging/quickstart",
+    "https://www.twilio.com/docs/iam/oauth-apps/org-oauth-apps",
+    "https://www.twilio.com/docs/messaging/quickstart/no-code-sms-studio-quickstart",
+    "https://www.twilio.com/en-us/blog/developers/twilio-update-e4-mcp",
+    "https://help.twilio.com/articles/43750712673819",
+    "https://github.com/twilio-labs/mcp",
+    "https://mcpservers.org/servers/twilio-labs/mcp"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://www.twilio.com/docs/iam/oauth/oauth-apps",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://www.twilio.com/docs/iam/api-keys",
+     "status": 200,
+     "chars": 5240,
+     "readable": true
+    },
+    {
+     "url": "https://www.twilio.com/docs/usage",
+     "status": 200,
+     "chars": 5799,
+     "readable": true
+    },
+    {
+     "url": "https://www.twilio.com/en-us/pricing",
+     "status": 200,
+     "chars": 22710,
+     "readable": true
+    },
+    {
+     "url": "https://www.twilio.com/docs/usage/api",
+     "status": 200,
+     "chars": 4394,
+     "readable": true
+    },
+    {
+     "url": "https://www.twilio.com/docs/ai/mcp",
+     "status": 200,
+     "chars": 9175,
+     "readable": true
+    },
+    {
+     "url": "https://www.twilio.com/docs/messaging/quickstart",
+     "status": 200,
+     "chars": 55568,
+     "readable": true
+    },
+    {
+     "url": "https://www.twilio.com/docs/iam/oauth-apps/org-oauth-apps",
+     "status": 200,
+     "chars": 14732,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 242.5
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.usepylon.com/schedule-demo",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.58
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.68
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.usepylon.com/pylon-docs/developer/mcp",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.usepylon.com/pylon-docs/developer/api/api-reference",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://docs.usepylon.com/pylon-docs/developer/mcp",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "bearer_token": true,
+  "oauth2": false
+ },
+ "lint": [
+  "no evidence cited for api"
+ ],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://docs.usepylon.com/pylon-docs/developer/mcp', 'https://docs.usepylon.com/pylon-docs/developer/mcp']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://docs.usepylon.com/pylon-docs/developer/api/api-reference']\n- Auth methods not mentioned on any cited page: ['oauth2']\n- Consistency: no evidence cited for api",
+ "metrics": {
+  "n_evidence": 5,
+  "alive_rate": 0.6,
+  "dead_rate": 0.4,
+  "blocked_rate": 0.0,
+  "official_rate": 1.0,
+  "readable": 3,
+  "quote_supported_rate": 0.6666666666666666,
+  "lint_issues": 1,
+  "flag_count": 4
+ }
+}

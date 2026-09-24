@@ -1,0 +1,192 @@
+{
+ "app": {
+  "id": 5,
+  "name": "Twenty",
+  "category": "CRM and Sales",
+  "hint": "twenty.com (open-source CRM)"
+ },
+ "record": {
+  "subcategory": "Customer Relationship Management (CRM)",
+  "one_liner": "An open-source CRM platform providing auto-generated REST and GraphQL APIs with a developer-first approach to customization.",
+  "auth_methods": [
+   "oauth2",
+   "api_key",
+   "bearer_token"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Supports OAuth 2.0/2.1 with dynamic client registration (RFC 7591) and workspace API keys passed via Bearer or x-api-key headers.",
+  "access": "self_serve_free",
+  "access_notes": "Twenty is free to self-host. The cloud-hosted version offers a free trial without a credit card, with paid plans starting at $9 per user/month.",
+  "api_styles": [
+   "rest",
+   "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Features a Core API for record CRUD operations (People, Companies, Opportunities, Tasks, Notes, and custom objects) and a Metadata API for schema management.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Every Cloud workspace ships with a native, first-party MCP server, and it is also documented for self-hosted deployments.",
+  "verdict": "ready_with_friction",
+  "blocker": "unclear_or_sparse_docs",
+  "blocker_notes": "There is no single static public API reference or OpenAPI spec because Twenty auto-generates a unique schema and endpoints per tenant based on custom objects.",
+  "evidence": [
+   {
+    "claim": "auth",
+    "url": "https://twenty.com",
+    "quote": "Authorization: Bearer YOUR_API_KEY. Create an API key in Settings → API & Webhooks → + Create key. Copy it immediately — it's shown once."
+   },
+   {
+    "claim": "access",
+    "url": "https://twenty.com/pricing",
+    "quote": "Simple pricing start your free trial today without credit card. monthly yearly -25% self-hosting pro $9 /user/month ... start for free"
+   },
+   {
+    "claim": "api",
+    "url": "https://twenty.com",
+    "quote": "Two APIs. Core API — /rest/ and /graphql/ CRUD on records: People, Companies, Opportunities, your custom objects. Query, filter, traverse relations. Metadata API — /rest/metadata/ and /metadata/ Schema management: create/modify/delete objects, fields, and relations."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://twenty.com",
+    "quote": "Every Cloud workspace ships with a native MCP server."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://twenty.com",
+    "quote": "Schema-per-tenant APIs. There is no static API reference for Twenty. Each workspace has its own schema — when you add a custom object (say Invoice ), it immediately gets REST and GraphQL endpoints identical to built-in objects like Company or Person ."
+   }
+  ],
+  "confidence": 0.95
+ },
+ "notes": "### 1. What the Product Does\nTwenty is an open-source, developer-first Customer Relationship Management (CRM) platform designed as a modern alternative to Salesforce. It allows teams to manage standard CRM entities such as people, companies, opportunities, tasks, and notes, while providing a no-code data model builder to create custom objects and fields. It also features visual workflow automations and native email/calendar synchronization.\n* **Source:** `https://twenty.com` (via search snippet)\n* **Verbatim Quote:** \"Twenty delivers an open-source CRM with a developer-first approach that puts customization control directly in your hands. The platform combines no-code data modeling with auto-generated APIs, making it a solid choice for technical teams who want to build custom workflows without vendor lock-in.\"\n* **Source:** `https://twenty.com` (via search snippet)\n* **Verbatim Quote:** \"Twenty is an open-source CRM and a modern alternative to Salesforce. It auto-generates both a REST API and a GraphQL API from your workspace data model, exposing a Core API for records (People, Companies, Opportunities, Notes, Tasks, and custom objects) and a Metadata API for schema (objects, fields, and relations).\"\n\n### 2. API Authentication Methods & Multi-Tenant Integration\nTwenty supports two primary methods of authentication:\n* **API Keys / Bearer Tokens:** Users can generate static keys within their workspace settings, which are passed via the `Authorization: Bearer` header or `x-api-key` header.\n  * **Source:** `https://twenty.com` (via search snippet)\n  * **Verbatim Quote:** \"Authorization: Bearer YOUR_API_KEY. Create an API key in Settings → API & Webhooks → + Create key. Copy it immediately — it's shown once.\"\n* **OAuth 2.0 / 2.1:** Supports Authorization Code Flow with PKCE for user-facing applications and Client Credentials Flow for server-to-server integrations. It utilizes dynamic client registration per RFC 7591 rather than a centralized developer dashboard.\n  * **Source:** `https://twenty.com` (via search snippet)\n  * **Verbatim Quote:** \"Twenty implements OAuth 2.0 with authorization code + PKCE for user-facing apps and client credentials for server-to-server access. Clients are registered dynamically via RFC 7591 — no manual setup in a dashboard.\"\n* **Primary Auth for Multi-Tenant Integration:** `oauth2`\n  * **Reasoning:** A multi-tenant integration platform would use `oauth2` (via the Authorization Code Flow) to act securely on behalf of users, leveraging dynamic client registration (`POST /oauth/register`) to connect to individual cloud or self-hosted tenants. Alternatively, `api_key` / `bearer_token` can be used if the end-user provides their workspace key directly.\n  * **Source:** `https://twenty.com` (via search snippet)\n  * **Verbatim Quote:** \"For OAuth-based access (external apps acting on behalf of users), see OAuth.\"\n\n### 3. How to Get Credentials & Cost\n* **Access Category:** `self_serve_free`\n* **How to Get Credentials:** A developer can obtain an API key directly from their workspace UI under developer settings, or programmatically register an OAuth client using the registration endpoint.\n  * **Source:** `https://twenty.com` (via search snippet)\n  * **Verbatim Quote:** \"Create an API key in Settings → API & Webhooks → + Create key.\"\n  * **Source:** `https://twenty.com` (via search snippet)\n  * **Verbatim Quote:** \"No manual setup needed — register programmatically: POST /oauth/register\"\n* **Cost:** Twenty is open-source and entirely free to self-host. For the cloud-hosted version, a free trial is available without a credit card, and paid plans start at $9 per user/month.\n  * **Source:** `https://twenty.com/pricing`\n  * **Verbatim Quote:** \"Simple pricing start your free trial today without credit card. monthly yearly -25% self-hosting pro $9 /user/month ... start for free\"\n  * **Source:** `https://twenty.com` (via search snippet)\n  * **Verbatim Quote:** \"Twenty is free to self-host and available as a managed Twenty Cloud offering.\"\n\n### 4. API Style & Technical Details\n* **API Style:** REST and GraphQL are both fully supported.\n  * **Source:** `https://twenty.com` (via search snippet)\n  * **Verbatim Quote:** \"Both are available as REST and GraphQL. GraphQL adds batch upserts and the ability to traverse relations in a single query. Same underlying data either way.\"\n* **API Breadth:** Extensive coverage divided into the Core API (for record CRUD operations) and the Metadata API (for data model and schema management).\n  * **Source:** `https://twenty.com` (via search snippet)\n  * **Verbatim Quote:** \"Two APIs. Core API — /rest/ and /graphql/ CRUD on records: People, Companies, Opportunities, your custom objects. Query, filter, traverse relations. Metadata API — /rest/metadata/ and /metadata/ Schema management: create/modify/delete objects, fields, and relations.\"\n* **OpenAPI Spec:** There is no single static public OpenAPI spec. Instead, Twenty dynamically auto-generates a workspace-specific OpenAPI specification for each tenant based on its custom schema.\n  * **Source:** `https://twenty.com` (via search snippet)\n  * **Verbatim Quote:** \"Schema-per-tenant APIs. There is no static API reference for Twenty. Each workspace has its own schema — when you add a custom object (say Invoice ), it immediately gets REST and GraphQL endpoints identical to built-in objects like Company or Person . The API is generated from the schema...\"\n  * **Source:** `https://github.com/twentyhq` (via search snippet)\n  * **Verbatim Quote:** \"Download the OpenAPI specification from your Twenty instance\"\n* **Webhooks:** Supports real-time, signed webhooks that trigger on record creation, updates, or deletions.\n  * **Source:** `https://twenty.com` (via search snippet)\n  * **Verbatim Quote:** \"Webhooks in Twenty complement the API by enabling real-time notifications to your own applications when certain events happen in your CRM.\"\n* **Sandbox:** Developers can use a free self-hosted instance or a free trial cloud workspace as a sandbox environment.\n\n### 5. Model Context Protocol (MCP) Servers\n* **MCP Category:** `official`\n* **Details:** Twenty provides a native, first-party MCP server out of the box for both cloud and self-hosted deployments. Additionally, multiple community-maintained MCP servers exist.\n  * **Source:** `https://twenty.com` (via search snippet)\n  * **Verbatim Quote:** \"Twenty's offering is First-party MCP server with OAuth, documented for both Cloud and self-hosted deployments (docs.twenty.com).\"\n  * **Source:** `https://twenty.com` (via search snippet)\n  * **Verbatim Quote:** \"Every Cloud workspace ships with a native MCP server.\"\n  * **Source:** `https://github.com/mhenry3164/twenty-crm-mcp-server`\n  * **Verbatim Quote:** \"🤖 twenty crm mcp server transform your crm into an ai-powered assistant a model context protocol server that connects twenty crm with claude and other ai assistants...\"\n\n### 6. Buildability Verdict\n* **Verdict:** `ready_with_friction`\n* **Main Blocker / Hurdle:** **Schema-per-tenant API structure.** Because Twenty auto-generates unique endpoints and schemas for each workspace based on custom objects and fields, there is no single static OpenAPI specification that can be used to build a universal toolkit. A multi-tenant integration platform must dynamically fetch or download the workspace-specific OpenAPI spec or schema from each customer's instance at runtime or setup time.\n  * **Source:** `https://twenty.com` (via search snippet)\n  * **Verbatim Quote:** \"Schema-per-tenant APIs. There is no static API reference for Twenty. Each workspace has its own schema — when you add a custom object (say Invoice ), it immediately gets REST and GraphQL endpoints identical to built-in objects like Company or Person .\"",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"Twenty CRM\" API documentation",
+   "\"Twenty CRM\" developer docs authentication",
+   "\"Twenty\" CRM webhooks OpenAPI",
+   " API docs",
+   "\"Twenty CRM\" OAuth documentation",
+   " \"OAuth\" developers",
+   "\"Twenty\" CRM API \"OAuth\" client id",
+   "\"Twenty\" CRM \"OpenAPI\" spec download",
+   " mcp",
+   "\"twenty\" crm official mcp server",
+   "\"docs.twenty.com\" mcp"
+  ],
+  "search_sources": [
+   {
+    "title": "glama.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkqlI5G-2JLbNmlT6fCpA03XfTfcJruYZD0mJJu42_00ifhyQmRRdmQ4TeczhBZnBTnmfe7hXqYF2osx4C2MYkV3MuiX_DRaAYZkBSazKsiijjeGAABXdibm-F0UwyRkUZMxzlcrOl2A7aV51x-YB7avuThEgqHQqRPQ=="
+   },
+   {
+    "title": "relaticle.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyU7FtLUJwWYh9lEACW71R5zCrx-LMJrmqdEZfT4d13JcPiy3_ydy-0KdC80VBaafldm6hwoDvSKCRjsatNOme4FqesSKZA7wo7WY4cGJx7hiYBnciz5LFed3fnFdb2CcDnEVhU-Sm1fbP9WIzyW1ArORCK1rGG2o1pEbphw=="
+   },
+   {
+    "title": "relaticle.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEO0dD772PxI2TkoYWaEAtlkXgDfpjBhGhUsAd6LmhmOyZ8J05tqcuPqY3bYDK1wDnbEcz226_MTWdP2vqtj8R6UoRJNKwpcFcex6ItXVJwcl23YkLnu5m_LBvGs4xcDoOVqHF3f29E48z-OQ=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBgVu38_AfHYvhJq9YMpqAQaeqqVXEjqkWYcpDA7CrSZb2b979zuLIlyLBeVk0j6Q82sl9SLdMPTcBtPR59WYsIQFP4fmlvTaufGqmhES8eB_gekuDCBETvOrYO2LWLJp-lFbhMOiZukukPPN9"
+   },
+   {
+    "title": "claude.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLp7uqj8KxNRhrTqo_HQ21DZAVJcAc2VgSa2960UOUO_N_RgziVHtm6xqcCz6Up0MXKJsu8tg3Qt1FiM0mecBXDM5mX1nWNTBw3cCYgIH9AnmrBUL9vBHy-8q7ZwJq5jQf3SMmAiFrPVahMkgniyIrGYZHfrahGJTgoqhQxBG_b4O1D0ycZibuk4PeVPtdMhuCuMM="
+   },
+   {
+    "title": "wikipedia.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFblKPIPEVlBreOTG73l8IYf64hngdld_OiuZVsLwZoC3GVSPhyZNevZZTdwoByM5W2DqbmrFUod9DpLaiaxOEZfnI5Ys7Ib19UpVEDDTgV8IvY5HP7yv1M-c2ZbYxaP-elIY7NYjxwYblP0QjpxQ=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlFtw53_W50LmC-l_wuZz2ch8ChzrTa0HJJrixZ18NDFoZg_uqsevsznlJ1sAWNSgZCGGRfbP_pcvJ1ePdsDzNO59g73nMhpuSHfJL2XFfdgs4iXLfbR6ZZXJrMBtJ"
+   },
+   {
+    "title": "modelcontextprotocol.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGYTD4N6Xlbqy11GN38xuH7sFV0wQVDp-KR8Os1273PHnDCoNq15MzBCeN9kI1MEIsv_jCf4QX4LhUwaA0L-I6hUFtQ0QGqt4oG8kgKmwzlj1Wv_nwlwiKlu_yDF6UWrPEP5cBml-4ydycfEv451giPZnw_v9VMBeKraYp7nsI"
+   },
+   {
+    "title": "context7.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvqr8lOfmSegly7dqvqfkoBLc7GckRMdERtWANyGp8KT8so3nikyftJexnlFfi3tJC9iP_ZitQ8V-eYsSXJVaT3PEr-eCtTCmOMytLXABEdHyxQj0fbBfBGreWFKhngqV_cu4OBzT1iyJiA3-FyPE="
+   },
+   {
+    "title": "skywork.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9GRzjqBNZHVqu0WQw70hDs8Y8O5RVNm_s38TOc_5-tt3jPb4BetPJtK-RrkllFb76RRTMV-nGP4qsn_puzE2_pVjxi1b8oVBAqFFtPksCd4RdXEECJm1B2SFwX9TpSz2kJ_gG_UsWN6_QjSOsNyqYKT_M-Du2HNROK35sN87vCMC8aALfoQ=="
+   }
+  ],
+  "tokens": 9630,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Twenty CRM developer documentation authentication API keys OAuth",
+    "Twenty CRM developer documentation getting started quickstart",
+    "Twenty CRM pricing API access plans",
+    "Twenty CRM API reference index",
+    "Twenty CRM MCP server official community",
+    " \"Authentication\" developer documentation",
+    " \"Quickstart\" developer documentation",
+    " \"API Reference\" index",
+    " \"Partner Program\" \"Developer Program\"",
+    "Twenty CRM official MCP server documentation",
+    " \"Partner Program\"",
+    " \"Developer Program\""
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://twenty.com/pricing",
+    "https://github.com/mhenry3164/twenty-crm-mcp-server"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://twenty.com/docs/developers/api/authentication",
+     "status": 404
+    },
+    {
+     "url": "https://twenty.com/docs/developers/apps/getting-started",
+     "status": 404
+    },
+    {
+     "url": "https://twenty.com/docs/developers/api",
+     "status": 404
+    },
+    {
+     "url": "https://twenty.com/docs/developers/api/oauth",
+     "status": 404
+    },
+    {
+     "url": "https://twenty.com/docs/developers/self-host/docker-compose",
+     "status": 404
+    },
+    {
+     "url": "https://github.com/lobehub/twenty-crm-mcp-server",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://twenty.com/pricing",
+     "status": 200,
+     "chars": 5691,
+     "readable": true
+    },
+    {
+     "url": "https://github.com/mhenry3164/twenty-crm-mcp-server",
+     "status": 200,
+     "chars": 10939,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 149.2
+ }
+}

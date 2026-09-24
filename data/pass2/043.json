@@ -1,0 +1,274 @@
+{
+ "app": {
+  "id": 43,
+  "name": "BigCommerce",
+  "category": "Ecommerce",
+  "hint": "developer.bigcommerce.com"
+ },
+ "record": {
+  "subcategory": "E-commerce Platform",
+  "one_liner": "BigCommerce is a SaaS e-commerce platform for building, managing, and scaling online stores with comprehensive features.",
+  "auth_methods": [
+   "bearer_token",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 Authorization Code Grant for marketplace applications (app-level credentials); static bearer tokens for store-level custom scripts.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can sign up for a free Developer Portal account and create a free, non-transacting sandbox store for testing and development. API credentials can be generated for both store-level (static token) and app-level (OAuth) access. Apps in a \"Draft\" state can be installed on any store owned by the developer without review. To make an app installable by other merchants (as an \"Unlisted\" or \"Public\" app), it must be submitted for review. A $99 fee is required for each new app submission to the marketplace for standard partners.",
+  "api_styles": [
+   "rest",
+   "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Primarily REST for store management (products, orders, customers, etc.) and Storefront operations, with a GraphQL Storefront API. Covers catalogs, carts, checkouts, orders, customers, price lists, promotions, shipping, and system logs.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "BigCommerce officially provides a native Storefront MCP server. Community-built MCP servers also exist.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. A developer can create a free sandbox store and generate API credentials to start building immediately.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://docs.bigcommerce.com/developer/api-reference/rest/admin/overview",
+    "quote": "Server-side REST APIs for managing store data and operations. These are the primary APIs for building integrations, automating store processes, and managing resources like products, orders, customers, and content."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts",
+    "quote": "BigCommerce offers three types of OAuth-based API accounts to developers who wish to use BigCommerce's REST APIs: store-level credentials, app-level credentials, and account-level credentials."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide/auth",
+    "quote": "The app sends POST request to BigCommerce to request a unique access_token for the store. BigCommerce responds with either an error or an access_token unique to the merchant's store"
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/quick-start",
+    "quote": "To get started with developing BigCommerce apps, you will first need to create a Developer Portal account. You will use your Developer Portal account to register and submit your app for review. You will also need to start a free store trial to test your app."
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.bigcommerce.com/developer/docs/overview/quick-start",
+    "quote": "Create a sandbox store. Sign up for a free BigCommerce trial store to test API calls and build integrations without affecting live data."
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.bigcommerce.com/developer/api-reference/rest/admin/management/pricing",
+    "quote": "A fee of $99 is required for each submission from our Standard Technology level partners, however this fee will be waived for Preferred or Elite tier apps."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.bigcommerce.com/developer/api-reference/rest/admin/overview",
+    "quote": "You can download generated OpenAPI specification files for API references in JSON or YAML."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.bigcommerce.com/developer/api-reference/rest/admin/overview",
+    "quote": "Real-time event notifications via webhooks."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.bigcommerce.com/developer/api-reference/rest/admin/overview",
+    "quote": "BigCommerce Storefront MCP is now available to every store on the platform... BigCommerce's Storefront MCP server gives AI agents purpose-built commerce tools to do exactly that: interact with a BigCommerce storefront through natural language on behalf of any shopper."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://docs.bigcommerce.com/developer/api-reference/rest/admin/management/pricing",
+    "quote": "A fee of $99 is required for each submission from our Standard Technology level partners, however this fee will be waived for Preferred or Elite tier apps."
+   }
+  ],
+  "confidence": 0.9,
+  "changes": [
+   {
+    "field": "access",
+    "old": "approval_required",
+    "new": "self_serve_free",
+    "reason": "A developer can sign up for a free developer account and a free sandbox store to build and test an application. An app can be installed on any store owned by the same developer account email without any review. The approval is for distribution, not for initial access and use.",
+    "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/quick-start"
+   },
+   {
+    "field": "access_notes",
+    "old": "Developers can sign up for a free Developer Portal account and create a free trial store for testing. Public multi-tenant integrations require app review and a $99 submission fee for the BigCommerce App Marketplace.",
+    "new": "Developers can sign up for a free Developer Portal account and create a free, non-transacting sandbox store for testing and development. API credentials can be generated for both store-level (static token) and app-level (OAuth) access. Apps in a \"Draft\" state can be installed on any store owned by the developer without review. To make an app installable by other merchants (as an \"Unlisted\" or \"Public\" app), it must be submitted for review. A $99 fee is required for each new app submission to the marketplace for standard partners.",
+    "reason": "The original notes were misleading by emphasizing the approval process. The corrected notes clarify that development and testing are fully self-serve and free. The approval and fee are only required for distributing the app to other merchants via the marketplace or as an unlisted app, which is a friction point but not a blocker to initial access.",
+    "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/quick-start"
+   },
+   {
+    "field": "verdict",
+    "old": "ready_with_friction",
+    "new": "ready_now",
+    "reason": "The original verdict was ready_with_friction based on the incorrect assumption that app approval was a blocker to getting started. Since a developer can self-serve API credentials and build/test on a free sandbox store without any approval, the correct verdict is ready_now. The friction (app review and fee) applies to distribution, not initial development.",
+    "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/quick-start"
+   },
+   {
+    "field": "blocker",
+    "old": "app_review_or_approval",
+    "new": "none",
+    "reason": "Consistent with the change in access and verdict, there is no upfront blocker to development.",
+    "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/quick-start"
+   },
+   {
+    "field": "blocker_notes",
+    "old": "The main blocker is the mandatory App Marketplace review process and the $99 app submission fee required to take a multi-tenant OAuth application live for production merchants.",
+    "new": "None. A developer can create a free sandbox store and generate API credentials to start building immediately.",
+    "reason": "The previous notes about the app review and fee are not a blocker to development, but rather a step for public distribution.",
+    "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/quick-start"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### **VERIFICATION NOTES**\n\nHere is a field-by-field verification of the initial research record for \"BigCommerce\".\n\n---\n\n**subcategory**: **CONFIRMED**\n*   **Value**: `E-commerce Platform`\n*   **Reasoning**: BigCommerce is consistently described as a SaaS e-commerce platform for building and managing online stores. This is the correct classification.\n\n**one_liner**: **CONFIRMED**\n*   **Value**: `BigCommerce is a SaaS e-commerce platform for building, managing, and scaling online stores with comprehensive features.`\n*   **Reasoning**: The official documentation and search results describe BigCommerce as a platform to \"Build, customize, and scale\" and as a \"leading e-commerce platform that enables businesses to create and manage online stores\". The one-liner is an accurate summary.\n\n**auth_methods**: **CONFIRMED**\n*   **Value**: `[\"bearer_token\", \"oauth2\"]`\n*   **Reasoning**: BigCommerce documentation details two primary authentication methods. For multi-tenant marketplace apps, OAuth 2.0 is required. For single-store integrations or scripts, developers can create store-level API accounts which provide a static `X-Auth-Token` (bearer token) for API calls. The documentation refers to these as \"OAuth-based API accounts\" but distinguishes between \"app-level\" (true OAuth 2.0 flow) and \"store-level\" (static token generation).\n\n**primary_auth**: **CONFIRMED**\n*   **Value**: `oauth2`\n*   **Reasoning**: For multi-tenant apps intended for the App Marketplace, OAuth 2.0 is the required and recommended authentication method. This makes it the primary method for a platform integration.\n\n**auth_notes**: **CONFIRMED**\n*   **Value**: `OAuth 2.0 Authorization Code Grant for marketplace applications (app-level credentials); static bearer tokens for store-level custom scripts.`\n*   **Reasoning**: The documentation confirms that \"Single-click apps\" (the recommended type for the marketplace) use the OAuth 2.0 Authorization Code Grant flow. It also describes the creation of \"store-level API accounts\" which generate a static access token (bearer token) for authenticating requests.\n\n**access**: **WRONG**\n*   **Correct Value**: `self_serve_free`\n*   **Reasoning**: The initial record incorrectly stated `approval_required`. A developer can sign up for a free developer account and a free sandbox store to build and test an application. An app can be installed on any store owned by the same developer account email without any review (\"Draft\" apps). To install an app on a store *not* owned by the developer, the app must be submitted for review to become \"Unlisted\" or \"Public\". However, because a developer can get API credentials and use them on their own stores for free without approval, the access is self-serve. The approval is for distribution, not for initial access and use.\n\n**access_notes**: **WRONG**\n*   **Correct Value**: `Developers can sign up for a free Developer Portal account and create a free, non-transacting sandbox store for testing and development. [3, 19, 32] API credentials can be generated for both store-level (static token) and app-level (OAuth) access. [1, 7] Apps in a \"Draft\" state can be installed on any store owned by the developer without review. [30, 41] To make an app installable by other merchants (as an \"Unlisted\" or \"Public\" app), it must be submitted for review. [30, 34] A $99 fee is required for each new app submission to the marketplace for standard partners. [22, 33, 35]`\n*   **Reasoning**: The original notes were misleading by emphasizing the approval process. The corrected notes clarify that development and testing are fully self-serve and free. The approval and fee are only required for distributing the app to other merchants via the marketplace or as an unlisted app, which is a friction point but not a blocker to initial access.\n\n**api_styles**: **CONFIRMED**\n*   **Value**: `[\"rest\", \"graphql\"]`\n*   **Reasoning**: The developer documentation clearly outlines both REST APIs (for Admin and Storefront) and a GraphQL Storefront API.\n\n**api_breadth**: **CONFIRMED**\n*   **Value**: `broad`\n*   **Reasoning**: The APIs cover a wide range of functionalities including catalog management (products, categories), orders, customers, content, payments, shipping, and webhooks, justifying the \"broad\" classification.\n\n**api_notes**: **CONFIRMED**\n*   **Value**: `Primarily REST for store management (products, orders, customers, etc.) and Storefront operations, with a GraphQL Storefront API. Covers catalogs, carts, checkouts, orders, customers, price lists, promotions, shipping, and system logs.`\n*   **Reasoning**: The documentation confirms the existence of server-side REST APIs for managing store data and a GraphQL API for storefronts. The list of covered resources is accurate.\n\n**openapi_spec**: **CONFIRMED**\n*   **Value**: `true`\n*   **Reasoning**: The documentation explicitly states, \"You can download generated OpenAPI specification files for API references in JSON or YAML.\" BigCommerce also maintains a GitHub repository for their OpenAPI specifications.\n\n**webhooks**: **CONFIRMED**\n*   **Value**: `true`\n*   **Reasoning**: BigCommerce provides extensive documentation on using webhooks to receive real-time notifications for events like order creation or product inventory changes. Webhooks can be managed via the API.\n\n**sandbox**: **CONFIRMED**\n*   **Value**: `true`\n*   **Reasoning**: Developers can create a free \"sandbox store\" through the Partner Portal. These stores are for development and testing and cannot process live transactions.\n\n**mcp**: **CONFIRMED**\n*   **Value**: `official`\n*   **Reasoning**: BigCommerce officially announced and documented a \"Storefront MCP server\" that allows AI agents to interact with a storefront using natural language. It is available as an early access feature in the store control panel. While community MCPs also exist, the presence of a vendor-provided one makes this \"official\".\n\n**mcp_notes**: **CONFIRMED**\n*   **Value**: `BigCommerce officially provides a native Storefront MCP server. [6, 20] Community-built MCP servers also exist. [13, 15]`\n*   **Reasoning**: The search results confirm that BigCommerce has released its own Storefront MCP server for AI agents. Separately, open-source, community-built MCP servers for the BigCommerce API are also available.\n\n**verdict**: **WRONG**\n*   **Correct Value**: `ready_now`\n*   **Reasoning**: The original verdict was `ready_with_friction` based on the incorrect assumption that app approval was a blocker to getting started. Since a developer can self-serve API credentials and build/test on a free sandbox store without any approval, the correct verdict is `ready_now`. The friction (app review and fee) applies to distribution, not initial development.\n\n**blocker**: **WRONG**\n*   **Correct Value**: `none`\n*   **Reasoning**: Consistent with the change in `access` and `verdict`, there is no upfront blocker to development.\n\n**blocker_notes**: **WRONG**\n*   **Correct Value**: `None. A developer can create a free sandbox store and generate API credentials to start building immediately.`\n*   **Reasoning**: The previous notes about the app review and fee are not a blocker to development, but rather a step for public distribution.\n\n---\n### **UNCERTAIN FIELDS**\n\nNone. The documentation was clear and sufficient to verify all fields.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "BigCommerce API authentication methods",
+   "BigCommerce create API account",
+   "BigCommerce developer free account",
+   "BigCommerce app review requirements for API access",
+   "BigCommerce unlisted app API access",
+   "BigCommerce sandbox store",
+   "BigCommerce OpenAPI spec",
+   "BigCommerce webhooks",
+   "BigCommerce MCP server",
+   "BigCommerce app submission fee"
+  ],
+  "search_sources": [
+   {
+    "title": "bigcommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5J96_c_NqQzUVwJizUhh0ZI3oqWC68es4wqcI4zGd86HE9dGrAbx0msvhHdf3izuvWOi0WxueVbbTsLYnOL_p1xDsNSYQmtDFPJEwdCbiVwC4Qp3DbpLR"
+   },
+   {
+    "title": "youtube.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgMABVPKnyR4Wmf86tj3sc3p-gNF4DSiNN-_y72nRQqZY-AnvAbfJsl2YMknmQ5ZBk8GlkWT2wh6aUD4GQXbPNEDEfeJNwgauNOl9hs_IyODM10afnw4GQnoJUgyWI9fJ6n4oTR0I="
+   },
+   {
+    "title": "activepieces.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFWeOYvlRNq7zoX3XMLNJJNnzNXhEEBEeqKmIjeeSO-cYSRDt7_GcU8ZK7AF6TmWsXSEA8jVQe5maBYvXivxCk7BYTuWWk637e7LCoSn8HVepQ14c_JIeIYyr4xvjL1CE4ksiE5T3E"
+   },
+   {
+    "title": "bigcommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwkDeXmvErenjTp9s6uZaVV8oTgHkYmun3F176w25BKFNFvIxP7AeTsMVtCRobprlQLKK6NuNApC0wkRzr2bxWWq268iNOPh9K2wt6d3v2wlOE-e2j_a6kLnxmmh_Ah_pNXxhG3Hxka0i4zCkWifXAh7RF4ZAjskoKK4Sw25YwPhoBJqD29N2V2Z93-rg="
+   },
+   {
+    "title": "bigcommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5owFBVknzi0sf3YaHyy0qmIAjNO6UBbG4xYwh49R39D9_5PZOxMQXKuLFX4XdSO3d5eiVMIaFnTSs5rFl_kpwnNl9kJSqcboohGv1UN2mf7G_oiag0jwBGEK-VCvWWKaMKD37tmafHXLax29YEmEqGcKw9sFAi-8_HSAl9eqL8Mkx1cjjLFNznY9wEA74Qm9ANh0Y"
+   },
+   {
+    "title": "bigcommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIxkyqiQlkSzednbOq4RXMHWwzHjRgK8HXy_VfPZ4WT3a0OQX1duMMDSbKx8OtInORV26sNG3R-DsmmrEGSe-ZJCgdjiPN6ljwdbOxE1K0EdlTxhXURdwN3PGd6S4JANB2AXv_gY80YCknkL3iOO366djg-1pR_WKppeA_fT1_lZzCDad4bIRBl5owow=="
+   },
+   {
+    "title": "bigcommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmzm5Vnk0JdkfWzPzLniwblQRM6_U-eB8ee6c9bV47fdrxRIdjHM7EkeDmj5yh_4mSaLx5PN5IdGLo6Y_ixyxIjN3iSAjxKWIs_Qve4wvZD9OUvbOv4pQ0IQ-SNrz2MRhISeBzO4DjWCRGTkrli2E6qCKXiVJXcg=="
+   },
+   {
+    "title": "bigcommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvhtwSQ9lJre8Wbuv5N8g9tQqlC1RVlR_IV27fUu9d89AGcmJrar56ZFS3_lZnmDLrVZ2J0X6OQmyJiXECyg3a1v2lP9-Toq41kCDEs4i-Vj_Vvg9Nx3IFgXX7bXkG7zOHhoQt5WzVFmLEqBzu5qs4dEypDxpBpdldBSdyQV59AAX5ww=="
+   },
+   {
+    "title": "folio3.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHz7feZgw-jNl2LFNDVjcDL4_g7IR0_Gxz54087Vjb8Uhm8ypjvZi0aQNibG4gF_2tja4odsfu9MKg8f3o09tribJzCnqTHm2mE1FUxZMX-I-hRu7x1T7fUW47e3t3Q2uSVRut5rIrS8sBMvU_AgUE2qLJ6Cmc="
+   },
+   {
+    "title": "bigcommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2_2Xf_0LK5IvuYn3Eo-04igmWu9VnjxJG7Rv3KbLQd8pPRnfRcianzD8zsblKc8POaRK4EbSr2oXeRmS5UpBl-vwRWb_9Yar6FCd7NKyNMS5KIrPy1WIhyi2CKiwmuhf-tu3CGwaxAuhA95KVzZwxi_oDUjaemAMK"
+   },
+   {
+    "title": "bigcommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFw-BMuE9ASy6D_Obr8UBFLaw9r-pK1LdoHFgWCA3NrQecXotNWE-oWEtGu8j3NVSE6wwNIs2Z0Cb5UrRukOoMVMtQ6bXlnEyaysTGrheynCSeiMPr3znVitoh0P66pHsQQxx5r0JvLyUFMTo_ooRVSd8m4hXd-_WwTxdebhyJkG-8wLw2n7B21-BWK4ts="
+   },
+   {
+    "title": "medium.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEc0AqvOoHuUmhixcmV1bCscOzcovX45tDDWEJal719ArAoEztcGp4v5aCBsH9VYsKtBmnkkacX9PAQqf9Ijv91GsJpJTTmxI9OCxTR8EgnZaktZRxijTgc8VD3hfyObevJrK67NRqLHmr8o9HBLjPGp4F2G8R8OJSzCzua5YO6a8NOh6EGhiKdhtJ24X4K3PaQjHXpOw=="
+   },
+   {
+    "title": "bigcommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpwjumjINrY6RS3nxIG7gac7egvKlRaZZnPAWXvcvk2Sqz8s5uJgT0A--Tl6UIoo5W3vo2UPTiLwtf6AkTYIMG1Zac5VnTHF4Bg3GJ3mtqkJ-J5wQuPE0H3ln6Z_RoRCqAzn7KumIMUwOST7StpfJyMsQUeJ4b_rkqApFS8jE="
+   },
+   {
+    "title": "github.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOHQvXGOwH118SN7Zs8Qu2WyVf5FlJ-Mxip_xHV_D_ikZJctn2uAmXIzWMt4aukXQpNl1Xwkv2HTbRTyxM7ho7JdqDlBzZSqPYA3SaXO2rP9RJI8gRziGdRQ=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMjlGnMVVW5cAytTX0zSmOamTQ8un0MMVZ1YLH7Ccck-ViVDFdyjkGXF9Fb9WcZwb53EI9sORz-GA_bVqxrAxdgS94gGgCZnlRRPU6w0WbgfqNBj890P5zRmA0UZzQG4NmVGc="
+   },
+   {
+    "title": "hookdeck.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFY841cSE6GFnzjey33VjdmZComA6pwz2iY73sVv1gldfatR5g_Rf2hsXzZ0LW9urO1FwKgoQ6n0cSxo9_FH2tFazAn_T69hXWm-VtZsSG3BgkdLhUF3JcvvEWwRhhzdjapvweI0TK6X4VOsAXkXVxM_d0KuaDn4lJwXS-juspSQZOPd0kWat8yZvCpQyUTpgfENZUZqsiPAf4jd9c="
+   },
+   {
+    "title": "bigcommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1pbHN2OVaem2ThL6pBz-h-JXZdol7P53RcQck47_EO9hBgDO5-FE2-2j-iOYx_F6pAC5yWzUD1mnmX9o6LnEBuQQOpyVXumAXifWVyqKBewAKKuWntJbHpR6OkR9QyFZ_NPw-sYbRKXwUuKGEQh-eqQKbW8gkORKJ2t9Ucw=="
+   },
+   {
+    "title": "bigcommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHjVYPtPOGfccSSdLucHhAeVOsTRs2DKefjYRZzBGy8ob0DGwFjGxUQppaFA0kIOiCp_0m8Jh88vA0RWic16MBL47cW2YqvZr_InZ5OHUqZVQ8XBsb7-Xgx0Tf9e1XDQOEymUJTWW5W8fNd9gGqPkxXMHdzrYYM6qXdW2Hl52ZvJcc6D8q"
+   },
+   {
+    "title": "bigcommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEY0Jqy5PLOJmZ1dvBfPNbFz0OkQzXfGVy_BDSSomfyZZ8d-Q71VPic9wjbz6ZcxXff8LRg9oePC7VKBRoY9nsEVFCAzbMsg6AkkoQp8HC9nHyTJTYF3goG9hcjJSe1pBR_8mgFecmjQjGSXNv7L9CJy14GHAOnUl-XYjprVRF6am4DE5te-Zm63Ty8k1J2gguQBkC56YTwsQMNXDE="
+   },
+   {
+    "title": "bigcommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeXxUFgyQ9Fty0Pa92uD40GjtqH9oeFoLgIxU_dKok15HFgPAmQo9pMV3yDp9vHpBFGL23rsPVoo68PK6B6dDVwcm7Ym490sEcG0Dfjcvqg3XkDClltK1G6BCL2uR35pZ2IbDYc6lAcNp3tob1GUrXPx8XQOOSuSpuePXL"
+   },
+   {
+    "title": "bigcommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoW47YUU2m5L7AHZHICueVgFDVblhcwYdTnRXH54PHSp2GROkXw30DXgen5qQ7JkyXoc1XZ_zJNwQ-zUz-l9m7BksYS59UhWfSR44fx5RoLVa20t7KTzFRiLzbdo8SEkvHjIfv6MIsQmIjOQ=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGVA7hvr0xyaxXG6iAjqJHdB7DKCHn-fKyEBQbfnbonrUtVgl6E3ncZK1oCWnGO9hx3hq5H2nS6WTqRKFbvH_rbfnOZ8DYsOQljtNed2hSr7X7mDbWF_ydpiD4AJGj9gA8EDuhf0MsvLo6bTY_nQ=="
+   }
+  ],
+  "tokens": 8759,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://docs.bigcommerce.com/developer/api-reference/rest/admin/overview",
+    "status": 200,
+    "chars": 75886,
+    "readable": true
+   },
+   {
+    "url": "https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts",
+    "status": 200,
+    "chars": 43660,
+    "readable": true
+   },
+   {
+    "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide/auth",
+    "status": 200,
+    "chars": 21437,
+    "readable": true
+   },
+   {
+    "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/quick-start",
+    "status": 200,
+    "chars": 19100,
+    "readable": true
+   },
+   {
+    "url": "https://docs.bigcommerce.com/developer/docs/overview/quick-start",
+    "status": 200,
+    "chars": 17547,
+    "readable": true
+   },
+   {
+    "url": "https://docs.bigcommerce.com/developer/api-reference/rest/admin/management/pricing",
+    "status": 200,
+    "chars": 74981,
+    "readable": true
+   }
+  ],
+  "seconds": 67.5
+ }
+}

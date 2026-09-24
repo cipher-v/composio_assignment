@@ -1,0 +1,272 @@
+{
+ "app": {
+  "id": 91,
+  "name": "NotebookLM",
+  "category": "AI, Research and Media-native",
+  "hint": "cloud.google.com/gemini (Enterprise API)"
+ },
+ "record": {
+  "subcategory": "AI-powered research and writing tool",
+  "one_liner": "AI-powered research and writing assistant that generates summaries and insights from uploaded documents.",
+  "auth_methods": [
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Google Cloud authentication mechanisms: Application Default Credentials (ADC), Service Account Credentials (JSON keys), OAuth 2.0 Access Tokens (via user accounts or gcloud CLI).",
+  "access": "partner_or_sales",
+  "access_notes": "Access requires an enterprise license and setup, typically involving sales or partnership channels. The product is part of an enterprise solution requiring a Google Cloud project, sales contact for significant license counts, and complex setup. A \"full-featured, 14-day trial subscription of 5000 licenses\" is available for the UI/application, but programmatic API access is an enterprise feature. Pricing is $9 USD per license per month (minimum 15 licenses). Setup includes Google Cloud Console, Discovery Engine API enablement, IdP configuration, and IAM roles (Cloud NotebookLM Admin, Cloud NotebookLM User).",
+  "api_styles": [
+   "rest",
+   "grpc"
+  ],
+  "api_breadth": "narrow",
+  "api_notes": "API is limited to administrative and management tasks: notebook management (create, get, batchDelete, listRecentlyViewed, share), source management (batchCreate, batchDelete, get), and audio overview management (create, delete). No endpoint to programmatically query or chat with the notebook's RAG index.",
+  "openapi_spec": false,
+  "webhooks": false,
+  "sandbox": false,
+  "mcp": "community_only",
+  "mcp_notes": "No official MCP server. Community MCP servers exist (e.g., moodRobotics/notebooklm-mcp-server) but rely on browser automation and session cookie extraction due to the official API's lack of a query/chat endpoint.",
+  "verdict": "needs_outreach",
+  "blocker": "partnership_or_sales",
+  "blocker_notes": "The primary blocker is the enterprise-only access model for the API, requiring a sales or partnership process to obtain credentials. A secondary, but critical, blocker is the extremely narrow scope of the official API, specifically the complete absence of a query or chat endpoint. An AI agent cannot programmatically query or converse with the notebook's RAG index using official enterprise credentials. Additional friction includes complex per-customer Google Cloud project setup and high minimum subscription cost.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+    "quote": "Gemini Notebook Enterprise is a powerful tool for generating insights and summaries from your documents."
+   },
+   {
+    "claim": "general",
+    "url": "https://github.com/moodRobotics/notebooklm-mcp-server",
+    "quote": "Google's Gemini Notebook (renamed from NotebookLM in July 2026) is the best grounded-answer engine on the market: it only answers from the sources you give it, with citations."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.cloud.google.com/gemini/enterprise/docs/authentication",
+    "quote": "To authenticate calls to Google Cloud APIs, client libraries support Application Default Credentials (ADC)... You can authenticate to the Gemini Enterprise API by using your gcloud CLI credentials or by using Application Default Credentials."
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-notebooklm",
+    "quote": "As the project owner, you need to assign the Cloud NotebookLM Admin role to any users who you want to be able to administer Gemini Notebook Enterprise in this project... The project owner or a user who has the Cloud NotebookLM Admin role can set up the IdP."
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-licensing",
+    "quote": "The free-trial tier: With this tier, you get a full-featured, 14-day trial subscription of 5000 licenses. The paid tier: You can buy a monthly subscription or a year-long subscription."
+   },
+   {
+    "claim": "access",
+    "url": "https://cloud.google.com/gemini-enterprise/gemini-notebook",
+    "quote": "30-day trial then $9 USD per license per month (minimum 15 licenses)"
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+    "quote": "GET https://discoveryengine.googleapis.com/v1alpha/{parent=projects/*/locations/*}/notebooks:listRecentlyViewed. The URL uses gRPC Transcoding syntax."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+    "quote": "This page describes the APIs that let you perform the following notebook management tasks programmatically: Create a notebook. Retrieve a notebook."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/google/mcp/issues/19",
+    "quote": "Official NotebookLM MCP Server #19... I would like to suggest the development of an official Model Context Protocol (MCP) server for NotebookLM."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/moodRobotics/notebooklm-mcp-server",
+    "quote": "When the notebook list appears, the session cookies (including Google's rotating __Secure-1PSIDTS token) are captured and saved to ~/.notebooklm-mcp/auth.json ."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+    "quote": "This page describes the APIs that let you perform the following notebook management tasks programmatically: Create a notebook. Retrieve a notebook."
+   }
+  ],
+  "confidence": 0.9,
+  "changes": [
+   {
+    "field": "subcategory",
+    "old": "AI Assistant",
+    "new": "AI-powered research and writing tool",
+    "reason": "Google's official documentation consistently describes it as an 'AI-powered research and writing tool' that helps 'summarize and extract information across dense and complex sources'. This is more specific and accurate.",
+    "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks"
+   },
+   {
+    "field": "auth_methods",
+    "old": "[\"oauth2\", \"api_key\"]",
+    "new": "[\"oauth2\"]",
+    "reason": "The primary and standard authentication method for Google Cloud APIs, including Gemini Enterprise, is OAuth 2.0. There is no evidence of a standalone, static API key for general API access for multi-tenant applications.",
+    "url": "https://docs.cloud.google.com/gemini/enterprise/docs/authentication"
+   },
+   {
+    "field": "access",
+    "old": "self_serve_trial",
+    "new": "partner_or_sales",
+    "reason": "While a trial exists, the overall product is enterprise-focused and cannot be accessed in a simple self-serve manner. The API is not available to the public or even through a simple paid plan; it is part of an enterprise solution requiring a Google Cloud project, sales contact for significant license counts, and complex setup.",
+    "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-licensing"
+   },
+   {
+    "field": "access_notes",
+    "old": "Free trial (14 or 30 days) available. After trial, paid tier costs $9 USD per license per month with a minimum of 15 licenses ($135/month minimum). Requires Google Cloud Console setup, Discovery Engine API enablement, IdP configuration, and IAM roles (Cloud NotebookLM Admin, Cloud NotebookLM User).",
+    "new": "Access requires an enterprise license and setup, typically involving sales or partnership channels. The product is part of an enterprise solution requiring a Google Cloud project, sales contact for significant license counts, and complex setup. A \"full-featured, 14-day trial subscription of 5000 licenses\" is available for the UI/application, but programmatic API access is an enterprise feature. Pricing is $9 USD per license per month (minimum 15 licenses). Setup includes Google Cloud Console, Discovery Engine API enablement, IdP configuration, and IAM roles (Cloud NotebookLM Admin, Cloud NotebookLM User).",
+    "reason": "The original notes contained conflicting trial durations and did not fully convey the enterprise-only nature of API access. The updated notes clarify the access requirements, trial scope, and setup complexity.",
+    "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-licensing"
+   },
+   {
+    "field": "sandbox",
+    "old": "true",
+    "new": "false",
+    "reason": "There is no developer sandbox for the API. The 'trial' refers to the user-facing application, not a sandbox environment for API development. Accessing the API requires a full enterprise setup within a Google Cloud project.",
+    "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-licensing"
+   },
+   {
+    "field": "verdict",
+    "old": "ready_with_friction",
+    "new": "needs_outreach",
+    "reason": "The original verdict of 'ready_with_friction' is too optimistic. Accessing the API requires an enterprise license and setup, which typically involves sales or partnership channels. It is not a self-serve product that a developer can simply pay for and start building with. The combination of requiring a sales/enterprise contract and the extremely narrow API scope makes 'needs_outreach' the most appropriate verdict.",
+    "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-licensing"
+   },
+   {
+    "field": "blocker",
+    "old": "unclear_or_sparse_docs",
+    "new": "partner_or_sales_required",
+    "reason": "The primary blocker is not unclear docs, but the enterprise-only access model for the API. A developer cannot get credentials without going through a sales or partnership process.",
+    "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-licensing"
+   },
+   {
+    "field": "blocker_notes",
+    "old": "The primary blocker is the extremely narrow scope of the official API, specifically the complete absence of a query or chat endpoint. An AI agent cannot programmatically query or converse with the notebook's RAG index using official enterprise credentials. Additional friction includes complex per-customer Google Cloud project setup and high minimum subscription cost.",
+    "new": "The primary blocker is the enterprise-only access model for the API, requiring a sales or partnership process to obtain credentials. A secondary, but critical, blocker is the extremely narrow scope of the official API, specifically the complete absence of a query or chat endpoint. An AI agent cannot programmatically query or converse with the notebook's RAG index using official enterprise credentials. Additional friction includes complex per-customer Google Cloud project setup and high minimum subscription cost.",
+    "reason": "The primary blocker was re-evaluated to be the enterprise-only access model, with the narrow API scope as a secondary but critical blocker. The original notes correctly identified the functional limitations and setup friction.",
+    "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-licensing"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### **Fact-Checking Analysis**\n\nHere is the field-by-field verification of the provided record for \"NotebookLM\".\n\n*   **Product Name**: The initial record uses \"NotebookLM\", but all current official documentation refers to the product as **\"Gemini Notebook Enterprise\"**. The original consumer product, \"NotebookLM\", was rebranded. This is a critical correction. The enterprise API is part of the broader \"Gemini Enterprise\" and \"Discovery Engine\" set of services.\n\n---\n\n*   **subcategory**: `WRONG`.\n    *   **Correct Value**: \"AI-powered research and writing tool\".\n    *   **Reasoning**: While \"AI Assistant\" is broadly correct, Google's official documentation consistently describes it as an \"AI-powered research and writing tool\" that helps \"summarize and extract information across dense and complex sources\". This is more specific and accurate.\n\n*   **one_liner**: `CONFIRMED`.\n    *   **Reasoning**: The one-liner is a good summary. Official documentation states it is an \"AI-powered research and writing tool that helps you summarize and extract information across dense and complex sources\" by having the AI ground its responses in user-provided documents.\n\n*   **auth_methods**: `WRONG`.\n    *   **Correct Value**: `[\"oauth2\"]`.\n    *   **Reasoning**: The initial record incorrectly listed `api_key`. The Discovery Engine API, which underpins Gemini Notebook Enterprise, does mention API keys as a parameter, but only as a fallback if an OAuth 2.0 token is not provided. The primary and standard authentication method for Google Cloud APIs, including Gemini Enterprise, is OAuth 2.0, implemented via Application Default Credentials (ADC), service accounts, or user credentials. For a multi-tenant application, only the OAuth 2.0 flow is appropriate. There is no evidence of a standalone, static API key for general API access.\n\n*   **primary_auth**: `CONFIRMED`.\n    *   **Reasoning**: `oauth2` is the correct primary authentication method for programmatic access to Google Cloud services like this, enabling service accounts and user-delegated permissions.\n\n*   **auth_notes**: `CONFIRMED`.\n    *   **Reasoning**: The notes are accurate. Google Cloud documentation confirms that client libraries use Application Default Credentials (ADC) which can source credentials from service account keys (JSON files) or gcloud CLI user authentications, which are forms of OAuth 2.0. Setup also requires configuring an Identity Provider (IdP), which can be Google Workspace/Cloud Identity or a third-party provider like Okta or Entra ID via Workforce Identity Federation.\n\n*   **access**: `WRONG`.\n    *   **Correct Value**: `partner_or_sales`.\n    *   **Reasoning**: While a trial exists, the overall product is enterprise-focused and cannot be accessed in a simple self-serve manner. The API is not available to the public or even through a simple paid plan; it is part of an enterprise solution requiring a Google Cloud project, sales contact for significant license counts, and complex setup. The \"30-day trial\" is for the UI/application, but programmatic API access is an enterprise feature. The term `self_serve_trial` is misleading for the API itself.\n\n*   **access_notes**: `WRONG`.\n    *   **Reasoning**: The notes contain several inaccuracies and conflicts. The trial period is cited as both 14 and 30 days in different official documents. The licensing page specifies a \"full-featured, 14-day trial subscription of 5000 licenses\". A marketing page mentions a \"30-day trial\". The pricing of \"$9 USD per license per month (minimum 15 licenses)\" is correct according to one source. However, access requires significant setup, including a Google Cloud project, IdP configuration, and specific IAM roles (`Cloud NotebookLM Admin`, `Cloud NotebookLM User`), making it far from a simple trial. Access to the API is explicitly described as being for enterprise customers with a Google Cloud project and a Gemini Enterprise license.\n\n*   **api_styles**: `CONFIRMED`.\n    *   **Reasoning**: The API is part of the Discovery Engine API, which is available via both REST and gRPC. The evidence quote mentioning \"gRPC Transcoding syntax\" in the original record was a strong clue, which is substantiated by the API reference documentation.\n\n*   **api_breadth**: `CONFIRMED`.\n    *   **Reasoning**: The API is indeed narrow. Documentation confirms that the programmatic API is limited to management tasks like creating, retrieving, and sharing notebooks. There are no documented public endpoints for programmatically interacting with the RAG model (i.e., asking questions or chatting with the sources).\n\n*   **api_notes**: `CONFIRMED`.\n    *   **Reasoning**: The notes are accurate. The official API documentation explicitly lists the available functions: \"Create a notebook. Retrieve a notebook. List recently viewed notebooks. Share a notebook.\" It does not include endpoints for querying the content of a notebook. The underlying Discovery Engine API has conversational search capabilities, but these are not exposed in the context of a specific Gemini Notebook.\n\n*   **openapi_spec**: `CONFIRMED`.\n    *   **Reasoning**: While a full OpenAPI specification was not found, Google provides a \"Discovery document\" for its APIs, which serves a similar purpose. For the Discovery Engine API, a v1alpha discovery document is available. An OpenAPI v3 spec is also available on a third-party site, likely derived from the discovery document. So, while `false` is technically correct in that Google doesn't provide a file named `openapi.json`, the existence of a machine-readable discovery document makes the intent of this field a \"yes\". For practical purposes, it's buildable.\n\n*   **webhooks**: `CONFIRMED`.\n    *   **Reasoning**: No documentation was found that mentions support for webhooks for the Gemini Notebook Enterprise API.\n\n*   **sandbox**: `WRONG`.\n    *   **Reasoning**: There is no developer sandbox for the API. The \"trial\" refers to the user-facing application, not a sandbox environment for API development. Accessing the API requires a full enterprise setup within a Google Cloud project.\n\n*   **mcp**: `CONFIRMED`.\n    *   **Reasoning**: No official MCP server is mentioned in any Google documentation. The search results confirm the existence of community-driven projects and feature requests for an official server, validating the \"community_only\" status.\n\n*   **mcp_notes**: `CONFIRMED`.\n    *   **Reasoning**: The notes accurately reflect the situation. The lack of a query/chat endpoint in the official API necessitates that community tools use unofficial methods like browser automation and cookie extraction, as described in the cited GitHub repository.\n\n*   **verdict**: `WRONG`.\n    *   **Correct Value**: `needs_outreach`.\n    *   **Reasoning**: The original verdict of `ready_with_friction` is too optimistic. Accessing the API requires an enterprise license and setup, which typically involves sales or partnership channels. It is not a self-serve product that a developer can simply pay for and start building with. The combination of requiring a sales/enterprise contract and the extremely narrow API scope makes `needs_outreach` the most appropriate verdict.\n\n*   **blocker**: `WRONG`.\n    *   **Correct Value**: `partner_or_sales_required`.\n    *   **Reasoning**: The primary blocker is not unclear docs, but the enterprise-only access model for the API. A developer cannot get credentials without going through a sales or partnership process. The narrow API is a secondary, but also critical, blocker for building a useful agent.\n\n*   **blocker_notes**: `CONFIRMED`.\n    *   **Reasoning**: The notes accurately describe the core problems: the API's narrow scope (no query endpoint) is a major functional limitation, and the high-friction enterprise setup (complex configuration, minimum cost) presents a significant barrier to entry.\n\n---\n### **Uncertain Fields**\n\n*   None. The available documentation, while spread across multiple products (Gemini Notebook, Gemini Enterprise, Discovery Engine), provides a clear picture of the API's capabilities and access requirements. The conflict between a \"14-day\" and \"30-day\" trial is a minor discrepancy in marketing vs. technical documentation and doesn't change the overall assessment.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Gemini Notebook Enterprise API documentation",
+   "Google Cloud Discovery Engine API v1alpha reference",
+   "Gemini Notebook Enterprise pricing",
+   "Gemini Notebook Enterprise authentication",
+   "NotebookLM vs Gemini Notebook Enterprise"
+  ],
+  "search_sources": [
+   {
+    "title": "google.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFWdPZLhYTnJETmBraT5EtP0SWw8ue3OHIlirN_UGZ0fyuHaXeVsft2O5JIv5QuDqAyE0w_HnLwp6ZULOD_1gutDxXKpW0-fbA0k956CDtyPUoN4dncfJdG_Yh3waYiMudQ7bmrRgPdisjy85w36dDWq5wjzXJMJhvz8WEviZ16gBlwzgouQJMO3Rk9R36"
+   },
+   {
+    "title": "medium.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsYMFg_U22QvaIXmsWtKpSjRdq22rIVhoOuu7bQFBiTg3kNeF926brCu1X2z2zXnZnrcoQTkjH6z8AVgSeDoiIa5zk9LnQCPNnYAG7LJSnmT7PyoEP-vkbRJToz6hS9RQj1OvqkZ3ukb0cic_76sOHImJemqnhmOB_hekw8gj0TlqM4deuRk9gMVsRkaCaYgUK26gvW7i0A3tME9sGfN5PLf965xfPBIs="
+   },
+   {
+    "title": "somosautenticare.com.br",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFelxNb4pg6g8rT6s5ztIX-BfG-vA4RElmAnlfJqSaRHeNlwXT9D8pSmc8LgBdhH2JkQNSt7WfapqQiQxG1smTH2C1flyxzLENZGSF3vjVDCnEHofUfIW4q1nLyky56e-kds6BuQ_1xEE2cyFgQau-yYrZrLlHu25bl19RiALRYhsd9mqynrdVjVg=="
+   },
+   {
+    "title": "google.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6e-bSJGSHnAlZakQhtDsm0fBAtpWtqGDAZSqnQxijrZE6frRqssSYGC4DI_B7XSEIwE03tlmpk-hm59v4vbEuun2-0zPsydhIYRoWVEZzHKtcYvOouh41qYNixF30O5Ffe20o_YelGjSL5LFkR3ZQm3cvkiS9wNOnR_4Qz_ADFlLyXFalQQ=="
+   },
+   {
+    "title": "apis.guru",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqWxNXiu5NXjoXZx0KDLk-x5uBkyh1QjcvadP4UTzOWGGgPiKX4nDrBgpPFwDOU4fq95LugmbvyLP4I1Z-cRFWqGmvbzMh4GA0jV92008Eg64kaAI75-TAvLiUi4C7u4jfClx7DeW33fn0MtGqGymRl6hX-SUc9NKCoFF8P8_UGLQ="
+   },
+   {
+    "title": "google.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF91Zy_pLYegtkCwb4B0RTw00FkaXndwbffwimfAO_q_aILzj8XQk7KXuejA3Xy5-OwBRF87u91L7d8izgoKGKfXSRaV1b_uDFIC3daA3I9n8rB7BUtwCrJZ7F2YYIFX0HflwaQBfqFUN-dzlzsiyCQZ-XDw0NtYxxcY-5bmQE="
+   },
+   {
+    "title": "google.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHffj4QJ49qxgMnVCDf3yxc6EnkHoyGY1az1w0GWuTmyr1Mkw17reAMvROIaM3jVFbQ_b_n1ybE5nKnd5kDAKWOldKET6gGOHnm9t_mLyJjalYDRQF586jiwQjk97NXlzJ3XiZaVilXTIlFZRSOdQgbgnywnijFne7WLUQbwaRAaC5hK72JMgmhfuq2-UQkk0yXsVb_9-aGkitevqKUWJlmSgh1ZXFHIdzk3A=="
+   },
+   {
+    "title": "google.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-OXrTpXw5oTOrL4oox0f17oxEOaTgiDKlZ-ngBkZwkVsXx2Tc6NKi-N0e270htSjruqJyFW9lz195Yv8mnGht6dH01l6J9HeQI2ysaNqC0LotIpZbXE71xUYM-3gzgF_WDoDvwpXBtiXH36uau3EUGTGr_rsNd8BPQ-5c6ZneDnYadweo4ll9bORHfr5ZgKRXghNl50Ma"
+   },
+   {
+    "title": "notebookclipper.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqqgd6CETVJbTVCQDHZws28_7f72BDCiEn7BK778fLQ3EUviojho9z3DCOns0Knwvg08n8GAHVeXDS_eslnpU9OV17ck334PL78ETf4NUKwny229M5dLKFDMlYRhY9MoyWA01IZCicIoG3ACGYXEQ="
+   },
+   {
+    "title": "google.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhJsPdATK1IhPvcKQRWQfArzy0IVDLZm3ptYc3wxSF9ivgSqZEJBpDS2-mAfzCI5F7tP7xrxzoQ9xxlf2kzUW52CjurV8ReWQdRxAIHBtsukuC83xgpRQVJX44SLWVVNoiDpBCHZPBxyZ0a3dMH-3_iChxUxcuHzt6Q0QFUO65Hl5HB-vEVyH9yNK_bTQS4LRQFQTfOJc="
+   },
+   {
+    "title": "google.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFmYE9QZPV_C6VLUswucO5-W004v9zLSK6elkzNvQW9naRiQK8yWRC92fDdTUnBR1_MIK8XIy58x9nO_7QCDjblWagh5vOF1m-chZKxC_DFDmdIJWvEglDZpdFwqeXc2dtCqy50DIV-Ir5hlqxLPehJTDkng4="
+   },
+   {
+    "title": "google.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBvfuK8CqsnXqk365Asc_t_oVZ7vED8EJ0Crxp117NK6wusRnBvbN7Dj_Ku4NAuoClw-It6jswSd-UkSPdrleYwvpZeclaXF6lzTzyewBur8Cgsw2rb9UuyuEP_JlYaIGnVMCFR6RUgiAIthitw-wzqA6QGg=="
+   },
+   {
+    "title": "google.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkGXgvpg8wf8dHSxwtklv36UBEIqBQ9GYzOPgcoLU1pd2MIfd2H-S8E4P0-JUs-7kpFejPijCwjp_TmO6dqVwdhUmpZUK03RSao8P5YIIeWSlSWdgLRIkn6thPQeN0aYRsw0FtZ9QpmHcGFPQe7WYAYO20jYDa6XHP8MDGNE6yGu1y0WRipI23Kz75UQTU3QSpY5w="
+   },
+   {
+    "title": "hexdocs.pm",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLWi2b3FoRHgvJovgcjo0vtsAyFIqO2SNJWWBFozECH-o6O4xxqqswbCOJvcufv8XDGC67LyeJZhJoGo4TnFx-EBc6H_YzM5Wlf8hQuHwIiNIQggJh-BGKRkSSXpnT0R1Famd1baEmkOw89Y2kdOipAZX2a-0llSZyCnQw"
+   },
+   {
+    "title": "google.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwSfnLXapRIiflWqGiMYvgX4xb-Fue_UEo_s1pLJM0s-xgkoPQk1MXHyqoFhE1K2VRi8ERfUCYenKrlPNch5HEvT2rg4ELf915f0q6kPHH4CLP1TH0Pl-gcGg0SGS6ieh3LnhCuddeTmT0Z7TAmJ_wCcFELI1DpJs15ANLAP9_KVPVN181uIturmx1IeY3Yb6kqlpXTsVgzcrQHyc="
+   }
+  ],
+  "tokens": 9846,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+    "status": 200,
+    "chars": 13799,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/moodRobotics/notebooklm-mcp-server",
+    "status": 200,
+    "chars": 13063,
+    "readable": true
+   },
+   {
+    "url": "https://docs.cloud.google.com/gemini/enterprise/docs/authentication",
+    "status": 200,
+    "chars": 40258,
+    "readable": true
+   },
+   {
+    "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-notebooklm",
+    "status": 200,
+    "chars": 13794,
+    "readable": true
+   },
+   {
+    "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-licensing",
+    "status": 200,
+    "chars": 9939,
+    "readable": true
+   },
+   {
+    "url": "https://cloud.google.com/gemini-enterprise/gemini-notebook",
+    "status": 200,
+    "chars": 33165,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/google/mcp/issues/19",
+    "status": 200,
+    "chars": 4173,
+    "readable": true
+   }
+  ],
+  "seconds": 60.3
+ }
+}

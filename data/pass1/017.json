@@ -1,0 +1,235 @@
+{
+ "app": {
+  "id": 17,
+  "name": "Plain",
+  "category": "Support and Helpdesk",
+  "hint": "plain.com"
+ },
+ "record": {
+  "subcategory": "Helpdesk / ticketing",
+  "one_liner": "API-first customer support platform for B2B SaaS, unifying channels into a single queue.",
+  "auth_methods": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "Core public API uses fine-grained API keys passed as a static token in the HTTP Authorization header. MCP server uses OAuth 2.0 with PKCE.",
+  "access": "self_serve_trial",
+  "access_notes": "Developers can sign up for a 7-day free trial (no credit card required) to get API credentials. No permanent free tier; API access requires a paid subscription after trial.",
+  "api_styles": [
+   "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "GraphQL API with full API-UI parity, covering threads, customers, tenants, labels, and help centers. Endpoint: core-api.uk.plain.com/graphql/v1.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Plain publishes and hosts an official remote MCP server at https://mcp.plain.com/mcp, exposing 30 granular tools and using OAuth 2.0 with PKCE.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "No third-party OAuth for the core GraphQL API means each customer must manually create and provide an API key. Lack of a permanent free tier/sandbox creates friction for long-term development and testing.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://help.plain.com/article/quickstart",
+    "quote": "plain also supports chat , discord , microsoft teams and contact forms , all in one queue."
+   },
+   {
+    "claim": "general",
+    "url": "https://www.plain.com/blog",
+    "quote": "Plain is the API-first customer infrastructure platform for B2B SaaS. It was built from the ground up with the API as the primary interface — the same GraphQL API that Plain uses internally is the one customers build on."
+   },
+   {
+    "claim": "auth",
+    "url": "https://www.plain.com/docs/graphql/authentication.md",
+    "quote": "create a machine user and an api key, and scope it with fine-grained permissions."
+   },
+   {
+    "claim": "auth",
+    "url": "https://www.plain.com/docs/graphql/authentication.md",
+    "quote": "now that you have an api key, pass it on any api call as a header: authorization: bearer plainapikey_xxx"
+   },
+   {
+    "claim": "auth",
+    "url": "https://github.com/superset-sh/superset/issues/6470",
+    "quote": "Plain has no third-party OAuth, so /integrations/plain in the web app takes an API key (and optional webhook secret) instead of an OAuth redirect."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.plain.com/docs/graphql/authentication.md",
+    "quote": "go to settings → machine users and click + add machine user"
+   },
+   {
+    "claim": "access",
+    "url": "https://www.plain.com/pricing",
+    "quote": "foundation get support right from day one $35 /month 1 seat"
+   },
+   {
+    "claim": "access",
+    "url": "https://www.plain.com/pricing",
+    "quote": "7 day free trial · no credit card required"
+   },
+   {
+    "claim": "access",
+    "url": "https://help.plain.com/article/pricing",
+    "quote": "every plan includes a free 7-day trial, with no credit card required."
+   },
+   {
+    "claim": "api",
+    "url": "https://www.plain.com/docs/graphql/introduction",
+    "quote": "graphql api introduction"
+   },
+   {
+    "claim": "api",
+    "url": "https://www.plain.com/blog",
+    "quote": "Plain's API endpoint ( core-api.uk.plain.com/graphql/v1 ) exposes the full schema at /schema."
+   },
+   {
+    "claim": "api",
+    "url": "https://www.plain.com/blog",
+    "quote": "The only platform with a GraphQL API, no restrictive rate limits, native MCP server support, full API-UI parity"
+   },
+   {
+    "claim": "api",
+    "url": "https://www.plain.com/docs/graphql/authentication",
+    "quote": "Webhook verification uses HMAC-SHA256 request signing, and Plain supports mTLS (mutual TLS) for both webhooks and Customer Cards"
+   },
+   {
+    "claim": "api",
+    "url": "https://www.plain.com/docs/graphql/authentication",
+    "quote": "Plain also ships a built-in API Explorer at app.plain.com/developer/api-explorer for testing queries against live data"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://www.plain.com/docs/graphql/authentication",
+    "quote": "The Plain MCP server at https://mcp.plain.com/mcp lets tools like Claude, ChatGPT, and Cursor work with your support data directly."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://www.plain.com/docs/graphql/authentication",
+    "quote": "Plain MCP uses OAuth to allow your MCP server connection to share the same context as your normal web app user."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Product Overview\nPlain is an API-first customer support platform designed specifically for engineering-led B2B SaaS teams. It unifies customer support channels—including Slack, Microsoft Teams, Discord, email, and live chat—into a single queue. The platform features full API-UI parity, an automated AI support agent named Ari, an AI assistant named Sidekick, and structured data models for threads, customers, tenants, labels, and help centers.\n\n* **Source URL:** `https://help.plain.com/article/quickstart`\n  * **Verbatim Quote:** `\"plain also supports chat , discord , microsoft teams and contact forms , all in one queue.\"`\n* **Source URL:** `https://www.plain.com/blog` (via search results)\n  * **Verbatim Quote:** `\"Plain is the API-first customer infrastructure platform for B2B SaaS. It was built from the ground up with the API as the primary interface — the same GraphQL API that Plain uses internally is the one customers build on.\"`\n\n---\n\n### Authentication Methods & Multi-Tenant Integration\n* **Public API Authentication:** The core public API uses Machine Users and fine-grained API keys. The generated API key is passed as a static token in the standard HTTP `Authorization` header.\n* **MCP Server Authentication:** The hosted Model Context Protocol (MCP) server uses OAuth 2.0 with PKCE to inherit user-level permissions.\n* **Multi-Tenant Integration Choice:** `api_key`. Plain does not support third-party OAuth applications for its core GraphQL API. Therefore, a multi-tenant integration platform must collect a manually generated API key from each customer workspace.\n\n* **Source URL:** `https://www.plain.com/docs/graphql/authentication.md`\n  * **Verbatim Quote:** `\"create a machine user and an api key, and scope it with fine-grained permissions.\"` and `\"now that you have an api key, pass it on any api call as a header: authorization: bearer plainapikey_xxx\"`\n* **Source URL:** `https://github.com/superset-sh/superset/issues/6470` (via search results)\n  * **Verbatim Quote:** `\"Plain has no third-party OAuth, so /integrations/plain in the web app takes an API key (and optional webhook secret) instead of an OAuth redirect.\"`\n\n---\n\n### Credential Acquisition & Cost\n* **Developer Access Classification:** `self_serve_trial`\n* **Acquisition Process:** Any developer can sign up for an account self-serve. To obtain API credentials, they navigate to **Settings** → **Machine Users**, click **+ Add Machine User**, and then click **Add API key** to configure fine-grained permission scopes.\n* **Pricing & Constraints:** Plain offers a 7-day free trial with no credit card required. There is no permanent free tier or dedicated free developer sandbox. After the trial expires, API access requires a paid subscription starting at the Foundation plan ($35/seat/month, billed yearly). No partner program approval or sales interaction is required to access the API.\n\n* **Source URL:** `https://www.plain.com/docs/graphql/authentication.md`\n  * **Verbatim Quote:** `\"go to settings → machine users and click + add machine user\"`\n* **Source URL:** `https://www.plain.com/pricing`\n  * **Verbatim Quote:** `\"foundation get support right from day one $35 /month 1 seat\"` and `\"7 day free trial · no credit card required\"`\n* **Source URL:** `https://help.plain.com/article/pricing`\n  * **Verbatim Quote:** `\"every plan includes a free 7-day trial, with no credit card required.\"`\n\n---\n\n### API Style & Technical Details\n* **API Style:** GraphQL API. The endpoint is located at `core-api.uk.plain.com/graphql/v1`.\n* **Breadth:** Complete API-UI parity. Every action available in the user interface can be executed programmatically via the GraphQL schema (covering threads, customers, tenants, labels, help center articles, and workspace data).\n* **OpenAPI Spec:** None. The API is strictly GraphQL-based and exposes its schema at `/schema` or `/schema.graphql`.\n* **Webhooks:** Yes. Supports over 20 webhook event types (e.g., `thread.status_changed`, `discussion.message_created`). Webhook payloads are verified using HMAC-SHA256 request signing, and the platform supports mutual TLS (mTLS).\n* **Sandbox:** No dedicated free sandbox environment is provided, but developers can test queries against live workspace data using the built-in browser-based API Explorer.\n\n* **Source URL:** `https://www.plain.com/docs/graphql/introduction`\n  * **Verbatim Quote:** `\"graphql api introduction\"`\n* **Source URL:** `https://www.plain.com/blog` (via search results)\n  * **Verbatim Quote:** `\"Plain\\'s API endpoint ( core-api.uk.plain.com/graphql/v1 ) exposes the full schema at /schema.\"` and `\"The only platform with a GraphQL API, no restrictive rate limits, native MCP server support, full API-UI parity\"`\n* **Source URL:** `https://www.plain.com/docs/graphql/authentication`\n  * **Verbatim Quote:** `\"Webhook verification uses HMAC-SHA256 request signing, and Plain supports mTLS (mutual TLS) for both webhooks and Customer Cards\"` and `\"Plain also ships a built-in API Explorer at app.plain.com/developer/api-explorer for testing queries against live data\"`\n\n---\n\n### MCP Servers\n* **MCP Server Classification:** `official`\n* **Details:** Plain publishes and hosts an official, first-party remote MCP server that exposes 30 granular tools across threads, customers, tenants, help center articles, labels, thread fields, and workspace data. It utilizes OAuth 2.0 with PKCE for authentication.\n\n* **Source URL:** `https://www.plain.com/docs/graphql/authentication` (MCP Server Guide via search results)\n  * **Verbatim Quote:** `\"The Plain MCP server at https://mcp.plain.com/mcp lets tools like Claude, ChatGPT, and Cursor work with your support data directly.\"` and `\"Plain MCP uses OAuth to allow your MCP server connection to share the same context as your normal web app user.\"`\n\n---\n\n### Buildability Verdict\n* **Verdict:** `ready_with_friction`\n* **Main Blocker:** The primary hurdle is **per-customer admin setup** and **trial expiry**. Because Plain lacks a third-party OAuth app architecture for its core GraphQL API, a multi-tenant integration platform cannot provide a seamless \"One-Click Connect\" flow. Instead, every end-user must manually create a Machine User, configure permissions, and copy-paste an API key. Furthermore, the lack of a permanent free tier or developer sandbox means developers face trial expiry friction for long-term toolkit maintenance and testing.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"plain.com\" \"mcp server\"",
+   "\"plain.com\" oauth",
+   " oauth",
+   " mcp",
+   " \"oauth\"",
+   " \"oauth\" api",
+   "\"plain.com\" \"machine user\" api key",
+   "\"plain.com\" \"oauth app\""
+  ],
+  "search_sources": [
+   {
+    "title": "plain.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3VdGqfqWbcZz1QHZwr9bgw0TnUZBYGabFnNLy-QfnSJbVGAb1_fLNP2Y-7CGOjccPfynjhYVxMvzwlCSzNhZ8HbP2WZm70f8UeBfD1MHxLlG-bauTNkR94K-UI00AMO-dv6ozGjbgiwlZXRola38eJA=="
+   },
+   {
+    "title": "plain.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0SnPPHunjG8DPWTcVZ7xbSmHhzc0tzwbnf2dHFU0Y6o239j2srl8ncgItaIMnbcvNi-qjyy38Ctm54ATX38ZlcJzIA8gdxZ5wvcSo3uWfsm-HphgqiMyzvLizT9PA"
+   },
+   {
+    "title": "plain.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHazIU3sLEI35927E0_z-a5l8fLz0LQWLUYPKDzQ0on-cYZwrc47E1nKGbhUkKP2KfKo4S1GGvM18wV0G5xINOIt4tld83JaHESjdelGowJBVEUNXih20X6R3ZKH3c0zaqNXzKI_fR8V5C7duTsZovV"
+   },
+   {
+    "title": "claribi.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbnUNm7z-P3tgo6EGWBJEFn70pdX0Byl2UD7TeGFHsVTJm09rgnfHoL05uOSxt9GKe_vFPWUhT5apLeyiThj3uJ1KiECz23Gzadhhb1mUpz9B_Ggw5EBYcHQhxFFMyRliu"
+   },
+   {
+    "title": "plain.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdpQQB8AfnHnt7-hU3Etc3O47Hl2J_szw8oclEur9eNKkifwtT9e9opdDFIlJkPdkm7PekAma2yEJot5LPoZOM-lMw192ctoD277R_5vz1S7_RoJkXNQVel1Kv_-Mk43yHFK-4O9e04eGlpA=="
+   },
+   {
+    "title": "clonepartner.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTZDO_6AMP7IDW5lsO_7ITTRH0lC7QZIZgTxiVjvNXSVGLEGLSd_IS7bnIV2th7V1HS5JDkMLuspSnfozPYufZ7HQTCfx175e3LpMtpizHDzs9yC17RUjYGeIykFEV4FQikS9AbWyWq5E-i0C-Wt8XJ7z_BXoBbqSGc74fvasjpQLfXnSep342GD4_shvu"
+   }
+  ],
+  "tokens": 9552,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Plain API authentication plain.com",
+    "Plain API keys plain.com",
+    "Plain OAuth plain.com",
+    "Plain API getting started plain.com",
+    "Plain API quickstart plain.com",
+    "Plain API pricing plain.com",
+    "Plain API plans plain.com",
+    "Plain developer program plain.com",
+    "Plain API reference plain.com",
+    "Plain API documentation plain.com",
+    "Plain MCP server plain.com"
+   ],
+   "candidates": 1,
+   "live_urls": [
+    "https://www.plain.com/docs/graphql/authentication.md",
+    "https://www.plain.com/pricing",
+    "https://www.plain.com/docs/graphql/introduction",
+    "https://www.plain.com/docs/graphql/authentication",
+    "https://help.plain.com/article/quickstart",
+    "https://help.plain.com/article/pricing",
+    "https://apis.io/security/plain/plain-authentication/",
+    "https://github.com/api-evangelist/plain-support"
+   ],
+   "bad_candidates": [],
+   "pages_read": [
+    {
+     "url": "https://www.plain.com/docs/graphql/authentication.md",
+     "status": 200,
+     "chars": 1403,
+     "readable": true
+    },
+    {
+     "url": "https://www.plain.com/pricing",
+     "status": 200,
+     "chars": 6952,
+     "readable": true
+    },
+    {
+     "url": "https://www.plain.com/docs/graphql/introduction",
+     "status": 200,
+     "chars": 3629,
+     "readable": true
+    },
+    {
+     "url": "https://www.plain.com/docs/graphql/authentication",
+     "status": 200,
+     "chars": 2608,
+     "readable": true
+    },
+    {
+     "url": "https://help.plain.com/article/quickstart",
+     "status": 200,
+     "chars": 3313,
+     "readable": true
+    },
+    {
+     "url": "https://help.plain.com/article/pricing",
+     "status": 200,
+     "chars": 2173,
+     "readable": true
+    },
+    {
+     "url": "https://apis.io/security/plain/plain-authentication/",
+     "status": 200,
+     "chars": 4517,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 111.5
+ }
+}

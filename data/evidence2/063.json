@@ -1,0 +1,151 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.netlify.com/pricing/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.5
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.57
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.85
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.29
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.netlify.com/pricing/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.5
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.87
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.3
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "github.com/netlify/open-api",
+   "status": 0,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.netlify.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://www.netlify.com/blog/netlify-mcp-server-ai-agents/",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://www.netlify.com/blog/netlify-mcp-server-ai-agents/",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/netlify/netlify-mcp",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.38
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/netlify/netlify-mcp",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.74
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "bearer_token": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['github.com/netlify/open-api', 'https://www.netlify.com/blog/netlify-mcp-server-ai-agents/', 'https://www.netlify.com/blog/netlify-mcp-server-ai-agents/']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/', 'https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/', 'https://docs.netlify.com/', 'https://github.com/netlify/netlify-mcp']\n- Non-vendor sources (prefer official docs): ['https://github.com/netlify/netlify-mcp', 'https://github.com/netlify/netlify-mcp']",
+ "metrics": {
+  "n_evidence": 13,
+  "alive_rate": 0.7692307692307693,
+  "dead_rate": 0.23076923076923078,
+  "blocked_rate": 0.0,
+  "official_rate": 0.7692307692307693,
+  "readable": 10,
+  "quote_supported_rate": 0.6,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

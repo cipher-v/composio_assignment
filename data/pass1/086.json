@@ -1,0 +1,265 @@
+{
+ "app": {
+  "id": 86,
+  "name": "QuickBooks",
+  "category": "Finance and Fintech",
+  "hint": "developer.intuit.com"
+ },
+ "record": {
+  "subcategory": "Accounting",
+  "one_liner": "Cloud-based accounting platform for small and medium-sized businesses.",
+  "auth_methods": [
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 is the primary authentication method for the public API.",
+  "access": "approval_required",
+  "access_notes": "Developers can sign up for a free account and get immediate access to a sandbox environment. Production credentials require completing a mandatory assessment process. Intuit introduced a tiered 'App Partner Program' that charges for data retrieval (reads) as of July 2025.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API (v3) for managing customers, invoices, estimates, payments, bills, vendors, and financial reports. Covers 29+ entity types and 11+ financial reports.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Intuit publishes quickbooks-online-mcp-server under its own GitHub organization. Several community servers also exist.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "The mandatory App Assessment Questionnaire and potential security review required for production credentials, combined with the tiered pricing model that meters read operations, create significant friction for scaling multi-tenant integrations.",
+  "evidence": [
+   {
+    "claim": "auth",
+    "url": "https://satvasolutions.com/quickbooks-online-api-limitations/",
+    "quote": "You'll need to authenticate using OAuth 2.0, handle user permissions, and ensure your app follows Intuit's API guidelines."
+   },
+   {
+    "claim": "auth",
+    "url": "https://github.com/api-evangelist/quickbooks/blob/main/README.md",
+    "quote": "The QuickBooks Online Accounting API (v3) gives developers REST access... The API uses OAuth 2.0 with the Intuit OAuth platform."
+   },
+   {
+    "claim": "access",
+    "url": "https://help.developer.intuit.com/s/article/App-Assessment-Questionnaire-FAQ",
+    "quote": "If you have a new or development-mode app, you will not be able to access your production credentials until your questionnaire is submitted and your app is approved."
+   },
+   {
+    "claim": "access",
+    "url": "https://maesn.com/blog/quickbooks-api-pricing-2026/",
+    "quote": "Builder is free... 500,000 reads, then blocked. No listing."
+   },
+   {
+    "claim": "access",
+    "url": "https://maesn.com/blog/quickbooks-api-pricing-2026/",
+    "quote": "Four tiers: Builder, Silver, Gold and Platinum. Free, 300, 1.700 and 4.500 USD a month, each with a larger allowance of metered calls."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.intuit.com/app/developer/qbo/docs/learn/app-partner-program",
+    "quote": "Core API calls cover most data-in operations... unmetered and uncharged. CorePlus API calls cover most data-out operations... metered and charges may apply."
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/api-evangelist/quickbooks/blob/main/README.md",
+    "quote": "REST API (v3) for managing customers, invoices, estimates, payments..."
+   },
+   {
+    "claim": "api",
+    "url": "https://usecarly.com/mcp/quickbooks/",
+    "quote": "Extremely broad, covering 29+ entity types including Invoices, Customers, Payments, Bills, Vendors, and 11+ financial reports."
+   },
+   {
+    "claim": "api",
+    "url": "https://help.developer.intuit.com/s/article/Open-API-docs-Swagger-docs-for-QuickBooks-Online-API-and-Payments-API",
+    "quote": "Our APIs are custom and are not Open API/Swagger compliant."
+   },
+   {
+    "claim": "api",
+    "url": "https://apitracker.io/a/quickbooks",
+    "quote": "Webhooks. Supported. Webhooks management API. Yes."
+   },
+   {
+    "claim": "api",
+    "url": "https://intuit-developer-faq.readthedocs.io/en/latest/getting_started/",
+    "quote": "When you create an intuit developer account, we create a quickbooks test company called a sandbox company."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://usecarly.com/mcp/quickbooks/",
+    "quote": "Intuit also publishes quickbooks-online-mcp-server under its own GitHub organization... It exposes the QuickBooks Online API in depth, 144 tools across 29 entity types plus 11 financial reports."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://kipper.com/mcp/quickbooks/",
+    "quote": "Several community servers exist, including those from Wyre and DataGrout.ai."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://satvasolutions.com/quickbooks-online-api-limitations/",
+    "quote": "2 weeks to 2 months."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "QuickBooks Online (QBO) is a cloud-based accounting platform for small and medium-sized businesses, offering features for invoicing, expense tracking, payroll, and financial reporting.\n\n### API Authentication\nQuickBooks Online uses **OAuth 2.0** as its primary authentication method for the public API. A multi-tenant integration platform would use the standard OAuth 2.0 flow to allow users to authorize access to their specific company data.\n*   **Evidence:** \"You'll need to authenticate using OAuth 2.0, handle user permissions, and ensure your app follows Intuit's API guidelines.\" ([Source 1.5.3](https://satvasolutions.com/quickbooks-online-api-limitations/))\n*   **Evidence:** \"The QuickBooks Online Accounting API (v3) gives developers REST access... The API uses OAuth 2.0 with the Intuit OAuth platform.\" ([Source 1.4.4](https://github.com/api-evangelist/quickbooks/blob/main/README.md))\n\n### Developer Access & Cost\n**Access Category:** `approval_required`\nDevelopers can sign up for a free account and get immediate access to a sandbox environment. However, obtaining production credentials requires completing a mandatory assessment process. As of July 2025, Intuit introduced a tiered \"App Partner Program\" that charges for data retrieval (reads).\n*   **Credential Acquisition:** \"If you have a new or development-mode app, you will not be able to access your production credentials until your questionnaire is submitted and your app is approved.\" ([Source 1.5.1](https://help.developer.intuit.com/s/article/App-Assessment-Questionnaire-FAQ))\n*   **Cost (Free Tier):** \"Builder is free... 500,000 reads, then blocked. No listing.\" ([Source 1.1.2](https://maesn.com/blog/quickbooks-api-pricing-2026/))\n*   **Cost (Paid Plans):** \"Four tiers: Builder, Silver, Gold and Platinum. Free, 300, 1.700 and 4.500 USD a month, each with a larger allowance of metered calls.\" ([Source 1.1.2](https://maesn.com/blog/quickbooks-api-pricing-2026/))\n*   **API Classification:** \"Core API calls cover most data-in operations... unmetered and uncharged. CorePlus API calls cover most data-out operations... metered and charges may apply.\" ([Source 1.1.4](https://developer.intuit.com/app/developer/qbo/docs/learn/app-partner-program))\n\n### API Details\n*   **Style:** REST (v3). \"REST API (v3) for managing customers, invoices, estimates, payments...\" ([Source 1.4.4](https://github.com/api-evangelist/quickbooks/blob/main/README.md))\n*   **Breadth:** Extremely broad, covering 29+ entity types including Invoices, Customers, Payments, Bills, Vendors, and 11+ financial reports. ([Source 1.2.2](https://usecarly.com/mcp/quickbooks/))\n*   **OpenAPI Spec:** Officially not supported, though community versions exist. \"Our APIs are custom and are not Open API/Swagger compliant.\" ([Source 1.4.2](https://help.developer.intuit.com/s/article/Open-API-docs-Swagger-docs-for-QuickBooks-Online-API-and-Payments-API))\n*   **Webhooks:** Supported. \"Webhooks. Supported. Webhooks management API. Yes.\" ([Source 1.4.5](https://apitracker.io/a/quickbooks))\n*   **Sandbox:** Available for free upon account creation. \"When you create an intuit developer account, we create a quickbooks test company called a sandbox company.\" ([Source](https://intuit-developer-faq.readthedocs.io/en/latest/getting_started/))\n\n### MCP Servers\n*   **Official:** Yes. Intuit maintains an official open-source MCP server. \"Intuit also publishes quickbooks-online-mcp-server under its own GitHub organization... It exposes the QuickBooks Online API in depth, 144 tools across 29 entity types plus 11 financial reports.\" ([Source 1.2.2](https://usecarly.com/mcp/quickbooks/))\n*   **Community:** Several community servers exist, including those from Wyre and DataGrout.ai. ([Source 1.2.1](https://kipper.com/mcp/quickbooks/))\n\n### Buildability Verdict\n**Verdict:** `ready_with_friction`\n**Main Blocker:** The mandatory **App Assessment Questionnaire** and potential security review required for production credentials, combined with the **tiered pricing model** that meters read operations, create significant friction for scaling multi-tenant integrations.\n\n*   **Note:** While a developer can build and test immediately in the sandbox (`ready_now` for dev), the transition to production is gated by a review process that can take \"2 weeks to 2 months.\" ([Source 1.5.3](https://satvasolutions.com/quickbooks-online-api-limitations/))",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "QuickBooks API pricing 2026 developer account cost",
+   "QuickBooks Online API app review requirements for production",
+   "QuickBooks Online OpenAPI specification download",
+   "intuit quickbooks-online-mcp-server official status",
+   "QuickBooks Online API rate limits and plans"
+  ],
+  "search_sources": [
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFuW5r7HA-Wp7LoKAY0UAtk8dKdRjZW6sGQu3ItxEDDcm4TaCQ2MRcB4EvNATxDtBWqWTADsyH6k7Bmb0zXvcC1MwTOccyRF9GdecS5NTjWEbjt2RtJvQnhkTEV6QcEo08eCxO-E4en7quV_EIZQ=="
+   },
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGb3_Jf2Pi7da1cZaPjjWB62kxrDRSnYzMJT26CPW6hFJZw_uJnKkGQAjnE5gJBSyPsODgFqnADxUbqY2nDhRzn7ZUktfz_LLQ5MftrFlTX6QEeiU1Y_xS6v29BN-MYSTbVx3byaEf4QMTHyYaZ"
+   },
+   {
+    "title": "apitracker.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTCucicgxwTwoKU-lJEIt9wdlrP3AZGDi-gyuMYp1DsaGbGGvLQ4cvHFZwuoNP5TgxM8CjM-d76uKehdUaWeQKtYUPkiSBlcqSbPc94FoBGZytlNmopOlAswT7-kY="
+   },
+   {
+    "title": "satvasolutions.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXbmM5J9NGesdQZw1NnJh31bRT_s5htQM8OcB-jEy-42PZXzFdgBQwd1EXmg028uvzw9EPwn-PdY9YcAbrms31wrfsyxx4MTqK4E88zjIGpOgsmpzZrFLLXxqx2iiNPFONKFH5nogCG3krpCMMQI9ZkBIpJxBVTVBjno8NiGVyzkWgfSphkN9iqt4yeRc="
+   },
+   {
+    "title": "truto.one",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfTbhab5hGdm5ArOfOZcb7D1nBkF_li6SrPKq6wO-D54_PJeIGaKefcVEMFeGfG3jelOLWh75WMXDs6Q1umFhiXreY2gQDxDp9UNk5KtpdEFXgkm8oRsZB5qXsLlSIYUu-vGC-yxOQB_Va8TrPeML2Dj1TQMNKrUJ9Ce94eSfZmfVQZryEWj6zt_BOFTXwFOyP"
+   },
+   {
+    "title": "codat.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGa8h5g9MWafNBl_hcLvLlI1U-bSEd65oHwkFpgJoR_kgPhwoy73zS8ySXB4rpcsSa7lVe0Tcvrqq-yxwgOHJxacHeCXH3frEm_MLR3-_Uu5vuM7Hj9-4yPc4zTblxsNc8e8ljVHjFHlz-kfp0CY-K2Vv-q76JBKoyERqyDxTrn4w61jOZe6ofYMAtkbbf7fiLheNJJA5fV1ocEKg=="
+   },
+   {
+    "title": "intuit.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqHlv1SHR4LNAo7u2P4xRsCuvSKeYOLgZb4Q0jA8X7-9IqTQtABLDAewDeKM_jbri_MOiPLsAYLgQSZ2IC9byk39l6pLOlQodsYFqhDxjsR3MMO9hIxcnpINfmucZg2SCTLs04PX-ab-gQUbaRfKvYOdlmiL84nzaUqysIvEKZ00Ye9VGYUIH7x8A6w8tXq8PeHoi_aBDGXN91r_miDpya3FLEQoe2eRtV8zW4pEZ7f2pVSb1gmnROGDfuDj9Gl-xJSw7Ab5bXtyf0Nd1U"
+   },
+   {
+    "title": "intuit.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDeuClHqzj8t9AtKACIozq3TgaibWN9c08TUcbkdl5IFfuPjaYpWCmAzny4DA3eVWufuQS25CJpjjytNefV1rvMZxfYBma5dqcAYGE6iBBNJLT5kupq5beGZK55XGWUxhYorq2rEu9g9gAef9Tk5nbwnBX0_xKMH5leAr8NeYXVa42Aej9"
+   },
+   {
+    "title": "maesn.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9aPJJ21HRqKy0vUOTpNpZQSeMO_N_aWQ-OSDoQTF8N6bS7iqQdccuGMbB5EFB1MRUs830KzDMBnj_ZZmRlMfPBnIK1a8JjgvNne4N4o-yzu95o_dGp8a7m1XHvI9ahcmf_DIscUw0AeCiDnDPEyYxCEZv"
+   },
+   {
+    "title": "intuit.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5BUq4RgJmnLqdq-1g8wmjh2JXYYwtd6yEWMIyDlubij4GN-PAh824G6o2hV84gVGn7avre8UrzF6oOgRDtcd1QNULQ-5t3MzvFEMxP0jlcqE6_8pquTd7kP1sQ5VKph57v6o-fVbkOK1-_KA6Q2Z9AQYJj_qz7NbhAX0-"
+   },
+   {
+    "title": "apideck.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrRxJjf9A0iMX_vUASr1pZYRYJZ45k6NvC-_tAr8jUf1mQh8DJJFedXUw8Y22FVNGBHkpEOsnIt-U2nQlwj_LuGUt_FXbHvlhgsmJapNi3SQEK8Ym7jAlIp6D1E2vtXm1oyBV3V4d1e0zxX5PWAIeCiJgnK4fwC3oY9yHVEWEA1Oh_9E6DRm2duP2LnfYCTJOI"
+   },
+   {
+    "title": "kipper.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4V0VwouJJc_TIlGHVHau5ErZgTirLkl-nEAxs8BslXmiWcuPazylCcFgEiKYZfZopYz9VZOZPNQpOutwIbJuzzx4kdlOyftqJReI6YInS-NVlxoP_Y4k16PXGbkKLR-ZySok="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBAZc9MQVJK273lr50QspsZ7ah0ikFV424M9gBOvUS853qamXNXnylk0DGErm3xxgRq6SvQDanr4xM1D76m3wXdJe5RXFgPAzTWTl85ONEm-b2aFB7Jm_a-NIQIPlV4RxsQSFk1W4pkNcpUuKsVfINRA=="
+   },
+   {
+    "title": "intuit.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjsis04gBpNza1fVXEQJLckZHjIcpmqww4j8Em2EVbeGUmK9vN-ZpHa4C7tRS74aSUBEwkQ-XFZ5sxnZC-5sfZbiQEwSm-idOPXEDwa_LWYpXusrLXJaz8ouzj-BjVkjh2Xc9C84HbiR97_AQJdOF4hQlu9x35wptNu69VDm4NE1rtlxHXmyBxjtdjQM7h92e6fAwieVkbJpxZauVzYkXwncc35nJuI2JlWnefkT0GL9vaPqvEP0SY5KorkmwV33RcGi3zy--KaGwROtsAnKS-PHFwZFTkTdX1195ShC7SyKvwa9KLGrG2GVbKW_1ldxhZCyB6TQbgeOzfb3gygHupbuDuNJvVBuAEiS4GIa8nIGJIz1KLXBv5fUnCVldQ8FWmcxRz_PpcXTzq664MfuR4f4yFNorRioKgjFju0Nngaujp7toAF4k6WHR9gpPu"
+   },
+   {
+    "title": "intuit.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOGU1_eWxCJpaW5vwWS7PFW9p_jiDeFRnhIp1Zcm919CWXZ7FEjhyhyCELF7rVm8XMJ__xJW3bh3yyqjQHUL2S_g0pniiePph3aYGHteLYCDKjYhvn6jTL5jw9M9UgSZOmSTZihFB-mpCUV86XH8-kU9uc00HvZe7Z-blrqkcD3UGCU9M2H7TR8ScC7WLZ58miQQVR8EVci5DOKFB0kVdl7Iz-EaPkhcPH5zI="
+   },
+   {
+    "title": "usecarly.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoybZSkvLZfVYUGPULz4cAeRaBHVlSDiQfqEu3hkZkgBqcHHCBluDZCPhyMkTyCBX10DE0SClsM9xI5OvdulH8ycJdJn0lTkwkuRKlvvoK9DcqIj5ObWJvYHUnEwqlu_5rZL_WtGJzeg=="
+   }
+  ],
+  "tokens": 4068,
+  "retries": [
+   "504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status':"
+  ],
+  "discovery": {
+   "search_queries": [
+    "QuickBooks developer authentication developer.intuit.com",
+    "QuickBooks API keys developer.intuit.com",
+    "QuickBooks OAuth developer.intuit.com",
+    "QuickBooks developer getting started developer.intuit.com",
+    "QuickBooks developer quickstart developer.intuit.com",
+    "QuickBooks developer pricing developer.intuit.com",
+    "QuickBooks API access plans developer.intuit.com",
+    "QuickBooks developer program developer.intuit.com",
+    "QuickBooks API reference developer.intuit.com",
+    "QuickBooks API documentation developer.intuit.com",
+    "QuickBooks MCP server",
+    "QuickBooks developer MCP server"
+   ],
+   "candidates": 6,
+   "live_urls": [
+    "https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization",
+    "https://developer.intuit.com/app/developer/qbo/docs/get-started",
+    "https://developer.intuit.com/app/developer/qbo/docs/learn/app-partner-program",
+    "https://developer.intuit.com/app/developer/qbo/docs/api/accounting",
+    "https://accounts.intuit.com/app/sign-in?redirect_uri=https%3A%2F%2Fdeveloper.intuit.com%2Fapp%2Fdeveloper%2Fplayground&single_sign_on=false&app_group=ExternalDeveloperPortal&asset_alias=Intuit.devx.devx&partner_uid_button=google&appfabric=true",
+    "https://help.developer.intuit.com/s/article/Configuring-the-Oauth-2-0-Playground-for-QuickBooks-Online",
+    "https://intuit-developer-faq.readthedocs.io/en/latest/getting_started/",
+    "https://github.com/intuit/quickbooks-online-mcp-server",
+    "https://apitracker.io/a/quickbooks",
+    "https://www.apideck.com/blog/quickbooks-api-pricing-and-the-intuit-app-partner-program",
+    "https://dev.to/zuplo/quickbooks-api-complete-developers-guide-2026-3l77",
+    "https://truto.one/blog/how-much-does-the-quickbooks-api-cost-2026-pricing-rate-limits/"
+   ],
+   "bad_candidates": [],
+   "pages_read": [
+    {
+     "url": "https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization",
+     "status": 200,
+     "chars": 63,
+     "readable": false
+    },
+    {
+     "url": "https://developer.intuit.com/app/developer/qbo/docs/get-started",
+     "status": 200,
+     "chars": 63,
+     "readable": false
+    },
+    {
+     "url": "https://developer.intuit.com/app/developer/qbo/docs/learn/app-partner-program",
+     "status": 200,
+     "chars": 63,
+     "readable": false
+    },
+    {
+     "url": "https://developer.intuit.com/app/developer/qbo/docs/api/accounting",
+     "status": 200,
+     "chars": 63,
+     "readable": false
+    },
+    {
+     "url": "https://accounts.intuit.com/app/sign-in?redirect_uri=https%3A%2F%2Fdeveloper.intuit.com%2Fapp%2Fdeveloper%2Fplayground&single_sign_on=false&app_group=ExternalDeveloperPortal&asset_alias=Intuit.devx.devx&partner_uid_button=google&appfabric=true",
+     "status": 200,
+     "chars": 62,
+     "readable": false
+    },
+    {
+     "url": "https://help.developer.intuit.com/s/article/Configuring-the-Oauth-2-0-Playground-for-QuickBooks-Online",
+     "status": 200,
+     "chars": 72,
+     "readable": false
+    },
+    {
+     "url": "https://intuit-developer-faq.readthedocs.io/en/latest/getting_started/",
+     "status": 200,
+     "chars": 1847,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 291.2
+ }
+}

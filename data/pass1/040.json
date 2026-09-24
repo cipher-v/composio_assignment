@@ -1,0 +1,243 @@
+{
+ "app": {
+  "id": 40,
+  "name": "SendGrid",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "sendgrid.com"
+ },
+ "record": {
+  "subcategory": "Email delivery",
+  "one_liner": "SendGrid is a cloud-based email delivery platform for transactional and marketing email campaigns.",
+  "auth_methods": [
+   "bearer_token",
+   "basic"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "API keys can be passed as a Bearer token or via HTTP Basic authentication (username 'apikey', password is the API key). No public OAuth2 application flow.",
+  "access": "self_serve_trial",
+  "access_notes": "Developers can sign up self-serve for a 60-day free trial. After the trial, a paid plan (starting at $19.95/month) is required for API access.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extremely broad REST API with over 60 endpoints for Mail Send, Account Provisioning, Alerts, API Keys, Domain Authentication, Marketing Campaigns, and Subusers.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "community_only",
+  "mcp_notes": "No official SendGrid MCP server; Twilio's official MCP server does not cover SendGrid v3. Community-built servers exist, e.g., Garoth/sendgrid-mcp.",
+  "verdict": "ready_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "The free tier expires after 60 days, requiring a paid subscription to maintain active API credentials. Lack of public OAuth2 forces reliance on static API keys.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.postman.com",
+    "quote": "SendGrid is a cloud-based email delivery platform that provides reliable transactional and marketing email services."
+   },
+   {
+    "claim": "auth",
+    "url": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+    "quote": "Twilio SendGrid supports API keys delivered via Bearer token or Basic authentication, depending on the Twilio SendGrid functionality you are using."
+   },
+   {
+    "claim": "auth",
+    "url": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+    "quote": "To use an API key, pass an Authorization header with a value of Bearer <Your-API-Key-Here>"
+   },
+   {
+    "claim": "auth",
+    "url": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+    "quote": "When using Basic Authentication, your username will always be apikey , and your password will be the API key."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+    "quote": "Authenticate to the Twilio SendGrid API by creating an API Key in the Settings section of the Twilio SendGrid console ."
+   },
+   {
+    "claim": "access",
+    "url": "https://apis.io",
+    "quote": "Free Trial freemium. 60-day trial: 100 emails/day, no credit card required. Essentials paid. Starts at $19.95 per month"
+   },
+   {
+    "claim": "access",
+    "url": "https://www.mystrika.com",
+    "quote": "Does SendGrid still have a free tier? No, SendGrid no longer offers a permanent free tier. The current offering is a 60-day trial that provides 100 emails per day. After the trial expires, you must upgrade to a paid Essentials plan starting at $19.95 per month"
+   },
+   {
+    "claim": "api",
+    "url": "https://apitracker.io",
+    "quote": "API styles. REST."
+   },
+   {
+    "claim": "api",
+    "url": "https://www.postman.com",
+    "quote": "Each API below is published from its OpenAPI definition... Twilio SendGrid Account Provisioning API. Twilio SendGrid Alerts API. Twilio SendGrid API Keys API... Twilio SendGrid Mail API."
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com",
+    "quote": "Sendgrid's OpenAPI Specification ... The SendGrid OAI specifications are automatically generated from the SendGrid OAS specifications using the sendgrid-oas-transpiler ."
+   },
+   {
+    "claim": "api",
+    "url": "https://www.twilio.com/docs/sendgrid/api-reference",
+    "quote": "webhooks webhooks api overview create an event webhook... inbound parse inbound parse api overview"
+   },
+   {
+    "claim": "api",
+    "url": "https://www.twilio.com/docs/sendgrid/api-reference",
+    "quote": "Sandbox mode is an optional parameter within mail_settings that validates a Mail Send request without delivering the email. Enabling sandbox mode lets you confirm that your request body is formatted correctly without sending the email to any of your recipients."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://www.usecarly.com",
+    "quote": "Does SendGrid have an official MCP server? No. SendGrid does not ship one, and Twilio's official MCP server ( @twilio-alpha/mcp ) exposes Twilio's Public API rather than SendGrid's v3 email API."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://www.usecarly.com",
+    "quote": "Community Server Example: Garoth/sendgrid-mcp"
+   },
+   {
+    "claim": "verdict",
+    "url": "https://www.mystrika.com",
+    "quote": "Does SendGrid still have a free tier? No, SendGrid no longer offers a permanent free tier. The current offering is a 60-day trial that provides 100 emails per day. After the trial expires, you must upgrade to a paid Essentials plan starting at $19.95 per month"
+   }
+  ],
+  "confidence": 0.9
+ },
+ "notes": "### Product Research Notes: SendGrid\n\n#### 1. What the Product Does\nSendGrid (owned by Twilio) is a cloud-based email delivery platform designed to handle transactional and marketing email campaigns at scale.\n* **Source URL:** `https://www.postman.com`\n* **Verbatim Quote:** `\"SendGrid is a cloud-based email delivery platform that provides reliable transactional and marketing email services.\"`\n\n#### 2. Public API Authentication Methods & Multi-Tenant Architecture\nSendGrid's public v3 API relies entirely on API keys. It supports passing these keys either as a static Bearer token or via HTTP Basic authentication (where the username is literally the string `apikey` and the password is the API key). SendGrid does **not** provide a public OAuth2 application flow for third-party platforms to authenticate end-users via an authorization code grant. \n* **Source URL:** `https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication`\n* **Verbatim Quote:** `\"Twilio SendGrid supports API keys delivered via Bearer token or Basic authentication, depending on the Twilio SendGrid functionality you are using.\"`\n* **Verbatim Quote:** `\"To use an API key, pass an Authorization header with a value of Bearer <Your-API-Key-Here>\"`\n* **Verbatim Quote:** `\"When using Basic Authentication, your username will always be apikey , and your password will be the API key.\"`\n\n**Primary Auth for Multi-Tenant Integration:** `api_key`\nSince there is no public OAuth2 app ecosystem for third-party integrations, a multi-tenant platform like Composio must securely collect and store the customer's SendGrid API key to make requests on their behalf.\n\n#### 3. Credential Acquisition & Cost\nDevelopers can sign up for a SendGrid account entirely self-serve without a credit card. However, SendGrid no longer offers a permanent free tier; instead, it provides a time-limited 60-day trial. After the trial expires, developers must upgrade to a paid plan to maintain API access.\n* **Source URL:** `https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication`\n* **Verbatim Quote:** `\"Authenticate to the Twilio SendGrid API by creating an API Key in the Settings section of the Twilio SendGrid console .\"`\n* **Source URL:** `https://apis.io`\n* **Verbatim Quote:** `\"Free Trial freemium. 60-day trial: 100 emails/day, no credit card required. Essentials paid. Starts at $19.95 per month\"`\n* **Source URL:** `https://www.mystrika.com`\n* **Verbatim Quote:** `\"Does SendGrid still have a free tier? No, SendGrid no longer offers a permanent free tier. The current offering is a 60-day trial that provides 100 emails per day. After the trial expires, you must upgrade to a paid Essentials plan starting at $19.95 per month\"`\n\n**Access Definition:** `self_serve_trial`\n\n#### 4. API Style & Technical Characteristics\n* **API Style:** REST\n  * **Source URL:** `https://apitracker.io`\n  * **Verbatim Quote:** `\"API styles. REST.\"`\n* **API Breadth:** Extremely broad, spanning over 60 distinct endpoints including Mail Send, Account Provisioning, Alerts, API Keys, Domain Authentication, Marketing Campaigns, and Subusers.\n  * **Source URL:** `https://www.postman.com`\n  * **Verbatim Quote:** `\"Each API below is published from its OpenAPI definition... Twilio SendGrid Account Provisioning API. Twilio SendGrid Alerts API. Twilio SendGrid API Keys API... Twilio SendGrid Mail API.\"`\n* **OpenAPI Spec:** Yes, officially maintained and used to generate helper libraries.\n  * **Source URL:** `https://github.com`\n  * **Verbatim Quote:** `\"Sendgrid's OpenAPI Specification ... The SendGrid OAI specifications are automatically generated from the SendGrid OAS specifications using the sendgrid-oas-transpiler .\"`\n* **Webhooks:** Supports both Event Webhooks (for tracking delivery metrics) and Inbound Parse Webhooks.\n  * **Source URL:** `https://www.twilio.com/docs/sendgrid/api-reference`\n  * **Verbatim Quote:** `\"webhooks webhooks api overview create an event webhook... inbound parse inbound parse api overview\"`\n* **Sandbox:** Includes a built-in \"Sandbox Mode\" parameter within the Mail Send payload to validate requests without consuming quota or delivering actual emails.\n  * **Source URL:** `https://www.twilio.com/docs/sendgrid/api-reference` (via Sandbox Mode documentation)\n  * **Verbatim Quote:** `\"Sandbox mode is an optional parameter within mail_settings that validates a Mail Send request without delivering the email. Enabling sandbox mode lets you confirm that your request body is formatted correctly without sending the email to any of your recipients.\"`\n\n#### 5. Model Context Protocol (MCP) Servers\nThere is no official SendGrid MCP server. While Twilio publishes an official MCP server, it only covers the core Twilio API (SMS, Voice, etc.) and completely excludes the SendGrid v3 email API. However, multiple community-built servers exist.\n* **Source URL:** `https://www.usecarly.com`\n* **Verbatim Quote:** `\"Does SendGrid have an official MCP server? No. SendGrid does not ship one, and Twilio's official MCP server ( @twilio-alpha/mcp ) exposes Twilio's Public API rather than SendGrid's v3 email API.\"`\n* **Community Server Example:** `Garoth/sendgrid-mcp`\n\n**MCP Status:** `community_only`\n\n#### 6. Buildability Verdict\n* **Verdict:** `ready_with_friction`\n* **Main Blocker:** `trial_expiry`\n\n**Justification:** SendGrid provides comprehensive public REST documentation, an OpenAPI specification, and a self-serve signup flow that requires no upfront credit card or manual vendor approval. However, it introduces friction because the free tier expires after 60 days, requiring a paid subscription (starting at $19.95/month) to maintain active API credentials for ongoing development and testing. Additionally, the lack of a public OAuth2 application flow forces the toolkit to rely on per-customer static API keys.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "sendgrid pricing free tier api access",
+   "sendgrid authentication oauth2",
+   "sendgrid openapi spec",
+   "sendgrid mcp server",
+   "sendgrid sandbox mode",
+   "sendgrid sandbox environment"
+  ],
+  "search_sources": [
+   {
+    "title": "postman.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEmrcry-j5IKvlwf2Y5THW8T1M376OLLlM2pzKE5KRSPI7jvh0oyGE0aKup520a0m-aO5mRaHqc6n7SCI-UF4SMUP2sLIl1mWWoQ2UBk5sdzq74Zt-ZYccyWAn_PuXqnWf_ox2-HPfrJlt9cOIC9rWj20="
+   },
+   {
+    "title": "beeceptor.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZ_hbPsrVqAnMlFONcJO-Mu2unRgwhRqQORpbxa6WU3Uu19zEHczXnS9yXQRGwQc3FGOw0IoSrc-PluXGC1iFI1KuLcfgZd-ZyOMTgUZtScmX5xzJNWwwF9vR_EJFwgHmLUCDowOByaeA-81Rp-UFy"
+   },
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8YOudXtsV4YERqU59iZJPObe2U365X_xyHPlfQti6N5H-blrLu9JUQ0NAWch0XXvAOtMKiSiXlNG-pYWZ6gjYMA9lZAGUWULpZd1zPw3GPMR6NLoBgb7C1IXrA8VvscAJOt3VzWaphJvBcRZLu-mN"
+   },
+   {
+    "title": "apitracker.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkbjbGRQ-QJkujeSoXRzPeK-7oKNxldwfauBzncPVwDrqbewlK63JJ1bnRaqL_rPXKYgExbrv596qp2C3keMl91088Sn6FA61vbJLcsUEjRb5gvsH8S5rQD_A="
+   },
+   {
+    "title": "twilio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAiPzpqgXs0sGpLAPYmnNsW1fkPLy9h__p-TdLdmZQSc-WZ10yb-FuTDaBauInfOChKZxAvIbIZIJi9bnd9dfPcGx8F1wLl6QGbtT-TuuUm2GmV7Q3fkgx91L3ZOpXN4vj71Vgtcra3BWgZzol9P2qbTanPGeEHnYfvFzmacLVxLcsvacQoIwwsQ=="
+   },
+   {
+    "title": "dev.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-UmyKaPyAztzyJjav3h3QcY_lMdGo-Io5Hmzb6DtlCG1Uu4IaW_RqA4ljRMDE50exE30hTO8laNSXjxd2t6d0iwxZ8-sabRS5ThaflxybB1pETvTeol7SLbNIo43NE2FNY8_lgVXnBIw8btZ_SMI5_9yqShS8HorS7xMHpJJ0asOwyvSFveCb6__wro7N"
+   }
+  ],
+  "tokens": 10473,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "SendGrid authentication API keys OAuth documentation",
+    "SendGrid getting started quickstart documentation",
+    "SendGrid pricing API access plans",
+    "SendGrid API reference index",
+    "SendGrid MCP server official",
+    "SendGrid MCP server community"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://www.twilio.com/en-us/products/email-api/pricing",
+    "https://www.twilio.com/docs/sendgrid/api-reference",
+    "https://www.twilio.com/docs/sendgrid/for-developers/sending-email/quickstart-nodejs",
+    "https://www.twilio.com/docs/sendgrid/ui/account-and-settings/api-keys",
+    "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+    "https://www.twilio.com/docs/sendgrid/for-developers/sending-email/authentication",
+    "https://www.twilio.com/docs/sendgrid/for-developers/sending-email/api-getting-started",
+    "https://www.twilio.com/docs/sendgrid/for-developers/sending-email/email-api-quickstart-for-c",
+    "https://www.twilio.com/docs/sendgrid/for-developers/sending-email/quickstart-python",
+    "https://github.com/Garoth/sendgrid-mcp",
+    "https://apis.io/plans/sendgrid/sendgrid-plans-pricing/"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://www.twilio.com/docs/sendgrid/api-keys",
+     "status": 404
+    },
+    {
+     "url": "https://www.twilio.com/docs/sendgrid/api/getting-started",
+     "status": 404
+    },
+    {
+     "url": "https://www.twilio.com/docs/sendgrid/api-reference/authentication",
+     "status": 404
+    },
+    {
+     "url": "https://www.twilio.com/docs/sendgrid/for-developers/sending-email/quickstart-csharp",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://www.twilio.com/en-us/products/email-api/pricing",
+     "status": 200,
+     "chars": 27370,
+     "readable": true
+    },
+    {
+     "url": "https://www.twilio.com/docs/sendgrid/api-reference",
+     "status": 200,
+     "chars": 17150,
+     "readable": true
+    },
+    {
+     "url": "https://www.twilio.com/docs/sendgrid/for-developers/sending-email/quickstart-nodejs",
+     "status": 200,
+     "chars": 17223,
+     "readable": true
+    },
+    {
+     "url": "https://www.twilio.com/docs/sendgrid/ui/account-and-settings/api-keys",
+     "status": 200,
+     "chars": 11783,
+     "readable": true
+    },
+    {
+     "url": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+     "status": 200,
+     "chars": 17165,
+     "readable": true
+    },
+    {
+     "url": "https://www.twilio.com/docs/sendgrid/for-developers/sending-email/authentication",
+     "status": 200,
+     "chars": 7635,
+     "readable": true
+    },
+    {
+     "url": "https://www.twilio.com/docs/sendgrid/for-developers/sending-email/api-getting-started",
+     "status": 200,
+     "chars": 9701,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 84.1
+ }
+}

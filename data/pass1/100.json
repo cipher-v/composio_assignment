@@ -1,0 +1,246 @@
+{
+ "app": {
+  "id": 100,
+  "name": "Grain",
+  "category": "AI, Research and Media-native",
+  "hint": "grain.com (meeting notes)"
+ },
+ "record": {
+  "subcategory": "Meeting recording and note-taking",
+  "one_liner": "AI-powered meeting recording and note-taking platform that captures, transcribes, and summarizes video calls.",
+  "auth_methods": [
+   "bearer_token",
+   "oauth2"
+  ],
+  "primary_auth": "bearer_token",
+  "auth_notes": "Public API supports Personal Access Tokens (PATs) passed as a Bearer token. OAuth2 is available for specific pre-built integrations.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up for a free Grain account and instantly generate a Personal Access Token from the workspace settings without requiring manual approval or partner review. The personal API is available across all plans, including the free tier.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "The API covers reading and managing recordings, highlights, video uploads, tags, action items, teams, users, and webhooks.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Grain hosts and maintains an official remote MCP server available to all users. Configuration: mangual config via mcp-remote : { \"grain\": { \"command\": \"npx\", \"args\": [\"-y\", \"mcp-remote\", \"https://api.grain.com/_/mcp\"] } }",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. The API documentation is fully public, and credentials can be obtained immediately via self-serve methods on a free account.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://coldiq.com/tools/grain",
+    "quote": "Grain is an AI-powered meeting tool designed for sales, customer success, and product teams. It automatically records, transcribes, and summarizes meetings to keep teams focused without manual note-taking."
+   },
+   {
+    "claim": "auth",
+    "url": "https://nango.dev/integrations/grain",
+    "quote": "Grain offers both OAuth and API_KEY authentication modes. For the API_KEY auth mode, Authorization: Bearer apiKey is passed in the request header to access different endpoints, where apiKey is your account's personal access token."
+   },
+   {
+    "claim": "auth",
+    "url": "https://grain.com/app/settings/integrations?tab=api",
+    "quote": "Every request needs a token in the Authorization header and a Public-Api-Version header (see Versions). ... curl -X GET \\ -H \"Authorization: Bearer grain_pat_example123\" \\ -H \"Public-Api-Version: 2026-10-01\" \\ https://api.grain.com/_/public-api/v2/token-info"
+   },
+   {
+    "claim": "auth",
+    "url": "https://grain.com/app/settings/integrations?tab=api",
+    "quote": "A Personal Access Token (PAT) authenticates requests as you, with the same access you have in Grain. Generate one here: https://grain.com/app/settings/integrations?tab=api."
+   },
+   {
+    "claim": "access",
+    "url": "https://grain.com/app/settings/integrations?tab=api",
+    "quote": "1. Create a Personal Access Token. A Personal Access Token (PAT) authenticates requests as you, with the same access you have in Grain. Generate one here: https://grain.com/app/settings/integrations?tab=api."
+   },
+   {
+    "claim": "access",
+    "url": "https://grain.com/release-note/06-18-2025",
+    "quote": "try grain today. it’s free forever."
+   },
+   {
+    "claim": "access",
+    "url": "https://grain.com/release-note/06-18-2025",
+    "quote": "Personal API on Starter. We said we'd bring it to Starter. It's there now. Build on your Grain data from any plan."
+   },
+   {
+    "claim": "api",
+    "url": "https://semarize.com/resources/get-your-data/grain",
+    "quote": "Grain exposes recordings and transcripts through a REST API at api.grain.com/_/public-api/."
+   },
+   {
+    "claim": "api",
+    "url": "https://grain.com/app/settings/integrations?tab=api",
+    "quote": "The Grain API lets you read and manage recordings, highlights, uploads, and more."
+   },
+   {
+    "claim": "api",
+    "url": "https://grain.com/release-note/06-18-2025",
+    "quote": "Two highly-requested additions for API users: tags and action items! Dig into the docs at developers.grain.com."
+   },
+   {
+    "claim": "api",
+    "url": "https://apitracker.io/",
+    "quote": "OpenAPI/Swagger specs. -"
+   },
+   {
+    "claim": "api",
+    "url": "https://grain.com/app/settings/integrations?tab=api",
+    "quote": "Hooks let Grain notify your server when something happens. Create one with a hook_type and a URL, and Grain sends a POST request to that URL whenever a matching event occurs."
+   },
+   {
+    "claim": "api",
+    "url": "https://apitracker.io/",
+    "quote": "Sandbox environment. -"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://grain.com/release-note/06-18-2025",
+    "quote": "official grain mcp server announced: june 18, 2025 mike adams ‍ grain's official mcp server is available now for all users! 🎉"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://grain.com/release-note/06-18-2025",
+    "quote": "mangual config via mcp-remote : { \"grain\": { \"command\": \"npx\", \"args\": [\"-y\", \"mcp-remote\", \"https://api.grain.com/_/mcp\"] } }"
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### 1. Product Overview\nGrain is an AI-powered meeting recording and note-taking platform that automatically captures, transcribes, and summarizes video calls across platforms like Zoom, Google Meet, and Microsoft Teams, turning conversations into searchable, shareable insights.\n* **Source URL:** `https://coldiq.com/tools/grain`\n* **Verbatim Quote:** `\"Grain is an AI-powered meeting tool designed for sales, customer success, and product teams. It automatically records, transcribes, and summarizes meetings to keep teams focused without manual note-taking.\"`\n\n### 2. Authentication Methods & Multi-Tenant Integration\n* **Available Auth Methods:** The public API supports Personal Access Tokens (PATs) passed as a Bearer token, and the platform also supports OAuth2 for specific pre-built integrations.\n  * **Source URL:** `https://nango.dev/integrations/grain`\n  * **Verbatim Quote:** `\"Grain offers both OAuth and API_KEY authentication modes. For the API_KEY auth mode, Authorization: Bearer apiKey is passed in the request header to access different endpoints, where apiKey is your account's personal access token.\"`\n  * **Source URL:** `https://grain.com/app/settings/integrations?tab=api`\n  * **Verbatim Quote:** `\"Every request needs a token in the Authorization header and a Public-Api-Version header (see Versions). ... curl -X GET \\ -H \"Authorization: Bearer grain_pat_example123\" \\ -H \"Public-Api-Version: 2026-10-01\" \\ https://api.grain.com/_/public-api/v2/token-info\"`\n* **Primary Auth for Multi-Tenant Integration:** `bearer_token`\n  * **Reasoning:** Because Grain's public developer documentation instructs users to generate individual Personal Access Tokens (PATs) for custom API access, a multi-tenant integration platform would have users provide their static PAT.\n  * **Source URL:** `https://grain.com/app/settings/integrations?tab=api`\n  * **Verbatim Quote:** `\"A Personal Access Token (PAT) authenticates requests as you, with the same access you have in Grain. Generate one here: https://grain.com/app/settings/integrations?tab=api.\"`\n\n### 3. Credential Acquisition & Cost\n* **Access Level:** `self_serve_free`\n* **How to get credentials:** Any developer can sign up for a free Grain account and instantly generate a Personal Access Token from the workspace settings without requiring manual approval or partner review.\n  * **Source URL:** `https://grain.com/app/settings/integrations?tab=api`\n  * **Verbatim Quote:** `\"1. Create a Personal Access Token. A Personal Access Token (PAT) authenticates requests as you, with the same access you have in Grain. Generate one here: https://grain.com/app/settings/integrations?tab=api.\"`\n* **Cost / Plan Requirements:** Grain offers a free tier, and the personal API is available across plans.\n  * **Source URL:** `https://grain.com/release-note/06-18-2025`\n  * **Verbatim Quote:** `\"try grain today. it’s free forever.\"`\n  * **Source URL:** `https://grain.com/release-note/06-18-2025` *(from the March 25, 2026 update section)*\n  * **Verbatim Quote:** `\"Personal API on Starter. We said we'd bring it to Starter. It's there now. Build on your Grain data from any plan.\"`\n\n### 4. API Technical Details\n* **API Style:** REST API\n  * **Source URL:** `https://semarize.com/resources/get-your-data/grain`\n  * **Verbatim Quote:** `\"Grain exposes recordings and transcripts through a REST API at api.grain.com/_/public-api/.\"`\n* **Breadth:** Covers reading and managing recordings, highlights, video uploads, tags, action items, teams, users, and webhooks.\n  * **Source URL:** `https://grain.com/app/settings/integrations?tab=api`\n  * **Verbatim Quote:** `\"The Grain API lets you read and manage recordings, highlights, uploads, and more.\"`\n  * **Source URL:** `https://grain.com/release-note/06-18-2025` *(from the March 6, 2026 update section)*\n  * **Verbatim Quote:** `\"Two highly-requested additions for API users: tags and action items! Dig into the docs at developers.grain.com.\"`\n* **OpenAPI Spec:** None found publicly.\n  * **Source URL:** `https://apitracker.io/`\n  * **Verbatim Quote:** `\"OpenAPI/Swagger specs. -\"`\n* **Webhooks:** Supported. Event types include `recording_added`, `recording_updated`, and `recording_deleted`.\n  * **Source URL:** `https://grain.com/app/settings/integrations?tab=api` *(from the Hooks section)*\n  * **Verbatim Quote:** `\"Hooks let Grain notify your server when something happens. Create one with a hook_type and a URL, and Grain sends a POST request to that URL whenever a matching event occurs.\"`\n* **Sandbox:** None found.\n  * **Source URL:** `https://apitracker.io/`\n  * **Verbatim Quote:** `\"Sandbox environment. -\"`\n\n### 5. Model Context Protocol (MCP) Servers\n* **MCP Status:** `official`\n* **Details:** Grain hosts and maintains an official remote MCP server available to all users.\n  * **Source URL:** `https://grain.com/release-note/06-18-2025`\n  * **Verbatim Quote:** `\"official grain mcp server announced: june 18, 2025 mike adams ‍ grain's official mcp server is available now for all users! 🎉\"`\n* **Configuration:**\n  * **Source URL:** `https://grain.com/release-note/06-18-2025`\n  * **Verbatim Quote:** `\"mangual config via mcp-remote : { \"grain\": { \"command\": \"npx\", \"args\": [\"-y\", \"mcp-remote\", \"https://api.grain.com/_/mcp\"] } }\"`\n\n### 6. Buildability Verdict & Blockers\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. The API documentation is fully public, and credentials can be obtained immediately via self-serve methods on a free account.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"developers.grain.com\"",
+   "\"grain.com\" api documentation oauth",
+   "grain api pricing \"enterprise\" OR \"paid\"",
+   "grain api webhooks openapi",
+   " \"Authentication\" api",
+   " \"OAuth\" public api",
+   " \"Personal Access Token\"",
+   " \"authentication\"",
+   " \"bearer\"",
+   " \"oauth\"",
+   " \"public-api\"",
+   "\"Build on your Grain data from any plan\"",
+   " \"API\"",
+   "\"grain\" \"personal access token\" pricing",
+   "\"grain\" \"public api\" oauth client"
+  ],
+  "search_sources": [
+   {
+    "title": "unified.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDrowdkeyVC4-uZiVmnivM48lkaLG7cWE7n45h7E48TnbYld7PgH9iQHksmUb9bSCgG7JnZ082xApEUkyZQFHrcB6x2mPYOLCWj1ViUXv79ha1fRuMD6NZ2z_RNHmQNA5lV_o3ntr5kvdLV9wxC2lKfnMI6pjarmkExs3ydO0EmAiO4yAeyuUW8DGyvH3H2Nnd-A=="
+   },
+   {
+    "title": "nango.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmSv2r37r5rJzOOSlzongdHSuC_R04YbGRZgjarl1XVSvxDadj7e6-RYGGoewtTgdSweJHbane_eVNuCKyFOjzZY4ZFeEApaosJ2npWyV4fZH8TmQm-Q3k6AtQF27K2Ho9aGd1unHJhg=="
+   },
+   {
+    "title": "grain.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEX7qIp-325vHNLN3pFKL9f6wJKFDvnhZWOepVGvpbZrAcKzPgOvjp6RAhQZA7atyDcAYkfvkXYk26OFRxOkVQMI1GgYh58L7g5amiwpFXNvhCZU84G7w7W"
+   },
+   {
+    "title": "truefoundry.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5nMMICTsKBzVYg32WhxG1M3-R7stps5v1pV8V2Tl5FyhxSUHVC8osrgq2DqXMeBOM2lgqv1tXeS9IPQ3TZ0TZS367pr7qdqHvz537ezBNj8A6edfK81B73BGqYCPrSniK7UBL8UV7TQ4m"
+   },
+   {
+    "title": "textql.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFP0iFoIgmBBdfyvnijhia0C9As2Uh6qEhJQd9lLcq5TeZzli00iTrdyVBc-C-azt3aShqAButpSivkxkRFLaSKPuDDmfjlhscktajoJUR_WMGN2M6wSdtHPex2QVpx_JfFZ4HtnuclBD6O6k4odQ=="
+   },
+   {
+    "title": "grain.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvyBLGR0OnWG8so3lqwLGSQKRMP4mVZFJdcsrCpphpLQ4W5rpLS5YTDg70XZU9r4_aQpX9GOijMoH5oyWljidhfrWnfNhUTgxKJCp4jkOxm6VCBpphwEW0ZL0="
+   },
+   {
+    "title": "textql.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-R9PS4vfWkX1_5Me62u-3kYcjHRtcfUXCcSWFo5DMo8j4OwA_wKziD1BGrqXoB-Srq7E3N_sSMlmD-pW3N4CMVqiE62J7TLeJzh_Jy1dvr0T1wB19W-M_8vGZ5R4TBOCfvlPI"
+   }
+  ],
+  "tokens": 12578,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "Grain API authentication",
+    "Grain API keys",
+    "Grain OAuth developer",
+    "Grain API getting started",
+    "Grain API quickstart",
+    "Grain developer guide",
+    "Grain API pricing",
+    "Grain API plans",
+    "Grain developer program",
+    "Grain partner program",
+    "Grain API reference",
+    "Grain API documentation",
+    "Grain API index",
+    "Grain MCP server"
+   ],
+   "candidates": 3,
+   "live_urls": [
+    "https://grain.com/app/settings/integrations?tab=api",
+    "https://developers.grain.com/",
+    "https://grain.com/pricing",
+    "https://grain.com/release-note/06-18-2025",
+    "https://docs.flymy.ai/mcp/grain/",
+    "https://semarize.com/resources/get-your-data/grain",
+    "https://coldiq.com/tools/grain",
+    "https://www.claap.io/blog/grain-pricing"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://api.grain.com/_/mcp",
+     "status": 401
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://grain.com/app/settings/integrations?tab=api",
+     "status": 200,
+     "chars": 95,
+     "readable": false
+    },
+    {
+     "url": "https://developers.grain.com/",
+     "status": 200,
+     "chars": 62,
+     "readable": false
+    },
+    {
+     "url": "https://grain.com/pricing",
+     "status": 200,
+     "chars": 9515,
+     "readable": true
+    },
+    {
+     "url": "https://grain.com/release-note/06-18-2025",
+     "status": 200,
+     "chars": 2669,
+     "readable": true
+    },
+    {
+     "url": "https://docs.flymy.ai/mcp/grain/",
+     "status": 200,
+     "chars": 11412,
+     "readable": true
+    },
+    {
+     "url": "https://semarize.com/resources/get-your-data/grain",
+     "status": 200,
+     "chars": 26059,
+     "readable": true
+    },
+    {
+     "url": "https://coldiq.com/tools/grain",
+     "status": 200,
+     "chars": 8368,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 104.7
+ }
+}

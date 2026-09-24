@@ -1,0 +1,220 @@
+{
+ "app": {
+  "id": 51,
+  "name": "DataForSEO",
+  "category": "Data, SEO and Scraping",
+  "hint": "docs.dataforseo.com"
+ },
+ "record": {
+  "subcategory": "SEO / Marketing Analytics",
+  "one_liner": "DataForSEO is an API platform providing raw SERP, keyword, backlink, and SEO data for building custom tools.",
+  "auth_methods": [
+   "basic"
+  ],
+  "primary_auth": "basic",
+  "auth_notes": "DataForSEO exclusively uses HTTP Basic Authentication, requiring an API login (registered email) and an automatically generated API password. Multi-tenant platforms must have each customer provide their own credentials.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up for an account and instantly retrieve API credentials for a free sandbox environment. New accounts receive $1 trial credit. Production use requires a minimum prepaid deposit of $50.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "DataForSEO offers a comprehensive REST API covering SERP, Keyword Data, Backlinks, Domain Analytics, On-Page, DataForSEO Labs, Business Data, Merchant, App Data, Content Analysis, and AI Optimization APIs. Data exchange uses JSON payloads.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "DataForSEO officially publishes and maintains a first-party TypeScript-based MCP server: https://github.com/dataforseo/mcp-server-typescript",
+  "verdict": "ready_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "While a free sandbox is available, live production data requires a $50 minimum deposit. The lack of OAuth2 also creates friction for multi-tenant integrations, requiring secure handling of individual customer basic auth credentials.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://nextgrowth.ai",
+    "quote": "DataForSEO is a raw SEO and SERP data API platform that provides direct programmatic access to keyword rankings, backlink data, and business intelligence without a subscription dashboard."
+   },
+   {
+    "claim": "auth",
+    "url": "https://dataforseo.com",
+    "quote": "Basic authentication is the only way to access DataForSEO API; credentials should always be passed in the header of the request."
+   },
+   {
+    "claim": "auth",
+    "url": "https://fastn.ai",
+    "quote": "Have each customer authorise their own DataForSEO account, so calls run under their credentials rather than a shared key."
+   },
+   {
+    "claim": "access",
+    "url": "https://dashthis.com",
+    "quote": "Pricing: Free sandbox and $1 trial credit on registration. $50 minimum deposit, then pure pay-as-you-go with no plans or subscriptions."
+   },
+   {
+    "claim": "access",
+    "url": "https://dataforseo.com",
+    "quote": "Sandbox is completely free for any registered user at DataForSEO. The main use case for Sandbox is configuring your software to work with our data."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.dataforseo.com/v3/",
+    "quote": "OpenAPI specification. YAML-formatted specification for all APIs · LangChain integration."
+   },
+   {
+    "claim": "api",
+    "url": "https://dataforseo.com",
+    "quote": "DataForSEO API is using the REST technology for interchanging data between your application and our service."
+   },
+   {
+    "claim": "api",
+    "url": "https://dataforseo.com",
+    "quote": "In DataForSEO API, the pingback function is a notification sent to your server upon the completion of a task, while postback is a function that sends the results to your server."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/dataforseo/mcp-server-typescript",
+    "quote": "DataForSEO API modelcontextprotocol server"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/Skobyn/dataforseo-mcp-server",
+    "quote": "a comprehensive stdio mcp server for dataforseo api"
+   }
+  ],
+  "confidence": 0.9
+ },
+ "notes": "### 1. Product Overview\nDataForSEO is an API platform that provides raw search engine results page (SERP), keyword, backlink, domain analytics, merchant, app, and on-page SEO data. It functions as a data infrastructure layer for developers building custom AI SEO tools, software, and marketing platforms, bypassing the traditional subscription dashboard interface.\n- **Source:** `https://nextgrowth.ai`\n- **Verbatim Quote:** \"DataForSEO is a raw SEO and SERP data API platform that provides direct programmatic access to keyword rankings, backlink data, and business intelligence without a subscription dashboard.\"\n\n### 2. Authentication Methods & Multi-Tenant Integration\n- **Available Auth Methods:** DataForSEO exclusively uses HTTP Basic Authentication. It requires a single credential pair consisting of an API login (the user's registered email address) and an automatically generated API password (which is distinct from the dashboard login password).\n- **Multi-Tenant Integration:** Because DataForSEO does not offer a public OAuth2 application flow, a multi-tenant integration platform must use `basic` authentication. Each tenant/customer must provide their own DataForSEO API login and API password to run calls under their own metered account.\n- **Primary Auth:** `basic`\n- **Source:** `https://dataforseo.com` (via Google Search)\n- **Verbatim Quote:** \"Basic authentication is the only way to access DataForSEO API; credentials should always be passed in the header of the request.\"\n- **Source:** `https://fastn.ai`\n- **Verbatim Quote:** \"Have each customer authorise their own DataForSEO account, so calls run under their credentials rather than a shared key.\"\n\n### 3. Developer Credentials & Cost\n- **How to get credentials:** Any developer can sign up for an account on the DataForSEO website. Upon registration, the automatically generated API login and API password can be retrieved instantly from the \"API Access\" section of the account dashboard.\n- **Cost Structure:** DataForSEO operates on a pure pay-as-you-go model with no monthly subscriptions. New accounts receive $1 of trial credit upon registration, and a completely free sandbox environment is available for testing. However, moving to the live production environment requires a minimum prepaid deposit of $50.\n- **Access:** `self_serve_free` (since any developer can sign up and obtain working API credentials for the sandbox environment at no cost).\n- **Source:** `https://dashthis.com`\n- **Verbatim Quote:** \"Pricing: Free sandbox and $1 trial credit on registration. $50 minimum deposit, then pure pay-as-you-go with no plans or subscriptions.\"\n- **Source:** `https://dataforseo.com` (via Google Search)\n- **Verbatim Quote:** \"Sandbox is completely free for any registered user at DataForSEO. The main use case for Sandbox is configuring your software to work with our data.\"\n\n### 4. API Style & Technical Attributes\n- **API Style:** REST API. Data exchange is handled via standard HTTP POST/GET requests with payloads formatted in JSON.\n- **Breadth:** Extremely broad, covering SERP API, Keyword Data API, Backlinks API, Domain Analytics API, On-Page API, DataForSEO Labs API, Business Data API, Merchant API, App Data API, Content Analysis API, and AI Optimization API.\n- **OpenAPI Spec:** Yes, a machine-readable specification is officially provided.\n- **Webhooks:** Yes, it supports asynchronous callbacks via `pingback_url` (for task completion notifications) and `postback_url` (for pushing the actual results directly to a server).\n- **Sandbox:** Yes, a free sandbox environment is available by changing the base URL hostname to `sandbox.dataforseo.com/v3/`. It returns structurally identical responses with dummy data.\n- **Source:** `https://docs.dataforseo.com/v3/`\n- **Verbatim Quote:** \"OpenAPI specification. YAML-formatted specification for all APIs · LangChain integration.\"\n- **Source:** `https://dataforseo.com` (via Google Search)\n- **Verbatim Quote:** \"DataForSEO API is using the REST technology for interchanging data between your application and our service.\"\n- **Source:** `https://dataforseo.com` (via Google Search)\n- **Verbatim Quote:** \"In DataForSEO API, the pingback function is a notification sent to your server upon the completion of a task, while postback is a function that sends the results to your server.\"\n\n### 5. Model Context Protocol (MCP) Servers\n- **MCP:** `official`\n- **Details:** DataForSEO officially publishes and maintains a first-party TypeScript-based MCP server. Independent community-developed implementations also exist.\n- **Source:** `https://github.com/dataforseo/mcp-server-typescript`\n- **Verbatim Quote:** \"DataForSEO API modelcontextprotocol server\"\n- **Source:** `https://github.com/Skobyn/dataforseo-mcp-server`\n- **Verbatim Quote:** \"a comprehensive stdio mcp server for dataforseo api\"\n\n### 6. Buildability Verdict\n- **Verdict:** `ready_with_friction`\n- **Main Blocker / Hurdle:** While a developer can build and test an integration immediately using the free sandbox and $1 trial credit, live production data requires a financial hurdle of a $50 minimum deposit. Furthermore, the lack of OAuth2 support introduces friction for multi-tenant integration platforms, as they must securely collect and manage raw HTTP Basic credentials (email and API password) from each individual customer.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"DataForSEO\" authentication API key basic auth",
+   "\"DataForSEO\" pricing free tier trial",
+   "\"DataForSEO\" openapi spec swagger",
+   "\"DataForSEO\" webhooks sandbox",
+   " \"OpenAPI specification\"",
+   " \"OpenAPI\"",
+   " \"openapi\" filetype:yaml",
+   " \"openapi\" filetype:json",
+   "\"dataforseo\" \"openapi.yaml\"",
+   "\"dataforseo\" \"openapi.json\""
+  ],
+  "search_sources": [
+   {
+    "title": "luckyrentals.co.nz",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7BLy5d2EVIzJyWSnwAH9mLDgEVicP3nkQBpTkbENjcngj8SAxNBYSzLLFcFU5cuvVh5eXzIWzk_thPA3-hDJP6lkjRtnz5TA5mjIr4REWDOK9_IVJVS-je5KHdORNuXaklI34r9E="
+   },
+   {
+    "title": "thatmarketingbuddy.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlVgIHmp0FzlnNcbLytk06ra3gpBfQpeax5lrLrkzkGHtqEIDycuQrpYlufg5XmPlINvS5rSz3mdji1-cH-YDNewzOevQ0_FypsfkEs_V8bLAo-Z_NkXtysfQeZn0p2Y17yyfagFYB"
+   },
+   {
+    "title": "dataforseo.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxmpjY_H9bEJZRP1si9IJZFMKa84ZRQsFI0zAg3lLSzWFLaSpkcMHQHB9439nV4wjcH1mS9QqywWirqDNL1mYAaejO1dX3oRHjSZfMgWUvrVxvd4I3zqvz4_47Vl5H-wqjTRxqLOeCuHSfsVd4rI1Wt19hMIBDdHPpNtt5yCGNUuHjFg=="
+   },
+   {
+    "title": "tooltrust.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6wYWywW76pDZSKxK1rdTEaz0veksQVYIGjorxC3TlqAXNJNEjAb4poA0IoVmN2Xiqhvc6RbmFJVR405WAVsrH5y37LFjWm_WP6WgwWw3HsdNBu45T"
+   }
+  ],
+  "tokens": 10649,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    " authentication api keys oauth",
+    " getting started quickstart",
+    " pricing api plans",
+    " api reference index",
+    "DataForSEO MCP server",
+    "DataForSEO authentication API keys",
+    "DataForSEO getting started API",
+    "DataForSEO pricing API",
+    "DataForSEO API reference",
+    "DataForSEO MCP server official",
+    "DataForSEO MCP server github",
+    " \"DataForSEO API v3 Pricing – Transparent Pay-As-You-Go Pricing Model\"",
+    " \"Authentication – DataForSEO API v.3\"",
+    " \"Getting Started - DataForSEO\"",
+    " \"DataForSEO API Documentation\"",
+    " \"DataForSEO API Documentation\" index",
+    " \"Getting Started\" developer",
+    " getting started",
+    " API reference index",
+    ""
+   ],
+   "candidates": 7,
+   "live_urls": [
+    "https://docs.dataforseo.com/v3/",
+    "https://docs.dataforseo.com/v3/auth/",
+    "https://dataforseo.com/pricing",
+    "https://dataforseo.com/help-center/how-to-connect-the-official-dataforseo-mcp-server-to-chatgpt-simple-guide",
+    "https://dataforseo.com/blog/dataforseo-mcp-server-bridging-the-gap-between-ai-models-and-seo-data",
+    "https://github.com/dataforseo/mcp-server-typescript",
+    "https://github.com/Skobyn/dataforseo-mcp-server",
+    "https://thatmarketingbuddy.com/software/dataforseo#mcp",
+    "https://mcpatlas.dev/server/mcp-dataforseo/"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://docs.dataforseo.com/v3/appendix/authentication/",
+     "status": 404
+    },
+    {
+     "url": "https://dataforseo.com/api-pricing",
+     "status": 404
+    },
+    {
+     "url": "https://mcp.dataforseo.com/mcp",
+     "status": 405
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://docs.dataforseo.com/v3/",
+     "status": 200,
+     "chars": 13155,
+     "readable": true
+    },
+    {
+     "url": "https://docs.dataforseo.com/v3/auth/",
+     "status": 200,
+     "chars": 13391,
+     "readable": true
+    },
+    {
+     "url": "https://dataforseo.com/pricing",
+     "status": 200,
+     "chars": 4637,
+     "readable": true
+    },
+    {
+     "url": "https://dataforseo.com/help-center/how-to-connect-the-official-dataforseo-mcp-server-to-chatgpt-simple-guide",
+     "status": 200,
+     "chars": 7390,
+     "readable": true
+    },
+    {
+     "url": "https://dataforseo.com/blog/dataforseo-mcp-server-bridging-the-gap-between-ai-models-and-seo-data",
+     "status": 200,
+     "chars": 33489,
+     "readable": true
+    },
+    {
+     "url": "https://github.com/dataforseo/mcp-server-typescript",
+     "status": 200,
+     "chars": 13419,
+     "readable": true
+    },
+    {
+     "url": "https://github.com/Skobyn/dataforseo-mcp-server",
+     "status": 200,
+     "chars": 13342,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 86.0
+ }
+}

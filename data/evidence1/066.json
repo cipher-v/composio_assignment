@@ -1,0 +1,132 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://neo4j.com/pricing/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://neo4j.com/docs/getting-started/whats-neo4j/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://neo4j.com/docs/api/",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://neo4j.com/docs/aura/api/authentication/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.12
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://neo4j.com/docs/aura/api/authentication/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://neo4j.com/pricing/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://neo4j.com/docs/api/",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://neo4j.com/docs/aura/api/",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://neo4j.com/docs/getting-started/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://neo4j.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://neo4j.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  }
+ ],
+ "auth_support": {
+  "basic": true,
+  "bearer_token": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://neo4j.com/docs/api/', 'https://neo4j.com/docs/api/', 'https://neo4j.com/docs/aura/api/']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://neo4j.com/docs/getting-started/whats-neo4j/', 'https://neo4j.com/docs/aura/api/authentication/', 'https://neo4j.com/docs/aura/api/authentication/', 'https://neo4j.com/pricing/', 'https://neo4j.com/docs/getting-started/', 'https://neo4j.com/', 'https://neo4j.com/']",
+ "metrics": {
+  "n_evidence": 11,
+  "alive_rate": 0.7272727272727273,
+  "dead_rate": 0.2727272727272727,
+  "blocked_rate": 0.0,
+  "official_rate": 1.0,
+  "readable": 8,
+  "quote_supported_rate": 0.125,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

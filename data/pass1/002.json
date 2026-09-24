@@ -1,0 +1,176 @@
+{
+ "app": {
+  "id": 2,
+  "name": "HubSpot",
+  "category": "CRM and Sales",
+  "hint": "hubspot.com"
+ },
+ "record": {
+  "subcategory": "CRM / Customer Platform",
+  "one_liner": "An all-in-one customer platform that unifies marketing, sales, customer service, content management, data management, and operations software.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 for public apps and multi-tenant integrations; private app access tokens and service keys for single-account integrations.",
+  "access": "self_serve_free",
+  "access_notes": "Sign up for a free developer account at developers.hubspot.com and create a public app from the dashboard to get credentials.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST APIs with date-based versioning (e.g., /crm/2026-09/resource). Covers CRM objects, marketing, sales, service, content, data, and revenue hubs.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "HubSpot MCP Server (Remote) at https://mcp.hubspot.com and Developer MCP Server (Local)",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. HubSpot provides self-serve free developer accounts, comprehensive REST APIs, official OpenAPI 3.0 specifications, robust testing sandboxes, and a publicly hosted official MCP server endpoint.",
+  "evidence": [
+   {
+    "claim": "auth",
+    "url": "https://developers.hubspot.com/docs/apps/legacy-apps/authentication/working-with-oauth",
+    "quote": "oauth is a secure means of authentication for your app. it uses authorization tokens rather than a password"
+   },
+   {
+    "claim": "access",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYGo-0kMQ0VAqnScJqpNqc_bfkwOajxPRe0zY0mzWtkv2C7cHZEJE_KS6q5n1KNIw7agPkoLgwRGO7gsXnFZl-BvVECTjQCq4TS_M6ABR1780utJRbVunBnGhlk=",
+    "quote": "Get started with a free account."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.hubspot.com/docs/api-reference/latest/overview",
+    "quote": "the 2026-09 apis use a date-based versioning scheme (e.g., /crm/2026-09/ ) that follows the previous 2026-03 api version . all endpoints in this section follow the pattern: /api-name/2026-09/resource"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFY5VvmCWN6JumoAhXPAs5psAidTygHL6iAgb0RRdwCcm8ZiDGJovPywkl35-o_QMN6hmuyB4uOf2MyL5Vs4lMPu_19npICC_N-AS8UOyAsCe605O4zDizTLTz_gNAKHDf4XhJH2mAKiFeSS2HN_xbEB3_87Ehg74W4OqnDn0g=",
+    "quote": "Enter the HubSpot MCP server URL provided by HubSpot ( https://mcp.hubspot.com ). Authorize the connection by signing in to your HubSpot account when prompted."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "# Research Notes: HubSpot Toolkit Buildability\n\n### 1. Product Overview\nHubSpot is an all-in-one customer platform that unifies marketing, sales, customer service, content management, data management, and operations software.\n* **Source URL:** `https://legal.hubspot.com/hubspot-product-and-services-catalog`\n* **Verbatim Quote:** `\"the hubspot customer platform all of hubspot's marketing, sales, and customer service software on one agentic platform.\"`\n\n---\n\n### 2. Authentication Methods\nHubSpot supports multiple authentication methods depending on the integration type, though legacy API keys have been completely deprecated.\n* **OAuth 2.0:** Used for public applications and multi-tenant integrations.\n  * **Source URL:** `https://developers.hubspot.com/docs/apps/legacy-apps/authentication/working-with-oauth`\n  * **Verbatim Quote:** `\"oauth is a secure means of authentication for your app. it uses authorization tokens rather than a password\"`\n* **Private App Access Tokens / Service Keys:** Used for single-account, system-to-system integrations.\n  * **Source URL (Private Apps):** `https://developers.hubspot.com/docs/apps/legacy-apps/private-apps/overview`\n  * **Verbatim Quote:** `\"private apps allow you to use hubspot’s apis to access specific data from your hubspot account... which will generate an access token that’s unique to your app.\"`\n  * **Source URL (Service Keys):** `https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF43-t6Cw1ZjUpLgIfzTV2yI_l2H7WApZFN8rppOUYtzi9pUGjZdMetTuqB3412hQpAELObOTJO6emoC5F-elAFiGT8GnlKitgTAKvMZfwwVeT8PD8zq4TYNn7khB1UewdmHt-5oMJmG8cp8gX3caZ3MebVsUSeIA==`\n  * **Verbatim Quote:** `\"Service keys (public beta): the replacement for legacy private apps with scoped API access for in-account integrations\"`\n* **API Keys (Sunsetted):** Deprecated in late 2022.\n  * **Source URL:** `https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgVEoI5HX-fvABAnu4yTiBQ3D66__2D4qHlg3XizRXHOO4y4cBl-1NKKc2FU3HpiIlANfELi9Nz7ZIwjNhRQi2rG28VE5SqLI72QsdMQQk6fyIfuRmejwL0SF6NedyJkdcaHrRhAj6fE7FjWaAR4Lb2kuVUxdjR3wWZjk=`\n  * **Verbatim Quote:** `\"After November 30, we will begin the process of deprecating API Keys and your API keys will no longer be supported by HubSpot.\"`\n\n* **Multi-Tenant Integration Choice:** A multi-tenant platform like Composio must use OAuth 2.0.\n  * **Source URL:** `https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-c4SEp_HOPc3gSTth56rm5JbeMbiH_YE8B8h_O5NOvesbfwIiMXvBf1UWKycDmdSY_8q6wxs21K8BMvtZQjvKG1jH6vBbfk6vjukGnmi4jh8Bqh0KPrJej1WT1GAy9RzOm0nGmP33rKCzatI4Gt01juifkgIq9JtUun7p0LuHfeKe8mRltOhcigJt`\n  * **Verbatim Quote:** `\"For multiple accounts, the app route also requires OAuth.\"`\n* **Primary Auth Mode:** `oauth2`\n\n---\n\n### 3. Developer Credentials & Cost\nDevelopers can sign up for a free developer account to create public applications and manage test environments at no cost.\n* **How to get credentials:** Sign up at `developers.hubspot.com` and create a public app from the developer dashboard to obtain a Client ID and Client Secret.\n  * **Source URL:** `https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4sjof9S-e7XG3LurM_ftQfU1B0j8_PVCkzzGO197EAQcBkjLcJI4ma0EK1A8Dg69cTZRi4PRoPrSBmiWuyH7ZGUM8bQ-XDWxvHpXkZ1HaA1I3vsmy4bMQI3FC56y_4mEoC9qJJi0DA3WwUHj1IJniZv3PyNbz-VzK43IjgxlE0ezf_HrrWKHGuVPo4yc58DsA3lGQDpTeqYirAAIKw9akhp05QE8yAM4D9WS_M_zv64YzTy-BpknC`\n  * **Verbatim Quote:** `\"Sign into your HubSpot developer account at developers.hubspot.com... From the dashboard you can click the Create an app button to create your OAuth app.\"`\n* **Cost / Plan Requirements:** Free. Developer accounts and test portals do not require a paid subscription.\n  * **Source URL (Free Account):** `https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYGo-0kMQ0VAqnScJqpNqc_bfkwOajxPRe0zY0mzWtkv2C7cHZEJE_KS6q5n1KNIw7agPkoLgwRGO7gsXnFZl-BvVECTjQCq4TS_M6ABR1780utJRbVunBnGhlk=`\n  * **Verbatim Quote:** `\"Get started with a free account.\"`\n  * **Source URL (Test Accounts):** `https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH21K-RvRBmiY7iYJaDmIJ3UwFuZUTe2wPTNUo-lXkj7NxnBhSSO0VqaZ_eys5dyzae50WSWp5Q1DhrscT2twpVsBBefiCweh049M6GU6RrGT1tqhIT1IDsZRwfM1T7H5HX7Du7D1isgl6AGcfMOc_7kc2aEApSeQhml1wQ`\n  * **Verbatim Quote:** `\"Create a developer test account. To create a developer test account in your HubSpot account: In your HubSpot account, navigate to Development. In the left sidebar menu, navigate to Testing > Test Accounts.\"`\n* **Access Level:** `self_serve_free`\n\n---\n\n### 4. API Technical Details\n* **API Style:** REST APIs utilizing a date-based versioning scheme.\n  * **Source URL:** `https://developers.hubspot.com/docs/api-reference/latest/overview`\n  * **Verbatim Quote:** `\"the 2026-09 apis use a date-based versioning scheme (e.g., /crm/2026-09/ ) that follows the previous 2026-03 api version . all endpoints in this section follow the pattern: /api-name/2026-09/resource\"`\n* **Breadth:** Extremely broad, covering CRM objects (contacts, companies, deals, tickets), marketing, sales, service, content, data management, and commerce.\n  * **Source URL:** `https://legal.hubspot.com/hubspot-product-and-services-catalog`\n  * **Verbatim Quote:** `\"marketing hub... sales hub... service hub... content hub... data hub... revenue hub\"`\n* **OpenAPI Spec:** Officially available via public repositories and Postman workspaces.\n  * **Source URL:** `https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJBVDVl95dHlomG4ki_Wvh7wKLaxsoBjL_VjWOQJ5lGuI9THpYHqlAf6gMvV0V-KPormsGAEmVVSmQzCTzMN7Tr0lGIK9IRQ0sHnpRSLio43bVy1IBuyQrf5hPJoOWVk1heV4Y7vVjulgE-xayMIR81bKNWRtXH3k=`\n  * **Verbatim Quote:** `\"This repository contains the Open API 3.0 schema for HubSpot's public APIs and is integrated with HubSpot's Public API Postman Workspace.\"`\n* **Webhooks:** Fully supported, including a Next-Gen Webhooks Journal API.\n  * **Source URL:** `https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7cMwSoDtN2T1zPP9EdQMr1qcx17srN9STqRZ9SEccCsJVQ1giyuS5Fc2yZrIJrCFQo1RILongxp85B_dXHI3bdvHSf_8-DKrNpoI7q682rTEq-AoS01wOm0O-SYxqnIJTbHlFm6sbfwEDHSFlqJNdWFzM667VUcyNiEElS08LmdqnWPLk`\n  * **Verbatim Quote:** `\"Next-Gen Webhooks We've overhauled our webhooks for improved performance and reliability. We're introducing the Webhooks Journal API in beta.\"`\n* **Sandbox:** Supported via Standard Sandboxes and Developer Test Accounts.\n  * **Source URL:** `https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEA7r_3Kxg_bhFVVRWMfBAmcwnYSqcJdXrEc2qVbO1S_2skT-4rThW8MQWVDe_W-7cnsx7RJkskQfNtKDgbWsUnCnQz7P2yqw9DLIuiojzz7HeEfggnLQpC25YOB5573oWTzkmePxeR1f1Irl7ia-gAyUphecqnJlLWlzA=`\n  * **Verbatim Quote:** `\"On December 15, 2025, HubSpot launched an improved Standard Sandbox with a new Deploy to Production feature.\"`\n\n---\n\n### 5. Model Context Protocol (MCP) Servers\nHubSpot provides official Model Context Protocol (MCP) servers, including a publicly hosted remote endpoint for AI agents to interact directly with CRM records.\n* **MCP Availability:** `official`\n* **Source URL (Server Types):** `https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUEbbIDPipF70C7svwdiOsWNwTRislHLjQvIH7iByymY4XsrTKAHTbXUKGz2zCDFEaqWwOrF1dHkxSKRXUZbkIoFbL6cQKDaXFYl_zVXwKWGnAvYwpclWMGZcu2R9HRQ6wrToXUgk=`\n* **Verbatim Quote:** `\"HubSpot offers two distinct MCP servers that act as secure gateways for AI agents and tools. The HubSpot MCP Server (Remote)... Developer MCP Server (Local)...\"`\n* **Source URL (Remote Endpoint):** `https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFY5VvmCWN6JumoAhXPAs5psAidTygHL6iAgb0RRdwCcm8ZiDGJovPywkl35-o_QMN6hmuyB4uOf2MyL5Vs4lMPu_19npICC_N-AS8UOyAsCe605O4zDizTLTz_gNAKHDf4XhJH2mAKiFeSS2HN_xbEB3_87Ehg74W4OqnDn0g=`\n* **Verbatim Quote:** `\"Enter the HubSpot MCP server URL provided by HubSpot ( https://mcp.hubspot.com ). Authorize the connection by signing in to your HubSpot account when prompted.\"`\n\n---\n\n### 6. Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. HubSpot provides self-serve free developer accounts, comprehensive REST APIs, official OpenAPI 3.0 specifications, robust testing sandboxes, and a publicly hosted official MCP server endpoint (`https://mcp.hubspot.com`). Composio can ship an agent toolkit immediately.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"hubspot\" developer account cost free tier",
+   "\"hubspot\" openapi spec download",
+   "\"hubspot\" webhooks sandbox",
+   "\"hubspot\" mcp server",
+   "\"hubspot\" api key sunset",
+   "\"hubspot\" public app oauth creation cost",
+   " \"Model Context Protocol\" OR \"MCP\"",
+   " openapi"
+  ],
+  "search_sources": [
+   {
+    "title": "hubspot.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGritqsRmvK5vP-WlVak79VU1jMwFIchk4vgFZmZFM4Lbpq2Gbzpha2OqGKIt5UFI0rvKRJo_ZUNQVplRcfmMTDN0-t4UxiamHo9wSA1cpMYDjYQvBWZM-dA7hLquKAhw=="
+   },
+   {
+    "title": "hubspot.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH21K-RvRBmiY7iYJaDmIJ3UwFuZUTe2wPTNUo-lXkj7NxnBhSSO0VqaZ_eys5dyzae50WSWp5Q1DhrscT2twpVsBBefiCweh049M6GU6RrGT1tqhIT1IDsZRwfM1T7H5HX7Du7D1isgl6AGcfMOc_7kc2aEApSeQhml1wQ"
+   },
+   {
+    "title": "insidea.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFInT_LhoDFbxR1uYJm_LdQCo9AuOY3dHvgVVW4wS-1-7MeHjVZNIfcuN6dwOc54AIDGK4rxx_aNAP6PgdcVlqrD7p8fpco_HJDEZNlzCJmNCGwKm8tyjJjAVSPPGU6B36z3d82xljZmH4Ydx-CJ3hO-znx-9HU2Wdw0sR7novTKpbY5yuZYJo="
+   },
+   {
+    "title": "mergeyourdata.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEA7r_3Kxg_bhFVVRWMfBAmcwnYSqcJdXrEc2qVbO1S_2skT-4rThW8MQWVDe_W-7cnsx7RJkskQfNtKDgbWsUnCnQz7P2yqw9DLIuiojzz7HeEfggnLQpC25YOB5573oWTzkmePxeR1f1Irl7ia-gAyUphecqnJlLWlzA="
+   }
+  ],
+  "tokens": 14708,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "HubSpot developer documentation authentication OAuth API keys",
+    "HubSpot developer documentation getting started quickstart",
+    "HubSpot developer API pricing plans access",
+    "HubSpot API reference index",
+    "HubSpot MCP server official community",
+    " authentication OAuth guide",
+    " getting started quickstart",
+    " API limits pricing tiers",
+    " API reference index",
+    " MCP server documentation",
+    " API reference index URL",
+    " \"MCP server\" documentation URL",
+    " \"getting started\" URL"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://developers.hubspot.com/docs/apps/legacy-apps/authentication/working-with-oauth",
+    "https://developers.hubspot.com/docs/developer-tooling/platform/usage-guidelines",
+    "https://developers.hubspot.com/docs/api-reference/latest/overview",
+    "https://developers.hubspot.com/docs/apps/legacy-apps/private-apps/overview",
+    "https://legal.hubspot.com/hubspot-product-and-services-catalog",
+    "https://www.hubspot.com/partners/technology",
+    "https://theindex.fyi/api/docs"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://developers.hubspot.com/docs/api/getting-started-with-hubspot-apis",
+     "status": 404
+    },
+    {
+     "url": "https://developers.hubspot.com/docs/api/mcp-server",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://developers.hubspot.com/docs/apps/legacy-apps/authentication/working-with-oauth",
+     "status": 200,
+     "chars": 6541,
+     "readable": true
+    },
+    {
+     "url": "https://developers.hubspot.com/docs/developer-tooling/platform/usage-guidelines",
+     "status": 200,
+     "chars": 11679,
+     "readable": true
+    },
+    {
+     "url": "https://developers.hubspot.com/docs/api-reference/latest/overview",
+     "status": 200,
+     "chars": 1568,
+     "readable": true
+    },
+    {
+     "url": "https://developers.hubspot.com/docs/apps/legacy-apps/private-apps/overview",
+     "status": 200,
+     "chars": 11589,
+     "readable": true
+    },
+    {
+     "url": "https://legal.hubspot.com/hubspot-product-and-services-catalog",
+     "status": 200,
+     "chars": 313922,
+     "readable": true
+    },
+    {
+     "url": "https://www.hubspot.com/partners/technology",
+     "status": 200,
+     "chars": 24133,
+     "readable": true
+    },
+    {
+     "url": "https://theindex.fyi/api/docs",
+     "status": 200,
+     "chars": 25,
+     "readable": false
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 170.0
+ }
+}

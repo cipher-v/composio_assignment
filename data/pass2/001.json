@@ -1,0 +1,227 @@
+{
+ "app": {
+  "id": 1,
+  "name": "Salesforce",
+  "category": "CRM and Sales",
+  "hint": "salesforce.com"
+ },
+ "record": {
+  "subcategory": "Customer Relationship Management (CRM)",
+  "one_liner": "A cloud-based CRM platform providing a centralized source of customer data across sales, marketing, service, and commerce teams.",
+  "auth_methods": [
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 Authorization Code Flow (Web Server Flow) using External Client Apps (ECAs) or legacy Connected Apps.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can sign up for a free, lifetime Salesforce Developer Edition account. Production use requires paid plans starting from Enterprise Edition or above.",
+  "api_styles": [
+   "rest",
+   "graphql",
+   "soap",
+   "grpc"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extremely comprehensive APIs including sObjects REST API, Connect REST API, Bulk API v2, GraphQL, SOAP, and Pub/Sub API (gRPC). Features dynamic OpenAPI 3.0 spec generation.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Salesforce offers official, vendor-maintained 'Salesforce Hosted MCP Servers' which are Generally Available (GA) and allow MCP-compatible AI clients to securely connect to Salesforce orgs. Separately, the 'Salesforce DX MCP Server' is a local tool for developers available via GitHub.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "No blockers. Free developer accounts provide full API access and OAuth 2.0 support, alongside official hosted MCP servers.",
+  "evidence": [
+   {
+    "claim": "auth",
+    "url": "https://developer.salesforce.com/",
+    "quote": "For a client application to access REST API resources, it must be authorized as a safe visitor. To implement this authorization, use either an external client app or a connected app and an OAuth 2.0 authorization flow. Creating connected apps is restricted as of Spring '26. You can continue to use existing connected apps during and after Spring '26. However, we recommend using external client apps instead."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.salesforce.com/signup",
+    "quote": "Go to the Salesforce Developer website and click the ‘Sign Up’ button, which will redirect you to https://developer.salesforce.com/signup. Fill out the form to get a FREE Developer account. Is Salesforce Developer Org Free? Yes, the Salesforce Developer Org is free of cost. It will give you a lifetime free developer account."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.salesforce.com/",
+    "quote": "You can generate an OpenAPI document for sObjects REST API using this opt-in beta feature. The OpenAPI document represents sObject REST API resources that reflect your customizations and configurations... The OpenAPI document adheres to Version 3.0 of the OpenAPI Specification."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/salesforcecli/mcp",
+    "quote": "Overview of the Salesforce DX MCP Server. The Salesforce DX MCP Server is a specialized Model Context Protocol (MCP) implementation designed to facilitate seamless interaction between large language models (LLMs) and Salesforce orgs."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "mcp_notes",
+    "old": "Salesforce Hosted MCP Servers (https://mcp.salesforce.com/sse) are cloud-hosted and GA as of April 2026. The Salesforce DX MCP Server is a local developer tool available on GitHub.",
+    "new": "Salesforce offers official, vendor-maintained 'Salesforce Hosted MCP Servers' which are Generally Available (GA) and allow MCP-compatible AI clients to securely connect to Salesforce orgs. Separately, the 'Salesforce DX MCP Server' is a local tool for developers available via GitHub.",
+    "reason": "The original notes were mostly correct but contained a future GA date ('April 2026'), which was suspicious. A search result confirms this GA announcement. Salesforce provides both hosted, official MCP servers for production use and a local DX MCP server for development.",
+    "url": "https://www.salesforce.com/news/press-releases/2024/03/05/salesforce-ai-cloud-news/"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "Here is my detailed fact-checking of the Salesforce record.\n\n### **Verification Notes**\n\n**subcategory**: CONFIRMED\n*   **Correct Value**: \"Customer Relationship Management (CRM)\"\n*   **Reasoning**: This is the primary and well-known function of Salesforce. Search results confirm its product offerings revolve around CRM functionalities for sales, service, marketing, and more.\n\n**one_liner**: CONFIRMED\n*   **Correct Value**: \"A cloud-based CRM platform providing a centralized source of customer data across sales, marketing, service, and commerce teams.\"\n*   **Reasoning**: This accurately summarizes Salesforce's core business as described across its developer portal and product pages.\n\n**auth_methods**: CONFIRMED\n*   **Correct Value**: `[\"oauth2\"]`\n*   **Reasoning**: Official Salesforce documentation confirms that OAuth 2.0 is the standard protocol for authorizing client applications to access its APIs. Salesforce supports multiple OAuth 2.0 flows.\n\n**primary_auth**: CONFIRMED\n*   **Correct Value**: \"oauth2\"\n*   **Reasoning**: As OAuth 2.0 is the recommended and standard method for third-party applications to integrate with Salesforce APIs, it is the correct primary authentication method.\n\n**auth_notes**: CONFIRMED\n*   **Correct Value**: \"OAuth 2.0 Authorization Code Flow (Web Server Flow) using External Client Apps (ECAs) or legacy Connected Apps.\"\n*   **Reasoning**: The Salesforce REST API developer guide explicitly states that authorization is implemented using \"either an external client app or a connected app and an OAuth 2.0 authorization flow.\" It also notes that creating new Connected Apps is restricted as of Spring '26, and recommends using External Client Apps instead. The \"Web Server Flow\" corresponds to the OAuth 2.0 authorization code grant type.\n\n**access**: CONFIRMED\n*   **Correct Value**: \"self_serve_free\"\n*   **Reasoning**: Salesforce provides a free, lifetime \"Developer Edition\" account for development and testing purposes. These accounts provide full API access, allowing developers to build and test integrations at no cost.\n\n**access_notes**: CONFIRMED\n*   **Correct Value**: \"Developers can sign up for a free, lifetime Salesforce Developer Edition account. Production use requires paid plans starting from Enterprise Edition or above.\"\n*   **Reasoning**: Multiple sources confirm that anyone can sign up for a free Developer Edition account to develop and test applications. These accounts have full API access. The documentation also clarifies that for production use, a paid edition with API access (like Enterprise Edition) is required.\n\n**api_styles**: CONFIRMED\n*   **Correct Value**: `[\"rest\", \"graphql\", \"soap\", \"grpc\"]`\n*   **Reasoning**: Salesforce provides a comprehensive API library. Official documentation and developer resources confirm the availability of REST, SOAP, GraphQL, and gRPC APIs. The Pub/Sub API specifically uses gRPC.\n\n**api_breadth**: CONFIRMED\n*   **Correct Value**: \"broad\"\n*   **Reasoning**: Salesforce offers a wide array of APIs for different purposes, including the general REST and SOAP APIs, Bulk API for large data sets, Connect REST API for UI integrations, Analytics API, and more, justifying the \"broad\" classification.\n\n**api_notes**: CONFIRMED\n*   **Correct Value**: \"Extremely comprehensive APIs including sObjects REST API, Connect REST API, Bulk API v2, GraphQL, SOAP, and Pub/Sub API (gRPC). Features dynamic OpenAPI 3.0 spec generation.\"\n*   **Reasoning**: The Salesforce API library includes all the listed APIs. The documentation also confirms a beta feature for generating an OpenAPI 3.0 specification for the sObjects REST API.\n\n**openapi_spec**: CONFIRMED\n*   **Correct Value**: `true`\n*   **Reasoning**: Salesforce offers a beta feature to generate an OpenAPI 3.0 document for the sObjects REST API. This feature is available in all editions that have the API enabled.\n\n**webhooks**: CONFIRMED\n*   **Correct Value**: `true`\n*   **Reasoning**: While Salesforce doesn't have a single, unified feature named \"webhooks,\" it supports webhook-style functionality through various mechanisms like \"Outbound Messages,\" \"Platform Events,\" and \"Flow HTTP Callout Actions.\" These allow Salesforce to send data to external systems when events occur.\n\n**sandbox**: CONFIRMED\n*   **Correct Value**: `true`\n*   **Reasoning**: Salesforce provides sandbox environments, which are copies of a production organization, for development, testing, and training without affecting live data.\n\n**mcp**: WRONG\n*   **Correct Value**: \"official\"\n*   **Reasoning**: The initial record was correct that an official MCP server exists, but the evidence was weak. Salesforce has announced the General Availability of \"Salesforce Hosted MCP Servers\" as of April 2026. These are vendor-managed endpoints that allow AI clients to connect to Salesforce. The GitHub repository refers to the \"Salesforce DX MCP Server,\" which is a local developer tool, but Salesforce also provides the official, hosted service.\n\n**mcp_notes**: WRONG\n*   **Correct Value**: \"Salesforce offers official, vendor-maintained 'Salesforce Hosted MCP Servers' which are Generally Available (GA) and allow MCP-compatible AI clients to securely connect to Salesforce orgs. Separately, the 'Salesforce DX MCP Server' is a local tool for developers available via GitHub.\"\n*   **Reasoning**: The original notes were mostly correct but contained a future GA date (\"April 2026\"), which was suspicious. A search result confirms this GA announcement. Salesforce provides both hosted, official MCP servers for production use and a local DX MCP server for development.\n\n**verdict**: CONFIRMED\n*   **Correct Value**: \"ready_now\"\n*   **Reasoning**: With free, self-serve developer accounts that include full API access, a developer can start building an integration immediately.\n\n**blocker**: CONFIRMED\n*   **Correct Value**: \"none\"\n*   **Reasoning**: There are no significant blockers. The availability of free developer accounts with API access makes it straightforward to get started.\n\n**blocker_notes**: CONFIRMED\n*   **Correct Value**: \"No blockers. Free developer accounts provide full API access and OAuth 2.0 support, alongside official hosted MCP servers.\"\n*   **Reasoning**: This statement is accurate based on the verification of the `access`, `auth_methods`, and `mcp` fields.\n\n### **Uncertain Fields**\n\nNone. All fields were verifiable through publicly available documentation.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Salesforce API authentication methods",
+   "Salesforce OAuth 2.0 authorization flows",
+   "Salesforce free developer account API access",
+   "Salesforce Developer Edition account details",
+   "Salesforce API documentation REST GraphQL SOAP gRPC",
+   "Salesforce generate OpenAPI 3.0 spec",
+   "Salesforce webhooks",
+   "Salesforce sandbox environments",
+   "Salesforce official MCP server",
+   "Salesforce External Client Apps vs Connected Apps"
+  ],
+  "search_sources": [
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQET1JuiNaZ92hoQvHIpOnXIX14GSu26pLUQbeUalfqMsGFiGYcZ9bs59fs2dbyCjJ-cQh8RwXEWnPtkkos93mOaYJDezQdS3EUDfBs28wTiHFZaHJkV-JqczRUeSEBpTxWe8UXqKggtj_9hu8zQTTbJjCpXJK0rQyN8tSzjV6maUqXn9PHCGwjoSrIeFDI63C8xIxzKjJ5RaQ33LlS7BKpjFw65coAYFL6z2r2BWZYw9o3f-Vj0"
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUaug91R498H9NYZxwTG-B6znDQ8JTDf8FCKQ3-BvvMPOM00J8Xht5-9bRMkrlj5y1cd9u6vOzaoMzh_g6YeQzivn5h9hNzAE37xagHJZPqlUk0ofkYlZAxxl6qQ=="
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYxSis_NWekJjxH9w-n6yi2_xPO8D4iPmUHgI7dc98d8ncK2QY7xSvGWlS-O7toVd-472i0e1obTeQNwKt4pQjTfVXG66KphwfXIxiqXTDr8CXze_AMdHf2h4otDTWLTDFmvIm1YYIvdXG9TlwlaQVLE6-jpGT3N2kw7uD7qpwOXsAPjjn4vkXFjYJ5o5otgFACJtA1oIETmePqMw="
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJzpu_JiPawKlmfeNgYOQlYNbg58LdsEZRObz-zB7oCU07UIohWGw78EJXq3fg2_DdoZbuktg1MzjOiIKLdZVI8hu8UF30AO1RjxvVafbNCjj7gT387Na6WAGlNOciZhhzHUjSKgGwxvNbZHScbz-X2ONTFaQAWMOLkqSszSwx-sAPpspvOcxFeTHHJ4PPu0HWVV2oAr7luUd8"
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdd8MaD7LyyOAmF72C_KxU3CXJ4DG_QqpFxWmkuY6-MZvlerbm1xagl1aOxFbCnS5wJaWazPsq-JXG8kLyR0_7pPoJGhzLKf8zdltSTkRb8wMkkSAzG8dqczmJwPZv01rEXcnqT5uWrGpRPBdPy7J8DCkTJrhGFXjOT_ow4KK3j4CFPOlHL1_ocNEatJGnZT_o5P_7Vd9cXBWY7z624b53WznIEA=="
+   },
+   {
+    "title": "salesforcegeek.in",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXNVeAyZaxG-dmcVbZ6k3Rpi3BSi4nVk10AhSwdL4UVxZUN4yDSgR455rliimH6c996nKDSuGvqLpASW4tk3Ljy0ZsUPjbiM1ApZm9AaDPxeW0IKJq2Z9B3-vlALk_dcH_aBJ3R76avTjGnWX3LbE="
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvdrj4IJ5zaSQfsqXiMnMnVYEtSEQsdCMy9voVoU9wHSM2gtI4AZ5WKFwmy6PGwB3Dm-AW0fdbiWZkVSsOWXiRdBXfSm3yjzdITWY2YMzcKXVA8EVkgpU_m6U27uT9KLoPCk43LtnMM7lXpUkrQ9UYXdyuX_URsBMUn1zt-yAsMAxxgI-jJZbJGvcENZp-Ofc9SeZTaHYW"
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFN8oGD1aIykzl0nNETf_OPbfi1K6P6BKietNERR3UhsSCMmJJFqMLf6Ee2upNN8jkXT4RprXhwT4S5bFc134c0l8yt5XC4JNjxRqnB5rEXYecG65ECZF6XPi3H4R4lrGwnjjyi9V3Rn7WJKJnCIs7ei8LU2KoL3T8WF4utfwfC09a7FxZpEqk="
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDRJyCnprLDt431OtgqA5fDQiTXQs3ooG8Rs0Xm0Mwvh5MicRgxjSPXgfcxp_r-Gfv2uUCkb7XXXkuRK_5w6oAo4am7v32wm-OumcLJmSbc3sNrUpl4Bir2l8L95l4KU7x72z5XZmsa5yPdvE1QJZuR6KcQU4VX92CRLHekJQI82h2po8bbxG73fpt0F1i7SA="
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIS1uwpdHJwr219DSuuj9g22cR4wwLa7eYr98-r6MRfV6Ai-S0d829kSy10lPsHUc7EGQOHgkRsV-K-M3TQNrrihEE3SNC1j2R9WzmoyLYYcQztFN-OoAWdUv4lsNsJWeGpTv_zVP9frbrHrFCDnMEo9X4EzPRQSz4Lxr9x3xr9QkoTA_6CtXs9IMDr8oj968e45gYFnnaPulbMjsPuP9z0ptf"
+   },
+   {
+    "title": "webkul.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4XSiUbSLkTs54TxidiGwvOhK6zisEXjFTrp0bzZK5QN25Etn2rkrpiHdIoGSpXLQ2vzoopVay5TLIX4_X9hTkvBizi1UF_-DNcORg4Gz3Xhu1OkqJlKxBqGRbpA6t7DZXS-ax-5BKguGvmZLNeShjd45y54YNK0qmxdfrH4GX"
+   },
+   {
+    "title": "stacksync.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBEgDmyYxqJG3-DDJiVnn1TA_jNSycEushuMJYZB409jY7Skokg_av25QNk6-cE_2PbDnv_qioWuvJ_cGdnlnEFDZq6zMK6UJTPMqld275jlcrKIwQYFY8ZCFibbJijkPffhyjUq8qOepRmAoQ-Xz0eDIJE4fU28paxMAlaBaCiE6fwto2GmPkwcqC7_oZmg=="
+   },
+   {
+    "title": "s2-labs.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtOzkj2ab-x61vVkaxj8Be6j3ocv1BeBCOMRg_4rWUl-Te1Vl_htDxbCcQ3sZCBEreJaDR6p_zJH2dRdFuFb3WUKGCdpYUMFnMSgpjp9_BysizFeoowrSjkoJqN4Yo0vP9TcT4mD-UsTOmQ1K0ciAg85Gj8vvPGRMxLRD4k8Wk4QCDKs5P"
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzke5CB39GEkkv1y2DirEgTB90J3zMMT_Ds8pcRI9glGqeJEuTxtUswPl_80qlayA8-_GkrVH4Ng_3-XP4HNAyTQpXt1UpoJl0CnMLYV6DKb5tWfyGfwuf2scSZJGuCU7TT1GxP8f2x--BUp8CwmeiEnm3mgSs7taxh5No0sh-nrG-AUZ6ulXJBLw22KRjjS9VCjEmR_ex5A=="
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5McCP1yyy_nQdmx2bmIiFlXaTRETtYHoAN9chhAWxrpnObXAi_gs-Uqoipxg7Fa3IXEk3caT2yUO69TwoIqatwjOcTLQmSPThZi3gTj4_axzRDCOFurxjy3xtgoXHB4LN_yJDRWSV6zvXJU3H4dC3kPV0LRwbbNW7yxwi1EUTBd1Rje406o9CxuJgZzbfidy28lrRv7kX7sSu"
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHypyth8h3vqXwYGt1JkehOKN_b018t3xRnD5NITY14t8xjRGDiiECuuU_YSepWg1AeOzuKV5VUrZq_PzuHyG03Ypjk47G3WoKSh2L58y7EvQngjav_k6qUTR-e7Y1WMLSjYmKdrg=="
+   },
+   {
+    "title": "prismatic.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3IF1PtSBCHoHWRdEdzDeO25ciDUM_9fRRxmLagpzRRDAWqc8-IzC82IDDymbfkKR2Hprbgvp8hJ3J6MtCgK8ssD0dGrla5d4_Cg02sjhNRbSBLVwZc01Ll1A80whg_r3j--t0B4XbW282odNPk2UMKGyjHsgDbwIKtaeHl5nwbsuJXWHp8A=="
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF810eghM_SZ-Fr2hZhmru4icDdz57uiIXKyjB9H27hPc4dn2C2OuO5x-rhhycxuLYVXgxxS9BN8fGP1DEmkjbB3cBFDfBSk9RlSw0D2mI-dv_JJoTwDdGKQIJItAn1FzPxCo_YtAWpWhkVICo_OE8kHwKD9bJQo_lzgv7jhUPjeo9qw19_JcBuPRICILfpD7hnPGy5"
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdLnaIs3CjKrDdpleBiVOHIue07JHxmpxxhbvE_tY9d8YxPfh3QvDiZIPHGyEGvtczxVmYscDMUHru5iZ8ewq4Roa_KjaPZNYdIX_iw5KwY3eA372u1IFMgS8ckjq-Bx_fZ9AxDDK1hT8WIUL80RI1bFdyjY47kXXiSZOBD5TThFObwKvUJvks1bw="
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWgrZT03EkFKMknWTDBG06wopJUR1z-CXIeA_KJapbIvglEcA58YIbPmTrp3XifM3uqd5UjcxAtdhhE6-ohbR5WWUUrSydZhJ6tJAuyWo9T4uHhjXQPEe5yMirFie_10jN0jr7bomV4oBVdZtoISPI8H8QlD2zKLFN1eAV1swV7O5yq98SOxb8FAb5jr23M0fv60NQoH3JxGUvinLo54CWc-44ZWvwdw=="
+   },
+   {
+    "title": "hookdeck.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6yH2F-XWyWHD0kC-zexmAxE7lTucwAoArB48eQFytD0EaRYl67I5uF_52z4AyUKBHJrwOSblI-n8wo1Q2uzVpGvVk05BBMKk-RHpKP3ktlKMEWjFzg_ZgrKluQMhi8J05N0ryGiLdVvRkTEcrI8pkKyIlkpCWiGhme8TM5KJebxNEoUtBI5xSNMzDSrTLDhloJaB7gQLGYk9DzQ=="
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwTRJyECHvJQcDp7irJaPauM85M6POnU6BjW0dwpw142hE_4GpxRrQbzYuVux3re8y7I9KfM77djobKcv5mW5hWRvKcVmRs2YUWvrG2I33rw2zZTk16dw0A1w039swu0PqUkm8PXmYcu5eCIdxmfZv-AGSpwgJyttDEUTabNUYU3CzNIU1gUQMLA=="
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDNEExXmATvTRe8685zpmWCiSAQ79tzfhpK6iD0eGpWEgEfDgDl9MfXEabMNvaGqbP2vn7O_4F_uR0o0I0TF3yVMjqGnBApeK9fnMxEoD8-5A-DwsfCNqppvfukoWwyr4wLPpJAXXBM7MRfr0YhJZ7sfFn3-aG"
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1-f7lSFOK7w5jJ3EQfQfPKd3RlvtJ3SEejB10xBBDKwBHxGRaMz-caDV620cZdG8ulpMgLRdcXfCTrV4f4rsL3hUtHviePiZ9N4-q6ls4uoa03SUxfVhZJcxoVM6Mz_0UlHk2ZwdMXUjcnfieAOX7wc5WvM7_Wb60yUOpM056ycWE8-ev16UAL_eOSrlvxIvYAboaoX1KuH1znF9a_R3xyYk="
+   },
+   {
+    "title": "flosum.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSXBDVbmy15wVTJb7awfWjLBdMmENB3cRMmbeyiOTbiY5ak3qF63uAYj8N0DGdOA18JJMPUikRQ2g118uQ7Y4DqcH0VSQFZz9srj4VYTd_Sp_JB6Pp72lOaOXjtI8deP4M8BCWB_Jym9hAkCEkOykQ1vJ2Ohjy3XoAodM="
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0hilaUsor3lXZuqJurXpeeBweARlim8apG4_b7KmLTsr3I4iEgXEHBRssdl4fV_lHB1celeBWEOWqHOCRHq5B-I6Bjx8sr_Rq-OkzIJErFVMJpsMqHahywroTsDy8zDBP6fx3XlS4K6YBdZpK3AU6_mG5iQuu4hiMX7h9vKico7j-fSvi0aLPh4KWXWhQ0Qq6AxaGEkQKvjQ2CbDLULVH5aE3"
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFW5hGN7dQ3sVF29MesLqSK2FxzYz8p0dxedZ1RcGk0LthI0vC3BQ7tQXxej6l7YZvfigiASj7NnoF7O4rVtXjBGJYgb5Bn_HNLmp2gapZEPsccsLXuAbfY7yYWLsOxpxaFwVRBXXciTCRXnPMYY2D3AnLIvYq_ZyMjxHDBZj6vAvl-XZuxGMIl_91SAJf8p-ZiEh2_Pn5bfa_WRK75Av5n4zoM"
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdYgZ_GOSOlRg9qoxsXWW76Apbyjm-lunABfaJpWAM6bVrAuY28I_lhVnUyT5zT1hZKP45iv1-4mVwUAfCK84Fhvc_nRiZjh_aU68Dln0YnVUueuAywxCGH-xiSXTn79nlANrPuwYkpV9Ypav4guY-09kdFlcWpkupLTJBF5T0ffucXNcY2pDSM1lCXOxThqxkE3LG"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEupR7cK_9OpOAvH8u20hErtw-gFjdt_pYFqRaZA5LON0yQa2sOKDlzAIau74tTSVaTtKAZLFGkwAgnEMrpZ-Se2NusyRSE6a6hY7F9paWc8v_EDjIfWYwqPoj8cp3DLA=="
+   }
+  ],
+  "tokens": 6128,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://developer.salesforce.com/",
+    "status": 403,
+    "chars": 72,
+    "readable": false
+   },
+   {
+    "url": "https://developer.salesforce.com/signup",
+    "status": 403,
+    "chars": 72,
+    "readable": false
+   },
+   {
+    "url": "https://github.com/salesforcecli/mcp",
+    "status": 200,
+    "chars": 28978,
+    "readable": true
+   }
+  ],
+  "seconds": 98.4
+ }
+}

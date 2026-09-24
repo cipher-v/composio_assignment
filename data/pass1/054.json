@@ -1,0 +1,192 @@
+{
+ "app": {
+  "id": 54,
+  "name": "MrScraper",
+  "category": "Data, SEO and Scraping",
+  "hint": "docs.mrscraper.com"
+ },
+ "record": {
+  "subcategory": "Web Scraping",
+  "one_liner": "MrScraper is an AI-powered web scraping platform and API for structured data extraction.",
+  "auth_methods": [
+   "bearer_token"
+  ],
+  "primary_auth": "bearer_token",
+  "auth_notes": "Static API token passed in the x-api-token header.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can sign up for a free account on the MrScraper dashboard, which includes a permanent free tier (1,000 tokens/month) without a credit card.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "REST API with endpoints for managing and executing scrapers (Platform API) and direct utility endpoints like Web Unblocker, Scrape Markdown, Get Screenshot, Scrape JSON, Listing Page, and Scrape Sitemap.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "MrScraper officially supports the Model Context Protocol and provides an official MCP server with source code on GitHub.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "none",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://request.composio.dev/boards/tool-requests/posts/mrscraper",
+    "quote": "mrscraper is an ai-powered web scraping toolkit for extracting structured data, rendered html, screenshots, and reusable scrape results from websites. it supports both prompt-based ai scraping and manual step-based scraping"
+   },
+   {
+    "claim": "general",
+    "url": "https://mrscraper.com/blog/best-web-scraping-api",
+    "quote": "MrScraper unifies headless browser rendering, residential proxy rotation, anti-bot handling, and AI prompt extraction into managed cloud endpoints."
+   },
+   {
+    "claim": "auth",
+    "url": "https://mrscraper.com/blog/best-web-scraping-api",
+    "quote": "All API endpoints require authentication using an API token passed in the x-api-token header."
+   },
+   {
+    "claim": "access",
+    "url": "https://mrscraper.com/blog/best-web-scraping-api",
+    "quote": "Plans include 1,000 Plan Tokens/month on Scraper Free ($0/mo, no credit card required) and 200,000 Plan Tokens/month on Scraper Pro ($199/mo), with flat $0.001/token overages."
+   },
+   {
+    "claim": "api",
+    "url": "https://mrscraper.com/blog/best-web-scraping-api",
+    "quote": "Built on REST principles, our API offers predictable resource-oriented URLs, accepts JSON-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes."
+   },
+   {
+    "claim": "api",
+    "url": "https://mrscraper.com/blog/best-web-scraping-api",
+    "quote": "Playground. Web Unblocker GET Scrape Markdown POST Get Screenshot POST Scrape JSON POST Listing Page POST Scrape Sitemap POST. Platform. Authentication. Scraper. Result. Analytic."
+   },
+   {
+    "claim": "api",
+    "url": "https://mrscraper.com/blog/best-web-scraping-api",
+    "quote": "MrScraper, for example, can be configured to deliver extracted data to a webhook endpoint — your..."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://mrscraper.com/blog/best-web-scraping-api",
+    "quote": "In addition to raw HTML and JSON, MrScraper provides native AI prompt extraction and an MCP (Model Context Protocol) server."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://mrscraper.com/blog/best-web-scraping-api",
+    "quote": "The MrScraper MCP server source code is available on GitHub for local setup, contributions, and issue reports."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### 1. What the Product Does\nMrScraper is an AI-powered web scraping platform and API that unifies headless browser rendering, residential proxy rotation, anti-bot handling, and structured data extraction via natural language prompts. It supports both prompt-based AI scraping and manual step-based scraping.\n* **Source:** `https://request.composio.dev/boards/tool-requests/posts/mrscraper`\n  * **Quote:** `\"mrscraper is an ai-powered web scraping toolkit for extracting structured data, rendered html, screenshots, and reusable scrape results from websites. it supports both prompt-based ai scraping and manual step-based scraping\"`\n* **Source:** `https://mrscraper.com/blog/best-web-scraping-api`\n  * **Quote:** `\"MrScraper unifies headless browser rendering, residential proxy rotation, anti-bot handling, and AI prompt extraction into managed cloud endpoints.\"`\n\n### 2. Every Auth Method & Primary Auth for Multi-Tenant Integration\nThe public API relies exclusively on a static API token passed via a custom HTTP header. No OAuth2 or Basic authentication options are documented.\n* **Auth Method:** Static API Token passed in the `x-api-token` header.\n  * **Source:** `https://mrscraper.com/blog/best-web-scraping-api`\n  * **Quote:** `\"All API endpoints require authentication using an API token passed in the x-api-token header.\"`\n* **Primary Auth for Multi-Tenant Integration:** `bearer_token` (per the strict definition for static personal/access tokens not explicitly named \"API key\").\n\n### 3. How to Get Credentials & Cost\nDevelopers can obtain credentials instantly by signing up for an account on the MrScraper dashboard.\n* **Access Type:** `self_serve_free`\n* **Cost:** MrScraper offers a permanent free tier (\"Scraper Free\") providing 1,000 tokens per month without requiring a credit card. Paid plans start at $199/month for the \"Scraper Pro\" tier.\n  * **Source:** `https://mrscraper.com/blog/best-web-scraping-api`\n  * **Quote:** `\"Plans include 1,000 Plan Tokens/month on Scraper Free ($0/mo, no credit card required) and 200,000 Plan Tokens/month on Scraper Pro ($199/mo), with flat $0.001/token overages.\"`\n\n### 4. API Style, Breadth, OpenAPI Spec, Webhooks, Sandbox\n* **API Style:** REST\n  * **Source:** `https://mrscraper.com/blog/best-web-scraping-api`\n  * **Quote:** `\"Built on REST principles, our API offers predictable resource-oriented URLs, accepts JSON-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes.\"`\n* **Breadth:** The API provides endpoints for managing and executing scrapers programmatically (Platform API), alongside direct utility endpoints like Web Unblocker, Scrape Markdown, Get Screenshot, Scrape JSON, Listing Page, and Scrape Sitemap.\n  * **Source:** `https://mrscraper.com/blog/best-web-scraping-api`\n  * **Quote:** `\"Playground. Web Unblocker GET Scrape Markdown POST Get Screenshot POST Scrape JSON POST Listing Page POST Scrape Sitemap POST. Platform. Authentication. Scraper. Result. Analytic.\"`\n* **OpenAPI Spec:** No official OpenAPI specification file or download link is provided in the public documentation.\n* **Webhooks:** Supported. MrScraper can be configured to send real-time scraping results directly to external URLs.\n  * **Source:** `https://mrscraper.com/blog/best-web-scraping-api`\n  * **Quote:** `\"MrScraper, for example, can be configured to deliver extracted data to a webhook endpoint — your...\"`\n* **Sandbox:** No separate sandbox environment is available; testing is conducted directly on the live platform using the free tier token allocation.\n\n### 5. MCP Servers\n* **MCP Type:** `official`\n* **Details:** MrScraper officially supports the Model Context Protocol, providing an official MCP server with source code hosted on GitHub.\n  * **Source:** `https://mrscraper.com/blog/best-web-scraping-api`\n  * **Quote:** `\"In addition to raw HTML and JSON, MrScraper provides native AI prompt extraction and an MCP (Model Context Protocol) server.\"`\n  * **Source:** `https://mrscraper.com/blog/best-web-scraping-api`\n  * **Quote:** `\"The MrScraper MCP server source code is available on GitHub for local setup, contributions, and issue reports.\"`\n\n### 6. Buildability Verdict & Main Blocker\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. The platform provides comprehensive public documentation and a self-serve free tier that allows immediate acquisition of working API credentials.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"mrscraper\" api documentation",
+   "\"mrscraper\" pricing free tier",
+   "\"mrscraper\" mcp server",
+   "",
+   " authentication",
+   " oauth",
+   "\"mrscraper\" webhooks",
+   "\"mrscraper\" openapi spec",
+   " openapi",
+   " swagger",
+   " webhooks",
+   "\"mrscraper\" \"x-api-token\""
+  ],
+  "search_sources": [
+   {
+    "title": "mrscraper.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJTPxF8Aq8-vi3eNG19y29RnxQQr_m9jd5ubIWuE0VOPw627snaIeaWYka2uQKn_tWplfK_6pjHnN4GFCGpZC1x69VzROXf-ZY4FSC_Gqkv207YEUSetLesx4S7qpkqDpcjkZogdZ7O7u-kg=="
+   },
+   {
+    "title": "mrscraper.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMhXUzFbIDR5pfinpGG7k6Ao-Y7Hq-GjTJCAIBqA6LkNEtwu-xUsPyx9LKIkhkiyxizNqGGzwGe_P-PsowgJUJruZF77HuCoO8hG3G_Dsy1PMfpyJ79dLRIsygh4uhdps-av_9LqcUBLbWWw=="
+   },
+   {
+    "title": "mrscraper.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGbfFh57KI9_l-3UnO-slmIjwK8TmeFhff24xvJ6jsvbp4nwhp_I1IY7guHwdWnVekov6KkiCaImykASh7j0BmAOa3m3LeiW9RVC_2yBgsFGVz6EUJ1HE21VJq_5nHmO1hlBq8MzFHF3f6m_FxMJwy3gJriao9XItWZ55i"
+   }
+  ],
+  "tokens": 7693,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "MrScraper API authentication docs.mrscraper.com",
+    "MrScraper API keys docs.mrscraper.com",
+    "MrScraper OAuth docs.mrscraper.com",
+    "MrScraper getting started docs.mrscraper.com",
+    "MrScraper quickstart docs.mrscraper.com",
+    "MrScraper pricing docs.mrscraper.com",
+    "MrScraper API access plans docs.mrscraper.com",
+    "MrScraper developer program docs.mrscraper.com",
+    "MrScraper API reference docs.mrscraper.com",
+    "MrScraper API documentation index docs.mrscraper.com",
+    "MrScraper MCP server",
+    " \"authentication\"",
+    " \"api keys\"",
+    " \"oauth\"",
+    " \"getting started\"",
+    " \"quickstart\"",
+    " \"pricing\"",
+    " \"api reference\"",
+    " \"mcp server\"",
+    "MrScraper Token Plan",
+    "MrScraper Authentication",
+    "MrScraper Quickstart",
+    "MrScraper API Reference"
+   ],
+   "candidates": 3,
+   "live_urls": [
+    "https://mrscraper.com/pricing",
+    "https://docs.mrscraper.com/docs/getting-started/overview",
+    "https://mrscraper.com/blog/best-web-scraping-api",
+    "https://request.composio.dev/boards/tool-requests/posts/mrscraper",
+    "https://www.mcpbundles.com/skills/mrscraper-mcp-60697f1441"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://api.mrscraper.com/",
+     "status": 401
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://mrscraper.com/pricing",
+     "status": 200,
+     "chars": 10819,
+     "readable": true
+    },
+    {
+     "url": "https://docs.mrscraper.com/docs/getting-started/overview",
+     "status": 200,
+     "chars": 5719,
+     "readable": true
+    },
+    {
+     "url": "https://mrscraper.com/blog/best-web-scraping-api",
+     "status": 200,
+     "chars": 17894,
+     "readable": true
+    },
+    {
+     "url": "https://request.composio.dev/boards/tool-requests/posts/mrscraper",
+     "status": 200,
+     "chars": 1506,
+     "readable": true
+    },
+    {
+     "url": "https://www.mcpbundles.com/skills/mrscraper-mcp-60697f1441",
+     "status": 200,
+     "chars": 1236,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 92.1
+ }
+}

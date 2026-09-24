@@ -1,0 +1,292 @@
+{
+ "app": {
+  "id": 72,
+  "name": "Airtable",
+  "category": "Productivity and Project Management",
+  "hint": "airtable.com/developers"
+ },
+ "record": {
+  "subcategory": "Database / Spreadsheet",
+  "one_liner": "Airtable is a cloud-based database platform combining spreadsheet interface with relational database power.",
+  "auth_methods": [
+   "bearer_token",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Personal Access Tokens (PATs) for scoped access; OAuth 2.0 for multi-tenant integrations. Legacy API keys deprecated Feb 1, 2024.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can sign up for a free account, create Personal Access Tokens, or register OAuth integrations to get a client_id/client_secret. No manual approval or sales contact is needed. The Free plan includes API access, but it is limited to 1,000 API calls per month.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "RESTful API with comprehensive record-level CRUD operations, schema/metadata retrieval, and webhook management. Webhooks use a 'thin ping' architecture and expire after 7 days.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Airtable officially publishes and maintains an MCP server at mcp.airtable.com. The `mcp-cli` is a separate, installable tool for command-line interaction.",
+  "verdict": "ready_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "The free plan is limited to 1,000 API calls per month, which is insufficient for most integrations. A paid plan is required for realistic usage. Additionally, native webhooks expire after 7 days, requiring a mechanism to refresh them.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://airtable.com/developers/agents",
+    "quote": "Airtable's structured field types, relational links, and built-in automations make it a rich data layer for ai agents."
+   },
+   {
+    "claim": "auth",
+    "url": "https://sfailabs.com/guides/how-to-get-airtable-api-key",
+    "quote": "airtable deprecated legacy api keys on february 1, 2024. the replacement is a personal access token (pat), which you create at airtable.com/create/tokens ."
+   },
+   {
+    "claim": "auth",
+    "url": "https://github.com/Airtable/oauth-example",
+    "quote": "Example code for authorizing a user an Airtable OAuth integration."
+   },
+   {
+    "claim": "access",
+    "url": "https://airtable.com/pricing",
+    "quote": "Our Free plan is available at no cost for users just getting started."
+   },
+   {
+    "claim": "access",
+    "url": "https://github.com/Airtable/oauth-example",
+    "quote": "Go to https://airtable.com/create/oauth and register a new integration."
+   },
+   {
+    "claim": "api",
+    "url": "https://dev.to",
+    "quote": "While Airtable doesn't provide an official OpenAPI specification, developers can generate OpenAPI specifications from their databases to aid integration."
+   },
+   {
+    "claim": "api",
+    "url": "https://hookdeck.com",
+    "quote": "The ping contains only base.id , webhook.id , and a timestamp , so it tells you that something changed, not what. To get the changes you call the list-payloads endpoint with a cursor"
+   },
+   {
+    "claim": "api",
+    "url": "https://simplified-webhooks.com",
+    "quote": "Airtable's native webhooks expire after 7 days and must be refreshed, or they silently stop firing."
+   },
+   {
+    "claim": "api",
+    "url": "https://airtable.com",
+    "quote": "App Sandbox is available to all Airtable users on Business and Enterprise Scale plans."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://airtable.com/developers/agents",
+    "quote": "install the plugin to get airtable mcp & full skills library... install via npm. npm install -g @airtable/mcp-cli"
+   }
+  ],
+  "confidence": 0.9,
+  "changes": [
+   {
+    "field": "access_notes",
+    "old": "Developers can sign up for a free account, create Personal Access Tokens, or register OAuth integrations to get client_id/client_secret. No manual approval or sales contact needed. Free tier includes full API access.",
+    "new": "Developers can sign up for a free account, create Personal Access Tokens, or register OAuth integrations to get a client_id/client_secret. No manual approval or sales contact is needed. The Free plan includes API access, but it is limited to 1,000 API calls per month.",
+    "reason": "The free plan has a critical limitation of 1,000 API calls per month, which was omitted in the first pass.",
+    "url": "https://airtable.com/pricing"
+   },
+   {
+    "field": "openapi_spec",
+    "old": "false",
+    "new": "false",
+    "reason": "The first pass correctly identified no official OpenAPI spec, but the reasoning was clarified. While community tools exist, Airtable does not provide an official one.",
+    "url": "https://apis.io/apis/airtable"
+   },
+   {
+    "field": "sandbox",
+    "old": "false",
+    "new": "false",
+    "reason": "The 'App Sandbox' is only available on paid Business and Enterprise plans, not on the free tier for general developer use.",
+    "url": "https://airtable.com/pricing"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "Airtable officially publishes and maintains an MCP server and CLI tool. Source: https://airtable.com/developers/agents, quote: \"install the plugin to get airtable mcp & full skills library... install via npm. npm install -g @airtable/mcp-cli\"",
+    "new": "Airtable officially publishes and maintains an MCP server at mcp.airtable.com. The `mcp-cli` is a separate, installable tool for command-line interaction.",
+    "reason": "The original quote was misattributed to the MCP server itself, rather than the CLI tool. The MCP server is a hosted endpoint.",
+    "url": "https://airtable.com/developers/agents"
+   },
+   {
+    "field": "verdict",
+    "old": "ready_now",
+    "new": "ready_with_friction",
+    "reason": "The 1,000 API calls/month limit on the free tier is a significant friction point, making 'ready_now' inaccurate.",
+    "url": "https://airtable.com/pricing"
+   },
+   {
+    "field": "blocker",
+    "old": "none",
+    "new": "paid_plan_required_for_real_use",
+    "reason": "The free tier's API call limit effectively requires a paid plan for any realistic integration.",
+    "url": "https://airtable.com/pricing"
+   },
+   {
+    "field": "blocker_notes",
+    "old": "None. API is self-serve, free, and supports standard OAuth 2.0. Minor hurdles include lack of official OpenAPI spec and webhook expiration, but these don't block toolkit deployment.",
+    "new": "The free plan is limited to 1,000 API calls per month, which is insufficient for most integrations. A paid plan is required for realistic usage. Additionally, native webhooks expire after 7 days, requiring a mechanism to refresh them.",
+    "reason": "The API call limit on the free plan is a major blocker for practical use, necessitating a paid plan.",
+    "url": "https://airtable.com/pricing"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### **Fact-Checking Analysis: Airtable**\n\nHere is a detailed, field-by-field verification of the provided record for Airtable.\n\n---\n\n**`subcategory`**: **CONFIRMED**\n*   **Correct Value**: `Database / Spreadsheet`\n*   **Reasoning**: Airtable is consistently described as a platform that \"blends the simplicity of spreadsheets with the power of databases\". This categorization is accurate.\n\n**`one_liner`**: **CONFIRMED**\n*   **Correct Value**: \"Airtable is a cloud-based database platform combining spreadsheet interface with relational database power.\"\n*   **Reasoning**: Search results confirm this description. One source states, \"Airtable combines the simplicity of a spreadsheet with the power of a database\". Another notes it \"blends the simplicity of spreadsheets with the power of databases\".\n\n**`auth_methods`**: **CONFIRMED**\n*   **Correct Value**: `bearer_token`, `oauth2`\n*   **Reasoning**: Airtable's primary authentication methods for its API are Personal Access Tokens (PATs), which are a form of bearer token, and OAuth 2.0 for third-party integrations. Legacy API keys were fully deprecated as of February 2024.\n\n**`primary_auth`**: **CONFIRMED**\n*   **Correct Value**: `oauth2`\n*   **Reasoning**: For a multi-tenant integration platform, OAuth 2.0 is the standard and recommended method. Airtable supports creating OAuth integrations for this purpose. Personal Access Tokens are suitable for individual scripts and single-user integrations but not for third-party applications connecting multiple users.\n\n**`auth_notes`**: **CONFIRMED**\n*   **Correct Value**: \"Personal Access Tokens (PATs) for scoped access; OAuth 2.0 for multi-tenant integrations. Legacy API keys deprecated Feb 1, 2024.\"\n*   **Reasoning**: Documentation confirms that PATs are the replacement for legacy API keys, offering scoped permissions. OAuth 2.0 is available for building integrations. Multiple sources confirm that legacy API keys were deprecated in February 2024.\n\n**`access`**: **CONFIRMED**\n*   **Correct Value**: `self_serve_free`\n*   **Reasoning**: Airtable offers a free plan that is free forever and does not require a credit card to sign up. This free plan includes API access, allowing developers to create Personal Access Tokens or register OAuth applications without needing a paid plan or manual approval.\n\n**`access_notes`**: **WRONG**\n*   **Correct Value**: \"Developers can sign up for a free account, create Personal Access Tokens, or register OAuth integrations to get a client_id/client_secret. No manual approval or sales contact is needed. The Free plan includes API access, but it is limited to 1,000 API calls per month.\"\n*   **Reasoning**: While the initial notes are largely correct, they omit a critical limitation. The free plan is capped at 1,000 API calls per month. The paid \"Team\" plan increases this to 100,000 per month, and the \"Business\" plan offers unlimited calls.\n\n**`api_styles`**: **CONFIRMED**\n*   **Correct Value**: `rest`\n*   **Reasoning**: The Airtable API is consistently referred to as a REST API, providing programmatic access to bases, tables, and records.\n\n**`api_breadth`**: **CONFIRMED**\n*   **Correct Value**: `broad`\n*   **Reasoning**: The API supports full CRUD (Create, Read, Update, Delete) operations on records, management of base schemas (tables, fields), and webhook management. This comprehensive access to both data and metadata justifies the \"broad\" classification.\n\n**`api_notes`**: **CONFIRMED**\n*   **Correct Value**: \"RESTful API with comprehensive record-level CRUD operations, schema/metadata retrieval, and webhook management. Webhooks use a 'thin ping' architecture and expire after 7 days.\"\n*   **Reasoning**: The API provides CRUD operations and schema management. Official documentation and guides confirm that webhooks are supported. Multiple sources describe the webhook implementation as a \"thin ping\" model, where a lightweight notification is sent, requiring a follow-up API call to fetch the actual payload. These webhooks expire after 7 days and must be refreshed.\n\n**`openapi_spec`**: **WRONG**\n*   **Correct Value**: `false`\n*   **Reasoning**: Airtable does not provide an official OpenAPI specification. However, the community has created tools to generate OpenAPI schemas from an Airtable base. One source, APIs.io, lists an OpenAPI spec, but it appears to be community-generated or derived, not officially published by Airtable for its entire API surface.\n\n**`webhooks`**: **CONFIRMED**\n*   **Correct Value**: `true`\n*   **Reasoning**: Airtable has a native Webhooks API that allows for programmatic notification of changes.\n\n**`sandbox`**: **WRONG**\n*   **Correct Value**: `false`\n*   **Reasoning**: The \"App Sandbox\" feature is only available on paid Business and Enterprise Scale plans. It is not a general-purpose developer sandbox available on the free tier. Therefore, for the purpose of a self-serve developer building an integration, no free sandbox is available. The common workaround before this feature existed was to duplicate a base for testing.\n\n**`mcp`**: **CONFIRMED**\n*   **Correct Value**: `official`\n*   **Reasoning**: Airtable hosts and maintains an official Model Context Protocol (MCP) server at `mcp.airtable.com`. This allows MCP-compatible AI agents to interact with Airtable data.\n\n**`mcp_notes`**: **WRONG**\n*   **Correct Value**: \"Airtable officially publishes and maintains an MCP server at mcp.airtable.com. The `mcp-cli` is a separate, installable tool for command-line interaction.\"\n*   **Reasoning**: The original quote from `airtable.com/developers/agents` was misattributed. The page mentions both a one-click connection to AI tools (like Claude and ChatGPT) via OAuth and a separate CLI tool (`@airtable/mcp-cli`) installable via npm. The MCP server itself is a hosted endpoint (`mcp.airtable.com`) and does not require installing a CLI plugin to use with clients like Claude. The quote in the first-pass record refers specifically to the CLI tool, not the general MCP server setup.\n\n**`verdict`**: **WRONG**\n*   **Correct Value**: `ready_with_friction`\n*   **Reasoning**: The original verdict of `ready_now` is incorrect due to the significant limitation on the free plan. The 1,000 API calls/month limit on the free tier is a major point of friction for any meaningful integration and would be quickly exhausted, requiring an upgrade to a paid plan.\n\n**`blocker`**: **WRONG**\n*   **Correct Value**: `paid_plan_required_for_real_use`\n*   **Reasoning**: The API call limit on the free tier makes it unsuitable for production or even active development use, effectively requiring a paid plan.\n\n**`blocker_notes`**: **WRONG**\n*   **Correct Value**: \"The free plan is limited to 1,000 API calls per month, which is insufficient for most integrations. A paid plan is required for realistic usage. Additionally, native webhooks expire after 7 days, requiring a mechanism to refresh them.\"\n\n---\n### **Uncertain Fields**\n\nAll fields were verifiable using the provided documentation and search results. There are no fields that remain uncertain.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Airtable API documentation",
+   "Airtable API authentication",
+   "Airtable API free plan access",
+   "Airtable webhooks API documentation",
+   "Airtable OpenAPI specification",
+   "Airtable MCP server official",
+   "Airtable developer sandbox"
+  ],
+  "search_sources": [
+   {
+    "title": "dev.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdNHFdpZ--EWfpAOaYHQp2NezDVAHC5gCK-SdbS52fJZ_C-HI9EPkKgSsRFLNZdkxfI8Fq0xuNTMGAmq4hoIqK4nqm5yAJ3OokOTWgL-n1nzYe_Ckg4P5C_pMPbrhbyPMLd8iARNHbltZn-bo-qOj8jJau-X3omnq9Kyv-vZv5ciRrh--s-0ok49yq"
+   },
+   {
+    "title": "airtable.rest",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIPTylTT4W0S2dynba16tYxQAaqsopieqYJmdSxgS7Km1TeZNF5L_EntZl0tHylHM345VW1oRzU8YLm1ORagfhgI45Wk6vZEepXszb0U7J8mo="
+   },
+   {
+    "title": "apievangelist.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZZXMGIZc1KqkF8yVrHB0Y0WlIqx1M1TJjWq8v_3xF2YtXidb8Zc8-xqwbZkE_DYrN9UUrON9FIlJLYjmaDyLBQIRifTLyTJ0UoXiitnM7kQJp_Lh_jWy9w7a2scr115Bn_a5SMmv4RxOtkBTsSH3AIi6PpA=="
+   },
+   {
+    "title": "n8n.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCQX83oIJ0jFAnASZnK5eON5yc3axnJoDBQ8jzfpMHCMzhvzfpSFPWJ_vI2cpefBm-zi8vh_f9WDnboPOsaHkfGr4DGlOqsGcWsmncE8L1CvPACXZYvxCnQI0LESV-1G3eI0oJcXx7uhmC2FVGgmmDfv0I3bKvpk8="
+   },
+   {
+    "title": "youtube.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZShOXAr0NWxSde323acRgQZZo2DoCi9Uu7OTmGey1TbUalSbTqkQEbbi-BqoH3HA5rW5DT4_70DlP3b5OHcKGeR9nXokzPj93lUGXIk-q-Wga0yTpfjbmlhQwqVKVvLOstSl5fP4="
+   },
+   {
+    "title": "softr.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGdnC93Y7LFLKgnI2pIc1nqsw0NGWgavQcN5ZppZxtvDylbWLMJ98zzffq2DgN42y8swmhyQx5Mz9U87a-O6srToXtX8UPqtmOd0K-DHlHDYP9Q8wuHsE33gzXskrSuKXKBh4fPg=="
+   },
+   {
+    "title": "customjs.space",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdUUsecdsIYaIXQlw_f6bM5rpffy2y9JeZXg-eeMXPN_vQzMxIDFWPiGujXG_x2VwE8apdMdWRkNOv0aSZjKl24tPAgLMGZrIuMHFYCJUJ6y_6Dw8d6fKqwrCATm9jgJSjkTb8N96nNm3UBl-fPAvm3uk="
+   },
+   {
+    "title": "retoolers.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7JQnNnUXZwIG5S8hE-o-KiqmXLZlmqMSIhX4mDS-Hs_IBcL9ranrg8n29X_hxP9Al7SUa7WPce_2biC8YQUBPWAEnW97oVVHXZ_F40cE6EOzCM2-BAWVo81byXyWtNc4X464vZpS8qOVi1g=="
+   },
+   {
+    "title": "airtable.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKGMoHV-10tgJe7j0ze_E9P2n_eUhjIk5dRHpl2ecV4RYVF5H5E5WgLj8AtRz3HKSbzVFZYIaDaTZZ5F78xVxRE5AcUg_WZOrh49ElWHg8zQBm1A7_0nr1BUhISQUvO2MiFEUzaxa0vxBiDZc0XRdjGNoT"
+   },
+   {
+    "title": "readthedocs.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZUm-OTQ-LJpF09EWla8GcHzUyn0u1c8z_DwS5Or-FFGMiS2L0WiH-fd3kqsY9IZmv1g5j4Qbawep9QQls-fNHr8EGJ7RIOUIh4EXlVtGeAnpxtMHbOoZEQvsrHKlgQ9FjwXcESTf8U0FLHknxe9ExeSjdVg=="
+   },
+   {
+    "title": "hookdeck.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfrZKHIoMSal0meMzOxgfAjait9zDkzz8ov0vmvj-y9EOd6ZGIWPPGM25mU5Ubt4jGLLApkMmJDHZqjgbqlJpTaSvbH71qzIxz67dZYoQDSwkHNkbvXxYIKCw0cr62J1hTgbv8tUpYGf2npRzoFXEpupQaon5OXEl_K_guUOclT-XuuFuLP1mBDcsDZZtgEDBS5Q8lii3CsSk="
+   },
+   {
+    "title": "simplified-webhooks.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHW9rIPXgHJPv3I34SYyVpMIdenmA6kw2pxKVLBnU0CeQN78EhhVlyB0d-ASu9N3n9DOBU4vP5JoRAPmBsleLu-jWhk7IluFj5BxzaC5ZVzVBomFyxY_d0HLsPbVqWmX-BP0UwFKVIsA_Z1VTs_KsGi"
+   },
+   {
+    "title": "airtable.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmIC74diNtocifbiTr1EiBsHKLHm_YrS01YsOv3HZ8qmsM_8Rr5fRlci1THtmZw1hTJQ_a0e0FtiNRhO6CDR_A0SPfQRI_MXgWW_KkwzAfzC3X1ed6OHeaKcd_YmwbRJwraxJIMMxc6erms5nMcWg7YanjSB0u9HyCHRQlNEJDt60yRN4IIkOkBG4IZSKWch719sHOorcJYg=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8_FNJ8JkMGbyeAru1r2Hq89CpbUsjvnCIcmyAEiRqs6ssdS7yXVc4DBF9CBsZhI2bcTKynMOQTnwtgvzYTPXtg06FQJp9XJ4w9WLBJpItKJrJ1Vb1HnLUqPulkDoZmlBiHd0z5dh2rS_gvu0HcpA4XH1he9ptCwFdYBPx"
+   },
+   {
+    "title": "sequentialroutine.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGztmqNBwOe9GgIqRWn3lq8AD6kO9CRlnmZR718LcbOTQajXbBIKU9-6JxRTJXPlpN_bCMrvlX-Lnfg6djEepH6CevQB-XPAwYHCKTYoDRZbcqRiaeoFxYxw7xWEJxSnDzm3UJVNXKcfQM8QvX94n3iJdTTJjrpIay8sNXIMNZfLBB5E7onNGXIzfz8fgxmppJqT0BH"
+   },
+   {
+    "title": "airtable.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbSKMYrngOoqfh83aEz4ekmrUW68gKA9rWuVDuw37So1Z2X0w1k9tkVBTn4oBJpaG2hAjxlOFp-yB55SaCI-VOXRCfBJ-8uYzEu3f3tTfwsJfJvgvs6JO-qQPN2hoQM9386Rsc5sxLXICIHD_75gMRQJh-Az_y6sj_Iz0ZholHM3D6d1Vzn5zppnlWVk_xboz3GBc="
+   },
+   {
+    "title": "airtable.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6iu4MkzYNNPbw5404bu0pic6gUbBpadECf_sYaq7fc7AfEdEVKfXV035S5B6eYUruk_JEdgr1JJWSmaIdxh1F7RCFwRZq8eSbDeIc8BbLsw52qehJ68veuX_-23iDI-2mvy2DrRg962nbmsKnpfWzFKVfBrNxN4KDDKaQbGzl4Eg34Bijv3EhNZnVBui1fOrj6dT5fW5y4S8Zpl_SrDfWepRU"
+   },
+   {
+    "title": "airtable.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1ZzEbQFJrZPRGlUCFliCEGyfWt4mNLuI3JZaUa2TH_r7vvNU6QxyG_clizzco3NILymQYRKwUOf8n0HANVEhHecj-3oLTT66gsV5FcUR1POLOGkmWZU0rmxf7B_g4H6OXLK8hmgwoGUMKj7r4Iib1Fumb-sKqFT8JwOw_zxjhDXJF2qbYPN4TcSXuvZqJk-E="
+   },
+   {
+    "title": "usecarly.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHr10Nwg1H3k_XZSXEWg1LZqr-6hXMM_iFcmr7xZr1XMS8SSd5M199gk3713K7LZ6PdKsGGqshjuUmkc06o2wqbSy73r5ZHQU82_CzfbDEqA55og7npXT-baYza6ygC23hyOuiExIY="
+   },
+   {
+    "title": "mcpservers.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEws3oSFbObGnRNAgDQO67nS0Y6uv2-ZkRozQnyoT_bLKNQXd044tuG3-c9Z4VTX1hErUX30eITPvDKCPXQayy9oLaZpuUl9UYfW2aRJjhxRn6jDUKy7qyBgvISKkVHsuw6N4HtYddJ5EnWHBIv"
+   },
+   {
+    "title": "truefoundry.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjIgoG2qB6lFTuFOGQ-aD6zcH3Rz50dq0hF8OxBTwV0q7y1rLD_-xdTgOXYM8ALUoTeHwmLM7Rwey0g7Q3Ql2Rxmu2Vn6GRsHt-rJcbCCQNQ3qBwF1YxMX8OaqBh-QO9gyahBQQjk1r4XH9iSM5I_JKeI="
+   }
+  ],
+  "tokens": 9313,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://airtable.com/developers/agents",
+    "status": 200,
+    "chars": 4095,
+    "readable": true
+   },
+   {
+    "url": "https://sfailabs.com/guides/how-to-get-airtable-api-key",
+    "status": 200,
+    "chars": 13952,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/Airtable/oauth-example",
+    "status": 200,
+    "chars": 5391,
+    "readable": true
+   },
+   {
+    "url": "https://airtable.com/pricing",
+    "status": 200,
+    "chars": 8908,
+    "readable": true
+   },
+   {
+    "url": "https://dev.to",
+    "status": 200,
+    "chars": 9791,
+    "readable": true
+   },
+   {
+    "url": "https://hookdeck.com",
+    "status": 200,
+    "chars": 4279,
+    "readable": true
+   },
+   {
+    "url": "https://simplified-webhooks.com",
+    "status": 200,
+    "chars": 3576,
+    "readable": true
+   },
+   {
+    "url": "https://airtable.com",
+    "status": 200,
+    "chars": 10657,
+    "readable": true
+   }
+  ],
+  "seconds": 81.3
+ }
+}

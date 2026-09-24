@@ -1,0 +1,110 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://request.composio.dev/boards/tool-requests/posts/mrscraper",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.7
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://mrscraper.com/blog/best-web-scraping-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://mrscraper.com/blog/best-web-scraping-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://mrscraper.com/blog/best-web-scraping-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.03
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://mrscraper.com/blog/best-web-scraping-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://mrscraper.com/blog/best-web-scraping-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://mrscraper.com/blog/best-web-scraping-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://mrscraper.com/blog/best-web-scraping-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.59
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://mrscraper.com/blog/best-web-scraping-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  }
+ ],
+ "auth_support": {
+  "bearer_token": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://mrscraper.com/blog/best-web-scraping-api', 'https://mrscraper.com/blog/best-web-scraping-api', 'https://mrscraper.com/blog/best-web-scraping-api', 'https://mrscraper.com/blog/best-web-scraping-api', 'https://mrscraper.com/blog/best-web-scraping-api', 'https://mrscraper.com/blog/best-web-scraping-api', 'https://mrscraper.com/blog/best-web-scraping-api']\n- Non-vendor sources (prefer official docs): ['https://request.composio.dev/boards/tool-requests/posts/mrscraper']",
+ "metrics": {
+  "n_evidence": 9,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.8888888888888888,
+  "readable": 9,
+  "quote_supported_rate": 0.2222222222222222,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

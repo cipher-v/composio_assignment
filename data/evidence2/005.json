@@ -1,0 +1,71 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://twenty.com",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://twenty.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://twenty.com",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/IgorWarzocha/twenty-mcp-server",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://twenty.com",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  }
+ ],
+ "auth_support": {
+  "api_key": false,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://github.com/IgorWarzocha/twenty-mcp-server']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://twenty.com', 'https://twenty.com/pricing', 'https://twenty.com', 'https://twenty.com']\n- Auth methods not mentioned on any cited page: ['api_key']",
+ "metrics": {
+  "n_evidence": 5,
+  "alive_rate": 0.8,
+  "dead_rate": 0.2,
+  "blocked_rate": 0.0,
+  "official_rate": 0.8,
+  "readable": 4,
+  "quote_supported_rate": 0.0,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

@@ -1,0 +1,243 @@
+{
+ "app": {
+  "id": 46,
+  "name": "Squarespace",
+  "category": "Ecommerce",
+  "hint": "developers.squarespace.com"
+ },
+ "record": {
+  "subcategory": "Website Builder / E-commerce",
+  "one_liner": "Squarespace is a website builder and e-commerce platform for creating websites, managing storefronts, and handling orders.",
+  "auth_methods": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 authorization code flow for third-party multi-tenant applications; API keys for site-specific access.",
+  "access": "approval_required",
+  "access_notes": "OAuth 2.0 credentials require a registration request and manual review by Squarespace. Full Commerce API access requires the merchant's site to be on the 'Advanced' subscription tier ($99/month annually or $139/month month-to-month) after a 14-day free trial.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Covers Analytics, Contacts, Discounts, Inventory, Orders, Products, Profiles, Transactions, and Webhook Subscriptions. Built on HTTPS with REST principles.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Squarespace publishes an official MCP server for domain tools (name generation, real-time availability, checkout links). Community-built MCP servers exist for full commerce capabilities.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "OAuth client registration requires manual review and approval by Squarespace. Accessing Commerce APIs requires the merchant site to be on the expensive 'Advanced' tier subscription after the 14-day trial expires.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://developers.squarespace.com/",
+    "quote": "everything you need to build and publish external apps — reliable apis, clear documentation, and a marketplace to reach squarespace's global customer base."
+   },
+   {
+    "claim": "general",
+    "url": "https://developers.squarespace.com/",
+    "quote": "manage your storefront's orders, inventory, transactions, and more."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+    "quote": "then, depending on your development needs, authenticate requests by using an api key or oauth access token."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.squarespace.com/commerce-apis/oauth",
+    "quote": "Squarespace uses oauth 2.0 to authorize third-party applications to integrate with squarespace and consume squarespace apis."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.squarespace.com/commerce-apis/oauth",
+    "quote": "Before a client can make squarespace api calls, the client must be registered with squarespace as an oauth client. Start the oauth client process here . ... We will review your registration and respond with your_client_id and your_client_secret as soon as possible."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.squarespace.com/assets/pricing.txt",
+    "quote": "squarespace offers four plans: basic, core, plus, and advanced."
+   },
+   {
+    "claim": "access",
+    "url": "https://apis.io/plans/squarespace/squarespace-plans-pricing/",
+    "quote": "API access is an entitlement of the merchant's Squarespace site subscription, and the Commerce API keys used by custom applications require the top Advanced tier."
+   },
+   {
+    "claim": "access",
+    "url": "https://support.squarespace.com/hc/en-us/articles/41325887099533-Developer-Tools-APIs-at-Squarespace",
+    "quote": "Orders, Inventory, and Transactions are only available in the Commerce Advanced plan."
+   },
+   {
+    "claim": "access",
+    "url": "https://mcp.mcpbundles.com/bundle/squarespace",
+    "quote": "While Squarespace does not offer a completely free plan, it does provide a 14-day free trial for all new registered websites."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.squarespace.com/commerce-apis/overview",
+    "quote": "all commerce apis are built on https and designed with rest principles in mind."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.squarespace.com/commerce-apis/overview",
+    "quote": "analytics api: retrieve aggregated commerce data... contacts api: manage the people associated with a site... discounts api: manage discounts... inventory api: read and adjust stock... orders api: access order history... products api: manage physical, service, gift card, and download products... transactions api: access financial transactions... webhook subscriptions api: subscribe to notifications"
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.squarespace.com/commerce-apis/overview",
+    "quote": "webhook subscriptions api: subscribe to notifications from a site, like when an order was created, by configuring a webhook endpoint."
+   },
+   {
+    "claim": "api",
+    "url": "https://mcp.mcpbundles.com/bundle/squarespace",
+    "quote": "Duplicating a site in Squarespace allows you to create a sandbox environment for testing and experimentation... Each new duplicated site begins with a 14-day trial period."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://mcp.mcpbundles.com/bundle/squarespace",
+    "quote": "The Squarespace MCP server connects AI assistants and agents to Squarespace. Built on the Model Context Protocol... Today the server provides domain tools: brand-aware name generation, real-time availability and pricing, and a checkout link for every available domain."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://mcp.mcpbundles.com/bundle/squarespace",
+    "quote": "A comprehensive Model Context Protocol (MCP) server for Squarespace, providing complete integration with the Squarespace platform for website management, e-commerce operations, content creation, and analytics."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://developers.squarespace.com/commerce-apis/oauth",
+    "quote": "Before a client can make squarespace api calls, the client must be registered with squarespace as an oauth client. Start the oauth client process here . ... We will review your registration and respond with your_client_id and your_client_secret as soon as possible."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://apis.io/plans/squarespace/squarespace-plans-pricing/",
+    "quote": "API access is an entitlement of the merchant's Squarespace site subscription, and the Commerce API keys used by custom applications require the top Advanced tier."
+   }
+  ],
+  "confidence": 0.9
+ },
+ "notes": "### Product Overview\nSquarespace is a website builder and e-commerce platform that enables businesses to create websites, manage storefronts, track inventory, process orders, and handle domains, marketing, and analytics.\n* **Source:** `https://developers.squarespace.com/`\n* **Verbatim Quote:** \"everything you need to build and publish external apps — reliable apis, clear documentation, and a marketplace to reach squarespace's global customer base.\"\n* **Verbatim Quote:** \"manage your storefront's orders, inventory, transactions, and more.\"\n\n---\n\n### Authentication Methods\nSquarespace provides two authentication methods for interacting with its public API:\n1. `api_key`: Static personal API keys generated via the developer tools panel for site-specific access.\n2. `oauth2`: OAuth 2.0 authorization code flow for third-party multi-tenant applications.\n* **Source:** `https://developers.squarespace.com/commerce-apis/authentication-and-permissions`\n* **Verbatim Quote:** \"then, depending on your development needs, authenticate requests by using an api key or oauth access token.\"\n* **Source:** `https://developers.squarespace.com/commerce-apis/oauth`\n* **Verbatim Quote:** \"Squarespace uses oauth 2.0 to authorize third-party applications to integrate with squarespace and consume squarespace apis.\"\n\nFor a multi-tenant integration platform like Composio, the primary authentication method is `oauth2`.\n\n---\n\n### Developer Credentials & Cost\n* **Access Type:** `approval_required`\n* **How to get credentials:** To obtain OAuth 2.0 credentials, developers must submit a registration request containing the client name, icon, redirect URIs, initiate URL, and links to terms and privacy policies. Squarespace manually reviews this registration before issuing credentials.\n  * **Source:** `https://developers.squarespace.com/commerce-apis/oauth`\n  * **Verbatim Quote:** \"Before a client can make squarespace api calls, the client must be registered with squarespace as an oauth client. Start the oauth client process here . ... We will review your registration and respond with your_client_id and your_client_secret as soon as possible.\"\n* **Cost:** Squarespace does not offer a permanent free tier. It provides a 14-day free trial for new websites. Full access to the Commerce APIs (Orders, Inventory, Transactions) requires the top \"Advanced\" subscription tier, which costs $99/month billed annually or $139/month month-to-month.\n  * **Source:** `https://www.squarespace.com/assets/pricing.txt`\n  * **Verbatim Quote:** \"squarespace offers four plans: basic, core, plus, and advanced.\"\n  * **Source:** `https://apis.io/plans/squarespace/squarespace-plans-pricing/`\n  * **Verbatim Quote:** \"API access is an entitlement of the merchant's Squarespace site subscription, and the Commerce API keys used by custom applications require the top Advanced tier.\"\n  * **Source:** `https://support.squarespace.com/hc/en-us/articles/41325887099533-Developer-Tools-APIs-at-Squarespace`\n  * **Verbatim Quote:** \"Orders, Inventory, and Transactions are only available in the Commerce Advanced plan.\"\n  * **Source:** `https://mcp.mcpbundles.com/bundle/squarespace` (referencing general trial availability)\n  * **Verbatim Quote:** \"While Squarespace does not offer a completely free plan, it does provide a 14-day free trial for all new registered websites.\"\n\n---\n\n### API Style & Features\n* **API Style:** REST\n  * **Source:** `https://developers.squarespace.com/commerce-apis/overview`\n  * **Verbatim Quote:** \"all commerce apis are built on https and designed with rest principles in mind.\"\n* **Breadth:** Covers Analytics, Contacts, Discounts, Inventory, Orders, Products, Profiles, Transactions, and Webhook Subscriptions.\n  * **Source:** `https://developers.squarespace.com/commerce-apis/overview`\n  * **Verbatim Quote:** \"analytics api: retrieve aggregated commerce data... contacts api: manage the people associated with a site... discounts api: manage discounts... inventory api: read and adjust stock... orders api: access order history... products api: manage physical, service, gift card, and download products... transactions api: access financial transactions... webhook subscriptions api: subscribe to notifications\"\n* **OpenAPI Spec:** None found officially published by the vendor.\n* **Webhooks:** Supported via the Webhook Subscriptions API.\n  * **Source:** `https://developers.squarespace.com/commerce-apis/overview`\n  * **Verbatim Quote:** \"webhook subscriptions api: subscribe to notifications from a site, like when an order was created, by configuring a webhook endpoint.\"\n* **Sandbox:** No permanent free sandbox environment is provided. Developers can duplicate an existing site to create a temporary testing environment, which initiates a new 14-day trial period.\n  * **Source:** `https://mcp.mcpbundles.com/bundle/squarespace` (referencing sandbox/testing documentation)\n  * **Verbatim Quote:** \"Duplicating a site in Squarespace allows you to create a sandbox environment for testing and experimentation... Each new duplicated site begins with a 14-day trial period.\"\n\n---\n\n### MCP Servers\n* **MCP Type:** `official`\n* **Details:** Squarespace publishes an official MCP server, but it is currently limited to domain tools (name generation, real-time availability, and checkout links) and does not require authentication. For full commerce capabilities, community-built MCP servers exist.\n  * **Source:** `https://mcp.mcpbundles.com/bundle/squarespace` (referencing official Squarespace MCP documentation)\n  * **Verbatim Quote:** \"The Squarespace MCP server connects AI assistants and agents to Squarespace. Built on the Model Context Protocol... Today the server provides domain tools: brand-aware name generation, real-time availability and pricing, and a checkout link for every available domain.\"\n  * **Source:** `https://mcp.mcpbundles.com/bundle/squarespace` (referencing community repositories)\n  * **Verbatim Quote:** \"A comprehensive Model Context Protocol (MCP) server for Squarespace, providing complete integration with the Squarespace platform for website management, e-commerce operations, content creation, and analytics.\"\n\n---\n\n### Buildability Verdict\n* **Verdict:** `ready_with_friction`\n* **Main Blocker:** `approval_required` (OAuth client registration requires manual review and approval by Squarespace before credentials are provided) and `paid_plan` (accessing the Commerce APIs requires the merchant site to be on the expensive Advanced tier subscription after the 14-day trial expires).",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"Squarespace\" API pricing plans",
+   "\"Squarespace\" OAuth client registration app review",
+   "\"Squarespace\" API sandbox test account",
+   "\"Squarespace\" MCP server",
+   "\"Squarespace\" \"OpenAPI\" OR \"Swagger\" spec",
+   " \"OpenAPI\""
+  ],
+  "search_sources": [
+   {
+    "title": "miniorange.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWdDTEVIzamf6oHGNLMo3D3P7AfbNx8dHRgG4a6YTbG45oYtV3M_yl3mDZ4QGYzVWVvkYBH1KZbWQhFNFQP_SCtu6Oec84-lqE8ucQ0mOMF9NiE4tp05eE0QpsbylVlMHEha8NL4T8qtNx4ibVejSJ0NIOsb1JGoubzOXRxtiZhrs1Fg_61EBHOSJWziJPAw=="
+   },
+   {
+    "title": "squarespace.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4EnJJeHvJholORIFoCvfn9_7hiJVNFnRFgO3Jb4bRqC3ggpgLROqF8egRAZhi-yQ1AcneiSCP70tA2XI5X0DS_FF0nwPCZiaqL_tlItGvxgtOrvIUMH64rErb1eN6ChvkJqtXu367p4jfvs_dL7dR0g=="
+   },
+   {
+    "title": "burtchdesigns.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeJCYPu7BZN3G8BnTJaPgVJJxKTh6ejjyL3ebM1kOgpSgN4_whdoFWZdHiGzVrHkY7zxEXwBUDArO7zFTLISBpjid0kPL9KPSJ8VzwUj5zFxrQ4nZsmZLaT8nUjo4l86ZEtajwdw5jAVC8lqQ8WSpYyPudnYxNKVi32Yw3e3PibeEaV6KsbJqvXg8="
+   },
+   {
+    "title": "squarespace.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCXf-Zbf9cm_DRmaLn2sW9Ode6IYTs8rsXqPIpykDGlUNHur7rgit2RGd6eUpWliOEVy57khcfiRntsPP4tAIV_Q2VGWaAjR2i3AbgVZrjmOWeii3ygC0-mlZLMK5tGCtq2yu9XwysZ1mc6OVcbLF12WU5Yg=="
+   }
+  ],
+  "tokens": 12434,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "Squarespace API authentication developers.squarespace.com",
+    "Squarespace OAuth developers.squarespace.com",
+    "Squarespace API keys developers.squarespace.com",
+    "Squarespace API getting started developers.squarespace.com",
+    "Squarespace API quickstart developers.squarespace.com",
+    "Squarespace API pricing developers.squarespace.com",
+    "Squarespace API plans developers.squarespace.com",
+    "Squarespace developer program developers.squarespace.com",
+    "Squarespace API reference developers.squarespace.com",
+    "Squarespace API documentation developers.squarespace.com",
+    "Squarespace MCP server"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://developers.squarespace.com/",
+    "https://www.squarespace.com/assets/pricing.txt",
+    "https://developers.squarespace.com/commerce-apis/overview",
+    "https://login.squarespace.com/api/1/login/oauth/provider/authorize?client_id=wAHMs0yNCd2CyyoI0Eclva4GmZ1qqRPx&redirect_uri=https%3A%2F%2Faccount.squarespace.com%2Foauth-connect&state=v2.local.Gg4n8atlBqg13F9ZpSuRoEk8cufskLPKDDNg1Db8P9uVPOV7R2EwfByQ0ATQe6_il_rCEz1jY8WUeR1HaBMIrt6ftPMCSCzcmBS4memUc4zU8nlLgKP5ooHomlpBs9i5FN6vsDxWUZ45y_U-4GYLjXu7buNZoT-D6nUWND6TkIrYGXZwo7TKGrHoabC69dEzYlr7rtmk7k9iCbejTZntLDd40_4qy2wzozT07ebugGiL4ZETbPcXY8dappWI72pGIng&options=%7B%22isCloseVisible%22%3Afalse%2C%22isCreateAccountViewActive%22%3Afalse%7D&force_login=false",
+    "https://developers.squarespace.com/commerce-apis/oauth",
+    "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+    "https://support.squarespace.com/hc/en-us/articles/236297987-Squarespace-API-keys",
+    "https://support.squarespace.com/hc/en-us/articles/41325887099533-Developer-Tools-APIs-at-Squarespace",
+    "https://developers.squarespace.com/commerce-apis/website-overview",
+    "https://mcp.mcpbundles.com/bundle/squarespace",
+    "https://apis.io/plans/squarespace/squarespace-plans-pricing/"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://developers.squarespace.com/authentication-and-permissions",
+     "status": 404
+    },
+    {
+     "url": "https://developers.squarespace.com/accessing-squarespace-apis-using-oauth-2-0",
+     "status": 404
+    },
+    {
+     "url": "https://developers.squarespace.com/api-keys",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://developers.squarespace.com/",
+     "status": 200,
+     "chars": 2079,
+     "readable": true
+    },
+    {
+     "url": "https://www.squarespace.com/assets/pricing.txt",
+     "status": 200,
+     "chars": 6212,
+     "readable": true
+    },
+    {
+     "url": "https://developers.squarespace.com/commerce-apis/overview",
+     "status": 200,
+     "chars": 2283,
+     "readable": true
+    },
+    {
+     "url": "https://login.squarespace.com/api/1/login/oauth/provider/authorize?client_id=wAHMs0yNCd2CyyoI0Eclva4GmZ1qqRPx&redirect_uri=https%3A%2F%2Faccount.squarespace.com%2Foauth-connect&state=v2.local.Gg4n8atlBqg13F9ZpSuRoEk8cufskLPKDDNg1Db8P9uVPOV7R2EwfByQ0ATQe6_il_rCEz1jY8WUeR1HaBMIrt6ftPMCSCzcmBS4memUc4zU8nlLgKP5ooHomlpBs9i5FN6vsDxWUZ45y_U-4GYLjXu7buNZoT-D6nUWND6TkIrYGXZwo7TKGrHoabC69dEzYlr7rtmk7k9iCbejTZntLDd40_4qy2wzozT07ebugGiL4ZETbPcXY8dappWI72pGIng&options=%7B%22isCloseVisible%22%3Afalse%2C%22isCreateAccountViewActive%22%3Afalse%7D&force_login=false",
+     "status": 200,
+     "chars": 21,
+     "readable": false
+    },
+    {
+     "url": "https://developers.squarespace.com/commerce-apis/oauth",
+     "status": 200,
+     "chars": 10674,
+     "readable": true
+    },
+    {
+     "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+     "status": 200,
+     "chars": 3975,
+     "readable": true
+    },
+    {
+     "url": "https://support.squarespace.com/hc/en-us/articles/236297987-Squarespace-API-keys",
+     "status": 200,
+     "chars": 45676,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 52.1
+ }
+}

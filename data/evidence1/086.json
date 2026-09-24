@@ -1,0 +1,160 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://satvasolutions.com/quickbooks-online-api-limitations/",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://github.com/api-evangelist/quickbooks/blob/main/README.md",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://help.developer.intuit.com/s/article/App-Assessment-Questionnaire-FAQ",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://maesn.com/blog/quickbooks-api-pricing-2026/",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://maesn.com/blog/quickbooks-api-pricing-2026/",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developer.intuit.com/app/developer/qbo/docs/learn/app-partner-program",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/api-evangelist/quickbooks/blob/main/README.md",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://usecarly.com/mcp/quickbooks/",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://help.developer.intuit.com/s/article/Open-API-docs-Swagger-docs-for-QuickBooks-Online-API-and-Payments-API",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://apitracker.io/a/quickbooks",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://intuit-developer-faq.readthedocs.io/en/latest/getting_started/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.79
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://usecarly.com/mcp/quickbooks/",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://kipper.com/mcp/quickbooks/",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://satvasolutions.com/quickbooks-online-api-limitations/",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://satvasolutions.com/quickbooks-online-api-limitations/', 'https://help.developer.intuit.com/s/article/App-Assessment-Questionnaire-FAQ', 'https://maesn.com/blog/quickbooks-api-pricing-2026/', 'https://maesn.com/blog/quickbooks-api-pricing-2026/', 'https://usecarly.com/mcp/quickbooks/', 'https://help.developer.intuit.com/s/article/Open-API-docs-Swagger-docs-for-QuickBooks-Online-API-and-Payments-API', 'https://usecarly.com/mcp/quickbooks/', 'https://kipper.com/mcp/quickbooks/', 'https://satvasolutions.com/quickbooks-online-api-limitations/']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://github.com/api-evangelist/quickbooks/blob/main/README.md', 'https://github.com/api-evangelist/quickbooks/blob/main/README.md']\n- Non-vendor sources (prefer official docs): ['https://github.com/api-evangelist/quickbooks/blob/main/README.md', 'https://github.com/api-evangelist/quickbooks/blob/main/README.md', 'https://apitracker.io/a/quickbooks']",
+ "metrics": {
+  "n_evidence": 14,
+  "alive_rate": 0.35714285714285715,
+  "dead_rate": 0.6428571428571429,
+  "blocked_rate": 0.0,
+  "official_rate": 0.2857142857142857,
+  "readable": 4,
+  "quote_supported_rate": 0.5,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

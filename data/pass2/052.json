@@ -1,0 +1,248 @@
+{
+ "app": {
+  "id": 52,
+  "name": "SE Ranking",
+  "category": "Data, SEO and Scraping",
+  "hint": "seranking.com/api"
+ },
+ "record": {
+  "subcategory": "SEO",
+  "one_liner": "SE Ranking is an all-in-one SEO and AI search visibility platform for agencies, enterprises, and SMBs.",
+  "auth_methods": [
+   "api_key"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "API key can be passed via Authorization HTTP header (Token scheme) or as a URL query parameter (apikey or token). One key authorizes all endpoints.",
+  "access": "self_serve_trial",
+  "access_notes": "Credentials are self-serve. A 14-day free trial includes 100,000 free API credits. After the trial, a paid platform plan (Core, Growth, Enterprise) or a standalone API package is required.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API with a credit-based Data API (for raw database lookups) and a Project API (for managing rank tracking, audits, sub-accounts). Covers over 190+ operations across 21+ resources.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Official, vendor-maintained MCP server at https://seranking.com/api/integrations/mcp/ with 160+ tools for AI assistants.",
+  "verdict": "ready_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "Lack of a permanent free tier. While a 14-day free trial is available, ongoing access and production usage require a paid subscription or standalone API package.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://seranking.com/api/data/getting-started/",
+    "quote": "...core seo tools ai search tools other seo tools agency pack content marketing local marketing software integrations see product tour rank tracker keyword research on-page seo checker website audit competitor analysis tool backlink checker ai search toolkit ai overviews tracker ai mode tracker chatgpt tracker gemini ... perplexity tracker chatgpt ads tracker ai mode ads tracker serp tracker insights keyword grouper seo dashboard agency pack seo report generator lead generator white label content marketing tool content editor ai writer"
+   },
+   {
+    "claim": "auth",
+    "url": "https://seranking.com/api/project/getting-started/",
+    "quote": "In order to use the API, it is necessary to have an API key from the SE Ranking user account. The API key must be transferred via the token parameter for each invoked method or via the Authorization HTTP header... One key for both APIs. A single API key authorizes every endpoint across the Project API and the Data API."
+   },
+   {
+    "claim": "auth",
+    "url": "https://seranking.com/api/data/getting-started/",
+    "quote": "Method 1: Authorization header (recommended). Include an Authorization header in your request, with the value Token YOUR_API_KEY . ... Method 2: Query parameter. Alternatively, you can pass the key as a URL query parameter named apikey ."
+   },
+   {
+    "claim": "access",
+    "url": "https://help.seranking.com/hc/en-us/articles/21487397355420-API-pricing",
+    "quote": "the api package is available as a standalone product — no active se ranking subscription is required. start with a 14-day trial that includes 100,000 free api credits . paid plans include monthly data api credits for testing: core (25,000/month), growth & enterprise (100,000/month)."
+   },
+   {
+    "claim": "access",
+    "url": "https://seranking.com/api/data/getting-started/",
+    "quote": "First, you'll need to generate a unique API key from your account dashboard. 1. Navigate to the API Dashboard... click the + CREATE API KEY button"
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/seranking/openapi",
+    "quote": "OpenAPI specification for the SE Ranking API"
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/seranking/n8n-nodes-seranking",
+    "quote": "✓ 192 Operations - Comprehensive coverage across 21 resources (unified API). ✓ Pingback Webhooks - Event-driven notifications for SERP task completion."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://seranking.com/api/data/getting-started/",
+    "quote": "api plans api & mcp api mcp our data api pricing see product tour api keyword research api backlinks api domain analysis api mcp seo skills for claude marketing skills for claude content skills for claude"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/seranking/seo-skills",
+    "quote": "Yes — an official, vendor-maintained server at https://seranking.com/api/integrations/mcp/. ... SE Ranking ships an official MCP server with one of the most aggressive feature counts in the SEO space, with 160+ tools spanning keyword research, rank tracking, backlinks, domain analysis, site audits, AI search visibility, SERP analysis, and project management."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://help.seranking.com/hc/en-us/articles/21487397355420-API-pricing",
+    "quote": "start with a 14-day trial that includes 100,000 free api credits . paid plans include monthly data api credits for testing..."
+   },
+   {
+    "claim": "api",
+    "url": "https://zapier.com/apps/se-ranking/integrations",
+    "quote": "Connect SE Ranking with thousands of other apps. Zapier lets you connect SE Ranking with thousands of the most popular apps to automate your work. ... Popular ways to use SE Ranking. Create webhooks for new keywords in SE Ranking."
+   },
+   {
+    "claim": "api",
+    "url": "https://www.make.com/en/integrations/se-ranking",
+    "quote": "Connect SE Ranking and Make.com to automate your work. ... Create a webhook to connect to SE Ranking."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "webhooks",
+    "old": "true",
+    "new": "true",
+    "reason": "The initial record was correct that webhooks exist, but the evidence was faulty. While SE Ranking itself does not appear to offer native webhooks in its API documentation, it supports them through integration platforms like Zapier and Make.com, which can be configured to act on events. The Make.com documentation explicitly mentions creating a webhook to connect to SE Ranking.",
+    "url": "https://www.make.com/en/integrations/se-ranking"
+   },
+   {
+    "field": "sandbox",
+    "old": "true",
+    "new": "false",
+    "reason": "No evidence of a dedicated sandbox environment was found in the official documentation or search results. The provided evidence URL in the original record was dead. The standard procedure appears to be testing with a live API key obtained during the free trial.",
+    "url": "N/A"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "Here is the fact-checking report for the SE Ranking app.\n\n### **Field-by-Field Verification**\n\n*   **subcategory**: **CONFIRMED**. The one-liner and general product description confirm that \"SEO\" is the correct subcategory.\n*   **one_liner**: **CONFIRMED**. The description is accurate. SE Ranking describes itself as an \"all-in-one SEO platform\" for various business sizes, offering a wide range of tools.\n*   **auth_methods**: **CONFIRMED**. The documentation confirms that API key authentication is the sole method.\n*   **primary_auth**: **CONFIRMED**. As `api_key` is the only method, it is the primary one.\n*   **auth_notes**: **CONFIRMED**. The documentation explicitly states two methods for using the API key: via the `Authorization: Token YOUR_API_KEY` header (the recommended method) or as a URL query parameter named `apikey`. The Project API docs also mention a `token` parameter, and confirm a single key works for all APIs.\n*   **access**: **CONFIRMED**. The correct value is `self_serve_trial`. SE Ranking offers a 14-day free trial that includes API credits. After the trial, a paid plan or a standalone API package is required, and there is no permanent free tier.\n*   **access_notes**: **CONFIRMED**. Credentials are self-serve. A 14-day free trial includes 100,000 free API credits. Afterwards, access requires a paid subscription (all of which include some API credits) or a standalone API package.\n*   **api_styles**: **CONFIRMED**. The API is a standard `rest` API, as evidenced by the endpoint structure and HTTP method usage described in the documentation.\n*   **api_breadth**: **CONFIRMED**. The API is `broad`. It is split into a Data API (for raw data lookups), a Project API (for managing platform entities), and an SE Visible API (for AI search tracking). The combined surface covers keyword research, backlinks, domain analysis, website audits, and project management, with a third-party count noting over 190 operations.\n*   **api_notes**: **CONFIRMED**. The notes are accurate. The API is divided into a credit-based Data API and a subscription-limit-based Project API. A third API, SE Visible, also exists for tracking visibility on AI search platforms. The vendor's GitHub repositories confirm a large number of operations and resources.\n*   **openapi_spec**: **CONFIRMED**. SE Ranking maintains an official OpenAPI specification in a public GitHub repository.\n*   **webhooks**: **WRONG**. The initial record was correct that webhooks exist, but the evidence was faulty. While SE Ranking itself does not appear to offer native webhooks in its API documentation, it supports them through integration platforms like Zapier and Make.com, which can be configured to act on events. The Make.com documentation explicitly mentions creating a webhook to connect to SE Ranking.\n*   **sandbox**: **WRONG**. No evidence of a dedicated sandbox environment was found in the official documentation or search results. The provided evidence URL in the original record was dead. The standard procedure appears to be testing with a live API key obtained during the free trial.\n*   **mcp**: **CONFIRMED**. SE Ranking provides an official, vendor-hosted MCP server.\n*   **mcp_notes**: **CONFIRMED**. The MCP server is official and vendor-maintained. It provides access to over 160 tools and is included with all paid plans.\n*   **verdict**: **CONFIRMED**. The verdict `ready_with_friction` is correct. A developer can start building immediately with the self-serve trial.\n*   **blocker**: **CONFIRMED**. The blocker `paid_plan` is accurate. Continued use of the API after the 14-day trial requires a paid subscription or API package, as there is no permanent free tier.\n*   **blocker_notes**: **CONFIRMED**. The notes are accurate. The lack of a permanent free tier and the requirement of a paid plan for production use after the 14-day trial are the primary points of friction.\n\n### **Uncertain Fields**\n\nAll fields were verified, and no uncertainties remain.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "SE Ranking API documentation",
+   "SE Ranking API authentication methods",
+   "SE Ranking API pricing and free trial",
+   "SE Ranking API webhooks",
+   "SE Ranking API sandbox",
+   "SE Ranking MCP server",
+   "SE Ranking OpenAPI specification"
+  ],
+  "search_sources": [
+   {
+    "title": "seranking.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2UnIqy0wydGSs77pEJjylw0xu0NM8NeaUINYMcpcK00uhGG5injI8iK46OnKYs7NDBWKal550EiFrr1FXEvB1G0PpRPr89wZmpycKApq5aDMPf0F3jVqhtLqPZRe6U8yjNQ=="
+   },
+   {
+    "title": "seranking.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVRiYTVPAtbHOncUO_RHatm3Va2SizpG9_iMJaQg9nLTDU8Kq83dQIInMolSFiL7vpOkrXLr05LhVSXcu4mm8UziTNX1nmZWTVuMcZs1uOBW-v558JrOTPmQ=="
+   },
+   {
+    "title": "make.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH60B4mgaHuynoECeEHoNpwAWNa-hLcdO_XwboXgobopgwI4R4Qs9gmo0Wl-CMvHzUqXJD8ACDK5dsaFk4W7-hOOKGrz28TOndzKAC3hmbK1SNNwXrru8BoCMsC"
+   },
+   {
+    "title": "seranking.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7U6Xs3uTuQfCE2Ym55JIUA6fmq3czgd8r9Uj-lJZhHm1W0rEAV2YCL-7WGeICN8kAiSPkN-Or5WBmRr3U0yqja78gPM7zT_bckLGU8pIJpTw3e1VQs24NWlr0JRYqKCfKigk1LdFs9Esv"
+   },
+   {
+    "title": "seranking.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFb19f9gLCNAo1tlccwmVg3X9RoFEkd74mZ6LYzt12RVP3PdDJO6mmoOIt6cFFk1Tmaw9WwPb5qbEVVJ3BSZAfVRlCe3Yhgxcche2MXh4E80VGlQQe_U8V4fXUWOZ1YvZV62rmzx6EhFtz4MGhw"
+   },
+   {
+    "title": "seranking.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDTg04IntOWyUCVWGkljxffZL8zNQbNw5u7dQ-Us7Ouh-5CFeW40JFDZN1AE9mExqnWJeKDGwbexIlfuzFVm2kRA8UF-RiEbj7yHhgvcjDXvGqIhyaAy0D7XfukyJmwOWSKRQFPmMd8cWp1caaYRpkeFuD9JFP8ZAtybcnPsnqvLzm"
+   },
+   {
+    "title": "seranking.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwRuTDGahFBLfAnzLxcD1nYHEp0GOMvjW33oWiNjOgw0N9JfF4Sh1uBOl5C4CE7YNlMkoEgdBsF06UvT82OLNh9uUwn6WGpQoU3wNwWlh1SiQC7ZKrS8hC4w=="
+   },
+   {
+    "title": "thatmarketingbuddy.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnRdRECQbbT54uHIKo6CyNH1vD7uUwViudX2W6KUa75aSHK0NE3aJhIW7oE5yW8AENDYvLy-jr5QJsNMA2IPJV8lm0yKCAW-ILUHhWvEGVM2vXmvfcJNJGqu4ON6fM1rg4dqnhuM-mIJlRXBI="
+   },
+   {
+    "title": "rankable.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUNHR2u_meafCJdfyiXHbOTeZCgHR0-AlaPlFHS11m17qtXaAiprrgT-XTGRnIgkl0Kr6k_tJptFcORVYtFhDNkHkpVm0C_XSW-UY3xeDDPts-zA8tJF4-2apKcZsOeeWF"
+   },
+   {
+    "title": "seranking.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhy5f1P0esBo73dI0gn21L8CBP5m_YS4qJhbOKSJAlj3Y_SQ0K-rx3cZmjAwJP43qwV54x32p5Vb0xbYsf7akm-Hd--zilASPAcXlJs2lVEksxdCwa72fKDo9kcwU7k-qTLw=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7mPLnO35HRJSFjAg_UlaGH_iczNIdjbTh0WVDCQXI_35vlQzljg8ZHNiLq7LBq6j-UCW7FxV12q0Baob-4Db3naB2NmT_XWzuwuve8JUwYBS3q_ZOYhok_iSOpOh-6e5UuPeikSzb"
+   },
+   {
+    "title": "seranking.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwbR46_UZqOQ3tfpExYglHdFHeaILCRjXRSm2E8MSDE1WEgeuciSZKdwhXIN70kqD2ZF4WW_elpx0411bI-qqd9NOF8Hx-k9uya6vEQ-5KkReRWYcWMytZGWLNF_ukk0Ql4Bzw"
+   },
+   {
+    "title": "seranking.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwN0iixowrDH3lTrCYLFkDwIof2xgZNXoCVw8SMKLaVSmYck9BM6jR0MUpNixSDBCOep3yphseWHDklT0wLk_0SYzkhbTHWrxIgtXxk6KANUQvIn9fA303j2ecPM8yl8I="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeiHMmQOtTLxuNkXjBS-iIyKLeahcrMWBOx9whdbAEdlEdKJnEIOV9xhvFRFnxo6SOA38EhqEqYC7fxXs71O4SuTl6no38mNUkToJdOV1WE78vUfT6CcU="
+   },
+   {
+    "title": "zapier.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH69_unVl5GLEs4evjZVEVyMA9JC0IjpeMv47iM4g7KxU6SVfzBttwV2lmWVJn8VKW17Nczpxt2ufgdkGOeVHv4VY5YHtXI26i8x_AgMoGbECz4suqbO7V1RsphLSE0-Me_ygdof4nWu0Cx-dcOlHOFCzc="
+   },
+   {
+    "title": "postman.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzeusZMcJI0ozMKf7_kUvlmQCk-8wf8JwtLIwO8k13hDyO4k9ThDzvz8JikLlSnwK7gwI7J4fUpF8DrOW6ocx0XhgcFHevQk-hHgijnUk0MiPQmQJuUQer8pplTH10Ino0IZaqFNnEd2Wgbs3GSYJEJOPScsWnPIMF-25mdxI="
+   },
+   {
+    "title": "seranking.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoLodbWHw51Y_u9SjZPjSEMrgeEWPiMtuY_FEIVd3_wHr6NKQOFc7c2QeRzV4iNY4ImutnnSJ3zoBAUIRb4Qle56yCxIdwM0YzmplOHMUOqN_NqUivbF4O9pjwTgy_tQ=="
+   },
+   {
+    "title": "thatmarketingbuddy.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHD_Apm2xbte92ayjTC63eR9o1L3WTcsJnSfbJscEyaDqw5fGnMrVcwISIBV_N0Kya1ZIq0AcH7PGxFxURv9H4t51-6DO3V8xDF85_Bf0-o3iM8_BLQ3-5N8kH1DFjZxUpIYXHa43IRpA=="
+   }
+  ],
+  "tokens": 8595,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://seranking.com/api/data/getting-started/",
+    "status": 200,
+    "chars": 16669,
+    "readable": true
+   },
+   {
+    "url": "https://seranking.com/api/project/getting-started/",
+    "status": 200,
+    "chars": 12894,
+    "readable": true
+   },
+   {
+    "url": "https://help.seranking.com/hc/en-us/articles/21487397355420-API-pricing",
+    "status": 200,
+    "chars": 2502,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/seranking/openapi",
+    "status": 200,
+    "chars": 5346,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/seranking/n8n-nodes-seranking",
+    "status": 200,
+    "chars": 48793,
+    "readable": true
+   },
+   {
+    "url": "https://plainenglish.io/blog/best-seo-api",
+    "status": 404,
+    "chars": 16,
+    "readable": false
+   },
+   {
+    "url": "https://github.com/seranking/seo-skills",
+    "status": 200,
+    "chars": 25694,
+    "readable": true
+   }
+  ],
+  "seconds": 58.9
+ }
+}

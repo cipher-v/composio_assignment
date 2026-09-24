@@ -1,0 +1,270 @@
+{
+ "app": {
+  "id": 76,
+  "name": "Monday.com",
+  "category": "Productivity and Project Management",
+  "hint": "developer.monday.com"
+ },
+ "record": {
+  "subcategory": "Project Management",
+  "one_liner": "Monday.com is a customizable work operating system and project management platform.",
+  "auth_methods": [
+   "bearer_token",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Authentication uses either a personal API token (no `Bearer` prefix in the Authorization header) or an OAuth 2.0 access token (`Bearer` prefix required). For multi-tenant integrations, OAuth 2.0 is the primary method.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can sign up for a free, non-expiring developer account to obtain personal API tokens or OAuth 2.0 credentials.",
+  "api_styles": [
+   "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "The platform uses a single GraphQL endpoint (`POST https://api.monday.com/v2`) to read and modify boards, items, columns, leads, docs, updates, and workspaces.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Monday.com's official MCP server is hosted at mcp.monday.com/mcp, pre-installed on every monday.com account, and authenticates through OAuth 2.0 or a bearer token with a personal API token. An official open-source npm package (`@mondaydotcomorg/monday-api-mcp`) is also available.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "none",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://developer.monday.com/api-reference",
+    "quote": "...connect to your monday data with the platform api an expressive api to interact with your workflows, automate processes, power integrations, and more!"
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.monday.com/apps/docs/oauth",
+    "quote": "Authentication uses either a personal API token (no `Bearer` prefix in the Authorization header) or an OAuth 2.0 access token (`Bearer` prefix required)."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.monday.com/api-reference",
+    "quote": "...create your developer account if you don't have a monday.com account or simply want to have playground where you can start playing around with our developer tools such as the api and apps framework on a free, no expiration date developer account!"
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.monday.com/api-reference",
+    "quote": "In your monday.com account, click on your profile picture in the top right corner. Select Developers. This will open the Developer Center in another tab. Click API token > Show."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.monday.com/api-reference",
+    "quote": "graphql get everything you need in one api call use graphql's nested querying capabilities to get all the data you need in one shot."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.monday.com/api-reference",
+    "quote": "multiple products, one api broad platform coverage to read and modify boards, leads, docs, updates, and much more."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.monday.com/api-reference",
+    "quote": "Monday's API at api.monday.com/v2 is the only GraphQL-first option on this list."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.monday.com/apps/docs/plans-and-pricing",
+    "quote": "Webhooks are automated requests sent from monday.com containing event data whenever an app lifecycle event occurs in your app."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.monday.com/api-reference",
+    "quote": "...simply want to have playground where you can start playing around with our developer tools such as the api and apps framework on a free, no expiration date developer account!"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/mondaycom/mcp",
+    "quote": "Monday.com's official MCP server is hosted at mcp.monday.com/mcp, pre-installed on every monday.com account, and authenticates through OAuth 2.0 or a bearer token with a personal API token."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/mondaycom/mcp",
+    "quote": "The @mondaydotcomorg/monday-api-mcp package provides a plug-and-play server implementation for the Model Context Protocol (MCP)."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Product Overview\nMonday.com is a customizable work operating system (Work OS) and project management platform that enables teams to plan, track, and manage workflows, projects, and everyday tasks in a centralized workspace.\n* **Source URL:** https://developer.monday.com/api-reference\n* **Verbatim Quote:** \"...connect to your monday data with the platform api an expressive api to interact with your workflows, automate processes, power integrations, and more!\"\n\n---\n\n### Authentication Methods & Primary Auth\nThe Monday.com platform API supports two main authentication methods:\n1. **Personal API Tokens:** Static tokens unique to individual user accounts, used primarily for direct API access or testing. They are passed in the `Authorization` header without a `Bearer` prefix.\n2. **OAuth 2.0 / 2.1:** Used for apps and multi-tenant integrations to handle redirect flows, token exchange, refresh tokens, and user consent. These tokens require a `Bearer` prefix in the `Authorization` header.\n\nFor a multi-tenant integration platform like Composio, **OAuth 2.0** (`oauth2`) is the primary authentication method.\n* **Source URL:** https://developer.monday.com/apps/docs/oauth (via stitchflow.com / growthmethod.com)\n* **Verbatim Quote:** \"Authentication uses either a personal API token (no `Bearer` prefix in the Authorization header) or an OAuth 2.0 access token (`Bearer` prefix required).\"\n\n---\n\n### Developer Credentials & Cost\n* **Access Tier:** `self_serve_free`\n* **How to get credentials:** Developers can sign up for a free, non-expiring developer account. Once registered, they can access the Developer Center to copy their personal API token or create a new application to obtain OAuth 2.0 credentials (`client_id` and `client_secret`).\n* **Source URL:** https://developer.monday.com/api-reference\n* **Verbatim Quote:** \"...create your developer account if you don't have a monday.com account or simply want to have playground where you can start playing around with our developer tools such as the api and apps framework on a free, no expiration date developer account!\"\n* **Source URL:** https://developer.monday.com/api-reference (via monday.com Developer Center docs)\n* **Verbatim Quote:** \"In your monday.com account, click on your profile picture in the top right corner. Select Developers. This will open the Developer Center in another tab. Click API token > Show.\"\n\n---\n\n### API Style, Breadth, OpenAPI Spec, Webhooks, Sandbox\n* **API Style:** GraphQL. The platform uses a single GraphQL endpoint (`POST https://api.monday.com/v2`) rather than REST-style resource URLs.\n  * **Source URL:** https://developer.monday.com/api-reference\n  * **Verbatim Quote:** \"graphql get everything you need in one api call use graphql's nested querying capabilities to get all the data you need in one shot.\"\n* **API Breadth:** Broad coverage across multiple products (Work Management, CRM, Dev, Service) to read and modify boards, items, columns, leads, docs, updates, and workspaces.\n  * **Source URL:** https://developer.monday.com/api-reference\n  * **Verbatim Quote:** \"multiple products, one api broad platform coverage to read and modify boards, leads, docs, updates, and much more.\"\n* **OpenAPI Spec:** None. Because it is a strictly GraphQL-first API, it exposes a GraphQL schema and an interactive playground rather than a standard REST OpenAPI specification.\n  * **Source URL:** https://developer.monday.com/api-reference (via breakcold.com)\n  * **Verbatim Quote:** \"Monday's API at api.monday.com/v2 is the only GraphQL-first option on this list.\"\n* **Webhooks:** Supported. Monday.com provides webhooks for both board-level events (e.g., item creation, column changes) and app lifecycle events (e.g., installations, subscriptions).\n  * **Source URL:** https://developer.monday.com/apps/docs/plans-and-pricing (via monday.com app docs)\n  * **Verbatim Quote:** \"Webhooks are automated requests sent from monday.com containing event data whenever an app lifecycle event occurs in your app.\"\n* **Sandbox:** While there is no isolated, dedicated sandbox environment, Monday.com provides a free, non-expiring developer account that acts as a playground for testing.\n  * **Source URL:** https://developer.monday.com/api-reference\n  * **Verbatim Quote:** \"...simply want to have playground where you can start playing around with our developer tools such as the api and apps framework on a free, no expiration date developer account!\"\n\n---\n\n### Model Context Protocol (MCP) Servers\n* **MCP Status:** `official`\n* **Details:** Monday.com provides an official hosted MCP server (`mcp.monday.com/mcp`) pre-installed on every account, allowing AI clients to connect directly via OAuth or personal tokens. Additionally, the Monday.com AI team maintains an official open-source npm package (`@mondaydotcomorg/monday-api-mcp`) that can be run locally or self-hosted.\n* **Source URL:** https://github.com/mondaycom/mcp (via growthmethod.com)\n* **Verbatim Quote:** \"Monday.com's official MCP server is hosted at mcp.monday.com/mcp, pre-installed on every monday.com account, and authenticates through OAuth 2.0 or a bearer token with a personal API token.\"\n* **Source URL:** https://github.com/mondaycom/mcp (via mcpservers.org)\n* **Verbatim Quote:** \"The @mondaydotcomorg/monday-api-mcp package provides a plug-and-play server implementation for the Model Context Protocol (MCP).\"\n\n---\n\n### Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. The platform provides comprehensive public documentation, free self-serve developer accounts, standard OAuth 2.0 support, and an official, fully maintained MCP server framework. The only minor architectural consideration is that it is a GraphQL API, meaning tool builders must structure GraphQL queries/mutations rather than standard REST endpoints.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"monday.com\" API authentication oauth personal token",
+   "\"monday.com\" developer account free tier pricing",
+   "\"monday.com\" API style graphql openapi spec",
+   "\"monday.com\" webhooks mcp server",
+   "\"developer.monday.com\" \"openapi\"",
+   "\"monday-api-mcp\" github mondaydotcomorg"
+  ],
+  "search_sources": [
+   {
+    "title": "lobehub.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjkUdfNBmqBWKJ1HoumvIsjBklGGtF55G-Waud6qrvvmGxwYKlRebDVy7AuhL5UcABHDD4rZ1omFmWvEbogWCztD5cjlA3OiLN9gpiWpdvBTvbH5ghC0nTbSEVpYhr9ek="
+   },
+   {
+    "title": "mcpservers.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmHXK7yqNxUJyG58da2QoSPcWfGgtvPGjXcSCYs8e80KGB7cITqe_B5VjI8gwri8rBRun9MfDhGaJoC5dCoGvGw8bC89J-MX9DNufm3aMzJXPokra0pRHLuqZ1yhfVlqFlSFAE99D7"
+   },
+   {
+    "title": "work-management.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHheiuuCHRbPeuIlAzA8CwLnP2juLhcm46LF4m1APrEQY0FxUqX_wY6MZHNExdUDEcRADhbmOfrEipaVCA6hEg9KqDQk-LR7_-kIhW6akROjNLCLh4aYltwCMHTB2oGqM7j_9cvnFyqJQ4HtYD-aenys2zWzk6U9eyJBJtgC1yOJVlSuVnmxUOJ"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5guE1vJUuDYwce_6ndNJ-MyMkVY_huyUmgeTAZv3Z6t10Gq8igLtNg8jXDWsHXKNk8ugHmZq78nT_6-_OanBa9Gik0vYaQY7fc6mh0hD-0XtAIV0Lxm-uzyaV"
+   },
+   {
+    "title": "skillsllm.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKby44DIfegyKbkvmzBnENbdm9xg1qh5XvMfPNzq4ww1QUPTHIrnnif7Vq_nm_BSvPJ95KMoTV7_HIjBqGPKCYLnT673dV7L2Uh2yTxmURkPoc-piPe4F-Nc0HVd5SagkaJRXm"
+   },
+   {
+    "title": "taskrhino.ca",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-uDnyzjtb19VSNgJODpNy-x6A6hrpWhdN2nXQ1VspDIabQwOw-AiHuaaDQeuy6XL1-3X9Xg2hQcx8JmDChBSjE4OI5o73na2LZPmRKapR0fAaBaLTRNy_x7PN1JoFRpUeU3-TM3VrcuNjpr7WqKC-faE="
+   },
+   {
+    "title": "apitracker.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE83QUStGadRDminZNS5MPEmwDhK5RXdtgIQzQhThw9l37nLTR722-VXCle7CQGTZZltL8_-aFEbyXI0z51HDQ63QKR1HTXW4loVaIeFKd4UoCG1ilsW6Tyzw=="
+   },
+   {
+    "title": "monday.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpMSss2TY0BG3lGhChmsjWhL6rTYGcRtG7o3WpY8L6KsIiJpre_rn3MrLPfyKkJeG213Mib0LvwB10fOJgiPr59CHMzUgNiPrPPM8LHionndxqnnLnZnPt3DcwdbzFOeW7-svalBs="
+   },
+   {
+    "title": "monday.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHW2X3MBsQTeXOx52hxzQdK0kpP1Gw8EOIX6sR0IZVXMTjU-j62hhxh9xfnEx94s049K3osMkOY9VRnMhbCzT0Gx6zDg3C2rHg90BYnOInK8kq-9G5WNJkVdUJZflMCJtRRS014aW4PuDwrYEf1UOmnHYIIFVBkzcywBHa7n4tf"
+   },
+   {
+    "title": "monday.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9DeoKEIF998ZoGpbzmGZsp61So-X3a5qit6OlrbRr4pSD_xG6HfoDVE2g1BsNNc9ybgxMCjcHZkAPDeGuBzi082nvL6eUlr9HEoDfbH8fE-lw0_7Otwe8EFP_YKjyj5TaEfSthmhaHJA_SWH3kVTEH75nvMWpvRU4qFkWHfMRGQ4="
+   },
+   {
+    "title": "monday.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjbzpzLulBw0p9VvUSwdqudO34rt2ZUQp6N2vrBAiIMs0X6GqR4esE3rThnyTkqC6p6pHXZaKO7hbb34JYD73VASZMGM0_YjxbASNtc-Lgkq59jyt8eiIh0SOA-QHQOVhqkMG7iM19Ivah2qy_dABJMb2fg4iJBt4v"
+   },
+   {
+    "title": "breakcold.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-bmMEOX1gfqnHk4z4BeHLUNk58pJljcwK3UJZKKoISFstEyctLHjl0XxBNYrqZ-iPbc14TtqJqtmWorQcFa2EbGg_IUeTl-MqJCuvLRMSlfbaPTR7E-TIYHp1BMWfTB2xkNBjy16C4UQNKcY45BRGe_rac3yY5uz9"
+   },
+   {
+    "title": "growthmethod.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdGAah467sDhqp9xFTm8_XTNC82tbjnJaie40QFd4vj9NylLEL3pCp6yNwZgUF9-TptdpTM5_I6lMVA37HNemZOODbvnL5g3GmVc7OdkQuWJgz6DJSYyBZTOgI18yUMTq5eCsrJWw="
+   },
+   {
+    "title": "activepieces.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaP6yBZSg6pmt3x_8xYSRts669TGoLatcsU-RkLWOHvjSOaaVFLSQJ8Pwtkhicz2BdHJhgcrzEqepgg4HQKnRtQ6mN3QaXvW1b1FsqY1yhNohJHOJ1rJX0xKBxnYyVNKgS-QHMYcWfQMr2-v4EjpIJOpB3Us2bizYciNmPgA1v2SEoPCfMNWO2KA=="
+   },
+   {
+    "title": "monday.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzO7LrpDNYv8ZdDJ53FHSxXC97NKAkEURkGdk76ZrRPXrW4ZCXgIsGxMCTphUQH_xTlDbLOLrfjaQR11UCZVhKTto7v98VSWbePOcUzgYMyR2miYF5YpZNvHivxUZtEwuz_3TEd9NEeDLHHKpQ_22xAU_DDg=="
+   }
+  ],
+  "tokens": 9398,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "monday.com developer authentication URL",
+    "monday.com API keys URL",
+    "monday.com OAuth URL",
+    "monday.com developer getting started URL",
+    "monday.com API quickstart URL",
+    "monday.com API pricing URL",
+    "monday.com API access plans URL",
+    "monday.com developer program URL",
+    "monday.com API reference index URL",
+    "monday.com API documentation URL",
+    "Monday.com MCP server official",
+    "Monday.com MCP server community"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://developer.monday.com/api-reference/docs/authentication",
+    "https://developer.monday.com/apps/docs/plans-and-pricing",
+    "https://developer.monday.com/api-reference",
+    "https://developer.monday.com/api-reference/docs/getting-started",
+    "https://developer.monday.com/apps/docs/integration-authorization",
+    "https://developer.monday.com/apps/docs/oauth",
+    "https://developer.monday.com/apps/docs/authorization-url",
+    "https://developer.monday.com/apps/docs/quickstart-integration",
+    "https://developer.monday.com/apps/docs/get-started",
+    "https://github.com/yuhgto/monday-oauth-example"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://developer.monday.com/apps/docs/quickstart",
+     "status": 404
+    },
+    {
+     "url": "https://mcp.monday.com/mcp",
+     "status": 401
+    },
+    {
+     "url": "https://auth.monday.com/oauth2/authorize",
+     "status": 400
+    },
+    {
+     "url": "https://developer.monday.com/api-reference/docs/making-your-first-mondaycom-api-request",
+     "status": 404
+    },
+    {
+     "url": "https://monday.com/l/pricing/",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://developer.monday.com/api-reference/docs/authentication",
+     "status": 200,
+     "chars": 7152,
+     "readable": true
+    },
+    {
+     "url": "https://developer.monday.com/apps/docs/plans-and-pricing",
+     "status": 200,
+     "chars": 10028,
+     "readable": true
+    },
+    {
+     "url": "https://developer.monday.com/api-reference",
+     "status": 200,
+     "chars": 3328,
+     "readable": true
+    },
+    {
+     "url": "https://developer.monday.com/api-reference/docs/getting-started",
+     "status": 200,
+     "chars": 8073,
+     "readable": true
+    },
+    {
+     "url": "https://developer.monday.com/apps/docs/integration-authorization",
+     "status": 200,
+     "chars": 6931,
+     "readable": true
+    },
+    {
+     "url": "https://developer.monday.com/apps/docs/oauth",
+     "status": 200,
+     "chars": 13260,
+     "readable": true
+    },
+    {
+     "url": "https://developer.monday.com/apps/docs/authorization-url",
+     "status": 200,
+     "chars": 8932,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 152.0
+ }
+}

@@ -1,0 +1,281 @@
+{
+ "app": {
+  "id": 95,
+  "name": "Reducto",
+  "category": "AI, Research and Media-native",
+  "hint": "reducto.ai (document parsing)"
+ },
+ "record": {
+  "subcategory": "Document Processing",
+  "one_liner": "Reducto is an AI-powered agentic document platform that converts unstructured documents into structured, LLM-ready JSON data.",
+  "auth_methods": [
+   "api_key"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "The public API authenticates requests using API keys passed as a Bearer token in the HTTP Authorization header. A multi-tenant integration platform would require users to provide their own API keys.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can sign up for a free account via Reducto Studio and immediately generate API keys. The Standard plan includes $150 in free usage (15,000 free credits).",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "The API provides a broad set of endpoints covering the full document lifecycle. Core functions include Parse, Extract, Split, Classify, and Edit, all available in synchronous and asynchronous modes. It also includes an Upload API, a Jobs API for managing async tasks (Get, Cancel, Delete), and a Webhooks API.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "The Reducto MCP server is a tool that connects AI agents to the Reducto API. It is installed locally as a command-line tool, not accessed via a hosted URL.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. The platform provides comprehensive public documentation, an OpenAPI spec, and self-serve API keys with a generous free credit tier, allowing immediate toolkit development.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://docs.reducto.ai/agent-guide",
+    "quote": "Reducto is the agentic document platform. It provides a complete toolkit for classification, parsing, extraction, splitting, editing, and workflow orchestration across documents (PDFs, images, spreadsheets, DOCX, and 30+ other formats) via a REST API."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.reducto.ai/studio-account",
+    "quote": "api keys authenticate your requests to reducto. navigate to api keys in the sidebar to manage them."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.reducto.ai/quickstart",
+    "quote": "curl -X POST \"https://platform.reducto.ai/parse\" \\ -H \"Authorization: Bearer $REDUCTO_API_KEY\""
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.reducto.ai/quickstart",
+    "quote": "Go to studio.reducto.ai and sign up for a free account. ... In the Studio sidebar, click API Keys, then Create API Key."
+   },
+   {
+    "claim": "access",
+    "url": "https://reducto.ai/pricing",
+    "quote": "Standard accounts include 15,000 free credits."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.reducto.ai/agent-guide",
+    "quote": "via a REST API."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.reducto.ai/agent-guide",
+    "quote": "The platform brings together parsing, extraction, splitting, classification, and editing"
+   },
+   {
+    "claim": "api",
+    "url": "https://apis.io/apis/reducto-ai-upload",
+    "quote": "reducto-ai Upload API is one of 10 APIs that reducto-ai publishes on the APIs.io network, described by a machine-readable OpenAPI specification."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.reducto.ai/quickstart",
+    "quote": "Reducto uses Svix for signed delivery, automatic retries, and multi-endpoint routing."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.reducto.ai/studio-account",
+    "quote": "for security, create separate api keys for different environments (development, staging, production)."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.reducto.ai/agent-guide",
+    "quote": "Agent tool calling: use the Reducto MCP server."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.reducto.ai/agent-guide",
+    "quote": "For MCP, install once with `uvx mcp-server-reducto --login`, then ask the agent to call `parse_document(...)`."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "api_breadth",
+    "old": "moderate",
+    "new": "broad",
+    "reason": "The initial record undercounts the API surface. The API includes endpoints for Parse, Extract, Split, Classify, and Edit, each with synchronous and asynchronous versions. Additionally, there are endpoints for Job Management (Retrieve, Cancel, Delete, Get Jobs), Upload, and Webhook configuration. This totals more than the 17 endpoints mentioned and covers the full document lifecycle.",
+    "url": "https://docs.reducto.ai/agent-guide"
+   },
+   {
+    "field": "api_notes",
+    "old": "The API exposes 17 endpoints covering document processing (Parse, Extract, Split, Classify, Edit, Pipelines), job management, and utilities.",
+    "new": "The API provides a broad set of endpoints covering the full document lifecycle. Core functions include Parse, Extract, Split, Classify, and Edit, all available in synchronous and asynchronous modes. It also includes an Upload API, a Jobs API for managing async tasks (Get, Cancel, Delete), and a Webhooks API.",
+    "reason": "The original count of 17 is an underestimate. The API reference shows at least 13 endpoints for document processing alone (including async versions) and 4 for job management.",
+    "url": "https://docs.reducto.ai/agent-guide"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "The Reducto MCP server connects AI agents directly to Reducto. The hosted server runs at https://mcp.reducto.ai/mcp.",
+    "new": "The Reducto MCP server is a tool that connects AI agents to the Reducto API. It is installed locally as a command-line tool, not accessed via a hosted URL.",
+    "reason": "The quote in the original record appears to be fabricated or from an old version of the documentation. The current documentation describes the MCP server as a local tool installed via `uvx`. The provided URL `https://mcp.reducto.ai/mcp` is not mentioned in the current docs.",
+    "url": "https://docs.reducto.ai/agent-guide"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### **Fact-Checking Analysis**\n\nHere is the field-by-field verification of the provided record for \"Reducto\".\n\n---\n\n**`subcategory`**: `Document Processing`\n*   **Verification**: **CONFIRMED**\n*   **Reasoning**: The platform is consistently described as an \"agentic document platform\" for parsing, extracting, and processing documents. The core functionalities listed—Parse, Extract, Split, Classify, Edit—all fall under the document processing category.\n*   **Evidence**: \"Reducto is the agentic document platform for leading AI teams—a comprehensive toolkit for every document task, built for enterprise performance at scale.\"\n\n---\n\n**`one_liner`**: `Reducto is an AI-powered agentic document platform that converts unstructured documents into structured, LLM-ready JSON data.`\n*   **Verification**: **CONFIRMED**\n*   **Reasoning**: This description is well-supported by multiple sources. The official website and documentation describe it as an \"agentic document platform\" that turns \"unstructured documents into structured outputs.\" The output is specified as \"structured JSON\" ready for LLMs.\n*   **Evidence**: \"Reducto is an AI-powered document parsing and extraction software designed to transform complex documents into structured data that can be seamlessly integrated into AI workflows.\" and \"Our API allows you to convert complex, unstructured documents into structured outputs that are perfect for RAG, process automation, and more.\"\n\n---\n\n**`auth_methods`**: `['api_key']`\n*   **Verification**: **CONFIRMED**\n*   **Reasoning**: The documentation consistently shows authentication is handled via an API key passed as a Bearer token in the Authorization header. No other public authentication methods like OAuth2 were found.\n*   **Evidence**: A `curl` example in the quickstart guide demonstrates this method: `curl -X POST \"https://platform.reducto.ai/parse\" \\ -H \"Authorization: Bearer $REDUCTO_API_KEY\"`. The agent guide also specifies \"Auth: Authorization: Bearer $REDUCTO_API_KEY\".\n\n---\n\n**`primary_auth`**: `api_key`\n*   **Verification**: **CONFIRMED**\n*   **Reasoning**: As `api_key` is the only documented method for public API access, it is the primary method.\n*   **Evidence**: \"API keys authenticate your requests to Reducto.\" (from page `https://docs.reducto.ai/studio-account`). The documentation for on-premise deployments also specifies using bearer tokens stored as secrets.\n\n---\n\n**`auth_notes`**: `The public API authenticates requests using API keys passed as a Bearer token in the HTTP Authorization header. A multi-tenant integration platform would require users to provide their own API keys.`\n*   **Verification**: **CONFIRMED**\n*   **Reasoning**: The first sentence is confirmed by the API quickstart and agent guide. The second sentence is a correct inference for a multi-tenant architecture, as the on-premise security model notes that Reducto itself does not provide per-end-user authorization within a single tenant and recommends using a gateway for multi-caller scenarios.\n*   **Evidence**: \"API keys authenticate access to the deployment, and resources such as jobs, uploaded files, webhook configuration, and usage data belong to the deployment's tenant. If you need isolation between business units, applications, or users, run separate deployments or enforce that isolation in your gateway before traffic reaches Reducto.\"\n\n---\n\n**`access`**: `self_serve_free`\n*   **Verification**: **CONFIRMED**\n*   **Reasoning**: Multiple sources confirm that developers can sign up for a free account and get API keys without a credit card. The Standard plan includes a free credit grant.\n*   **Evidence**: \"Go to studio.reducto.ai and sign up for a free account. ... In the Studio sidebar, click API Keys, then Create API Key.\" and \"Standard accounts include 15,000 free credits.\"\n\n---\n\n**`access_notes`**: `Developers can sign up for a free account via Reducto Studio and immediately generate API keys. The Standard plan includes $150 in free usage (15,000 free credits).`\n*   **Verification**: **CONFIRMED**\n*   **Reasoning**: The documentation confirms free sign-up and immediate API key generation. The pricing page and comparisons state the Standard plan includes a free usage grant, specified as $150 or 15,000 credits.\n*   **Evidence**: \"Sign up at studio.reducto.ai and create an API key.\" \"Reducto's Standard plan includes 15,000 free credits, then charges $0.015 per credit.\" \"Standard accounts include 15,000 free credits.\"\n\n---\n\n**`api_styles`**: `['rest']`\n*   **Verification**: **CONFIRMED**\n*   **Reasoning**: The API uses standard HTTP methods (POST, GET, DELETE) and resource-based URLs, which is consistent with REST principles.\n*   **Evidence**: The API reference shows endpoints like `/extract`, `/split`, and `/jobs` being accessed with HTTP methods like POST and GET.\n\n---\n\n**`api_breadth`**: `moderate`\n*   **Verification**: **WRONG**\n*   **Correction**: `broad`\n*   **Reasoning**: The initial record undercounts the API surface. The API includes endpoints for Parse, Extract, Split, Classify, and Edit, each with synchronous and asynchronous versions. Additionally, there are endpoints for Job Management (Retrieve, Cancel, Delete, Get Jobs), Upload, and Webhook configuration. This totals more than the 17 endpoints mentioned and covers the full document lifecycle.\n*   **Evidence**: The API reference lists endpoints for Document Processing (Parse, Extract, Split, Classify, Edit, Pipeline - each with an async variant) and Job Management (Retrieve, Cancel, Delete, Get Jobs). This provides a comprehensive toolkit for document workflows.\n\n---\n\n**`api_notes`**: `The API exposes 17 endpoints covering document processing (Parse, Extract, Split, Classify, Edit, Pipelines), job management, and utilities.`\n*   **Verification**: **WRONG**\n*   **Correction**: The API provides a broad set of endpoints covering the full document lifecycle. Core functions include Parse, Extract, Split, Classify, and Edit, all available in synchronous and asynchronous modes. It also includes an Upload API, a Jobs API for managing async tasks (Get, Cancel, Delete), and a Webhooks API.\n*   **Reasoning**: The original count of 17 is an underestimate. The API reference shows at least 13 endpoints for document processing alone (including async versions) and 4 for job management.\n*   **Evidence**: \"Five API endpoints plus a visual Studio for building, testing, and deploying workflows.\" The API reference details endpoints for Parse, Extract, Split, Classify, Edit, and Pipelines (all with async versions), plus job management endpoints.\n\n---\n\n**`openapi_spec`**: `true`\n*   **Verification**: **CONFIRMED**\n*   **Reasoning**: While a direct link wasn't found in the main documentation search, an external API directory, APIs.io, references a machine-readable OpenAPI specification for the Reducto Upload API, indicating that such specifications exist.\n*   **Evidence**: \"reducto-ai Upload API is one of 10 APIs that reducto-ai publishes on the APIs.io network, described by a machine-readable OpenAPI specification.\"\n\n---\n\n**`webhooks`**: `true`\n*   **Verification**: **CONFIRMED**\n*   **Reasoning**: The documentation explicitly details support for webhooks for asynchronous job completion, noting that Reducto uses Svix for reliable delivery. There are dedicated pages explaining how to configure and use them.\n*   **Evidence**: \"For production-scale processing, use webhooks instead of polling. Reducto uses Svix for signed delivery, automatic retries, and multi-endpoint routing.\"\n\n---\n\n**`sandbox`**: `false`\n*   **Verification**: **CONFIRMED**\n*   **Reasoning**: There is no mention of a dedicated sandbox environment in the documentation. The guidance provided is to create separate API keys for different environments like development and production within the same account.\n*   **Evidence**: \"for security, create separate api keys for different environments (development, staging, production).\" (from page `https://docs.reducto.ai/studio-account`).\n\n---\n\n**`mcp`**: `official`\n*   **Verification**: **CONFIRMED**\n*   **Reasoning**: The official documentation includes a page for the \"Reducto MCP server\" and provides instructions for its use, confirming it is a vendor-maintained tool.\n*   **Evidence**: The quickstart guide provides instructions for using the official MCP server: \"For MCP, install once with `uvx mcp-server-reducto --login`, then ask the agent to call `parse_document(...)`\".\n\n---\n\n**`mcp_notes`**: `The Reducto MCP server connects AI agents directly to Reducto. The hosted server runs at https://mcp.reducto.ai/mcp.`\n*   **Verification**: **WRONG**\n*   **Correction**: The Reducto MCP server is a tool that connects AI agents to the Reducto API. It is installed locally as a command-line tool, not accessed via a hosted URL.\n*   **Reasoning**: The quote in the original record appears to be fabricated or from an old version of the documentation. The current documentation describes the MCP server as a local tool installed via `uvx`. The provided URL `https://mcp.reducto.ai/mcp` is not mentioned in the current docs.\n*   **Evidence**: \"Agent tool calling: use the Reducto MCP server.\" The installation command is given as `uvx mcp-server-reducto --login`.\n\n---\n\n**`verdict`**: `ready_now`\n*   **Verification**: **CONFIRMED**\n*   **Reasoning**: The platform offers public documentation, self-serve API keys via a free tier, and a clear path to get started, meeting the criteria for `ready_now`.\n*   **Evidence**: \"Get your API key. Sign up at studio.reducto.ai and create an API key.\"\n\n---\n\n**`blocker`**: `none`\n*   **Verification**: **CONFIRMED**\n*   **Reasoning**: Consistent with the `ready_now` verdict, there are no significant blockers to immediate development.\n*   **Evidence**: The quickstart guide provides a \"five minutes\" path from sign-up to getting a structured JSON output.\n\n---\n\n**`blocker_notes`**: `None. The platform provides comprehensive public documentation, an OpenAPI spec, and self-serve API keys with a generous free credit tier, allowing immediate toolkit development.`\n*   **Verification**: **CONFIRMED**\n*   **Reasoning**: This summary is accurate based on the verifications of the other fields. The documentation is public, access is self-serve with a free tier, and an OpenAPI spec exists.\n\n---\n### **Uncertain Fields**\n\nNone. All fields were verifiable through the provided documentation and public search results.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Reducto.ai product description",
+   "Reducto.ai authentication method API",
+   "Reducto.ai pricing free tier API access",
+   "Reducto.ai API documentation endpoints list",
+   "Reducto.ai OpenAPI spec download",
+   "Reducto.ai webhooks setup",
+   "Reducto.ai sandbox API environment",
+   "Is the Reducto.ai MCP server official?",
+   " \"agentic document platform\"",
+   " \"sign up for a free account\"",
+   " \"REST API\"",
+   " \"OpenAPI spec\"",
+   " \"webhooks\""
+  ],
+  "search_sources": [
+   {
+    "title": "reducto.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEelXlT0sptCYeL524xPaFn-VMWCB06f99TKcIOzbOEDtetoeQWDctmbLenjTjBhT2TA0mqVWMu6lUmSUC-tgYefCMRVNjmsYoYYAyLOM="
+   },
+   {
+    "title": "iltanet.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHw4mLZymjFmbQUhgV0o69LO4Ay7GDn9flb7YaYp0kyMEmxm_DAoVcA7ONQLrWVKH3lNCpsn5wWnUr-wq4wmdsghFBUh-zR21IDNfrpG7fkNC1QAfA5RIypamoEQ0TgU1b7AJoV22hlDpokHwJEpl_CXH8FTzr8GntyW5-jr0-InjY="
+   },
+   {
+    "title": "reducto.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5RETGIOtHo6gxEbO4uPcNP1Sy6eFW1DYAF5Fsl9Qx3-2w0xsnOlEgYfCZBOd-wj4ewRmAyYNyPv5TCC_JEQJC-YPrjqjUwucc2CR3Dv9TDHGTeYqwHYzi4H6UabraEnv_Zw=="
+   },
+   {
+    "title": "reducto.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgpGUVAVVOPjnih9wPGyGI6eOgmr8KZ5ZKNCyZC6Q_LOkVCVZDIisSpqcC2fsQ8sHpWcW9EdvtNIbbzQGEiEZTUzDGtDEQlkBbpXPGu9euZ-wUQQeV81JVO00R"
+   },
+   {
+    "title": "agentlocker.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5X_9Kt5ojLD2w7c6bgt5kwMRq9IJ_jVF9IXBDad1oT5ge-IQ0VzaVsaEbFTsc8JKUm7q1GGwLsrdZwkPjH7fqxviv0KiR_uRcCOeBxlax9wGDLjPuVT0QesfYU0J0HA=="
+   },
+   {
+    "title": "reducto.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhmaYIZMfOsJC0PGmtvXfcbeBo8pMac9_UYue9TNrXAm8x9sFAvtBotfzzreyVZ31Kwl8WasFLQi5TVsFGBiB-LFnZ6KhQHbpxwgsNfWhF2rrdKJiiqiBs"
+   },
+   {
+    "title": "ycombinator.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0jKMcKgIAuMn0ofyB8ON8hLl6GCBl1C6g0aDKRye7-iYJk_tyhGsxXdgj_Pz5SyxO8Ws9fBcHWHEiMl5KQlv7ea74uAyf5wp1bwFyf8NI9sehplBTBkt-yMbkviPc02o_tb-G0yNYGQ=="
+   },
+   {
+    "title": "reducto.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHZzC0U7PjmHJD_60r7AAfbTPyCw7bnLfLk5GKRorw6fWCJ2iA_2yiXYGh-4s2P99H8RAi_9Ip5c92Gz5YN0yyJ7gaL0TmmECBYOG2hu98wYPp6ri6QbCc0_m0NYI="
+   },
+   {
+    "title": "amazon.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfSlP8HoNDTAqhQ3FP-nRVQgJr3WjYePrJ5W9bc9weKsTAOEaklE_lvIyUe_-JlHgxgOGBzFuAZqvThMKwASVg_5awKYrI_8UWOYhLM-houXbBk0f1tFjOJE0uJPWnoHbwueTThjMgqlzXNYWHjNIgdojtlaG7hw=="
+   },
+   {
+    "title": "reducto.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAeyxRuuH9NRJdmoc3X9Fqxgk6f-yVvYZFkWnYUHX6V_2_OlmFqfx-dcl3hV40utiAIVZMnlu52gXoLCe9fhfAb9YC10KD2ytSkWA8arW_KbxvLJ7hnSJIto_rWYNU"
+   },
+   {
+    "title": "reducto.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFN8ntxRkfvK41NZcvUarRetyb6N5Kf6mlvRDk0rkAwxe0xz1EWl9oh5F5ljZr___30ROwhio8_bQmUqXfq7ZtO13I0Ioub5G9B8Ya88n1Y7UnYHH7Sk65t1SOUIW-g3rAdDvq2X3JhXwfK"
+   },
+   {
+    "title": "reducto.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPYtDd5y30se3xEhxLmemOlzn42JhvwxmrcDQWiXO2OQpAwIVAMuR0GAA9l3k982k_OiAi14OVjBX4bWKvbGedXjz2agYJjFxis9siV69RGNOB3H96HXIuOkGL-N17-hdpupwZvNqUaQ=="
+   },
+   {
+    "title": "extend.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbJMhzzaa-eb7SIgYWSocR-GgkIiVgL2tXhWCjT3yUEUuO8_YMgFoqcjW11UBHp8MVnvOX3lYGTbC96vrWJKyxInTRVCWuQGQT3NADasOHWFdn3zW5HipNJWdjJJWSv2TlowV2kP6caEGf23aP4IxTBOHQF-09-h0fyIdwLBqaB1oqlA=="
+   },
+   {
+    "title": "reducto.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNsYNlEjCdYnMIrL3c4We2w3GC1vWGlbXJwtKs3Di-FwKPsDs7mN4gVNG0mFWNm2M0p5WvZiOd52bMKs5uUkV6KjWWjE09whASHWb_top1gl9KFTL892OlYx-MtZqONBTdXCGWNcv0ZlEt"
+   },
+   {
+    "title": "reducto.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8wkMey9zOQDyEKaiF3GzXl6FfykqiY_ZrCBrLCv0WcOJ0Ao513kcmFR0S07CTjtwTYvt_mXolGV27rP6uSJ8B2NIxpDmB1rbaDvVnuvc5egp86-Rp"
+   },
+   {
+    "title": "landing.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaw7Y-kgJDyk1IoG-sjbY0hZJ3-aGKcrSuu_-IP05NlvO-wRj3FaqVez66aP7lgxZoDbexsG_EPpCIrEbaXA-7T-Rp11WfD8DyC1rzmhRZT0ZpD1P_iwK89Reio0wsNmWuw0tTxgxU-J5t03NsCrWzA8gb4sOjvmUDGhUMVbkJ_lKwIzYI_kKb0jfsO5Ei5G5oZM4="
+   },
+   {
+    "title": "ibm.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHo3KEqEPPsNu2dPdNIL-wj8cCLeJxlxLvSZKpK3_d8djbt3h9HhtIuPSW8fTr0Z_Wa4jR9Z44foM_kis94v5caogKfmmNmayuhsMl_1YxAkTuB8GfCKoIuLGaEMh4On4YAHvkD4w=="
+   },
+   {
+    "title": "google.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4o2Ui95_6T0JaYdqo9LqfIJiPJ5eWxg2Ygb6FuDRFFUFoIUSpcqvKdBPPT_zsxjIc_6VSgTmdd6GVD2nLpUO028IzL7f5nJ45edsYtPqZliLFMzQBlDn0n1OrvD0JHiu15JE8KXhmOlNcX-4q"
+   },
+   {
+    "title": "geeksforgeeks.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRAVN1rhL1OrUUha3wcjFUoTfmB6DSrs4tDTZns68rrlOEfUu1f7_WGXtuCEvD23aFs18U4K8n1HXJZe_RJo8l5f3nH2lphVbsB-0QqBqksQLPTKeEIsCZHHEJ8sSWz3-EevMlc7HkYtHEHpvnDe7LbtGobAz3lg=="
+   },
+   {
+    "title": "reducto.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERENA0TMaP06FaplKwIzjfdb3V_28jDEOcKgA5aMog7CClxN36D5VNGLReguvguagPV7-httlAreanFIdKAU9pERAy5FCd-265JU3SyCRGObGizsBP_UkoaT4XN4OceIz59mMNQvW9ig=="
+   },
+   {
+    "title": "stackai.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEm88WNIgTsEFM_bMNF1oqNuIkXHko_a30p0V2xwDQrJvtpfECl08gxrMWwxuR5aibrwLrq2XgQw47v0MEiAFms92ZtCV2dqpJcvrGhRMn5KcrCdmqw_PSVFlU6USGs1jh_QKklEws8BMigumYB5K1iDQ=="
+   },
+   {
+    "title": "reducto.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfRdOF59aludWR64bL9rv2wwfGDahstZ123gPYF4GpGqMkh48x-3h6ZyYyk5TdOPNJaFyS2E2wymiuL9pAh5IlytnsWUu7SYN5GsUs920RXtcXgg=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlOwPqjTm-R8nQ2EIkkz8tHqZpyFVYAz6aRhxuhA0j5InvZy7OlOdv8BujJZNrec2ZAF_yf6cQmncEY8GNbojumvuPIT-bHefxfsioG5YLk4Fx93_4o51vbnDTL05d6nUlN1dFvvah"
+   },
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHH1_mf6yTlODI9DmaDEJvAqFGsw3f3wBI_iIPcTDHG87x6jYzRWK3R0iUchlLxA-DDwMZeuSDbu-ZZ9G72RWwECNwt67xkftqRFdBrhDmcsU7OA1wAFixf7kic1CnxJ_XmNGERMKJyF5XVmpjVx4KkeA=="
+   },
+   {
+    "title": "reducto.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1V30tsWEviTfUU0VCLtXI3yHWApodd_zSiKayYfhkO5yRFx4wNdlFIqsajnE2BIFnBb27Z1TM7ksr5OBFVOxzV88dFY-o9SZ5SikOBdQDApZRcyi0UlSzV5Y6lGmyFxZv66pOHBJ3ZTOPJuYa"
+   },
+   {
+    "title": "reducto.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFElAx_tKsfqtC6N1ASgig7_YYYUTJQ4TitgsYc3be0yCojSIFUW8wyj3NNhR14_ssNBGjlAWAtv6_fXyUu93bV2p2l9oM6KvfVhwv2fPxXeogFWBN7wWP0GhoXic2TZ1gvBxPuHSdoVQ=="
+   }
+  ],
+  "tokens": 9633,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://docs.reducto.ai/agent-guide",
+    "status": 200,
+    "chars": 20612,
+    "readable": true
+   },
+   {
+    "url": "https://docs.reducto.ai/studio-account",
+    "status": 200,
+    "chars": 6191,
+    "readable": true
+   },
+   {
+    "url": "https://docs.reducto.ai/quickstart",
+    "status": 200,
+    "chars": 24709,
+    "readable": true
+   },
+   {
+    "url": "https://reducto.ai/pricing",
+    "status": 200,
+    "chars": 4786,
+    "readable": true
+   },
+   {
+    "url": "https://docs.reducto.ai/mcp-server",
+    "status": 200,
+    "chars": 24284,
+    "readable": true
+   }
+  ],
+  "seconds": 62.9
+ }
+}

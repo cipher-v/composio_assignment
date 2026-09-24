@@ -1,0 +1,151 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://developers.klaviyo.com/en/v1-2/reference/api-overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.62
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.klaviyo.com/en/docs/authenticate_",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.86
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.klaviyo.com/en/docs/authenticate_",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.56
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.klaviyo.com/en/docs/authenticate_",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.8
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.klaviyo.com/en/docs/set_up_oauth",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.klaviyo.com/uk/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.55
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developers.klaviyo.com/en/docs/set_up_oauth",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.14
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developers.klaviyo.com/en/docs/set_up_oauth",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.klaviyo.com/en/v1-2/reference/api-overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.73
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/klaviyo/openapi",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.59
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.klaviyo.com/en/docs/authenticate_",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://help.klaviyo.com/hc/en-us/articles/360045726811",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://developers.klaviyo.com/en/docs/authenticate_",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  }
+ ],
+ "auth_support": {
+  "api_key": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://developers.klaviyo.com/en/docs/set_up_oauth', 'https://developers.klaviyo.com/en/docs/set_up_oauth', 'https://developers.klaviyo.com/en/docs/authenticate_', 'https://help.klaviyo.com/hc/en-us/articles/360045726811', 'https://developers.klaviyo.com/en/docs/authenticate_']\n- Non-vendor sources (prefer official docs): ['https://github.com/klaviyo/openapi']",
+ "metrics": {
+  "n_evidence": 13,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.9230769230769231,
+  "readable": 13,
+  "quote_supported_rate": 0.6153846153846154,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

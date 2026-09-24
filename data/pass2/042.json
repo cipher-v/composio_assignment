@@ -1,0 +1,254 @@
+{
+ "app": {
+  "id": 42,
+  "name": "WooCommerce",
+  "category": "Ecommerce",
+  "hint": "woocommerce.com/document/woocommerce-rest-api"
+ },
+ "record": {
+  "subcategory": "E-commerce",
+  "one_liner": "Open-source e-commerce platform for WordPress, managing online stores, products, orders, and customers.",
+  "auth_methods": [
+   "basic",
+   "oauth2"
+  ],
+  "primary_auth": "basic",
+  "auth_notes": "Multi-tenant platforms use an Application Authentication Endpoint (OAuth-like flow) to get Consumer Keys and Secrets, then use HTTP Basic Auth for API calls.",
+  "access": "self_serve_free",
+  "access_notes": "WooCommerce is an open-source, self-hosted WordPress plugin. Developers can download and install it for free, generating API credentials instantly on a local or staging site without approval or fees.",
+  "api_styles": [
+   "rest",
+   "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Primarily REST API for full CRUD on coupons, customers, orders, products, shipping, reports. Also has an unauthenticated Store API and an experimental Dual API for GraphQL endpoints.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "WooCommerce includes a native, official MCP integration (introduced in WooCommerce 10.3) built on the WordPress Abilities API and MCP Adapter. It runs as a developer preview on the merchant's own site via a local proxy. Additionally, robust community options exist, such as techspawn/woocommerce-mcp-server.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "Per-customer admin setup / decentralized endpoints. No centralized API gateway; each merchant store has a unique domain. Multi-tenant platforms must prompt for the store URL and initiate the Application Authentication Endpoint flow on that domain. Server-side configurations (e.g., permalinks, firewalls) can cause 401 errors requiring manual troubleshooting.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://developer.woocommerce.com/docs/apis/",
+    "quote": "the wc rest api is a powerful part of woocommerce which lets you read and write various parts of woocommerce data such as orders, products, coupons, customers, and shipping zones. it based on the wordpress rest api ."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.woocommerce.com/docs/apis/rest-api/authentication/",
+    "quote": "WooCommerce includes two ways to authenticate with the wp rest api. it is also possible to authenticate using any wp rest api authentication plugin or method. rest api keys   pre-generated keys can be used to authenticate use of the rest api endpoints. new keys can"
+   },
+   {
+    "claim": "auth",
+    "url": "https://woocommerce.github.io/woocommerce-rest-api-docs/#authentication-endpoint",
+    "quote": "Auto generating API keys using our Application Authentication Endpoint  This endpoint can be used by any APP to allow users to generate API keys for your APP. This makes integration with WooCommerce API easier because the user only needs to grant access to your APP via a URL. After being redirected back to your APP, the API keys will be sent back in a separate POST request."
+   },
+   {
+    "claim": "auth",
+    "url": "https://woocommerce.github.io/woocommerce-rest-api-docs/#authentication-endpoint",
+    "quote": "Authentication over HTTPS . You may use HTTP Basic Auth by providing the REST API Consumer Key as the username and the REST API Consumer Secret as the password."
+   },
+   {
+    "claim": "access",
+    "url": "https://woocommerce.com/for-agencies/",
+    "quote": "download woocommerce free"
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.woocommerce.com/docs/apis/",
+    "quote": "the store api provides public rest api endpoints for the development of customer-facing cart, checkout, and product functionality."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.woocommerce.com/docs/apis/",
+    "quote": "the dual api is an experimental, code-first api architecture: you write plain php classes (the code api) and a build script generates a matching graphql endpoint from them."
+   },
+   {
+    "claim": "api",
+    "url": "https://woocommerce.github.io/woocommerce-rest-api-docs/#authentication-endpoint",
+    "quote": "coupons customer orders products shipping classes product tags product reviews reports tax rates tax classes webhooks"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://usecarly.com/",
+    "quote": "Yes — WooCommerce has an official MCP integration, and it's from WooCommerce itself. It first appeared in WooCommerce 10.3 and firmed up over the releases since, exposing your products and orders to AI clients like Claude, Cursor, and VS Code."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/techspawn/woocommerce-mcp-server",
+    "quote": "This MCP server enables interaction with WooCommerce stores through the WordPress REST API. It provides comprehensive tools for managing all aspects of products, orders, customers, shipping, taxes, discounts, and store configuration using JSON-RPC 2.0 protocol."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://woocommerce.github.io/woocommerce-rest-api-docs/#authentication-endpoint",
+    "quote": "Requirements... Pretty permalinks in Settings > Permalinks so that the custom endpoints are supported. Default permalinks will not work."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://woocommerce.github.io/woocommerce-rest-api-docs/#authentication-endpoint",
+    "quote": "Occasionally some servers may not parse the Authorization header correctly (if you see a \"Consumer key is missing\" error when authenticating over SSL, you have a server issue)."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": "[\"api_key\", \"basic\", \"oauth2\"]",
+    "new": "[\"basic\", \"oauth1\"]",
+    "reason": "The primary authentication methods are HTTP Basic Authentication using a Consumer Key and Secret, and OAuth 1.0a. The 'Application Authentication Endpoint' is for generating API keys, not an OAuth 2.0 flow for making API calls.",
+    "url": "https://woocommerce.github.io/woocommerce-rest-api-docs/#authentication-over-https"
+   },
+   {
+    "field": "blocker",
+    "old": "app_review_or_approval",
+    "new": "per_customer_admin_setup",
+    "reason": "There is no vendor approval or app review process required. The blocker is the decentralized nature requiring each merchant to generate keys on their unique WordPress instance.",
+    "url": "https://woocommerce.github.io/woocommerce-rest-api-docs/#authentication-endpoint"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### **Fact-Checker's Report: WooCommerce**\n\nHere is a field-by-field analysis of the first-pass research record.\n\n---\n\n#### **`subcategory`**\n*   **Original:** `E-commerce`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** The official website describes WooCommerce as \"the open-source commerce platform for WordPress\".\n\n---\n\n#### **`one_liner`**\n*   **Original:** `Open-source e-commerce platform for WordPress, managing online stores, products, orders, and customers.`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** This is an accurate summary. The official site calls it an \"open-source ecommerce platform for WordPress\". The REST API documentation confirms it manages \"orders, products, coupons, customers, and shipping zones\".\n\n---\n\n#### **`auth_methods`**\n*   **Original:** `['api_key', 'basic', 'oauth2']`\n*   **Verification:** **WRONG**\n*   **Correction:** `['basic', 'oauth1']`\n*   **Evidence:** The primary authentication methods are HTTP Basic Authentication using a Consumer Key and Secret, and OAuth 1.0a. The official documentation states, \"You may use HTTP Basic Auth by providing the REST API Consumer Key as the username and the REST API Consumer Secret as the password.\" While WordPress can be extended with plugins to support OAuth 2.0, it is not a native authentication method for the WooCommerce REST API. The \"Application Authentication Endpoint\" is a custom flow for generating API keys (Consumer Key/Secret), not an OAuth 2.0 flow for making API calls.\n\n---\n\n#### **`primary_auth`**\n*   **Original:** `basic`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** For multi-tenant applications, the documented flow is to use the \"Application Authentication Endpoint\" to have the user generate a Consumer Key and Secret for the app. Subsequent API calls are then made using these credentials via HTTP Basic Auth. The documentation states: \"You may use HTTP Basic Auth by providing the REST API Consumer Key as the username and the REST API Consumer Secret as the password.\"\n\n---\n\n#### **`auth_notes`**\n*   **Original:** `Multi-tenant platforms use an Application Authentication Endpoint (OAuth-like flow) to get Consumer Keys and Secrets, then use HTTP Basic Auth for API calls.`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** This is correct. The official documentation describes an \"Application Authentication Endpoint\" which can be used by any app to allow users to generate API keys. The documentation for this endpoint confirms it is for generating API keys, which are then used for authentication, typically with HTTP Basic Auth.\n\n---\n\n#### **`access`**\n*   **Original:** `self_serve_free`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** WooCommerce is a free, open-source WordPress plugin that anyone can download and install on their own hosting. A developer can immediately install it on a local or staging server and generate API keys without cost or approval. The official site states: \"WooCommerce is the free, open-source ecommerce platform for WordPress.\"\n\n---\n\n#### **`access_notes`**\n*   **Original:** `WooCommerce is an open-source, self-hosted WordPress plugin. Developers can download and install it for free, generating API credentials instantly on a local or staging site without approval or fees.`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** This is an accurate summary. WooCommerce is free to download. API keys can be generated directly from the WordPress admin dashboard after installation. The process is described as: \"Go to WooCommerce > Settings > Advanced > REST API. Select Create an API key or Add Key.\"\n\n---\n\n#### **`api_styles`**\n*   **Original:** `['rest', 'graphql']`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** The official developer documentation outlines three main APIs: the \"WC REST API\", the public \"Store API\" (which is also REST-based), and the \"Dual API (code + GraphQL, experimental)\".\n\n---\n\n#### **`api_breadth`**\n*   **Original:** `broad`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** The REST API provides comprehensive CRUD (Create, Read, Update, Delete) operations for major e-commerce resources including coupons, customers, orders, products, and more.\n\n---\n\n#### **`api_notes`**\n*   **Original:** `Primarily REST API for full CRUD on coupons, customers, orders, products, shipping, reports. Also has an unauthenticated Store API and an experimental Dual API for GraphQL endpoints.`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** This is an accurate summary of the developer documentation, which details the \"WC REST API\" for managing store data, the unauthenticated \"Store API\" for customer-facing functionality, and the experimental \"Dual API\" for GraphQL.\n\n---\n\n#### **`openapi_spec`**\n*   **Original:** `false`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** No official OpenAPI specification was found in the developer documentation or through search. The API documentation is presented in a custom format on the developer website and GitHub.\n\n---\n\n#### **`webhooks`**\n*   **Original:** `true`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** Webhooks are a core feature and can be managed through the WooCommerce admin UI or the REST API. The documentation states, \"The webhooks API allows you to create, view, update, and delete individual, or a batch, of webhooks.\"\n\n---\n\n#### **`sandbox`**\n*   **Original:** `true`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** While there is no hosted sandbox environment provided by the vendor, the self-hosted nature of WooCommerce allows any developer to create their own sandbox. A developer can install WordPress and WooCommerce on a local machine or a private staging server for testing purposes at no cost.\n\n---\n\n#### **`mcp`**\n*   **Original:** `official`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** WooCommerce introduced an official, native MCP integration in version 10.3. It is described as a \"developer preview\" or \"beta\" feature. A developer blog post states: \"An early version of the WooCommerce MCP integration is in beta and ready for broader testing.\" It builds on core WordPress technologies like the Abilities API and the MCP Adapter.\n\n---\n\n#### **`mcp_notes`**\n*   **Original:** `WooCommerce includes a native, official MCP integration (introduced in WooCommerce 10.3) built on the WordPress Abilities API and MCP Adapter. It runs as a developer preview on the merchant's own site via a local proxy. Additionally, robust community options exist, such as techspawn/woocommerce-mcp-server.`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** This is accurate. The official MCP integration was introduced in WooCommerce 10.3 as a developer preview. It leverages the WordPress Abilities API and MCP Adapter. It requires enabling a feature flag on the merchant's site and running a local proxy to connect to AI clients. A community-built MCP server also exists, `techspawn/woocommerce-mcp-server`, which interacts with the store via the REST API.\n\n---\n\n#### **`verdict`**\n*   **Original:** `ready_with_friction`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** The API is fully documented and access is self-serve and free, but the decentralized, self-hosted nature creates friction for multi-tenant platforms. Each integration requires the end-user (the merchant) to provide their unique store URL and generate credentials, and is subject to their specific server configuration. This per-customer setup requirement is a significant point of friction.\n\n---\n\n#### **`blocker`**\n*   **Original:** `app_review_or_approval`\n*   **Verification:** **WRONG**\n*   **Correction:** `per_customer_admin_setup`\n*   **Evidence:** There is no vendor approval or app review process required to use the API. The primary blocker is that each connection is decentralized. A multi-tenant application cannot use a single set of credentials; it must guide each merchant through generating keys on their own WordPress instance, which has a unique domain and server environment. This fits the `per_customer_admin_setup` definition.\n\n---\n\n#### **`blocker_notes`**\n*   **Original:** `Per-customer admin setup / decentralized endpoints. No centralized API gateway; each merchant store has a unique domain. Multi-tenant platforms must prompt for the store URL and initiate the Application Authentication Endpoint flow on that domain. Server-side configurations (e.g., permalinks, firewalls) can cause 401 errors requiring manual troubleshooting.`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** This is an accurate description of the friction. Each store is a unique endpoint. The documentation explicitly notes that server configurations can cause issues: \"Occasionally some servers may not parse the Authorization header correctly (if you see a 'Consumer key is missing' error when authenticating over SSL, you have a server issue).\" It also requires \"pretty permalinks\" to be enabled, which is a server-side setting.\n\n---\n### **Uncertain Fields**\n\nNone. All fields were verifiable through the provided documentation and new searches.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "WooCommerce REST API authentication methods",
+   "WooCommerce REST API Application Authentication Endpoint documentation",
+   "WooCommerce REST API OAuth 2.0",
+   "WooCommerce official MCP server",
+   "WooCommerce 10.3 MCP integration",
+   "WordPress Abilities API MCP",
+   "WooCommerce REST API sandbox",
+   "WooCommerce REST API webhooks documentation",
+   "WooCommerce open source e-commerce platform for WordPress"
+  ],
+  "search_sources": [
+   {
+    "title": "woocommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4BGB6UDhPv9fSMVasyT-Y_W_4azQkDU_AvXNDlM5dZKn9ay2GK1kh5htN16TNX--h6qpclATDiDOj-FwdSAGpMw_ruWOHL6y08PTjHxa4I9vxBg=="
+   },
+   {
+    "title": "woocommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHWMVZeDWk7vFOyrkV3nN-yScWgE8QYHWhpMY3C45HpDB3SDOIHiEaDY9vgoGH6_Ve1JeMqdJe5my_Kcm87bZgx8uFRgy0PZN7sgPvXD6kn8m4qs7prtkA-y9jsIhYP1QsV7l-z8-s"
+   },
+   {
+    "title": "facebook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEd8U68Lo5lPsG0KLao6q7lYZjsDRLwocaGXtzA2bXUfUnqrRb9MP_wnZ8WWv6LDpBwVo15HFV7DFBbTy5gS-lLV9zWsEWB-A0PsFhqzIT1ZYETg7vRu7DXaRz-zdKW0HHSbuRkFfatzQQPt5BwIPKdDuYzwKfV9ZfCq4D2CBKwVhraBqdEUpvMqj3CX2kQHFqr1_Ml_zXwMg=="
+   },
+   {
+    "title": "hostinger.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEwwDoZYHEZN6Mo1F_uoZQw3kEfhNH1aFE1ui8Q7d6gh4EDUV21vbKveCnew2yI5JJww-erE4CgPtrwmNwnSgQF8cfNOUeMXFCCL1qR7vLXzoiss9qJdIt5O2_iuM9jBBJeFi1yQ9t65TdpRQffsbmqspmPetTesp47JpaPN4v"
+   },
+   {
+    "title": "woocommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtfimn3-39aE-4tDPt54Htdm72DG5FyHs6ncey9OIPxIKGWhM6T-thSKsjesAEFjIPICmxqFHYxPb18jhZAyFDK1yaEGB5Rnsmve4LBDA84jgaX3drcL3fs6VNlw0LMrFp9U8DuFxvN5M73oxv946TPFk_8qNpYxCuYaf-os4F"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRxwKEoe7S8zoeAZkQMVvGB0iK-D4CwLaLDxkzyCFYNtJDXaT7Q0sBL0B_I9gObLfDABX5SgSBgW6OqdY-9pMz-nWwsD6QdqZ-0irpLNjnX-bD0hP4rHJXCeQnLSMLqA2tW73Qe2OjNLsJiFVLn9IYaQE="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoJWfTps0yTI8yGkoauaGgyECUAqlnij34bKoDRfCEOIyGb2xnT2Y1OjxYXWKvO2aQp82Sa7Q03dbh0GUFEWVdRoYKgblsnwXAdgtodqS75HQ2QEqrWZSzJb-3nbUjNf7kzWbFa5f9bew4qkDEYMK0-xsfByc3S7lpsuPvmogjkUPXKIE1FTUkJhRbZ2QWMDSUv9Rllmzsis29DQEU8qH2fyCmEbm91Z1XSfguXLE="
+   },
+   {
+    "title": "kinsta.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAgma_joxmFSlo3M-DrYUtqlGpR2eEqNGm_YnUgNRNdLoabfYqhZj2JGu8JKROx1MPCIlJyfIjAVWu5dJHJlpl9n2dm9VMGEIcJEbnjarC3MamKj0dz4L5GyEkulUABHWZmnk="
+   },
+   {
+    "title": "woocommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrqay4KW6aib2Ly_ysFDVVMgJmJPSPckzZx4mQwU1gWuWMrlwCw4Fxa-c0KrPEdN7cHoWEVCa9J0HjLlCtiZTYX8fs1upFgv_WmCRvmUlhiLJyZUjUq_9o4eew"
+   },
+   {
+    "title": "wikipedia.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUVx8iIvqvF1lJaO_0n3Wtl2fKQWye89p7Nd_RiKFQdfBawIALDg0b6JrGBK4qgOdvGL6oKbMZtvzeLAgnXwQklQKrrd9nYpsf_zW54KglS2yhXLthhX8wWz_mED5q_CQix5ON"
+   },
+   {
+    "title": "woocommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZXN3nHyDcyVjLeHLJMeC0oss0MRvLjvIQFWVHjYXaSiVNaYWPxDyAa69IkO-GqmwOEIKBsZL4he553gCh0lCnqeM5DAtDVIlLw5uitHLNMBQ-W0MdYSLQInMz-A=="
+   },
+   {
+    "title": "woocommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2zB80JdUzmdc-dAiXekXGoaBcsuJ-0gVY9gC0bPI30zDxZTyJ0GI3U3xPCOr9nvUjOx4J5WXb4KhQar1lHgtJoIuKI-FKL1x0G7nmqo3Z6Cfk6cr9Q6ox7FOsXEObiX3I7qGbPZDzqwwWg49RDsN0Vg=="
+   },
+   {
+    "title": "codeable.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1FA6moVn7XeZUpGdyujBbu2JTUfKsEuM7vWFMWdv5pgE_51c0jIzJn1isN_fPkBVfXifWx3rgRuTF-bqWpcnar3dMavziF2WRoiq6YM4Lq-tcpIhC8_OF1yAA1PFLRuT4g8-fEcvvuzaGTNnQKUYEc0hhfUjizaESiULOIw=="
+   },
+   {
+    "title": "github.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlHpdnjpUTC0ZLcI3S1-EH3CYBtCR-CpbNPo0dAaTSYh2de-5uGWAh4RKURdK0QfNVuydBaFo2PnUHub0PiPWHIHD7hgCVjG5i6pl_2lx5RVm6AhGwH0gBvZa8xgXZ1PjPHBiGp6uVgviFsX6MERSCKYTlWRyWr7wkJg=="
+   },
+   {
+    "title": "woocommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEj5DjQ712wKgxcibDm0sQR7GRnenQmn8Zd0ebe1SKkMpt73_RKB3augl6gNRKtKxKIfhEx8XDZmsRgNDd4zqCz0OtM9Nu-gd8XMj3I-U2nKdXDzjALVvt1XJmAERi0dOC6gPscaLbNBPYwLEZlcPJpTByR2RhG_tjDeVWA"
+   },
+   {
+    "title": "woocommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFh0STpbW1RSf4xQ2ldR8UpjRHiobFqxrjJhKlpLHLnjMCsArWjEHh6skTyxk0_Uqj0SbEcjGMJMK3xnjRqrsfznz_xDqzZ0njOSFtekwGSK0ZAPNo1ivR7U2ne5ZVtilJ6EidIZ2k3CnKAMjHNhGwyPEfao4YPfj0DrJ2JnE2kcu3Y72CcRrVYOTS3dZ0F1b7PUtKd6Ge8O6E="
+   },
+   {
+    "title": "youtube.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKas5jKlm34AtelVpOD8cgWqu0bfqUlMuf-GYxZT-ceWcH2o4YFrHu_hRpkRDVwkZdDWHQi6ycpMaJZ6_15fI6-Y84vHr-53rGm_yJxR7p9Wd1gK8HTW75V-wzC45Fv0qWmMSFk6E="
+   },
+   {
+    "title": "woocommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7DHpeGG6n3fLBT7bVacrFeMfCPuFvgGO3st2yV6CtHPCIhiYOPdStOABPXPHxEcqt1DLvS2HDhGdqaMuqIWXJi2ZnlNC_bUqucxm9Ai0oYA7Oj2puBvBavHyY0uYqvURD0Fgffy-CzqGMq5BqSxsus6iXOKZVV7-8gEJQawFpDKTIngm5XhHtJuDMOCFi"
+   },
+   {
+    "title": "usecarly.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFazUSEmG3Qq-A3_Pt9TpxPUy1NU9MkFFAKIky3LdR2aqrxRwftoA8Qh8YawiV4Vy-oFJ_oZhjkS2k2Xq2FTPACOgr2G7lB9MAVbhAakGG-YVe_2bTVqHsIO-7zvjZw_ZCk02FV03--PvQ="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVWEuXk8A27HmVnplTiuYP6SNYl2v78ODDCSIBzANHjCTAk3LqnzAC1U5dkiYKMZ5tryuRcCexI3WxqemvlPJZM3SmMKvbGoY6f18N22kgGGCdiYA5h_OwAsUPhvMhmKq0n235PTYsahGTTNJr-g=="
+   }
+  ],
+  "tokens": 10773,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://developer.woocommerce.com/docs/apis/",
+    "status": 200,
+    "chars": 3842,
+    "readable": true
+   },
+   {
+    "url": "https://developer.woocommerce.com/docs/apis/rest-api/authentication/",
+    "status": 200,
+    "chars": 14073,
+    "readable": true
+   },
+   {
+    "url": "https://woocommerce.github.io/woocommerce-rest-api-docs/#authentication-endpoint",
+    "status": 200,
+    "chars": 400000,
+    "readable": true
+   },
+   {
+    "url": "https://woocommerce.com/for-agencies/",
+    "status": 200,
+    "chars": 2766,
+    "readable": true
+   },
+   {
+    "url": "https://usecarly.com/",
+    "status": 200,
+    "chars": 3479,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/techspawn/woocommerce-mcp-server",
+    "status": 200,
+    "chars": 14050,
+    "readable": true
+   }
+  ],
+  "seconds": 53.7
+ }
+}

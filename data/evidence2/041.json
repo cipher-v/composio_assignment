@@ -1,0 +1,161 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.shopify.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.2
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://shopify.dev/docs/apps/build/authentication-authorization/authenticate-standalone-apps?lang=node",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.59
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://shopify.dev/docs/apps/build/authentication-authorization/authenticate-standalone-apps?lang=node",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.71
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://shopify.dev/docs/storefronts/headless/building-with-the-customer-account-api/authenticate-customers?extension=javascript",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.54
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://shopify.com/partners",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://shopify.dev/docs/apps/build/authentication-authorization/authenticate-standalone-apps?lang=node",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://shopify.dev/docs/apps/store/review",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.76
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://shopify.dev/docs/api/admin-rest",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.7
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://shopify.dev/docs/api/admin-graphql",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://shopify.dev/docs/storefronts/headless/building-with-the-storefront-api/getting-started",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.11
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://shopify.dev/docs/apps/store/review",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://shopify.com/partners",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://shopify.dev/docs/api/mcp/storefront",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://shopify.dev/docs/api/mcp/dev",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "api_key": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://shopify.dev/docs/api/mcp/storefront', 'https://shopify.dev/docs/api/mcp/dev']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://www.shopify.com/pricing', 'https://shopify.com/partners', 'https://shopify.dev/docs/api/admin-graphql', 'https://shopify.dev/docs/storefronts/headless/building-with-the-storefront-api/getting-started', 'https://shopify.dev/docs/apps/store/review', 'https://shopify.com/partners']",
+ "metrics": {
+  "n_evidence": 14,
+  "alive_rate": 0.8571428571428571,
+  "dead_rate": 0.14285714285714285,
+  "blocked_rate": 0.0,
+  "official_rate": 1.0,
+  "readable": 12,
+  "quote_supported_rate": 0.5,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

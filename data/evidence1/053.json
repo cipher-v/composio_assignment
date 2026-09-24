@@ -1,0 +1,181 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://ahrefs.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.64
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://ahrefs.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.7
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.ahrefs.com/en/api/reference/public/get-domain-rating-free",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.57
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.ahrefs.com/en/ahrefs-connect/docs/oauth-guide",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.92
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.ahrefs.com/en/ahrefs-connect/docs/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.82
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.ahrefs.com/en/ahrefs-connect/docs/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://ahrefs.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.ahrefs.com/en/ahrefs-connect/docs/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.62
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://ahrefs.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.ahrefs.com/en/api/reference/public/get-domain-rating-free",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.ahrefs.com/en/api/docs/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.58
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.stitchflow.com/user-management/ahrefs/api",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.68
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://plainenglish.io/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.ahrefs.com/en/api/docs/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://usecarly.com/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://agenticskills.io/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  }
+ ],
+ "auth_support": {
+  "bearer_token": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://ahrefs.com/', 'https://ahrefs.com/pricing', 'https://plainenglish.io/', 'https://usecarly.com/', 'https://agenticskills.io/']\n- Non-vendor sources (prefer official docs): ['https://www.stitchflow.com/user-management/ahrefs/api', 'https://plainenglish.io/', 'https://usecarly.com/', 'https://agenticskills.io/']",
+ "metrics": {
+  "n_evidence": 16,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.75,
+  "readable": 16,
+  "quote_supported_rate": 0.6875,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

@@ -1,0 +1,121 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.gorgias.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.gorgias.com/reference/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.52
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.gorgias.com/docs/access-tokens-api-keys",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.gorgias.com/docs/oauth2-bearer-token",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.gorgias.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developers.gorgias.com/docs/access-tokens-api-keys",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.43
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/mattcoatsworth/Gorgias-MCP-Server",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.67
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.gorgias.com/reference/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.85
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.gorgias.com/docs/http-integrations",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developers.gorgias.com/docs/access-tokens-api-keys",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  }
+ ],
+ "auth_support": {
+  "basic": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://developers.gorgias.com/docs/http-integrations']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://www.gorgias.com/pricing', 'https://developers.gorgias.com/docs/access-tokens-api-keys', 'https://developers.gorgias.com/docs/access-tokens-api-keys']\n- Non-vendor sources (prefer official docs): ['https://github.com/mattcoatsworth/Gorgias-MCP-Server']",
+ "metrics": {
+  "n_evidence": 10,
+  "alive_rate": 0.9,
+  "dead_rate": 0.1,
+  "blocked_rate": 0.0,
+  "official_rate": 0.9,
+  "readable": 9,
+  "quote_supported_rate": 0.6666666666666666,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

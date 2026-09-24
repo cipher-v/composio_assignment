@@ -1,0 +1,218 @@
+{
+ "app": {
+  "id": 60,
+  "name": "Clay",
+  "category": "Data, SEO and Scraping",
+  "hint": "clay.com"
+ },
+ "record": {
+  "subcategory": "Data orchestration and enrichment",
+  "one_liner": "Clay is a data orchestration and enrichment platform for GTM teams, aggregating data from 100+ providers.",
+  "auth_methods": [
+   "api_key"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "Requests are authenticated by passing a workspace-specific Public API key in the `clay-api-key` HTTP header. The CLI uses browser-based OAuth but this is not exposed for third-party multi-tenant platforms.",
+  "access": "self_serve_free",
+  "access_notes": "Any user with an Admin or Editor role can instantly generate a Public API key from their web application dashboard. A free tier is available with 100 Data Credits and 500 Actions per month, including API access. Paid plans (Launch, Growth) and an Enterprise tier exist, with some API functionality gated by plan.",
+  "api_styles": [
+   "rest",
+   "cli_or_library"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "The Public API is REST-based and exposes core resources including `Me`, `Search` (people/companies), `Routine` (asynchronous enrichment), and `Table` (querying workspace tables). Querying workspace tables via the Public API is restricted to Enterprise plans. Webhooks are supported for ingesting external data.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Clay officially publishes and maintains an agent plugin and CLI that exposes its capabilities as Model Context Protocol (MCP) tools for AI coding assistants.",
+  "verdict": "ready_with_friction",
+  "blocker": "enterprise_only",
+  "blocker_notes": "While a free tier with API access is available, significant functionality (e.g., querying workspace tables via POST /tables/query) is gated behind an Enterprise contract. Webhooks require at least a Growth plan ($495/mo). Integrations must rely on users manually providing static API keys as there is no public OAuth system.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://composio.dev/",
+    "quote": "Clay is a go-to-market data enrichment and workflow automation platform for searching people and companies, running routines, and querying workspace tables."
+   },
+   {
+    "claim": "general",
+    "url": "https://autobound.ai/",
+    "quote": "Clay isn't a data API in the traditional sense, it's an orchestration layer that lets you query 100+ data providers through a single interface."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.clay.com/quickstart",
+    "quote": "Requests authenticate with a clay api key in the clay-api-key header."
+   },
+   {
+    "claim": "auth",
+    "url": "https://university.clay.com/fr/docs/cli-security-privacy",
+    "quote": "the recommended path is browser-based oauth: running clay login opens a browser sign-in and completes the flow back to the local machine."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.clay.com/quickstart",
+    "quote": "Create one yourself in clay under settings → account → api keys (beta) ."
+   },
+   {
+    "claim": "access",
+    "url": "https://fast.io/",
+    "quote": "Clay's Free plan includes 100 Data Credits and 500 Actions per month, allowing users to test core workflows and table views. It does not require a credit card."
+   },
+   {
+    "claim": "access",
+    "url": "https://fast.io/",
+    "quote": "The Growth plan costs $495/month and includes 6,000 Data Credits and 40,000 Actions per month, adding features like Salesforce and HubSpot sync, HTTP APIs, webhooks..."
+   },
+   {
+    "claim": "access",
+    "url": "https://apis.io/",
+    "quote": "Enterprise custom. Custom pricing, requires a demo. This is the only tier that unlocks the Tables query operation in the Public API (POST /tables/query is documented as Enterprise-only)."
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/",
+    "quote": "Resource, Operations. Me, Get authenticated user + workspace. Search, Get filter fields, create search, run page, search-and-fetch. Routine, Run (1–100 items)... Table, Query (Enterprise Public API)..."
+   },
+   {
+    "claim": "api",
+    "url": "https://autobound.ai/",
+    "quote": "What makes it agent-friendly: Excellent documentation: OpenAPI spec, SDKs in Python/Node/Ruby/Go, Postman collections, and extensive examples."
+   },
+   {
+    "claim": "api",
+    "url": "https://apis.io/",
+    "quote": "Clay Incoming Webhooks. Webhook source that pushes data from any external system into a Clay Table as new rows. Used to trigger Clay workflows from CRMs, signal providers, and product events."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://developers.clay.com/quickstart",
+    "quote": "The agent plugin gives your coding agent clay’s skills and the clay cli — the fastest way to build with clay from a coding agent."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://university.clay.com/docs-topics/getting-started",
+    "quote": "clay mcp for reps vs. agent plugin choose between mcp for reps and the clay agent plugin based on who will be using it and how much your ops team needs to approve in advance."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Research Notes\n\n#### 1. What the Product Does\nClay is a data orchestration and enrichment platform designed for Go-to-Market (GTM) teams. Instead of acting as a traditional static contact database, it functions as an orchestration layer that aggregates data from over 50 to 100+ third-party providers in real time. It enables teams to centralize data, execute multi-provider waterfall enrichment logic, perform AI-driven web research (via Claygents), and automate outbound sales workflows through a spreadsheet-like interface, a public REST API, a CLI, and Model Context Protocol (MCP) servers.\n*   **Source:** `https://composio.dev/`\n    *   **Quote:** \"Clay is a go-to-market data enrichment and workflow automation platform for searching people and companies, running routines, and querying workspace tables.\"\n*   **Source:** `https://autobound.ai/`\n    *   **Quote:** \"Clay isn't a data API in the traditional sense, it's an orchestration layer that lets you query 100+ data providers through a single interface.\"\n\n#### 2. Public API Authentication Methods\nThe Clay Public API relies on a single primary authentication method for direct programmatic access:\n*   **API Key (`api_key`):** Requests are authenticated by passing a workspace-specific Public API key inside a custom HTTP header named `clay-api-key`.\n    *   **Source:** `https://developers.clay.com/quickstart`\n    *   **Quote:** \"Requests authenticate with a clay api key in the clay-api-key header.\"\n*   **CLI OAuth (Internal Only):** While Clay supports browser-based OAuth (`clay login`) to authenticate its local command-line interface and agent plugin, it does not expose a public OAuth2 application system for third-party multi-tenant platforms.\n    *   **Source:** `https://university.clay.com/fr/docs/cli-security-privacy`\n    *   **Quote:** \"the recommended path is browser-based oauth: running clay login opens a browser sign-in and completes the flow back to the local machine.\"\n\n**Multi-Tenant Integration Choice:** A multi-tenant integration platform must use `api_key`. Users will need to generate a Public API key from their Clay workspace settings and provide it securely to the integration platform.\n\n#### 3. Credential Acquisition and Costs\n*   **How to Get Credentials:** Any user with an Admin or Editor role can instantly generate a Public API key directly from the web application dashboard without requiring manual vendor approval or sales interaction.\n    *   **Source:** `https://developers.clay.com/quickstart`\n    *   **Quote:** \"Create one yourself in clay under settings → account → api keys (beta) .\"\n*   **Costs & Plans:** Clay operates on a freemium model with usage-based meters (separating platform \"Actions\" from \"Data Credits\"). \n    *   **Free Tier:** Clay offers a free entry tier that includes API-key access, 100 Data Credits, and 500 Actions per month at no cost.\n        *   **Source:** `https://fast.io/`\n        *   **Quote:** \"Clay's Free plan includes 100 Data Credits and 500 Actions per month, allowing users to test core workflows and table views. It does not require a credit card.\"\n    *   **Paid Tiers:** Self-serve paid plans include the Launch plan (starting at $185/month) and the Growth plan (starting at $495/month), which unlocks advanced features like outbound webhooks and HTTP APIs.\n        *   **Source:** `https://fast.io/`\n        *   **Quote:** \"The Growth plan costs $495/month and includes 6,000 Data Credits and 40,000 Actions per month, adding features like Salesforce and HubSpot sync, HTTP APIs, webhooks...\"\n    *   **Enterprise Tier:** Querying workspace tables directly via the Public API is restricted exclusively to custom Enterprise plans.\n        *   **Source:** `https://apis.io/`\n        *   **Quote:** \"Enterprise custom. Custom pricing, requires a demo. This is the only tier that unlocks the Tables query operation in the Public API (POST /tables/query is documented as Enterprise-only).\"\n\n#### 4. API Style, Breadth, Specs, and Tooling\n*   **API Style:** REST API.\n*   **API Breadth:** The Public API exposes core resources including `Me` (retrieving authenticated user and workspace details), `Search` (filtering and fetching people or companies), `Routine` (triggering asynchronous enrichment functions), and `Table` (querying workspace tables).\n    *   **Source:** `https://github.com/` (n8n-nodes-clay)\n    *   **Quote:** \"Resource, Operations. Me, Get authenticated user + workspace. Search, Get filter fields, create search, run page, search-and-fetch. Routine, Run (1–100 items)... Table, Query (Enterprise Public API)...\"\n*   **OpenAPI Spec:** Yes, Clay provides a machine-readable OpenAPI specification.\n    *   **Source:** `https://autobound.ai/`\n    *   **Quote:** \"What makes it agent-friendly: Excellent documentation: OpenAPI spec, SDKs in Python/Node/Ruby/Go, Postman collections, and extensive examples.\"\n*   **Webhooks:** Clay supports incoming webhooks to ingest external data directly into tables to trigger automated workflows.\n    *   **Source:** `https://apis.io/`\n    *   **Quote:** \"Clay Incoming Webhooks. Webhook source that pushes data from any external system into a Clay Table as new rows. Used to trigger Clay workflows from CRMs, signal providers, and product events.\"\n*   **Sandbox:** No dedicated sandbox environment is provided; developers perform testing directly within a standard Free tier or trial workspace.\n\n#### 5. MCP Servers\n*   **Availability:** `official`\n*   **Details:** Clay officially publishes and maintains an agent plugin and CLI that exposes its capabilities as Model Context Protocol (MCP) tools for AI coding assistants like Claude Code, Cursor, and Codex.\n    *   **Source:** `https://developers.clay.com/quickstart`\n    *   **Quote:** \"The agent plugin gives your coding agent clay’s skills and the clay cli — the fastest way to build with clay from a coding agent.\"\n    *   **Source:** `https://university.clay.com/docs-topics/getting-started`\n    *   **Quote:** \"clay mcp for reps vs. agent plugin choose between mcp for reps and the clay agent plugin based on who will be using it and how much your ops team needs to approve in advance.\"\n\n#### 6. Buildability Verdict\n*   **Verdict:** `ready_with_friction`\n*   **Main Blocker / Hurdle:** While any developer can sign up for free and instantly obtain a Public API key, significant functional hurdles exist due to plan-based endpoint restrictions. Specifically, querying workspace tables via the Public API (`POST /tables/query`) is strictly gated behind an Enterprise contract, and utilizing webhooks requires at least a Growth plan ($495/mo). Furthermore, because Clay lacks a public OAuth application system for third-party platforms, integrations must rely entirely on users manually copying and pasting static API keys.\n\n---\n\n### Summary Checklist for Composio\n\n```json\n{\n  \"access\": \"self_serve_free\",\n  \"primary_auth\": \"api_key\",\n  \"mcp\": \"official\",\n  \"verdict\": \"ready_with_friction\",\n  \"main_blocker\": \"plan_gated_endpoints\"\n}\n```",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"clay.com\" pricing api access",
+   "\"clay\" api reference openapi spec",
+   "clay mcp server github",
+   "clay webhooks developer documentation",
+   " api reference",
+   " authentication",
+   "\"clay-api-key\"",
+   "\"clay\" oauth2 public api app"
+  ],
+  "search_sources": [
+   {
+    "title": "composio.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGd5rZ11N6kaEjzLns2If7-AJj1spKYdwdjHcGjehOCcsDZMQwAfnkBex1osBZvgzhnaqYfIlfWQ8mShDTTAzlKiccX6f6umNa4OxHf2ZWoGFFIVHYT0W6f07PVFts="
+   },
+   {
+    "title": "composio.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHabpowjYvTCP2gJBp8Y5HTcb9yKYjFLvQ053L_waK-nJwaM4DryGWtFiSnWOkCvuHQ2Vxyw3wAF_nO97gg04bMLpco1azar7Zs8pxbsYjvNj3RiXtXuRJQ0HLDNfMZnVrsAGOy2Vw-D1WDMjh2yXY="
+   },
+   {
+    "title": "lovable.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiy6NfErdYuFMU28fx2goKMQAk7k4x-9e7rKv-HFu-E7hqUkCcxSvWTx_tqaBYPYFge7-Co2Ccl0gJOSpHF3Mu1Vt03-ON9c4_qYscqNPFqAB2t8LD0GSOeN0Q_NNYDaRZpmVL3A=="
+   },
+   {
+    "title": "clay.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEb4LlB1sxPqH_TbtKCl8B1yq4KbS_BpLSm1H1UwSunUis_COkPGB-wci61vJX_mGOCKUBJyafL9OlzpcGC88NW9EHuFDtR4nYvajiY0OZ7AmxCZx6ZaasQ48UKuF-dvodoGxhaoVjs12bj2rCkwSZiEyc6nX7vmXSRVL68ODyNPXjm"
+   },
+   {
+    "title": "clay.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFH3kBDH3ocD1vt4zx4ErQa6l5-E5tK1BtWo2y-eL7b82tRgqBgqrsUyHhbvcTXzzPPAfvicF-K8X1ya7t_Ihm3-i7GzwTEhi_FqaALc0H2McTGy14Eo7OEOfjONtyddj02"
+   }
+  ],
+  "tokens": 9738,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "clay.com API authentication",
+    "clay.com API keys",
+    "clay.com OAuth",
+    "clay.com API getting started",
+    "clay.com API quickstart",
+    "clay.com API pricing",
+    "clay.com API plans",
+    "clay.com API developer program",
+    "clay.com API reference",
+    "Clay MCP server"
+   ],
+   "candidates": 2,
+   "live_urls": [
+    "https://developers.clay.com/quickstart",
+    "https://university.clay.com/fr/docs/cli-security-privacy",
+    "https://university.clay.com/docs-topics/getting-started",
+    "https://university.clay.com/docs/guide-find-clay-api-key",
+    "https://www.clay.com/pricing",
+    "https://app.notion.com/p/clayrun/clay-library-5223a65f2468499491da4d5a899d8072",
+    "https://apitracker.io/a/clay-run"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://api.clay.com/v3/mcp",
+     "status": 405
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://developers.clay.com/quickstart",
+     "status": 200,
+     "chars": 2514,
+     "readable": true
+    },
+    {
+     "url": "https://university.clay.com/fr/docs/cli-security-privacy",
+     "status": 200,
+     "chars": 9540,
+     "readable": true
+    },
+    {
+     "url": "https://university.clay.com/docs-topics/getting-started",
+     "status": 200,
+     "chars": 8846,
+     "readable": true
+    },
+    {
+     "url": "https://university.clay.com/docs/guide-find-clay-api-key",
+     "status": 200,
+     "chars": 4411,
+     "readable": true
+    },
+    {
+     "url": "https://www.clay.com/pricing",
+     "status": 200,
+     "chars": 31219,
+     "readable": true
+    },
+    {
+     "url": "https://app.notion.com/p/clayrun/clay-library-5223a65f2468499491da4d5a899d8072",
+     "status": 200,
+     "chars": 7,
+     "readable": false
+    },
+    {
+     "url": "https://apitracker.io/a/clay-run",
+     "status": 200,
+     "chars": 2277,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 78.4
+ }
+}

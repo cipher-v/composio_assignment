@@ -1,0 +1,266 @@
+{
+ "app": {
+  "id": 18,
+  "name": "Help Scout",
+  "category": "Support and Helpdesk",
+  "hint": "helpscout.com"
+ },
+ "record": {
+  "subcategory": "Helpdesk / ticketing",
+  "one_liner": "Help Scout is a customer support and shared inbox platform for email-first support teams.",
+  "auth_methods": [
+   "oauth2",
+   "basic"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Mailbox API v2 uses OAuth 2.0 (Authorization Code for user-scoped, Client Credentials for server-to-server). Docs API v1 uses static API keys via HTTP Basic Authentication (key in username field).",
+  "access": "self_serve_trial",
+  "access_notes": "API access is included on Standard, Plus, and Pro paid plans. A 15-day free trial provides full feature access, including API. Free plan excludes API access. Mailbox API credentials (App ID, App Secret) are obtained by creating an app under 'My Apps'. Docs API keys are generated in user profile security settings.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Help Scout has two distinct APIs: Mailbox API v2 (conversations, customers, mailboxes, tags, workflows, threads, attachments, webhooks) and Docs API v1 (articles, categories, collections, sites).",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Help Scout hosts an official remote MCP server at https://mcp.helpscout.net/mcp, which supports OAuth authentication and dynamic client registration.",
+  "verdict": "ready_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "API access requires a paid plan (Standard tier or higher) after a 15-day free trial. Additionally, API access is fragmented, with the Mailbox API using OAuth 2.0 and the Docs API using HTTP Basic Auth with a static API key, requiring management of two separate authentication flows.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.gorgias.com/blog/helpscout-pricing",
+    "quote": "Help Scout is a shared inbox platform built for email-first support teams. It uses a Gmail-like interface instead of numbered tickets, built around three core components: Inbox for shared email. Docs for knowledge base, and. Beacon for an embeddable help widget."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.helpscout.com/mailbox-api/",
+    "quote": "This is an https-only api, with oauth 2 authentication and cors support running at: https://api.helpscout.net/v2"
+   },
+   {
+    "claim": "auth",
+    "url": "https://www.clonepartner.com/blog/helpscout-vs-podium",
+    "quote": "Mailbox API v2 — Conversations, customers, mailboxes, tags, workflows, threads, attachments. OAuth 2.0 (client credentials for server-to-server; authorization code for user-scoped)."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.helpscout.com/docs-api/#!/authentication",
+    "quote": "Authentication is based on api keys. ... The api key is passed via http basic authentication and goes in the username field. A dummy password, such as x, goes in the password field."
+   },
+   {
+    "claim": "access",
+    "url": "https://helpscout.com/docs/mcp-connector",
+    "quote": "Your Help Scout account must have API access, which is included on the Standard, Plus, and Pro plans."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.tidio.com/blog/helpscout-pricing/",
+    "quote": "It's also important to note that Help Scout offers a 15-day free trial with access to all features, allowing teams to evaluate the platform before committing."
+   },
+   {
+    "claim": "access",
+    "url": "https://github.com/drewburchfield/help-scout-mcp-server",
+    "quote": "Go to Help Scout > My Apps > Create Private App. Copy your App ID and App Secret."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.helpscout.com/docs-api/#!/authentication",
+    "quote": "To generate, view, or regenerate the api key, click your avatar in the top right of your account, then click your profile . next, click security and access in the menu on the left. your api key is listed under the docs api section."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.helpscout.com/mailbox-api/",
+    "quote": "conversations attachments delete attachment download attachment file get attachment data upload attachment custom fields update custom fields snooze delete snooze update snooze tags update tags threads schedule delete thread schedule publish thread schedule update thread schedule create chat thread create c ... er list system users tags get tag by id list tags teams list team members list teams update team members users conversation reassignment get conversation reassignment configuration update conversation reassignment configuration status get user status list users statuses set user status create user delete user get resource owner get user list users webhooks create webhook delete webhook get webhook list webhooks update webhook workflows list workflows run manual workflows update workflow status"
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.helpscout.com/",
+    "quote": "webhooks - get notified about activity in help scout"
+   },
+   {
+    "claim": "api",
+    "url": "https://www.intercom.com/blog/helpscout-vs-intercom",
+    "quote": "Help Scout offers testing only through its live environment, with no sandbox or simulation capability."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://helpscout.com/docs/mcp-connector",
+    "quote": "Set the remote MCP server URL to https://mcp.helpscout.net/mcp ."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://usecarly.com/chatgpt-helpscout-integration/",
+    "quote": "Help Scout runs its own official MCP server, which you add to ChatGPT as a custom connector rather than a one-click app. It answers at https://mcp.helpscout.net/mcp and authenticates over OAuth"
+   },
+   {
+    "claim": "verdict",
+    "url": "https://helpscout.com/docs/mcp-connector",
+    "quote": "Your Help Scout account must have API access, which is included on the Standard, Plus, and Pro plans."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://developer.helpscout.com/mailbox-api/",
+    "quote": "This is an https-only api, with oauth 2 authentication and cors support running at: https://api.helpscout.net/v2"
+   },
+   {
+    "claim": "verdict",
+    "url": "https://developer.helpscout.com/docs-api/#!/authentication",
+    "quote": "Authentication is based on api keys. ... The api key is passed via http basic authentication and goes in the username field. A dummy password, such as x, goes in the password field."
+   }
+  ],
+  "confidence": 0.9
+ },
+ "notes": "### Research Notes: Help Scout\n\n#### 1. Product Overview\nHelp Scout is a customer support and shared inbox platform designed primarily for email-first support teams. It combines shared email management, a knowledge base (Docs), and live chat widgets (Beacon) into a unified interface.\n* **Source:** `https://www.gorgias.com/blog/helpscout-pricing`\n* **Verbatim Quote:** `\"Help Scout is a shared inbox platform built for email-first support teams. It uses a Gmail-like interface instead of numbered tickets, built around three core components: Inbox for shared email. Docs for knowledge base, and. Beacon for an embeddable help widget.\"`\n\n#### 2. Authentication Methods & Multi-Tenant Integration\nHelp Scout splits its public capabilities across two distinct APIs with different authentication mechanisms:\n* **Mailbox API v2:** Uses OAuth 2.0 (supporting both Authorization Code flow for user-scoped access and Client Credentials flow for server-to-server access).\n  * **Source:** `https://developer.helpscout.com/mailbox-api/`\n  * **Verbatim Quote:** `\"This is an https-only api, with oauth 2 authentication and cors support running at: https://api.helpscout.net/v2\"`\n  * **Source:** `https://www.clonepartner.com/blog/helpscout-vs-podium`\n  * **Verbatim Quote:** `\"Mailbox API v2 — Conversations, customers, mailboxes, tags, workflows, threads, attachments. OAuth 2.0 (client credentials for server-to-server; authorization code for user-scoped).\"`\n* **Docs API v1:** Uses static API keys passed via HTTP Basic Authentication.\n  * **Source:** `https://developer.helpscout.com/docs-api/#!/authentication`\n  * **Verbatim Quote:** `\"Authentication is based on api keys. ... The api key is passed via http basic authentication and goes in the username field. A dummy password, such as x, goes in the password field.\"`\n* **Primary Auth for Multi-Tenant Integration:** `oauth2` (specifically OAuth 2.0 Authorization Code flow) is the primary choice for integrating the Mailbox API. However, a multi-tenant platform would also need to collect a separate `api_key` via HTTP Basic Auth if it intends to interact with the Docs API.\n\n#### 3. Credential Acquisition & Cost\n* **Access Level:** `self_serve_trial`\n* **Details:** Help Scout offers a permanent Free plan, but it explicitly excludes API access. However, developers can sign up for a 15-day free trial that includes all features (including the API). To maintain API access after the trial, a paid plan (Standard tier or higher) is required.\n  * **Source:** `https://helpscout.com/docs/mcp-connector`\n  * **Verbatim Quote:** `\"Your Help Scout account must have API access, which is included on the Standard, Plus, and Pro plans.\"`\n  * **Source:** `https://www.tidio.com/blog/helpscout-pricing/`\n  * **Verbatim Quote:** `\"It's also important to note that Help Scout offers a 15-day free trial with access to all features, allowing teams to evaluate the platform before committing.\"`\n* **How to get credentials:** For the Mailbox API, developers create an application under \"My Apps\" to obtain an App ID and App Secret. For the Docs API, users generate a key under their profile security settings.\n  * **Source:** `https://github.com/drewburchfield/help-scout-mcp-server`\n  * **Verbatim Quote:** `\"Go to Help Scout > My Apps > Create Private App. Copy your App ID and App Secret.\"`\n  * **Source:** `https://developer.helpscout.com/docs-api/#!/authentication`\n  * **Verbatim Quote:** `\"To generate, view, or regenerate the api key, click your avatar in the top right of your account, then click your profile . next, click security and access in the menu on the left. your api key is listed under the docs api section.\"`\n\n#### 4. API Style & Technical Details\n* **API Style:** REST\n* **Breadth:** High breadth. The Mailbox API covers conversations, threads, attachments, custom fields, tags, teams, users, workflows, and webhooks. The Docs API covers articles, categories, collections, and sites.\n  * **Source:** `https://developer.helpscout.com/mailbox-api/`\n  * **Verbatim Quote:** `\"conversations attachments delete attachment download attachment file get attachment data upload attachment custom fields update custom fields snooze delete snooze update snooze tags update tags threads schedule delete thread schedule publish thread schedule update thread schedule create chat thread create c ... er list system users tags get tag by id list tags teams list team members list teams update team members users conversation reassignment get conversation reassignment configuration update conversation reassignment configuration status get user status list users statuses set user status create user delete user get resource owner get user list users webhooks create webhook delete webhook get webhook list webhooks update webhook workflows list workflows run manual workflows update workflow status\"`\n* **OpenAPI Spec:** The Docs API documentation uses a Swagger UI format (`#!/authentication`), indicating an underlying spec, but no official public OpenAPI JSON/YAML download link is prominently highlighted.\n* **Webhooks:** Supported.\n  * **Source:** `https://developer.helpscout.com/`\n  * **Verbatim Quote:** `\"webhooks - get notified about activity in help scout\"`\n* **Sandbox:** No official sandbox or simulation environment is provided; testing must be done in a live environment.\n  * **Source:** `https://www.intercom.com/blog/helpscout-vs-intercom`\n  * **Verbatim Quote:** `\"Help Scout offers testing only through its live environment, with no sandbox or simulation capability.\"`\n\n#### 5. Model Context Protocol (MCP) Servers\n* **MCP Availability:** `official`\n* **Details:** Help Scout hosts an official remote MCP server that supports OAuth authentication and dynamic client registration. Community-built alternatives (such as `drewburchfield/help-scout-mcp-server`) also exist for self-hosting.\n  * **Source:** `https://helpscout.com/docs/mcp-connector`\n  * **Verbatim Quote:** `\"Set the remote MCP server URL to https://mcp.helpscout.net/mcp .\"`\n  * **Source:** `https://usecarly.com/chatgpt-helpscout-integration/`\n  * **Verbatim Quote:** `\"Help Scout runs its own official MCP server, which you add to ChatGPT as a custom connector rather than a one-click app. It answers at https://mcp.helpscout.net/mcp and authenticates over OAuth\"`\n\n#### 6. Buildability Verdict\n* **Verdict:** `ready_with_friction`\n* **Main Blocker:** `paid_plan_required_for_api` (API access is gated behind paid plans starting at the Standard tier, though a 15-day free trial is available) and `fragmented_auth` (The Mailbox API uses OAuth 2.0 while the Docs API uses HTTP Basic Auth with a static API key, requiring developers to manage two separate authentication flows for a complete integration).",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"Help Scout\" pricing free tier API access",
+   "\"Help Scout\" developer account free sandbox",
+   "\"Help Scout\" MCP server",
+   "\"Help Scout\" OAuth app review approval"
+  ],
+  "search_sources": [
+   {
+    "title": "tidio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7A0OMq3Mkj1byUlJ2CQvxrG6iptCDfB8PER6QTG-2pSN6-YaxfHK8gSZyALncE_A0zCw5dK4FKc0fLnsvLEJ1tv7djLSUFFbuAVQGgCZgZviPdxkJ0v84D-bA7HxUjdQT_8Iuj-4_hg=="
+   },
+   {
+    "title": "clonepartner.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWjQAJo6KVvG_2IsR25KjvS5vBae5pY6QPw7WX0kiVbR7TVtBNBPE_blcXpc-HGRCqXx-YnJKv0gCPHpjpvA-7qv55uskD2-YkYmswladV3mR83QC9G_v6V63GtyMsKGcbpuO5b5hqIUqgUX_DtxzN6jNH9_vvc7tnlWnOl-gWAxJTyA075-wkAWe4VVc="
+   },
+   {
+    "title": "gorgias.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhLZZBqY0Vib4xA8mqP9eywsdO0Pq1Q_dvlPGe4i0QLZYVU7bEcv6muu5_dTHrpWSVJQX-0NQr8zRIBNYoDj-sCDGkNGNJKEDOoxsWboSJ8T3kCqzRyynZDM8syUdvzECcmRtqWVHxRD0ceg=="
+   },
+   {
+    "title": "docsie.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXFn09vU4m7ejIc3kp23j49kgjQMv0ylLnnBKIFyxipToe-QfDu4HG5lMxXh3eIflSVXSkHj2mecaVmSCbAk4t5LwWRELqUH6ryWyeU4rBB9Dj3dihuIyL12WvJELBRfjQU1Ch-YnZxLcz-W-C9AesW_AomFTQ"
+   },
+   {
+    "title": "helpscout.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvbXd4r10n128flfpCrbw6TE6AdWJboHNwn2i70woB4VuV5XQyQXy3x2k-Hd3pcm87HGs-V7pKTIn1i_jtsKlzLTXYOgqgcJMn3qMxNnh5Ftnw6Nr_mjWwE2jLkPmvLsX-jm5iuxcOGwkO9Uj25hf6IGNhtIL-rFfYF-tfGWIQ16tu4Ho83m6S8Gsy_3BaWIcAYRErtK7aHD_P_i6zw-PoIJsDygdeEwcFOfNo0_idLXQ="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnPtV6KxV3BjEoD7O5MDNGFGbSyDD3cDQdLXJCFCzW4mJKxbNtp1ABCaz2Koxx4sbaSNtVVwvvh_R1JKqUNQ5u24f1vbNlVbee623OXbsB2gq3FeRbTP8ye8_rOd0_dIRQsscpjPvOXM7lAtg4m6yUr8o="
+   },
+   {
+    "title": "intercom.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWUYzK9fYJuDROMRlHYX_UbZsJeal4b3XRgzUPHNkqmtZ1yxP3BqX7ViZ2V0FxKVDlfvCfHnW7vdxlziT2wPZP_7ViSxCYAdeAL3FOZ8twjJx7AwCbtrC6iYprbiDpyBc9YSl6EA7PB5HK8DxpCaoNFvJb2jfdg3sZXg=="
+   },
+   {
+    "title": "stackone.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGV7IqVLTOf9lwjL-2kCA7OpN6Eo4JJodOgDUqXtTAvqyOR0PGBQC5GBeccYm2hZ4qKWav6crK1nyq3VgcQ7zkndodRf41GYIpE-lp2FHjaBhqhxf5TiVOi_w_GE0C92QuKE3lKGQzRURCwpECR"
+   },
+   {
+    "title": "lobehub.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdUpM89qqrdV0Dhz_cIojFNR0IVN0VJJmSg7kJAcl9rg-h0fcmQc9dIwxf0Gkt7GIJK6OksSpxZQYABY1z_SY3lSL4IpG4NcKGm3r1MIXzWbvgJVAvZhAhpJXPk2sJZBY6uBr-Ucnw6ZTaIMd5cvJgyBa7tbt-7w=="
+   },
+   {
+    "title": "usecarly.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFO7NwIU3iCPlCvd9e71WIRmBS1wTLZUXzDjDZGYnp-17Y1cj9jvlpTr_u1_jXnRm08me6j1IoZIhbE2zlbDa1NyUS_zm2ziv7FqeDCvAGGqnP_7UpH80XJ83OsBHPTiLshoZ4Z9liR5krx_VIz0d1bjGQpNtJ8J3I="
+   },
+   {
+    "title": "mcp.so",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0P9BLLhjP_8ZbPaILlLOvRCCzvHEAyUV2LAi1Z262UTFWnq-t14OTJIQbMz_RINvsWboBJddk3GoPrl4KCAgFGpsMXB-lxBLuQcJByd-EAXUD7jNFb2pk1x6OYpRnMSDKh8uT9-Cs"
+   }
+  ],
+  "tokens": 12267,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Help Scout API authentication URL",
+    "Help Scout API keys URL",
+    "Help Scout OAuth documentation URL",
+    "Help Scout developer authentication URL",
+    "Help Scout API getting started URL",
+    "Help Scout API quickstart URL",
+    "Help Scout developer quickstart URL",
+    "Help Scout API pricing URL",
+    "Help Scout plans API access URL",
+    "Help Scout developer program URL",
+    "Help Scout API reference index URL",
+    "Help Scout API documentation index URL",
+    "Help Scout MCP server official",
+    "Help Scout MCP server community"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://developer.helpscout.com/",
+    "https://developer.helpscout.com/mailbox-api/#api-access",
+    "https://developer.helpscout.com/mailbox-api/",
+    "https://developer.helpscout.com/docs-api/#!/authentication",
+    "https://secure.helpscout.net/members/login?jump=https%3A%2F%2Fsecure.helpscout.net%2Fauthentication%2FauthorizeClientApplication%3Fclient_id%3D%257Bapplication_id%257D%26state%3D%257Byour_secret%257D",
+    "https://developer.helpscout.com/apps/getting-started/",
+    "https://developer.helpscout.com/mailbox-api/overview/authentication/",
+    "https://developer.helpscout.com/docs-api/",
+    "https://developer.helpscout.com/apps/",
+    "https://docs.helpscout.com/article/1140-mailbox-api",
+    "https://www.eesel.ai/blog/helpscout-pricing"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://developer.helpscout.com/api-docs/authentication/",
+     "status": 404
+    },
+    {
+     "url": "https://mcp.helpscout.net/mcp",
+     "status": 401
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://developer.helpscout.com/",
+     "status": 200,
+     "chars": 1258,
+     "readable": true
+    },
+    {
+     "url": "https://developer.helpscout.com/mailbox-api/#api-access",
+     "status": 200,
+     "chars": 4801,
+     "readable": true
+    },
+    {
+     "url": "https://developer.helpscout.com/mailbox-api/",
+     "status": 200,
+     "chars": 4801,
+     "readable": true
+    },
+    {
+     "url": "https://developer.helpscout.com/docs-api/#!/authentication",
+     "status": 200,
+     "chars": 4732,
+     "readable": true
+    },
+    {
+     "url": "https://secure.helpscout.net/members/login?jump=https%3A%2F%2Fsecure.helpscout.net%2Fauthentication%2FauthorizeClientApplication%3Fclient_id%3D%257Bapplication_id%257D%26state%3D%257Byour_secret%257D",
+     "status": 200,
+     "chars": 1494,
+     "readable": true
+    },
+    {
+     "url": "https://developer.helpscout.com/apps/getting-started/",
+     "status": 200,
+     "chars": 6275,
+     "readable": true
+    },
+    {
+     "url": "https://developer.helpscout.com/mailbox-api/overview/authentication/",
+     "status": 200,
+     "chars": 8442,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 75.7
+ }
+}

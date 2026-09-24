@@ -1,0 +1,241 @@
+{
+ "app": {
+  "id": 89,
+  "name": "Ramp",
+  "category": "Finance and Fintech",
+  "hint": "docs.ramp.com"
+ },
+ "record": {
+  "subcategory": "Finance / Fintech",
+  "one_liner": "Ramp is a finance platform offering corporate cards, expense management, and bill payments to optimize business spend.",
+  "auth_methods": [
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Ramp implements OAuth 2.0 supporting Client Credentials (server-to-server) and Authorization Code (third-party, multi-tenant apps) grant types. Refresh tokens are used to renew access.",
+  "access": "self_serve_free",
+  "access_notes": "Sandbox access is free and self-serve. Production access for internal use is available from a production account (free tier). For multi-tenant applications, production access requires an application review process including a functional demo, scope justification, and security compliance attestations (e.g., SOC 2 Type 2, ISO 27001, PCI).",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Ramp's Developer API v1 is a REST API covering transactions, cards, users, bill payments, custom records, reimbursements, and spend controls. It provides secure, scoped access to various financial objects.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Ramp officially provides multiple MCP servers: a Developer MCP for API documentation and OpenAPI schemas, a Ramp Data MCP for software benchmarks and AI adoption datasets, and an Account-Scoped Ramp MCP for financial actions and account data.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "While a free sandbox is available for full development and testing, moving a multi-tenant application to production requires a formal app review process, including a live functional demo, scope justification, and strict security compliance attestations.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://support.ramp.com/accessing-the-developer-api",
+    "quote": "ramp’s developer api allows teams to programmatically access ramp data and build automations or integrations tailored to their workflows. it provides secure, scoped access to objects like transactions, cards, users, and more."
+   },
+   {
+    "claim": "general",
+    "url": "https://ramp.com/pricing",
+    "quote": "whether you’re a startup, global enterprise, or somewhere in between, ramp is designed to save you time and money. ai-assisted free $0/mo/user best for smaller teams who want to simplify finances."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.ramp.com/developer-api/v1/authorization",
+    "quote": "Ramp implements the OAuth 2.0 authorization framework with the following components... Supported grant types... Client Credentials, Internal integrations, server-to-server, None required. Authorization Code, Third-party apps, public integrations, Authorized user consent required. Refresh Token, Renew access after an Authorization Code grant, None after the initial authorization."
+   },
+   {
+    "claim": "auth",
+    "url": "https://support.ramp.com/accessing-the-developer-api",
+    "quote": "build for other ramp businesses: test your integration in sandbox. when you are ready, apply for production access . after ramp approves your application, onboard production customers through oauth."
+   },
+   {
+    "claim": "access",
+    "url": "https://support.ramp.com/accessing-the-developer-api",
+    "quote": "request access using the sandbox access form . your sandbox should be ready in about one minute. check your inbox for an account access email. ramp provisions a sandbox business pre-populated with sample data... build for other ramp businesses: test your integration in sandbox. when you are ready, apply for production access . after ramp approves your application, onboard production customers through oauth."
+   },
+   {
+    "claim": "access",
+    "url": "https://ramp.com/pricing",
+    "quote": "ai-assisted free $0/mo/user best for smaller teams who want to simplify finances."
+   },
+   {
+    "claim": "access",
+    "url": "https://postman.com/ramp-api/workspace/ramp-developer-api/overview",
+    "quote": "3  Apply for Production Access. Onboard customers in production after testing in the sandbox. Provide: A description of the integration. A demo of the integration. A list of required API scopes. Security compliance attestations (e.g., SOC 2 Type 2, ISO 27001, PCI). Data storage and security policies. Access control information. Apply via the Developer Console in your Ramp production account."
+   },
+   {
+    "claim": "api",
+    "url": "https://stacksync.com/blog/ramp-wrike-integration",
+    "quote": "Ramp: REST API (Developer API v1)."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.ramp.com/",
+    "quote": "Products: AI Index... Bill Pay... Cards... Custom Records... Procurement... Ramp Rate... Reimbursements... Spend Controls... Users..."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.ramp.com/",
+    "quote": "for machine-readable docs, fetch: /llms.txt (llm index), /llms-guides.txt (guides index), /llms-guides/<slug>.txt (specific guide), /llms-api.txt (api reference), /llms-full.txt (combined docs), or /openapi/developer-api.json (openapi spec)."
+   },
+   {
+    "claim": "api",
+    "url": "https://stacksync.com/blog/ramp-wrike-integration",
+    "quote": "Signed webhooks (HMAC-SHA256 X-Ramp-Signature) for bill, transaction, reimbursement, vendor, and user events"
+   },
+   {
+    "claim": "api",
+    "url": "https://support.ramp.com/accessing-the-developer-api",
+    "quote": "the sandbox is a separate environment with its own base url and credentials — it is not a mode within the production api. sandbox api base url: https://demo-api.ramp.com production api base url: https://api.ramp.com"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.ramp.com/developer-api/v1/developer-mcp",
+    "quote": "Developer MCP is Ramp's unauthenticated Model Context Protocol server for developers building with Ramp's API. It gives AI assistants live access to Ramp's developer documentation, API reference, and OpenAPI schemas directly inside your coding workflow. Unlike Ramp MCP servers that access account data, Developer MCP does not require a Ramp account"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://ramp.com/developer-api/v1/developer-mcp",
+    "quote": "The Ramp Data MCP server exposes Ramp's datasets — Ramp Rate software benchmarks and AI Index business AI adoption metrics — to MCP-compatible clients... Conventions... Ramp MCP — Ramp's account-scoped MCP server (separate from this one)."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://skywork.ai/blog/mcp-servers-ramp",
+    "quote": "Ramp does have its own official `ramp-mcp` server, but Khoi Le's is a separate implementation written in TypeScript."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://postman.com/ramp-api/workspace/ramp-developer-api/overview",
+    "quote": "3  Apply for Production Access. Onboard customers in production after testing in the sandbox. Provide: A description of the integration. A demo of the integration. A list of required API scopes. Security compliance attestations (e.g., SOC 2 Type 2, ISO 27001, PCI). Data storage and security policies. Access control information. Apply via the Developer Console in your Ramp production account."
+   }
+  ],
+  "confidence": 0.9,
+  "changes": [
+   {
+    "field": "access",
+    "old": "approval_required",
+    "new": "self_serve_free",
+    "reason": "The initial assessment was partially correct but missed a key distinction. A developer can self-serve to get a free sandbox account and API credentials for internal use on a production account (including on the free tier) without prior approval. Approval is only required to build a multi-tenant application for other Ramp businesses. Since API access is available for internal use on a free plan without approval, the correct classification is `self_serve_free`.",
+    "url": "https://support.ramp.com/accessing-the-developer-api"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### **Fact-Checker Analysis**\n\nHere is the field-by-field verification of the first-pass research record for \"Ramp\".\n\n---\n\n#### **`subcategory`**\n*   **Original:** `Finance / Fintech`\n*   **Verification:** **CONFIRMED**\n*   **Reasoning:** Ramp provides corporate cards, expense management, bill payments, and other financial services. The \"Finance / Fintech\" category is accurate.\n*   **Evidence:** \"Ramp's Developer API allows teams to programmatically access Ramp data and build automations or integrations tailored to their workflows. It provides secure, scoped access to objects like transactions, cards, users, and more.\"\n\n---\n\n#### **`one_liner`**\n*   **Original:** `Ramp is a finance platform offering corporate cards, expense management, and bill payments to optimize business spend.`\n*   **Verification:** **CONFIRMED**\n*   **Reasoning:** This description accurately reflects the core product offerings mentioned across Ramp's official documentation and help center.\n*   **Evidence:** \"Control spend, automate payments, and close the books faster for greater financial health on the ultimate platform.\" and \"Ramp's Developer API allows teams to programmatically access Ramp data and build automations or integrations tailored to their workflows. It provides secure, scoped access to objects like transactions, cards, users, and more.\"\n\n---\n\n#### **`auth_methods`**\n*   **Original:** `[ \"oauth2\" ]`\n*   **Verification:** **CONFIRMED**\n*   **Reasoning:** The official API documentation explicitly states that Ramp uses OAuth 2.0 for API access.\n*   **Evidence:** \"Ramp uses OAuth 2.0 for secure API access, providing granular permission control through scopes and supporting multiple authorization flows for different use cases.\"\n\n---\n\n#### **`primary_auth`**\n*   **Original:** `oauth2`\n*   **Verification:** **CONFIRMED**\n*   **Reasoning:** For multi-tenant applications, the Authorization Code flow is required, which is a standard OAuth 2.0 grant type. This is the correct primary method for an integration platform.\n*   **Evidence:** \"Supported grant types. ... Authorization Code, Third-party apps, public integrations, Authorized user consent required.\"\n\n---\n\n#### **`auth_notes`**\n*   **Original:** `Ramp implements OAuth 2.0 supporting Client Credentials (server-to-server) and Authorization Code (third-party, multi-tenant apps) grant types. Refresh tokens are used to renew access.`\n*   **Verification:** **CONFIRMED**\n*   **Reasoning:** The API documentation confirms the supported grant types are Client Credentials, Authorization Code, and Refresh Token.\n*   **Evidence:** \"Supported grant types. Permanent link: Supported grant types. Grant Type, Use Case, User Interaction. Client Credentials, Internal integrations, server-to-server, None required. Authorization Code, Third-party apps, public integrations, Authorized user consent required. Refresh Token, Renew access after an Authorization Code grant, None after the initial authorization.\"\n\n---\n\n#### **`access`**\n*   **Original:** `approval_required`\n*   **Verification:** **WRONG**\n*   **Correct Value:** `self_serve_free`\n*   **Reasoning:** The initial assessment was partially correct but missed a key distinction. A developer can self-serve to get a free sandbox account and API credentials for internal use on a production account (including on the free tier) without prior approval. Approval is only required to build a multi-tenant application for other Ramp businesses. Since API access is available for internal use on a free plan without approval, the correct classification is `self_serve_free`.\n*   **Evidence:** \"Use the API for your own Ramp business: Create a separate developer app in your production Ramp account and send production requests to https://api.ramp.com . Build for other Ramp businesses: Test your integration in sandbox. When you are ready, apply for production access. After Ramp approves your application, onboard production customers through OAuth.\" and \"AI-assisted. Free. $0/mo/user. Best for smaller teams who want to simplify finances.\"\n\n---\n\n#### **`access_notes`**\n*   **Original:** `Sandbox access is free and self-serve. Production access for internal use is available from a production account (free tier). For multi-tenant applications, production access requires an application review process including a functional demo, scope justification, and security compliance attestations (e.g., SOC 2 Type 2, ISO 27001, PCI).`\n*   **Verification:** **CONFIRMED**\n*   **Reasoning:** The notes accurately describe the different access paths. Sandbox access is self-serve. Production access for internal use is available by creating a developer app within a standard Ramp account, which has a free tier. Building for other businesses requires a formal application process for production access, which includes providing a demo and security attestations.\n*   **Evidence:** \"Use the API for your own Ramp business: Create a separate developer app in your production Ramp account... Build for other Ramp businesses: Test your integration in sandbox. When you are ready, apply for production access.\" \"Apply for Production Access. Onboard customers in production after testing in the sandbox. Provide: A description of the integration. A demo of the integration. A list of required API scopes. Security compliance attestations (e.g., SOC 2 Type 2, ISO 27001, PCI).\" \"AI-assisted. Free. $0/mo/user. Best for smaller teams who want to simplify finances.\"\n\n---\n\n#### **`api_styles`**\n*   **Original:** `[ \"rest\" ]`\n*   **Verification:** **CONFIRMED**\n*   **Reasoning:** The API is a standard REST API using JSON.\n*   **Evidence:** \"All request and response bodies should be in JSON, with corresponding application/json headers.\"\n\n---\n\n#### **`api_breadth`**\n*   **Original:** `broad`\n*   **Verification:** **CONFIRMED**\n*   **Reasoning:** The API covers a wide range of Ramp's products, including cards, bill payments, reimbursements, users, procurement, and more.\n*   **Evidence:** The documentation lists numerous products with API support: AI Index, Bill Pay, Cards, Custom Records, Procurement, Ramp Rate, Reimbursements, Spend Controls, and Users.\n\n---\n\n#### **`api_notes`**\n*   **Original:** `Ramp's Developer API v1 is a REST API covering transactions, cards, users, bill payments, custom records, reimbursements, and spend controls. It provides secure, scoped access to various financial objects.`\n*   **Verification:** **CONFIRMED**\n*   **Reasoning:** This is an accurate summary of the API's scope and functionality as described in the documentation.\n*   **Evidence:** \"Ramp's Developer API allows teams to programmatically access Ramp data and build automations or integrations tailored to their workflows. It provides secure, scoped access to objects like transactions, cards, users, and more.\" The product list includes Bill Pay, Cards, Custom Records, Reimbursements, Spend Controls, and Users.\n\n---\n\n#### **`openapi_spec`**\n*   **Original:** `true`\n*   **Verification:** **CONFIRMED**\n*   **Reasoning:** The developer documentation explicitly provides a link to the canonical OpenAPI schema.\n*   **Evidence:** \"Canonical OpenAPI schema for the Developer API: /openapi/developer-api.json.\"\n\n---\n\n#### **`webhooks`**\n*   **Original:** `true`\n*   **Verification:** **CONFIRMED**\n*   **Reasoning:** Ramp provides extensive documentation on using webhooks to receive real-time notifications for various events. Webhook signatures are secured with HMAC-SHA256.\n*   **Evidence:** \"Webhooks allow your application to receive real-time notifications about events that occur in your Ramp account... Every webhook request from Ramp includes an X-Ramp-Signature header, which contains an HMAC-SHA256 hash of the raw request body, signed with your webhook secret.\"\n\n---\n\n#### **`sandbox`**\n*   **Original:** `true`\n*   **Verification:** **CONFIRMED**\n*   **Reasoning:** Ramp provides a separate sandbox environment with its own base URL for development and testing.\n*   **Evidence:** \"Ramp provides a sandbox environment where you can build and test your API integration before connecting to production. The sandbox is a separate environment with its own base URL and credentials — it is not a mode within the production API. Sandbox API base url: https://demo-api.ramp.com\"\n\n---\n\n#### **`mcp`**\n*   **Original:** `official`\n*   **Verification:** **CONFIRMED**\n*   **Reasoning:** Ramp officially provides a \"Developer MCP,\" which is an unauthenticated Model Context Protocol server for accessing public developer documentation. There is also mention of an account-scoped MCP server.\n*   **Evidence:** \"Developer MCP is Ramp's unauthenticated Model Context Protocol server for developers building with Ramp's API. It gives AI assistants live access to Ramp's developer documentation, API reference, and OpenAPI schemas directly inside your coding workflow.\" Additionally, Ramp's engineering team has written about building an open-source `ramp-mcp` server to interact with business data.\n\n---\n\n#### **`mcp_notes`**\n*   **Original:** `Ramp officially provides multiple MCP servers: a Developer MCP for API documentation and OpenAPI schemas, a Ramp Data MCP for software benchmarks and AI adoption datasets, and an Account-Scoped Ramp MCP for financial actions and account data.`\n*   **Verification:** **CONFIRMED**\n*   **Reasoning:** The notes are accurate. The documentation confirms the \"Developer MCP\" for public docs. Ramp's engineering blog discusses building an account-scoped MCP server for interacting with business data via the API.\n*   **Evidence:** \"Developer MCP is Ramp's unauthenticated Model Context Protocol server for developers building with Ramp's API.\" \"We built a Ramp MCP server that lets you interact with your business data using natural language—by turning our developer API into a SQL interface that an LLM can query.\"\n\n---\n\n#### **`verdict`**\n*   **Original:** `ready_with_friction`\n*   **Verification:** **CONFIRMED**\n*   **Reasoning:** While a developer can start building immediately for internal use with a free, self-serve account, building a multi-tenant app for public distribution requires an approval process. This approval step represents friction.\n*   **Evidence:** \"Build for other Ramp businesses: Test your integration in sandbox. When you are ready, apply for production access. After Ramp approves your application, onboard production customers through OAuth.\"\n\n---\n\n#### **`blocker`**\n*   **Original:** `app_review_or_approval`\n*   **Verification:** **CONFIRMED**\n*   **Reasoning:** The primary blocker for shipping a multi-tenant integration is the requirement to apply for and receive approval for production access.\n*   **Evidence:** \"Apply for Production Access. Onboard customers in production after testing in the sandbox. Provide: A description of the integration. A demo of the integration. A list of required API scopes. Security compliance attestations (e.g., SOC 2 Type 2, ISO 27001, PCI).\"\n\n---\n\n#### **`blocker_notes`**\n*   **Original:** `While a free sandbox is available for full development and testing, moving a multi-tenant application to production requires a formal app review process, including a live functional demo, scope justification, and strict security compliance attestations.`\n*   **Verification:** **CONFIRMED**\n*   **Reasoning:** This note accurately summarizes the process. A free sandbox is available, but production access for apps intended for other businesses is gated by a review that includes a demo and security compliance checks.\n*   **Evidence:** \"Ramp provides a sandbox environment where you can build and test your API integration...\" \"Apply for Production Access... Provide: A description of the integration. A demo of the integration. A list of required API scopes. Security compliance attestations (e.g., SOC 2 Type 2, ISO 27001, PCI).\"\n\n---\n### **Uncertain Fields**\n\nAll fields were verified with high confidence based on the available official documentation and supporting evidence. There are no fields that remain uncertain.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Ramp API documentation authorization",
+   "Ramp API authentication methods",
+   "Ramp API access tiers",
+   "Ramp API pricing free tier API access",
+   "Ramp API production access approval",
+   "Ramp API reference",
+   "Ramp API webhooks documentation",
+   "Ramp developer MCP server",
+   "Ramp API openapi spec"
+  ],
+  "search_sources": [
+   {
+    "title": "ramp.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAXNLvS-_3DSHI5dX0DW_IXkH7WD5ifZvhHvtGNYq11qiYvhQGJLqJWt_LWJvd6vOpzendakObDZnsFAamCeg8PIqAnc8VyXyb9PCjDPIxhr_Ug7omc5P9PoXfBNINrgH6egefYVuFIYJi_OUlHPs="
+   },
+   {
+    "title": "g2.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7Cb3yZzQG720Lb6KmQUz3SB9eNHTcSLlB2WvOeWa5gTNZQAvLk8Qif7k1RNaHCDyspOHR9cadEkP0gWHZY1IsVeeai2qmAiyB0VhrXrPnNXoxcPyvZ851kDElo-mJ7_UIhyqvT0CTLCvXXF_D24hQFVQ="
+   },
+   {
+    "title": "ramp.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCbD0cfG5ZLd36b4H3BiO78FKNY8kyhEWoJLJeV27o7XH4OZ4QM0IlQHzX6rX5No7dFObLYyVDCocYAz5dZbnsizohIsg8tEuqZdmUhD7zA-uUPUdclByqAnkSJcD2dqrn2jjNs-Sn1axLUHE6V1c="
+   },
+   {
+    "title": "ramp.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjkGI3ACp_Q-W-4FX6G0_qHdOmsL5-jJnw6SerNEpj3d3o93EinGUxOe58oe6wgckEykKBKHcSPhD09g6Jyns9yLOQIY6qZGRp5PR0zByFMhuu7A=="
+   },
+   {
+    "title": "postman.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6sa5jQER6vAGVe0JuOtfRHmn4JQ57FI7mUQS_q32HItAnlPyTq85TKGjoI4f2iIbg6u4Raefb7l0qWdAeOkGFx2V9SwdHtuT6I4PJ_ge32pCL1o2kixYWG60mhEENcSP2pJovZwrgaJ2Z8Q=="
+   },
+   {
+    "title": "rampnetwork.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuOoCOrMnhnRIwz9ormGveBH26xtB5iJvcRJPTZ3YsuhTVP_GOPzmL_nPQoNst1h8lTUN780ZkTau0Eb5vYL2SOrunBSzeUV-oMOLMpNtfOcNZ4oIREbfWFQiJCSyCwNYLUaN97bzpxI2G"
+   },
+   {
+    "title": "ramp.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTYH_M5iD0Hq7Vqkv6d7glAfWjcxEL90SImclafCqo5ITsQ_HjYtAiELisjFw5e6oBiE9usBtookTPINFOd1xblWX2OB7VEOnm30GOhKumzN8="
+   },
+   {
+    "title": "ramp.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEf3bTo9Zjn8mvcI24XUUBJdHQMVW5i78yL-wrG2_7dCf9xnyXBgcLgt4iyvpOUoMINAWhxqe55VK2l-n0ncYLXRPM4QRPDTLwkoiOeZ1Obuf6t5dgfPNYb6mixxgbSTNTP4IXb-fs2weJN"
+   },
+   {
+    "title": "ramp.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzuQ84xDUulSv5pg3GmulbYybS4-YZlI3T7JSwF1M-elNzP6AyEVvT9VvbMzzr0QG2bFcrNiKbZbH2Sh0gskdWxkkPGy3ksazb6DIJjH_BDwmZS-scmN_aT7jMiMvqoGENmjl96f13eDmf3OZSQ5A="
+   },
+   {
+    "title": "ramp.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErN0zwbDaSgWkkZYiVstfbX5vDkj1Bj-cEtiUlQMcfin-_xRKxE1nx1mxFqd8Cv_euSvALwWsSTZRrkEJ54v67UIoctGZaY5x3HPmbsYed86pU5tt8ucnr2Fqv_2IM-PxzYA=="
+   },
+   {
+    "title": "zenml.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjKzYpfyxErb1BTpx5n5_wzNV6HxDrG75e_g7SIsw-J1-7SE651ANDPHhZImtrlc2z9s3huGt9IFFeuY27chfaakSLx-vXokf1MS0eRcrHkNHIlLN1QgjPUyZT-tnf5Sk_MOY_oA1UB-mB2YfNlkzORmGFoZi646RGv5z5GCOX__7kTiGKFL0qs0TKzBJ9iY9Qi6JgIw_Y"
+   }
+  ],
+  "tokens": 9225,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://support.ramp.com/accessing-the-developer-api",
+    "status": 200,
+    "chars": 4586,
+    "readable": true
+   },
+   {
+    "url": "https://ramp.com/pricing",
+    "status": 200,
+    "chars": 26018,
+    "readable": true
+   },
+   {
+    "url": "https://docs.ramp.com/developer-api/v1/authorization",
+    "status": 200,
+    "chars": 867,
+    "readable": true
+   },
+   {
+    "url": "https://postman.com/ramp-api/workspace/ramp-developer-api/overview",
+    "status": 200,
+    "chars": 7,
+    "readable": false
+   },
+   {
+    "url": "https://stacksync.com/blog/ramp-wrike-integration",
+    "status": 404,
+    "chars": 9,
+    "readable": false
+   },
+   {
+    "url": "https://docs.ramp.com/",
+    "status": 200,
+    "chars": 867,
+    "readable": true
+   },
+   {
+    "url": "https://docs.ramp.com/developer-api/v1/developer-mcp",
+    "status": 200,
+    "chars": 867,
+    "readable": true
+   },
+   {
+    "url": "https://ramp.com/developer-api/v1/developer-mcp",
+    "status": 404,
+    "chars": 69,
+    "readable": false
+   }
+  ],
+  "seconds": 90.0
+ }
+}

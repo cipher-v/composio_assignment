@@ -1,0 +1,225 @@
+{
+ "app": {
+  "id": 67,
+  "name": "Snowflake",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "docs.snowflake.com"
+ },
+ "record": {
+  "subcategory": "Data Platform",
+  "one_liner": "Cloud-based data platform for storage, processing, analytics, and AI/ML.",
+  "auth_methods": [
+   "oauth2",
+   "jwt",
+   "bearer_token",
+   "other"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Snowflake OAuth (built-in authorization server) or External OAuth (third-party identity providers). Also supports Key Pair Authentication (JWT), Programmatic Access Token (PAT), and Workload Identity Federation.",
+  "access": "self_serve_trial",
+  "access_notes": "30-day free trial with $400 in usage credits. After trial or credit exhaustion, a paid consumption-based plan is required. OAuth credentials require tenant admin to execute SQL commands to create a security integration and retrieve client_id/client_secret.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extremely broad REST APIs covering resource management (accounts, users, roles, warehouses, databases, schemas, tables, views, stages, pipes) and AI/ML capabilities (Cortex Embed, Inference, Search).",
+  "openapi_spec": true,
+  "webhooks": false,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Official Snowflake-managed MCP server runs inside the Snowflake account, exposing Cortex Analyst, Cortex Search, and raw SQL execution to AI agents.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "Each customer (tenant) must manually register the integration platform as a custom OAuth client within their own Snowflake environment by executing SQL commands to create a security integration and then retrieve tenant-specific client_id and client_secret.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.snowflake.com/en/pricing-options/",
+    "quote": "snowflake pricing we keep pricing simple with a consumption-based pricing model... a fully managed product delivers simplicity and better tco snowflake takes care of infrastructure management and provides the ease-of-use"
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+    "quote": "When you send a request, the request must include authentication information using either of the following: Using key pair authentication. Using OAuth. Using a programmatic access token (PAT) Using workload identity federation."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.snowflake.com/en/user-guide/oauth-intro",
+    "quote": "Snowflake OAuth uses Snowflake's built-in OAuth service to provide OAuth-based authentication... To use OAuth with your custom application, you need to register it with Snowflake by creating a security integration and then configure your application to call Snowflake's OAuth endpoints"
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.snowflake.com/en/user-guide-getting-started",
+    "quote": "A Snowflake trial account lets you evaluate/test Snowflake's full range of innovative and powerful features with no cost or contractual obligations... The trial continues for 30 days (from the sign-up date) or until you've depleted your free usage balance, whichever occurs first."
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.snowflake.com/en/user-guide/oauth-intro",
+    "quote": "create security integration integration_name type = oauth enabled = true oauth_client = custom... Run the following describe command to obtain the client ID... Run the following select command to obtain the client secret. select SYSTEM$SHOW_OAUTH_CLIENT_SECRETS( integration_name );"
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+    "quote": "The Snowflake REST APIs suite of APIs enables developers to build end-to-end automation and integration with Snowflake resources. These REST APIs are compliant with the OpenAPI specification... The Snowflake REST APIs supports the following resources through the corresponding APIs... Working with accounts... Working with users, roles, and privileges... Managing virtual warehouses... Leveraging AI/ML."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+    "quote": "You can access the Snowflake REST APIs OpenAPI specifications in the snowflake-rest-api-specs Git repository."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.snowflake.com/en/user-guide/api-authentication",
+    "quote": "Specifies the URL for the webhook. The URL must use the https:// protocol. You can only specify the following URLs: URLs for Slack webhooks... URLs for Microsoft Teams webhooks... URLs for PagerDuty webhooks... URLs for Jira automation webhooks."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.snowflake.com/en/developer-guide/snowflake-ml/quickstart",
+    "quote": "The Snowflake-managed MCP server allows AI agents to securely retrieve data from Snowflake accounts without needing to deploy separate infrastructure. The Snowflake MCP Server includes Cortex Analyst and Cortex Search as tools on the standards-based interface."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Research Notes\n\n#### 1. What the Product Does\nSnowflake is a cloud-based data platform (AI Data Cloud) that provides fully managed data storage, processing, analytics, and AI/ML capabilities. It abstracts away infrastructure management, allowing users to run large-scale queries, build data pipelines, and leverage built-in AI models.\n* **Source URL:** `https://www.snowflake.com/en/pricing-options/`\n* **Verbatim Quote:** `\"snowflake pricing we keep pricing simple with a consumption-based pricing model... a fully managed product delivers simplicity and better tco snowflake takes care of infrastructure management and provides the ease-of-use\"`\n\n#### 2. Public API Authentication Methods & Multi-Tenant Integration\nThe Snowflake REST APIs and SQL API support multiple authentication mechanisms:\n* **Key Pair Authentication:** Uses a public/private key pair to sign a JWT.\n* **OAuth:** Supports both Snowflake OAuth (built-in authorization server) and External OAuth (third-party identity providers like Okta or Azure).\n* **Programmatic Access Token (PAT):** Static personal tokens.\n* **Workload Identity Federation:** For cloud-to-cloud trust relationships.\n* **Source URL:** `https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication`\n* **Verbatim Quote:** `\"When you send a request, the request must include authentication information using either of the following: Using key pair authentication. Using OAuth. Using a programmatic access token (PAT) Using workload identity federation.\"`\n\n**Multi-Tenant Choice:** A multi-tenant integration platform would use **`oauth2`** (specifically Snowflake OAuth via the Authorization Code flow). However, because Snowflake lacks a centralized global public OAuth app marketplace, each tenant must register the integration platform as a custom client within their own Snowflake environment.\n* **Source URL:** `https://docs.snowflake.com/en/user-guide/oauth-intro`\n* **Verbatim Quote:** `\"Snowflake OAuth uses Snowflake's built-in OAuth service to provide OAuth-based authentication... To use OAuth with your custom application, you need to register it with Snowflake by creating a security integration and then configure your application to call Snowflake's OAuth endpoints\"`\n\n#### 3. Credential Acquisition & Cost\n* **Cost Tier:** `self_serve_trial`. Snowflake does not offer a permanent free tier. Anyone can sign up for a 30-day free trial that includes $400 in usage credits. After the trial expires or credits are exhausted, users must transition to a paid consumption-based plan (Standard, Enterprise, Business Critical, or VPS).\n* **Source URL:** `https://docs.snowflake.com/en/user-guide-getting-started` (via subpage `trial-accounts`)\n* **Verbatim Quote:** `\"A Snowflake trial account lets you evaluate/test Snowflake's full range of innovative and powerful features with no cost or contractual obligations... The trial continues for 30 days (from the sign-up date) or until you've depleted your free usage balance, whichever occurs first.\"`\n* **How to Get Credentials:** To obtain OAuth credentials, a developer or tenant administrator must log into their Snowflake account and execute a SQL command to create a security integration. They then query the system to retrieve the tenant-specific `client_id` and `client_secret`.\n* **Source URL:** `https://docs.snowflake.com/en/user-guide/oauth-intro` (via subpage instructions)\n* **Verbatim Quote:** `\"create security integration integration_name type = oauth enabled = true oauth_client = custom... Run the following describe command to obtain the client ID... Run the following select command to obtain the client secret. select SYSTEM$SHOW_OAUTH_CLIENT_SECRETS( integration_name );\"`\n\n#### 4. API Style & Technical Details\n* **API Style:** REST (Snowflake REST APIs and SQL API).\n* **Breadth:** Extremely broad. Endpoints cover resource management (accounts, users, roles, warehouses, databases, schemas, tables, views, stages, pipes) and AI/ML capabilities (Cortex Embed, Inference, and Search).\n* **Source URL:** `https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication` (via REST API overview)\n* **Verbatim Quote:** `\"The Snowflake REST APIs suite of APIs enables developers to build end-to-end automation and integration with Snowflake resources. These REST APIs are compliant with the OpenAPI specification... The Snowflake REST APIs supports the following resources through the corresponding APIs... Working with accounts... Working with users, roles, and privileges... Managing virtual warehouses... Leveraging AI/ML.\"`\n* **OpenAPI Spec:** Yes, Snowflake provides official OpenAPI specifications hosted in a public Git repository (`snowflake-rest-api-specs`).\n* **Source URL:** `https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication` (via REST API overview)\n* **Verbatim Quote:** `\"You can access the Snowflake REST APIs OpenAPI specifications in the snowflake-rest-api-specs Git repository.\"`\n* **Webhooks:** Snowflake supports outbound webhooks via notification integrations, but they are strictly restricted to pre-approved external systems (Slack, Microsoft Teams, PagerDuty, Jira, ServiceNow). It does not natively support arbitrary incoming webhooks or arbitrary outbound webhook destinations.\n* **Source URL:** `https://docs.snowflake.com/en/user-guide/api-authentication` (via notification integrations)\n* **Verbatim Quote:** `\"Specifies the URL for the webhook. The URL must use the https:// protocol. You can only specify the following URLs: URLs for Slack webhooks... URLs for Microsoft Teams webhooks... URLs for PagerDuty webhooks... URLs for Jira automation webhooks.\"`\n* **Sandbox:** No permanent free developer sandbox exists; testing relies on the 30-day free trial account.\n\n#### 5. Model Context Protocol (MCP) Servers\n* **Availability:** `official`. Snowflake publishes and manages an official, native MCP server that runs directly inside the Snowflake account. It exposes tools such as Cortex Analyst, Cortex Search, and raw SQL execution to AI agents.\n* **Source URL:** `https://docs.snowflake.com/en/developer-guide/snowflake-ml/quickstart` (via Snowflake MCP announcements)\n* **Verbatim Quote:** `\"The Snowflake-managed MCP server allows AI agents to securely retrieve data from Snowflake accounts without needing to deploy separate infrastructure. The Snowflake MCP Server includes Cortex Analyst and Cortex Search as tools on the standards-based interface.\"`\n\n#### 6. Buildability Verdict\n* **Verdict:** `ready_with_friction`\n* **Main Blocker:** `per_customer_admin_setup`\n* **Explanation:** While Snowflake provides comprehensive REST APIs, an official OpenAPI spec, and a self-serve trial, it cannot be shipped as a seamless \"one-click\" multi-tenant integration. Because Snowflake lacks a centralized global OAuth app registry, every single customer (tenant) must have an account administrator manually execute a `CREATE SECURITY INTEGRATION` SQL statement within their own Snowflake console to register the integration platform's redirect URI, and then copy-paste their unique `client_id` and `client_secret` back into the integration platform.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"Snowflake\" REST API authentication oauth",
+   "\"Snowflake\" OpenAPI spec swagger",
+   "\"Snowflake\" webhooks",
+   "\"Snowflake\" MCP server",
+   "\"Snowflake\" \"security integration\" oauth multi-tenant",
+   "\"Snowflake\" public oauth app marketplace",
+   "\"Snowflake\" \"CREATE SECURITY INTEGRATION\" oauth client id",
+   "\"Snowflake\" free trial duration credits"
+  ],
+  "search_sources": [
+   {
+    "title": "snowflake.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4ucohkLo3MHVdksPqkR3SEnl6g3IrvIpL0FVT9bxjStyLHb2MsD2M2E9AcF1Zk0xocWmcLjTL2k7hqx_G4sLP0sv2ayMOoq5zrjqwvuLUiW68Be9U4jlreFdh1hiwqWKw3tkGl50ad5tm-iI4l7z7"
+   },
+   {
+    "title": "snowflake.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETLsVVG46bA2fKLBOgRZX1LpRO-LJinseedziBnJD-yL9HPc6DQfzSLUANg5bJnbzq2bblUBeTjMaFO0eIPFeFvIrlau2L12BQr7A_wyQvVXbpJGfA0U2rNdbSzKJYfXSE_D6490360DS4tkrfIC8GYLziSRnPI0liE-lM"
+   },
+   {
+    "title": "progress.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFub1KFmqR44hYvOG2ankRVc6BeeQfJNgoRT2Vlztlo4pzO_cTX1cf6hpHu7lt9c0IqrKnuVcEiT2gN3TZMsEEzXuz2uvmb5zirIkKVlTHeyjowtGhJnlrEwrOGnizQ70SBmUtN39NADinFzbf5bTbHryAuy-f9-V_INPNLXuMhrGz9E74h3xIzMZq3AZ70y9k7wgiztT4FLOCx9uwzxw1d6w7nvhORb9iPbvJdQfyU01Y2"
+   },
+   {
+    "title": "yukidata.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgHP1g3menfWj5YrJy8odNN9oq0DNj-y2yRWL979RqnkOsEMueWGNLS8Xu2Rniu9crgTj2D7SebhCwDrsLGhkUi7HSzL0sFX7AuDLyTPKdx55w4HeplygjBI6q8IO8tCwmq1V1Ce9Cv7G_z5sZqzOtC6I="
+   },
+   {
+    "title": "snowflake.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHM91yV8JLapjFR6B3YngZXEj4073sZPiDmxgF8ucWkT1Sr3hvcGF0QcLa_EcoK8X_h_ad4a1WWZJ_kbn3Ad8ul78VJFXn6xaD-mrHnj-S1RYf15zAX1tHLsSnBEk5Ux07A1y5w0RkrMfItWz7A4MD9j7r_DWApkAiv6tFrzn1vkg=="
+   },
+   {
+    "title": "cloudzero.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0koulPSgSjIJH7P6D7JBG9NS1kQN_dI9Pe4CQdH0FYya9WQ3SP3VlmsAX_CvWW11VyZWSnLyOYOEtfmpb03I6usAJCUde7SXM8IkOwOwkrgDz20CYubuxI8gp3BA7ZiEESt3aiL7V3uc8lbI="
+   },
+   {
+    "title": "reddit.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCeLhRiIJh626AmIf6MTkaawxhvUXQ5w2BcLr0x_AsiiLPBUln3lOLkmx_16DzL-BPaZkIer0FyyNBlSZ8xjcHl8LTAw_tkZ3tg2V_GzrVH_ClhBqaPozLuRh6tz8SHTNs3TlaPp5wi-LjLcqJJ-4X7_ZsZRaV3UMGFRNSWZVxpmgcDPDrGsu5A_xQCsFL6oJ0Y-L4_TnD6R4Ln1dt_S2P3A=="
+   },
+   {
+    "title": "cloudchipr.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjz8qTghRcFYdxcQ0N2Cy3yKjQ0Zp448oNInA1sw2nCBm2oprO2xHnx0Dsor8Qd0KvcIU_uzszzr-lujypZ-_JrRe-R457blvfy9cTx-jy6TQiifPs_b7DEpNI2rxzeyvMprjhuxdjGg=="
+   },
+   {
+    "title": "snowflake.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtKZ239Wn0OxyUQchAW3aRc83Lotlx2usVwTEtC6a6v_4HORX9GzclUK3t7rsfNofQNgu914hqWbeYc20Zx3kLgz-5HIsOkGzZF7WwOls3-WwxozMwiv85dwLZ-SpgPY-veYR_f4OuPA=="
+   },
+   {
+    "title": "snowflake.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-g6F6Q3J_oLBHslpqQjWYb3c0CfOe_CqTyGbuj41jF0oKEQc0DDmtr6QzKP9_YShfJiA-9Nzn74mXjXea9lgQBy9Hi4L6QGTKVPIVqw9dLO3tWVVDhfw21whjP_zRdz0BMkcxJN5GA9UEMKmlfuo-D-UGK-X9QQ=="
+   },
+   {
+    "title": "snowflake.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHm9OeiAuBnPB_UQv94G79_sO5h11z0ewipwcr5I_7qPfWAdZCDm8k3quHr65kUbPxHmWpEGOY1H9gRM2Fk8c2O4_FbpDgcxJ5Ni3gSoEb-lWcY1F8RlKOC6EG2ElzyfhcPAWTxqL6zwOXXq-JjTkqNivmqXYwga0aRnyPpoRzqFFr1d6gz_1YmK_IR"
+   },
+   {
+    "title": "snowflake.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHloWVxnyQ43bhu8o4u2-vqP3XZH6x88_UfeJs4hFsktupE9BQYmkdledLjXq8vM0XhqK8cRXbcBYaBqaUR3GlZuqtB3HdhAb4zWo4VSx3wJQdBNXC2SoSOrDvRoGlEn558pgVdgWxDbitgni1hW5dMU4Rh02CRaPEfYHqe6mUjXhBBfkuOMFUNaQ0MeAv8ZsLsZPfK6w=="
+   }
+  ],
+  "tokens": 8388,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    " Snowflake authentication API keys OAuth documentation",
+    " Snowflake getting started quickstart documentation",
+    " Snowflake pricing plans API access",
+    " Snowflake API reference index",
+    "Snowflake MCP server"
+   ],
+   "candidates": 0,
+   "live_urls": [
+    "https://docs.snowflake.com/en/developer-guide/snowflake-ml/quickstart",
+    "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+    "https://docs.snowflake.com/en/user-guide/api-authentication",
+    "https://docs.snowflake.com/en/user-guide/oauth-intro",
+    "https://docs.snowflake.com/en/getting-started-for-users",
+    "https://docs.snowflake.com/en/user-guide-getting-started",
+    "https://www.snowflake.com/en/pricing-options/",
+    "https://www.snowflake.com/en/developers/guides/cortex-rest-api-billing-cost/",
+    "https://mcpservers.org/servers/sgriffin-magnoliacap/mcp-snowflake-server-readonly"
+   ],
+   "bad_candidates": [],
+   "pages_read": [
+    {
+     "url": "https://docs.snowflake.com/en/developer-guide/snowflake-ml/quickstart",
+     "status": 200,
+     "chars": 6230,
+     "readable": true
+    },
+    {
+     "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+     "status": 200,
+     "chars": 11310,
+     "readable": true
+    },
+    {
+     "url": "https://docs.snowflake.com/en/user-guide/api-authentication",
+     "status": 200,
+     "chars": 6459,
+     "readable": true
+    },
+    {
+     "url": "https://docs.snowflake.com/en/user-guide/oauth-intro",
+     "status": 200,
+     "chars": 6434,
+     "readable": true
+    },
+    {
+     "url": "https://docs.snowflake.com/en/getting-started-for-users",
+     "status": 200,
+     "chars": 1500,
+     "readable": true
+    },
+    {
+     "url": "https://docs.snowflake.com/en/user-guide-getting-started",
+     "status": 200,
+     "chars": 4314,
+     "readable": true
+    },
+    {
+     "url": "https://www.snowflake.com/en/pricing-options/",
+     "status": 200,
+     "chars": 4478,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 297.2
+ }
+}

@@ -1,0 +1,267 @@
+{
+ "app": {
+  "id": 32,
+  "name": "Meta Ads",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "developers.facebook.com/docs/marketing-apis"
+ },
+ "record": {
+  "subcategory": "Advertising",
+  "one_liner": "Meta Ads (Marketing API) provides programmatic control over advertising operations across Facebook and Instagram.",
+  "auth_methods": [
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "User Access Tokens (OAuth 2.0) for individual users, System User Tokens for server-to-server integrations. Multi-tenant platforms would use OAuth 2.0 (Facebook Login for Business).",
+  "access": "approval_required",
+  "access_notes": "Access is free, but requires registering a Meta Developer Account, creating a Business-type app, adding 'Marketing API' and 'Facebook Login for Business' products, configuring OAuth, requesting permissions, and passing Meta's App Review and Business Verification for production access.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "RESTful Graph API architecture using nodes, edges, and fields. Covers the entire ad campaign lifecycle: campaigns, ad sets, ads, creatives, custom audiences, insights, and rules.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "community_only",
+  "mcp_notes": "No official MCP server. Community-built options like 'meta-mcp' exist, exposing 77 tools across 24 modules.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "The primary hurdle is the strict and lengthy App Review and Business Verification process required by Meta to transition from Development Access to production-level Standard/Advanced Access. Without this approval, multi-tenant integrations cannot access external users' data, and initial rate limits are too restrictive.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.adstellar.ai/blog/meta-ads-api-integration-pricing",
+    "quote": "The Meta Ads API opens a world of possibilities that Ads Manager simply can't match. Imagine automatically spinning up hundreds of campaign variations based on your best performers, pulling live performance data into custom dashboards..."
+   },
+   {
+    "claim": "general",
+    "url": "https://github.com/attainmentlabs/meta-ads-mcp",
+    "quote": "...covering the entire ad campaign lifecycle — from account discovery and campaign creation to performance analytics and automated optimization rules."
+   },
+   {
+    "claim": "auth",
+    "url": "https://www.adstellar.ai/blog/meta-ads-api-integration-pricing",
+    "quote": "User Access Tokens represent individual Facebook users and expire relatively quickly (about 60 days for long-lived versions)... System User Tokens are the gold standard for server-to-server integrations."
+   },
+   {
+    "claim": "auth",
+    "url": "https://nango.dev",
+    "quote": "This guide shows you how to register your own app with Meta to obtain your OAuth credentials (client ID and client secret) for the Meta Marketing API. These are required to let your users grant your app access to their Meta Marketing API account."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.adstellar.ai/blog/meta-ads-api-integration-pricing",
+    "quote": "meta's marketing api is technically free to access. there are no per-call fees, no usage charges from meta itself."
+   },
+   {
+    "claim": "access",
+    "url": "https://get-ryze.ai",
+    "quote": "Meta Marketing API free tier limitations restrict new developer accounts to Development Access, which provides only 60 quota points with a 300-second rate limit window... Standard Access increases your quota to 9,000 points but requires App Review approval through Meta's developer platform."
+   },
+   {
+    "claim": "access",
+    "url": "https://admanage.ai",
+    "quote": "To access the Meta Marketing API at any meaningful level, apps need to go through Meta's App Review process. This isn't a checkbox, it's a real process where Meta evaluates the app's permissions, use case, and security practices."
+   },
+   {
+    "claim": "api",
+    "url": "https://adlibrary.com",
+    "quote": "The Meta Marketing API is the programmatic interface for everything in Meta Ads Manager. Create campaigns, upload creatives, configure audiences, pull performance data, set automated rules — all of it is accessible via REST endpoints that return JSON."
+   },
+   {
+    "claim": "api",
+    "url": "https://windsor.ai",
+    "quote": "The Marketing API is the foundation for asset management. It treats every element of an account as a node (e.g., a specific campaign) connected by edges (e.g., the ad sets within that campaign)."
+   },
+   {
+    "claim": "api",
+    "url": "https://adamigo.ai",
+    "quote": "Meta webhooks are a tool within the Meta Graph API that sends real-time updates to a specified URL whenever key events occur in your ad account."
+   },
+   {
+    "claim": "api",
+    "url": "https://cometly.com",
+    "quote": "Before going live, test everything in sandbox mode. Meta offers a test environment where you can send events without affecting real ad accounts."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/attainmentlabs/meta-ads-mcp",
+    "quote": "meta-mcp bridges the gap between AI assistants and the Meta Marketing API. It exposes 77 tools across 24 modules, covering the entire ad campaign lifecycle — from account discovery and campaign creation to performance analytics and automated optimization rules."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://admanage.ai",
+    "quote": "Before you write a single line of ad creation code, you need a Meta-approved app set up inside Meta App Manager. This isn't a quick API key signup... The review process can take days to weeks."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Product Capabilities\n* **What the product does**: Meta Ads (via the Marketing API) provides programmatic control over advertising operations across Meta's platforms (Facebook and Instagram). It allows developers to automate campaign planning, creation, asset management, audience targeting, budget adjustments, and retrieve granular performance analytics.\n* **Source**: `https://www.adstellar.ai/blog/meta-ads-api-integration-pricing`\n* **Verbatim Quote**: \"The Meta Ads API opens a world of possibilities that Ads Manager simply can't match. Imagine automatically spinning up hundreds of campaign variations based on your best performers, pulling live performance data into custom dashboards...\"\n* **Source**: `https://github.com/attainmentlabs/meta-ads-mcp`\n* **Verbatim Quote**: \"...covering the entire ad campaign lifecycle — from account discovery and campaign creation to performance analytics and automated optimization rules.\"\n\n---\n\n### Authentication Methods\n* **Available Methods**: \n  * **User Access Tokens**: Obtained via the OAuth 2.0 authorization flow, representing individual Facebook users. Long-lived versions expire in approximately 60 days.\n  * **System User Tokens**: Created within Meta Business Manager for server-to-server integrations; these do not expire.\n* **Multi-Tenant Integration Choice**: A multi-tenant integration platform would use **OAuth 2.0** (User Access Tokens via Facebook Login for Business) to allow external users to securely connect and grant access to their Meta Ads accounts.\n* **Primary Auth**: `oauth2`\n* **Source**: `https://www.adstellar.ai/blog/meta-ads-api-integration-pricing`\n* **Verbatim Quote**: \"User Access Tokens represent individual Facebook users and expire relatively quickly (about 60 days for long-lived versions)... System User Tokens are the gold standard for server-to-server integrations.\"\n* **Source**: `https://nango.dev`\n* **Verbatim Quote**: \"This guide shows you how to register your own app with Meta to obtain your OAuth credentials (client ID and client secret) for the Meta Marketing API. These are required to let your users grant your app access to their Meta Marketing API account.\"\n\n---\n\n### Credential Acquisition & Cost\n* **Access Tier**: `approval_required`\n* **Cost**: Access to the Meta Marketing API is completely free; Meta does not charge subscription or per-call fees.\n* **How to get credentials**:\n  1. Register a Meta Developer Account at `developers.facebook.com`.\n  2. Create a Business-type app in the Meta Developer Dashboard.\n  3. Add the \"Marketing API\" and \"Facebook Login for Business\" products.\n  4. Configure OAuth settings and redirect URIs.\n  5. Request specific permissions (such as `ads_read` and `ads_management`).\n* **Approval/Gating**: New apps default to \"Development Access,\" which restricts usage to development mode and imposes a strict rate limit of 60 quota points per 300 seconds. Moving to production or accessing external users' data requires passing Meta's **App Review** (submitting screenshots, screen recordings, and technical compliance details) and completing **Business Verification**.\n* **Source**: `https://www.adstellar.ai/blog/meta-ads-api-integration-pricing`\n* **Verbatim Quote**: \"meta's marketing api is technically free to access. there are no per-call fees, no usage charges from meta itself.\"\n* **Source**: `https://get-ryze.ai`\n* **Verbatim Quote**: \"Meta Marketing API free tier limitations restrict new developer accounts to Development Access, which provides only 60 quota points with a 300-second rate limit window... Standard Access increases your quota to 9,000 points but requires App Review approval through Meta's developer platform.\"\n* **Source**: `https://admanage.ai`\n* **Verbatim Quote**: \"To access the Meta Marketing API at any meaningful level, apps need to go through Meta's App Review process. This isn't a checkbox, it's a real process where Meta evaluates the app's permissions, use case, and security practices.\"\n\n---\n\n### API Technical Profile\n* **API Style**: REST (Graph API architecture using nodes, edges, and fields).\n* **Breadth**: Extremely broad, covering the entire ad campaign lifecycle (campaigns, ad sets, ads, creatives, custom audiences, insights, and rules).\n* **OpenAPI Spec**: Meta does not officially publish a standard OpenAPI specification for the Marketing API (only independent third-party profiles exist).\n* **Webhooks**: Supported via the Real-Time Updates API / Webhooks, pushing instant HTTP POST notifications for account-level events (e.g., campaign status changes, policy violations, or lead generation).\n* **Sandbox**: Supported via test ad accounts and a test environment to safely run API calls and simulate delivery without spending real budget.\n* **Source**: `https://adlibrary.com`\n* **Verbatim Quote**: \"The Meta Marketing API is the programmatic interface for everything in Meta Ads Manager. Create campaigns, upload creatives, configure audiences, pull performance data, set automated rules — all of it is accessible via REST endpoints that return JSON.\"\n* **Source**: `https://windsor.ai`\n* **Verbatim Quote**: \"The Marketing API is the foundation for asset management. It treats every element of an account as a node (e.g., a specific campaign) connected by edges (e.g., the ad sets within that campaign).\"\n* **Source**: `https://adamigo.ai`\n* **Verbatim Quote**: \"Meta webhooks are a tool within the Meta Graph API that sends real-time updates to a specified URL whenever key events occur in your ad account.\"\n* **Source**: `https://cometly.com`\n* **Verbatim Quote**: \"Before going live, test everything in sandbox mode. Meta offers a test environment where you can send events without affecting real ad accounts.\"\n\n---\n\n### MCP Servers\n* **Status**: `community_only`\n* **Details**: There is no official MCP server published by Meta. However, robust community-built options exist.\n* **Source**: `https://github.com/attainmentlabs/meta-ads-mcp`\n* **Verbatim Quote**: \"meta-mcp bridges the gap between AI assistants and the Meta Marketing API. It exposes 77 tools across 24 modules, covering the entire ad campaign lifecycle — from account discovery and campaign creation to performance analytics and automated optimization rules.\"\n\n---\n\n### Buildability Verdict & Main Blocker\n* **Verdict**: `ready_with_friction`\n* **Main Blocker**: The primary hurdle is the strict and lengthy **App Review** and **Business Verification** process required by Meta to transition from Development Access to production-level Standard/Advanced Access. Without this approval, multi-tenant integrations cannot access external users' data, and the initial rate limits (60 points per 5 minutes) are too restrictive for production automation.\n* **Source**: `https://admanage.ai`\n* **Verbatim Quote**: \"Before you write a single line of ad creation code, you need a Meta-approved app set up inside Meta App Manager. This isn't a quick API key signup... The review process can take days to weeks.\"",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"Meta Marketing API\" app review",
+   "\"Meta Marketing API\" OAuth",
+   "\"Meta Marketing API\" OpenAPI spec",
+   "\"Meta Marketing API\" sandbox webhooks",
+   "\"Meta Marketing API\" official OpenAPI spec github",
+   "\"Facebook Marketing API\" OpenAPI json"
+  ],
+  "search_sources": [
+   {
+    "title": "data365.co",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmIFebUgY5tGj5F0QHjGHVg7fOxlqdIGvfdNIRxPRmdgK6Y30L78Th0v-yektxkSq95dPFkL0QDZrUoj_RWYabYjgV_J2UoV-WcZwDYOtXZ7jy7VbrDLyNXT0TZcGoP-6x"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENeLOjO3NumXGNEdl_EVa_VdpDsCdDULBNJNlICFNdGnPuma_kTYXuh4NV3dU3off9pDGkRTWSCGP4U7ZWR-RbAKtmaSObikQQvNQbtZjlOtux40Vvs66s5fBQiCxdcVSXax5TH2fizylNdh4N6g=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4T0N4R-B_sYwLzkmPkI6xfM7F8lOPQzdQ1pSERG-3Wx8GH91ZxArXaXo07S9w9gI5_b21hmQ2l4tB2dRPdcEbMxRZshUZ5KsdbMBpIdS2zhxMrHO_ixYyBfcV7h8DUKf41Xf7OLbXfiulaJW2pw=="
+   },
+   {
+    "title": "moesif.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGI-vesmtQxQhI6aImASS-dQcdqRzdXdAQ-6bJwyhUT-iFJwS0kQRRfy8wt-3yxQT6olanQPwm47eIMaepa1MJq_KyFUi8uCTnyfD7lHwykif2S1L9uRZqzUfZtPeXpl7nHZuiFIrUyCtkBzW7ThoZN9uyqmgoeerLgRdXvFcuf6p5oA76BY3mL-2nwbCRPaaJpVMSQiVGoswI="
+   },
+   {
+    "title": "cometly.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7F3VaijRcWXRIk4ANfZqhOcXerTdItVd62TTyGDUc6xk8gwqdjlmYfE4CKOm1Tfvy5e_YhCL_AnKOKT0O3nTItdqy4HEzlt2eOqctMSsMNZqGsPNKm20OkpCAnAyMFdSWyeKjHxOSiV6-c8gEdEPRTav3"
+   },
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuPq-eBrSJEdtsLzTGRqwxCo8kINyV_hpIBSJsIjFeW5JUFjmBj-eW2MpB-1twPebtLgklAbO4tMyC_P3r4x-aj2VDRzoVG3X1nLIYNlz3e0JRDt2sGUZPoY7dDs7h"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsDSiU47igoL9ufGJPwpkWmDBu4vMM4gIksKuJPDelRi8THk8WUsoZvxwQRbc9bKG-ZuL5GmI-9w_DNwflS4gos3zNO27mwDZaR-gwEutUtBOSDP_G6Nq6UFlAol5m9FtsHY0iz0dqFfPQDlB_VDEjgu83a_F8"
+   },
+   {
+    "title": "lytics.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjJJyBFQp-SJPkxYt0XrP_jRkeynnIm_e90CgE_m1P-HNFxCDIbUOAblTYUqbVsm0G6Yr9elGD0583uYCUlqjGR3VL05IcyZdEOyZ4NMm6TuZ0lxxbfGdVhLTafg=="
+   },
+   {
+    "title": "adamigo.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7oF7nQBoJotKqUIIWtNnMyWXPbocPftkJJ0Zby0Hq5b8ztoinVAWd1GQI4HbSPnLq9_9a048URJI-ec6aVaBBFZhW2fqyrLSYVNbZuRP1PYlWuv20_P6_B1ALnUhZNa_2zJ67cD1iw0YjWxHWUFICzIYN49Z2qs1UCPaHwhZS6BHh"
+   },
+   {
+    "title": "adstellar.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYzVSsA49YEAV2my8Vp-O0LA8PY8S3FbBYeolviOI3rG4o9jgaymmfpKyaNo0PrPsXqMe_x33ZZLlaWBJRPjga9-ksOfypstxYMJoGP9OJakf11QptAKxnLjyJzK20Ce1jP-bTj_LrXkMlCid9IgrQIZw9hcnIjw=="
+   },
+   {
+    "title": "wevion.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpribF5IRwV0mxqvxV409pMpB4eqr_q6b323oHYuizVASsQRmFFxOyNof9BYLQK117bz6lmMWEOiFoyqz2DQNA3Jz2NWMB_bNIkc9vz-fuTHN3svoyLHYn2TNrbfL04XODkMRCLQB7YNGHyehquwcK2csn1XCPeYgjfGbbQI15"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXvvqqyeounwggvVdNP2HaWa2fsykvsk_pkrHGgg7QdIiRLvNx0Hxty7IlN4UVnCmYfA4hD1lkmxUooFpNaTk9qEPqaRQla1DvgpAumI17TlFEZIvwP0ciAcm6UA9IaG04KNY="
+   },
+   {
+    "title": "scalekit.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcCF33ReJpEQJfr4tik9B8FzgNnfHsiUCIGmhXixNkPBV2plsCz7HgwJSUqnthPAj8JfbmansUXrhrlN1yN1vfnD4D_Ne8aprWs10LRJc9f-vZppAsvRayQmMGAxqSnW8PXhZK0g8QcS0="
+   },
+   {
+    "title": "socket.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWCV4FQGkR5k4Fa-aRGCZ6PPmLPoK0WfB9qxGuHm5K_EgoeE6K5q8nPBycnSvWxQfV58_FdzQn-Jm0iXSznm6wWajmZ0TtlFpFDQy2XoSqxzs1AecN4etkfhIRLO63MUiTxv3d2x8IbnzMHu6FUZANZoy_HiNKCw=="
+   }
+  ],
+  "tokens": 12398,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Meta Ads API authentication developers.facebook.com",
+    "Meta Ads API OAuth developers.facebook.com",
+    "Meta Ads API keys developers.facebook.com",
+    "Meta Ads API getting started developers.facebook.com",
+    "Meta Ads API quickstart developers.facebook.com",
+    "Meta Ads API documentation developers.facebook.com",
+    "Meta Ads API pricing developers.facebook.com",
+    "Meta Ads API plans developers.facebook.com",
+    "Meta Ads developer program developers.facebook.com",
+    "Meta Ads API reference developers.facebook.com",
+    "Meta Ads API documentation index developers.facebook.com",
+    "Meta Ads MCP server",
+    "Meta Ads API MCP server",
+    "developers.facebook.com/docs/marketing-api/authorization",
+    "developers.facebook.com/docs/marketing-api/get-started",
+    "developers.facebook.com/docs/marketing-api/quickstart",
+    "developers.facebook.com/docs/marketing-api/overview/access-tiers",
+    "developers.facebook.com/docs/marketing-api/reference",
+    "Meta Ads MCP server official URL",
+    "Meta Ads MCP server community github"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://meta-ads.mcp.pipeboard.co/",
+    "https://github.com/attainmentlabs/meta-ads-mcp",
+    "https://apis.io/plans/facebook/facebook-plans-pricing/",
+    "https://www.adstellar.ai/blog/meta-ads-api-integration-pricing",
+    "https://www.blotato.com/blog/facebook-api-pricing"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://developers.facebook.com/docs/marketing-api/get-started/authorization",
+     "status": 400
+    },
+    {
+     "url": "https://developers.facebook.com/docs/marketing-api/get-started",
+     "status": 400
+    },
+    {
+     "url": "https://developers.facebook.com/docs/development/platform-features/marketing-api-access-tier",
+     "status": 404
+    },
+    {
+     "url": "https://developers.facebook.com/docs/marketing-api/reference",
+     "status": 400
+    },
+    {
+     "url": "https://mcp.facebook.com/ads",
+     "status": 405
+    },
+    {
+     "url": "https://developers.facebook.com/docs/marketing-api/overview/authorization",
+     "status": 400
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://meta-ads.mcp.pipeboard.co/",
+     "status": 200,
+     "chars": 346,
+     "readable": false
+    },
+    {
+     "url": "https://github.com/attainmentlabs/meta-ads-mcp",
+     "status": 200,
+     "chars": 8634,
+     "readable": true
+    },
+    {
+     "url": "https://apis.io/plans/facebook/facebook-plans-pricing/",
+     "status": 200,
+     "chars": 5442,
+     "readable": true
+    },
+    {
+     "url": "https://www.adstellar.ai/blog/meta-ads-api-integration-pricing",
+     "status": 200,
+     "chars": 24996,
+     "readable": true
+    },
+    {
+     "url": "https://www.blotato.com/blog/facebook-api-pricing",
+     "status": 200,
+     "chars": 34360,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 77.1
+ }
+}

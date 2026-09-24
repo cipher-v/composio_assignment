@@ -1,0 +1,140 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://docs.reducto.ai/agent-guide",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.32
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.reducto.ai/studio-account",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.79
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.reducto.ai/quickstart",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.18
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.reducto.ai/quickstart",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.55
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://reducto.ai/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.77
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.reducto.ai/agent-guide",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.reducto.ai/agent-guide",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.reducto.ai/agent-guide",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.reducto.ai/quickstart",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.reducto.ai/studio-account",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.44
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://docs.reducto.ai/mcp-server",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://docs.reducto.ai/mcp-server",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.54
+  }
+ ],
+ "auth_support": {
+  "api_key": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://docs.reducto.ai/agent-guide', 'https://docs.reducto.ai/quickstart', 'https://docs.reducto.ai/agent-guide', 'https://docs.reducto.ai/quickstart', 'https://docs.reducto.ai/studio-account']",
+ "metrics": {
+  "n_evidence": 12,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 1.0,
+  "readable": 12,
+  "quote_supported_rate": 0.5833333333333334,
+  "lint_issues": 0,
+  "flag_count": 1
+ }
+}

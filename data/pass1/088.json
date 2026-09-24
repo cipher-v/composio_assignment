@@ -1,0 +1,249 @@
+{
+ "app": {
+  "id": 88,
+  "name": "Brex",
+  "category": "Finance and Fintech",
+  "hint": "developer.brex.com"
+ },
+ "record": {
+  "subcategory": "Financial Management",
+  "one_liner": "Brex is an all-in-one financial and spend management platform for businesses, integrating cards, banking, expenses, and more.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 with OpenID Connect for third-party partner applications; User Tokens (Bearer Tokens) for internal scripts and service accounts.",
+  "access": "self_serve_free",
+  "access_notes": "API access is included with the free Essentials plan. User tokens can be generated instantly from the dashboard. Production OAuth applications require Brex Partner program application and manual review.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API with broad coverage across Accounting, Budgets, Expenses, Fields, Onboarding, Payments, Team, Transactions, Travel, and Webhooks.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Official Brex MCP server at https://api.brex.com/mcp (beta), supports OAuth with Dynamic Client Registration. A community MCP server also exists on GitHub (crazyrabbitLTC/mcp-brex-server).",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "Production OAuth applications require manual partner approval. User tokens can be used for immediate integration but require per-customer admin setup.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.brex.com/pricing",
+    "quote": "Essentials for startups and growing companies $0 user/month ... global card acceptance and 1 local card program ... accounting integrations ... brex api access ... bill pay ... reimbursements"
+   },
+   {
+    "claim": "api",
+    "url": "https://www.brex.com/support/brex-api",
+    "quote": "The brex api is an automation layer that can be used to customize brex workflows. spend limits api: view and manage your brex spend limits. expenses api: view expense categories, capture, and report on spend. fields api: manage your brex fields and field values. payments api: initiate ach, check, and wi..."
+   },
+   {
+    "claim": "auth",
+    "url": "https://truto.one/",
+    "quote": "Brex supports two authentication modes. The user token is used to authenticate your own Brex account. The OAuth token is used when building partner applications to authenticate other Brex accounts."
+   },
+   {
+    "claim": "auth",
+    "url": "https://supergood.ai/",
+    "quote": "OAuth 2.0 with granular resource. permission scopes (cards. readonly, payments. readwrite) plus user tokens."
+   },
+   {
+    "claim": "auth",
+    "url": "https://postman.com/",
+    "quote": "Brex API authentication is fully compliant with OpenID Connect, an extension on top of OAuth2."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.brex.com/pricing",
+    "quote": "Essentials for startups and growing companies $0 user/month ... brex api access"
+   },
+   {
+    "claim": "access",
+    "url": "https://www.brex.com/support/brex-api",
+    "quote": "only account or card admins can create api tokens in the dashboard. ... generate a user token from your brex dashboard following these instructions"
+   },
+   {
+    "claim": "access",
+    "url": "https://supergood.ai/",
+    "quote": "User tokens work for in-house scripts, but production OAuth credentials require Brex Partner registration and review."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.brex.com/partners",
+    "quote": "complete the form to get in touch. ... talk with the partner team"
+   },
+   {
+    "claim": "api",
+    "url": "https://truto.one/",
+    "quote": "Brex APIs use the REST architecture, are defined using the OpenAPI specification, and use standard HTTP response codes and verbs."
+   },
+   {
+    "claim": "api",
+    "url": "https://truto.one/",
+    "quote": "Brex exposes multiple API domains: Accounting API, Budgets API, Expenses API, Fields API, Onboarding API, Payments API, Team API, Transactions API, Travel API, and Webhooks API."
+   },
+   {
+    "claim": "api",
+    "url": "https://redocly.com/",
+    "quote": "Implementing the OpenAPI (OAS 3.0) spec was crucial for Brex, as they'd opted for the code-first approach: generating their OAS spec directly from their code."
+   },
+   {
+    "claim": "api",
+    "url": "https://webhooks.fyi/",
+    "quote": "Brex uses HMAC with symmetric SHA256 keys for webhook validation. However, webhook listeners must request a REST API (GET /v1/webhooks/secrets) protected with OAuth to obtain the shared key."
+   },
+   {
+    "claim": "api",
+    "url": "https://supergood.ai/",
+    "quote": "OpenAPI specs are published, but there is no self-serve sandbox; testing runs against live data with scoped tokens."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://usecarly.com/",
+    "quote": "Yes — Brex ships an official MCP server, and it's hosted by Brex. The endpoint is https://api.brex.com/mcp , it supports OAuth with Dynamic Client Registration so most clients connect without any manual token setup, and it exposes more than 50 tools across expenses, cards, banking, bills, travel, and accounting."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://usecarly.com/",
+    "quote": "There is a community Brex MCP server on GitHub ( crazyrabbitLTC/mcp-brex-server ) that authenticates by taking a BREX_API_KEY from an environment variable."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://developer.brex.com/docs/mcp",
+    "quote": "the brex mcp server lets ai assistants interact directly with your brex account: manage expenses, look up users, check cards, review banking"
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### 1. What the Product Does\nBrex is an all-in-one financial and spend management platform designed for businesses. It integrates corporate credit cards, business banking, expense management, accounting automation, bill pay, and travel booking into a single solution.\n* **Source:** `https://www.brex.com/pricing`\n  * **Quote:** \"Essentials for startups and growing companies $0 user/month ... global card acceptance and 1 local card program ... accounting integrations ... brex api access ... bill pay ... reimbursements\"\n* **Source:** `https://www.brex.com/support/brex-api`\n  * **Quote:** \"The brex api is an automation layer that can be used to customize brex workflows. spend limits api: view and manage your brex spend limits. expenses api: view expense categories, capture, and report on spend. fields api: manage your brex fields and field values. payments api: initiate ach, check, and wi...\"\n\n### 2. API Authentication Methods\nThe Brex API supports two primary authentication methods:\n* **User Tokens (Bearer Tokens):** Static tokens tied to specific admin privileges, used primarily for internal scripts and service accounts.\n* **OAuth 2.0 (with OpenID Connect):** Used for third-party partner applications to authenticate external Brex accounts securely.\n* **Multi-Tenant Integration Choice:** A multi-tenant integration platform like Composio would use **OAuth 2.0** to allow end-users to delegate access safely.\n* **Source:** `https://truto.one/`\n  * **Quote:** \"Brex supports two authentication modes. The user token is used to authenticate your own Brex account. The OAuth token is used when building partner applications to authenticate other Brex accounts.\"\n* **Source:** `https://supergood.ai/`\n  * **Quote:** \"OAuth 2.0 with granular resource. permission scopes (cards. readonly, payments. readwrite) plus user tokens.\"\n* **Source:** `https://postman.com/`\n  * **Quote:** \"Brex API authentication is fully compliant with OpenID Connect, an extension on top of OAuth2.\"\n\n### 3. Credential Acquisition and Cost\n* **Cost:** Brex API access is available on the **Essentials** plan at **$0 user/month**, meaning there is a completely free tier for developers who have a Brex account.\n* **How to get credentials:** \n  * For internal development using user tokens, any account or card admin can instantly generate a token via the self-serve dashboard.\n  * For production multi-tenant OAuth applications, developers must apply to the Brex Partner program and undergo a manual review process.\n* **Source:** `https://www.brex.com/pricing`\n  * **Quote:** \"Essentials for startups and growing companies $0 user/month ... brex api access\"\n* **Source:** `https://www.brex.com/support/brex-api`\n  * **Quote:** \"only account or card admins can create api tokens in the dashboard. ... generate a user token from your brex dashboard following these instructions\"\n* **Source:** `https://supergood.ai/`\n  * **Quote:** \"User tokens work for in-house scripts, but production OAuth credentials require Brex Partner registration and review.\"\n* **Source:** `https://www.brex.com/partners`\n  * **Quote:** \"complete the form to get in touch. ... talk with the partner team\"\n\n### 4. API Style, Breadth, OpenAPI Spec, Webhooks, and Sandbox\n* **API Style:** REST architecture.\n* **Breadth:** Broad coverage across financial operations, including Accounting, Budgets, Expenses, Fields, Onboarding, Payments, Team, Transactions, Travel, and Webhooks.\n* **OpenAPI Spec:** Yes, Brex uses a code-first approach to automatically generate its OpenAPI (OAS 3.0) specifications.\n* **Webhooks:** Yes, real-time webhooks are supported (powered by Svix). They use HMAC with symmetric SHA256 keys for validation, and require calling a dedicated endpoint to retrieve secrets.\n* **Sandbox:** While a staging environment exists for partners, there is no public self-serve sandbox for general developers; testing with user tokens runs against live data.\n* **Source:** `https://truto.one/`\n  * **Quote:** \"Brex APIs use the REST architecture, are defined using the OpenAPI specification, and use standard HTTP response codes and verbs.\" and \"Brex exposes multiple API domains: Accounting API, Budgets API, Expenses API, Fields API, Onboarding API, Payments API, Team API, Transactions API, Travel API, and Webhooks API.\"\n* **Source:** `https://redocly.com/`\n  * **Quote:** \"Implementing the OpenAPI (OAS 3.0) spec was crucial for Brex, as they'd opted for the code-first approach: generating their OAS spec directly from their code.\"\n* **Source:** `https://webhooks.fyi/`\n  * **Quote:** \"Brex uses HMAC with symmetric SHA256 keys for webhook validation. However, webhook listeners must request a REST API (GET /v1/webhooks/secrets) protected with OAuth to obtain the shared key.\"\n* **Source:** `https://supergood.ai/`\n  * **Quote:** \"OpenAPI specs are published, but there is no self-serve sandbox; testing runs against live data with scoped tokens.\"\n\n### 5. MCP Servers\n* **Official:** Yes, Brex builds and hosts an official, remote MCP server at `https://api.brex.com/mcp`. It is currently in beta, exposes over 50 tools, and uniquely supports OAuth with Dynamic Client Registration alongside standard API tokens.\n* **Community:** Yes, an older community-built MCP server exists on GitHub (`crazyrabbitLTC/mcp-brex-server`), which relies on static environment variables.\n* **Source:** `https://usecarly.com/`\n  * **Quote:** \"Yes — Brex ships an official MCP server, and it's hosted by Brex. The endpoint is https://api.brex.com/mcp , it supports OAuth with Dynamic Client Registration so most clients connect without any manual token setup, and it exposes more than 50 tools across expenses, cards, banking, bills, travel, and accounting.\" and \"There is a community Brex MCP server on GitHub ( crazyrabbitLTC/mcp-brex-server ) that authenticates by taking a BREX_API_KEY from an environment variable.\"\n* **Source:** `https://developer.brex.com/docs/mcp`\n  * **Quote:** \"the brex mcp server lets ai assistants interact directly with your brex account: manage expenses, look up users, check cards, review banking\"\n\n### 6. Buildability Verdict\n* **Verdict:** `ready_with_friction`\n* **Access:** `self_serve_free` (for user tokens) / `partner_or_sales` (for production OAuth apps)\n* **Primary Auth:** `oauth2`\n* **MCP:** `official`\n* **Main Blocker / Hurdle:** `per_customer_admin_setup` (if using user tokens) or `app_review` / `partner_registration` (if using standard OAuth2). \n* **Notes:** Composio can ship a Brex toolkit immediately by utilizing the official vendor-hosted MCP server or wrapping their REST API. However, because standard production OAuth apps require manual partner approval from Brex's sales/partner team, the immediate multi-tenant path requires users to manually generate and provide their own admin user tokens (`per_customer_admin_setup`). Alternatively, developers can leverage Brex's official MCP server which supports OAuth via Dynamic Client Registration to bypass some manual token setup.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"Brex\" API authentication OAuth2",
+   " OAuth",
+   " openapi",
+   " webhooks sandbox",
+   " authentication",
+   " oauth",
+   " openapi.yaml",
+   " webhooks",
+   "\"Brex\" API \"authentication\"",
+   "\"Brex\" API \"oauth\"",
+   "\"Brex\" API \"openapi\"",
+   "\"Brex\" API \"webhooks\"",
+   "\"https://developer.brex.com/docs/mcp\"",
+   "\"brex mcp server\"",
+   "\"brex mcp\"",
+   "\"https://api.brex.com/mcp\""
+  ],
+  "search_sources": [
+   {
+    "title": "redocly.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHd38lCFPKNuT0bFSmPcCU0Oti5qMLhDHQ-9-cyujT81c2dWGhVn3OOVVlgoSOHfy7EFBxILgvuitnDilscDvgssAa9hq54RGK8gron5lLujKNBJWiPOBUUDYtFxI4="
+   },
+   {
+    "title": "brex.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFC-PzzE5-_V9oMkSucBA5Xtja4LOgjlXYzQnSTQjgK1Zi21rQ31jePn8nooN-1lp9hNnbjudmQJ93dG-UJvyNjeIRBxWnLzggi49c7USk8geP1RkBm4CXEbhpXZzQu7OfZS3_wfuzQa4WDzN3_"
+   },
+   {
+    "title": "reddit.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqFejXEmSG8GzmR7ck3Dt7bl906B0ibBRYm_cKxJ-TNC1X4rP3jjR2TC-IUo8UXiz1D0CBQ5DRtbRaWKaK-EvrI063b8EIzwi2BgAPGTo71M_GfdgrAcES_CKxA8bthGOt0xAssM5_HXQWXvWCDeK6C_AYE0X0NmCzKWdX27IDl_rO-03vQvuRYS_rQbfu-ZWa-XwEChWf"
+   },
+   {
+    "title": "truto.one",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHINnjE_bBtHA9oX-Rr-kivWa3TRoRqLenbFa38F234lS1_ehFAqRSIcb4yR94tdvigLMqq6GQEY44DOoda-6TLGhhxIviekylR4WhN8SGLG0-sIdf3-oAtWCTkA3Ob8UtMSQRYVuI_Bf-PjApkvMhon42bqI9uauufp5ycJNZ3Bjq80pcZgdKdGb1B1UcShnk512vrM_8_"
+   },
+   {
+    "title": "fastn.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfeuBh1BKFN83mqAKETGkd1_nNq7nMyBCV6a6wGpOaln66cwAgxNTnyVyk-bdbGEEU83ouh70yjm7mW9JWaegKi-NmiYHVDH1zrzu3fat-N1KHoACCSgwMr7_55MU="
+   },
+   {
+    "title": "usecarly.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFv4V6hsVACM2bMmafnnNI_3S2Azl3f-i-NaiYY9Gn_QXj5Z5nDwbmR_EHLoLHx5vJmtZC7YOBC2fV08mBGnO4y3SGiS2u_Iq80uTLebkIVEW3KNR3R1PHPtkn0ylasFRXSgg=="
+   },
+   {
+    "title": "brex.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1e4dH7WGcdGpfVe5IHr6RI7EmgwCStIcJZzjezqphHv0E2ESqm7YmEmiinKeA18wzOrWHb8MfuBiHcgOEPhUi8EzzW-Cg8YITWpscbdjTl9O2EDRn2rIJ7zc_2ozkOW36Lvty17JJ-0lh0WDFzKjMrgSv8kyJ0OpA"
+   },
+   {
+    "title": "unified.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnsofBMcHFatMqHo4GzKJjRjonBKhZs7RlBD_TqnShis3LB3xHpZ3vymMQT2mJ3J8RiMiQuCtb-sQO24OlGStfLZ2CFEMdZzMJGPR9EN_EWkL1gMaugzDmrbbFtnwUME8Ky7vD"
+   }
+  ],
+  "tokens": 12082,
+  "retries": [
+   "504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status':"
+  ],
+  "discovery": {
+   "search_queries": [
+    " Brex authentication API keys OAuth",
+    " Brex getting started quickstart",
+    " Brex pricing API access partner program developer program",
+    " Brex API reference index",
+    "Brex MCP server"
+   ],
+   "candidates": 3,
+   "live_urls": [
+    "https://developer.brex.com/docs/mcp",
+    "https://www.brex.com/support/brex-api",
+    "https://www.brex.com/partners",
+    "https://www.brex.com/support/using-brex-in-ai-apps",
+    "https://www.brex.com/pricing",
+    "https://mcp.mcpbundles.com/bundle/brex",
+    "https://github.com/crazyrabbitLTC/mcp-brex-server",
+    "https://www.mcpbundles.com/skills/brex"
+   ],
+   "bad_candidates": [],
+   "pages_read": [
+    {
+     "url": "https://developer.brex.com/docs/mcp",
+     "status": 200,
+     "chars": 10367,
+     "readable": true
+    },
+    {
+     "url": "https://www.brex.com/support/brex-api",
+     "status": 200,
+     "chars": 6430,
+     "readable": true
+    },
+    {
+     "url": "https://www.brex.com/partners",
+     "status": 200,
+     "chars": 4805,
+     "readable": true
+    },
+    {
+     "url": "https://www.brex.com/support/using-brex-in-ai-apps",
+     "status": 200,
+     "chars": 15795,
+     "readable": true
+    },
+    {
+     "url": "https://www.brex.com/pricing",
+     "status": 200,
+     "chars": 7380,
+     "readable": true
+    },
+    {
+     "url": "https://mcp.mcpbundles.com/bundle/brex",
+     "status": 200,
+     "chars": 225,
+     "readable": false
+    },
+    {
+     "url": "https://github.com/crazyrabbitLTC/mcp-brex-server",
+     "status": 200,
+     "chars": 7927,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 211.1
+ }
+}

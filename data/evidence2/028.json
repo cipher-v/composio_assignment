@@ -1,0 +1,91 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started",
+   "status": 400,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started",
+   "status": 400,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.facebook.com/docs/whatsapp/embedded-signup",
+   "status": 400,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://wati.io/help-center/meta-business-verification-a-step-by-step-guide/",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/facebook/openapi",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.93
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://developers.facebook.com/docs/whatsapp/mcp/mcp-for-whatsapp",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started",
+   "status": 400,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "bearer_token": false,
+  "oauth2": false
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://developers.facebook.com/docs/whatsapp/cloud-api/get-started', 'https://developers.facebook.com/docs/whatsapp/cloud-api/get-started', 'https://developers.facebook.com/docs/whatsapp/embedded-signup', 'https://wati.io/help-center/meta-business-verification-a-step-by-step-guide/', 'https://developers.facebook.com/docs/whatsapp/mcp/mcp-for-whatsapp', 'https://developers.facebook.com/docs/whatsapp/cloud-api/get-started']\n- Non-vendor sources (prefer official docs): ['https://github.com/facebook/openapi']\n- Auth methods not mentioned on any cited page: ['bearer_token', 'oauth2']",
+ "metrics": {
+  "n_evidence": 7,
+  "alive_rate": 0.14285714285714285,
+  "dead_rate": 0.8571428571428571,
+  "blocked_rate": 0.0,
+  "official_rate": 0.7142857142857143,
+  "readable": 1,
+  "quote_supported_rate": 1.0,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

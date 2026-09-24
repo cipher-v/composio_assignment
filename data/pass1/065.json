@@ -1,0 +1,240 @@
+{
+ "app": {
+  "id": 65,
+  "name": "Supabase",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "supabase.com/docs"
+ },
+ "record": {
+  "subcategory": "Backend-as-a-Service",
+  "one_liner": "Open-source BaaS platform providing managed PostgreSQL, auth, storage, real-time, and edge functions.",
+  "auth_methods": [
+   "bearer_token",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Personal Access Token (PAT) for scripting; OAuth2 for third-party applications.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up for a free account and register an OAuth application from their organization's dashboard settings without review or approval. Free tier includes unlimited API requests.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Management API covers project provisioning, organization management, database migrations, edge functions, secrets management, storage buckets, billing, and custom domains.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Supabase officially publishes and maintains its own Model Context Protocol (MCP) server.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. Comprehensive public documentation, self-serve free access to OAuth app creation, official OpenAPI specification, and existing official MCP server.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://supabase.com/docs/reference/api/introduction",
+    "quote": "Manage your Supabase organizations and projects programmatically."
+   },
+   {
+    "claim": "general",
+    "url": "https://supabase.com/docs/guides/getting-started",
+    "quote": "local development use the supabase cli to develop locally and collaborate between teams. use cases # ai, vectors, and embeddings build ai-enabled applications using our vector toolkit."
+   },
+   {
+    "claim": "auth",
+    "url": "https://supabase.com/docs/reference/api/introduction",
+    "quote": "There are two ways to generate an access token: Personal access token (PAT): PATs are long-lived tokens that you manually generate to access the Management API... OAuth2: OAuth2 allows your application to generate tokens on behalf of a Supabase user, providing secure and limited access to their account without requiring their credentials. Use this if you're building a third-party app that needs to create or manage Supabase projects on behalf of your users."
+   },
+   {
+    "claim": "access",
+    "url": "https://supabase.com/pricing",
+    "quote": "free perfect for passion projects & simple websites. start for free $ 0 / month get started with: unlimited api requests 50,000 monthly active users 500 mb database size"
+   },
+   {
+    "claim": "access",
+    "url": "https://supabase.com/docs/reference/api/introduction",
+    "quote": "Create an OAuth app#. In your organization's settings, navigate to the OAuth Apps tab. In the upper-right section of the page, click Add application. Fill in the required details and click Confirm."
+   },
+   {
+    "claim": "api",
+    "url": "https://supabase.com/docs/reference/api/introduction",
+    "quote": "Supabase API (v1). Download OpenAPI Document. json. Download OpenAPI Document. yaml. Supabase API generated from the OpenAPI specification."
+   },
+   {
+    "claim": "api",
+    "url": "https://supabase.com/docs/reference/api/introduction",
+    "quote": "Management API reference for the Supabase API: Organizations slug webhooks endpoints get"
+   },
+   {
+    "claim": "api",
+    "url": "https://supabase.com/docs/reference/api/introduction",
+    "quote": "Enable database webhook."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://supabase.com/docs/guides/getting-started",
+    "quote": "develop with supabase ai-first using plugins, mcp, and skills."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://supabase.com/docs/guides/getting-started",
+    "quote": "Connect your AI tools using the official Supabase Model Context Protocol (MCP) server. ... The MCP Server bridges the gap between AI tools and your Supabase projects, enabling natural language commands and agent-like experiences for database management."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Product Overview\nSupabase is an open-source Backend-as-a-Service (BaaS) platform built on top of PostgreSQL. It provides developers with a managed PostgreSQL database, user authentication (Supabase Auth), file storage (Supabase Storage), real-time data subscriptions via WebSockets, edge compute (Edge Functions), and a Management API to programmatically control projects and organizations.\n* **Source URL:** `https://supabase.com/docs/reference/api/introduction`\n* **Verbatim Quote:** \"Manage your Supabase organizations and projects programmatically.\"\n* **Source URL:** `https://supabase.com/docs/guides/getting-started`\n* **Verbatim Quote:** \"local development use the supabase cli to develop locally and collaborate between teams. use cases # ai, vectors, and embeddings build ai-enabled applications using our vector toolkit.\"\n\n---\n\n### Authentication Methods & Multi-Tenant Integration\nThe public **Supabase Management API** supports two primary authentication methods:\n1. **Personal Access Token (PAT):** Long-lived tokens manually generated by a user for personal automation or scripting.\n2. **OAuth2:** Standard authorization code flow with PKCE, allowing third-party applications to securely manage organizations and projects on behalf of a user.\n\nFor a multi-tenant integration platform like Composio, **OAuth2** is the `primary_auth` method.\n* **Source URL:** `https://supabase.com/docs/reference/api/introduction`\n* **Verbatim Quote:** \"There are two ways to generate an access token: Personal access token (PAT): PATs are long-lived tokens that you manually generate to access the Management API... OAuth2: OAuth2 allows your application to generate tokens on behalf of a Supabase user, providing secure and limited access to their account without requiring their credentials. Use this if you're building a third-party app that needs to create or manage Supabase projects on behalf of your users.\"\n\n---\n\n### Developer Credentials & Cost\n* **Access Classification:** `self_serve_free`\n* **Credential Acquisition:** Any developer can sign up for a free account and immediately register an OAuth application directly from their organization's dashboard settings without requiring manual review, partner program registration, or sales approval.\n* **Cost:** Free. Supabase offers a robust free tier that includes unlimited API requests and full access to the Management API and OAuth application creation.\n* **Source URL:** `https://supabase.com/pricing`\n* **Verbatim Quote:** \"free perfect for passion projects & simple websites. start for free $ 0 / month get started with: unlimited api requests 50,000 monthly active users 500 mb database size\"\n* **Source URL:** `https://supabase.com/docs/reference/api/introduction`\n* **Verbatim Quote:** \"Create an OAuth app#. In your organization's settings, navigate to the OAuth Apps tab. In the upper-right section of the page, click Add application. Fill in the required details and click Confirm.\"\n\n---\n\n### API Capabilities\n* **API Style:** REST (The Management API uses standard RESTful HTTP endpoints, though the underlying database itself can auto-generate both REST and GraphQL endpoints).\n* **API Breadth:** Broad. The Management API covers project provisioning, organization management, database migrations, edge functions, secrets management, storage buckets, billing, and custom domains.\n* **OpenAPI Spec:** Yes. An official OpenAPI 3.0 specification is publicly available for download.\n* **Webhooks:** Yes. The Management API provides endpoints to programmatically manage organization and project webhooks. Additionally, Supabase supports native Database Webhooks.\n* **Sandbox:** No dedicated hosted sandbox environment is provided, but developers can use the Free Tier to spin up isolated test projects or use the Supabase CLI for local development.\n* **Source URL:** `https://supabase.com/docs/reference/api/introduction`\n* **Verbatim Quote:** \"Supabase API (v1). Download OpenAPI Document. json. Download OpenAPI Document. yaml. Supabase API generated from the OpenAPI specification.\"\n* **Source URL:** `https://supabase.com/docs/reference/api/introduction`\n* **Verbatim Quote:** \"Management API reference for the Supabase API: Organizations slug webhooks endpoints get\" and \"Enable database webhook.\"\n\n---\n\n### Model Context Protocol (MCP) Servers\n* **MCP Status:** `official`\n* **Details:** Supabase officially publishes and maintains its own Model Context Protocol (MCP) server, allowing AI agents and LLM tools to interact directly with Supabase projects to manage tables, fetch configurations, and query data.\n* **Source URL:** `https://supabase.com/docs/guides/getting-started`\n* **Verbatim Quote:** \"develop with supabase ai-first using plugins, mcp, and skills.\"\n* **Source URL:** `https://supabase.com/docs/guides/getting-started` (via official announcement pages)\n* **Verbatim Quote:** \"Connect your AI tools using the official Supabase Model Context Protocol (MCP) server. ... The MCP Server bridges the gap between AI tools and your Supabase projects, enabling natural language commands and agent-like experiences for database management.\"\n\n---\n\n### Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. Supabase provides comprehensive public documentation, self-serve free access to OAuth app creation, an official OpenAPI specification, and an existing official MCP server ecosystem, making it fully ready for immediate integration.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"Supabase\" Management API OAuth2",
+   "\"Supabase\" OpenAPI spec management api",
+   "\"Supabase\" MCP server",
+   "\"Supabase\" partner program app review",
+   "\"Supabase\" \"Management API\" webhooks",
+   "\"Supabase\" \"OpenAPI\" spec download json",
+   "\"Supabase\" sandbox environment",
+   "\"Supabase\" \"OAuth Apps\" documentation"
+  ],
+  "search_sources": [
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE07YXDemdN5aSVZThkQQjX6g38oVFOCoR5lm8NJozliCmPenou5q10FzI9F0vlponI30xGTw9coUFXr2jTo28Vw22X3AOvhDQkPphSpHga6h0AXWJulRQtN_jlkos="
+   },
+   {
+    "title": "supabase.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvFisSmGsIyqX6dkaTMTn6llm3SBubGnUqnKPj5y68qFWHri1n4ohUdl0EokX4p0pO862YBkBbT_bcNZ3izUw4UlKcqPUwRAXNYiNhPEI_gcaSQ7e9upLqiRHNBHoR7jMZBSqrrA=="
+   },
+   {
+    "title": "supabase.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhOHms4KAnYmxiDp2wX4DXqlfOIefZWwquuPPZiDqwIVGQ4H19CO-8Hf7hisf7Go-6E1VWZ5xVTqf5dSgHfT2oilNJdHwx5gk66_TKi2hgblWAYHbUPXp4hUVmAzlu5bv6E_1kevnJjqk3zer1c3P5xwU="
+   },
+   {
+    "title": "supabase.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2nUA5WdhONnOGfjORMZYHEMs_4c1D71Obd3qt3Cx6eDJKksq7XK4W1P8_Zq1nAG9TG8REmWHMZOPdmCeUQINEAmwljtwx3PXZwjNu61Jp_iH5HQHhv7SM2rDb4Kz-a3_vwR_9wA=="
+   },
+   {
+    "title": "supabase.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoykLX-bWAgfExDrTmRwCOB55QuylnfgTb8rbhvo0reR1uCe70nWEP1IMCHuEgkwYb46k857B28xCZX1NDSlq4dPFTP5y-5mH4tRvtuIh-Ro6obphm0yU3N9VPmc5MorgrbQ_zhAuSm2z4mOnT6wRd9ume-crp4LWtNtp_mYWEj0-ZWF1W60tahIs="
+   },
+   {
+    "title": "unified.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBsO0wJ6k0CeDb8Ip6CW0Xcb-3CK8vwLRk6z4uzAGDk5QjeZGNylHYrL10HnAPTgOCaG2m0qU38t-a2NOlXh6Rk2Skixnhdv419xde6LyPJEmuu3qtdBJ36STasg83zfI="
+   },
+   {
+    "title": "supabase.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFS84uasURj6UCpqi1GyGdotLZZNRgqFL53jQFfV7QV5J0XmgsofoKp1bftk_WSgHCPx_55GXC3EbGm0eH8p1KyyZoHVYjbdJNL9GakY6v0xnX5si1uLFfDRTPnTZATIZOAmVhdJNt5F8itqYz8U91-YtjQEcTMQw=="
+   },
+   {
+    "title": "supabase.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXI88IdhVQU143WizAY9Kco1iTzIjIAq-6461qDF8E1RL8081WRKW1Ug3IFG561zxe1UFNE99EGU1FjIdGd6Rv-psKNpZTgxFJBO7xrEEANGV4tDkSK-toc_Et7mgKd37EEn2huwsGeR86-a2gjPnomIUvVk8bG7pgwcZwdA6s"
+   },
+   {
+    "title": "truto.one",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9djhG-DwNBzzFMce6LtCNIyWRtSUg8dK4xBQyD9t-05-gBu-zM0wTKsVLcVaMXjJ-HicaFrMuxlya7x5tQqyKssDtdk-f9fGSVxHZQJLhKUb5Z7CWlK_XmTdnuxcsdFjmQmFEEe_u5sg="
+   },
+   {
+    "title": "supabase.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGl2ekzMG4iBo1eS8nPbHpkcg-mcJfqDLUr2ogAqsdwarb9DDMcYhi25LldnQ1OvZktaPjNEM15taQsewjGMk-qF7tbjCBPzZ8GSFXbbXrgnuZD0m46NaTq1Q=="
+   },
+   {
+    "title": "supabase.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6Yt4Ftl3wT3pzSzR9QvplVvgLiO1kffAkzdDIs1LPAdOfv70g9Ud9dSXlwHF2kZn42AadXTfe9VS_hMA_6JsEC6b4AYe8eSY_ydvy6VyQbb2c-RsHuKaDzv5B3UqnBN4D4A=="
+   }
+  ],
+  "tokens": 8164,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "Supabase authentication documentation",
+    "Supabase API keys documentation",
+    "Supabase OAuth documentation",
+    "Supabase getting started documentation",
+    "Supabase quickstart documentation",
+    "Supabase pricing",
+    "Supabase API access plans",
+    "Supabase developer program",
+    "Supabase API reference",
+    "Supabase API documentation index",
+    "Supabase MCP server"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://supabase.com/docs/guides/auth",
+    "https://supabase.com/docs/guides/getting-started",
+    "https://supabase.com/pricing",
+    "https://supabase.com/docs/reference/api/introduction",
+    "https://supabase.com/docs/guides/getting-started/api-keys",
+    "https://supabase.com/docs/guides/auth/oauth-server",
+    "https://supabase.com/docs/guides/self-hosting/self-hosted-auth-keys",
+    "https://supabase.com/docs/reference/api/v1-push-a-branch",
+    "https://supabase-supabase.mintlify.app/quickstart"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://supabase.com/docs/guides/ai/mcp-lite",
+     "status": 404
+    },
+    {
+     "url": "https://supabase.com/docs/guides/platform/api-keys",
+     "status": 404
+    },
+    {
+     "url": "https://supabase.com/docs/guides/auth/oauth2",
+     "status": 404
+    },
+    {
+     "url": "https://supabase.com/docs/guides/platform/new-api-keys-and-asymmetric-authentication",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://supabase.com/docs/guides/auth",
+     "status": 200,
+     "chars": 5174,
+     "readable": true
+    },
+    {
+     "url": "https://supabase.com/docs/guides/getting-started",
+     "status": 200,
+     "chars": 5676,
+     "readable": true
+    },
+    {
+     "url": "https://supabase.com/pricing",
+     "status": 200,
+     "chars": 17421,
+     "readable": true
+    },
+    {
+     "url": "https://supabase.com/docs/reference/api/introduction",
+     "status": 200,
+     "chars": 11848,
+     "readable": true
+    },
+    {
+     "url": "https://supabase.com/docs/guides/getting-started/api-keys",
+     "status": 200,
+     "chars": 16143,
+     "readable": true
+    },
+    {
+     "url": "https://supabase.com/docs/guides/auth/oauth-server",
+     "status": 200,
+     "chars": 5541,
+     "readable": true
+    },
+    {
+     "url": "https://supabase.com/docs/guides/self-hosting/self-hosted-auth-keys",
+     "status": 200,
+     "chars": 10005,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 46.6
+ }
+}

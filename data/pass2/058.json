@@ -1,0 +1,217 @@
+{
+ "app": {
+  "id": 58,
+  "name": "Sherlock",
+  "category": "Data, SEO and Scraping",
+  "hint": "github.com/sherlock-project/sherlock"
+ },
+ "record": {
+  "subcategory": "OSINT / Social Media Reconnaissance",
+  "one_liner": "Sherlock is an open-source command-line tool to find social media accounts by username across hundreds of websites.",
+  "auth_methods": [
+   "none",
+   "api_key"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "The native open-source CLI tool requires no authentication. If using community-hosted versions on Apify, an Apify API key is required.",
+  "access": "self_serve_free",
+  "access_notes": "The core Sherlock tool is open-source and free to use by cloning the repository or installing via package managers. Apify offers a free tier for its community-hosted versions.",
+  "api_styles": [
+   "cli_or_library",
+   "rest"
+  ],
+  "api_breadth": "narrow",
+  "api_notes": "The core tool is a CLI/library. An unmaintained experimental REST API exists for local hosting. Third-party Apify actors provide a REST API for a single function: username enumeration.",
+  "openapi_spec": false,
+  "webhooks": false,
+  "sandbox": true,
+  "mcp": "community_only",
+  "mcp_notes": "A community-created MCP server (Burnsedia/sherlock-mcp) exists, wrapping the tool using FastMCP.",
+  "verdict": "ready_with_friction",
+  "blocker": "local_cli_only",
+  "blocker_notes": "Sherlock is primarily a command-line tool and library. An AI agent toolkit would need to wrap the Python CLI/library for local execution or rely on third-party hosted endpoints.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://github.com/sherlock-project/sherlock",
+    "quote": "hunt down social media accounts by username across social networks"
+   },
+   {
+    "claim": "general",
+    "url": "https://sherlockproject.xyz/",
+    "quote": "sherlock hunt down social media accounts by username across 400+ social networks"
+   },
+   {
+    "claim": "auth",
+    "url": "https://bellingcat.gitbook.io/toolkit/more/all-tools/sherlock",
+    "quote": "No account/API keys needed – Sherlock uses direct web requests and does not require creating any account or API key to use."
+   },
+   {
+    "claim": "auth",
+    "url": "https://apify.com/misceres/sherlock/api",
+    "quote": "To use the Apify API, you'll need an Apify account and your API token, found in API & Integrations in Apify Console."
+   },
+   {
+    "claim": "access",
+    "url": "https://bellingcat.gitbook.io/toolkit/more/all-tools/sherlock",
+    "quote": "the latest version is published on PyPI for one-command install (e.g. pipx install sherlock-project or pip install --user sherlock-project ). There is also an official Docker image available"
+   },
+   {
+    "claim": "access",
+    "url": "https://apify.com/misceres/sherlock/api",
+    "quote": "sherlock pricing pricing pay per usage try for free go to apify store"
+   },
+   {
+    "claim": "api",
+    "url": "https://bellingcat.gitbook.io/toolkit/more/all-tools/sherlock",
+    "quote": "Sherlock is primarily a CLI tool, so some familiarity with the command line is required to install and run it."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.apify.com/api/v2",
+    "quote": "get openapi definition"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/Burnsedia/sherlock-mcp",
+    "quote": "sherlock mcp server: fastmcp integration for social media username searches across 400+ platforms using model context protocol."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://bellingcat.gitbook.io/toolkit/more/all-tools/sherlock",
+    "quote": "Sherlock is primarily a CLI tool, so some familiarity with the command line is required to install and run it."
+   }
+  ],
+  "confidence": 0.9,
+  "changes": [
+   {
+    "field": "primary_auth",
+    "old": "none",
+    "new": "api_key",
+    "reason": "While the self-hosted CLI has no authentication, a multi-tenant integration platform would use a hosted API. The most prominent hosted option is through Apify, which requires an API key. Therefore, api_key is the correct primary authentication method for any integration scenario that does not involve self-hosting the CLI tool.",
+    "url": "https://apify.com/misceres/sherlock/api"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### Verification Notes\n\n**subcategory**: CONFIRMED. The tool is widely described as an Open Source Intelligence (OSINT) tool for social media.\n\n**one_liner**: CONFIRMED. The one-liner is accurate. The official GitHub repository describes the tool as a way to \"hunt down social media accounts by username across social networks\". The official website states it can search across \"400+ social networks\".\n\n**auth_methods**: CONFIRMED. The core, self-hosted Sherlock tool requires no authentication to use. It works by checking for the existence of a publicly accessible profile URL. Third-party hosted versions, such as the community-run actors on Apify, require an Apify API token for programmatic access.\n\n**primary_auth**: WRONG. The original record listed `none`. While the self-hosted CLI has no authentication, a multi-tenant integration platform would use a hosted API. The most prominent hosted option is through Apify, which requires an API key. Therefore, `api_key` is the correct primary authentication method for any integration scenario that does not involve self-hosting the CLI tool.\n*   **Correction**: `api_key`\n*   **Source**: \"To use the Apify API, you'll need an Apify account and your API token, found in API & Integrations in Apify Console.\"\n\n**auth_notes**: CONFIRMED. The note accurately distinguishes between the native CLI tool (no authentication) and the community-hosted Apify versions which require an Apify API key.\n\n**access**: CONFIRMED. The core tool is open-source, free, and can be self-hosted, which qualifies as `self_serve_free`. The community-hosted versions on Apify also have a free tier. Apify provides a permanent free plan with a monthly $5 credit for platform usage, which can be used to run actors like Sherlock.\n\n**access_notes**: CONFIRMED. The notes are accurate. The core tool can be installed via cloning the repository, `pip`, or Docker. Apify offers a free plan with monthly credits that can be used for the community-hosted Sherlock actors.\n\n**api_styles**: CONFIRMED. The primary, official distribution of Sherlock is a command-line tool and can be used as a Python library. There is no official, maintained REST API. An old, experimental REST API exists in a separate, unmaintained repository. Third-party services like the Apify actors provide a REST API wrapper around the tool.\n\n**api_breadth**: CONFIRMED. The API is narrow, providing a single core function: searching for a username across multiple sites.\n\n**api_notes**: CONFIRMED. The notes are accurate. The core tool is a CLI/library. An \"experimental REST API exists but has not been maintained since 2021\". Third-party Apify actors provide a REST API for username searching.\n\n**openapi_spec**: CONFIRMED. The value `false` is correct. The core Sherlock project does not provide an OpenAPI specification. While the Apify platform has an OpenAPI definition for its own API, this is for managing actors and builds on the platform level, not for the specific input/output of the community-provided Sherlock actor.\n\n**webhooks**: CONFIRMED. There is no evidence of webhook support in the official Sherlock project documentation or repository.\n\n**sandbox**: CONFIRMED. The value `true` is appropriate as the tool is open-source and can be freely downloaded, installed (e.g., via Docker), and tested locally without any restrictions.\n\n**mcp**: CONFIRMED. The value `community_only` is correct. The `Burnsedia/sherlock-mcp` repository is a community project. There is no evidence of an official MCP server maintained by the Sherlock Project.\n*   **Source**: The GitHub repository `burnsedia/sherlock-mcp` clearly states it is a \"FastMCP server integration for the Sherlock OSINT tool\".\n\n**mcp_notes**: CONFIRMED. The note accurately identifies the community-created MCP server.\n*   **Source**: The `README.md` in the `Burnsedia/sherlock-mcp` GitHub repository describes the project as a \"sherlock mcp server\".\n\n**verdict**: CONFIRMED. The verdict `ready_with_friction` is correct. The official tool is a CLI/library that must be wrapped and executed in a sandboxed environment, which constitutes a friction point. Relying on third-party APIs (like Apify's) is also a form of friction compared to an official, vendor-hosted API.\n\n**blocker**: CONFIRMED. The blocker `local_cli_only` accurately describes the state of the official tool, which has no official, vendor-hosted API.\n\n**blocker_notes**: CONFIRMED. The note is accurate. An integration would require either wrapping the Python CLI/library for local execution or using third-party hosted endpoints like those on Apify.\n\n### Fields with uncertainty\n\nNone. The information is well-supported by the official project repositories and documentation for third-party providers.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "sherlock-project github",
+   "sherlock-project official documentation",
+   " sherlock-project/sherlock rest api",
+   "apify free tier api access",
+   "what is sherlock osint tool"
+  ],
+  "search_sources": [
+   {
+    "title": "threatngsecurity.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLQ2EzECVjT2b81hmsw3PYQ05hYW0LTswleALF-H2n8dJoAww1aP_Vfm03m_mXrw9nT0-OPb6N7Ace95O5ZJNdyCKUxq7pgiYka2aqeeNEmkO8yNEDaF835HChtwF4DNPr2cu2ivbdYh6RsNhw"
+   },
+   {
+    "title": "hakatemia.fi",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqbxzsO6R9DIlZC2Qkj8p9c9rDRnIvqI4A1GqMwywh0EUM6_yMY8gmvAFAqLZin865Vy2bC4GTyuEkr7W2DrsVhW9-JQ5dY-C3M4CbHslHllLA-DnyLhfyOubz5qfzjuXEUwAQ_NOw-DX9hGsr"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxTn2vHyxU8W_mDANLhi2RUel6GE3oBWXksExcrx60fLvj-QlkG7pygEAckF11WQ9ahKh9VWNDBQVgibIkT0-b2NHVEWLFu-a8r2g1evVDwOvYHlNZeh51drVPspyU3ecUwNIZfq38tvR1cKE9PFmhXgbgFbDH5l7tbLt376fehE7gbKRXA0NIBKlq"
+   },
+   {
+    "title": "oshy.tech",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEb10vCosXEC1QH39X04jNK7rAYNv0KaDf4LZQxQpdM2ebtpJgY1GUS_eLTLzjXhQ-2Wq2mvjbuy83EZdo8QgjLOwNKaRf5e-ftl4RD60Bk5VDkciHAIgvWkmiB1AI9cOegQaokMTxg_Fbn06IgaQicoaIYxw=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHY36_y7L31BLixh1-Y79YXnW-yfUKnG3mB2stJzXV0vtpxFNow5kxbGGazrPBLsx-L3m1yGNV6vrO-yrNAnQQaOo4WGNH92nvZCZxBVewFQC3JRzQ5rExl6b0h6maN3MeogHVbwpzE"
+   },
+   {
+    "title": "x-cmd.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjNvPUC9Aw0_8sTEGCz9CVQ--nvD7Qa9BwjcCRb58Ngu_Rreo7UY41TsQvQv-dbzWCv8A9CV51W1vs01mXy6CIt3Hke0mBJ_ISrns2215otbMxZLLi6HS1ZiEU2O3nVtyzxQ=="
+   },
+   {
+    "title": "sherlockeye.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHamRet_WhooTR0eBS6tIfhJOnYnsuIsQQDkSVTlDjzxOtBBZHcAgRA5g0jSaKueIyfS7qEzN_6g1Ch1_jNnBXdryns6he227vGz3YIn9fNGlNm8b749YfN9i-uPB_n27HY7aqjL8MkqrAgmeM="
+   },
+   {
+    "title": "apify.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKAJ-oF6KmNo4f4QovWW11MhWdVOkk1u9okvP2QdmVbUNFkRLIMsAJMJwgHuiiFjjOBPNJxz0Cn52PqdRBo0IFEJBFVgrn-24qU5rYuOSibZ2kmtVp4HEG5cLMWpisOAzZBA=="
+   },
+   {
+    "title": "use-apify.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZQnuK1Tr_8WWkJgvQeHs3iKaNDtWLC13T3LcejTmIKJaash-yW2MeyqvSmUjj5FTpd8hbD1ZVZ69PE_6vhXTw9qWiiaKFAMBYCPMiU3MOZ7TO3GLfdZKGYBj2CV18v8C7_gJVcbglHUj3Ua0kYiU639yO"
+   },
+   {
+    "title": "apify.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGycpNXJK5KD3ce-WZHnDiKQUHYvPGpbQXCVz3u0XdUz9GKRym23diEgKt_rzjBFVj32xCcmsvp9G0Mvkn9ukt0-2WFQBkyKyfM-xYiFC2J29-flso="
+   },
+   {
+    "title": "gitbook.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9-hcdX54wPGzkC9jHyGP-93yKTrgfrVqpV82x2X268JudRktKbGK-MvPBEmURBMfBHdGbh79uzEIrYzG8HNDzObWv4jvBE5UvCGXRqQ-AX7t3NZDym6Wsnlhm0Fc8oMXA_3g1LhsRmeIHdEBlB9IQPsn2IPJQ_Zo="
+   },
+   {
+    "title": "skywork.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFw3NWKmBv5rfww0jWe6DMTrC2yT0B89Ykiy7UY6yxOapXM-OyV29YNsXOQa8wkffnklv-IrKfpwj5bNqt4L7A1NaOCQnOxi0YLWroIDcSrLydmhrF_Mkh5uNluDaTscwNlOFnrsycfUDCzZQ=="
+   },
+   {
+    "title": "youtube.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENntlCPgNGelDMU0GA4ricE8dAXJ1fnZoU6LorcxazDqfk6hrxW5eCpe5cW6oAJuoEVeE6i-puTb1m1hU1NX2JKybAhnHPC1SY7S8-Y4ORDOuS4Ad1T30MUR9ox21-hAcxYgK_2UQ="
+   },
+   {
+    "title": "deepwiki.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyq6l9ITHPpPozZ8xm-t7gG3_pvzJHW2xf6QXZESSh9K60tZRP-kc9OCXPNONvUswZxEhjwvTO-kSyP7ySZrObdWCX4LTuj4X0xNsEmni2Be5e2AL5H8PXK_rYP7z_vo2Dg8-f58G2w2M="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjlq2GDWOBvW_2oTi7glOJJ9IDJFXLP3iSuzSnnCiKIZ5xLDhtdrrzCs8EMyWe0KkWAhQIGDg1OuwPAL6SXASx3_dNCaYZR0ExHY1UPsNmL6yS-hzwDtDmE2AGToN_JjeEjw=="
+   },
+   {
+    "title": "apify.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGh2OeiF2lEbMUnYi4cq5f05Fh4WjbD8BXt_ihaQTJ61NSL73_BdFLxG0UNxBPcPcSJDprEqD-JN7WUfpCEseMDb4w6LC7fAcv9ZnQ2JKrL0wT7Xw3bT7enin2TMntbp79gmovc19E="
+   }
+  ],
+  "tokens": 8733,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://github.com/sherlock-project/sherlock",
+    "status": 200,
+    "chars": 6818,
+    "readable": true
+   },
+   {
+    "url": "https://sherlockproject.xyz/",
+    "status": 200,
+    "chars": 592,
+    "readable": true
+   },
+   {
+    "url": "https://bellingcat.gitbook.io/toolkit/more/all-tools/sherlock",
+    "status": 200,
+    "chars": 17710,
+    "readable": true
+   },
+   {
+    "url": "https://apify.com/misceres/sherlock/api",
+    "status": 200,
+    "chars": 8287,
+    "readable": true
+   },
+   {
+    "url": "https://docs.apify.com/api/v2",
+    "status": 200,
+    "chars": 22550,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/Burnsedia/sherlock-mcp",
+    "status": 200,
+    "chars": 8772,
+    "readable": true
+   }
+  ],
+  "seconds": 34.2
+ }
+}

@@ -1,0 +1,206 @@
+{
+ "app": {
+  "id": 84,
+  "name": "Paygent Connect",
+  "category": "Finance and Fintech",
+  "hint": "paygent (NMI-powered)"
+ },
+ "record": {
+  "subcategory": "Commerce / Billing",
+  "one_liner": "Paygent Connect enables AI agents to perform financial transactions and provides billing infrastructure for AI products.",
+  "auth_methods": [
+   "api_key",
+   "bearer_token",
+   "oauth2"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "Developers use a static API key (prefixed with 'pg_live_') passed as a Bearer token in the Authorization header. OAuth is used for Google Pay & Wallet Developer MCP integration.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up at paygent.to to get an API key immediately. A free tier is available with a $5/period total spend cap.",
+  "api_styles": [
+   "rest",
+   "cli_or_library"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive for commerce, including discovery, agent identity, and checkout management. Uses Universal Commerce Protocol (UCP) discovery document for machine-readable tool definitions.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Paygent provides a native MCP checkout endpoint. A collaborative server with Google for Pay/Wallet management also exists.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "none",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://paygentcommerce.com/developers/",
+    "quote": "If your runtime can call a tool, it can sell, watch prices, optimize cards, and complete checkout."
+   },
+   {
+    "claim": "general",
+    "url": "https://withpaygent.com/pricing",
+    "quote": "Paygent is billing infrastructure for AI products... track what your AI does, price it flexibly, and invoice automatically."
+   },
+   {
+    "claim": "general",
+    "url": "https://paygentcommerce.com/developers/",
+    "quote": "All money and points math is deterministic and server-side — never delegated to a model."
+   },
+   {
+    "claim": "auth",
+    "url": "https://paygent.to/",
+    "quote": "A Paygent account — sign up at paygent.to to get your pg_live_... API key."
+   },
+   {
+    "claim": "auth",
+    "url": "https://paygent.to/",
+    "quote": "headers={\"Authorization\": \"Bearer pg_live_...\"}"
+   },
+   {
+    "claim": "auth",
+    "url": "https://support.google.com/pay/merchants/answer/16385635",
+    "quote": "Enter your OAuth client ID and OAuth client secret. Select the new connector and click Connect."
+   },
+   {
+    "claim": "access",
+    "url": "https://paygent.to/",
+    "quote": "Sign up to the dashboard and get your Paygent API key."
+   },
+   {
+    "claim": "access",
+    "url": "https://paygent.to/",
+    "quote": "Free: $5/period total cap... Pro: $49/period total cap."
+   },
+   {
+    "claim": "api",
+    "url": "https://paygentcommerce.com/developers/",
+    "quote": "MCP checkout tools create, update, complete, and cancel checkouts as MCP tool calls."
+   },
+   {
+    "claim": "api",
+    "url": "https://paygentcommerce.com/developers/",
+    "quote": "The /.well-known/ucp document declares checkout schemas... machine-readable, versioned, and standard."
+   },
+   {
+    "claim": "api",
+    "url": "https://withpaygent.com/",
+    "quote": "SDK records agents, indicators, tokens... billing runs produce itemized invoices."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://paygentcommerce.com/developers/",
+    "quote": "Paygent isn't a proprietary API — it's an agent that speaks... an MCP checkout endpoint."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://support.google.com/pay/merchants/answer/16385635",
+    "quote": "The Google Pay & Wallet Developer MCP server gives AI-powered development tools the ability to access your Google Pay and Google Wallet developer data."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://paygent.to/",
+    "quote": "Sign up to the dashboard and get your Paygent API key."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "Paygent Connect is an agentic commerce and billing platform that enables AI agents to perform financial transactions (checkout, price watching, loyalty redemption) and allows developers to meter and bill for AI usage. It is built on the **Universal Commerce Protocol (UCP)** and is powered by the **NMI** payment gateway.\n\n### Research Notes\n\n**Product Capabilities**\n*   **Agentic Commerce:** Allows agents to discover products, manage carts, and complete checkouts autonomously using cryptographic spend mandates.\n    *   *Source:* [paygentcommerce.com](https://paygentcommerce.com/developers/) — \"If your runtime can call a tool, it can sell, watch prices, optimize cards, and complete checkout.\"\n*   **AI Billing & Metering:** Provides infrastructure to track LLM tokens, voice minutes, and custom indicators to generate itemized invoices.\n    *   *Source:* [withpaygent.com](https://withpaygent.com/pricing) — \"Paygent is billing infrastructure for AI products... track what your AI does, price it flexibly, and invoice automatically.\"\n*   **Deterministic Money Math:** Ensures all calculations for discounts, taxes, and totals are handled server-side rather than by the LLM.\n    *   *Source:* [paygentcommerce.com](https://paygentcommerce.com/developers/) — \"All money and points math is deterministic and server-side — never delegated to a model.\"\n\n**Authentication**\n*   **Primary Auth for Multi-tenant:** `api_key`. Developers use a static API key (prefixed with `pg_live_`) to authenticate requests to the Paygent backend.\n    *   *Source:* [paygent.to](https://paygent.to/) — \"A Paygent account — sign up at paygent.to to get your pg_live_... API key.\"\n*   **Other Methods:**\n    *   **Bearer Token:** The API key is passed in the Authorization header.\n        *   *Source:* [paygent.to](https://paygent.to/) — `headers={\"Authorization\": \"Bearer pg_live_...\"}`\n    *   **OAuth:** Used specifically for the Google Pay & Wallet Developer MCP integration.\n        *   *Source:* [google.com](https://support.google.com/pay/merchants/answer/16385635) — \"Enter your OAuth client ID and OAuth client secret. Select the new connector and click Connect.\"\n\n**Developer Access & Cost**\n*   **Access Level:** `self_serve_free`. Any developer can sign up and get an API key immediately.\n    *   *Source:* [paygent.to](https://paygent.to/) — \"Sign up to the dashboard and get your Paygent API key.\"\n*   **Cost:**\n    *   **Free Tier:** Includes a $5/period total spend cap and 10,000 GPT-4o-mini tokens.\n    *   **Pro Plan:** $49/period for higher limits ($5 per session, 50k GPT-4o tokens).\n    *   *Source:* [paygent.to](https://paygent.to/) — \"Free: $5/period total cap... Pro: $49/period total cap.\"\n\n**API Technicals**\n*   **API Style:** REST and MCP.\n    *   *Source:* [paygentcommerce.com](https://paygentcommerce.com/developers/) — \"MCP checkout tools create, update, complete, and cancel checkouts as MCP tool calls.\"\n*   **Breadth:** Comprehensive for commerce; includes discovery (`/.well-known/ucp`), agent identity (`/.well-known/agent_card.json`), and checkout management.\n*   **OpenAPI Spec:** Not explicitly published as a single YAML, but uses the **Universal Commerce Protocol (UCP)** discovery document for machine-readable tool definitions.\n    *   *Source:* [paygentcommerce.com](https://paygentcommerce.com/developers/) — \"The /.well-known/ucp document declares checkout schemas... machine-readable, versioned, and standard.\"\n*   **Webhooks:** Supported for usage events and billing runs.\n    *   *Source:* [withpaygent.com](https://withpaygent.com/) — \"SDK records agents, indicators, tokens... billing runs produce itemized invoices.\"\n*   **Sandbox:** The free tier acts as a functional sandbox with low spend limits.\n\n**MCP Servers**\n*   **Official:** Yes. Paygent provides a native MCP checkout endpoint and a collaborative server with Google for Pay/Wallet management.\n    *   *Source:* [paygentcommerce.com](https://paygentcommerce.com/developers/) — \"Paygent isn't a proprietary API — it's an agent that speaks... an MCP checkout endpoint.\"\n    *   *Source:* [google.com](https://support.google.com/pay/merchants/answer/16385635) — \"The Google Pay & Wallet Developer MCP server gives AI-powered development tools the ability to access your Google Pay and Google Wallet developer data.\"\n*   **Community:** None found (one \"Pagent\" server exists for A/B testing but is unrelated).\n\n**Buildability Verdict**\n*   **Verdict:** `ready_now`\n*   **Main Blocker:** None. The platform offers self-serve API keys, a free tier, and native MCP support, making it immediately buildable for AI agent toolkits.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "Paygent Connect API documentation \"get api access\"",
+   "Paygent Connect pricing free tier",
+   "Paygent Connect MCP server official",
+   "\"Paygent Connect\" NMI powered API",
+   "Universal Commerce Protocol Paygent"
+  ],
+  "search_sources": [
+   {
+    "title": "paygent.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEur_n7AbQp2CmKMzjMs8kvZfM1jSt1OOMH5HWNfg6ltpzr0r36fdpQApv0EFdL_6UsdbJ72GFO3GQ_1pwXokAcks5skJBlrKO7rhtLG_WJehyqAkXZlfSOK4rQurgbsc34iiN7jgTUZcBflTntw=="
+   },
+   {
+    "title": "paygentcommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVywiZlkH5yM6uOwrVNblCr5ENnANxvxnfpzbMhAD8TYZUU315XLTxuXMKHhCCAgNEL6N6iR65H3zrxG85mDaJOXbGWCQqG-EcBmB6TZH3EVjqsIMF9CQ="
+   },
+   {
+    "title": "withpaygent.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSa2C08RijYIMPVwskrdkaiiRM5q1IrgIIrOgZzjprW9CAgCOEWF2ORuT5eNUwOp5KO-3wGfhlU-f_C7kSRtDSZMEwpbGZ_jFKMTe7geVhIi01iJ7BM6a9UnnQ_PZCh8T1tvi5ixxLdu5tR5B15ubnRYKrXcRL4kEcNC95sGrrUOj4"
+   },
+   {
+    "title": "google.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZa_8bKMrp6vMwnr2Zy9xl3QCxbdxsO9STE0clohN5xM_TFUxae8eR3zog9Y3JudJtgDX_XZLlG0aTtDIYaojELRnzSgsCHrHoQygjO-G5OeqxYUQmFzg-sjllr2AAW5my2lMGk53iacsswReHDtQLUSMB7kwdka9OiSS4lf4="
+   },
+   {
+    "title": "paygent.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESP01CoHJfe4JOoTAqw5UpZaD9nhKIY-QU4b9G7aga_jlnf9QhylUYV0G8fy4I533quvnNPF-PylynnxJuq_1dJOe-DDoASqTxDa9m6QNNCutD"
+   },
+   {
+    "title": "googleblog.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJvKd6nfe-9BkkKoT0yWKhq5lmpR_4kO9oEFkoub80y5pHNokUzuZy37jOFkpo9l8ahcCYm9Q66Vw9cFP61AOfsFbtyqJHJ54pXW-69WSqCYqZW7KQEofmN3Lndwo2DyeZ9zRV_WA6Ng4Vh_hYilC4Ni3S5nnhNXz5FSp15DECEh4c7ys4P74sYaQ-vQ=="
+   },
+   {
+    "title": "paygentcommerce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsnuDxySF1ZqQzi2o0UUUNbcX4CvTxKRsTEEujclOb1s0lt4gEwXKlbY1ulhqcb2_kO69gRIuaM_22P8osJDs47eSdRK8yypXl-s1n8OLNLP8kQBmoidSupjOvXd6SARb9"
+   },
+   {
+    "title": "claudemcp.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9G7f3Ww6oC_SG7AiQOwM6jps8oDALQbM45ZBhOkllbHcrpfa2llfZRfjodovbr7jMhj4Y6hIlxWzMCgIaOhovoo2gjnbdFsAC0GR9034lEllBSHCKxqGfPf5W2Frvz5ZzqpLZqd7iBa1pNcPpVDEGbPqerGNjD7clCL_AkH8dHbUAKrNzx9BrQScD6A=="
+   },
+   {
+    "title": "artificialintelligence-news.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRYccMcxcjIyw4l9or1I03JiIEnjzKBukLFJPdNl-ZUzICaCZA2ErGuK3z5-9G7OdBdkhQTNFWJHCWxy4hhnbLZcS3idXVcsgHEI6ACUFWbrcEqTB5hcgqYkZmVh3WmBQ_kEC4CgM4o6sE9pYdS8xQvcifR5zUXj8YCT9AAUdRWHzcpAkhUC-Qs8Ym91xucIe1NY7ASJihJZertchZ"
+   }
+  ],
+  "tokens": 5640,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "Paygent Connect API authentication",
+    "Paygent Connect API keys",
+    "Paygent Connect OAuth",
+    "Paygent Connect getting started",
+    "Paygent Connect quickstart",
+    "Paygent Connect API pricing",
+    "Paygent Connect developer program",
+    "Paygent Connect plans API access",
+    "Paygent Connect API reference",
+    "Paygent Connect API documentation",
+    "Paygent Connect MCP server"
+   ],
+   "candidates": 2,
+   "live_urls": [
+    "https://www.gopaygent.com/",
+    "https://paygentcommerce.com/developers/"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://paygent.com/developers",
+     "status": 0
+    },
+    {
+     "url": "/ucp/mcp",
+     "status": 0
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://www.gopaygent.com/",
+     "status": 200,
+     "chars": 68,
+     "readable": false
+    },
+    {
+     "url": "https://paygentcommerce.com/developers/",
+     "status": 200,
+     "chars": 4555,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 75.7
+ }
+}

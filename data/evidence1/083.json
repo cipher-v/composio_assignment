@@ -1,0 +1,102 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.binance.com/en/developer",
+   "status": 202,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://binance-docs.github.io/apidocs/spot/en/#authentication-and-signing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://binance-docs.github.io/apidocs/spot/en/#binance-login-oauth2",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://binance-docs.github.io/apidocs/spot/en/#quick-start",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developers.binance.com/en/docs/products/spot/faqs/api_key_types",
+   "status": 202,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://binance-docs.github.io/apidocs/spot/en/#api-reference",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://binance-docs.github.io/apidocs/spot/en/#spot-testnet",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://developers.binance.com/en/docs/agent-native/mcp-server/agentic",
+   "status": 202,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "oauth2": null,
+  "api_key": null,
+  "signature_hmac": null
+ },
+ "lint": [],
+ "summary_for_verifier": "No issues flagged.",
+ "metrics": {
+  "n_evidence": 8,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 1.0,
+  "readable": 0,
+  "quote_supported_rate": null,
+  "lint_issues": 0,
+  "flag_count": 0
+ }
+}

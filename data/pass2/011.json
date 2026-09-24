@@ -1,0 +1,283 @@
+{
+ "app": {
+  "id": 11,
+  "name": "Zendesk",
+  "category": "Support and Helpdesk",
+  "hint": "zendesk.com"
+ },
+ "record": {
+  "subcategory": "Helpdesk / ticketing",
+  "one_liner": "An AI-first customer service and support platform providing ticketing, help center, live chat, messaging, and voice solutions.",
+  "auth_methods": [
+   "oauth2",
+   "basic"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth2 via a Global OAuth client is required for multi-tenant integrations. Basic auth (email/password or email/token) is supported but API tokens will be deprecated by April 2027.",
+  "access": "approval_required",
+  "access_notes": "Zendesk offers a 14-day free trial and a non-expiring Sponsored Developer Account (Suite Enterprise plan for up to 5 agents) for testing. However, production multi-tenant applications require submitting a request for a Global OAuth client via the Zendesk Marketplace portal, which undergoes manual review and approval.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extremely broad REST APIs covering ticketing, help center, messaging, live chat, voice, custom data, users, and organizations. An official OpenAPI spec is published for Zendesk Messaging, while a public Postman collection is maintained for the core Support API.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "community_only",
+  "mcp_notes": "reminia/zendesk-mcp-server (https://github.com/reminia/zendesk-mcp-server)",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "To distribute a multi-tenant integration, developers must apply for and receive manual approval for a Global OAuth Client from the Zendesk Marketplace team. Additionally, Zendesk enforces strict 30-minute token expirations and requires robust implementation of the OAuth 2.0 refresh token flow.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.zendesk.com/in/pricing/#georedirect",
+    "quote": "deliver faster, higher quality resolutions with the only ai-first service platform"
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.zendesk.com/api-reference/",
+    "quote": "To authenticate API requests, use basic authentication with your email address and password, your email address and an API token, or an OAuth access token."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.zendesk.com/api-reference/",
+    "quote": "Zendesk is removing API tokens as an authentication method. Starting July 28, 2026, unused tokens will automatically deactivate. By April 30, 2027, all API tokens will stop working."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.zendesk.com/api-reference/",
+    "quote": "If you distribute a public app or an integration app to multiple Zendesk customers, you must use global OAuth tokens to authenticate requests. You may not use regular API tokens or OAuth tokens because the Zendesk Developer Terms prohibits Zendesk customers from sharing their API credentials with you."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.zendesk.com/api-reference/",
+    "quote": "Zendesk does not currently offer a permanently free plan for its helpdesk software as of 2026. Instead, they focus on providing a high-value, scalable platform... A 14-day free trial: You get to test out the robust features"
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.zendesk.com/api-reference/",
+    "quote": "If you're interested in becoming a Zendesk developer partner, you can convert your trial account into a sponsored Zendesk Support account. As part of becoming a Zendesk developer partner, Zendesk sponsors an instance for up to 5 agents that you can use for developing, demoing, and troubleshooting your app or integration. Unlike a trial account, a sponsored account does not expire after 14 days."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.zendesk.com/api-reference/",
+    "quote": "Sign in to the Zendesk Marketplace portal . Select Global OAuth from the menu on the left side, and then click the Request new OAuth button. Complete the request form. Ensure the subdomain includes the prefix d3v- ."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.zendesk.com/api-reference/",
+    "quote": "Zendesk's REST APIs let you access Zendesk data and functionality using code instead of a user interface."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.zendesk.com/api-reference/",
+    "quote": "Zendesk Messaging maintains and publishes a public version of our OpenAPI specification for integrators to use as a reference. API specification. The latest version of the OpenAPI specification can be found on GitHub , published in YAML format."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.zendesk.com/api-reference/",
+    "quote": "A webhook sends an HTTP request to a specified URL in response to activity in Zendesk Support, Guide, Gather, and Messaging."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.zendesk.com/api-reference/",
+    "quote": "A sandbox is a test environment with the replicated configurations and data from your production environment... The availability of sandbox environments vary by plan: Support Enterprise includes one sandbox."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/reminia/zendesk-mcp-server",
+    "quote": "A Model Context Protocol server for Zendesk. This server provides a comprehensive integration with Zendesk. It offers: Tools for retrieving and managing Zendesk tickets and comments"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://developer.zendesk.com/",
+    "quote": "The Model Context Protocol (MCP) lets admins connect Zendesk to external MCP servers, discover the tools those servers provide, and use those tools as steps in action flows."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "Here is my adversarial fact-checking of the Zendesk record.\n\n### Verification Notes\n\n**subcategory**\n*   **Original:** `Helpdesk / ticketing`\n*   **Verification:** `CONFIRMED`\n*   **Reasoning:** Zendesk is widely known as a customer service and ticketing platform. Search results and their own website confirm this categorization. The Ticketing API is one of their core APIs.\n\n**one_liner**\n*   **Original:** `An AI-first customer service and support platform providing ticketing, help center, live chat, messaging, and voice solutions.`\n*   **Verification:** `CONFIRMED`\n*   **Reasoning:** Zendesk's pricing page describes it as \"the only ai-first service platform\". The API reference lists capabilities for ticketing, help center, live chat, messaging, and voice, confirming the listed solutions.\n\n**auth_methods**\n*   **Original:** `[\"oauth2\", \"basic\"]`\n*   **Verification:** `CONFIRMED`\n*   **Reasoning:** Zendesk's documentation confirms that the API supports OAuth access tokens and basic authentication (using email/password or an API token). However, both basic authentication with a password and API tokens are being deprecated. The Sunshine Conversations API also supports JWTs, but this is a distinct part of the ecosystem. For the core APIs, OAuth2 and Basic (with API Token) are the main methods, with OAuth2 being the required future method.\n\n**primary_auth**\n*   **Original:** `oauth2`\n*   **Verification:** `CONFIRMED`\n*   **Reasoning:** Zendesk documentation explicitly states that for multi-tenant integrations (public apps), developers *must* use global OAuth tokens. They also state that API tokens are being removed and integrations must migrate to OAuth. This makes OAuth2 the clear primary method for a multi-tenant platform.\n\n**auth_notes**\n*   **Original:** `OAuth2 via a Global OAuth client is required for multi-tenant integrations. Basic auth (email/password or email/token) is supported but API tokens will be deprecated by April 2027.`\n*   **Verification:** `CONFIRMED`\n*   **Reasoning:** Documentation confirms that multi-tenant apps must use global OAuth. It also confirms that API tokens will stop working by April 30, 2027. Basic authentication with email and password was deprecated for most accounts by January 2026.\n\n**access**\n*   **Original:** `approval_required`\n*   **Verification:** `CONFIRMED`\n*   **Reasoning:** While a developer can get a 14-day free trial or a sponsored developer account for testing, building a multi-tenant application that can connect to other customers' accounts requires a \"global OAuth client\". To get this, you must submit your app to the Zendesk Marketplace, which involves a review and approval process. This fits the definition of `approval_required`: \"the vendor must approve you before credentials work on other customers' accounts\".\n\n**access_notes**\n*   **Original:** `Zendesk offers a 14-day free trial and a non-expiring Sponsored Developer Account (Suite Enterprise plan for up to 5 agents) for testing. However, production multi-tenant applications require submitting a request for a Global OAuth client via the Zendesk Marketplace portal, which undergoes manual review and approval.`\n*   **Verification:** `CONFIRMED`\n*   **Reasoning:** Zendesk's developer documentation confirms the availability of a 14-day free trial. It also details the sponsored developer account for Marketplace partners, which is a non-expiring Suite Enterprise plan for up to 5 agents. The requirement to use a global OAuth client for multi-tenant apps, which involves submitting the app to the Marketplace, is also confirmed.\n\n**api_styles**\n*   **Original:** `[\"rest\"]`\n*   **Verification:** `CONFIRMED`\n*   **Reasoning:** The Zendesk API is consistently referred to as a REST API in its documentation.\n\n**api_breadth**\n*   **Original:** `broad`\n*   **Verification:** `CONFIRMED`\n*   **Reasoning:** The API reference homepage lists a wide array of capabilities, including Ticketing, Help Center, AI Agents, Messaging, Voice, Custom Data, Live Chat, and Sales CRM, justifying the \"broad\" classification.\n\n**api_notes**\n*   **Original:** `Extremely broad REST APIs covering ticketing, help center, messaging, live chat, voice, custom data, users, and organizations. An official OpenAPI spec is published for Zendesk Messaging, while a public Postman collection is maintained for the core Support API.`\n*   **Verification:** `CONFIRMED`\n*   **Reasoning:** The API breadth is confirmed. Zendesk documentation confirms they publish an official OpenAPI specification for the Messaging API (formerly Sunshine Conversations) on GitHub. They also maintain an official public Postman workspace which includes a collection for the core Support API. An OpenAPI file for the Ticketing API is also available for download.\n\n**openapi_spec**\n*   **Original:** `true`\n*   **Verification:** `CONFIRMED`\n*   **Reasoning:** Zendesk provides an official OpenAPI specification for its Messaging API. It also provides a downloadable OpenAPI file for the core Ticketing (Support) API. While there isn't one unified spec for all APIs, the presence of official specs for core products makes this true.\n\n**webhooks**\n*   **Original:** `true`\n*   **Verification:** `CONFIRMED`\n*   **Reasoning:** Zendesk has extensive documentation for using webhooks, which can be triggered by activity in Support, Guide, Gather, and Messaging. There is also a Webhooks API for managing them programmatically.\n\n**sandbox**\n*   **Original:** `true`\n*   **Verification:** `CONFIRMED`\n*   **Reasoning:** Zendesk offers sandbox environments. Availability varies by plan: one is included with Support Enterprise, two with Suite Enterprise/Enterprise Plus, and they can be purchased as an add-on for other professional-tier plans.\n\n**mcp**\n*   **Original:** `community_only`\n*   **Verification:** `CONFIRMED`\n*   **Reasoning:** Searches for \"Zendesk Model Context Protocol server\" return several community-built, open-source projects, such as `reminia/zendesk-mcp-server` and others. Zendesk documentation does not mention an official, vendor-maintained MCP server. Instead, documentation from platforms like Truefoundry explains how to register a third-party MCP server implementation with Zendesk. This confirms that only community-provided servers exist.\n\n**mcp_notes**\n*   **Original:** `reminia/zendesk-mcp-server (https://github.com/reminia/zendesk-mcp-server)`\n*   **Verification:** `CONFIRMED`\n*   **Reasoning:** The cited GitHub repository is a valid, community-built MCP server for Zendesk. Other examples exist, but this one is a prominent result.\n\n**verdict**\n*   **Original:** `ready_with_friction`\n*   **Verification:** `CONFIRMED`\n*   **Reasoning:** The API is public and well-documented. However, building a distributable, multi-tenant integration is not self-serve. It requires applying for a Global OAuth client, which is tied to the Zendesk Marketplace app submission and review process. This constitutes a significant hurdle, making `ready_with_friction` the correct verdict.\n\n**blocker**\n*   **Original:** `app_review_or_approval`\n*   **Verification:** `CONFIRMED`\n*   **Reasoning:** This directly corresponds to the `access` type of `approval_required`. The requirement to get a Global OAuth client approved via the Marketplace process is the primary blocker to self-serve development of a multi-tenant app.\n\n**blocker_notes**\n*   **Original:** `To distribute a multi-tenant integration, developers must apply for and receive manual approval for a Global OAuth Client from the Zendesk Marketplace team. Additionally, Zendesk enforces strict 30-minute token expirations and requires robust implementation of the OAuth 2.0 refresh token flow.`\n*   **Verification:** `CONFIRMED`\n*   **Reasoning:** The Global OAuth Client approval requirement is confirmed. For OAuth clients created after April 30, 2026, a default 30-minute access token expiration is applied. Documentation also confirms that developers must implement the refresh token flow to handle these short-lived tokens.\n\n### Uncertain Fields\n\nNone. The available documentation is comprehensive and allowed for clear verification of all fields.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Zendesk API authentication methods",
+   "Zendesk API access",
+   "Zendesk developer account free",
+   "Zendesk API free trial",
+   "Zendesk global OAuth client approval",
+   "Zendesk API token deprecation",
+   "Zendesk sponsored developer account",
+   "Zendesk OpenAPI spec",
+   "Zendesk Postman collection",
+   "Zendesk webhooks documentation",
+   "Zendesk sandbox environment plans",
+   "Zendesk Model Context Protocol server",
+   "Zendesk OAuth token expiration"
+  ],
+  "search_sources": [
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVCnUKxA7cI4Hz_PtuJKedWMIaSUDsZaknLUNNhwKtowkEsbxI7bNC8WUzi04yNA8T-7LfqZkpZKdFaYqd0rVfO0f5zhmo78ZfzB716VtGxA7AhufuqzsJlOeic9IRsga4Vjh2x83TaQyeB4ijN-_XdxJlbm8VsEHJfcIQ1DA="
+   },
+   {
+    "title": "Current time information in San Francisco, CA, US.",
+    "uri": "https://www.google.com/search?q=time+in+San+Francisco,+CA,+US"
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG80Ybaqkjuqw6BoIZ9SOZuC6TraqMDsrq8N-1NWXM_X5fXQ_HhyeDVsfMez0VkFD6BPI3dkGsCJ7Bd1zGITNRTChm_cQSFgwqiZsmU_E5pfOCqQkHz_olTa07yFWNVlg56Q7JqEwqf"
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiBKC5Ggpu5WjUOdWKcQxkzDN2M9gUz5O7nksDmw85IHVJPOjhyMnf-Y6ATne9sr7GSPFXZRLGZVvJqiqgZUioqc3mwUbhzgrw73tlMbtjQMFQ7XvWWeK1PfWwNzSVuatz_pw4oRniTfokRqKlcNydtBjTQpeJPy4uHZ7f5Z-2DDFn1QSSlw=="
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFY1SwHTMPjQPGWMMEBymDB7fp3DyyJycMGZ_Y5AIFHbTtN1PV9PxmepKtKrQT2mz8hZk0Esyg6bVUQp53ySWZsqntQiha9Qr7l61dQCvMLs9Q0sa0d3cwsC0wOd52-OgjXaMm5cWWzNkmULHyQt0fxDz7GEwF1CmLRhPuN-0wPIHmvMsvZMi8Njwvn9mTYCKX7bc5pMNw_FYkx"
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmXb2VuYPQTFztP2yHjxZqpzhldNEltaoKXKMuD4ydoPsWU880YY08DYE0VJmzKhiMJKhODFKvRGhXncJsa4XavBhlJrF0SZcVMX6AdJ3flWcVRqY7hpoHb7cOE8EUOPbxvumrhJ9nmhFf-OfTuQfXen4XLw2phOHyZg20F_9w-dBhh8jmThqx6u7Cd5K4jwsrUbdozcoCubQcsyIfMXQ0ps8_8r3xzVQQcmlUxXpdx4F_JSlqmV4cjRIuZXTWk5DbK2KEjOdu2TYL"
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHamA7tiq1pNX9HvuoEVB6nmF82kCq81vzry8ch6ayvA6tH4JOWXEKqUTciv8KYEdhBM_7S52YJQNT7Y1csyc7k2-Miw_nvQaDcgG9dhiq5DJYOxQR-MUJOeGlllIQb5S1ATN7_UxIWTRIOrusUA7hEgINM8bYdJdhsNqA="
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFOru0Xvo4V6wfjy7MTGZMrwwq-I3nZ2F8E3rcMV1DK2UrDmZkAyNdm-JN_zpUdlgi3G3vVhWLrBhTaLoFouZu0-WD73VxErlHM7nGF5W1OZDafDmWa5IrBpJ0GxpRwqUgRxeC_ghhV8b1dyZtLxNF6WhA_vC42m5fKPd2yciCbpAEiPF-kePpX9ozCaUTcyUWXQPhhC6c7g=="
+   },
+   {
+    "title": "classmethod.jp",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3pX9x0iOVeoJ2TZiCTawETLuDUP6zIQM-WVzKVIhC4BZj3RwE3qoX08uPMmP6-dCZOQ9-GvKDOh9ZOINKHLpMGC28V-TJ5F6QExCjS-ANgdCgWgJ5V6KiY0wzUgFFprC8JnS57ykBt-xaDrHpaUAHbwQBAAkbgfwD6COouQbWJFtoMnvybm5Y"
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHB0FcvQduJPFUn6mImYbwCZENIInhJvqQiV6m1wk-2iRsdCFjQBtMcmd_kldUaBysnJQEo_EGdAO5pscOj9Gtu4rNIJWugX4wmHrvkr2RJainiNYTiZn6L_oNJJV9IWnipAaTfoKFgb0Mms4oijdjbGgs-tV4fNGdfhegq_LD2MNTWRW1dlp5nQv6y_lXyWI9OA42Wbw25dteVVcTibNDve6kZ"
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBXi9okIuXFWwT7vaJ_iKoYg--6pZiu93B2yfjlpju8QDE7V8ej5kimIC3rEuQ5CpAqSru1JtxPQy7BhBc16RKicZpZ3NUTtCeyjKMZrEDVjR2xSKSTWMFg_bfKvmmYTM5slBtsWQh4aHTJI9ROjPSw7M="
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpgp_s2A_omUnIVHl6XR41XW-KOHvU_LCaMXu9X2utAkAkK1tRibsk966Tck05bsbG4qlnYu86QSXEwmYlgAG9T2yW25Abzh165GQnmNKwmdYvXgnUGe10sOyvBmo946Cit4tVnLTnTlI7chEznLquF3k0aKoWsTW5S9mecEGklgfWXGHBSnCe0BZfZTxv3mKHWcP6aOnxmdyMeEre0RpBF0xeXy_hq06x7RIlh8G9GuqzeyaDkUM="
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0c6IBG2S0ewEYEmHpNgYMyS2WwchQa7QnswWmAzK9Cbvm_8T-u3h1o0nF8vnbe846uFFXJRHKK9Y1py_lRNiHeoRfW6quRBkUl8BmcSJvDq2a_7ovGPntQWFt_BnuKLKdrtkXAkhaYKb8yCvBfIPc7eBE"
+   },
+   {
+    "title": "apitracker.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOGQhgErrRP3zISjrDnqAwfis5Jcg7_oh1rN_7jm3Ef7f5XSuzoWgAoppHrm3jHXPW0JQLYGKjkrDrCgt0mTVceHZ3ZHZNaF7zxbZpD3LAAkiIjYxM485AS30="
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXlyChxg-3Rg3xpGwpiyEC4eTp23hRrJfaNDfbJzHnO_c3JdSWW7TCaewZZraf7P50u752_mGIL5U3jXwzeK_qYWLyxmmJVFpAnN8ndy4OisSrt8JArmP5kIvI7yxuPkhhmstbtc5hVWeYI1lfs6yf_dR_yKWCF26xxZZUaQTmecml6yxx-4irc1vIgjczF74XmctPvew="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMarC71r2uWXAEqDTuqVjt1AUxbpueWKQzeQ5BuKKe9DcKnWpXNF-fuaG-R1LYPuysN1Rsrahx9PRg7NuBPqH_JqcnKYVGhgKJr5qFDcL19ByqlGNuYY5zCxoEf6jS6sEK-i-UKlmKK7AbwMBnlapHHdsofY4="
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsQx_1C_INOaAjo-mdr_v5O1xMJbTVfwvRYkFXhXDGM1bEbdVly2mfUIENZUvu4K8SuS8MKMeiKgJ4JF8sW0pFUEJUB5iHDfzCzRdKLCxhZgLxZv917IUJW9xChfUnubr_uuZ5oL1wQOFoNr-9YfMVuxeLcVQ-BtHIRhZaV-ANyQu0t04R8x1v7uKQu6FNyp2DoYZlIOpgE3vsgNWoACokbNFRlUUg"
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEx7JjMRVbFHCjLddQbsJqxQU0cZw-rXEm6Bx7DbGI1EMNgRIJA8t9lvp-KjM_z5iz7L_sbYCzaWUJVFKHoSZwHJX9R6dhu6CCJY5KsvkOujTWRX07d6d4rpoAn-N5pbJdvruOR8HJ8OdI9pygoYrwT"
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGY-5cuiVJM-dGbpqOUtnJ7Ksrk6sc6D99nu7be_xp_O4RnLVWvj2k-d9DyUQ0ji1BZIVwyQCTTvkZP4pwqXO-0TWcm-VzYP4jhH6woZ6-NqmxG9hK_0-YquF1qfd86xSM4uW1HWw0-Z6IJRm_ymSvrj6xK4uQZX-e6_5KGRw=="
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEM_2eF_FN8UNOVPnYUiClJvIy1YIGWQOem8e3CKD8dzTDdEh1HjFWRkYVOZBfHCKfexz3PFiRn7tBjp0-_WbjHkMoEedd8Zct9m7fgxPMEMLYMuVzpLQvsjGqfTwtWY19RtKKjAMlwd1DBDdvOni20x5HFxuO-4x-Qwnp5TihR9FxrG8BElZKakx8hyg1CIbUb"
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNFSskSpyvv-dsZT6DHMCjQ7T4GfL6GI6Umz0jYu3yvLSU7FwnWsI6oFa-ndq5AzY3s1Lj5uNW_JBq2qOnLcPfEjoVLJt32IUm925JRXwc2fTOvsRAKC-kskFEsrYoVBAizFZmhAo3vSyJvGGC_xsoOYKTCCejD59S66WPJSXhdIE6hm4gtw=="
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyq9_OxFRmJFLfe2ZvYGM4WaehVb5_HfelHfifeeAEtkjP-UMSrsBcrujStZGYJPbQ79yqZ8wzBHgvCpk_KhLHElWZ2NvBznoz6a-L3uqVwBcWIk_MM-dn3kwSH08LPfPPDqY="
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZtF0hhmXPiImhyKpLuJIHh487s6SSP4Pke_xqfEHHYdEfd0QcNXOum_k_2egKX_G7WPWjwvyypZDS5yJ9Xa-W2lsSAI2u0gx6Rl9VdOBkCMSr05UVK1grGojmNvVGFW20guC_MFPDLxqJ9P2ROJ-dHRRRw-N3FZ-o1s0xHnsk4k4-yO3wMG8vy1DgfNF8y2cobeVGxDSj7O8="
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvzrZub0HQEzt7XLlkpbTuWkNkOM3NxS2doCDlFHoW79NxwC-mMBRCxHXKg7BabnRObF3uoGuFWR2uCiOWTYWJTLzcrTCHphZ-dsdWxdbjZQcJMcfRrpcJ6aenzpaAv4WLeSHHE3XUQlw2oTGp3fAesOZ4I21yQPqKIdY-YNh72D3B9GdUNVJG7buebJXcTTbzph05p8kmkExOjzidfe6KRQQ15DM="
+   },
+   {
+    "title": "mcp.so",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_j8KydZCLHCwj2v5ja1hvR5XVn42gVKD90Bl78sFK9_y68X7hLaXkYxllJWpbKBOeLPyuKZflOpr2yR2r2kLX3ucBJRbdWWCdeinG-GGpfpdduraoT4LzcdmLEjsjMqESZMMa"
+   },
+   {
+    "title": "lobehub.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQaN5UVHEl1Dz-S6Gn0uFbG3oHAwMVAlB2vd-wyHzqICIgD4QWuKjc7dkQ3zGEdEQq5VUAUrpuno94Vqy6riV1BjMtX3kkKUYSnFkYpCUGnbJVIMGK71gox1gLwNX9rskADcXLlwQe7GVqpUQtjOj-637j9A=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEg7wF79Hkno4KLqZmr6fqnBM1BQ2FW4jG_vn-NuDcpsTMZBc2kAfEpzIAYIZu_JdmHW6SJ539r3cXPRny0rTfDeEdFb9N07fKY8qSSZsqospvfYSQXM1LSwpdtlL2NYUUd7E6-jE0F7A=="
+   },
+   {
+    "title": "mcpservers.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEK6yC1rpbYplfmTCDkyzM99b_NXkSZFniPD96RbnK4xqmfz6zasdvpGPFVtvGrQB6iM-BBluC3ym9OJ3X4R76SgMBsYxUzSAbTiiPl3T7dNc73uBUhWEMghHFEqpnBRfHqAfanINfka9NT_LW9rZcJXQ=="
+   },
+   {
+    "title": "truefoundry.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEin2ip4CJ8BfzcS_ByfsBNMMxmqWbN7gJVMH_aAw8vzJOvDxntMXUtQ7Ljw_wY1JnY7U899nGs0X4eBChe6CcRQNuCbzF8qoC2-IW2WuG2Js1IwrCwG6vQTVFZuqSn5o6PXTWqsKfyNzBEwjpUeQ=="
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPKLm7PalDYgunVS1kqQfKdr3H2Kh6MLlr3U8er87_ng6PRCv7Aap_MjDno8ZYw1PCBYymgqEP69cbBEhtmkTwEYCkW5pvg9XcrQDj9Olmd1YUhE9QjZxLOiVtI3yWxvMLwztp55I0zIBGdzfsCx1IqT8HXwc3amu0V3_-N63WytQ1Dm0r9iInYFgk08-ibDX1UxaNxn-9HxGY4GgP92WsidWi"
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpMhInPoWVgK4AeWrfYyD2tRpzth1nglwPHN6tmL6k44oiSqO_OGMOCMNgIp5EzdLdf3oaKXm3pnmbhwd49iGOHvwXTWe0xxgc3f5-hMhQ6qI1ff5n-KPzfItwGB2LK3fnRXY8ArkgW9s1CvBmhGBmbSxVXJEXAOHvh4pd234oTE23Tvzn7w=="
+   },
+   {
+    "title": "zendesk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfil3VDYC1q2R8ILJia6ztNb8caUKH8nfmMpP7WfwfsylvvwILsI69gc7hF4GZktUzfuMLCXvfK1z-xSHyx4rBBWbpoN0jtyVXJY3Ei3g0vtTPpDE-xQNKWQmv4QC0PfviKYRKW0s7BUvQSEsEcEFNSngdSZ7lnDqDFGWrt-2wXqcnFlVYSP-FuPEsz30bAe9jb3WyRRw7IjK0MM9yc4lawCQyuhflm8WgvSZ3yRLdIU_8JHYwB3iEJPCORJX5qn7mi-fyvA=="
+   }
+  ],
+  "tokens": 8793,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://www.zendesk.com/in/pricing/#georedirect",
+    "status": 200,
+    "chars": 27782,
+    "readable": true
+   },
+   {
+    "url": "https://developer.zendesk.com/api-reference/",
+    "status": 200,
+    "chars": 3307,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/reminia/zendesk-mcp-server",
+    "status": 200,
+    "chars": 13684,
+    "readable": true
+   },
+   {
+    "url": "https://developer.zendesk.com/",
+    "status": 200,
+    "chars": 4438,
+    "readable": true
+   }
+  ],
+  "seconds": 91.1
+ }
+}

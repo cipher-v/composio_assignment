@@ -1,0 +1,180 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://support.ramp.com/accessing-the-developer-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.67
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://ramp.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.56
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.ramp.com/developer-api/v1/authorization",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://support.ramp.com/accessing-the-developer-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.4
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://support.ramp.com/accessing-the-developer-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.54
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://ramp.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.75
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://postman.com/ramp-api/workspace/ramp-developer-api/overview",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://stacksync.com/blog/ramp-wrike-integration",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.ramp.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.ramp.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.09
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://stacksync.com/blog/ramp-wrike-integration",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://support.ramp.com/accessing-the-developer-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.67
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://docs.ramp.com/developer-api/v1/developer-mcp",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://ramp.com/developer-api/v1/developer-mcp",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://skywork.ai/blog/mcp-servers-ramp",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://postman.com/ramp-api/workspace/ramp-developer-api/overview",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://stacksync.com/blog/ramp-wrike-integration', 'https://stacksync.com/blog/ramp-wrike-integration', 'https://ramp.com/developer-api/v1/developer-mcp']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://docs.ramp.com/developer-api/v1/authorization', 'https://support.ramp.com/accessing-the-developer-api', 'https://docs.ramp.com/', 'https://docs.ramp.com/', 'https://docs.ramp.com/developer-api/v1/developer-mcp', 'https://skywork.ai/blog/mcp-servers-ramp']\n- Non-vendor sources (prefer official docs): ['https://postman.com/ramp-api/workspace/ramp-developer-api/overview', 'https://skywork.ai/blog/mcp-servers-ramp', 'https://postman.com/ramp-api/workspace/ramp-developer-api/overview']",
+ "metrics": {
+  "n_evidence": 16,
+  "alive_rate": 0.8125,
+  "dead_rate": 0.1875,
+  "blocked_rate": 0.0,
+  "official_rate": 0.6875,
+  "readable": 11,
+  "quote_supported_rate": 0.45454545454545453,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

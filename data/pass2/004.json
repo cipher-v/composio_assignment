@@ -1,0 +1,220 @@
+{
+ "app": {
+  "id": 4,
+  "name": "Attio",
+  "category": "CRM and Sales",
+  "hint": "attio.com"
+ },
+ "record": {
+  "subcategory": "Customer Relationship Management (CRM)",
+  "one_liner": "A highly customizable, data-driven CRM platform designed to manage contacts, companies, deals, pipelines, and workflows in real time.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 flow is preferred for multi-workspace apps; workspace API keys (bearer tokens) and HTTP Basic Authentication are supported for single workspaces.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can sign up for a free account ($0/month) with no credit card required. API keys and OAuth app creation are available via the Developer Console.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Exposes the entire workspace surface area including objects, attributes, records, lists, entries, notes, tasks, comments, threads, meetings, call recordings, transcripts, files, workspace members, and webhooks via api.attio.com/v2.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Attio hosts an official, production-ready MCP server at https://mcp.attio.com/mcp and a documentation MCP server at https://docs.attio.com/mcp.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "App review is only required for being listed in Attio's public App Marketplace. It is not a prerequisite for creating and using a multi-tenant OAuth application.",
+  "evidence": [
+   {
+    "claim": "auth",
+    "url": "https://docs.attio.com",
+    "quote": "In order to make requests to the Attio REST API, you need to generate an access token. There are two ways to generate an access token: By implementing an OAuth 2.0 flow; By generating an API key for your workspace. You should prefer the OAuth 2.0 flow if building an app for multiple workspaces."
+   },
+   {
+    "claim": "access",
+    "url": "https://attio.com/pricing",
+    "quote": "Free $ 0 0 per user/month... Start today, no credit card required... API and webhook access app sdk mcp server"
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.attio.com/docs/overview",
+    "quote": "REST API this allows developers to build apps that read and write information to and from Attio workspaces. You can also subscribe to events in realtime using webhooks."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.attio.com/mcp/overview",
+    "quote": "Attio MCP is Attio's hosted MCP server that gives AI tools secure access to your Attio workspace. It's designed to work seamlessly with popular AI assistants like Claude, ChatGPT, Cursor, and more."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://attio.com",
+    "quote": "You shall not publish or otherwise make available by any means, any Integration App unless the Integration App and any marketplace store Attio may provide in which such Integration App may be published has been first approved by Attio"
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": "[\"oauth2\", \"bearer_token\", \"basic\"]",
+    "new": "[\"oauth2\", \"bearer_token\"]",
+    "reason": "The documentation confirms two ways to generate an access token: an OAuth 2.0 flow or a workspace API key. Both token types are used as Bearer tokens in the Authorization header. While HTTP Basic Authentication is also supported, the documentation explicitly recommends using Bearer authentication instead.",
+    "url": "https://docs.attio.com"
+   },
+   {
+    "field": "access",
+    "old": "self_serve_free",
+    "new": "self_serve_free",
+    "reason": "The pricing page confirms a \"Free\" plan at $0/month which includes \"API and webhook access\". A developer can sign up for a free account and create an app in the Developer Console without needing a paid plan or sales interaction.",
+    "url": "https://attio.com/pricing"
+   },
+   {
+    "field": "verdict",
+    "old": "ready_with_friction",
+    "new": "ready_now",
+    "reason": "Access is self_serve_free, and while publishing an app to the public App Store requires approval, building and using a private integration (including multi-tenant OAuth apps) does not. The blocker app_review_or_approval only applies to public listing, not to functionality.",
+    "url": "https://attio.com"
+   },
+   {
+    "field": "blocker",
+    "old": "app_review_or_approval",
+    "new": "none",
+    "reason": "There is no blocker for building a private, multi-tenant integration. The Developer Terms state that approval is required to \"publish or otherwise make available by any means, any Developed App through the App Marketplace\". An unlisted OAuth app can be built and used without this approval step.",
+    "url": "https://attio.com"
+   },
+   {
+    "field": "blocker_notes",
+    "old": "Publishing the integration app to make it available to multiple external tenants requires explicit app review and approval from Attio.",
+    "new": "App review is only required for being listed in Attio's public App Marketplace. It is not a prerequisite for creating and using a multi-tenant OAuth application.",
+    "reason": "The original note is misleading. App review is only required for being listed in Attio's public App Marketplace. It is not a prerequisite for creating and using a multi-tenant OAuth application.",
+    "url": "https://attio.com"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### **Verification Notes**\n\nHere is a field-by-field verification of the first-pass research record for \"Attio\".\n\n*   **subcategory**: **CONFIRMED**. Attio's homepage and product descriptions clearly identify it as a \"CRM\" (Customer Relationship Management) platform.\n*   **one_liner**: **CONFIRMED**. The one-liner is a fair and accurate summary of the product's capabilities as described on its website and in its documentation. The docs state, \"Attio is a revolutionary crm platform which is highly customisable, incredibly powerful and data-driven.\"\n*   **auth_methods**: **WRONG**. The correct authentication methods are `oauth2` and `bearer_token`. The documentation confirms two ways to generate an access token: an OAuth 2.0 flow or a workspace API key. Both token types are used as Bearer tokens in the `Authorization` header. While HTTP Basic Authentication is also supported, the documentation explicitly recommends using Bearer authentication instead.\n*   **primary_auth**: **CONFIRMED**. The documentation states, \"You should prefer the OAuth 2.0 flow if building an app for multiple workspaces,\" making `oauth2` the correct primary authentication method for a multi-tenant integration platform.\n*   **auth_notes**: **CONFIRMED**. The notes are accurate. The documentation specifies that OAuth 2.0 is the preferred method for multi-workspace apps, while single-workspace API keys (used as bearer tokens) are available for single-workspace applications.\n*   **access**: **WRONG**. The correct access tier is `self_serve_free`. The pricing page confirms a \"Free\" plan at $0/month which includes \"API and webhook access\". A developer can sign up for a free account and create an app in the Developer Console without needing a paid plan or sales interaction.\n*   **access_notes**: **CONFIRMED**. The notes are accurate. The pricing page shows a free plan is available with no credit card required. The documentation confirms that API access is included in the free plan and that developers can create apps and generate credentials via the Developer Console.\n*   **api_styles**: **CONFIRMED**. The documentation explicitly describes the API as a \"public REST API which exchanges JSON over HTTPS\".\n*   **api_breadth**: **CONFIRMED**. The API is broad. The API reference and collections show endpoints for a wide range of CRM functionalities, including objects, records, attributes, lists, notes, tasks, comments, webhooks, and more.\n*   **api_notes**: **CONFIRMED**. The notes accurately reflect the breadth of the API, which exposes the core surface area of an Attio workspace.\n*   **openapi_spec**: **CONFIRMED**. Attio provides a public OpenAPI specification for its REST API.\n*   **webhooks**: **CONFIRMED**. The documentation confirms that developers can subscribe to events in real-time using webhooks.\n*   **sandbox**: **CONFIRMED**. While Attio doesn't offer a traditional, separate sandbox environment that is automatically provisioned, developers are encouraged to create a separate free workspace for development purposes. Additionally, the App SDK runs server-side logic in Attio's sandbox.\n*   **mcp**: **CONFIRMED**. Attio hosts an official, vendor-maintained MCP server. The documentation distinguishes the official server from community-built ones.\n*   **mcp_notes**: **CONFIRMED**. The notes are accurate. The official production MCP server is located at `https://mcp.attio.com/mcp`. It uses OAuth for authentication.\n*   **verdict**: **WRONG**. The correct verdict is `ready_now`. Access is `self_serve_free`, and while publishing an app to the public App Store requires approval, building and using a private integration (including multi-tenant OAuth apps) does not. The blocker `app_review_or_approval` only applies to public listing, not to functionality.\n*   **blocker**: **WRONG**. There is no blocker for building a private, multi-tenant integration. The Developer Terms state that approval is required to \"publish or otherwise make available by any means, any Developed App **through the App Marketplace**\". An unlisted OAuth app can be built and used without this approval step.\n*   **blocker_notes**: **WRONG**. The original note is misleading. App review is only required for being listed in Attio's public App Marketplace. It is not a prerequisite for creating and using a multi-tenant OAuth application.\n\n### **Uncertain Fields**\n\nAll fields were verified and determined with high confidence. There are no uncertain fields remaining.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Attio API authentication documentation",
+   "Attio API pricing plans",
+   "Attio developer console",
+   "Attio API reference",
+   "Attio OpenAPI spec",
+   "Attio API sandbox",
+   "Attio MCP server",
+   "Attio developer agreement app publishing"
+  ],
+  "search_sources": [
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-gNjVkNk_VB3jIkSHL7rIJZLX4tOd3oN7MiggfCDNVraMKvClHgDAuR5OZG8urnut3RExK8_EObBuzj7Pdj9pLOoC5PyV96nCsa9Su4GseqPzSKY9EpDhw1QnYODkjnji3A=="
+   },
+   {
+    "title": "attio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJfPaRiTO7RQem8qXfJOoJA2fsU_gMOEL5pA7dpw-ky5_4ZNOatyZaQPfGb-n_mziCwc-uS-Av2MBDae5Cn39YEA4-1pMurSs_Z3dsbqY4oWebN96_3VsMYY8PkuidCg=="
+   },
+   {
+    "title": "attio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjGVzpzCA0MgNww-hQSBRZpSvP_b2ICGvYvimCe4noqalH0xtq4ZIiezTuAoyTvWuyg45tzS8G2G7S8TT_6z8XQNMrxg_6WzthsaU6Hc7o9mvnVKwXReQDjn1178eL9ff2k6ywUHVUmouaK92lEY9M"
+   },
+   {
+    "title": "attio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFq3eh44Fs4pR9iaXB9o7qrmb2qN0MOB85GttMbqasaEWD5mihdMnN2ZzrgYyyysex6OgSkHNYs7r1MAIj1-JjUrffYCjU2tEgNAYcxl5TIXbOVn-w="
+   },
+   {
+    "title": "ahoy.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOl3dKGHernFlQT1YEqKAshMIFL1vD9YWPIyHibbHlgfM5-kxzulh4QCWFMIgluZe33Jz2FdOCdWldRarigKK9O5dqTbZAja390p5HfRSUswZyOio7EayLVLBDjJtjxyW-CmaACvCSiQZqznsf"
+   },
+   {
+    "title": "attio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGntF1a3VN4OnKcZ4fJer6e9EAMUEDxzK9dqwdkJ0bw3IezbLtwj0NvnEy-Vm9gV4C5V5M9bVIe0S8WqP6dNeYvX4CR6pmgIfLKEhNpC7t4wsFMVQ=="
+   },
+   {
+    "title": "attio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqjktyDdAJpMwYpoqLYqPVONU0TmLEpYZ067_cgT4lapmem7eQf5BhGDQQf6ZYEl4wCVdcTgPBW-Ic_LSEQ49z3DjeWhP61hLSJPIfozgYlpEwtaDwzqh7xvV_wMDyx-vg29dIXu_46-ylesM="
+   },
+   {
+    "title": "attio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFGjBYJSQENAL9d1f3McjNcTbNyfhWld2vJKO6-pAv3zXM61WPfPko0RK6Xo2ZWCOB0Pm35ulP_kbWELlLVgYmw9BGbo7ebD_b-SZq-pOu-QahlnZO9gN93TmlhMWxgtCAny0="
+   },
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBEES-U1aXeDYiv0VBDphUKAIEp4JshpK1O_E4SHD93VriL-ARtnsko_vZmupHobvQgRKHwLkB925l3iNEZb7oHkyKrwlKMjmtCOkhmKNFllzDzdponn3b0ualWECx6v3rgHsFFZzPxw=="
+   },
+   {
+    "title": "attio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxWn_LB05_xtZhQEkwFyflfyljHBBLPQlgesME8bMnSUNK4sNuePXjW3c5cnVFHzgXGn1gv7rw07Dgr5cmpCQeZDiyZZhoL7s-hwjKwCo9eevaa1KNkd0aLrlc77T08z-HoPbqxOu7jdhWIoDEPFPpXA0PNPg="
+   },
+   {
+    "title": "neondeerdata.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEt4u___TkUu_Vq0s1faW2J98Wl0O6qmVCYatgRmUDDM5ZY4kITc_fz9dB5dEtS9XUL-igBYXrmx9EkWAKggcqdIiHGKaaHU_hQqxwAqCU7i1TRPoex8ZeAwsb-5PHCrmI-C03-S_GCsYg="
+   },
+   {
+    "title": "attio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQET0qz2O9xYCygPhtDvu7x8JlAacCXj0Z6-RybIpvOeTReOKTg4UVoB4iUkpoXTbIAnjjQ_LJ0DE21ediRfR-iaM7ZRNJvcKjWAKbLu9cTssuXWW0mXxAT3GerWRDKRLR0tkd5XrpnqWDg="
+   },
+   {
+    "title": "attio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuKz0dTuDR4fvOtTwbDSSqIU8bubI6S6Gp3rd44ndCEUu1z70wGfzZuCcYsz1ho1Cou9ji17IGKJlU9-1UdIBTYADVCo3BCusPicwwSuG_PdwEYBCuYpIJg_y4J2TC"
+   },
+   {
+    "title": "reply.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuWzsoVmHZpLenF-FI-L0sKJxDOPztosj0NYXW1WOUQ2yQTPB8pzk2mhYMmooU3-Bwtb5JEls33-WngW1TV-gCQ1CUXX91eGIviRwup3l23SNTNYTr4qu52-vL"
+   },
+   {
+    "title": "scalekit.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkwa3MVYAYHNTZ6GiqZ-dhRFNrKNC_tR0qIGbk7sbwis5xFPWZUp_OsbkmKAOWKwK5b2xfIBb7oN2Rco6E3a1aRaEyeqjND9IyhiKx__D1LrhX5i4t8m_eim1bU3SSVzj03J57r-Vw4VU="
+   },
+   {
+    "title": "attio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEb2uRPxerH0Yk20M2IhDLflRDa-hX2AFyyUDumGPiKG6SDLfmTm3HJUXple9dArkBWLMQGEvOx3498ciNkSvolg76VtKrUVrHxM61ofHM4b9E4CfBe7DwLuigYl8ItghEAxo4dLL9lDg=="
+   },
+   {
+    "title": "attio.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoUE6AaorXpP2Hc1OiKkhyjGATqFGkiU5ZPRZnF5CSLoTC3qV-vMOiMUIoqDh1gIttJHpIbtgDwWBhG90CIuxxhAS2-AxzvYz1f4duW8Rlkiw2TrmY_Vp7Xhbkd8xhejqH4-nZzItNBdsQzgnfwYLR-_1K"
+   }
+  ],
+  "tokens": 7144,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://docs.attio.com",
+    "status": 200,
+    "chars": 1759,
+    "readable": true
+   },
+   {
+    "url": "https://attio.com/pricing",
+    "status": 200,
+    "chars": 11760,
+    "readable": true
+   },
+   {
+    "url": "https://docs.attio.com/docs/overview",
+    "status": 200,
+    "chars": 1759,
+    "readable": true
+   },
+   {
+    "url": "https://docs.attio.com/mcp/overview",
+    "status": 200,
+    "chars": 17183,
+    "readable": true
+   },
+   {
+    "url": "https://attio.com",
+    "status": 200,
+    "chars": 11839,
+    "readable": true
+   }
+  ],
+  "seconds": 37.5
+ }
+}

@@ -1,0 +1,151 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://docs.apify.com/get-started",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.55
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.apify.com/api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.apify.com/api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.apify.com/api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://apify.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.8
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://apify.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.6
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.apify.com/api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.48
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.apify.com/api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.apify.com/api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.apify.com/api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://docs.apify.com/api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.14
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/apify/apify-mcp-server",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.12
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://docs.apify.com/api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.48
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "bearer_token": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://docs.apify.com/api', 'https://docs.apify.com/api', 'https://docs.apify.com/api', 'https://docs.apify.com/api', 'https://docs.apify.com/api', 'https://docs.apify.com/api', 'https://docs.apify.com/api', 'https://github.com/apify/apify-mcp-server', 'https://docs.apify.com/api']\n- Non-vendor sources (prefer official docs): ['https://github.com/apify/apify-mcp-server']",
+ "metrics": {
+  "n_evidence": 13,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.9230769230769231,
+  "readable": 13,
+  "quote_supported_rate": 0.3076923076923077,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

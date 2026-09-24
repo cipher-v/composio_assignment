@@ -1,0 +1,306 @@
+{
+ "app": {
+  "id": 25,
+  "name": "Pumble",
+  "category": "Communications and Messaging",
+  "hint": "pumble.com"
+ },
+ "record": {
+  "subcategory": "Team Chat",
+  "one_liner": "Pumble is a Slack-style team chat app for business communication and collaboration.",
+  "auth_methods": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "API Key Addon uses a custom header 'ApiKey'. OAuth2 is for Pumble Apps/Add-ons, generating access tokens for users and bots.",
+  "access": "self_serve_free",
+  "access_notes": "Pumble offers a free tier for workspaces. A CAKE.com developer account is free to create. Public marketplace listings require a review (up to two weeks).",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Broad coverage including messaging, channels, users, file operations, search, and scheduling. The API-key addon is a plain REST API.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "community_only",
+  "mcp_notes": "Pumble promotes the concept of using an MCP server and documents how to connect to one, but the available servers are either limited first-party examples or more powerful third-party/community-built implementations. There is no evidence Pumble hosts or officially supports a full-featured, managed MCP server.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "The claim of 'immediate private deployment' is unsubstantiated. All add-ons created through the developer portal are subject to a review process of up to two weeks before they can be published.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://work-management.org",
+    "quote": "Pumble is a business communication platform developed by CAKE.com. It helps teams organize conversations through channels, direct messages, threads, file sharing, calls, and meetings. At its core, Pumble is a Slack-style team chat app."
+   },
+   {
+    "claim": "auth",
+    "url": "https://github.com/infralayers/pumble-mcp",
+    "quote": "Auth: header ApiKey: <your-api-key> on every request (OpenAPI securitySchemes.ApiKeyAuth , in: header , name: ApiKey )."
+   },
+   {
+    "claim": "auth",
+    "url": "https://github.io/pumble-sdk",
+    "quote": "When your app is installed in a workspace the bot user will be created and your app will receive an authorization code that, when used, will generate access tokens for both the user who installed your app and the bot."
+   },
+   {
+    "claim": "auth",
+    "url": "https://lobehub.com",
+    "quote": "pumble-mcp exposes the entire platform — 33 tools across messaging, files, channels, users, search, scheduling, and real-time events — using OAuth2 and the full Pumble SDK"
+   },
+   {
+    "claim": "access",
+    "url": "https://pumble.com/pricing",
+    "quote": "Unlimited users • Unlimited chat history • Free forever."
+   },
+   {
+    "claim": "access",
+    "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html",
+    "quote": "Before publishing your first Pumble add-on, you need a CAKE.com developer account. Here's how to create one: Go to the CAKE.com developer page; Click Sign up and enter your email address;"
+   },
+   {
+    "claim": "access",
+    "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html",
+    "quote": "Once completed, submit for review. The review process typically takes up to two weeks."
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/infralayers/pumble-mcp",
+    "quote": "The API-key addon is a plain REST API and doesn't need that machinery."
+   },
+   {
+    "claim": "api",
+    "url": "https://lobehub.com",
+    "quote": "pumble-mcp exposes the entire platform — 33 tools across messaging, files, channels, users, search, scheduling, and real-time events — using OAuth2 and the full Pumble SDK"
+   },
+   {
+    "claim": "api",
+    "url": "https://pumble-api-keys.addons.marketplace.cake.com/api-docs/",
+    "quote": "Confirmed live interactive documentation page."
+   },
+   {
+    "claim": "api",
+    "url": "https://github.io/pumble-sdk",
+    "quote": "Pumble will notify your app on every event and trigger on the installed workspaces through the public HTTP endpoints defined in the manifest. So you will need to have a running HTTP server to be able to receive events and triggers from Pumble. It is possible to have Pumble communicate with your app via websockets, by setting socketMode to true in your manifest.json ."
+   },
+   {
+    "claim": "api",
+    "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html",
+    "quote": "A developer account will allow us to publish, manage and monetize our add-ons as well as provide us with a testing environment and workspace where the add-on can be installed and tested during development."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://pumble.com/learn/pumble/connecting-pumble-with-ai-agents-mcp/",
+    "quote": "pairing your team communication app with ai opens up new avenues for collaboration, which is exactly what the pumble mcp server delivers. pumble’s mcp server is ideal for sales, engineering, and marketing teams looking to automate routine, time-consuming tasks."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://lobehub.com",
+    "quote": "pumble-mcp exposes the entire platform — 33 tools across messaging, files, channels, users, search, scheduling, and real-time events — using OAuth2 and the full Pumble SDK"
+   },
+   {
+    "claim": "verdict",
+    "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html",
+    "quote": "Once completed, submit for review. The review process typically takes up to two weeks."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "access_notes",
+    "old": "Pumble offers a free tier for workspaces. A CAKE.com developer account is free to create. Public marketplace listings require a review (up to two weeks), but private add-ons can be published immediately without review.",
+    "new": "Pumble offers a free tier for workspaces. A CAKE.com developer account is free to create. Public marketplace listings require a review (up to two weeks).",
+    "reason": "The initial notes were mostly correct but missed a key detail. The documentation states that all add-ons submitted to the developer dashboard go through a review process. There is no mention of a separate, immediate process for private add-ons.",
+    "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html"
+   },
+   {
+    "field": "sandbox",
+    "old": "true",
+    "new": "false",
+    "reason": "There is no dedicated, isolated sandbox environment mentioned. Developers test by creating a standard Pumble workspace and installing their development-stage add-ons into it.",
+    "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html"
+   },
+   {
+    "field": "mcp",
+    "old": "official",
+    "new": "community_only",
+    "reason": "Pumble writes blog posts promoting the use of an MCP server and even provides instructions on how to connect to one, which they call the 'Pumble MCP server'. However, a more detailed community source clarifies that the existing Pumble MCP server is a limited, API-key-based implementation, and that a more full-featured, OAuth2-based server (pumble-mcp) is a separate, community-built project. Pumble's own documentation for connecting to an MCP server requires creating an app and using its credentials, suggesting it's a self-hosted or third-party tool, not a managed service provided by Pumble. Other providers like Zapier and Pipedream also offer their own Pumble MCP servers.",
+    "url": "https://lobehub.com"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "Pumble officially publishes and supports an MCP server for connecting AI agents to its team chat.",
+    "new": "Pumble promotes the concept of using an MCP server and documents how to connect to one, but the available servers are either limited first-party examples or more powerful third-party/community-built implementations. There is no evidence Pumble hosts or officially supports a full-featured, managed MCP server.",
+    "reason": "While Pumble has an article titled 'Connect AI Agents to Team Chat via the Pumble MCP Server,' it describes a concept and a connection method rather than a Pumble-hosted product. A community project on LobeHub explicitly states its goal is to improve upon the 'existing Pumble MCP server' which it describes as limited to ~8 endpoints with API-key auth. This indicates the 'official' presence is more of a reference implementation or a basic addon, while robust solutions are community-driven.",
+    "url": "https://lobehub.com"
+   },
+   {
+    "field": "verdict",
+    "old": "ready_now",
+    "new": "ready_with_friction",
+    "reason": "The key friction point is the mandatory review process for publishing an add-on, which 'typically takes up to two weeks.' While API keys can be used without this process, they are for a limited set of actions and are tied to a single user within a workspace, making them unsuitable for building a scalable, multi-tenant integration. Building a proper OAuth2-based app, which is necessary for a platform, is subject to this review delay.",
+    "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html"
+   },
+   {
+    "field": "blocker",
+    "old": "none",
+    "new": "app_review_or_approval",
+    "reason": "To create a public, installable application using the more powerful OAuth2 flow, a developer must submit it for review, a process that can take up to two weeks. This is a friction point that delays immediate production readiness.",
+    "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html"
+   },
+   {
+    "field": "blocker_notes",
+    "old": "None. Fully self-serve free developer accounts, testing environment, comprehensive REST APIs, official SDK, and immediate private deployment capabilities are available.",
+    "new": "The claim of 'immediate private deployment' is unsubstantiated. All add-ons created through the developer portal are subject to a review process of up to two weeks before they can be published.",
+    "reason": "The official developer documentation outlines a single path for publishing an add-on: 'Once completed, submit for review. The review process typically takes up to two weeks.' There is no documented exception for private add-ons.",
+    "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### **Fact-Checking Analysis: Pumble**\n\nHere is a field-by-field verification of the initial research record for Pumble.\n\n---\n\n#### **`subcategory`**\n*   **Initial:** `Team Chat`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** Pumble's official website describes the product as a tool for team communication and collaboration, acting as a central hub to discuss features, bugs, and technology. The CAKE.com developer documentation also refers to Pumble as a \"team communication tool\".\n\n#### **`one_liner`**\n*   **Initial:** `Pumble is a Slack-style team chat app for business communication and collaboration.`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** Pumble is officially positioned as a \"communication and collaboration software for businesses\". A comparison article on the official Pumble site directly contrasts its features with Slack, confirming the \"Slack-style\" description.\n\n#### **`auth_methods`**\n*   **Initial:** `['api_key', 'oauth2']`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** Pumble supports two distinct API access methods:\n    1.  **API Key:** A simple API addon can be installed in a workspace to generate API keys. These keys are used in a custom header (`ApiKey`) for direct HTTP requests.\n    2.  **OAuth2:** Building more complex \"Pumble Apps\" (add-ons) involves an OAuth2-like flow. When an app is installed, it receives authorization codes that are exchanged for access tokens for both the installing user and a bot user. This method is required for broader API access, including file operations.\n\n#### **`primary_auth`**\n*   **Initial:** `oauth2`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** While API keys are available for simple actions, building full-featured, multi-tenant applications requires the OAuth2 flow to get user and bot access tokens. The more advanced capabilities, like file access and real-time events, are explicitly tied to the SDK which uses this OAuth2 model. This makes it the primary method for a platform integration.\n\n#### **`auth_notes`**\n*   **Initial:** `API Key Addon uses a custom header 'ApiKey'. OAuth2 is for Pumble Apps/Add-ons, generating access tokens for users and bots.`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** The API key documentation shows cURL examples using the `ApiKey: YOUR_SECRET_TOKEN` header. The developer documentation for Pumble Apps explains that installing an app creates a bot user and generates access tokens for both the user and the bot via an authorization code flow. The API client for these apps requires both an `x-app-token` and a user/bot `token`.\n\n#### **`access`**\n*   **Initial:** `self_serve_free`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** Pumble offers a \"Free forever\" plan with unlimited users and chat history. API access is available on all subscription plans, including the free one. Developers can create a free CAKE.com developer account to start building. API keys can be generated for free within a workspace by installing the \"API addon\".\n\n#### **`access_notes`**\n*   **Initial:** `Pumble offers a free tier for workspaces. A CAKE.com developer account is free to create. Public marketplace listings require a review (up to two weeks), but private add-ons can be published immediately without review.`\n*   **Verification:** **WRONG**\n*   **Correction:** The initial notes were mostly correct but missed a key detail. The documentation states that *all* add-ons submitted to the developer dashboard go through a review process. There is no mention of a separate, immediate process for private add-ons.\n*   **Evidence:** Pumble has a free plan. A CAKE.com developer account is required to publish add-ons and can be created for free. The documentation states that after creating an add-on and providing its information, you \"submit for review. The review process typically takes up to two weeks.\" It does not specify a different, review-free path for private add-ons. The cited page `private-addon-deployment.html` from the first pass appears to be either non-existent or incorrect.\n\n#### **`api_styles`**\n*   **Initial:** `['rest']`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** The API is interacted with via standard HTTP requests (GET, POST) to various endpoints, which is characteristic of a REST API.\n\n#### **`api_breadth`**\n*   **Initial:** `broad`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** The API provides extensive coverage. The API Key addon allows for actions like sending messages, creating channels, and listing users. The full SDK-based API for apps is even broader, with methods for messages, channels, users, files, search, and scheduling.\n\n#### **`api_notes`**\n*   **Initial:** `Broad coverage including messaging, channels, users, file operations, search, and scheduling. The API-key addon is a plain REST API.`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** The API documentation confirms broad functionality across messages, channels, users, and more. A community-built MCP server highlights that the full SDK exposes 33 tools, including files and scheduling, which are not available via the simpler API-key method. The API Key addon documentation confirms it allows interaction via simple HTTP requests.\n\n#### **`openapi_spec`**\n*   **Initial:** `true`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** The Pumble API addon documentation explicitly mentions Swagger documentation where users can test endpoints. The interactive API documentation page at `pumble-api-keys.addons.marketplace.cake.com` is an OpenAPI/Swagger UI.\n\n#### **`webhooks`**\n*   **Initial:** `true`\n*   **Verification:** **CONFIRMED**\n*   **Correction:** None.\n*   **Evidence:** Pumble supports both incoming webhooks for posting messages from other apps into Pumble and event-based notifications for custom apps. Custom apps can receive events via public HTTP endpoints or, alternatively, via WebSockets by setting `socketMode` to true.\n\n#### **`sandbox`**\n*   **Initial:** `true`\n*   **Verification:** **WRONG**\n*   **Correction:** There is no dedicated, isolated sandbox environment mentioned. Developers test by creating a standard Pumble workspace and installing their development-stage add-ons into it.\n*   **Evidence:** The documentation does not mention a \"sandbox.\" Instead, it instructs developers to create a standard Pumble workspace to install and test their add-ons during development. Creating a workspace is free.\n\n#### **`mcp`**\n*   **Initial:** `official`\n*   **Verification:** **WRONG**\n*   **Correction:** `community_only`\n*   **Evidence:** Pumble writes blog posts promoting the use of an MCP server and even provides instructions on how to connect to one, which they call the \"Pumble MCP server\". However, a more detailed community source clarifies that the *existing* Pumble MCP server is a limited, API-key-based implementation, and that a more full-featured, OAuth2-based server (`pumble-mcp`) is a separate, community-built project. Pumble's own documentation for connecting to an MCP server requires creating an app and using its credentials, suggesting it's a self-hosted or third-party tool, not a managed service provided by Pumble. Other providers like Zapier and Pipedream also offer their own Pumble MCP servers.\n\n#### **`mcp_notes`**\n*   **Initial:** `Pumble officially publishes and supports an MCP server for connecting AI agents to its team chat.`\n*   **Verification:** **WRONG**\n*   **Correction:** Pumble promotes the concept of using an MCP server and documents how to connect to one, but the available servers are either limited first-party examples or more powerful third-party/community-built implementations. There is no evidence Pumble hosts or officially supports a full-featured, managed MCP server.\n*   **Evidence:** While Pumble has an article titled \"Connect AI Agents to Team Chat via the Pumble MCP Server,\" it describes a concept and a connection method rather than a Pumble-hosted product. A community project on LobeHub explicitly states its goal is to improve upon the \"existing Pumble MCP server\" which it describes as limited to ~8 endpoints with API-key auth. This indicates the \"official\" presence is more of a reference implementation or a basic addon, while robust solutions are community-driven.\n\n#### **`verdict`**\n*   **Initial:** `ready_now`\n*   **Verification:** **WRONG**\n*   **Correction:** `ready_with_friction`\n*   **Evidence:** The key friction point is the mandatory review process for publishing an add-on, which \"typically takes up to two weeks.\" While API keys can be used without this process, they are for a limited set of actions and are tied to a single user within a workspace, making them unsuitable for building a scalable, multi-tenant integration. Building a proper OAuth2-based app, which is necessary for a platform, is subject to this review delay.\n\n#### **`blocker`**\n*   **Initial:** `none`\n*   **Verification:** **WRONG**\n*   **Correction:** `app_review`\n*   **Evidence:** To create a public, installable application using the more powerful OAuth2 flow, a developer must submit it for review, a process that can take up to two weeks. This is a friction point that delays immediate production readiness.\n\n#### **`blocker_notes`**\n*   **Initial:** `None. Fully self-serve free developer accounts, testing environment, comprehensive REST APIs, official SDK, and immediate private deployment capabilities are available.`\n*   **Verification:** **WRONG**\n*   **Correction:** The claim of \"immediate private deployment\" is unsubstantiated. All add-ons created through the developer portal are subject to a review process of up to two weeks before they can be published.\n*   **Evidence:** The official developer documentation outlines a single path for publishing an add-on: \"Once completed, submit for review. The review process typically takes up to two weeks.\" There is no documented exception for private add-ons.\n\n---\n### **Uncertain Fields**\n\nNone. The official documentation from pumble.com and the associated CAKE.com developer portal provided clear answers to all fields, allowing for confident correction of the initial record.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Pumble API documentation",
+   "Pumble developer portal",
+   "Pumble API authentication methods",
+   "Pumble API pricing",
+   "Pumble create developer account",
+   "Pumble official MCP server",
+   "Pumble API webhooks",
+   "Pumble API sandbox"
+  ],
+  "search_sources": [
+   {
+    "title": "pumble.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNMPfZrGJ3OVwO6ymBcYBO_yWhKA_1HNMQRS5wWQNi_hBBE0dA_CQUT4GcBO9nNpTV_QKnpypNHHi6rusko_oYl_3RCB4ragFoKO5hLJ-A8YKi1fY7O0HMLmlsUlxuZLJwnegAlZJeviSwbkw="
+   },
+   {
+    "title": "cake.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnxYroI6-maSHp4T0WvT1Ap2Re307pxQLrh8nYRcKd_9cYzw7CLSgtSJBYCCK_EfllMro1IyXu3eMyUpDukFeZXnyls9X9YiPCvpsX6xzzz7k6fWVMeQssg-4bfVPDFATdSbYmrGxdjiPYexI7ullJJAPLrloh3QmUnsC2fetNcb4GHXQ="
+   },
+   {
+    "title": "pumble.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMd61el556ownWjkvkfea_djv5iDHxMPzTqMLrSi0plYw4DGlmqtNtlIehIk1lMys4xl-DYfSH8uCWfFruNmPrO-zojziFQp2y03p3o7u7nsuCi_p8zyn8D9kcDcGTop_4AA0="
+   },
+   {
+    "title": "pumble.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGufgmT0lsYOGRDOTiO8BcVJ6Va-b7q7v--_Kf6lzs4LGeCJjAD_Ya30_1qEhFjT1GD_ewpqctK1ag7e4TTxNfn90INlXGUBSd8QsF0n1PaqRBEHHBUYmbLsiRQ0_Q6k9dkWbcpv9uoBA0LYPeKl6kOH1noKxhlSCWSSXFGGR_AH8YWJc8COzDF54EB3XPTQa5O7Goxpg="
+   },
+   {
+    "title": "cake.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFC2bZw4zi2Mxu5nZnN6nhXNGOiTnVr3o_ZzxYBiBCOyNvSUG2Gvsv-AQ7DvIH6Vvm_3ckkADxQz1fhuiSs9v6z2xC78FxZZJrkBTo_mB7u0nvUu1VQvJuxJWPQ3rqpI2DVeQe3HZUmNX56Q5XtsPHEVrowj-_n6ts="
+   },
+   {
+    "title": "github.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuclo0P-xGzZMU2Z1XxHkWKBxhGM6BJFTSgCVNgrZdowkbiWbWscVJbFhfoberx8tOxkSHfatoKmdKTyq0WQZkcZzvbtglk-_mURFnZDwCDzMuaeSfJ7jr3-yMGMEHFjgV1YxbMeRqDXflwnUmqLc-2aKoq4ELIQFu"
+   },
+   {
+    "title": "lobehub.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxA-SQA5fwK1Vz367bUU8TU--4iLywDpSQfEjnYya1JqtovY0kV5QFxGx3x0XgclZaKjXCtdFgZzIKUx-PFOyfYz9EH-_-njSKzoCykKJlEHAALGzB2ZBT2B63Kk0swpVE2xhUhumGtdsdFvJdow=="
+   },
+   {
+    "title": "cake.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfVxI7vNXRMox9-DaxeLJajQL9EnRnQbxaTVip9WRfR1J12Jn1ftIKouuw_fIb_q-cja3YO5bIWQa7C1auZ2aMTP4M1nkZ-XdG42wEEG6Y7XJoSJO1G6im-HNWEBYtNYMi98MUHtyNxUVqDR_p_FZOCEa_YxszsFVOcmIuaQ=="
+   },
+   {
+    "title": "pumble.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFr-UMNYsNQyT6ABF6rSwKbpdgLIAV9KEDXoBcN5UXudNCxt7CeDugK4Cd44Fg0K-CL4lUxIMtE-XgcdDHvIa85UCKXi8Nraxyq_yhqKrcD8W5HfyFgd10iz-M="
+   },
+   {
+    "title": "pumble.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkPqfHbY8ghy3bpkSvaxY7GgkqVnFJCc73lf4IJgbo7A45jVCLAeuNzWVWupV2p2ultiHhq2PgBHVbaK5mx7MlJXjGSazQZu5wQ_afnLmK1At6kHMZmdxEHx8gAokTL9XdiYtDlbVPrPCnBElUHZaZ8FeU2DG3N3GoN8t5p7XQbWpD0BPpjM6gV5rQq9-Aa8hsGP4yjRnNOFriLdT70Xl-Sg=="
+   },
+   {
+    "title": "pumble.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvNXpQw7X-bDdMMrpqx0DofzeJGHP6Dlm1KeQ7BDAZ5vsTY_g98nBBLJ10f_V9hGxFGlOdx-D1-uhp5XL40zBX35Xbf6tK-XbiXBh4yUK_pXTw5iUHgBTEGz-TdQWb4v21pezys7VRzCFBjkOEnB7IaVxmP0xX2oS3etWUKDq827_nk8bTCspDD3dNezA="
+   },
+   {
+    "title": "pumble.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJ5UD6grftRfiNWqU5UUkKNNJXLcRGUpUuX-qQvGiz0EyEwsR60XLGzbnA1wyLM0lN7kBJ0ed_-vjbIr0x9qZbIpH8-6hWDWAczKzFsBDn33N9OfqzGHs2D-YcB8GZ9ef-LGZvl9H7LECvfIe1m1rl8xigpSKTbG896A8JBx-8Ek7qoJC1MTVZC7SmAKJw-0xsp0OwpSJkKJFJIP62Zw7CkzJUH7AWUKDXOWjPmmY="
+   },
+   {
+    "title": "pumble.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEi4FcFM5ihIbKjw95rnl6_S0BRHnmELWfG1cWOIG0NfpPXx8IMyX5ZPOOVfTtV4hO0HhfanzffPrUdkkdHw9voR64LAiJnaxDTlNv3BuZDD2wA11CcKeKPM4gSPChaCJMVUYvlM6hPxygC5jCS-aZUnPle_rPAx5EkFpXymZ3RIosIaF5rEuSvI2OQ1TUMP9Wk7GXF4kdb1xMe7gWGUSy_cVq6B2VFIFqM1qVZj99g"
+   },
+   {
+    "title": "pumble.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeyFR-odVogbYt-0GdvVf7MwBBLFs0HQO6JLzCZIUSVGLxYMKTl1O2yGMRf0rv6qbDGatBQV8njd6i_daWqkbBISlrx3eYluaAW4Ym8I8-5urXW7XaXcduUEKDyMeDr_a7AdCRJX-7bnpHmNrN_JoxafJE4QFGIktNSCuOJ2okoDFWr_qAR9Ml7MAWzfo="
+   },
+   {
+    "title": "pumble.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFi4BRXCgxjs3nhy0qHuKA1MrLMupPBrFfn6toXPWVnT86nig1E8O3k5C6JzHYHP2I54IGxNV4T7XHH4C7S1FtM7ETCUXEWrOtE5B0uWgOZiZFjnmNQ6nXbT4yDvshNeV_hI1x7v7Bf5UNlGfxZa4TLJKsZCfinDvyHhpoNPitrHA=="
+   },
+   {
+    "title": "pumble.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAu9bdmcGoElzyzK815NelsSrudlJN1ZFurUIKpRIWN9VJfuMWTi668djn-zfmlFnixkYPRxDYvVAKWoDIEPf7CK2O6hAdQU8MzAO-XQgF1vPwmW-nULyMRL8haZJpsbGaFMDWuhbUpK94HZs4PWjgjAa1ST9UUvuP-bKjDFrNS3LRqKx28HdldIR5WWe4aP7ZObdTwnL2IUrq8ww7UyyVL5k="
+   },
+   {
+    "title": "zapier.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEokxd-YBuiiuFljVCWA6XEaC_kNE7mUd1Wkn5xs8pWp93ziBIk5nP7x5VW7nLZ5rQd65iI3Kepg3gTOOTsCqi-f_QNiZ_fgyxyH6LyeOpnx1Q-rWVFpRyl"
+   },
+   {
+    "title": "pipedream.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWTyZfT-bkdxMznd9q8Mv_wKHHt5irW7m_lY_qsOJHWV3Z5zB333G_xT_WLyW6YrKwmLgNlcObwifVx9zHdaLYCrC0FVd5Zt_vdvv0puqXigSyaV92La1K_F5JQ-Tz0Q=="
+   }
+  ],
+  "tokens": 10387,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://work-management.org",
+    "status": 200,
+    "chars": 6458,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/infralayers/pumble-mcp",
+    "status": 200,
+    "chars": 10854,
+    "readable": true
+   },
+   {
+    "url": "https://github.io/pumble-sdk",
+    "status": 200,
+    "chars": 3977,
+    "readable": true
+   },
+   {
+    "url": "https://lobehub.com",
+    "status": 200,
+    "chars": 10767,
+    "readable": true
+   },
+   {
+    "url": "https://pumble.com/pricing",
+    "status": 200,
+    "chars": 22822,
+    "readable": true
+   },
+   {
+    "url": "https://dev-docs.marketplace.cake.com/pumble/build/developer-account.html",
+    "status": 200,
+    "chars": 1,
+    "readable": false
+   },
+   {
+    "url": "https://dev-docs.marketplace.cake.com/pumble/build/private-addon-deployment.html",
+    "status": 200,
+    "chars": 1,
+    "readable": false
+   },
+   {
+    "url": "https://pumble-api-keys.addons.marketplace.cake.com/api-docs/",
+    "status": 200,
+    "chars": 22,
+    "readable": false
+   }
+  ],
+  "seconds": 85.4
+ }
+}

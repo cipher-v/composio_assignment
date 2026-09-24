@@ -1,0 +1,161 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://help.getharvest.com/api-v2/introduction/overview/general/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.64
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.8
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://help.getharvest.com/api-v2/introduction/overview/general/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.35
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.7
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://github.com/globalvisionmedia/oauth2-harvest",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.8
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://help.getharvest.com/api-v2/introduction/overview/general/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://help.getharvest.com/api-v2/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/jolicode/harvest-openapi-generator",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.62
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://zapier.com/apps/harvest/integrations/webhook",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.43
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.7
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.58
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://apis.io/apis/harvest",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://zapier.com/apps/harvest/integrations/webhook",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.43
+  }
+ ],
+ "auth_support": {
+  "bearer_token": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://apis.io/apis/harvest']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://help.getharvest.com/api-v2/introduction/overview/general/', 'https://zapier.com/apps/harvest/integrations/webhook', 'https://zapier.com/apps/harvest/integrations/webhook']\n- Non-vendor sources (prefer official docs): ['https://github.com/globalvisionmedia/oauth2-harvest', 'https://github.com/jolicode/harvest-openapi-generator', 'https://zapier.com/apps/harvest/integrations/webhook', 'https://zapier.com/apps/harvest/integrations/webhook']",
+ "metrics": {
+  "n_evidence": 14,
+  "alive_rate": 0.9285714285714286,
+  "dead_rate": 0.07142857142857142,
+  "blocked_rate": 0.0,
+  "official_rate": 0.6428571428571429,
+  "readable": 13,
+  "quote_supported_rate": 0.7692307692307693,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

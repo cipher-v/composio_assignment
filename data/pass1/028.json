@@ -1,0 +1,184 @@
+{
+ "app": {
+  "id": 28,
+  "name": "WhatsApp Business",
+  "category": "Communications and Messaging",
+  "hint": "developers.facebook.com/docs/whatsapp"
+ },
+ "record": {
+  "subcategory": "Messaging",
+  "one_liner": "The WhatsApp Business Platform (Cloud API) allows businesses to communicate with customers at scale using the WhatsApp network.",
+  "auth_methods": [
+   "bearer_token",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Bearer token for direct API requests (temporary or permanent access tokens). OAuth2 via Embedded Signup (Facebook Login for Business) for multi-tenant platforms.",
+  "access": "approval_required",
+  "access_notes": "Self-serve free for sandbox/testing with a test number and temporary access token. Production use requires Meta Business Verification (2-7 days) and compliance with WhatsApp's Commerce Policy.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive RESTful API covering messaging, template management, media uploads, phone number registration, and real-time analytics.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Meta hosts an official remote MCP server at https://mcp.facebook.com/whatsapp_business_tools.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. The platform provides a free sandbox and a well-documented REST API. For multi-tenant use, the 'Embedded Signup' flow is the standard, though it requires the platform to be a verified Meta Business.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://developers.facebook.com/docs/whatsapp/cloud-api",
+    "quote": "The WhatsApp Business Platform Cloud API enables you to programmatically message and call on WhatsApp."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.facebook.com/docs/whatsapp/embedded-signup",
+    "quote": "Embedded Signup is an authentication and authorization interface... It then grants your app access to these assets."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/pricing",
+    "quote": "Effective July 1, 2025, Meta charges on a per-message basis... Service messages... are free until October 1, 2026."
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/facebook/meta-openapi",
+    "quote": "This repository contains OpenAPI specifications for Meta APIs."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://developers.facebook.com/docs/whatsapp/mcp",
+    "quote": "The WhatsApp Business Tools MCP server is a remote server... Endpoint: https://mcp.facebook.com/whatsapp_business_tools."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://whatsappbusiness.com/developers/developer-hub/",
+    "quote": "Start building within minutes and send engaging, timely, high-quality messages... get started quickly and test for free."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Research Notes: WhatsApp Business Platform (Cloud API)\n\n#### **What the product does**\nWhatsApp Business Platform (Cloud API) allows businesses to communicate with customers at scale using the WhatsApp network. It is a RESTful API hosted by Meta that supports sending and receiving text, media (images, documents), interactive messages (buttons, lists), and \"WhatsApp Flows\" for structured data collection. It is designed for medium-to-large businesses to integrate messaging into CRMs, customer support tools, and automated workflows.\n*   **Source:** [Meta Documentation](https://developers.facebook.com/docs/whatsapp/cloud-api) - \"The WhatsApp Business Platform Cloud API enables you to programmatically message and call on WhatsApp.\"\n\n#### **Authentication Methods**\nThe API uses Meta's Graph API authentication framework.\n*   **bearer_token**: Used for all API requests. Developers can generate a **Temporary Access Token** (valid for 24 hours) for testing or a **Permanent Access Token** by creating a \"System User\" in the Meta Business Suite.\n*   **oauth2**: For multi-tenant integration platforms (like Composio), the **Embedded Signup** flow is used. This is built on \"Facebook Login for Business,\" where a client authenticates via a popup, and the platform receives an authorization code to exchange for an access token to manage the client's WhatsApp Business Account (WABA).\n*   **Source:** [Meta Documentation](https://developers.facebook.com/docs/whatsapp/embedded-signup) - \"Embedded Signup is an authentication and authorization interface... It then grants your app access to these assets.\"\n\n#### **Credential Acquisition & Cost**\n*   **Access:** `self_serve_free` (for sandbox/testing); `approval_required` (for production).\n*   **Developer Credentials:** Any developer with a Meta account can create a \"Business\" app at `developers.facebook.com`, add the \"WhatsApp\" product, and immediately get a **Test Number** and **Temporary Access Token** for free.\n*   **Production Approval:** To use a real phone number, the business must undergo **Meta Business Verification** (taking 2–7 days) and comply with WhatsApp's Commerce Policy.\n*   **Cost:** \n    *   **Free Tier:** Historically, the first 1,000 service conversations per month were free.\n    *   **New Model (2025/2026):** Meta is shifting to per-message pricing based on category (Marketing, Utility, Authentication, Service). **Service messages** (replies within a 24-hour window) remain free until **October 1, 2026**.\n*   **Source:** [Meta Pricing](https://developers.facebook.com/docs/whatsapp/cloud-api/pricing) - \"Effective July 1, 2025, Meta charges on a per-message basis... Service messages... are free until October 1, 2026.\"\n\n#### **API Style & Features**\n*   **Style:** REST (Graph API).\n*   **Breadth:** Comprehensive; covers messaging, template management, media uploads, phone number registration, and real-time analytics.\n*   **OpenAPI Spec:** Meta maintains an official repository for its API specifications.\n    *   **Source:** [GitHub - facebook/meta-openapi](https://github.com/facebook/meta-openapi) - \"This repository contains OpenAPI specifications for Meta APIs.\"\n*   **Webhooks:** Supported for incoming messages, message status updates (sent, delivered, read), and account quality changes.\n*   **Sandbox:** A \"Test Number\" is provided in the Meta Developer Dashboard for immediate testing without a real phone number.\n\n#### **MCP Servers**\n*   **Official:** Meta hosts a remote MCP server.\n    *   **Source:** [Meta for Developers](https://developers.facebook.com/docs/whatsapp/mcp) - \"The WhatsApp Business Tools MCP server is a remote server... Endpoint: `https://mcp.facebook.com/whatsapp_business_tools`.\"\n*   **Community:** Several community-built servers exist, such as `FredShred7/whatsapp-mcp-server` (Official Cloud API based) and `lharries/whatsapp-mcp` (Unofficial Web-based).\n\n#### **Buildability Verdict**\n*   **Verdict:** `ready_now`\n*   **Main Blocker:** None. The platform provides a free sandbox and a well-documented REST API. For multi-tenant use, the \"Embedded Signup\" flow is the standard, though it requires the platform to be a verified Meta Business.\n*   **Source:** [Meta Developer Hub](https://whatsappbusiness.com/developers/developer-hub/) - \"Start building within minutes and send engaging, timely, high-quality messages... get started quickly and test for free.\"",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "whatsapp business platform api authentication multi-tenant oauth",
+   "whatsapp business api pricing free tier 2024 2025",
+   "whatsapp business api openapi spec github",
+   "whatsapp business platform mcp server official community",
+   "whatsapp business api developer credentials cost approval process",
+   "whatsapp business api embedded signup documentation meta",
+   "whatsapp business platform oauth2 vs embedded signup for multi-tenant"
+  ],
+  "search_sources": [
+   {
+    "title": "facebook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTNiHwhJJAs3NSpF5CI5LEOKfO2zdzogjirwq8epN4lVRBJ0WXsQ_SpR5zBLUq1YWFYlqQd_uHruThsyUgj1ccQojLKHJCemVP_Gn01Zs9duHJNanIeO2kPtqf0JGmZB6ln9GSMRmOY6oRavas5-oD8-t32XR3dE8TpiNVsJ6IFlKfQMKc1wh3Swu_lRYH86R-l2IcNAMC"
+   },
+   {
+    "title": "leadnotifi.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9jeC4gf1PUjuGOzcSvs0sEnPQ3eu7D5d9MLHwBwgPEtjHjnc_ZvZLs8ajIpUNVcH-x_dmD2QP-iBF3eFCuFgqRWn5jKk84Adxx8oVfPg8U3C3DIIeWg0LruZ1CmrKWYYbre-0ukgaf3XP93CIjpyCHlzx5YaP12zCmAg5mbA4Z6tXeOYN"
+   },
+   {
+    "title": "facebook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOecSsj6-FHm5ds1h5IC86P-Z_8t2aNxMuIU9gSw9etFglqPk9dEeT9x_rVEQRcJiClMF-dt9bPkNIDpD6kMnkjuB_rK6wk22DchNiDVUHYfDUq730ktn7RaqCLi4gsIac5NuS-k7zkig8jOCiCLg5khLSZ-THz_ePlkhFc9OFZSfhmM_vab-lZj7qzcB1weEqL8NEHxYM5Q7DyOAo"
+   },
+   {
+    "title": "interakt.shop",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7hZB3r7dVndexVtjWIv_nmkckAoW_G9A5_409fACFWaH5h2x35vZNAALTkuzotl0gZ9DqwDHr5k17V3WoyJMrglVAYN4tsrMySlpMERJgc3AxM3t5NK3l5ToGgoNn5txLehyHd-mf2dqSSsf-CvgDcbBtnczD9HZniyDP"
+   },
+   {
+    "title": "blueticks.co",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3S2nmUK6YQWwSMH7aTUL8DAZQeH8UrZugIwtu_l56k6NXH_7nkR3gnU1gvon4yqIr_k1v7SwVVv683qCDkVnCYju4axiNN67kteSxjwZLrQUknBo30FmCcSkBD5AJePU7j8o55nOafMWqCeAr-Q=="
+   },
+   {
+    "title": "buzzbip.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBqWjMEPURgo6h-tMvfGg7LBV2rE9pXcNCko5wYRTSKUoHiwjXL0FoYrVjEof9SNXakdV01tnWqN88ftQ9kS-SWYvO9J4PGj3Lf9hjh-0wqwpssQrGbAn0JF8j-SDJuEdDaindgqMWPImNwSZftF8RoOnLzo5U9TCMw_jgRDXTwiTy0ARIuN8t9SJf7rE="
+   },
+   {
+    "title": "controlhippo.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2IbxE__6ANKPn-oc13jkuLUQNg39ZNV-rpvGXOfe2S0dGa88zfePpq-5-8OqJAvJ8FU0AAzN9srLr48CzBXvNdBsJEsTuGGJ1VG-U3DjG9baRafcu0qr8eHQIAihg2D98-sYs7kBRpU1hz6_PZqVEEJZAG9ykMRTsOak3lqerR7GvXfcTSMo="
+   },
+   {
+    "title": "dragapp.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVCaMuHGkYDjH33-SVDaWxBAtgVs6A3UxfdP8EC8Tx8welYD_YYQW_DRGiqX1aIo_VLjzrTHdJPujYG-XSo7Ik_36LZi5vjXaG_1Do5x0blh5bHEaRWbjJ43tpTsNa7d73w5chEEG1AXpkDMy6ghcSFUpqEiP_"
+   },
+   {
+    "title": "mcp.so",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFupDUDBN0xdTGqT3wKaQS8FfMn7ZX-HZ6cU_37ev1fFxP0NE_WadIYAJp870jtjsLGx2W6Z-UHfGZWfXKCyb3N8PX5GF4b1xSE-vt1NRlgrJs9E1GYoydmxXkJnCNYF8IL_Pb5SSnD"
+   },
+   {
+    "title": "marketing4ecommerce.net",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_9ndFZBfNB8h50yOKR9VSUBBmB5uZ-KH4G06vrCuXnXAKRV0I7zTHc2iGbbd10stuicmGZZ0-DThB8OT5Lwp9Q7YzJvLZAR9CTnOBXviVOViLm2GaggKADYs9OQZNszzrle2CAspAM7KM0Qgf_nvJe45_vn4sp6UmW_36BqhFLe-ERdz-oENks2RhxFfAOZeP1k3KeoyZenVwr9d3tvkCHSo4MQUSaw=="
+   }
+  ],
+  "tokens": 4037,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "WhatsApp Business API authentication developers.facebook.com",
+    "WhatsApp Business API keys developers.facebook.com",
+    "WhatsApp Business API OAuth developers.facebook.com",
+    "WhatsApp Business API getting started developers.facebook.com",
+    "WhatsApp Business API quickstart developers.facebook.com",
+    "WhatsApp Business API pricing developers.facebook.com",
+    "WhatsApp Business API plans developers.facebook.com",
+    "WhatsApp Business API partner program developers.facebook.com",
+    "WhatsApp Business API developer program developers.facebook.com",
+    "WhatsApp Business API reference index developers.facebook.com",
+    "WhatsApp Business API documentation index developers.facebook.com",
+    "WhatsApp Business MCP server"
+   ],
+   "candidates": 7,
+   "live_urls": [
+    "https://whatsappbusiness.com/developers/developer-hub/"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://developers.facebook.com/docs/whatsapp/business-management-api/get-started/authentication/",
+     "status": 404
+    },
+    {
+     "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started",
+     "status": 400
+    },
+    {
+     "url": "https://developers.facebook.com/docs/whatsapp/pricing",
+     "status": 400
+    },
+    {
+     "url": "https://developers.facebook.com/docs/whatsapp/api-reference",
+     "status": 404
+    },
+    {
+     "url": "https://developers.facebook.com/docs/whatsapp/mcp",
+     "status": 404
+    },
+    {
+     "url": "https://developers.facebook.com/docs/whatsapp/business-management-api/get-started/get-api-key/",
+     "status": 404
+    },
+    {
+     "url": "https://developers.facebook.com/docs/whatsapp/business-management-api/guides/access-tokens/",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://whatsappbusiness.com/developers/developer-hub/",
+     "status": 200,
+     "chars": 3439,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 43.8
+ }
+}

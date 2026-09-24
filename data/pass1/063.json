@@ -1,0 +1,225 @@
+{
+ "app": {
+  "id": 63,
+  "name": "Netlify",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "docs.netlify.com/api"
+ },
+ "record": {
+  "subcategory": "Cloud Platform",
+  "one_liner": "Netlify is a cloud platform for building, deploying, and scaling modern web applications.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth2 for public integrations; Personal Access Tokens (PATs) for scripts or CLI use.",
+  "access": "self_serve_free",
+  "access_notes": "Free tier ($0 forever) includes full API access. OAuth application registration and PAT generation are free and self-serve.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST-style API using JSON for serialization. Covers sites, deploys, builds, DNS, forms, environment variables, snippets, split tests, and databases.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Netlify publishes and hosts an official MCP server at https://netlify-mcp.netlify.app/mcp, which authorizes via OAuth.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "none",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.netlify.com/pricing/",
+    "quote": "Free $0 forever build and deploy free forever deploy any framework: deploy from ai, git, or api... store structured data with netlify database store files & images with blob storage"
+   },
+   {
+    "claim": "general",
+    "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+    "quote": "use the netlify rest api to manage atomic deploys of your sites and apps, manage form submissions, inject javascript snippets... and so much more."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+    "quote": "If you're making a public integration with Netlify for others to enjoy, you must use OAuth2. This allows users to authorize your application to use Netlify on their behalf without having to copy/paste API tokens or touch sensitive login info."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+    "quote": "To generate a personal access token (PAT): Go to Applications > Personal access tokens. Select New access token."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.netlify.com/pricing/",
+    "quote": "Free $0 forever build and deploy free forever deploy any framework: deploy from ai, git, or api"
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+    "quote": "You can register a new application in your Netlify user settings for OAuth applications... The OAuth2 end-user authorization endpoint is https://app.netlify.com/authorize ."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+    "quote": "This is a REST-style API that uses JSON for serialization and OAuth 2 for authentication. This document is an OpenAPI reference for the Netlify API that you can explore."
+   },
+   {
+    "claim": "api",
+    "url": "github.com/netlify/open-api",
+    "quote": "This repository contains Netlify's API definition in the Open API format, formerly known as Swagger."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.netlify.com/",
+    "quote": "This type of notification works as an outgoing webhook and allows you to send event information to an arbitrary URL using a POST request."
+   },
+   {
+    "claim": "mcp",
+    "url": "github.com/netlify/netlify-mcp",
+    "quote": "Netlify MCP Server follows the Model Context Protocol (MCP) to enable code agents to use the Netlify API and CLI—so they can create new projects, build, deploy, and manage your Netlify resources using natural language prompts."
+   },
+   {
+    "claim": "mcp",
+    "url": "github.com/netlify/netlify-mcp",
+    "quote": "It connects to Netlify's hosted server over HTTP ( https://netlify-mcp.netlify.app/mcp ) and authorizes via OAuth on first use — no token or local install required."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### 1. Product Overview\nNetlify is a cloud platform designed for building, deploying, and scaling modern web applications. It provides automated continuous deployment from Git repositories, serverless and edge functions, a global CDN, form handling, user identity management, object storage (Netlify Blobs), and managed Postgres databases (Netlify Database).\n* **Source:** `https://www.netlify.com/pricing/`\n* **Quote:** `\"Free $0 forever build and deploy free forever deploy any framework: deploy from ai, git, or api... store structured data with netlify database store files & images with blob storage\"`\n* **Source:** `https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/`\n* **Quote:** `\"use the netlify rest api to manage atomic deploys of your sites and apps, manage form submissions, inject javascript snippets... and so much more.\"`\n\n### 2. Authentication Methods & Multi-Tenant Integration\nNetlify provides two main authentication methods for interacting with its public API:\n1. **OAuth2:** Used for public integrations where users authorize a third-party application to act on their behalf.\n2. **Personal Access Tokens (PATs):** Static `bearer_token` credentials generated by individual users for scripts or personal CLI use.\n\nFor a multi-tenant integration platform, **`oauth2`** is the primary choice.\n* **Source:** `https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/`\n* **Quote:** `\"If you're making a public integration with Netlify for others to enjoy, you must use OAuth2. This allows users to authorize your application to use Netlify on their behalf without having to copy/paste API tokens or touch sensitive login info.\"`\n* **Quote:** `\"To generate a personal access token (PAT): Go to Applications > Personal access tokens. Select New access token.\"`\n\n### 3. Credential Acquisition & Cost\n* **Access Tier:** `self_serve_free`\n* **Cost:** Netlify provides a robust free tier ($0 forever) that includes full API access and deployment capabilities. Registering an OAuth application or generating a personal access token is completely free and self-serve.\n* **Process:** Developers can register an OAuth application directly within their user settings dashboard without requiring manual vendor approval or a paid subscription.\n* **Source:** `https://www.netlify.com/pricing/`\n* **Quote:** `\"Free $0 forever build and deploy free forever deploy any framework: deploy from ai, git, or api\"`\n* **Source:** `https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/`\n* **Quote:** `\"You can register a new application in your Netlify user settings for OAuth applications... The OAuth2 end-user authorization endpoint is https://app.netlify.com/authorize .\"`\n\n### 4. API Style & Technical Characteristics\n* **API Style:** REST\n* **Breadth:** Extremely broad, covering sites, deploys, builds, DNS, forms, environment variables, snippets, split tests, and databases.\n* **OpenAPI Spec:** Yes, Netlify maintains an official OpenAPI specification.\n* **Webhooks:** Yes, Netlify supports both incoming webhooks (\"Build hooks\") to trigger site builds and outgoing webhooks (\"Deploy notifications\") to send event payloads to external URLs.\n* **Sandbox:** No dedicated sandbox environment is provided, but the free tier serves as a fully functional testing environment.\n* **Source:** `https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/`\n* **Quote:** `\"This is a REST-style API that uses JSON for serialization and OAuth 2 for authentication. This document is an OpenAPI reference for the Netlify API that you can explore.\"`\n* **Source:** `github.com/netlify/open-api` (found via search)\n* **Quote:** `\"This repository contains Netlify's API definition in the Open API format, formerly known as Swagger.\"`\n* **Source:** `https://docs.netlify.com/` (via deploy notifications section)\n* **Quote:** `\"This type of notification works as an outgoing webhook and allows you to send event information to an arbitrary URL using a POST request.\"`\n\n### 5. Model Context Protocol (MCP) Servers\n* **MCP Status:** `official`\n* **Details:** Netlify publishes and hosts an official MCP server. It can be connected remotely over HTTP and handles authorization seamlessly via OAuth.\n* **Source:** `github.com/netlify/context-and-tools` / `github.com/netlify/netlify-mcp`\n* **Quote:** `\"Netlify MCP Server follows the Model Context Protocol (MCP) to enable code agents to use the Netlify API and CLI—so they can create new projects, build, deploy, and manage your Netlify resources using natural language prompts.\"`\n* **Quote:** `\"It connects to Netlify's hosted server over HTTP ( https://netlify-mcp.netlify.app/mcp ) and authorizes via OAuth on first use — no token or local install required.\"`\n\n### 6. Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. Netlify provides comprehensive public documentation, an official OpenAPI spec, self-serve free access to OAuth application registration, and even an officially hosted MCP server, making it fully ready for immediate integration.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"netlify\" api authentication oauth2",
+   "\"netlify\" openapi spec",
+   "\"netlify\" webhooks api",
+   "",
+   "\"netlify\" sandbox environment api",
+   "\"netlify\" mcp server github"
+  ],
+  "search_sources": [
+   {
+    "title": "contentful.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFzLQ7fa3XiEZYeiUi_Fb2CBN7eKlDclTR2mXd8rPcMpKavNIsfx3StKFJaQKXocScJo-3wHHc2EUN8GNKHyPea5L1z02gCmDshynxB1sbZWDa4Mt59d1mysc68JY_g3E15YsfktzAeYsFjgFWJqZOg-mpCxKEjrkf2RHCn_0KXuTMfqDC1g=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHU5watVxW6kuOCy_wBsNAfnlQ5Zxq3ftl6bpkkO2snIRSseN3ousTqUv1VngQza4V7BLIE7oeo-98jFapaAPEjtfGda0-H2sH15XyKg8BppF98TzAUAVF37ptbxLZitdwEiPwxaQAsvi0FZYWx9qU-n0oGKJArXfQfZPoJLD-NYHpI0W6DG6ztGOmCGwic-vYuDLrol475mHmgg-Ba"
+   },
+   {
+    "title": "netlify.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETLks0zDI6Oku2-AXfWMcapl-afsXrSAUfZOAV_btTpLH4zgUoTjeIrXHZy9LRcwTg7lwZe6nQ3AvtN8Gz5WHg6GznaHEzmEgNdm7ulMuuzg0rlcDpXMyAT77GdA7kW7pwuT0CoDoQaOsRiafcmfE="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGEXFGsfa0QJdiY_pKdtcT8sSxug-sk2br6Zn0W7M3VhCD6rw2Hcge75p2QWMW-eGjnU40Xjoho5JzzBKoq7OjYevRnj09G55PBB4yuCWo8R8Azrf6rivND3uKzNFeLg=="
+   },
+   {
+    "title": "gumloop.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxYZXC3Lcj7PMp2exZ6U3WhvuKGR1Hxhv5EmoJu7bnDbhVfpE0oQrdJYQ-b5ZspC1XDw6mj1W4PDhQDrG4rIQMT8UA8xcTQO0N_4w15dsCsJwCGP6RjovVKdTJjg=="
+   },
+   {
+    "title": "composio.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAqdUlBGwtNyGzOkA2gAhHuK7AkA7bYQOFneCjPGD-5OXf1vzCpCc7g2eMU8dwxRXKzF09wicus2HXX-Cs49Gz2zCsDwEANjeNYqWmiIrKgiHGLt48OeB40AD58nWYYpzqWg=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXBjwRbCsnSaonG_CbPAxSFrdr1NEUgqZ54mQo0fHPJoRuSNI9-szGu8lKa41KsLjlyPdtOjqPU4WS2hDA-mKdfUA-KhtkdUWjkLjD0KxFAqpvAP0DEuPs61jvqiMiotzB7LNCPg=="
+   }
+  ],
+  "tokens": 9268,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    " authentication API keys OAuth",
+    " getting started quickstart",
+    " pricing API access plans developer program",
+    " API reference index",
+    "Netlify MCP server",
+    " authentication API keys OAuth",
+    " getting started quickstart",
+    " pricing plans API access developer program",
+    " API reference index",
+    " MCP server official community",
+    " Netlify MCP Server",
+    " authentication API keys OAuth",
+    " getting-started quickstart",
+    " pricing plans API access developer program",
+    " API reference index",
+    " API reference index",
+    "",
+    "Netlify MCP server official community",
+    "github.com Netlify MCP Server",
+    " \"personal access tokens\"",
+    " \"api authentication\"",
+    " \"oauth\"",
+    " \"get started\"",
+    " \"quick start\"",
+    "",
+    "",
+    "",
+    " \"api reference\"",
+    "docs.netlify.com/api",
+    "github.com netlify/netlify-mcp"
+   ],
+   "candidates": 5,
+   "live_urls": [
+    "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+    "https://docs.netlify.com/",
+    "https://www.netlify.com/pricing/",
+    "https://docs.netlify.com/build/data-and-storage/netlify-database/api/",
+    "https://github.com/netlify/netlify-mcp",
+    "https://github.com/netlify/context-and-tools"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://netlify-mcp.netlify.app/mcp",
+     "status": 401
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+     "status": 200,
+     "chars": 32686,
+     "readable": true
+    },
+    {
+     "url": "https://docs.netlify.com/",
+     "status": 200,
+     "chars": 6342,
+     "readable": true
+    },
+    {
+     "url": "https://www.netlify.com/pricing/",
+     "status": 200,
+     "chars": 18024,
+     "readable": true
+    },
+    {
+     "url": "https://docs.netlify.com/build/data-and-storage/netlify-database/api/",
+     "status": 200,
+     "chars": 14022,
+     "readable": true
+    },
+    {
+     "url": "https://github.com/netlify/netlify-mcp",
+     "status": 200,
+     "chars": 6067,
+     "readable": true
+    },
+    {
+     "url": "https://github.com/netlify/context-and-tools",
+     "status": 200,
+     "chars": 12071,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 62.3
+ }
+}

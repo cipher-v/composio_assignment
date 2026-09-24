@@ -1,0 +1,250 @@
+{
+ "app": {
+  "id": 73,
+  "name": "Linear",
+  "category": "Productivity and Project Management",
+  "hint": "developers.linear.app"
+ },
+ "record": {
+  "subcategory": "Issue Tracking / Project Management",
+  "one_liner": "Linear is an issue tracking and project management platform for software and product development teams.",
+  "auth_methods": [
+   "oauth2",
+   "api_key"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 is the recommended method for multi-tenant applications. Personal API keys are also supported for personal scripts and internal tools.",
+  "access": "self_serve_free",
+  "access_notes": "Free account provides immediate API credentials and allows creation of public OAuth applications without vendor approval.",
+  "api_styles": [
+   "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive GraphQL API covering all core resources.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Linear's official Model Context Protocol (MCP) server is hosted at https://mcp.linear.app/sse and documented at https://linear.app/docs/integrations/mcp-server.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. Excellent developer documentation, self-serve free tier with API access, public OAuth 2.0, and official remote MCP server.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://linear.app/pricing",
+    "quote": "Issues, projects, cycles, initiatives"
+   },
+   {
+    "claim": "general",
+    "url": "https://linear.app/developers",
+    "quote": "learn about building apps and integrations for linear using the graphql api and typescript sdk."
+   },
+   {
+    "claim": "auth",
+    "url": "https://linear.app/developers",
+    "quote": "authentication use oauth 2.0 or personal api keys to authenticate your requests to the linear api"
+   },
+   {
+    "claim": "auth",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE33ynblH0WcbwasQXctFplgBJcayOahhuWQVcg5QzC3JMkCpdz6tYJyu-tHOR3g8GQ_z9Yejz5lve875Dc6gBsvVOEO1bqFz5RUXnQ7s3ZwcSSEO90Xlo575O5M0zcv6yO0jIU2ViZLNJ_1zXHceFUrCJCXWP6HynpkAfJa-jxRL0I2BPvNQngo1PLf5M=",
+    "quote": "Linear supports 2 authentication methods: OAuth - Create your own Linear OAuth application with custom scopes. Every user connects with their Linear account... API Key - Use a personal API key for all users."
+   },
+   {
+    "claim": "access",
+    "url": "https://linear.app/pricing",
+    "quote": "Free $0 free for everyone"
+   },
+   {
+    "claim": "access",
+    "url": "https://linear.app/pricing",
+    "quote": "API and webhook access"
+   },
+   {
+    "claim": "access",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-VtlBmBOvgjRHB582AM7jRWXzVXE9FEiX-OxVY_QLQPndrxRw7FV5TiWRzkxlTf4Wv27ZEnIsfsI-94f4fsTqu2YRrD4dKAdOQaQzZ-1WW-T280u7UY2mu2Wn7TnR6ah2EpX81KyLn9hTQ2NgjClQemdGS3uFuQlfGyYkK_C1WpVUzS6Slepmx8YjbHlVMn3iFvFsEYqv",
+    "quote": "Under your specific workspace, navigate to Settings > API > OAuth applications. Click the + icon... toggle the Public switch to allow installation in other workspaces."
+   },
+   {
+    "claim": "api",
+    "url": "https://linear.app/developers",
+    "quote": "graphql schema ↗"
+   },
+   {
+    "claim": "api",
+    "url": "https://linear.app/developers",
+    "quote": "learn about building apps and integrations for linear using the graphql api and typescript sdk."
+   },
+   {
+    "claim": "api",
+    "url": "https://linear.app/pricing",
+    "quote": "API and webhook access"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://linear.app/docs/mcp",
+    "quote": "Linear's MCP server follows the authenticated remote MCP spec."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkkw2MlwfJYjXmHIqdf7TvVj0kboEBDK8TgPYREPKH5dB9xF6Y4dLzWNnWOYjBsuWPPpwNt3GEMvhgJKkxASudCmlu2amj4Klt1m2TvFyjv-6Tcegjrnr9Abkg3Qrk0QupSDKsBMz3fw==",
+    "quote": "The Linear MCP server is Linear's official Model Context Protocol integration that gives AI coding tools direct, live access to your Linear workspace."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": "[\"oauth2\", \"bearer_token\"]",
+    "new": "[\"oauth2\", \"api_key\"]",
+    "reason": "The documentation consistently refers to 'personal API keys' and 'OAuth 2.0'. While API keys are a type of bearer token, Linear's documentation and API distinguish them. For personal scripts, the key is sent directly in the Authorization header. For OAuth 2.0, the token is sent with the Bearer prefix. The term 'bearer_token' is ambiguous here; 'api_key' is the specific term used by the vendor for personal keys.",
+    "url": "https://linear.app/developers"
+   },
+   {
+    "field": "auth_notes",
+    "old": "OAuth 2.0 for multi-tenant integrations; Personal API keys (bearer tokens) also supported.",
+    "new": "OAuth 2.0 is the recommended method for multi-tenant applications. Personal API keys are also supported for personal scripts and internal tools.",
+    "reason": "Clarified the usage of OAuth 2.0 for multi-tenant applications and API keys for personal scripts/internal tools, based on vendor recommendations.",
+    "url": "https://linear.app/developers"
+   },
+   {
+    "field": "sandbox",
+    "old": "true",
+    "new": "false",
+    "reason": "No official documentation mentions a dedicated sandbox or test environment. Third-party tutorials describe creating a regular Linear account and a new OAuth app within it for testing, not a distinct sandbox environment provided by Linear.",
+    "url": "https://linear.app/developers"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "Linear's official Model Context Protocol (MCP) server: https://linear.app/docs/mcp",
+    "new": "Linear's official Model Context Protocol (MCP) server is hosted at https://mcp.linear.app/sse and documented at https://linear.app/docs/integrations/mcp-server.",
+    "reason": "The original URL was outdated/incorrect. Updated with the correct hosting URL and documentation URL for the official MCP server.",
+    "url": "https://linear.app/docs/integrations/mcp-server"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### Verification Notes\n\n**subcategory**\n- **Original:** `Issue Tracking / Project Management`\n- **Verification:** CONFIRMED.\n- **Correction:** None.\n- **Evidence:** \"Linear is a project management and issue tracking tool designed for software teams.\"\n\n**one_liner**\n- **Original:** `Linear is an issue tracking and project management platform for software and product development teams.`\n- **Verification:** CONFIRMED.\n- **Correction:** None.\n- **Evidence:** \"Linear lets you manage software development and track bugs. Linear's streamlined design is built for speed and efficiency — helping high performing teams accomplish great things.\" \"Linear is a project management and issue tracking tool designed for software teams.\"\n\n**auth_methods**\n- **Original:** `[\"oauth2\", \"bearer_token\"]`\n- **Verification:** WRONG.\n- **Correction:** `[\"oauth2\", \"api_key\"]`\n- **Evidence:** The documentation consistently refers to \"personal API keys\" and \"OAuth 2.0\". While API keys are a type of bearer token, Linear's documentation and API distinguish them. For personal scripts, the key is sent directly in the `Authorization` header. For OAuth 2.0, the token is sent with the `Bearer` prefix. The term \"bearer_token\" is ambiguous here; \"api_key\" is the specific term used by the vendor for personal keys.\n\n**primary_auth**\n- **Original:** `oauth2`\n- **Verification:** CONFIRMED.\n- **Correction:** None.\n- **Evidence:** \"If you're building an application for others to use, we recommend you use OAuth2 authentication.\" \"OAuth is required for multi-tenant SaaS integrations.\"\n\n**auth_notes**\n- **Original:** `OAuth 2.0 for multi-tenant integrations; Personal API keys (bearer tokens) also supported.`\n- **Verification:** CONFIRMED (with clarification).\n- **Correction:** `OAuth 2.0 is the recommended method for multi-tenant applications. Personal API keys are also supported for personal scripts and internal tools.`\n- **Evidence:** \"If you're building an application for others to use, we recommend you use OAuth2 authentication.\" \"For personal scripts API keys are the easiest way to access the API.\"\n\n**access**\n- **Original:** `self_serve_free`\n- **Verification:** CONFIRMED.\n- **Correction:** None.\n- **Evidence:** Linear offers a \"Free\" plan for \"$0\" with \"unlimited members\". This free plan includes \"API and webhook access\". The official documentation confirms that users can create personal API keys and OAuth applications on a self-serve basis.\n\n**access_notes**\n- **Original:** `Free account provides immediate API credentials and allows creation of public OAuth applications without vendor approval.`\n- **Verification:** CONFIRMED.\n- **Correction:** None.\n- **Evidence:** The pricing page shows a free tier that includes API access. Documentation on creating personal API keys shows it's a self-serve action in user settings. Documentation for creating an OAuth application shows a \"Public\" toggle that allows installation in other workspaces, with no mention of a required vendor review.\n\n**api_styles**\n- **Original:** `[\"graphql\"]`\n- **Verification:** CONFIRMED.\n- **Correction:** None.\n- **Evidence:** \"Linear's public API is built using GraphQL. It's the same API we use internally for developing our applications.\"\n\n**api_breadth**\n- **Original:** `broad`\n- **Verification:** CONFIRMED.\n- **Correction:** None.\n- **Evidence:** \"In addition to querying, Linear has full support for mutating all entities.\" The API provides access to core resources like issues, projects, cycles, comments, and users.\n\n**api_notes**\n- **Original:** `Comprehensive GraphQL API covering all core resources.`\n-  **Verification:** CONFIRMED.\n- **Correction:** None.\n- **Evidence:** \"Linear's public GraphQL API provides full access to create, read, update, and query issues, projects, cycles, roadmaps, and teams.\" \"It's the same API we use internally for developing our applications.\"\n\n**openapi_spec**\n- **Original:** `false`\n- **Verification:** CONFIRMED.\n- **Correction:** None.\n- **Evidence:** The API is exclusively GraphQL. No mention of an OpenAPI or Swagger specification was found in any official documentation. The GraphQL schema is explorable via tools like Apollo Studio.\n\n**webhooks**\n- **Original:** `true`\n- **Verification:** CONFIRMED.\n- **Correction:** None.\n- **Evidence:** \"Linear's webhooks allow you to receive HTTP(S) push notifications whenever data is created or updated.\" The pricing page for the free plan lists \"API and webhook access\".\n\n**sandbox**\n- **Original:** `true`\n- **Verification:** WRONG.\n- **Correction:** `false`\n- **Evidence:** No official documentation mentions a dedicated sandbox or test environment. One third-party tutorial refers to setting up a \"test or sandbox account,\" but the instructions describe creating a regular Linear account and a new OAuth app within it for testing, not a distinct sandbox environment provided by Linear. The official developer documentation and API reference do not mention a sandbox.\n\n**mcp**\n- **Original:** `official`\n- **Verification:** CONFIRMED.\n- **Correction:** None.\n- **Evidence:** \"The Linear MCP server is Linear's official Model Context Protocol integration that gives AI coding tools direct, live access to your Linear workspace.\" The official documentation confirms this: \"The Model Context Protocol (MCP) server provides a standardized interface that allows any compatible AI model or agent to access your Linear data in a simple and secure way.\" Several community-built MCP servers also exist, but Linear maintains an official one.\n\n**mcp_notes**\n- **Original:** `Linear's official Model Context Protocol (MCP) server: https://linear.app/docs/mcp`\n- **Verification:** CONFIRMED.\n- **Correction:** `Linear's official Model Context Protocol (MCP) server is hosted at https://mcp.linear.app/sse and documented at https://linear.app/docs/integrations/mcp-server.` (Note: The original URL `https://linear.app/docs/mcp` was incorrect/outdated, but the claim of an official server was correct).\n- **Evidence:** \"The Linear MCP server is Linear's official Model Context Protocol integration... It connects to Linear's remote server at https://mcp.linear.app/sse.\" The official documentation is now located under the integrations section.\n\n**verdict**\n- **Original:** `ready_now`\n- **Verification:** CONFIRMED.\n- **Correction:** None.\n- **Evidence:** The API is publicly documented, and API credentials can be obtained instantly on a self-serve free plan, with no mandatory approval process for building multi-tenant apps.\n\n**blocker**\n- **Original:** `none`\n- **Verification:** CONFIRMED.\n- **Correction:** None.\n- **Evidence:** Access is self-serve and free, documentation is public, and public OAuth apps can be created without vendor review.\n\n**blocker_notes**\n- **Original:** `None. Excellent developer documentation, self-serve free tier with API access, public OAuth 2.0, and official remote MCP server.`\n- **Verification:** CONFIRMED.\n- **Correction:** None.\n- **Evidence:** Based on the verification of all other fields, this summary is accurate.\n\n### Uncertain Fields\n\nNone. All fields were verifiable from the provided documentation and search results.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Linear API pricing",
+   "Linear API free tier access",
+   "Linear API authentication methods",
+   "Linear developer documentation OAuth",
+   "Linear API create public application",
+   "Linear API sandbox environment",
+   "Linear Model Context Protocol server official",
+   " mcp"
+  ],
+  "search_sources": [
+   {
+    "title": "airbyte.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvpf19SID75s_6uAVoaJqIPfHaaewck9UoTVvFw3fHwCNLK8H4E2TkcLl5rz-IDyhCgXWNfw6kexqjj0xA-cZgNm4o5-U4Mmg6I8ts4-5pg7zzh4GGszezSclhfqL25KHdrtBuC1Fv89Yg1gW-yGg="
+   },
+   {
+    "title": "apitracker.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVmsr7PGR7Z8DUVuhiNgCJRpbgxCcwClyueXZUy3E6f8YjX9cCU7timgKb9g9B6hv43XIc3UnbBZkqLh3ezIGKWlABsaDg0CSxUf61GZWkla0FN-mglA-a7h10MTQ="
+   },
+   {
+    "title": "linear.app",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgY3XULTsv1Pw_qTdR03Rq1LxEUEF1AUyayizMxl6KYX779Ek5f-b1IFF63Xd5iG3AxA0TB6RqGla0B-8IiK9fg91NLp31YHA6P57eSNBE3KEddLerYnZp"
+   },
+   {
+    "title": "linear.app",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEd0HiausYUafN53mKla1pICMWb4gHlDSv209RnBAVMzkZ6slyVGWGTv0Da0aSqKsT_Xn9S1JvjyY7jr8B6A9NHGAQ9F_2fui7SyV3xblV_7wncUwlJd1s3RJkw-aDQQM="
+   },
+   {
+    "title": "dlthub.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHV_YzrtEO_VZ5lPe5TDulNXqHofT12L3YJjOeAbZ9KWkWJn354hnlNURFUhGF6aA9BDYrxigKFGoFTDx63s8CgC-_1se-OQJzzLQxlwbB_BZqs0IHQSP0iuD9aXS9jcNrbXl0="
+   },
+   {
+    "title": "unified.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3sja0iY_Di6z63EGDyhxowSMWls2iMBbWlu3JhDk5FD6HQzYBUbO32z5pGibcwJgpNNcYrBURLGCkuHTR_mGQlT0NzoxfB_f-uuBxBbZtw2pqaVxne7_54pymJZlw-aEp-pmO_yXmqYVEp_ViimYlx47tnOdOWmlIvBqGEp_tAURdhRU7AQFe2sD50mBGwsisxdwJbOJ5OAg="
+   },
+   {
+    "title": "linear.app",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZxyGwwMfWFwsEwcayJqMl6gQlXBWSFmI0xytJZRHptSd-JbUJGDVsT0D_AC_j5jwhu7PG-_wQuvGz1IX_zYKEV6SAE7v8Pb30JkB38tgqz-jY2JGz"
+   },
+   {
+    "title": "nango.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEok7j41AgVZ3K-j6NdkzAS0s3N9DPpSR-_WqFFhDp0dkm7AjoDfZlbO4axdSNKbBd-cKtBa68nxi1TKWXuna3vYz45iLDK8i6uzv2dKZlESed06QPfAln9_DV4KWuM0FhzkJWSjTQKFv5Sz1uNgZb8AsYKz0VOmubnSKh0JTS5zItd42Joxd8VcMo-PMycujYirYV2wRvz"
+   },
+   {
+    "title": "linear.app",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNog2bLpDFIP3ig6Y3mYOBTSshqCZKrziMK9e9hBKneyPLCJigaLcToteAe80ulWlrS6iNaaG2EFCzkbDJzHjsgMCDtKvvKBUCfBs8H0FC7rXggVM2vbFNWvXlJbC9X5xnWAM="
+   },
+   {
+    "title": "pricingping.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2Zm8N8o61lhLcaIXBhkM_RHucMMVWqmHSNr4NTu6KtqPCAuIqja7PKujYVM3D59uSizju8Nvb7fy2DQxjiLrahvD-CeUR3AVgISiAF_3LkKyKCvAp8D0UUOw2-bKjQPI7gA=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNbrMH2EncX81zeq2HEPzgVjGNT-8Xyh2AXJ-4loqYX-hJMxuHFddtpvHDooxiDPb-DvrpOEvlVxRbIeOaSUmeNieKyJKUmRIvNUKRVi20AjcYEg5y2V6qUC1_L79AAhtmxuM="
+   },
+   {
+    "title": "apollographql.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpGUfT6TM4JVWTjhKuMxq1-sm788GUKOowcjddZQEjpxQ_oub-U1pP_ubeDj0hE7y0ibZS9JWxrEToGW84UiPk9lDF8aKhMP-VG6PKOCunNBU2vlU6P_HZhcJklR3TTEwAvdTMsgh9fOoUgzBLu5SKvzMOdL6H0nxy8cX19hQ0kncAoofflg=="
+   },
+   {
+    "title": "endgrate.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHt463GivKuH-pVTQwvG89dGUTPDRUNTystJUkSb2SbhcUCKyenZnQWJQoGu9l9m0N9_VL9UzCbe46rp2NH23aCdAPo5zB5RVh8c6g-XYA1HR7pDUvdWwlvjHR1b4lSPijKSQf0D0y9548mUwmbq2_VQXGxP6anLFMYxFFACN42Nf3IEW2XM01IwVfMqpBB5hJy"
+   },
+   {
+    "title": "builder.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjFpWs_KXW5IxjG196DhsbCrskvRn85zYp-6QvlBEsH-2g7Pd7peivWwXoBv73SY7acgQdyIuVjKKq9L9_nzgDOToXJYCdt_3R2nTp5GKKgzQZggKLf0oMqIQufsOvspkGWUiVyjrIZw=="
+   },
+   {
+    "title": "linear.app",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFs6mgxeOjq1drlMaLtHFdPttOA56HZ790CL0eZtDlUfLnxFeOeg-s-MEsZvUUWof9uP-gYy7AZyzcbX0jLHCzTk63Z_5Hfp9pE_Jj_0YzKGgRXhhJCCw=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYAMQ9_ZvZYPURc_8VJeBQnPJpD2WIxRE3jcFUKhqwxHv9uoMzFZlWKEx609UeXm_J8rNbAhOKkfiyQaOcxIHHrZRe68FtldssyGsxbN1U5VtyE2Ggmmu7bTE_WIbJQs0yNg=="
+   }
+  ],
+  "tokens": 8422,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://linear.app/pricing",
+    "status": 200,
+    "chars": 2852,
+    "readable": true
+   },
+   {
+    "url": "https://linear.app/developers",
+    "status": 200,
+    "chars": 1601,
+    "readable": true
+   },
+   {
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE33ynblH0WcbwasQXctFplgBJcayOahhuWQVcg5QzC3JMkCpdz6tYJyu-tHOR3g8GQ_z9Yejz5lve875Dc6gBsvVOEO1bqFz5RUXnQ7s3ZwcSSEO90Xlo575O5M0zcv6yO0jIU2ViZLNJ_1zXHceFUrCJCXWP6HynpkAfJa-jxRL0I2BPvNQngo1PLf5M=",
+    "status": 404,
+    "chars": 337,
+    "readable": false
+   },
+   {
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-VtlBmBOvgjRHB582AM7jRWXzVXE9FEiX-OxVY_QLQPndrxRw7FV5TiWRzkxlTf4Wv27ZEnIsfsI-94f4fsTqu2YRrD4dKAdOQaQzZ-1WW-T280u7UY2mu2Wn7TnR6ah2EpX81KyLn9hTQ2NgjClQemdGS3uFuQlfGyYkK_C1WpVUzS6Slepmx8YjbHlVMk3iFvFsEYqv",
+    "status": 200,
+    "chars": 15696,
+    "readable": true
+   },
+   {
+    "url": "https://linear.app/docs/mcp",
+    "status": 200,
+    "chars": 15120,
+    "readable": true
+   },
+   {
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkkw2MlwfJYjXmHIqdf7TvVj0kboEBDK8TgPYREPKH5dB9xF6Y4dLzWNnWOYjBsuPWPpwNt3GEMvhgJKkxASudCmlu2amj4Klt1m2TvFyjv-6Tcegjrnr9Abkg3Qrk0QupSDKsBMz3fw==",
+    "status": 200,
+    "chars": 17299,
+    "readable": true
+   }
+  ],
+  "seconds": 67.4
+ }
+}

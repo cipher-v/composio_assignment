@@ -1,0 +1,191 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://docs.sentry.io/get-started/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.38
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://docs.sentry.io/api/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.7
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.sentry.io/api/auth/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.61
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.sentry.io/account/auth-tokens/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.77
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.sentry.io/api/auth/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.sentry.io/api/auth/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.84
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.sentry.io/api/auth/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://sentry.io/pricing/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.2
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.sentry.io/api/auth/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.sentry.io/api/auth/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.sentry.io/api/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.73
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.sentry.io/api/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.64
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/getsentry/sentry-api-schema",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.2
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.sentry.io/api/auth/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.sentry.io/api/auth/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.sentry.io/get-started/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.8
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/getsentry/sentry-mcp",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.84
+  }
+ ],
+ "auth_support": {
+  "bearer_token": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://docs.sentry.io/get-started/', 'https://docs.sentry.io/api/auth/', 'https://docs.sentry.io/api/auth/', 'https://sentry.io/pricing/', 'https://docs.sentry.io/api/auth/', 'https://docs.sentry.io/api/auth/', 'https://github.com/getsentry/sentry-api-schema', 'https://docs.sentry.io/api/auth/', 'https://docs.sentry.io/api/auth/']\n- Non-vendor sources (prefer official docs): ['https://github.com/getsentry/sentry-api-schema', 'https://github.com/getsentry/sentry-mcp']",
+ "metrics": {
+  "n_evidence": 17,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.8823529411764706,
+  "readable": 17,
+  "quote_supported_rate": 0.47058823529411764,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

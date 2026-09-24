@@ -1,0 +1,111 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developer.gladly.com/rest/#section/Authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.73
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://apps.shopify.com/gladly",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.62
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.gladly.com/rest/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.62
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://www.stackone.com/connectors/gladly/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.54
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developer.gladly.com/docs/lookup-api",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developer.gladly.com/rest/#section/Authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.63
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.gladly.com/rest/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.gladly.com/rest/#tag/Webhooks",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.2
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.gladly.com/docs/sandbox-environment",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "basic": true,
+  "api_key": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://developer.gladly.com/docs/lookup-api', 'https://developer.gladly.com/docs/sandbox-environment']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://developer.gladly.com/rest/', 'https://developer.gladly.com/rest/#tag/Webhooks']\n- Non-vendor sources (prefer official docs): ['https://apps.shopify.com/gladly', 'https://www.stackone.com/connectors/gladly/']",
+ "metrics": {
+  "n_evidence": 9,
+  "alive_rate": 0.7777777777777778,
+  "dead_rate": 0.2222222222222222,
+  "blocked_rate": 0.0,
+  "official_rate": 0.7777777777777778,
+  "readable": 7,
+  "quote_supported_rate": 0.7142857142857143,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

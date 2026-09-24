@@ -1,0 +1,241 @@
+{
+ "app": {
+  "id": 93,
+  "name": "Fathom",
+  "category": "AI, Research and Media-native",
+  "hint": "fathom.video"
+ },
+ "record": {
+  "subcategory": "Meeting Assistant",
+  "one_liner": "Fathom is an AI-powered meeting assistant that records, transcribes, and summarizes virtual meetings.",
+  "auth_methods": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "API Key authentication uses X-Api-Key header. OAuth 2.0 uses bearer tokens. OAuth is recommended for multi-user integrations.",
+  "access": "self_serve_free",
+  "access_notes": "API keys can be generated instantly from account settings. OAuth credentials (Client ID and Secret) can be obtained by registering a public application instantly via the developer portal. API access is included on all plans, including the free plan.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API with standard HTTP methods and JSON payloads. Provides comprehensive access to meetings, recordings, AI summaries, transcripts, teams, team members, users, and webhooks.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Fathom provides an official, vendor-hosted MCP server integration to connect meeting data directly to AI assistants like Claude and ChatGPT. Multiple community-built MCP servers also exist.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "No technical blockers. Comprehensive public documentation and instant self-serve credentials (API keys and OAuth) are available. Public OAuth apps are subject to review, but developers can register and start building immediately.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.fathom.ai/pricing",
+    "quote": "free plan unlimited recordings, instant call summaries, integrations with llms & more. sign up. free forever."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.fathom.ai/sdks/authentication",
+    "quote": "api key authentication ... bearer token authentication ... security schemes name type environment variable apikeyauth apikey fathom_api_key_auth bearerauth http fathom_bearer_auth ... use oauth for multi-user integrations"
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.fathom.ai/oauth",
+    "quote": "if you’re developing a public app that you wish to integrate with fathom, you should build it using oauth."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.fathom.ai/quickstart",
+    "quote": "head to the api access section of your user settings and generate an api key."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.fathom.ai/oauth",
+    "quote": "register your app register an oauth app configure your redirects and receive your oauth credentials. (2 mins)"
+   },
+   {
+    "claim": "access",
+    "url": "https://www.fathom.ai/pricing",
+    "quote": "HubSpot, Salesforce, public API included on all plans."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.fathom.ai/quickstart",
+    "quote": "curl https://api.fathom.ai/external/v1/meetings \\ -h \"x-api-key: your_api_key\""
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.fathom.ai/quickstart",
+    "quote": "Meetings. GET. List meetings · GET. List meeting types. Recordings. Teams. Team Members. Users. Webhooks. Webhook Payloads."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.fathom.ai/",
+    "quote": "webhooks set up a webhook for your meetings."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://www.fathom.ai/pricing",
+    "quote": "public api & mcp see all integrations →"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://developers.fathom.ai/",
+    "quote": "MCP (Model Context Protocol) lets you connect Fathom to AI assistants like Claude and ChatGPT... To learn more about Fathom's MCP and how to connect it to any other MCP-compatible tool, visit api.fathom.ai/mcp."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/Dot-Fun/fathom-mcp",
+    "quote": "Model Context Protocol server for Fathom AI"
+   },
+   {
+    "claim": "verdict",
+    "url": "https://developers.fathom.ai/oauth",
+    "quote": "subject to review to ensure the best experience for all users"
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### Adversarial Fact-Checker Report: Fathom (fathom.video)\n\nHere is the verification of the first-pass research record.\n\n**Important Note:** My initial searches for \"Fathom API\" returned results for two different companies: **Fathom (fathom.video)**, the AI meeting assistant, and **Fathom (fathom.global)**, a flood risk data provider. The provided URLs all point to `fathom.video`'s developer documentation (`developers.fathom.ai`), but some search results (e.g.,) refer to the flood data company. I have filtered these out and focused only on the correct entity. Another company, **Fathom Analytics (usefathom.com)**, also appeared in searches and is also a separate entity.\n\n---\n\n### Field-by-Field Verification\n\n*   **subcategory**: **CONFIRMED**\n    *   **Correct Value**: `Meeting Assistant`\n    *   **Reasoning**: Fathom is consistently described as an \"AI meeting assistant\" across its own website and third-party reviews.\n\n*   **one_liner**: **CONFIRMED**\n    *   **Correct Value**: `Fathom is an AI-powered meeting assistant that records, transcribes, and summarizes virtual meetings.`\n    *   **Reasoning**: This is an accurate summary of the product's core functionality as described on its website and in reviews. Fathom \"records, transcribes, and summarizes calls on Zoom, Google Meet, and Microsoft Teams automatically.\"\n\n*   **auth_methods**: **CONFIRMED**\n    *   **Correct Value**: `[\"api_key\", \"oauth2\"]`\n    *   **Reasoning**: The documentation confirms two primary authentication methods. The Quickstart guide details using a personal API key via the `X-Api-Key` header. The \"Building with OAuth\" page and SDK authentication guide detail the OAuth 2.0 flow for multi-user public apps. [p. 3, p. 2] The SDK docs also show distinct \"API Key Authentication\" and \"Bearer Token Authentication\" (used for OAuth) examples. [p. 2]\n\n*   **primary_auth**: **CONFIRMED**\n    *   **Correct Value**: `oauth2`\n    *   **Reasoning**: The documentation explicitly recommends OAuth for the target use case: \"if you’re developing a public app that you wish to integrate with fathom, you should build it using oauth.\" [p. 3] This aligns with the definition of `primary_auth` for multi-tenant platforms.\n\n*   **auth_notes**: **CONFIRMED**\n    *   **Correct Value**: `API Key authentication uses X-Api-Key header. OAuth 2.0 uses bearer tokens. OAuth is recommended for multi-user integrations.`\n    *   **Reasoning**: The Quickstart guide shows a cURL example with `-h \"x-api-key: your_api_key\"`. [p. 4, 22] The SDK authentication page shows how to use a bearer token for OAuth and states, \"use oauth for multi-user integrations\". [p. 2]\n\n*   **access**: **WRONG**\n    *   **Correct Value**: `self_serve_free`\n    *   **Reasoning**: The initial value was correct, but the reasoning and evidence require correction. Fathom offers a \"Free forever\" plan that includes unlimited recordings and transcriptions. [p. 1, 24] While some advanced AI features are limited on the free plan, API access itself is included. The Quickstart guide confirms that any user can self-serve generate an API key from their settings. [p. 4, 22] The OAuth page confirms that developers can register an app and receive credentials in minutes. [p. 3] The review mentioned for OAuth apps is for being featured in the app marketplace, not for initial access, which makes it self-serve. [p. 3]\n\n*   **access_notes**: **CONFIRMED**\n    *   **Correct Value**: `API keys can be generated instantly from account settings. OAuth credentials (Client ID and Secret) can be obtained by registering a public application instantly via the developer portal. API access is included on all plans, including the free plan.`\n    *   **Reasoning**: The Quickstart guide states, \"Head to the API Access section of your User Settings and generate an API key.\" [p. 4, 22] The OAuth page states you can \"register an oauth app configure your redirects and receive your oauth credentials. (2 mins)\". [p. 3] The pricing page lists \"public api & mcp\" as a general integration feature, not tied to a specific paid plan. [p. 1]\n\n*   **api_styles**: **CONFIRMED**\n    *   **Correct Value**: `[\"rest\"]`\n    *   **Reasoning**: The API documentation provides a REST API reference with standard HTTP methods. The Quickstart guide shows a cURL example to a REST endpoint: `https://api.fathom.ai/external/v1/meetings`. [p. 4, 22, 31]\n\n*   **api_breadth**: **CONFIRMED**\n    *   **Correct Value**: `broad`\n    *   **Reasoning**: The API provides access to a wide range of data, including meetings, recordings, transcripts, summaries, and action items. The API reference confirms endpoints for meetings, meeting types, recordings, teams, users, and webhooks.\n\n*   **api_notes**: **CONFIRMED**\n    *   **Correct Value**: `REST API with standard HTTP methods and JSON payloads. Provides comprehensive access to meetings, recordings, AI summaries, transcripts, teams, team members, users, and webhooks.`\n    *   **Reasoning**: This is an accurate summary based on the findings for `api_styles` and `api_breadth`.\n\n*   **openapi_spec**: **WRONG**\n    *   **Correct Value**: `false`\n    *   **Reasoning**: The initial value was correct, but I performed a search to confirm. No official OpenAPI or Swagger specification was found in the developer documentation or in search results.\n\n*   **webhooks**: **CONFIRMED**\n    *   **Correct Value**: `true`\n    *   **Reasoning**: The developer documentation homepage explicitly links to a guide for setting up webhooks: \"Webhooks set up a webhook for your meetings.\" [p. 5, 15]\n\n*   **sandbox**: **WRONG**\n    *   **Correct Value**: `false`\n    *   **Reasoning**: The initial value was correct, but I performed a search to confirm. No sandbox or test environment is mentioned in the developer documentation or was found in search results. Developers are expected to use their own accounts with live data.\n\n*   **mcp**: **CONFIRMED**\n    *   **Correct Value**: `official`\n    *   **Reasoning**: Fathom provides an official, vendor-hosted MCP server. The documentation provides the official server URL: `https://api.fathom.ai/mcp`. While community-built servers like the one on GitHub exist, Fathom maintains its own.\n\n*   **mcp_notes**: **CONFIRMED**\n    *   **Correct Value**: `Fathom provides an official, vendor-hosted MCP server integration to connect meeting data directly to AI assistants like Claude and ChatGPT. Multiple community-built MCP servers also exist.`\n    *   **Reasoning**: This is an accurate summary. The documentation confirms the official server and its purpose. The cited GitHub repository is an example of a community-built server, and its README clarifies it is \"not officially affiliated with Fathom Video, Inc.\" [p. 6, 26]\n\n*   **verdict**: **CONFIRMED**\n    *   **Correct Value**: `ready_now`\n    *   **Reasoning**: Fathom provides public documentation and self-serve credentials (API keys and OAuth) available on a free plan. A developer can sign up and start building immediately without needing to contact sales or wait for a lengthy approval process.\n\n*   **blocker**: **CONFIRMED**\n    *   **Correct Value**: `none`\n    *   **Reasoning**: Consistent with the `ready_now` verdict, there are no significant blockers to development.\n\n*   **blocker_notes**: **CONFIRMED**\n    *   **Correct Value**: `No technical blockers. Comprehensive public documentation and instant self-serve credentials (API keys and OAuth) are available. Public OAuth apps are subject to review, but developers can register and start building immediately.`\n    *   **Reasoning**: This is an accurate summary of the state of access. The OAuth app review is for promotion in Fathom's marketplace, not for initial functionality, so it does not block development. [p. 3]\n\n---\n### Uncertain Fields\n\nAll fields were verifiable from the provided documentation and new searches. There are no fields that remain uncertain.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Fathom AI meeting assistant",
+   "fathom.video one-liner",
+   "Fathom API pricing plans",
+   "Fathom API access free plan",
+   "Fathom API documentation endpoints",
+   "Fathom API reference",
+   "Fathom API OpenAPI specification",
+   "Fathom API sandbox",
+   "Fathom official MCP server",
+   " \"Model Context Protocol\"",
+   " api reference"
+  ],
+  "search_sources": [
+   {
+    "title": "fathom.global",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSIMrCl35PnntGswWrCOsxie2CGFPhTFZteFQfkxx8JbfjDEj02vH-MuC0kuch0MGr12n7zyiYoz0yyj_oTcze5vSAslfcixpXNFxn8rCdXnG9W1pXoTzVGyaB6dN0x76hPAPdmBbMsY5rUaqD1oFmQO8i"
+   },
+   {
+    "title": "fathom.global",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2Zl9ukXO7veiQB5qg77pCwlcXspv9tUu-4s8bqrXHMC06T14B6h89RpjAzEozKwE0NPgSOleHU4BhCzlerksUSlgXExE_eRN7a_Rw6g2cZ1myV_9aJ6Vml5bUYMS9yM7Fblvi"
+   },
+   {
+    "title": "fathom.global",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDLrb6LcrpXvvfsz4qdU6MzNzI0-0kCtU3TU60Qu7o1xVW9vMWDqybfA_S4qFST9uGTrf4Nc-UvhTdqiInq2x68jsiIxGScmrYSTn5FXrVZgTTVei8QkDLOjsPoDYtwmp-g7G9"
+   },
+   {
+    "title": "fathom.global",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeZ8y9L4mD7UzNMqsd1r_VruMM0JA6qsfTGN-bB88ywT8d2sIscGweAtlBWxVrzOhs7MJrIczwXzVQfVWWwgSPL5xAdLLKt5s0hfHxgULNXhuk2MYj1QUoeBcks-O-9is3u_gxvd5LDqYuyw=="
+   },
+   {
+    "title": "usefathom.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQxFAF5InTANEqIYNasvkwsTIC8VnFa0-pC-ELUCt-YCPDZ0hDkZWNFe3n9skJn2RxSI7qKuilmidClllK2NAQ0Ioth5RbbNH7gXgtdaqbgxeHWVS8Kt9hq8mWrsnZHmG5sv2FWfAXoI5w7ZU="
+   },
+   {
+    "title": "usefathom.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFX6XzQzTVehi8fWeED2RO0XMJ0wGYtfMMIv_PIYX5sNOUcP2GornEMgVk-z06EgMpisZTxcCeAMuRs5PX_A6EUEr7HZfhkSiwH20uyQsgK_FvYVz1MWqc="
+   },
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExibYlSaROSZDUA514ldFdUs_zCME9djsqXsuVdzvRsnOsyJ61qUUk4OVCrwGazfopi6bQYon_9dsPktbavph2R75PHANlAlVuUQM0dRTTP7RWqn6_f9ieusTlr_4RA3AV28USuqS4O3cqf1TVZ0jaaeExg8uR8mZl"
+   },
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyD8CJOEpo1aVyMpvLA-2ExJkY4A5A-oLqC0ddmlUoOhOFns385nJmez0NY5tl1Whkbcx-dYVoUy13x_8hwynkqJHk573AOkhnSraLvwyTjcQCXN6OlgWSrnxaFw=="
+   },
+   {
+    "title": "aishortcutlab.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEX6WOKg_DxYQDJHgmh9gfzwBiQnk4X45KzUPuuDDuTOzA_GUHOv8WGxKWmaIkYGk6SHW8WAIfV6jFrkQ5WutwbdVUvEvKp3jv8tgEhBah5EjYqYtHWxTdsYEKvuBwfGH_3-a7A"
+   },
+   {
+    "title": "aitoolsdevpro.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQHO7KhBzDjw5vUi_y6nmAgvmJ6EIEhPp3RT4WYX1m58qDtZUJFTO9Dcn_npaSPULiRXJBX4VcYCPlpOl_R6Z_SsSynqPHFDGmZFpZn_hQh2hiboIsrk619-z5iR4JtbKOsBbDC7QAp-eZNrnCNA=="
+   },
+   {
+    "title": "fathom.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnPfINEyqsd5olals84-0OviqDFW6rSZ0THL1pzBUska6ZvpaWe703uzhpMpxUuozrkJF0nrazc2ITDHMSRmJ5ONtSHLEtJlIBOdEhUAnMudbFMLhvmE4BfszDMJztyyNOGg=="
+   },
+   {
+    "title": "meetgeek.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnnbUWurtQeUGC70XF2lI_a8qgDI_Y-3krDP8OHRSl_Zvjd2yW58n-cEKZUdv5h6bXeClKwe83pEZNu2hhWd7x2CqkMA9ZZqwQVjJCHuYcU0pIreBMJRCGj1fYOMvqoa_iVu8wFg=="
+   },
+   {
+    "title": "usecarly.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-W1aqiolx_CSchoxsvhO8_jCM3cbR7OnwAYH0y87O7cENPaNB8law7ojCoy4jGJs0Lx1kVzx0eMmNB_GRxz07-gk2_Hw3fOuN9nhlnIWcdaz4DFYjxzfzaIdxqWrOb14yKEA9PwwGPg=="
+   },
+   {
+    "title": "gumloop.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjglZgDaqCtoAW32ZWqjQl6HTUcQIYqdG-SPCGdHFmxUXvwcNS89bh7zfy_mO8X_-I_Nhn5L_Wdpo5n0xSJ72edXvePWekGkQ90KmXBCfQrcZ5Tmxky23dRbs7sfk="
+   },
+   {
+    "title": "apitracker.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHYHDwEx83QqzDFsEtW5n694d_CiCnmKTk_9EdIyWw98ODqHRyeOlrpRMyXbcx0Vf8TCq78KB4xH8KkqxyblNmKrX-yRJEVgcIGDKAs3AteRoZC_sjXVCHvwEqIjc5-A=="
+   },
+   {
+    "title": "fathom.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDK8MhiFM1QO3qHMEesufwPxmum-kczzZPa-wm9pyZ3KqNDsqiPgHAViggJyP1Bh5qTrGCdsQxaYV87GNokb9sEQg75cTidJTVGElkVQS-ISHoyJ_2rik4cH4odru4_Xc="
+   },
+   {
+    "title": "lunar.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWYinKP_YNiusGJghv6nmowPIchg5h6yhDvLKzs9eZG7K_E9M76Sgye60uHGyCqLAra0vANQIi7lqdB6UbFjl4-MOUTo6c0Jn1rCjK6kEtPWMNE8pcqv0VrA0oU3axfvMhOdXv0jvXv1Af2Gc="
+   },
+   {
+    "title": "obot.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZ7fPnc2aitRy9T7mu1nBeGlTbMlzrJqDl29psNLEfTFAqgma3pEWP8MuTQeukZTTfjHUsn8NdhatWmS_FbTffDnr6_HThT_l7NzOTkoT_Bso0MOwrq_yukIuHAtwT"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTjgVdsrg5NDkpPJQn_lDbpIDEv-UXTybXC5vdvizbGQvvgCPi-oYYzGjl7TBNi5Hs_IjQiDEagscAiaBVf6SS5lz0w5OqLxYfVpClwyQG5kpEeQC3hpispm9eu13AiGIWBbE-oDuQFGK1"
+   }
+  ],
+  "tokens": 12273,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://www.fathom.ai/pricing",
+    "status": 200,
+    "chars": 6917,
+    "readable": true
+   },
+   {
+    "url": "https://developers.fathom.ai/sdks/authentication",
+    "status": 200,
+    "chars": 1840,
+    "readable": true
+   },
+   {
+    "url": "https://developers.fathom.ai/oauth",
+    "status": 200,
+    "chars": 2488,
+    "readable": true
+   },
+   {
+    "url": "https://developers.fathom.ai/quickstart",
+    "status": 200,
+    "chars": 6785,
+    "readable": true
+   },
+   {
+    "url": "https://developers.fathom.ai/",
+    "status": 200,
+    "chars": 1113,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/Dot-Fun/fathom-mcp",
+    "status": 200,
+    "chars": 9129,
+    "readable": true
+   }
+  ],
+  "seconds": 70.0
+ }
+}

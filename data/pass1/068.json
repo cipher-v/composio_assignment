@@ -1,0 +1,204 @@
+{
+ "app": {
+  "id": 68,
+  "name": "MongoDB Atlas",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "mongodb.com/docs/atlas/api"
+ },
+ "record": {
+  "subcategory": "Database / Data Platform",
+  "one_liner": "MongoDB Atlas is a fully managed multi-cloud data platform for document databases, offering automated deployment, scaling, and administrative capabilities.",
+  "auth_methods": [
+   "oauth2",
+   "api_key"
+  ],
+  "primary_auth": "bearer_token",
+  "auth_notes": "For multi-tenant integration, collect customer's Service Account Client ID and Client Secret, then programmatically exchange them for a short-lived access token using the OAuth 2.0 Client Credentials flow. MongoDB Atlas provides a token endpoint at POST https://cloud.mongodb.com/api/oauth/token.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up for MongoDB Atlas instantly without credit card requirements or manual approval. Credentials (Service Accounts and legacy API keys) can be generated directly within the Atlas Access Manager UI at no cost. A perpetual free tier (M0 clusters) is available for development and testing.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "The API is extremely broad, covering cluster creation, database user management, network peering, private endpoints, search indexes, and access tracking.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "The MongoDB MCP Server is the official MCP server implementation, available as a self-hosted local deployment or a fully managed, hosted version within MongoDB Atlas. Source: https://www.mongodb.com/docs/mcp-server/overview/",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2",
+    "quote": "The MongoDB Atlas Administration API allows developers to manage all components in MongoDB Atlas."
+   },
+   {
+    "claim": "auth",
+    "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2",
+    "quote": "The Atlas Administration API supports OAuth2 Service Accounts and HTTP Digest-based API keys. Service accounts are the recommended authentication method and API keys are considered a legacy option. To authenticate with a Service Account, first exchange its client ID and secret for an access token using the OAuth 2.0 Client Credentials flow. Atlas provides a token endpoint at POST https://cloud.mongodb.com/api/oauth/token , which returns a Bearer token that is reusable and valid for 1 hour (3600 seconds)."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2",
+    "quote": "build with mongodb atlas get started for free in minutes sign up"
+   },
+   {
+    "claim": "api",
+    "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2",
+    "quote": "Atlas Admin API v2. REST. The MongoDB Atlas Administration API allows developers to manage all components in MongoDB Atlas."
+   },
+   {
+    "claim": "api",
+    "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2",
+    "quote": "Download source. JSON OpenAPI specification · YAML OpenAPI specification"
+   },
+   {
+    "claim": "api",
+    "url": "https://www.mongodb.com/docs/atlas/api/api-authentication/",
+    "quote": "In Atlas, go to the Project Integrations page. Click Configure for Webhook Settings. Enter the webhook URL."
+   },
+   {
+    "claim": "api",
+    "url": "https://www.mongodb.com/docs/atlas/atlas-ui/triggers/functions/api/",
+    "quote": "MongoDB Atlas Triggers run server-side JavaScript functions automatically in response to database changes (database triggers), cron schedules (scheduled triggers), or authentication events."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://www.mongodb.com/docs/mcp-server/overview/",
+    "quote": "The MongoDB MCP Server is our official MCP server implementation that gives your AI client a set of tools that can be used to interact with your MongoDB data and deployments... MongoDB offers two MCP Server deployment types: Local MCP for MongoDB MCP Server, which you run and manage yourself, and MongoDB Atlas Managed MCP Server, which MongoDB hosts and manages for you in Atlas."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2",
+    "quote": "The MongoDB Atlas Administration API allows developers to manage all components in MongoDB Atlas."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Product Overview\nMongoDB Atlas is a fully managed multi-cloud data platform centered around a document database. It provides automated database deployment, scaling, vector search, stream processing, and full administrative capabilities.\n* **Source URL:** `https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2`\n* **Verbatim Quote:** `\"The MongoDB Atlas Administration API allows developers to manage all components in MongoDB Atlas.\"`\n\n---\n\n### API Authentication & Multi-Tenant Strategy\nThe MongoDB Atlas Administration API supports two primary authentication methods:\n1. **Service Accounts (OAuth 2.0 Client Credentials Flow):** The modern, recommended approach for machine-to-machine authentication.\n2. **Programmatic API Keys (HTTP Digest Authentication):** A legacy challenge-response mechanism using public and private keys.\n\nFor a multi-tenant integration platform, the recommended approach is to collect the customer's Service Account **Client ID** and **Client Secret**, and then programmatically exchange them for a short-lived access token. While MongoDB offers \"Atlas App Connections\" (OAuth 2.1) for specific AI tool marketplaces (like Claude or Cursor), it is not yet a general-purpose public OAuth app registration framework for arbitrary third-party platforms. Thus, the integration platform acts as a client executing the client credentials flow on behalf of the tenant.\n\n* **Primary Auth Type:** `bearer_token`\n* **Source URL:** `https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2`\n* **Verbatim Quote:** `\"The Atlas Administration API supports OAuth2 Service Accounts and HTTP Digest-based API keys. Service accounts are the recommended authentication method and API keys are considered a legacy option. To authenticate with a Service Account, first exchange its client ID and secret for an access token using the OAuth 2.0 Client Credentials flow. Atlas provides a token endpoint at POST https://cloud.mongodb.com/api/oauth/token , which returns a Bearer token that is reusable and valid for 1 hour (3600 seconds).\"`\n\n---\n\n### Credential Acquisition & Cost\nAny developer can sign up for MongoDB Atlas instantly without credit card requirements or manual approval. Credentials (both Service Accounts and legacy API keys) can be generated directly within the Atlas Access Manager UI at no cost. The platform includes a perpetual free tier (M0 clusters) suitable for development and testing.\n\n* **Access Tier:** `self_serve_free`\n* **Source URL:** `https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2`\n* **Verbatim Quote:** `\"build with mongodb atlas get started for free in minutes sign up\"`\n\n---\n\n### API Technical Details\n* **API Style:** REST\n  * **Source URL:** `https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2`\n  * **Verbatim Quote:** `\"Atlas Admin API v2. REST. The MongoDB Atlas Administration API allows developers to manage all components in MongoDB Atlas.\"`\n* **API Breadth:** Extremely broad, covering cluster creation, database user management, network peering, private endpoints, search indexes, and access tracking.\n* **OpenAPI Spec:** Officially provided in both JSON and YAML formats.\n  * **Source URL:** `https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2`\n  * **Verbatim Quote:** `\"Download source. JSON OpenAPI specification · YAML OpenAPI specification\"`\n* **Webhooks:** Supported natively via Project Integrations for alert notifications, as well as via \"Atlas Triggers\" which execute server-side JavaScript functions reactively.\n  * **Source URL:** `https://www.mongodb.com/docs/atlas/api/api-authentication/` (via search results for Webhook Integration)\n  * **Verbatim Quote:** `\"In Atlas, go to the Project Integrations page. Click Configure for Webhook Settings. Enter the webhook URL.\"`\n  * **Source URL:** `https://www.mongodb.com/docs/atlas/atlas-ui/triggers/functions/api/`\n  * **Verbatim Quote:** `\"MongoDB Atlas Triggers run server-side JavaScript functions automatically in response to database changes (database triggers), cron schedules (scheduled triggers), or authentication events.\"`\n* **Sandbox:** The M0 free tier cluster serves as a fully functional cloud sandbox environment.\n\n---\n\n### MCP Server Support\nMongoDB provides an officially maintained Model Context Protocol (MCP) server. It supports both a self-hosted local deployment and a fully managed, hosted version directly within MongoDB Atlas.\n\n* **MCP Support:** `official`\n* **Source URL:** `https://www.mongodb.com/docs/mcp-server/overview/`\n* **Verbatim Quote:** `\"The MongoDB MCP Server is our official MCP server implementation that gives your AI client a set of tools that can be used to interact with your MongoDB data and deployments... MongoDB offers two MCP Server deployment types: Local MCP for MongoDB MCP Server, which you run and manage yourself, and MongoDB Atlas Managed MCP Server, which MongoDB hosts and manages for you in Atlas.\"`\n\n---\n\n### Buildability Verdict\nAn agent toolkit can be built immediately. The combination of a comprehensive REST API, official OpenAPI specifications, a free tier sandbox, and an official MCP server makes it highly buildable.\n\n* **Verdict:** `ready_now`\n* **Main Blocker:** None",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"MongoDB Atlas\" API authentication methods",
+   "\"MongoDB Atlas\" OpenAPI spec",
+   "\"MongoDB Atlas\" MCP server",
+   "\"MongoDB Atlas\" webhooks triggers",
+   "\"Atlas App Connections\" oauth",
+   "\"MongoDB Atlas\" \"OAuth2\" third party integration",
+   "\"MongoDB Atlas\" \"service account\" multi-tenant",
+   "\"MongoDB Atlas\" partner program API access"
+  ],
+  "search_sources": [
+   {
+    "title": "mongodb.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFs6yMkFjs7mvGPHJe2yipwURR5ZXjJdP9-RLq2evtNdDsbqd_C1ahEhqX3Vwn4MxJ25tn7HANUdsUyT6Jkmq8IU_np2P30P5MZMOLO-WqsyE6j6QO8QJUpEmf0t8YeyaOh8k0emsKWrynsnpMi8BDFwc0ZAakFBT0sIPIELo6ZlLwUFPvRK5Om8it-pQ=="
+   },
+   {
+    "title": "mongodb.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLunK_Y47Sq8WlkdJry8YQ_UlSJwBEpzKQI87PcQwwrwXeMnFumCNBqZYymfcDhnu_nXzTjjeirR1jubtv1UB457a_RN4XKQr0dSNAtDiU61iLO2Mp5xwGd4rD2nmH598YhO9dT0slyzR_3ND1i1sUm-hcUmvAYJ2VTyNq8vm0l3OlnmW43DMmwG4AIPUBpcT10sKfOXqZjhDm_kB3psc6yr8e7DuTPn6YyF8Tn2wqR7sUxXjotQ=="
+   },
+   {
+    "title": "mongodb.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_PH19t1ihfRTjB_Glz57YSdtJ5YHRKEMP9VVGf2M0Anc4HHRN5-vUdaSWPUSqEl5vbP1t8s2_FkkOKsxlIQ6qk_S1k40TW3t6ljeIRCJDl8cAMz-o4VOTPRq4BeLweyvEp9ZtTs0SIop0HCkBWM40dgci0LgeQHXhATSUK-t0UvNAJVK7YMIZt6W1m_ab4WLeweIuWzb3XFfkpHn5LmLOXoGI6TKty87RPp11VADVy13o6EgUj9c8UAiOHqx1TVeMOYHIUw=="
+   },
+   {
+    "title": "reddit.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHasBLtliy4bTBlb5sBYzAQiDvvaESOEDhBfOMlqksumSjTWMVb-6uOXhsCL2vCf5SvdJUGHC98iF-LsdMlFXgs5MbeENlnnEF2nWurrb0Xsyt9OnEwmbWM9wa77A=="
+   },
+   {
+    "title": "reddit.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzeDTBE-p5Zx6DDjVH6aSX8xtZCEQoX-Od8QNfOtLAGjSXAmydCsc5dk0JcJHgZfHNNi-eSFhNUQXOhs2uzx35d6yCmzK8F6OebMRYWgXDnTBgUZ_H_ez-6nf4nVMZEP_v9ZrMTkDncq5tglTR-6MG_rqPnCDizwlb24eQmplIAkmG33hKeG-vkeyaKWWba1wThCe0n-FnAa6A"
+   },
+   {
+    "title": "mongodb.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHA9SPpE1iFZHZt2DqtDOMS91rHoA1-074cx9wY6HrDKBut0krb_6bDcaT3z8EyWotPo16ThuPRUsc6xQkTHvQ4NaGRbsyPb4TGGDBnA7qS3iRYi57oC3g7p4ssDti0ttFn8TGJuienoG6ABUJr4k3pagYQAgslgXmN81KUtb1eXl0F_4l6ooTfFG6_mspnoS-0SVClif_fsLZ-rEmxpX_3VR4_E2a8ZFF5UbRqUFj33GY23Qg="
+   },
+   {
+    "title": "confluent.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnLP7py8E0KBEgsT-xfEystv0CrpWXl8GMHzxRQuKrPxlhIYve3MyJZl4VQPg5OrdAuynhgwOYzZHhwHGWbH4EEeQdMHfMYaPjaBaRqXezvSFSzqiwXpfVplQYmXQ7KRsa2rp2OLMVmenkOpxztGKeVVBu-jFFwEKl_Jt38Kg="
+   }
+  ],
+  "tokens": 9617,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "MongoDB Atlas authentication API keys OAuth documentation",
+    "MongoDB Atlas getting started quickstart documentation",
+    "MongoDB Atlas pricing API access",
+    "MongoDB Atlas developer program",
+    "MongoDB Atlas API reference documentation",
+    "MongoDB Atlas MCP server"
+   ],
+   "candidates": 0,
+   "live_urls": [
+    "https://www.mongodb.com/docs/atlas/api/api-authentication/",
+    "https://www.mongodb.com/docs/atlas/atlas-ui/triggers/functions/api/",
+    "https://www.mongodb.com/docs/mcp-server/overview/",
+    "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2",
+    "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/preview",
+    "https://www.mongodb.com/docs/atlas/api/atlas-admin-api-ref/",
+    "https://www.mongodb.com/docs/atlas/architecture/current/auth/authentication/",
+    "https://www.mongodb.com/resources/products/platform/mongodb-atlas-tutorial",
+    "https://www.mongodb.com/products/platform/atlas-database/getting-started",
+    "https://www.cloudzero.com/blog/mongodb-pricing/",
+    "https://www.knowi.com/blog/getting-started-with-mongodb-atlas-overview-and-tutorial/"
+   ],
+   "bad_candidates": [],
+   "pages_read": [
+    {
+     "url": "https://www.mongodb.com/docs/atlas/api/api-authentication/",
+     "status": 200,
+     "chars": 13798,
+     "readable": true
+    },
+    {
+     "url": "https://www.mongodb.com/docs/atlas/atlas-ui/triggers/functions/api/",
+     "status": 200,
+     "chars": 46891,
+     "readable": true
+    },
+    {
+     "url": "https://www.mongodb.com/docs/mcp-server/overview/",
+     "status": 200,
+     "chars": 17927,
+     "readable": true
+    },
+    {
+     "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2",
+     "status": 200,
+     "chars": 34436,
+     "readable": true
+    },
+    {
+     "url": "https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/preview",
+     "status": 200,
+     "chars": 9082,
+     "readable": true
+    },
+    {
+     "url": "https://www.mongodb.com/docs/atlas/api/atlas-admin-api-ref/",
+     "status": 200,
+     "chars": 20763,
+     "readable": true
+    },
+    {
+     "url": "https://www.mongodb.com/docs/atlas/architecture/current/auth/authentication/",
+     "status": 200,
+     "chars": 14838,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 157.4
+ }
+}

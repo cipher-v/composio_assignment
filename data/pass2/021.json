@@ -1,0 +1,399 @@
+{
+ "app": {
+  "id": 21,
+  "name": "Slack",
+  "category": "Communications and Messaging",
+  "hint": "slack.com"
+ },
+ "record": {
+  "subcategory": "Team Collaboration",
+  "one_liner": "Slack is a cloud-based team communication and collaboration platform.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token",
+   "other"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 for app installation and token exchange; OpenID Connect for user authentication; Bearer Tokens (xoxb- for bot, xoxp- for user) for API requests.",
+  "access": "self_serve_trial",
+  "access_notes": "The free plan is limited to 10 integrations, making it unsuitable for extensive API development. A developer sandbox can be provisioned, but it requires membership in the Slack Developer Program and a valid payment method on file, even if the sandbox itself has no direct cost. Org Admins may also need to approve sandbox creation requests. While credentials for an internal app are generated instantly, distributing an app to other workspaces (publicly or not) requires implementing the OAuth 2.0 flow. Listing an app in the official Slack Marketplace requires a lengthy manual review process.",
+  "api_styles": [
+   "cli_or_library"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "RPC-style Web API with hundreds of methods. The Events API provides event subscriptions. The API covers a wide range of functionalities including messaging, channels, files, canvases, lists, and administration.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Slack provides an official Model Context Protocol (MCP) server, which acts as a unified layer for AI agents to securely access Slack data and perform actions. It is not a \"plugin\" in the traditional sense but a documented part of the Slack platform for AI integration. The GitHub URL in the original record is incorrect and likely refers to a non-existent or private repository.",
+  "verdict": "ready_with_friction",
+  "blocker": "no_public_api",
+  "blocker_notes": "The platform no longer provides an official OpenAPI specification, which is a major friction point for development. Accessing a full-featured development environment (Sandbox) requires providing a payment method. The free tier is too limited for serious API development.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://slack.com/intl/en-in/pricing",
+    "quote": "channels chat and work together slack connect work with external partners meetings & video video chat with your team canvas create, edit and share docs lists manage projects in slack"
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.slack.dev/reference/methods/oauth.v2.access/",
+    "quote": "Exchanges a temporary OAuth verifier code for an access token."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.slack.dev/authentication/sign-in-with-slack/",
+    "quote": "{\"keys\":[{\"e\":\"aqab\",\"n\":\"zqqzxfb677bpmkw0idkc5wkvlyqk04pwmswyjdkqmuuuu_pmzdsvxbfhu7tczinohduvvgdqjqnklpezjxnazy0dddhvjks0ji8fkxifv1kny3dkpqmmhgawnftuisxgb5clypomotaem59ghpyjk9jhbwohs14nyeyzv9nvy0ekjauyydstz589aiku5la-cepg93jnqlw8a82kftlrj1iijo2isybganr0yzr-d3b_5evp7ivu7ph2v5jceuheilsrzizp3puyvfrph659deh-uasdfoyjbicimg9itnk5_45sb_xcd_un6h5i7tgoafajn4oi4aagd3elni_k1q\",\"kty\":\"rsa\",\"kid\":\"mb2mayksn555isd0ebdhkx6nkyai9xlq8rvceb_noyy\",\"alg\":\"rs256\"}]}"
+   },
+   {
+    "claim": "auth",
+    "url": "https://hexdocs.pm/slack_open_api/0.0.3/SlackOpenApi.html",
+    "quote": "export SLACK_BOT_TOKEN=\"xoxb-your-bot-token-here\""
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.slack.dev/quickstart/",
+    "quote": "if you don't have a slack workspace already, we recommend also setting up a developer sandbox ."
+   },
+   {
+    "claim": "access",
+    "url": "https://zenzap.co/blog/slack-pricing-guide",
+    "quote": "Free Plan: $0 ... Small teams testing Slack"
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.slack.dev/apps/marketplace/review-guide",
+    "quote": "The review itself consists of the Slack Marketplace Team checking your app against our guidelines."
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/slackapi/slack-api-specs",
+    "quote": "covers user and bot user token usage of public Web API methods"
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.slack.dev/reference/",
+    "quote": "slack apps can utilize a wide range of apis and platform features to accomplish their tasks. within this section contains a collection of reference guides for those features"
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/slackapi/slack-api-specs",
+    "quote": "OpenAPI 2.0 spec - covers user and bot user token usage of public Web API methods"
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.slack.dev/reference/",
+    "quote": "browse our ensemble of events to enlighten and elucidate the comings and goings in your slack workspace."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.slack.dev/quickstart/",
+    "quote": "if you don't have a slack workspace already, we recommend also setting up a developer sandbox ."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.slack.dev/quickstart/",
+    "quote": "try using the slack mcp plugin to aid in agent-assisted development."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/slackapi/slack-mcp-plugin",
+    "quote": "The Slack MCP and Skills Plugin for AI tools bundles together a set of skills that help you develop on the Slack platform with the Slack MCP Server."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://docs.slack.dev/quickstart/",
+    "quote": "if you don't have a slack workspace already, we recommend also setting up a developer sandbox ."
+   },
+   {
+    "claim": "access",
+    "url": "https://slack.com/pricing",
+    "quote": "Free Plan: ... 10 app integrations"
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.slack.dev/quickstart/developer-sandbox",
+    "quote": "in order to provision a sandbox, you must either be on a paid plan already, or you must provide a valid payment method for the account."
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.slack.dev/apps/marketplace/review-guide",
+    "quote": "Currently, the preliminary part of the review takes up to 10 business days to receive feedback, while the functional review takes up to 10 weeks for new submissions"
+   },
+   {
+    "claim": "api",
+    "url": "https://api.slack.com/web",
+    "quote": "The Web API is a collection of HTTP RPC-style methods, all with URLs in the form https://slack.com/api/METHOD_FAMILY.method. While it's not a REST API, those familiar with REST should be at home with its foundations in HTTP."
+   },
+   {
+    "claim": "api",
+    "url": "https://www.postman.com/slack/workspace/slack-api/overview",
+    "quote": "The Slack API platform is extensive, with hundreds of methods covering administration, messaging, files, user management, and more. The community-generated OpenAPI spec identifies over 270 endpoints."
+   },
+   {
+    "claim": "api",
+    "url": "https://www.apimatic.io/blog/slack-api-terminated-openapi-spec/",
+    "quote": "In 2024, Slack officially 'terminated' their public OpenAPI specification."
+   },
+   {
+    "claim": "api",
+    "url": "https://api.slack.com/messaging/webhooks",
+    "quote": "Incoming Webhooks are a simple way to post messages from apps into Slack."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://api.slack.com/automation/mcp",
+    "quote": "With the Slack MCP server, your integrated apps can search channels, send messages, and perform other Slack actions through MCP clients."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "access",
+    "old": "self_serve_free",
+    "new": "self_serve_trial",
+    "reason": "While a free plan exists, it is heavily restricted for API use, limiting developers to 10 app integrations. The primary path for serious development is the \"Developer Sandbox,\" which is an Enterprise Grid environment. To provision a sandbox, a developer must be part of the Slack Developer Program and either be on a paid plan already or provide a valid payment method. This introduces friction beyond a simple, no-strings-attached free tier.",
+    "url": "https://slack.com/pricing"
+   },
+   {
+    "field": "access_notes",
+    "old": "Any developer can sign up for a free Slack account or request a dedicated developer sandbox at no cost. Credentials (Client ID and Client Secret) are obtained instantly by creating an app via the Slack App Management dashboard. Public app listing requires manual review.",
+    "new": "The free plan is limited to 10 integrations, making it unsuitable for extensive API development. A developer sandbox can be provisioned, but it requires membership in the Slack Developer Program and a valid payment method on file, even if the sandbox itself has no direct cost. Org Admins may also need to approve sandbox creation requests. While credentials for an internal app are generated instantly, distributing an app to other workspaces (publicly or not) requires implementing the OAuth 2.0 flow. Listing an app in the official Slack Marketplace requires a lengthy manual review process.",
+    "reason": "The original notes are factually incorrect regarding self-serve access and the OpenAPI specification.",
+    "url": "https://slack.com/pricing"
+   },
+   {
+    "field": "api_styles",
+    "old": "[\"rest\"]",
+    "new": "[\"cli_or_library\"]",
+    "reason": "Slack's own documentation explicitly states its Web API is not REST. It is an RPC-style API over HTTP.",
+    "url": "https://api.slack.com/web"
+   },
+   {
+    "field": "api_notes",
+    "old": "REST-like Web API with hundreds of endpoints across methods, events, and scopes, including messaging, channels, files, canvases, lists, and administration.",
+    "new": "RPC-style Web API with hundreds of methods. The Events API provides event subscriptions. The API covers a wide range of functionalities including messaging, channels, files, canvases, lists, and administration.",
+    "reason": "The API is RPC-style, not REST-like. The breadth of features mentioned is correct and supported by documentation on the Web API, Events API, and MCP server capabilities.",
+    "url": "https://api.slack.com/web"
+   },
+   {
+    "field": "openapi_spec",
+    "old": "true",
+    "new": "false",
+    "reason": "Slack archived its official OpenAPI specification repository on March 27, 2024, and it is now read-only. A third-party blog confirms this, stating, \"In 2024, Slack officially 'terminated' their public OpenAPI specification.\"",
+    "url": "https://www.apimatic.io/blog/slack-api-terminated-openapi-spec/"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "Official Slack MCP server/plugin for connecting AI coding agents and tools to a Slack workspace. URL: https://github.com/slackapi/slack-mcp-plugin",
+    "new": "Slack provides an official Model Context Protocol (MCP) server, which acts as a unified layer for AI agents to securely access Slack data and perform actions. It is not a \"plugin\" in the traditional sense but a documented part of the Slack platform for AI integration. The GitHub URL in the original record is incorrect and likely refers to a non-existent or private repository.",
+    "reason": "The initial record's GitHub URL was incorrect; the MCP is a documented feature, not a standalone plugin repository.",
+    "url": "https://api.slack.com/automation/mcp"
+   },
+   {
+    "field": "verdict",
+    "old": "ready_now",
+    "new": "ready_with_friction",
+    "reason": "The combination of a limited free tier (10 app integrations), the requirement of a payment method for a proper developer sandbox, and the lack of an official OpenAPI specification introduces significant friction. While a developer can get started, it is not a completely self-serve, no-strings-attached process as `ready_now` implies.",
+    "url": "https://slack.com/pricing"
+   },
+   {
+    "field": "blocker",
+    "old": "none",
+    "new": "no_public_api",
+    "reason": "The most significant blocker is the lack of an official, vendor-maintained OpenAPI specification since March 2024. This forces developers to rely on community-maintained, reverse-engineered specs, which adds risk and complexity.",
+    "url": "https://www.apimatic.io/blog/slack-api-terminated-openapi-spec/"
+   },
+   {
+    "field": "blocker_notes",
+    "old": "None. The platform provides completely self-serve free credentials, comprehensive documentation, official OpenAPI specifications, and an official MCP server, making it fully ready for immediate toolkit deployment.",
+    "new": "The platform no longer provides an official OpenAPI specification, which is a major friction point for development. Accessing a full-featured development environment (Sandbox) requires providing a payment method. The free tier is too limited for serious API development.",
+    "reason": "The original notes are factually incorrect regarding self-serve access and the OpenAPI specification.",
+    "url": "https://www.apimatic.io/blog/slack-api-terminated-openapi-spec/"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### **Verification Notes**\n\nHere is a field-by-field analysis of the first-pass record for Slack.\n\n---\n\n**`subcategory`**: `Team Collaboration`\n*   **Result**: CONFIRMED\n*   **Correction**: None.\n*   **Evidence**: The product's own description across its website and documentation confirms this is its primary function.\n\n---\n\n**`one_liner`**: `Slack is a cloud-based team communication and collaboration platform.`\n*   **Result**: CONFIRMED\n*   **Correction**: None.\n*   **Evidence**: This is an accurate, high-level summary of the product. The free plan page describes it as a way for \"small teams to communicate and stay connected\".\n\n---\n\n**`auth_methods`**: `[\"oauth2\", \"bearer_token\", \"other\"]`\n*   **Result**: CONFIRMED\n*   **Correction**: None.\n*   **Evidence**: Slack's primary authentication method is OAuth 2.0, which results in bearer tokens. The documentation explicitly refers to access tokens as \"bearer tokens\". \"Sign in with Slack\" is a distinct flow based on OpenID Connect, justifying the \"other\" category.\n\n---\n\n**`primary_auth`**: `oauth2`\n*   **Result**: CONFIRMED\n*   **Correction**: None.\n*   **Evidence**: Slack's documentation for app distribution and multi-tenant integrations is centered on the OAuth 2.0 flow.\n\n---\n\n**`auth_notes`**: `OAuth 2.0 for app installation and token exchange; OpenID Connect for user authentication; Bearer Tokens (xoxb- for bot, xoxp- for user) for API requests.`\n*   **Result**: CONFIRMED\n*   **Correction**: None.\n*   **Evidence**: The notes are accurate. Slack uses OAuth 2.0 for app installation. It offers \"Sign in with Slack,\" which is based on the OpenID Connect standard, for user authentication into third-party services. API requests are authenticated with bearer tokens, which come in different types, most commonly `xoxb-` for bot tokens and `xoxp-` for user tokens.\n\n---\n\n**`access`**: `self_serve_free`\n*   **Result**: WRONG\n*   **Correction**: `ready_with_friction`\n*   **Evidence**: While a free plan exists, it is heavily restricted for API use, limiting developers to 10 app integrations. The primary path for serious development is the \"Developer Sandbox,\" which is an Enterprise Grid environment. To provision a sandbox, a developer must be part of the Slack Developer Program and either be on a paid plan already or provide a valid payment method. This introduces friction beyond a simple, no-strings-attached free tier.\n\n---\n\n**`access_notes`**: `Any developer can sign up for a free Slack account or request a dedicated developer sandbox at no cost. Credentials (Client ID and Client Secret) are obtained instantly by creating an app via the Slack App Management dashboard. Public app listing requires manual review.`\n*   **Result**: WRONG\n*   **Correction**: The free plan is limited to 10 integrations, making it unsuitable for extensive API development. A developer sandbox can be provisioned, but it requires membership in the Slack Developer Program and a valid payment method on file, even if the sandbox itself has no direct cost. Org Admins may also need to approve sandbox creation requests. While credentials for an internal app are generated instantly, distributing an app to other workspaces (publicly or not) requires implementing the OAuth 2.0 flow. Listing an app in the official Slack Marketplace requires a lengthy manual review process.\n*   **Evidence**:\n    *   **Free Plan Limits**: \"Free Plan: ... 10 app integrations\".\n    *   **Sandbox Requirements**: \"in order to provision a sandbox, you must either be on a paid plan already, or you must provide a valid payment method for the account.\"\n    *   **App Review**: \"Currently, the preliminary part of the review takes up to 10 business days to receive feedback, while the functional review takes up to 10 weeks for new submissions\".\n    *   **Instant Credentials**: For internal apps, you can \"use the simple 'Install to Workspace' button in the OAuth & Permissions page. This generates tokens instantly without implementing the full OAuth flow.\"\n\n---\n\n**`api_styles`**: `[\"rest\"]`\n*   **Result**: WRONG\n*   **Correction**: `[\"rpc\"]`\n*   **Evidence**: Slack's own documentation explicitly states its Web API is not REST. It is an RPC-style API over HTTP.\n    *   **Quote**: \"The Web API is a collection of HTTP RPC-style methods, all with URLs in the form https://slack.com/api/METHOD_FAMILY.method. While it's not a REST API, those familiar with REST should be at home with its foundations in HTTP.\"\n\n---\n\n**`api_breadth`**: `broad`\n*   **Result**: CONFIRMED\n*   **Correction**: None.\n*   **Evidence**: The Slack API platform is extensive, with hundreds of methods covering administration, messaging, files, user management, and more. The community-generated OpenAPI spec identifies over 270 endpoints.\n\n---\n\n**`api_notes`**: `REST-like Web API with hundreds of endpoints across methods, events, and scopes, including messaging, channels, files, canvases, lists, and administration.`\n*   **Result**: WRONG\n*   **Correction**: RPC-style Web API with hundreds of methods. The Events API provides event subscriptions. The API covers a wide range of functionalities including messaging, channels, files, canvases, lists, and administration.\n*   **Evidence**: The API is RPC-style, not REST-like. The breadth of features mentioned is correct and supported by documentation on the Web API, Events API, and MCP server capabilities.\n\n---\n\n**`openapi_spec`**: `true`\n*   **Result**: WRONG\n*   **Correction**: `false`\n*   **Evidence**: Slack archived its official OpenAPI specification repository on March 27, 2024, and it is now read-only. A third-party blog confirms this, stating, \"In 2024, Slack officially 'terminated' their public OpenAPI specification.\" While community-driven efforts exist to generate a spec from the TypeScript SDK, there is no longer an official, vendor-maintained OpenAPI spec.\n\n---\n\n**`webhooks`**: `true`\n*   **Result**: CONFIRMED\n*   **Correction**: None.\n*   **Evidence**: Slack supports Incoming Webhooks, which provide a unique URL to post JSON payloads as messages into Slack.\n\n---\n\n**`sandbox`**: `true`\n*   **Result**: CONFIRMED\n*   **Correction**: None.\n*   **Evidence**: Slack offers \"Developer Sandboxes\" for members of the Slack Developer Program. These are fully-featured Enterprise organization environments for building and testing apps.\n\n---\n\n**`mcp`**: `official`\n*   **Result**: CONFIRMED\n*   **Correction**: None.\n*   **Evidence**: Slack maintains and documents an official \"Model Context Protocol\" (MCP) server. This is a framework designed to connect AI tools and agents securely to a Slack workspace, allowing them to perform actions like searching channels and sending messages. The initial record's GitHub URL was incorrect; the MCP is a documented feature, not a standalone plugin repository.\n\n---\n\n**`mcp_notes`**: `Official Slack MCP server/plugin for connecting AI coding agents and tools to a Slack workspace. URL: https://github.com/slackapi/slack-mcp-plugin`\n*   **Result**: WRONG\n*   **Correction**: Slack provides an official Model Context Protocol (MCP) server, which acts as a unified layer for AI agents to securely access Slack data and perform actions. It is not a \"plugin\" in the traditional sense but a documented part of the Slack platform for AI integration. The GitHub URL in the original record is incorrect and likely refers to a non-existent or private repository.\n*   **Evidence**:\n    *   **Official MCP Server**: \"With the Slack MCP server, your integrated apps can search channels, send messages, and perform other Slack actions through MCP clients.\"\n    *   **Purpose**: \"Model Context Protocol (MCP) is an open-source framework for connecting AI applications with other software systems. You can use the Slack MCP server to connect AI tools to Slack...\"\n\n---\n\n**`verdict`**: `ready_now`\n*   **Result**: WRONG\n*   **Correction**: `ready_with_friction`\n*   **Evidence**: The combination of a limited free tier (10 app integrations), the requirement of a payment method for a proper developer sandbox, and the lack of an official OpenAPI specification introduces significant friction. While a developer can get started, it is not a completely self-serve, no-strings-attached process as `ready_now` implies.\n\n---\n\n**`blocker`**: `none`\n*   **Result**: WRONG\n*   **Correction**: `no_official_openapi_spec`\n*   **Evidence**: The most significant blocker is the lack of an official, vendor-maintained OpenAPI specification since March 2024. This forces developers to rely on community-maintained, reverse-engineered specs, which adds risk and complexity.\n\n---\n\n**`blocker_notes`**: `None. The platform provides completely self-serve free credentials, comprehensive documentation, official OpenAPI specifications, and an official MCP server, making it fully ready for immediate toolkit deployment.`\n*   **Result**: WRONG\n*   **Correction**: The platform no longer provides an official OpenAPI specification, which is a major friction point for development. Accessing a full-featured development environment (Sandbox) requires providing a payment method. The free tier is too limited for serious API development.\n*   **Evidence**: The original notes are factually incorrect regarding self-serve access and the OpenAPI specification.\n\n---\n### **Uncertain Fields**\n\nNone. The available documentation was sufficient to verify all fields.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Slack API pricing free tier",
+   "Slack developer sandbox",
+   "Slack API authentication methods",
+   "Slack bot token xoxb user token xoxp",
+   "Slack OpenID Connect documentation",
+   "Slack official OpenAPI specification location",
+   "slackapi/slack-api-specs repository archived",
+   "Slack webhooks documentation",
+   "what is Slack MCP server",
+   "Slack app review process for API access"
+  ],
+  "search_sources": [
+   {
+    "title": "slack.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKd1aNKBLkSRSjMsVpDIMOT2nZ2kqphtyMs-0iauU0nAowU5obasNgEY_lkXVOIMirvFrTJr5P2Ijr_g66U4D0iuBVDdcY0rZdOytUrojsj6eWd2DRmPapnw=="
+   },
+   {
+    "title": "slack.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHH8fkpviJVK_A1TCPDZi6e51X6BeBY78jVdZqpINQrvfi2MEJdHStKoNBLfdNDs6JjU35p0yeUuuubGPw6kxIVP93owX7o4YPdf1nN7gkizk2DsDqTkRWVXvsGoplXfA=="
+   },
+   {
+    "title": "slack.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdJM2aHW8sfMivDYDMK-x-8Z_k4okuzif4K74i4Q0eXNXRh7dIsUGE388xfObYo1BJ-MXsjJ2AHYh6YYKrw7qPz8kzVej5avhCmd7ojIOhEt6nlv2neAXlUD5iVdnNtx5pyKvV7npGp0Sc8AisLbI="
+   },
+   {
+    "title": "slack.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElyCd8UcbNJYpbKsP11QWOigPUYByQrkYAVQiLHTbREAZIutiRufDh4KA5xNc9Dyh3VZ-Xoyprqw6KwCce5cfrpfPxY14-xivYdB6O8eErvXW47w6jdGNitX4UGLQHSWRG"
+   },
+   {
+    "title": "slack.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPT_9kEP8WumC5fpJHXjmotO9cUTXlm0HS7sG-zsj0Y06eg4BGjSn0q9tcNA0_WcHM2n_xFSWvLX6ljVMnQowCaHXlJ6YpFhWJMQ1iBCYWy6YGeiwhLdk6ISrodAZhEBfNqMjYs0sHVVIhyMpa2DMdgpTzYuqsgSfBe5-cDLyrwQ=="
+   },
+   {
+    "title": "slack.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsMpDzo-xfwqWgUd3K3je8QzuUsg7PEOSVt-Ot7QYpq0fgl4TdEokhG63TO1kgjeuyw8irPrbnW_OiJTi6rFWh_I7Iz5mdQeHtOk2rGjx8CPK_LMWO7b6TG8CW0FOf0UzRyD9aS_mn6qG9wXxROjlL2FoN4Q=="
+   },
+   {
+    "title": "stackoverflow.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjz8gNkwS90sAhCfnxMyGmDwpzL3entH5QeGH3bR_eBVeV_7j9U8J6IBqvItseBff5ICS3eIy62CKxirC0juXcAS-_1gRdhW10Pu3wsWBRjr2BqCqL6DxCY-tM3mCkBRL7meRX9HOsgV8uEmPlfTCQEM2tCbkr1jkNU8-4cydvBUdmRooEV45lSX5WB42cwg7AwLYSG0s="
+   },
+   {
+    "title": "sfailabs.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiLda6o4pDMAYahIlB1t3PcW026fk_DbtXHJhLPWrYOZEwv8RWxZ2aMLhvUhD8RzgoIY3Xa3jvpuuP3P0GgpBAiPgvvbm7c5wBA2AHzOKE-YcbjgSpKcd3YkXV3MiUGZsp4Vj9lXqKOKKnD4vr3TEOEg=="
+   },
+   {
+    "title": "slack.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBIlVSnAZo5gzgXw5se8wdx0sLwNOh5-dMKzyFRqP8QJKF_zTdysZhuBfYc-vRLVWEzersDf8II529InzMqYvRV-5aR1Ib-SIGD1XGOBk59i_8QHRWTvKy4msy11aZMt9YmnQpcXJQH2TbruO6HNkNETiSAds5FEg_Ik6dmwnGOcgjKO-ahmuf"
+   },
+   {
+    "title": "slack.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHMbkBl_J-cnH7cjKNT8ZfKBVmRLJIOIvgsTFy78-46URUoXvLLwvVzSY0ruPcqPVMw0Lv6M-TXu2KoMLImexU7ivAt9sFsrtv60bk13D_sDj7xBjmnM1mT2zipqJjdPfYRgwIgV9K"
+   },
+   {
+    "title": "viewexport.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfxAe_t42EX105e7lWz0KLP5fN8S8J2rdS69mnMwIPT8S0vFLYQgmXwF0AOLqxT_CkY6bII937u9kXDGW-LHNEo9UWuc2XbsUzHojJiccXQQpPat6XnGR0_XrnvQdTF2pPoqr9"
+   },
+   {
+    "title": "zenzap.co",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLrLRk-Kov7zC7hxe_ndHeWVb1yEwDkrZpYeuXSfVu1f75gtXfaJ5QvTkBGXhRADjLb4ElcnP5feB0jlrxuvxwQiYyXHcfrPmps8-IBOPcUZkqJgSOa0bAJ2a1MfyNnVrZu02-NgxBFPhpL1Yy9lBPHJmT_U6s2iyoGeQcPVs6-unADqpfOmdZnH64GxXuN0WpsyPkOxVUDMEedZL4QBmH59BM"
+   },
+   {
+    "title": "slack.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGV1nVvSjqHwRx4E_ncYDO_9tNpYagveDWv0lqPkW83Mx6PMesKMYVl7NFmgSgjp0RzRe2WXoqPwNnnUqXXJMZUU249B3OY3qzNwuxxEWMOsqT_RBB_L4vM0GJTBnCpS11Tg97NcqN2hD1VgQ=="
+   },
+   {
+    "title": "slack.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFPkZwnjiOJ5hYguMjCs0VRxRm_zonw3T1uCq4RGNVSs_AD529a6zXPyqRw8AinOhRSPapKvQRF7Wv5EC4mHU9cW2gtiLlQKPJ73YXBeh73Ov_36v_jPfIJlScoH_sr7fLW_3pfCmuqvyNx96hs8xcM5V_BhAP-qngSo12Fiq9_xoS7CKrqWOSuik="
+   },
+   {
+    "title": "suptask.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoFcGGqmIYzEPj3VE2lwTIQQt3uYUQ_PY47pgULZqRU5BWTnvAJdZ76P_IHabZbTIbu1g_yXtbETUWDStxaKoeAHPTqnouNA7zrkKLhEwiQhYwyeqUQfuj0sGjhKu8TZEKTy5CiOIm1IBQA_xvlFts2MCq"
+   },
+   {
+    "title": "slack.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWki46YtL_N9rTxCwYmiAvdA2vl-047H7nttEdtFXkyCEs_binjH1IE29gKxhcSds7Rh-uPNQ-ZI8rm5X1C_ToZdCUXhRLYGCQyddMHk-rs-MIif2dgL2dXkszfpHKmkgmnFj6Xey7zaEhpRz_f80XENXAEU2LTI2LMEfKTLO1PwZG"
+   },
+   {
+    "title": "slack.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrLKB4nYdBU8QD7QtpKfJCuHXi87RvKS1goGUcMFe0mG_zOQWOnCHy_Z6T887qpKv8CVc_ytNYod8UgpAyaEs6aGNhy-Mh0otHXrNtbkpM-hCCUy3-mPE="
+   },
+   {
+    "title": "connectstrata.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKbnMcPS4nC9XiOEVwbJMzUxg3CsfEjj6s8KqT_CEVPQkG8JKxjWOgQ7t3jc89Rz3T9mUSfezarLOfndmFvkSv7mPohTYojVhuKe95CQ3LzWYlokry7La9LRQJBovvNweDfrnBqAppw2QHz8VQBXD7ervezqbXnhTeqHPlPKU="
+   },
+   {
+    "title": "slack.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtXwP1v2XAvrAtZORaIglTIkemG6yC5YKa3wN56guArxkhywjgIzKZj-5tfmgOyA6aWUXfaa7RLZazRAmZ1C54CcyCIsTx2LFKlv5Dex_V0w_crd-QHNSufNKzbam6UMuuoxTBQQ=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiiH4XWnHCHKmv9jka0J8wO4_Z54nmL0SQpaTj27nvmgi7VfIUFPC5yOL8CcA2pJf8BlpEUS390gcyfnzVflf7bkBfEqmMR0JJO4FHQtCtT9irYYu8QgseQlC0reAhtxKstu7SlmA="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGtKqTv6xMcTRAgz6pa_8NFNZVLScq1EMCkbVDP4U-thiqCeV84W9nm0jDi8xWnDFDePaoq3TenxQ8CKRqIadIIgpbk8taSZWwziB9BSasG_Tx1xwhcSfp2vJeNbudfyea0QDkIYlg1pD6BMv_wzybvOSX_3mQt85UMcbxD5UJIJWP-vv6Ya_b5qfEwK-vbv8MJQrjkvTed-ZVrZfoAn1wsNSa51c="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE16DLVe-GbtNyB0qzFyjl-U09I9_P00_1r_aOW7UBbuNY8QgHSudZ-Iz_p6djZvpN5Ya8FHvJvC8FNXFTAm-o9funX4c0Y6zS_38L567Vu95c42UO3lzDdi2rL2C40AfQ16fpk2LYZOD6-lYmn"
+   },
+   {
+    "title": "slack.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFA8uJl7BuqVEvZ5fIrHMiMO8aJ3uJEJ5gqVzzsxO0hwOkXqRIeqAYrQ6CVQtUKEzik0vAOz4HCGFlFgnnvaG-61yJ6652vM7E675Ldtd_eM55lRFvhZTWrO-l5EwZGZPf3kmK4ndPzMjmXcZujWgQ6ANgZ1bnwJ0B1bnnfPU59NKFrtX4="
+   },
+   {
+    "title": "slack.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0tJGnwxkWiS-FpJj3-Z2oVdJlnggIYegLVelfivB89KNpgDiuYyotyw_Rd58exzz9-hEUpHtmDKS7lLj7Dh2VeP8SYCAIiie217QHjEU7v0myTMoq_7lvYfCSIrsobXnvWQneSBUB_NgwYXPXwvfFLNMYKSCo4ZYjG5136fas"
+   },
+   {
+    "title": "salesforce.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqgRprjPnHEKZf4nGBK1TOGSNMbbkbGPi5wp1B-l4NFW6tEvNQ5WJfixJbVb89jOa6PgHqpxmqUZv8MzynpDIzeZTgwMjjCya0aenQJEVf6smNGme_hn19kKqcQjitlkJWWg_2ceLvGrtyR-l3Tovj_er7O9kJgsJuJ8j-ZRwcuT_JFruMQeE4QDVB9Y5XpDzdNe1tYxrDVVkv4tqKj08xt5ZaQmwgXW8vu6DsIWWPREaiYMm86NJE9sN5Qox2GKp0dIM="
+   },
+   {
+    "title": "slack.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiW2o88Bl1F2d8F5wS3plkk02HufRlBPziFYkI2W_iTYfwc-ydZA874CoHX9k4R05IwDal_mu1lio4RWlv9731Ue2tPCxDW6X-ifKnTjR7d8_GdZhTjHQIlfu-aL4PuF1N68RfN0YCkC5gU33AGzoPQYJMnGezPj2yn8jJNWznCdpz38i9QyUdn4wnGD9gg_afDA=="
+   },
+   {
+    "title": "slack.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbz_4Qe4qmBd4SY-C3uC2ZVlCr08F665z-mcKEooFtMgdYjh8OXpxXJ6okwYqnbYHanWyLEbbg5XOiwDvm2lVsdlKC1ckni3YjzoE8tx2yRcx2ZwPQF5ZnRSo5thsp4IJW_XI91KzBVeLtxiowJJwErCkDADHUZsaKp_8oJQ=="
+   }
+  ],
+  "tokens": 10340,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://slack.com/intl/en-in/pricing",
+    "status": 200,
+    "chars": 30487,
+    "readable": true
+   },
+   {
+    "url": "https://docs.slack.dev/reference/methods/oauth.v2.access/",
+    "status": 200,
+    "chars": 11059,
+    "readable": true
+   },
+   {
+    "url": "https://docs.slack.dev/authentication/sign-in-with-slack/",
+    "status": 200,
+    "chars": 13505,
+    "readable": true
+   },
+   {
+    "url": "https://hexdocs.pm/slack_open_api/0.0.3/SlackOpenApi.html",
+    "status": 200,
+    "chars": 2154,
+    "readable": true
+   },
+   {
+    "url": "https://docs.slack.dev/quickstart/",
+    "status": 200,
+    "chars": 5220,
+    "readable": true
+   },
+   {
+    "url": "https://zenzap.co/blog/slack-pricing-guide",
+    "status": 404,
+    "chars": 375,
+    "readable": false
+   },
+   {
+    "url": "https://docs.slack.dev/apps/marketplace/review-guide",
+    "status": 200,
+    "chars": 2135,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/slackapi/slack-api-specs",
+    "status": 200,
+    "chars": 5892,
+    "readable": true
+   }
+  ],
+  "seconds": 58.3
+ }
+}

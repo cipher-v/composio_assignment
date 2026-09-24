@@ -1,0 +1,287 @@
+{
+ "app": {
+  "id": 70,
+  "name": "Sentry",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "docs.sentry.io/api"
+ },
+ "record": {
+  "subcategory": "Error tracking and performance monitoring",
+  "one_liner": "Sentry is a developer-first error tracking and performance monitoring platform that captures application errors, logs, traces, and metrics.",
+  "auth_methods": [
+   "bearer_token",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Sentry supports Personal Tokens (bearer_token), Organization Tokens (bearer_token), Internal Integrations (bearer_token), and OAuth 2.0 for Public Integrations. OAuth 2.0 is the recommended method for multi-tenant applications.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up for a free account and immediately create a public integration to obtain OAuth credentials. No upfront approval is required for development and testing, though publishing to the marketplace requires review.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Sentry provides a REST API (v0) covering account management, monitoring, and data export. It does not expose a public GraphQL API.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Sentry's official MCP service is designed for human-in-the-loop coding agents, focusing on developer workflows and debugging.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. Sentry provides a fully self-serve, free developer tier with public OAuth 2.0 capabilities (Public Integrations) that can be developed and tested in an unpublished state without upfront approval, alongside a well-documented REST API and an official OpenAPI spec.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://docs.sentry.io/get-started/",
+    "quote": "Sentry captures errors, logs, traces, replays, profiles, and metrics from your application — and connects them all through distributed tracing."
+   },
+   {
+    "claim": "general",
+    "url": "https://docs.sentry.io/api/",
+    "quote": "The Sentry web API is used to access the Sentry platform programmatically. You can use the APIs to manage account-level resources, like organizations and teams, as well as manage and export data."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.sentry.io/api/auth/",
+    "quote": "Some API endpoints require an authentication token that's associated with your user account, rather than an authentication token from an internal integration. These auth tokens can be created within Sentry on the 'User settings' page (User settings > Personal Tokens) and assigned specific scopes."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.sentry.io/account/auth-tokens/",
+    "quote": "Organization Tokens: These tokens are bound to an organization, and have access to all projects within that organization. They have a limited set of permissions and are designed to be used in CI environments and with Sentry CLI."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.sentry.io/api/auth/",
+    "quote": "Internal integrations automatically generate tokens after installation."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.sentry.io/api/auth/",
+    "quote": "For third-party applications that need to access Sentry on behalf of users, Sentry supports OAuth2 with the authorization code grant type."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.sentry.io/api/auth/",
+    "quote": "Public integrations require an OAuth flow for tokens."
+   },
+   {
+    "claim": "access",
+    "url": "https://sentry.io/pricing/",
+    "quote": "pricing: free developer plan, pay as you grow"
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.sentry.io/api/auth/",
+    "quote": "In sentry.io , navigate to Settings > Developer Settings. From here, you can choose to create an internal or public integration."
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.sentry.io/api/auth/",
+    "quote": "These start in an unpublished state for development purposes and can be submitted later for approval to publish."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.sentry.io/api/",
+    "quote": "The current version of the Sentry's web API is considered v0 . Our public endpoints are generally stable, but beta endpoints are subject to change."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.sentry.io/api/",
+    "quote": "crons dashboards discover & performance environments events & issues explore integration platform integrations mobile builds monitors & alerts organizations profiling projects releases replays scim seer snapshots spike protection notifications teams users"
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/getsentry/sentry-api-schema",
+    "quote": "Sentry's public API schema. Contribute to getsentry/sentry-api-schema development by creating an account on GitHub."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.sentry.io/api/auth/",
+    "quote": "Webhooks allow your service to get requests about specific resources, depending on your selection."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.sentry.io/api/auth/",
+    "quote": "Receive webhook events when issues are created, resolved, or assigned"
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.sentry.io/get-started/",
+    "quote": "Sandbox — explore Sentry with pre-populated sample data."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/getsentry/sentry-mcp",
+    "quote": "Sentry's MCP service is primarily designed for human-in-the-loop coding agents. Our tool selection and priorities are focused on developer workflows and debugging use cases, rather than providing a general-purpose MCP server for all Sentry functionality."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "# Research Notes: Sentry Toolkit Buildability\n\n### 1. What the Product Does\nSentry is a developer-first error tracking and performance monitoring platform that captures application errors, logs, traces, and metrics to help teams diagnose and resolve issues in real-time.\n* **Source URL:** `https://docs.sentry.io/get-started/`\n* **Verbatim Quote:** `\"Sentry captures errors, logs, traces, replays, profiles, and metrics from your application — and connects them all through distributed tracing.\"`\n* **Source URL:** `https://docs.sentry.io/api/`\n* **Verbatim Quote:** `\"The Sentry web API is used to access the Sentry platform programmatically. You can use the APIs to manage account-level resources, like organizations and teams, as well as manage and export data.\"`\n\n### 2. Public API Authentication Methods & Multi-Tenant Choice\nSentry provides multiple authentication mechanisms depending on the use case:\n* **Personal Tokens (User Tokens):** Bound to a specific user account.\n  * **Source URL:** `https://docs.sentry.io/api/auth/`\n  * **Verbatim Quote:** `\"Some API endpoints require an authentication token that's associated with your user account, rather than an authentication token from an internal integration. These auth tokens can be created within Sentry on the 'User settings' page (User settings > Personal Tokens) and assigned specific scopes.\"`\n* **Organization Tokens:** Bound to an organization, primarily for CI/CD and CLI usage.\n  * **Source URL:** `https://docs.sentry.io/account/auth-tokens/`\n  * **Verbatim Quote:** `\"Organization Tokens: These tokens are bound to an organization, and have access to all projects within that organization. They have a limited set of permissions and are designed to be used in CI environments and with Sentry CLI.\"`\n* **Internal Integrations:** Automatically generated tokens bound to a single organization.\n  * **Source URL:** `https://docs.sentry.io/api/auth/`\n  * **Verbatim Quote:** `\"Internal integrations automatically generate tokens after installation.\"`\n* **OAuth 2.0 (Public Integrations):** Standard authorization code grant flow for third-party multi-tenant applications.\n  * **Source URL:** `https://docs.sentry.io/api/auth/`\n  * **Verbatim Quote:** `\"For third-party applications that need to access Sentry on behalf of users, Sentry supports OAuth2 with the authorization code grant type.\"`\n\n**Primary Auth for Multi-Tenant Integration Platform:** `oauth2`\n* **Source URL:** `https://docs.sentry.io/api/auth/`\n* **Verbatim Quote:** `\"Public integrations require an OAuth flow for tokens.\"`\n\n### 3. Developer Credentials Acquisition & Cost\n* **Access Classification:** `self_serve_free`\n* **Cost:** Sentry provides a free tier for developers.\n  * **Source URL:** `https://sentry.io/pricing/`\n  * **Verbatim Quote:** `\"pricing: free developer plan, pay as you grow\"`\n* **How to Get Credentials:** Any developer can sign up for a free account and immediately create a public integration to obtain OAuth credentials.\n  * **Source URL:** `https://docs.sentry.io/api/auth/`\n  * **Verbatim Quote:** `\"In sentry.io , navigate to Settings > Developer Settings. From here, you can choose to create an internal or public integration.\"`\n* **Approval Requirements:** No upfront approval is required for development and testing. The integration can be installed and tested by the creator's organization immediately, though it requires a review process before being published to the public marketplace.\n  * **Source URL:** `https://docs.sentry.io/api/auth/`\n  * **Verbatim Quote:** `\"These start in an unpublished state for development purposes and can be submitted later for approval to publish.\"`\n\n### 4. API Style & Technical Characteristics\n* **API Style:** REST API (versioned at `v0`). Sentry does not expose a public GraphQL API.\n  * **Source URL:** `https://docs.sentry.io/api/`\n  * **Verbatim Quote:** `\"The current version of the Sentry's web API is considered v0 . Our public endpoints are generally stable, but beta endpoints are subject to change.\"`\n* **API Breadth:** Extremely broad, covering account management, monitoring, and data export.\n  * **Source URL:** `https://docs.sentry.io/api/`\n  * **Verbatim Quote:** `\"crons dashboards discover & performance environments events & issues explore integration platform integrations mobile builds monitors & alerts organizations profiling projects releases replays scim seer snapshots spike protection notifications teams users\"`\n* **OpenAPI Spec:** Yes, Sentry maintains an official public repository containing their OpenAPI schema.\n  * **Source URL:** `https://github.com/getsentry/sentry-api-schema`\n  * **Verbatim Quote:** `\"Sentry's public API schema. Contribute to getsentry/sentry-api-schema development by creating an account on GitHub.\"`\n* **Webhooks:** Yes, supported natively via the Integration Platform.\n  * **Source URL:** `https://docs.sentry.io/api/auth/`\n  * **Verbatim Quote:** `\"Webhooks allow your service to get requests about specific resources, depending on your selection.\"` and `\"Receive webhook events when issues are created, resolved, or assigned\"`\n* **Sandbox:** Sentry provides a pre-populated interactive sandbox environment for exploration, though developers typically use their free developer account for live API testing.\n  * **Source URL:** `https://docs.sentry.io/get-started/`\n  * **Verbatim Quote:** `\"Sandbox — explore Sentry with pre-populated sample data.\"`\n\n### 5. MCP Servers\n* **MCP Status:** `official`\n* **Source URL:** `https://github.com/getsentry/sentry-mcp`\n* **Verbatim Quote:** `\"Sentry's MCP service is primarily designed for human-in-the-loop coding agents. Our tool selection and priorities are focused on developer workflows and debugging use cases, rather than providing a general-purpose MCP server for all Sentry functionality.\"`\n\n### 6. Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. Sentry provides a fully self-serve, free developer tier with public OAuth 2.0 capabilities (Public Integrations) that can be developed and tested in an unpublished state without upfront approval, alongside a well-documented REST API and an official OpenAPI spec.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"sentry\" \"integration platform\" public integration oauth",
+   "sentry api authentication bearer token oauth2",
+   "sentry mcp server official",
+   "sentry openapi spec github",
+   "\"sentry\" sandbox documentation",
+   "sentry api sandbox environment"
+  ],
+  "search_sources": [
+   {
+    "title": "sentry.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEp3KdYYWwCEZW5FIZtFf3m7idzKec3_x3X9h0XJnQQYS4gQMo8aVzutfzG1nuNE0Nhq5lZXpn8XTPNDB43-N9OB6zNolB6hWdroY2zSdu0vqK1iCyxsNCmNhkw8uHH"
+   },
+   {
+    "title": "apitracker.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyjcPKtsl4dvvwR3wI7wlwHKh-CRinThSyezUkzGpybdxklBUVzk0v0qJINQRpa4tOx4o-is8AeL5RjFN23FT6Az9VjllL5vxtuuN8Ve3BQ0VaC5tLknQutg=="
+   },
+   {
+    "title": "sentry.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSFPoetbNh__KY0rCQyt_gm0elxJ32y5xFgqrdcoO9-t3OoPRSvV9TbZIPLMGK0zhr2CcrXIhsLtAd4GaOVUE6SSDvDmkYDoI77MGuf9wdsS5T2Pvsrg=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHS_WILuOgesRs8RkjL_wVwklc64DUBno9l8M2pXM9r1hcVZ251V8UgNJPhPM9vpZHrOBmdS5366X-3NyVnui0Us_ifwiX9mpcXIKtHm1o572mxPxAP9LBBw_nDAfz3f-K5b_LSPUqu5BkP"
+   },
+   {
+    "title": "sentry.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWbEYzY3SHIdNotC6QrRjPZYI-ayFhzKn4tPzpmrpfcD2iy69pXDZlVLXwGggG1aR3alwBFo9Wbbmejen1r3ksf0RTNNqXwZPQuo6qX0KwDpQEf-ah-Ex7gwMe8gfWxz_Mhrgzs-I="
+   },
+   {
+    "title": "mintlify.app",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1rg3Te2b36uz6RxIdfV-AgPbdu-y53K3kFP11TC84pKYqYBLMJIm-83cqye7H2lDfSZPq3XuPbtPDTdrMEHJgpbpBSBxHwR6IrbMMieS0-5jobgo2yG78n5FbMaUoBaz_Dqj98zkLadN-x0loifIQ2OQJ"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEfqRDc57jE1J-2TiWRKehOOYZAgd6gS_eQDbausbAPc2m3q7VQ0iq1Ss00eSgBfqbK6YIqzjrq3LZ2rYKqQHgVZ4QistluYyJk4EpekDZdgc7JLsQ4VnLdBzjlY3oTt1RZNFmxTjEcnVa_vdL0u78aWvGhj3YJwDlEkpFXMqRV5g71n_7h8k="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKCfUCSUKr9ltUiXSaLI8_GQY3IimijFAG32lvLbKkTm00lNhJ_1E9cG-QV6bI77yLZzea5Mr03s_w6XRodOrZbwxGlgyXcSC8TOSdxl4Hu8uSlNI68_kLLIaGP0D24tolDnauk18Gf0LrreIFDEc2cztif-dn4Im9xt4q9ULORSbE6aJ0RDDz"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGp8IFzMBIHo9G4mSC_WMiYBpE-zwlNL1wfKTMQCuwBgdY-AgmOWvCZZ7LGWbXZ77WoPduwh-SCVBZAI8zYzZjd1-9mRiVALQcDbUtpKU0GHkTb-Bvz21LuP-4OCH7Qpt1OAoNYpdFF6vnY7SUfpNROXca4PxToxBRl3-OlOrM="
+   }
+  ],
+  "tokens": 11437,
+  "retries": [
+   "504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status':",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "sentry docs authentication",
+    "sentry docs api keys",
+    "sentry docs oauth",
+    "sentry docs api authentication",
+    "sentry docs getting started",
+    "sentry docs quickstart",
+    "sentry docs installation",
+    "sentry pricing api access",
+    "sentry developer program",
+    "sentry plans api",
+    "sentry pricing",
+    "sentry docs api reference",
+    "sentry docs rest api",
+    "sentry docs api index",
+    "Sentry MCP server",
+    "Sentry MCP",
+    "Sentry community MCP",
+    "Sentry official MCP",
+    "sentry.io pricing"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://sentry.io/pricing/",
+    "https://docs.sentry.io/api/",
+    "https://docs.sentry.io/api/auth/",
+    "https://docs.sentry.io/account/auth-tokens/",
+    "https://docs.sentry.io/product/partnership-platform/oauth-integration/",
+    "https://docs.sentry.io/organization/authentication/",
+    "https://docs.sentry.io/cli/configuration/",
+    "https://docs.sentry.io/get-started/",
+    "https://docs.sentry.io/product/sentry-basics/",
+    "https://docs.sentry.io/product/sentry-basics/getting-started-tutorial/",
+    "https://github.com/getsentry/sentry-mcp"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://docs.sentry.io/api/authentication/",
+     "status": 404
+    },
+    {
+     "url": "https://docs.sentry.io/product/sentry-basics/getting-started/",
+     "status": 404
+    },
+    {
+     "url": "https://docs.sentry.io/api/auth-tokens/",
+     "status": 404
+    },
+    {
+     "url": "https://docs.sentry.io/product/accounts/oauth/",
+     "status": 404
+    },
+    {
+     "url": "https://docs.sentry.io/product/accounts/authentication/",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://sentry.io/pricing/",
+     "status": 200,
+     "chars": 8561,
+     "readable": true
+    },
+    {
+     "url": "https://docs.sentry.io/api/",
+     "status": 200,
+     "chars": 2041,
+     "readable": true
+    },
+    {
+     "url": "https://docs.sentry.io/api/auth/",
+     "status": 200,
+     "chars": 20345,
+     "readable": true
+    },
+    {
+     "url": "https://docs.sentry.io/account/auth-tokens/",
+     "status": 200,
+     "chars": 7044,
+     "readable": true
+    },
+    {
+     "url": "https://docs.sentry.io/product/partnership-platform/oauth-integration/",
+     "status": 200,
+     "chars": 3255,
+     "readable": true
+    },
+    {
+     "url": "https://docs.sentry.io/organization/authentication/",
+     "status": 200,
+     "chars": 1638,
+     "readable": true
+    },
+    {
+     "url": "https://docs.sentry.io/cli/configuration/",
+     "status": 200,
+     "chars": 10346,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 477.5
+ }
+}

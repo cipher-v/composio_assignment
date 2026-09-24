@@ -1,0 +1,242 @@
+{
+ "app": {
+  "id": 97,
+  "name": "higgsfield",
+  "category": "AI, Research and Media-native",
+  "hint": "higgsfield.ai/cli (content suite)"
+ },
+ "record": {
+  "subcategory": "AI-powered video and image generation",
+  "one_liner": "Higgsfield is an AI-powered video and image generation platform that consolidates access to over 50 generative media models under a single, unified API endpoint.",
+  "auth_methods": [
+   "api_key"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "The public developer REST API authenticates requests using a custom authorization header containing an API Key ID and an API Key Secret. A multi-tenant integration platform would use this method, requiring each tenant to generate and provide their own server-side API Key ID and Secret. Higgsfield provides an official hosted MCP server that utilizes an OAuth connector to link directly to a user's web account credits, but the public developer REST API relies strictly on the server-side API key credentials.",
+  "access": "paid_plan",
+  "access_notes": "To obtain credentials, developers must sign up for an API account, register a payment method, and fund a prepaid balance. There is no free tier or trial available for the public REST API. Minimum top up is $5.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "The API covers image and video generation operations, checking request status, canceling queued requests, and file uploads. It is a REST API.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "The official Higgsfield MCP is at higgsfield.ai/mcp, and the only official connector URL is mcp.higgsfield.ai/mcp. Community servers also exist.",
+  "verdict": "ready_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "There is no free tier or trial available for the public developer REST API. Developers must register a payment method and fund a prepaid balance (minimum $5) to obtain working credentials and test the integration.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://docs.higgsfield.ai/docs",
+    "quote": "generate images and videos through one authenticated, asynchronous api. higgsfield provides one integration point for generative media models."
+   },
+   {
+    "claim": "general",
+    "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+    "quote": "one api key opens every model in the api catalog: 50+ current video and image models, including seedance, kling, wan, minimax, pixverse, ltx, and grok for video and ideogram, recraft, and qwen for images, alongside higgsfield's own soul 2, soul cinema, dop, and marketing studio image."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.higgsfield.ai/docs",
+    "quote": "--header \"authorization: key ${ hf_api_key_id }:${ hf_api_key_secret }\""
+   },
+   {
+    "claim": "auth",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYHc1C619B2jG-mOsGk5n8fcBZRxQhzbtSsEuccoesI73MI_IdnLVV1xnsG1I6Ryq8r2Sd8n2xTNRveu55qd4Aj4VktF78NG8RoSiDSbxNxRzMoyuh5qydNIZVTh_9HFMfhAHI7luj_KpfRVUghwaMbWlf0mbJmZJr-XG2qRJNRlSyQ0zT5QCZexOQ62JFv1nS4VFIu26v",
+    "quote": "The REST API at https://api.higgsfield.ai: a separate developer path that authenticates with an Authorization: Key KEY_ID:KEY_SECRET header issued from cloud.higgsfield.ai."
+   },
+   {
+    "claim": "access",
+    "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+    "quote": "sign up for an api account, either as an individual or as a company. register a payment method and fund your balance. generate an api key in the console at console.higgsfield.ai ."
+   },
+   {
+    "claim": "access",
+    "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+    "quote": "each request is paid in us dollars from a prepaid balance. no plan or subscription is involved: fund the balance, send requests at the rates listed in the catalog, and new requests simply wait once the balance hits zero."
+   },
+   {
+    "claim": "access",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHg5xksIkYZiGa4kqmKCz_ZjsE46LCVy1nBxt8yieu8kO5S7HFdjlveEUIJqZqfOIyklHDMD_NkDRU9GVDk5RNKTnLSyEKB1wesknDsJqBvw-4fVjPd18kuniDZ-ubB8RXxJB8fiFHY4coUW6ZUBHuifH9EP5ISgH_WLKlDGphAaCfHOerLih210vNwKrn46guRowiFkvQrfWHodoUSk1emAv-r8q4IQQwwWuFfwpK94baAuovS0QKjSESWPrt_VhVHxkJLNg==",
+    "quote": "There is no subscription fee of any kind for API access; Minimum top up is $5;"
+   },
+   {
+    "claim": "api",
+    "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+    "quote": "call the rest api directly from any language with an http client"
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.higgsfield.ai/docs/api-reference/overview",
+    "quote": "reference for higgsfield image and video generation operations, request status, and cancellation."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.higgsfield.ai/docs/api-reference/overview",
+    "quote": "the api reference is generated from the public openapi specification."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.higgsfield.ai/docs",
+    "quote": "submit a request to a model endpoint, then poll for the result or receive a webhook when processing finishes."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDh1Hzrzj8Bjm9eq16mek-iFUPGG25Jv64-TuReiiZBVgfAeHVQHt7-f1DNIPlthAlpCBAYeFh_ryx_IKmM7_i4ay9OuETYjr0AhF2Y-miynoYo5rdgZ4l62KxNIeJcy8oGA_QogdM8kvVWSy60vetbDV57KdwDXWOMta_SxoqefNr6KXXW5gLUOBL0pbBPkCVG4OuY5E=",
+    "quote": "The official Higgsfield MCP. Connects Higgsfield to Claude, ChatGPT, and other AI agents. The official setup page is higgsfield.ai/mcp, and the only official connector URL is mcp.higgsfield.ai/mcp."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+    "quote": "each request is paid in us dollars from a prepaid balance. no plan or subscription is involved: fund the balance, send requests at the rates listed in the catalog, and new requests simply wait once the balance hits zero."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### 1. What the Product Does\nHiggsfield is an AI-powered video and image generation platform that consolidates access to over 50 generative media models under a single, unified API endpoint.\n* **Source:** `https://docs.higgsfield.ai/docs`\n* **Verbatim Quote:** \"generate images and videos through one authenticated, asynchronous api. higgsfield provides one integration point for generative media models.\"\n* **Source:** `https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api`\n* **Verbatim Quote:** \"one api key opens every model in the api catalog: 50+ current video and image models, including seedance, kling, wan, minimax, pixverse, ltx, and grok for video and ideogram, recraft, and qwen for images, alongside higgsfield's own soul 2, soul cinema, dop, and marketing studio image.\"\n\n### 2. Authentication Methods & Multi-Tenant Integration\nThe public developer REST API authenticates requests using a custom authorization header containing an API Key ID and an API Key Secret.\n* **Source:** `https://docs.higgsfield.ai/docs`\n* **Verbatim Quote:** `--header \"authorization: key ${ hf_api_key_id }:${ hf_api_key_secret }\"`\n\n* **Primary Auth for Multi-Tenant Integration:** `api_key`. A multi-tenant integration platform would use this method, requiring each tenant to generate and provide their own server-side API Key ID and Secret.\n* **Note on OAuth:** Higgsfield provides an official hosted MCP server that utilizes an OAuth connector to link directly to a user's web account credits. However, the public developer REST API relies strictly on the server-side API key credentials.\n* **Source:** `https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYHc1C619B2jG-mOsGk5n8fcBZRxQhzbtSsEuccoesI73MI_IdnLVV1xnsG1I6Ryq8r2Sd8n2xTNRveq55qd4Aj4VktF78NG8RoSiDSbxNxRzMoyuh5qydNIZVTh_9HFMfhAHI7luj_KpfRVUghwaMbWlf0mbJmZJr-XG2qRJNRlSyQ0zT5QCZexOQ62JFv1nS4VFIu26v`\n* **Verbatim Quote:** \"The hosted MCP at mcp.higgsfield.ai: OAuth login, and every job costs credits... The REST API at https://api.higgsfield.ai: a separate developer path that authenticates with an Authorization: Key KEY_ID:KEY_SECRET header issued from cloud.higgsfield.ai.\"\n\n### 3. Credential Acquisition & Cost\nTo obtain credentials, developers must sign up for an API account, register a payment method, and fund a prepaid balance. There is no free tier or trial available for the public REST API.\n* **Source:** `https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api`\n* **Verbatim Quote:** \"sign up for an api account, either as an individual or as a company. register a payment method and fund your balance. generate an api key in the console at console.higgsfield.ai .\"\n* **Verbatim Quote:** \"each request is paid in us dollars from a prepaid balance. no plan or subscription is involved: fund the balance, send requests at the rates listed in the catalog, and new requests simply wait once the balance hits zero.\"\n* **Source:** `https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHg5xksIkYZiGa4kqmKCz_ZjsE46LCVy1nBxt8yieu8kO5S7HFdjlveEUIJqZqfOIyklHDMD_NkDRU9GVDk5RNKTnLSyEKB1wesknDsJqBvw-4fVjPd18kuniDZ-ubB8RXxJB8fiFHY4coUW6ZUBHuifH9EP5ISgH_WLKlDGphAaCfHOerLih210vNwKrn46guRowiFkvQrfWHodoUSk1emAv-r8q4IQQwwWuFfwpK94baAuovS0QKjSESWPrt_VhVHxkJLNg==`\n* **Verbatim Quote:** \"There is no subscription fee of any kind for API access; Minimum top up is $5;\"\n* **Access Definition:** `paid_plan`\n\n### 4. API Style & Technical Details\n* **API Style:** REST\n  * **Source:** `https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api`\n  * **Verbatim Quote:** \"call the rest api directly from any language with an http client\"\n* **Breadth:** Medium to Broad. It covers image and video generation operations, checking request status, canceling queued requests, and file uploads.\n  * **Source:** `https://docs.higgsfield.ai/docs/api-reference/overview`\n  * **Verbatim Quote:** \"reference for higgsfield image and video generation operations, request status, and cancellation.\"\n* **OpenAPI Spec:** Yes.\n  * **Source:** `https://docs.higgsfield.ai/docs/api-reference/overview`\n  * **Verbatim Quote:** \"the api reference is generated from the public openapi specification.\"\n* **Webhooks:** Yes.\n  * **Source:** `https://docs.higgsfield.ai/docs`\n  * **Verbatim Quote:** \"submit a request to a model endpoint, then poll for the result or receive a webhook when processing finishes.\"\n* **Sandbox:** None found. The API operates directly against the production environment using the prepaid balance.\n\n### 5. MCP Servers\nHiggsfield provides an official hosted MCP server, and there are also community-built alternatives.\n* **Source:** `https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDh1Hzrzj8Bjm9eq16mek-iFUPGG25Jv64-TuReiiZBVgfAeHVQHt7-f1DNIPlthAlpCBAYeFh_ryx_IKmM7_i4ay9OuETYjr0Ahf2Y-miynoYo5rdgZ4l62KxNIeJcy8oGA_QogdM8kvVWSy60vetbDV57KdwDXWOMta_SxoqefNr6KXXW5gLUOBLzpbBPkCVG4OuY5E=`\n* **Verbatim Quote:** \"The official Higgsfield MCP. Connects Higgsfield to Claude, ChatGPT, and other AI agents. The official setup page is higgsfield.ai/mcp, and the only official connector URL is mcp.higgsfield.ai/mcp.\"\n* **Community Servers:** Community servers exist, such as `geopopos/higgsfield_ai_mcp` and `nukIeer/higgsfield-unlimited-mcp`.\n* **MCP Definition:** `official`\n\n### 6. Buildability Verdict\n* **Verdict:** `ready_with_friction`\n* **Main Blocker:** `paid_plan`. There is no free tier or trial available for the public developer REST API. Developers must register a payment method and fund a prepaid balance (minimum $5) to obtain working credentials and test the integration.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"higgsfield api\" free tier",
+   "\"higgsfield api\" pricing",
+   "\"higgsfield\" mcp server official"
+  ],
+  "search_sources": [
+   {
+    "title": "daily.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOVi2f5X43DQPsEvXmalkAdpIp32f_Yynrz-vxxW46BjCepEDMyVD8XzlTfkoaSTCmZ-L9S0Yo3zPTRAEbtChZALolDXbZNenr8TEDCOMV8OeUnGkOo4NNT3v9b41RPyQvpnp-3LyVJ0zxyZ2deYPC0M_sN4eHEC4qPBmMfyABtZYXUN-kx690qeGIs4BLyOGEKgTCnwjvUWdR"
+   },
+   {
+    "title": "daily.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHg5xksIkYZiGa4kqmKCz_ZjsE46LCVy1nBxt8yieu8kO5S7HFdjlveEUIJqZqfOIyklHDMD_NkDRU9GVDk5RNKTnLSyEKB1wesknDsJqBvw-4fVjPd18kuniDZ-ubB8RXxJB8fiFHY4coUW6ZUBHuifH9EP5ISgH_WLKlDGphAaCfHOerLih210vNwKrn46guRowiFkvQrfWHodoUSk1emAv-r8q4IQQwwWuFfwpK94baAuovS0QKjSESWPrt_VhVHxkJLNg=="
+   },
+   {
+    "title": "explainx.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnjzKijlM84Bk_4xfEJMo864v3hJ1wCICtwqkYILc5JIHOGjXmlBSqvzLb3FWaAru9DAf0k44f5s2hJl0f-qOh5kvKoyF7YJDuyCcVX0S5HeSaq6B2AQKFPYQ35EXx3ZM0h_oQx5DfyLg="
+   },
+   {
+    "title": "creatify.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYHc1C619B2jG-mOsGk5n8fcBZRxQhzbtSsEuccoesI73MI_IdnLVV1xnsG1I6Ryq8r2Sd8n2xTNRveq55qd4Aj4VktF78NG8RoSiDSbxNxRzMoyuh5qydNIZVTh_9HFMfhAHI7luj_KpfRVUghwaMbWlf0mbJmZJr-XG2qRJNRlSyQ0zT5QCZexOQ62JFv1nS4VFIu26v"
+   },
+   {
+    "title": "higgsfield.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEN-4cpcpM0N88gy5A_BIxkDiW0CFh506B-gr5wS7By8HE_8puNZ6L_sxU8T6UiSIv9wgU9lAn_kCPYxVs-A1lqAeHBco0qBbNSy4HSIQQVUEN7s-Go7u7sRufvGzXe958ynrGl"
+   },
+   {
+    "title": "higgsfield.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDh1Hzrzj8Bjm9eq16mek-iFUPGG25Jv64-TuReiiZBVgfAeHVQHt7-f1DNIPlthAlpCBAYeFh_ryx_IKmM7_i4ay9OuETYjr0Ahf2Y-miynoYo5rdgZ4l62KxNIeJcy8oGA_QogdM8kvVWSy60vetbDV57KdwDXWOMta_SxoqefNr6KXXW5gLUOBLzpbBPkCVG4OuY5E="
+   },
+   {
+    "title": "theclick.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZjhcGBmjJpiJeISq5DiKcasKtsaCSJvMUS7Vjzg5wLJ95-CClpDjiCRwNs6jY1DBJ4XW1Rn6rp8cU83UbkVL3LTKeZAo2Qg3FLkIHxJ2PqsGPp7_Hzyryx3C1vR00uvGg-w=="
+   }
+  ],
+  "tokens": 12828,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "higgsfield.ai authentication API keys OAuth",
+    "higgsfield.ai API key management",
+    "higgsfield.ai developer authentication",
+    "higgsfield.ai getting started quickstart",
+    "higgsfield.ai CLI getting started",
+    "higgsfield.ai documentation quickstart guide",
+    "higgsfield.ai pricing API access",
+    "higgsfield.ai developer program",
+    "higgsfield.ai API plans",
+    "higgsfield.ai API reference index",
+    "higgsfield.ai API documentation",
+    "higgsfield.ai CLI API reference",
+    "higgsfield MCP server official",
+    "higgsfield MCP server community",
+    "higgsfield.ai MCP server"
+   ],
+   "candidates": 6,
+   "live_urls": [
+    "https://docs.higgsfield.ai/docs",
+    "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+    "https://docs.higgsfield.ai/docs/api-reference/overview",
+    "https://docs.higgsfield.ai/docs/how-to/introduction",
+    "https://github.com/geopopos/higgsfield_ai_mcp",
+    "https://github.com/geopopos/geo_higgsfield_ai_mcp",
+    "https://www.layer3labs.io/guides/higgsfield-api",
+    "https://daily.dev/posts/higgsfield-api-pricing-complete-cost-breakdown-plus-30-off--aeuejvchc?userid=yr4hPdIZ3qjPDpIi1ZVvU&cid=share_post",
+    "https://www.mindstudio.ai/blog/higgsfield-api-pricing-pay-per-use",
+    "https://explainx.ai/mcp-servers/higgsfield-mcp"
+   ],
+   "bad_candidates": [
+    {
+     "url": "console.higgsfield.ai",
+     "status": 0
+    },
+    {
+     "url": "docs.higgsfield.ai",
+     "status": 0
+    },
+    {
+     "url": "https://mcp.higgsfield.ai",
+     "status": 404
+    },
+    {
+     "url": "https://mcp.higgsfield.ai/mcp",
+     "status": 401
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://docs.higgsfield.ai/docs",
+     "status": 200,
+     "chars": 3238,
+     "readable": true
+    },
+    {
+     "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+     "status": 200,
+     "chars": 8860,
+     "readable": true
+    },
+    {
+     "url": "https://docs.higgsfield.ai/docs/api-reference/overview",
+     "status": 200,
+     "chars": 1757,
+     "readable": true
+    },
+    {
+     "url": "https://docs.higgsfield.ai/docs/how-to/introduction",
+     "status": 200,
+     "chars": 1755,
+     "readable": true
+    },
+    {
+     "url": "https://github.com/geopopos/higgsfield_ai_mcp",
+     "status": 200,
+     "chars": 12197,
+     "readable": true
+    },
+    {
+     "url": "https://github.com/geopopos/geo_higgsfield_ai_mcp",
+     "status": 200,
+     "chars": 12404,
+     "readable": true
+    },
+    {
+     "url": "https://www.layer3labs.io/guides/higgsfield-api",
+     "status": 200,
+     "chars": 19754,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 181.9
+ }
+}

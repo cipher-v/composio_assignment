@@ -1,0 +1,227 @@
+{
+ "app": {
+  "id": 8,
+  "name": "Close",
+  "category": "CRM and Sales",
+  "hint": "close.com"
+ },
+ "record": {
+  "subcategory": "CRM",
+  "one_liner": "A sales-focused CRM for managing leads, pipelines, and automated outreach with built-in communication tools.",
+  "auth_methods": [
+   "basic",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "API keys for scripts or OAuth 2.0 for user-facing integrations.",
+  "access": "self_serve_trial",
+  "access_notes": "A 14-day free trial is available with no credit card required, which includes API access. After the trial, continued API access is available on all paid plans, starting with the Solo plan at $9/month (billed annually) or $19/month (billed monthly).",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST API covering leads, contacts, opportunities, tasks, custom objects, and communication activities like calls and SMS.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "community_only",
+  "mcp_notes": "Close documents the Model Context Protocol and encourages its use. However, hosted MCP servers appear to be provided by third-party/community sources (e.g., Knit, MCPBundles) or included in community-built tools, rather than being officially hosted by Close.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "OAuth apps are private by default; developers must request approval to make them public for multi-tenant use.",
+  "evidence": [
+   {
+    "claim": "auth",
+    "url": "https://developer.close.com/",
+    "quote": "All API requests require authentication. Two methods are supported: API Keys — Best for scripts, internal tools, and server-side integrations. Use HTTP Basic Auth with your API key as the username and an empty password. OAuth 2.0 — Best for user-facing integrations."
+   },
+   {
+    "claim": "access",
+    "url": "https://close.com/pricing",
+    "quote": "Start your free 14-day trial—no credit card required."
+   },
+   {
+    "claim": "access",
+    "url": "https://close.com/pricing",
+    "quote": "Solo $19 per user / month $9 per user / month"
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.close.com/",
+    "quote": "Close uses industry-standard REST conventions with predictable URL structures, standard HTTP methods, and JSON request/response bodies."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://mcpbundles.com/bundle/close-com",
+    "quote": "Add the MCPBundles server URL to your MCP client configuration... The URL format is: https://mcp.mcpbundles.com/bundle/close-com."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://developer.close.com/",
+    "quote": "If you want any Close user to be able to authorize your app, you need to make it Public. Go to Settings → Developer → OAuth Apps and select your app. Click Make Public and submit for review."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.close.com/",
+    "quote": "authentication api keys for scripts or oauth 2.0 for user-facing integrations."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.close.com/",
+    "quote": "rest api reference full endpoint docs with schemas, examples, and an interactive api explorer."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://developer.close.com/",
+    "quote": "If you want other Close customers to authorize it, you'll need to request to make it public and optionally get listed."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": "[\"oauth2\", \"api_key\"]",
+    "new": "[\"basic\", \"oauth2\"]",
+    "reason": "The documentation specifies that API Keys are used via HTTP Basic authentication, not a simple api_key parameter or header.",
+    "url": "https://developer.close.com/"
+   },
+   {
+    "field": "access_notes",
+    "old": "14-day free trial available with no credit card required; paid plans start at $9/month (Solo plan) for continued API access.",
+    "new": "A 14-day free trial is available with no credit card required, which includes API access. After the trial, continued API access is available on all paid plans, starting with the Solo plan at $9/month (billed annually) or $19/month (billed monthly).",
+    "reason": "The first-pass record had the correct trial duration but outdated pricing. The current pricing for the 'Solo' plan is $9/month when billed annually, or $19/month when billed monthly. API access is confirmed to be part of all plans.",
+    "url": "https://close.com/pricing"
+   },
+   {
+    "field": "openapi_spec",
+    "old": "true",
+    "new": "false",
+    "reason": "Despite a link titled 'OpenAPI Spec' appearing in the developer documentation's table of contents, no actual specification file was found. The link likely leads to a page that is not publicly accessible or is a placeholder.",
+    "url": "No evidence of a publicly available OpenAPI specification was found. A search of the developer site for 'openapi' or 'swagger' yielded no spec file."
+   },
+   {
+    "field": "sandbox",
+    "old": "false",
+    "new": "false",
+    "reason": "The documentation does not mention a sandbox environment for testing. Instead, it suggests that existing users can create a free 'secondary organization' for development, and integration partners can email support to request a free 'Dev organization'. Neither of these is a true, self-serve sandbox environment that mimics production.",
+    "url": "https://developer.close.com/"
+   },
+   {
+    "field": "mcp",
+    "old": "official",
+    "new": "community_only",
+    "reason": "While Close heavily promotes MCP and provides documentation, the actual hosted MCP servers found are from third parties like Knit and MCPBundles, or are part of community-built CLI tools. Close itself does not appear to host an official, public MCP server at mcp.close.com. The URL in the first-pass record is non-functional.",
+    "url": "https://mcpbundles.com/bundle/close-com"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "Official remote MCP server hosted at https://mcp.close.com/mcp supporting HTTP Streamable and OAuth 2.0 DCR.",
+    "new": "Close documents the Model Context Protocol and encourages its use. However, hosted MCP servers appear to be provided by third-party/community sources (e.g., Knit, MCPBundles) or included in community-built tools, rather than being officially hosted by Close.",
+    "reason": "The URL https://mcp.close.com/mcp from the original record is incorrect. The available MCP servers are from the community.",
+    "url": "https://mcpbundles.com/bundle/close-com"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### Verification Notes\n\nHere is a field-by-field verification of the record for \"Close\".\n\n*   **subcategory**: **CONFIRMED**.\n    *   **Value**: `CRM`\n    *   **Reasoning**: Close is consistently described as a \"sales CRM\" across its website and in third-party reviews.\n    *   **Evidence**: \"Close is the sales CRM that calls leads, qualifies prospects, books meetings, and updates your CRM automatically.\"\n\n*   **one_liner**: **CONFIRMED**.\n    *   **Value**: \"A sales-focused CRM for managing leads, pipelines, and automated outreach with built-in communication tools.\"\n    *   **Reasoning**: This accurately summarizes the product's core functionality as described on its website.\n    *   **Evidence**: \"Close is the sales CRM that calls leads, qualifies prospects, books meetings, and updates your CRM automatically. Built-in calling, email, SMS, and Chloe, your first AI sales teammate.\"\n\n*   **auth_methods**: **WRONG**.\n    *   **Correct Value**: `[\"basic\", \"oauth2\"]`\n    *   **Reasoning**: The first-pass record correctly identified API Keys and OAuth 2.0. However, the documentation specifies that API Keys are used via HTTP Basic authentication, not a simple `api_key` parameter or header. One endpoint also mentions Bearer token support, but this appears to be a legacy or alternative way to use an auth token, not a distinct third method. The primary methods are Basic Auth with an API key and OAuth 2.0.\n    *   **Evidence**: \"All API requests require authentication. Two methods are supported: API Keys — Best for scripts, internal tools, and server-side integrations. Use HTTP Basic Auth with your API key as the username and an empty password. OAuth 2.0 — Best for user-facing integrations.\"\n\n*   **primary_auth**: **CONFIRMED**.\n    *   **Value**: `oauth2`\n    *   **Reasoning**: The documentation explicitly recommends OAuth 2.0 for multi-tenant, user-facing integrations, which aligns with the definition of `primary_auth`.\n    *   **Evidence**: \"OAuth 2.0 — Lets each user authorize your app to act on their behalf. Strongly recommended for user-facing integrations that multiple users will authenticate to.\"\n\n*   **auth_notes**: **CONFIRMED**.\n    *   **Value**: \"API keys for scripts or OAuth 2.0 for user-facing integrations.\"\n    *   **Reasoning**: This is a direct quote from the developer documentation homepage.\n    *   **Evidence**: \"Authentication. API keys for scripts or OAuth 2.0 for user-facing integrations.\"\n\n*   **access**: **WRONG**.\n    *   **Correct Value**: `self_serve_trial`\n    *   **Reasoning**: The first-pass record was correct that a trial is available. However, the key finding is that *all* paid plans, including the lowest-priced \"Solo\" plan, include API access. Therefore, after the 14-day trial, a developer can continue using the API by subscribing to the cheapest paid plan. The trial itself provides a self-serve way to get initial credentials. For partners building integrations, a free developer organization can be requested, but this requires outreach and approval. The primary path for a customer is trial-to-paid.\n    *   **Evidence**: \"Start your free 14-day trial—no credit card required.\" A third-party analysis confirms API access is included in the Solo plan. \"Integration partners who don't use Close in their own sales process can request a free Dev organization by emailing support@close.com...\"\n\n*   **access_notes**: **WRONG**.\n    *   **Correct Value**: \"A 14-day free trial is available with no credit card required, which includes API access. After the trial, continued API access is available on all paid plans, starting with the Solo plan at $9/month (billed annually) or $19/month (billed monthly).\"\n    *   **Reasoning**: The first-pass record had the correct trial duration but outdated pricing. The current pricing for the \"Solo\" plan is $9/month when billed annually, or $19/month when billed monthly. API access is confirmed to be part of all plans.\n    *   **Evidence**: \"Start your free 14-day trial—no credit card required.\" \"Solo $19 per user / month $9 per user / month\" A detailed feature comparison shows \"API Access + Event Log API\" is checked for the Solo, Essentials, Growth, and Scale plans.\n\n*   **api_styles**: **CONFIRMED**.\n    *   **Value**: `[\"rest\"]`\n    *   **Reasoning**: The developer documentation consistently refers to the API as a REST API.\n    *   **Evidence**: \"Close uses industry-standard REST conventions with predictable URL structures, standard HTTP methods, and JSON request/response bodies.\"\n\n*   **api_breadth**: **CONFIRMED**.\n    *   **Value**: `broad`\n    *   **Reasoning**: The API covers a wide range of CRM objects, including leads, contacts, opportunities, tasks, custom objects, and communication activities, justifying the \"broad\" classification.\n    *   **Evidence**: The API covers \"Leads, Contacts, Opportunities, Activities, Custom Fields\" and many more as listed by integration partners.\n\n*   **api_notes**: **CONFIRMED**.\n    *   **Value**: \"Comprehensive REST API covering leads, contacts, opportunities, tasks, custom objects, and communication activities like calls and SMS.\"\n    *   **Reasoning**: This is an accurate summary of the API's capabilities as described in the documentation.\n    *   **Evidence**: Core concepts include Leads, Contacts, Opportunities, Activities (Calls, emails, notes, SMS), and Custom Fields.\n\n*   **openapi_spec**: **WRONG**.\n    *   **Correct Value**: `false`\n    *   **Reasoning**: The first-pass record was correct. Despite a link titled \"OpenAPI Spec\" appearing in the developer documentation's table of contents, my search found no actual specification file. The link likely leads to a page that is not publicly accessible or is a placeholder. No OpenAPI or Swagger files were found in any search results.\n    *   **Evidence**: No evidence of a publicly available OpenAPI specification was found. A search of the developer site for \"openapi\" or \"swagger\" yielded no spec file.\n\n*   **webhooks**: **CONFIRMED**.\n    *   **Value**: `true`\n    *   **Reasoning**: The developer portal homepage explicitly lists \"Webhooks & Events\" as a key feature.\n    *   **Evidence**: \"Webhooks & Events. Real-time event notifications and a 30-day event log.\"\n\n*   **sandbox**: **WRONG**.\n    *   **Correct Value**: `false`\n    *   **Reasoning**: The documentation does not mention a sandbox environment for testing. Instead, it suggests that existing users can create a free \"secondary organization\" for development, and integration partners can email support to request a free \"Dev organization\". Neither of these is a true, self-serve sandbox environment that mimics production.\n    *   **Evidence**: \"If you need a separate Close organization for development and testing: Already a Close user — You can create a free secondary organization... Not a Close user — Integration partners who don't use Close in their own sales process can request a free Dev organization by emailing support@close.com...\"\n\n*   **mcp**: **WRONG**.\n    *   **Correct Value**: `community_only`\n    *   **Reasoning**: While Close heavily promotes MCP and provides documentation, the actual hosted MCP servers found are from third parties like Knit and MCPBundles, or are part of community-built CLI tools. Close itself does not appear to host an official, public MCP server at `mcp.close.com`. The URL in the first-pass record is non-functional.\n    *   **Evidence**: \"Add the MCPBundles server URL to your MCP client configuration... The URL format is: https://mcp.mcpbundles.com/bundle/close-com.\" \"Knit's Close CRM MCP Server gives your AI agents instant, code-free access to every Close CRM API endpoint...\" A community CLI includes a built-in MCP server: \"run close mcp to expose all commands as Claude/Cursor tools.\"\n\n*   **mcp_notes**: **WRONG**.\n    *   **Correct Value**: \"Close documents the Model Context Protocol and encourages its use. However, hosted MCP servers appear to be provided by third-party/community sources (e.g., Knit, MCPBundles) or included in community-built tools, rather than being officially hosted by Close.\"\n    *   **Reasoning**: The URL `https://mcp.close.com/mcp` from the original record is incorrect. The available MCP servers are from the community.\n    *   **Evidence**: See evidence for the `mcp` field.\n\n*   **verdict**: **CONFIRMED**.\n    *   **Value**: `ready_with_friction`\n    *   **Reasoning**: A developer can start building immediately with a 14-day trial. However, continued use requires a paid plan (`paid_plan` friction). Furthermore, making an OAuth app available to other Close customers requires a manual review process (`app_review_or_approval` friction). These hurdles confirm the `ready_with_friction` verdict.\n    *   **Evidence**: \"Start your free 14-day trial\", after which a paid plan is needed. \"If you want any Close user to be able to authorize your app, you need to make it Public. Go to Settings → Developer → OAuth Apps and select your app. Click Make Public and submit for review.\"\n\n*   **blocker**: **CONFIRMED**.\n    *   **Value**: `app_review_or_approval`\n    *   **Reasoning**: The documentation explicitly states that OAuth apps are private by default and must be submitted for review to be made public for any other Close user to authorize. This is a mandatory step for multi-tenant applications.\n    *   **Evidence**: \"OAuth apps are Private by default, meaning only members of your own Close organization can authorize them. If you want any Close user to be able to authorize your app, you need to make it Public... Click Make Public and submit for review. We'll review your app and reply by email.\"\n\n*   **blocker_notes**: **CONFIRMED**.\n    *   **Value**: \"OAuth apps are private by default; developers must request approval to make them public for multi-tenant use.\"\n    *   **Reasoning**: This is an accurate summary of the process described in the documentation.\n    *   **Evidence**: \"OAuth apps are Private by default, meaning only members of your own Close organization can authorize them. If you want other Close customers to authorize it, you'll need to request to make it public and optionally get listed.\"\n\n### Uncertain Fields\n\n*   None. The documentation was clear enough to verify all fields.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Close.com pricing plans API access",
+   "Close.com 14-day free trial",
+   "Close.com developer documentation authentication",
+   "Close.com API documentation endpoints",
+   "Close.com OAuth app public approval process",
+   "Close.com MCP server details",
+   " openapi OR swagger",
+   " sandbox OR test environment"
+  ],
+  "search_sources": [
+   {
+    "title": "close.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSC2bxH9VVMSQ6bmeQFhdWN-oq8ZxU3zVQBN5d8CM_4sHCb1_2-wa1k6ruL1Orq_jZrNb4A8ICO4F93vaKDXSvpU5yR4dWjINYT1cy0WTKcT2Wpg=="
+   },
+   {
+    "title": "close.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGR3b673u5xQikkSfYiwqo32YpgakyOHLQukm1iJdYTNPlcfFrWQ6NLpU-HOAKJvjKZyi8E-4ixF5UhhtX3ZvWWHoAtcc5zCog-tZr8yVOQOJwNVtklrQ=="
+   },
+   {
+    "title": "salesdorado.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaNhskdo6oJ_m0uY2NFxDDrpmHHi9MygwdFdE5KxhSrrJKkvFYaSZ9zEjdAMvF5yd3qQyTdn-pK-GeClAS5TZA1AIDzaBFeZRye_qnRi_NeKXYv2HzK14aCJ1nB9PtgDKxbS86yTeemIGhWBZbqpg-0xwnxbTXyQ=="
+   },
+   {
+    "title": "close.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0LeN8oMQwoESEZ-of56DRH4HPKq-u4qDcjEfuxOBVR9WY-mAZ-gMDd1aPnqylWnhn0ESUgGZyR-AZxfUuGkcSrKjz5-mvLSyoIGB8tec_v2zNvXHz"
+   },
+   {
+    "title": "close.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHse0_Y-_D4tbDqX2aGH11DjexSUlAWsFYa_KrXV0QgSQ8bUA4NehqEHH_L24dfjdn1xOsFnkmVwNlTklBph8ry_VxEKF85SlElHX4WSMS4mbvlpZDM8ZhXTgvLPFXUKkemw=="
+   },
+   {
+    "title": "close.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5p6KqJ0FCK6hRg02AvqI1wx3XW5v9t6x_ruoqI5CELTEqYrNVyBmdTSwtkKW8_AlCaIqQsbMk_Rrf0Ecnj6Va5mnURnQ1tuCP45nhegawFj_gaBRTbSn4clN3zXeHc97LDQ=="
+   },
+   {
+    "title": "marketbetter.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBxf7DBmOQiagnoqILKe8618U_ziSx6McwcjTcRpjTJpQ6VVTqEgN-bZ1xZUkJCtWaUpaMD1t0lu2VVM7zEWyBmN4tm8iWKKJ6g1NNK9kmoePCjUYyDdZnSKF5yTHfEncq3DMlmwgmPUVqTcWCkw=="
+   },
+   {
+    "title": "zeeg.me",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGx65zCYK2ztgre7UgYQuNK4E5PuROrna5pbNQAEbIBrfdvb2HoNd8RR1uUsJhs8XNQxRqlAU7ZYPnGVgCGqRbMhyvDPLRxDoHRLsaJhPHTOl8eESBwA7X8N7EK3C8y8T-jV_D5Mwma3w=="
+   },
+   {
+    "title": "make.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGOCUKuoddyGsyEaX98cxH7BRLN9LgsVaNBtlFl7-4oF5MqKJtX1Rc0m8H1gaRRS77WHK5BtHIx8yw81YIBOZcbbPs2TVhinzt2bw2NYQnrxEhWaOVMzVc6Q=="
+   },
+   {
+    "title": "mcpbundles.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnKHepIo2XfObrtWpTYb9Sf4lym4vmYGsfhhiD4IOlY4x6c-Ar8wsDXgIYT-h6VK6V9iyT-OOqyCjoZQnJ3tjqhwerejaIIvUPU9FVJQR8_p02FmZeEvZQGzSETK816NCGhWSWPw=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5mnKSSYll3BQGt2zceAajyxrsqzQss423W4cHhXrA5aTYFmH2WKyyNILADoCYSk03sPRflWZu8JJisW8R6vDiM5LXy2OPhzeGM9hgZxbXmisZL-a2WOzw3U6rINXyuJuH2ocpRw=="
+   },
+   {
+    "title": "getknit.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvFGS5wbSpn6saR9c7-db9QeXfUj5_ojjDl7O2DNMIoBVC-ffohOAt_d7Y4AKIOaOuV1Oj8Fd6aJXBdbwV4gKVbnidTHUePLE9ZyXWom75OznJGGLbrDQQS6h2zp6dUHzEvpT9uJW40w__7JkRqRw="
+   },
+   {
+    "title": "connormgrant.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsyMAAmWnEJasM-yUCoiBC8YyBsFLbFCG7yZeogdsCYRN-YHnuvKqwyO01BRgiXyaC3SN0pltu8MptdqUpIxgwNjDPekxBapQ0exJISC9uSNLwySjHU65afOrwZ_yVoHdGHHdLJ89HXUut"
+   },
+   {
+    "title": "close.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQX6xG-xjTbwYoK811I-vljRz1G4MxUYQjEHRwWKE0kGcE9PDxW4d4EGPlIbM6-H04AmijBdk0a_6bzZYefV8Mx1zbEksPZQYRupv7GiSKo5DvGtU6w2-3gh-dRWfJHGVT4n6zGhakO6Bs"
+   },
+   {
+    "title": "close.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnZWQRgAN26fX0B3lA5dpJauHEFGP9oPbpXjk8nc0bZcYwdwuBEIMC4NoDHqN7qFaNGecqJwZtDsjFRymyl4D6isMHvco_7a8ymJgqA-0JypSOED3dmDteRvuQ_ANqsxfIHFAGvqMbd5nqffVHh2ZQD4HOaU6q"
+   }
+  ],
+  "tokens": 7809,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://developer.close.com/",
+    "status": 200,
+    "chars": 3028,
+    "readable": true
+   },
+   {
+    "url": "https://close.com/pricing",
+    "status": 200,
+    "chars": 20348,
+    "readable": true
+   },
+   {
+    "url": "https://developer.close.com/mcp/",
+    "status": 200,
+    "chars": 8833,
+    "readable": true
+   }
+  ],
+  "seconds": 49.2
+ }
+}

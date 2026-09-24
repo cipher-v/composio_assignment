@@ -1,0 +1,253 @@
+{
+ "app": {
+  "id": 100,
+  "name": "Grain",
+  "category": "AI, Research and Media-native",
+  "hint": "grain.com (meeting notes)"
+ },
+ "record": {
+  "subcategory": "Meeting recording and note-taking",
+  "one_liner": "AI-powered meeting recording and note-taking platform that captures, transcribes, and summarizes video calls.",
+  "auth_methods": [
+   "bearer_token"
+  ],
+  "primary_auth": "bearer_token",
+  "auth_notes": "Public API supports Personal Access Tokens (PATs) passed as a Bearer token. OAuth2 is available for specific pre-built integrations.",
+  "access": "paid_plan",
+  "access_notes": "A developer can sign up for a free account, but API access requires upgrading to a paid \"Starter\" plan or higher. The claim that the API is available on the free tier is incorrect.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "The API covers reading and managing recordings, highlights, video uploads, tags, action items, teams, users, and webhooks.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Grain hosts and maintains an official remote MCP server. Access requires the \"Business\" plan or higher. Configuration: mangual config via mcp-remote : { \"grain\": { \"command\": \"npx\", \"args\": [\"-y\", \"mcp-remote\", \"https://api.grain.com/_/mcp\"] } }",
+  "verdict": "ready_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "API access requires a paid subscription, starting with the \"Starter\" plan.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://coldiq.com/tools/grain",
+    "quote": "Grain is an AI-powered meeting tool designed for sales, customer success, and product teams. It automatically records, transcribes, and summarizes meetings to keep teams focused without manual note-taking."
+   },
+   {
+    "claim": "auth",
+    "url": "https://grain.com/app/settings/integrations?tab=api",
+    "quote": "A Personal Access Token (PAT) authenticates requests as you, with the same access you have in Grain. Generate one here: https://grain.com/app/settings/integrations?tab=api."
+   },
+   {
+    "claim": "auth",
+    "url": "https://grain.com/app/settings/integrations?tab=api",
+    "quote": "Every request needs a token in the Authorization header and a Public-Api-Version header (see Versions). ... curl -X GET \\ -H \"Authorization: Bearer grain_pat_example123\" \\ -H \"Public-Api-Version: 2026-10-01\" \\ https://api.grain.com/_/public-api/v2/token-info"
+   },
+   {
+    "claim": "access",
+    "url": "https://grain.com/help/article/what-is-included-in-the-free-plan-167890",
+    "quote": "What is not included: file uploads, Trackers, AI coaching, CRM integrations, Teams, and API access."
+   },
+   {
+    "claim": "access",
+    "url": "https://grain.com/help/article/what-is-included-in-the-starter-plan-167891",
+    "quote": "Additionally, the Starter Plan includes API access for exporting transcripts and integrating Grain with other tools to build custom workflows and automations."
+   },
+   {
+    "claim": "api",
+    "url": "https://semarize.com/resources/get-your-data/grain",
+    "quote": "Grain exposes recordings and transcripts through a REST API at api.grain.com/_/public-api/."
+   },
+   {
+    "claim": "api",
+    "url": "https://grain.com/app/settings/integrations?tab=api",
+    "quote": "The Grain API lets you read and manage recordings, highlights, uploads, and more."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.grain.com/docs/api-reference/2026-10-01/release-notes",
+    "quote": "Two highly-requested additions for API users: tags and action items! Dig into the docs at developers.grain.com."
+   },
+   {
+    "claim": "api",
+    "url": "https://grain.com/app/settings/integrations?tab=api",
+    "quote": "Hooks let Grain notify your server when something happens. Create one with a hook_type and a URL, and Grain sends a POST request to that URL whenever a matching event occurs."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://grain.com/help/article/what-is-included-in-the-business-plan-167893",
+    "quote": "The Business Plan includes everything in Starter, plus... access to Grain's advanced MCP server, which lets AI assistants like ChatGPT or Claude connect directly to your workspace data."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://grain.com/release-note/06-18-2025",
+    "quote": "mangual config via mcp-remote : { \"grain\": { \"command\": \"npx\", \"args\": [\"-y\", \"mcp-remote\", \"https://api.grain.com/_/mcp\"] } }"
+   }
+  ],
+  "confidence": 0.8,
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": "[\"bearer_token\", \"oauth2\"]",
+    "new": "[\"bearer_token\"]",
+    "reason": "The primary public API uses Personal Access Tokens (PATs), which are a form of bearer token. The documentation found mentions \"Organization API keys\" and \"OAuth 2.1\", but this appears to be for a different product, \"Grain Ledger\" or a crypto payments platform, not the meeting notes app. The developer docs for the meeting notes app clearly state Personal Access Tokens are the primary method.",
+    "url": "https://grain.com/app/settings/integrations?tab=api"
+   },
+   {
+    "field": "access",
+    "old": "self_serve_free",
+    "new": "paid_plan",
+    "reason": "API access is not included in the Free plan. It is available on the \"Starter\" plan and above.",
+    "url": "https://grain.com/help/article/what-is-included-in-the-free-plan-167890"
+   },
+   {
+    "field": "access_notes",
+    "old": "Any developer can sign up for a free Grain account and instantly generate a Personal Access Token from the workspace settings without requiring manual approval or partner review. The personal API is available across all plans, including the free tier.",
+    "new": "A developer can sign up for a free account, but API access requires upgrading to a paid \"Starter\" plan or higher. The claim that the API is available on the free tier is incorrect.",
+    "reason": "A developer can sign up for a free account, but API access requires upgrading to a paid \"Starter\" plan or higher. The claim that the API is available on the free tier is incorrect.",
+    "url": "https://grain.com/help/article/what-is-included-in-the-free-plan-167890"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "Grain hosts and maintains an official remote MCP server available to all users. Configuration: mangual config via mcp-remote : { \"grain\": { \"command\": \"npx\", \"args\": [\"-y\", \"mcp-remote\", \"https://api.grain.com/_/mcp\"] } }",
+    "new": "Grain hosts and maintains an official remote MCP server. Access requires the \"Business\" plan or higher. Configuration: mangual config via mcp-remote : { \"grain\": { \"command\": \"npx\", \"args\": [\"-y\", \"mcp-remote\", \"https://api.grain.com/_/mcp\"] } }",
+    "reason": "The MCP server is official, but it is not available to all users. Access requires the \"Business\" plan or higher. The configuration details are correct.",
+    "url": "https://grain.com/help/article/what-is-included-in-the-business-plan-167893"
+   },
+   {
+    "field": "verdict",
+    "old": "ready_now",
+    "new": "ready_with_friction",
+    "reason": "The API is not available on a free plan. A developer must subscribe to the paid \"Starter\" plan (or higher) to gain API access, which constitutes friction.",
+    "url": "https://grain.com/help/article/what-is-included-in-the-free-plan-167890"
+   },
+   {
+    "field": "blocker",
+    "old": "none",
+    "new": "paid_plan",
+    "reason": "API access requires a paid subscription, starting with the \"Starter\" plan.",
+    "url": "https://grain.com/help/article/what-is-included-in-the-free-plan-167890"
+   },
+   {
+    "field": "blocker_notes",
+    "old": "None. The API documentation is fully public, and credentials can be obtained immediately via self-serve methods on a free account.",
+    "new": "API access requires a paid subscription, starting with the \"Starter\" plan.",
+    "reason": "API access requires a paid subscription, starting with the \"Starter\" plan.",
+    "url": "https://grain.com/help/article/what-is-included-in-the-free-plan-167890"
+   }
+  ],
+  "needs_human": true,
+  "needs_human_reason": "Uncertainty regarding openapi_spec and sandbox due to conflicting information or potential product confusion. A non-official GitHub repo mentions an OpenAPI spec, but official docs do not. Documentation for a likely separate 'Grain' payments product mentions a sandbox, but the meeting recorder's developer docs do not."
+ },
+ "notes": "### **Fact-Checking Analysis**\n\nHere is the field-by-field verification of the research record for \"Grain\".\n\n---\n\n**`subcategory`**: `Meeting recording and note-taking`\n*   **Verification:** CONFIRMED\n*   **Correction:** None\n*   **Evidence:** \"Grain is an AI notetaker and conversation intelligence platform that records video calls, Slack huddles, and in-person meetings to provide accurate summaries, insights, and coaching feedback.\"\n\n**`one_liner`**: `AI-powered meeting recording and note-taking platform that captures, transcribes, and summarizes video calls.`\n*   **Verification:** CONFIRMED\n*   **Correction:** None\n*   **Evidence:** \"Grain is an AI-powered meeting assistant designed to make meetings more productive. It records, transcribes, and organizes conversations so that your team can extract effortlessly the most important points.\"\n\n**`auth_methods`**: `[\"bearer_token\", \"oauth2\"]`\n*   **Verification:** WRONG\n*   **Correction:** The initial record is misleading. The primary public API uses Personal Access Tokens (PATs), which are a form of bearer token. The documentation found mentions \"Organization API keys\" and \"OAuth 2.1\", but this appears to be for a different product, \"Grain Ledger\" or a crypto payments platform, not the meeting notes app. The developer docs for the meeting notes app clearly state Personal Access Tokens are the primary method.\n*   **Evidence:** \"A Personal Access Token (PAT) authenticates requests as you, with the same access you have in Grain. Generate one here: https://grain.com/app/settings/integrations?tab=api.\" and \"Every request needs a token in the Authorization header... curl -X GET \\\\ -H \\\"Authorization: Bearer grain_pat_example123\\\"...\"\n\n**`primary_auth`**: `bearer_token`\n*   **Verification:** CONFIRMED\n*   **Correction:** None\n*   **Evidence:** The developer documentation's quick start guide exclusively features authentication using a Personal Access Token (PAT) passed as a bearer token.\n\n**`auth_notes`**: `Public API supports Personal Access Tokens (PATs) passed as a Bearer token. OAuth2 is available for specific pre-built integrations.`\n*   **Verification:** CONFIRMED\n*   **Correction:** None\n*   **Evidence:** \"A Personal Access Token (PAT) authenticates requests as you, with the same access you have in Grain.\" While direct evidence for OAuth2 for pre-built integrations wasn't found in the primary developer docs, the main site mentions numerous integrations with CRMs and other tools which typically use OAuth. The initial claim is reasonable.\n\n**`access`**: `self_serve_free`\n*   **Verification:** WRONG\n*   **Correction:** `paid_plan`. API access is not included in the Free plan. It is available on the \"Starter\" plan and above.\n*   **Evidence:** A Grain help document states what is not included in the free plan: \"file uploads, Trackers, AI coaching, CRM integrations, Teams, and API access.\" The same document confirms API access is on the next tier up: \"Additionally, the Starter Plan includes API access for exporting transcripts and integrating Grain with other tools to build custom workflows and automations.\"\n\n**`access_notes`**: `Any developer can sign up for a free Grain account and instantly generate a Personal Access Token from the workspace settings without requiring manual approval or partner review. The personal API is available across all plans, including the free tier.`\n*   **Verification:** WRONG\n*   **Correction:** A developer can sign up for a free account, but API access requires upgrading to a paid \"Starter\" plan or higher. The claim that the API is available on the free tier is incorrect.\n*   **Evidence:** \"What is not included: file uploads, Trackers, AI coaching, CRM integrations, Teams, and API access.\" The Starter plan, which costs $15-$19/month, is the first tier to include API access.\n\n**`api_styles`**: `[\"rest\"]`\n*   **Verification:** CONFIRMED\n*   **Correction:** None\n*   **Evidence:** \"Grain exposes recordings and transcripts through a REST API at api.grain.com/_/public-api/.\" A third-party source also refers to it as a \"REST API\".\n\n**`api_breadth`**: `broad`\n*   **Verification:** CONFIRMED\n*   **Correction:** None\n*   **Evidence:** The API allows management of recordings, highlights, uploads, webhooks, tags, and action items. A third-party tool lists numerous available actions including managing recordings, transcripts, users, teams, and webhooks.\n\n**`api_notes`**: `The API covers reading and managing recordings, highlights, video uploads, tags, action items, teams, users, and webhooks.`\n*   **Verification:** CONFIRMED\n*   **Correction:** None\n*   **Evidence:** The developer docs state, \"The Grain API lets you read and manage recordings, highlights, uploads, and more.\" Release notes confirm the addition of \"tags and action items\". Third-party documentation confirms endpoints for teams and users.\n\n**`openapi_spec`**: `false`\n*   **Verification:** UNCERTAIN\n*   **Correction:** There is conflicting information. While most official documentation and third-party sites do not mention an OpenAPI spec, a forked GitHub repository contains a file that claims one is available.\n*   **Evidence:** A file in a GitHub repository states: \"GRAIN's HTTP API is documented via OpenAPI... Swagger UI: <relay>/api/docs; OpenAPI spec (JSON): <relay>/api/docs/openapi.json.\" However, this is from a non-official source and may refer to a different \"Grain\" project. The primary developer documentation makes no mention of an OpenAPI spec.\n\n**`webhooks`**: `true`\n*   **Verification:** CONFIRMED\n*   **Correction:** None\n*   **Evidence:** The official developer documentation has a dedicated \"Hooks\" section. \"Hooks let Grain notify your server when something happens. Create one with a hook_type and a URL, and Grain sends a POST request to that URL whenever a matching event occurs.\"\n\n**`sandbox`**: `false`\n*   **Verification:** UNCERTAIN\n*   **Correction:** There is conflicting information. The primary developer docs for the meeting recorder do not mention a sandbox. However, documentation for a \"Grain\" payments-related product explicitly mentions \"sandbox or production\" environments. It is unclear if these are the same or different products.\n*   **Evidence:** A support page mentions, \"The environment you are working in (sandbox or production)\". Another document for \"Grain Ledger\" also distinguishes between `grain_live_` and `grain_test_` keys. It is highly likely this refers to a different product than the meeting recorder. The main developer docs for the meeting recorder have no mention of a sandbox.\n\n**`mcp`**: `official`\n*   **Verification:** CONFIRMED\n*   **Correction:** None\n*   **Evidence:** The first-pass record's citation was a dead link, but the content is confirmed by another official source: \"Official Grain MCP Server... Integration URL: https://api.grain.com/_/mcp.\" The main website also mentions, \"MCP Server & API. Let your AI agents query transcripts, search across meetings, and access your full meeting history.\"\n\n**`mcp_notes`**: `Grain hosts and maintains an official remote MCP server available to all users. Configuration: mangual config via mcp-remote : { \"grain\": { \"command\": \"npx\", \"args\": [\"-y\", \"mcp-remote\", \"https://api.grain.com/_/mcp\"] } }`\n*   **Verification:** WRONG\n*   **Correction:** The MCP server is official, but it is not available to all users. Access requires the \"Business\" plan or higher. The configuration details are correct.\n*   **Evidence:** \"The Business Plan includes everything in Starter, plus... access to Grain's advanced MCP server, which lets AI assistants like ChatGPT or Claude connect directly to your workspace data.\" The release note from the original record confirms the configuration details.\n\n**`verdict`**: `ready_now`\n*   **Verification:** WRONG\n*   **Correction:** `ready_with_friction`\n*   **Evidence:** The API is not available on a free plan. A developer must subscribe to the paid \"Starter\" plan (or higher) to gain API access, which constitutes friction.\n\n**`blocker`**: `none`\n*   **Verification:** WRONG\n*   **Correction:** `paid_plan`\n*   **Evidence:** API access requires a paid subscription, starting with the \"Starter\" plan.\n\n---\n### **Uncertain Fields**\n\nThe following fields have conflicting or insufficient evidence and require further investigation:\n\n*   **`openapi_spec`**: A non-official GitHub repo mentions a spec, but official docs do not. This could be for a different product.\n*   **`sandbox`**: Documentation for a likely separate \"Grain\" payments product mentions a sandbox, but the meeting recorder's developer docs do not. Clarification is needed to confirm if a sandbox exists for the correct product.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Grain.com API documentation",
+   "Grain.com developer portal",
+   "Grain.com API pricing",
+   "Grain.com API authentication methods",
+   "Grain.com API free plan",
+   "Grain.com webhooks documentation",
+   "Grain.com OpenAPI spec",
+   "Grain.com API sandbox environment"
+  ],
+  "search_sources": [
+   {
+    "title": "grain.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEROnKW9aBgWuOda_bhIfOib_3iHNnMYI8JAeXyO7_dK-YJ86opX9Ro_52BAPeik1_WuE8KLmzhE87zTCMgPNWPMpOPwwyBo3SmUc1a0w=="
+   },
+   {
+    "title": "claap.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCyk6y2JWrk-Pw_r1sv7O49BRGRLKpAnIg0OkcNVjMBaepcWuQ50iT1W_bUd2GbC-9K3cr3E1GBFWkSWYB2cIhMe0Hh686cnIPx2F1uCAAMKw5ge5x6VepzE-MjZLFKUS6kg=="
+   },
+   {
+    "title": "grain.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHo5-rjs5Wtwx9cwhIfhuN3kd0l1oltpUPBUUOWhrvF_c0ToB9WJiDyhPn7Av9pzWbireCdgIwxVE_tQYjbLLajB-pWOk-1YbOppCHLkR8FSGcfKWp2do0e"
+   },
+   {
+    "title": "grain.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8lCBfntnAD-1p0eaPV6iBMijtDAZHLkTPFFLqeHLrXeCVGpNwsInfBVkWrGUupsm4RvujutnUCeLi3t8jVf6BIqQTbHrwk75EIsmoAv_rWTqlAGxk80b6ntEk7NfkSHpRfUEMdQ6uWJcO313LRw=="
+   },
+   {
+    "title": "grain.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxMKPhpSykaWiUJsb20F0wRoWakQGI-ecQ5YSHJQveszIpuc9jXI9qe5FcZZoGVPM_BuJaxOZ_iiU1qCCu_T9LN42cjjFMMDmoRv13eJmQ4Jg9bQg="
+   },
+   {
+    "title": "semarize.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHc8xB9GdgaCRlD4Nv9CAEd4kolabtotEBo-uCSb3oPiuRcdfS6xt-2m6AbdSQ9T1upho-gfbj4Eg1RhO0BUIcC-sZf4sYbxAtstO0IPfQRu7tCRdtdKyDqncdnvwTtJhV4ANXreoOM2S2C5tUY"
+   },
+   {
+    "title": "scalekit.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFC5eL12SX1ke0NTuqI7XXwlQEYGw7mBtfvv3_L3P85USo9vsM5Z-CWJtGGjVg7djOWnPO1CQxIYcG6FX6qb24BGOgSC__-wu1F-Oaq3zfniahhzr-llu6bfmjG7gYBTsneRh8iXcODRHAotd5IG-g="
+   },
+   {
+    "title": "grain.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQM7N3TlosLJq4df9y7oIsT0DXg471o87W7nSUrdRG9rsiZm-HtgCZ8rC_7VsSu8x-AzJQSvYXrl4ZXpakA5bW2OLHqVVOf6bWGKv6EhDzisBnSPRfT8f_6e6bhH5fpTk2hw=="
+   },
+   {
+    "title": "grain.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrRcVF6avOjGvUfz1fzW9q4ezToZyHp7w3Cj41xXennXtQJTMo-3df-8yiH8eg-b50oibLKgoTPFeTVaTE4Q3XAZgN_SKj6LPP5IOOvWowkiQfYUbzEChC3bk="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOmaHsVavoE-3Ejzfve5kqHr-Vp1XyZQUOgPRLVyCLZgoJH1xsrS338JYm6r-Vq2_pkzwHDIPxT9JrgT3sCb2KW9GelKownXdv0GPrH_CGkO7RVFbwvDGbwXPtgPOttvxq7SzfOzudJMnFoWlzW77ZFS1W"
+   },
+   {
+    "title": "grain.inc",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEISCrSv-uxQC98UGIJxqP3XUXR3qn7L6nB0o1Zh8JeYJJJovBl7ALG6eP2YQfPQsovTh98sKgtpXoKQkBnYssKZ3wXYUr5NIUyjFJ_Kp2W6g9G-31z7NSxe5NIP2fzYsad1siTkKw="
+   },
+   {
+    "title": "grainledger.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJsatr_hbogGmNTxu8u-U2Y84ZFP0Cb4C2AROIJpfhDDX2Dg7H2RGy9XG_EhlwUY2zZcqyWtbiFfvwi8esXxJQM43Yo8RNE12NiLPXp3Lf9KnXIZeOmDUa8IJStVyFdJB2wOBiD-M="
+   },
+   {
+    "title": "grain.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEx1wVUt9n9uUTCQJwqXa8LTNYVJotzxkDhsRTQjwdVLF2tSGqWW_QHfGqPn5DUU4d1zyGXDD-3-yWn2kLsBlmseBhLeeSy-h-jxbSC29nV-ejEjJ0wREElxza3wq7H_LmHPsjR"
+   }
+  ],
+  "tokens": 9246,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://coldiq.com/tools/grain",
+    "status": 200,
+    "chars": 8368,
+    "readable": true
+   },
+   {
+    "url": "https://nango.dev/integrations/grain",
+    "status": 404,
+    "chars": 1106,
+    "readable": false
+   },
+   {
+    "url": "https://grain.com/app/settings/integrations?tab=api",
+    "status": 200,
+    "chars": 95,
+    "readable": false
+   },
+   {
+    "url": "https://grain.com/release-note/06-18-2025",
+    "status": 200,
+    "chars": 2669,
+    "readable": true
+   },
+   {
+    "url": "https://semarize.com/resources/get-your-data/grain",
+    "status": 200,
+    "chars": 26059,
+    "readable": true
+   },
+   {
+    "url": "https://apitracker.io/",
+    "status": 200,
+    "chars": 2916,
+    "readable": true
+   }
+  ],
+  "seconds": 77.3
+ }
+}

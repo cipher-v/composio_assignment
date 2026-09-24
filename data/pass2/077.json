@@ -1,0 +1,264 @@
+{
+ "app": {
+  "id": 77,
+  "name": "ClickUp",
+  "category": "Productivity and Project Management",
+  "hint": "clickup.com/api"
+ },
+ "record": {
+  "subcategory": "Project Management",
+  "one_liner": "ClickUp is an all-in-one productivity platform that combines task management, docs, goals, and more in a single workspace, eliminating the need for multiple tools.",
+  "auth_methods": [
+   "bearer_token",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Personal API Tokens for personal use; OAuth 2.0 for multi-tenant integrations.",
+  "access": "self_serve_free",
+  "access_notes": "API is free and available on all ClickUp plans, including Free Forever. Workspace owners/admins can instantly create OAuth apps to get Client ID and Client Secret.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API (v2 transitioning to v3) covering tasks, checklists, comments, chat, views, webhooks, custom task types, time tracking, user groups, folders, spaces, and workspaces.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "ClickUp hosts an official MCP server (public beta) at https://mcp.clickup.com/mcp.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "none",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://clickup.com/features",
+    "quote": "ClickUp is an all-in-one productivity platform that combines task management, docs, goals, and more in a single workspace, eliminating the need for multiple tools."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developer.clickup.com/docs/Getting%20Started",
+    "quote": "For personal use, authenticate with your personal api token . for apps or integrations that other people use, use the oauth flow , allowing users to authorize workspaces for your app."
+   },
+   {
+    "claim": "auth",
+    "url": "https://help.clickup.com/hc/en-us/articles/6303422883095-Create-your-own-app-with-the-ClickUp-API",
+    "quote": "when you want to develop an application that others can use, you must use an oauth2 authentication flow. with oauth 2, everyone who uses your app gets assigned an individualized token."
+   },
+   {
+    "claim": "access",
+    "url": "https://help.clickup.com/hc/en-us/articles/6303422883095-Create-your-own-app-with-the-ClickUp-API",
+    "quote": "the clickup api is available on all clickup plans . workspace owners or admins can manage integration settings and create oauth apps in the workspace."
+   },
+   {
+    "claim": "access",
+    "url": "https://help.clickup.com/hc/en-us/articles/6303422883095-Create-your-own-app-with-the-ClickUp-API",
+    "quote": "on the next screen, you'll see that a client id and client secret have been generated. use the client id and client secret in your app to create an oauth 2 authentication flow."
+   },
+   {
+    "claim": "access",
+    "url": "https://clickup.com/pricing",
+    "quote": "Is the Free Forever Plan really free? For sure! This is so much more than a trial."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.clickup.com/docs/Getting%20Started",
+    "quote": "build your own custom integrations and clickup apps with our public application programming interface (api)."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.clickup.com/docs/Getting%20Started",
+    "quote": "in the api reference section you will find a few individual endpoints that are defined as api v3. we're working on updating the rest of the api to v3 and provide a dedicated guide for api v3."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.clickup.com/",
+    "quote": "api browse our public api specification."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.clickup.com/",
+    "quote": "webhooks trigger workflows from clickup events."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.clickup.com/reference/getaccesstoken",
+    "quote": "get webhooks get create webhook post update webhook put delete webhook del"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://developer.clickup.com/mcp/clickups-mcp-server",
+    "quote": "Learn about ClickUp's MCP Server so you can use your AI assistant with ClickUp!"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://clickup.com/blog/mcp-tools",
+    "quote": "ClickUp MCP servers allow you to connect workspace data to external tools/LLM agents via the MCP standard."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://developer.clickup.com/mcp/clickups-mcp-server",
+    "quote": "Our MCP server URL is https://mcp.clickup.com/mcp ."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://developer.clickup.com/mcp/clickups-mcp-server",
+    "quote": "Public Beta: ClickUp's MCP server is currently in public beta, and we're actively seeking feedback here."
+   },
+   {
+    "claim": "api",
+    "url": "https://www.apis.io/provider/clickup",
+    "quote": "It ships a public REST API in two concurrent versions: v2...and v3..."
+   },
+   {
+    "claim": "api",
+    "url": "https://www.apis.io/provider/clickup",
+    "quote": "...v2 (138 operations, the broad surface) and v3 (35 operations, Chat, Docs, attachments, audit logs and ACLs)..."
+   },
+   {
+    "claim": "api",
+    "url": "https://www.apis.io/provider/clickup",
+    "quote": "ClickUp does not offer a native public GraphQL API. The platform exposes its functionality exclusively through a REST API (v2)..."
+   },
+   {
+    "claim": "access",
+    "url": "https://developer.clickup.com/docs/api-availability-by-plan",
+    "quote": "Our Public API is available on all ClickUp Plans ."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.reddit.com/r/clickup/comments/1ap2y1r/api_subscription/",
+    "quote": "If you'd like to use API with ClickUp, then you can use API on any plan."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.reddit.com/r/clickup/comments/1ap2y1r/api_subscription/",
+    "quote": "On the Free Forever Plan, Unlimited Plan, and Business Plan there is a limitation of 100 calls per minute."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "one_liner",
+    "old": "ClickUp is an all-in-one productivity and project management platform designed to centralize tasks, documents, goals, chat, and time tracking.",
+    "new": "ClickUp is an all-in-one productivity platform that combines task management, docs, goals, and more in a single workspace, eliminating the need for multiple tools.",
+    "reason": "The original quote was from a non-vendor source. A more concise and official description is available from the vendor's website.",
+    "url": "https://clickup.com/features"
+   },
+   {
+    "field": "sandbox",
+    "old": "true",
+    "new": "false",
+    "reason": "ClickUp does not provide a dedicated sandbox environment. Developers are advised to create a separate free workspace for testing, which is not a technically distinct sandbox system.",
+    "url": "https://www.apis.io/provider/clickup"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### **Fact-Checking Analysis**\n\nHere is the field-by-field verification of the initial record for ClickUp.\n\n---\n\n**`subcategory`**: **CONFIRMED**\n*   **Original:** Project Management\n*   **Verification:** ClickUp is widely described as a project management and productivity platform. Sources refer to it as a \"project management software company\", a \"cloud-based project management and work management platform\", and its API is tagged with \"Project Management\".\n*   **Evidence:**\n    *   `https://en.wikipedia.org/wiki/ClickUp`: \"ClickUp is a project management software company that provides an all-in-one platform to improve workplace efficiency and collaboration.\"\n    *   `https://everhour.com/blog/what-is-clickup`: \"ClickUp is a cloud-based project management and work management platform designed to help teams plan, organize, and track their work in one place.\"\n    *   `https://www.apis.io/provider/clickup`: \"Tagged areas include Project Management, Work Management, Productivity, Collaboration, and Task.\"\n\n**`one_liner`**: **WRONG**\n*   **Original:** ClickUp is an all-in-one productivity and project management platform designed to centralize tasks, documents, goals, chat, and time tracking.\n*   **Correction:** The original quote was from a non-vendor source. A more concise and official description is: \"ClickUp is an all-in-one productivity platform that combines task management, docs, goals, and more in a single workspace, eliminating the need for multiple tools.\"\n*   **Evidence:**\n    *   `https://clickup.com/features`: \"ClickUp is an all-in-one productivity platform that combines task management, docs, goals, and more in a single workspace, eliminating the need for multiple tools.\"\n\n**`auth_methods`**: **CONFIRMED**\n*   **Original:** `[\"bearer_token\", \"oauth2\"]`\n*   **Verification:** The documentation confirms two primary authentication methods: a personal API token (which functions as a bearer token) for individual use and OAuth 2.0 for applications used by others.\n*   **Evidence:**\n    *   `https://developer.clickup.com/docs/Getting%20Started`: \"For personal use, authenticate with your personal api token . for apps or integrations that other people use, use the oauth flow , allowing users to authorize workspaces for your app.\"\n    *   `https://www.apis.io/provider/clickup`: \"Authentication is a single Authorization header carrying either a personal token or an OAuth 2.0 access token authorized per Workspace...\"\n\n**`primary_auth`**: **CONFIRMED**\n*   **Original:** `oauth2`\n*   **Verification:** The documentation explicitly states that for multi-tenant applications or integrations used by others, the OAuth flow is the required method. This aligns with the definition of `primary_auth`.\n*   **Evidence:**\n    *   `https://developer.clickup.com/docs/Getting%20Started`: \"...for apps or integrations that other people use, use the oauth flow , allowing users to authorize workspaces for your app.\"\n    *   `https://help.clickup.com/hc/en-us/articles/6303422883095-Create-your-own-app-with-the-ClickUp-API`: \"when you want to develop an application that others can use, you must use an oauth2 authentication flow.\"\n\n**`auth_notes`**: **CONFIRMED**\n*   **Original:** Personal API Tokens for personal use; OAuth 2.0 for multi-tenant integrations.\n*   **Verification:** The notes accurately reflect the guidance provided in the developer documentation.\n*   **Evidence:**\n    *   `https://developer.clickup.com/docs/Getting%20Started`: \"For personal use, authenticate with your personal api token . for apps or integrations that other people use, use the oauth flow , allowing users to authorize workspaces for your app.\"\n\n**`access`**: **CONFIRMED**\n*   **Original:** `self_serve_free`\n*   **Verification:** ClickUp offers a \"Free Forever\" plan. The API is available on all plans, including the free one. A developer can sign up for a free account and generate API credentials without payment or manual approval.\n*   **Evidence:**\n    *   `https://clickup.com/pricing`: \"Is the Free Forever Plan really free? For sure! This is so much more than a trial.\"\n    *   `https://developer.clickup.com/docs/api-availability-by-plan`: \"Our Public API is available on all ClickUp Plans .\"\n    *   `https://www.reddit.com/r/clickup/comments/1ap2y1r/api_subscription/`: A ClickUp community manager confirms, \"If you'd like to use API with ClickUp, then you can use API on any plan.\"\n\n**`access_notes`**: **CONFIRMED**\n*   **Original:** API is free and available on all ClickUp plans, including Free Forever. Workspace owners/admins can instantly create OAuth apps to get Client ID and Client Secret.\n*   **Verification:** The notes are accurate. The API is available on the Free Forever plan, although with lower rate limits. Workspace owners or admins can create OAuth apps in the settings.\n*   **Evidence:**\n    *   `https://help.clickup.com/hc/en-us/articles/6303422883095-Create-your-own-app-with-the-ClickUp-API`: \"the clickup api is available on all clickup plans . workspace owners or admins can manage integration settings and create oauth apps in the workspace.\"\n    *   `https://www.reddit.com/r/clickup/comments/1ap2y1r/api_subscription/`: \"On the Free Forever Plan, Unlimited Plan, and Business Plan there is a limitation of 100 calls per minute.\"\n\n**`api_styles`**: **CONFIRMED**\n*   **Original:** `[\"rest\"]`\n*   **Verification:** The documentation consistently refers to the API as a REST API. There is no mention of a public GraphQL API.\n*   **Evidence:**\n    *   `https://www.apis.io/provider/clickup`: \"It ships a public REST API in two concurrent versions: v2...and v3...\"\n    *   `https://www.apis.io/provider/clickup`: \"ClickUp does not offer a native public GraphQL API. The platform exposes its functionality exclusively through a REST API (v2)...\"\n\n**`api_breadth`**: **CONFIRMED**\n*   **Original:** `broad`\n*   **Verification:** The API covers a wide range of platform features including tasks, comments, chat, views, webhooks, time tracking, user groups, folders, spaces, and more, justifying the \"broad\" classification.\n*   **Evidence:**\n    *   `https://www.apis.io/provider/clickup`: \"It ships a public REST API in two concurrent versions: v2 (138 operations, the broad surface) and v3 (35 operations, Chat, Docs, attachments, audit logs and ACLs)...\"\n\n**`api_notes`**: **CONFIRMED**\n*   **Original:** REST API (v2 transitioning to v3) covering tasks, checklists, comments, chat, views, webhooks, custom task types, time tracking, user groups, folders, spaces, and workspaces.\n*   **Verification:** The notes accurately describe the API's state and scope. The developer docs mention the v2/v3 transition, and the API reference and other sources confirm the extensive feature coverage.\n*   **Evidence:**\n    *   `https://developer.clickup.com/docs/Getting%20Started`: \"in the api reference section you will find a few individual endpoints that are defined as api v3. we're working on updating the rest of the api to v3...\"\n    *   `https://www.apis.io/provider/clickup`: \"...v2 (138 operations, the broad surface) and v3 (35 operations, Chat, Docs, attachments, audit logs and ACLs)...\"\n\n**`openapi_spec`**: **CONFIRMED**\n*   **Original:** `true`\n*   **Verification:** The developer portal explicitly mentions and links to their OpenAPI specification.\n*   **Evidence:**\n    *   `https://developer.clickup.com/`: \"api browse our public api specification.\"\n    *   `https://developer.clickup.com/docs/Getting%20Started`: \"openapi specification\"\n\n**`webhooks`**: **CONFIRMED**\n*   **Original:** `true`\n*   **Verification:** The developer portal homepage and API reference both confirm the availability of webhooks.\n*   **Evidence:**\n    *   `https://developer.clickup.com/`: \"webhooks trigger workflows from clickup events.\"\n    *   `https://developer.clickup.com/reference/getaccesstoken`: \"get webhooks get create webhook post update webhook put delete webhook del\"\n\n**`sandbox`**: **WRONG**\n*   **Original:** `true`\n*   **Correction:** `false`. ClickUp does not provide a dedicated sandbox environment. Developers are advised to create a separate free workspace for testing. While some articles refer to a \"test or sandbox account,\" they mean creating a regular account for testing purposes, not a technically distinct sandbox system.\n*   **Evidence:**\n    *   `https://www.apis.io/provider/clickup`: \"There is no sandbox, no idempotency mechanism and no published deprecation policy.\"\n    *   `https://endgrate.com/blog/using-the-clickup-api-to-create-task-with-php-examples`: \"Before diving into the ClickUp API integration, it's essential to set up a test or sandbox account. This will allow you to experiment with API calls without affecting your live data.\" This refers to creating a test workspace, not a vendor-provided sandbox.\n\n**`mcp`**: **CONFIRMED**\n*   **Original:** `official`\n*   **Verification:** ClickUp's own developer documentation confirms they host an official MCP server.\n*   **Evidence:**\n    *   `https://developer.clickup.com/mcp/clickups-mcp-server`: \"Learn about ClickUp's MCP Server so you can use your AI assistant with ClickUp!\"\n    *   `https://clickup.com/blog/mcp-tools`: \"ClickUp MCP servers allow you to connect workspace data to external tools/LLM agents via the MCP standard.\"\n\n**`mcp_notes`**: **CONFIRMED**\n*   **Original:** ClickUp hosts an official MCP server (public beta) at https://mcp.clickup.com/mcp.\n*   **Verification:** The documentation confirms the URL and that the server is in public beta.\n*   **Evidence:**\n    *   `https://developer.clickup.com/mcp/clickups-mcp-server`: \"Our MCP server URL is https://mcp.clickup.com/mcp .\"\n    *   `https://developer.clickup.com/mcp/clickups-mcp-server`: \"Public Beta: ClickUp's MCP server is currently in public beta, and we're actively seeking feedback here.\"\n\n**`verdict`**: **CONFIRMED**\n*   **Original:** `ready_now`\n*   **Verification:** With self-serve free access to API credentials and public documentation, a developer can start building immediately.\n*   **Evidence:** Based on the confirmed `self_serve_free` access and available documentation.\n\n**`blocker`**: **CONFIRMED**\n*   **Original:** `none`\n*   **Verification:** There are no significant blockers to getting started, aligning with the `ready_now` verdict.\n*   **Evidence:** Based on the confirmed `self_serve_free` access.\n\n---\n### **Uncertain Fields**\n\nAll fields were successfully verified. No items require further human review.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "ClickUp API access free plan",
+   "ClickUp pricing plans",
+   "ClickUp API sandbox environment",
+   "ClickUp MCP server documentation",
+   "ClickUp official description"
+  ],
+  "search_sources": [
+   {
+    "title": "wikipedia.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFL_n3qr1ChXPpQqR7cOUSqGx-9cdQaNTlCN1kXGhnVfW9SXJ42faKqKj525EBsu4y_iV1yaeYxNX3ag8z7OcVbLSJusXxfn8DD_Njgax4RIcF3oxF0OsKOuZh2WIAaZg=="
+   },
+   {
+    "title": "everhour.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjpfoGYQ6RpKdKtE_5RpEpaR8P5_tvbJI5_7NRZ7V6XfTNzDhEv-8kAGQRSBM_Nx5UCiIaH05DQXJKj83AmMqzI7KLhzHRB3nVYj5lHLxNV05SrxyQd2JWHWYrLvm5AaRkrm0N"
+   },
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-KLNwRoSaM9c9BasQMp6pJ7d73gK2ftzTP7sbLHIr1htyRS5R4SmpfOFyHVcc1Ux37S7qzB1qlbH66xYyQV8Yf6V-7vhU8CCN5lmyQcadeTYKsqFcTtILPiPyMA=="
+   },
+   {
+    "title": "clickup.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyEDyu8fp9oVpjAzBZ-hllG8gOD2O0IBYl1XvPJxpS7hKsA8BLOfQjFQbu8ZE0wpDp3QpX6c6zAkoo0ofmyo72WtCHmGobUsYys8RrZUZc7as0stdsrg=="
+   },
+   {
+    "title": "clickup.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0q1KSJ9Rsi8zbrFw8ql4LfLdB29Civmr1bcIysmEBP0pLZPA6O0xls1y5-FFKl96ZmpzK32vKCRoyuYCyZIa1KHNaG4MXFEO4cx71H2_AkdqBIMAQ"
+   },
+   {
+    "title": "clickup.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcPmoIyHRv6_5m5zHaXE5sdc7N-MR3hWwnlQrk3ZXLkjjUR4jPAvqXoQnNTlC_rKpA-MMEEoSEB3qvZCOYFtW9545MsU9kKFBZIiVTWXRZvDjrI0bBQsDiEvB5-YG8FxL0CQ1d8MtCeavP1lgZ1trFpb_hTvvaQt74Oq-p_kX72Wovlbw="
+   },
+   {
+    "title": "reddit.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwVP9j1cDFMK3zbnbb5KmDXZJ3e5q9nJrfSs7xYRCNEdmxGSZWkDuujUqjxB7mQH00jkOPZVKKwjlYkCeelKQcojRn7vgGSRIHO4cR-pdkjpqgYIQNiXgB-axVtIwa1LrXNjo_7xyJkvfoKjrFUbe8bhB85ywYKG-ZPKke3A=="
+   },
+   {
+    "title": "clickup.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqXBkuqFFo4axdOO6_HiB1bqyWUN2Koj1vFUksIfUAJH9CDGgcfVfbSHHzlySTA1_EkIYCjBcrKkTz--lxWsY74P-zb8lcNRVhJ3OiNq6u_MbESxS60KSOSw5bCmLAcYwqA0CCVrkg_QqEPJ5_gn5-8kTx"
+   },
+   {
+    "title": "endgrate.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEK50nyk2P3rdx46J60iUzDTq-2oMofxHSePmfgQe5ZWZ2_c7meoT9f00ibZAAWszaHYDm5udBuYToDNykF5o72vkNGMDnON03VjHZfJD_9W97vMcWMB2RTmZGOQCgTmULpnkoF0YZ0Ivf_GbQs86hx2XBB-nbMcs1EP04yfRWEiIYK1eIjis_F2pkTPg=="
+   },
+   {
+    "title": "clickup.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGP_AYhWfaMd9zIxIsuhNlef_N0k1w_PFSwpaIUwnPDoVXxOEDZyw0K6ud2phcm3r8DWckn-VenR19JzBI72dPoItmIQSQ2CYhLJGpmykclun6y3lZJHem1kWT4jwYsvJHgswhbUQxSMwkPEsZXcNnL4LsayilNJ0omrvRKGYIjBzbN6bDF1Idba76R"
+   },
+   {
+    "title": "clickup.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeUycDVw0Ur2yK-fIRZuza9ixt_7M_N_6s8hmwyLWp-4RJEmPXjH0OrvQLijEKJpkRNguEfUtYR_wpVJREkzkZuNxTD9o9r5MnUkK-jc6I0pB6z440NmrOspR9rfU="
+   }
+  ],
+  "tokens": 10429,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://www.eesel.ai/blog/clickup-pricing-2026",
+    "status": 200,
+    "chars": 3956,
+    "readable": true
+   },
+   {
+    "url": "https://developer.clickup.com/docs/Getting%20Started",
+    "status": 200,
+    "chars": 2983,
+    "readable": true
+   },
+   {
+    "url": "https://help.clickup.com/hc/en-us/articles/6303422883095-Create-your-own-app-with-the-ClickUp-API",
+    "status": 200,
+    "chars": 3608,
+    "readable": true
+   },
+   {
+    "url": "https://www.scalekit.com/blog/clickup-mcp-server-vs-rest-api",
+    "status": 404,
+    "chars": 89,
+    "readable": false
+   },
+   {
+    "url": "https://developer.clickup.com/",
+    "status": 200,
+    "chars": 838,
+    "readable": true
+   },
+   {
+    "url": "https://developer.clickup.com/reference/getaccesstoken",
+    "status": 200,
+    "chars": 6118,
+    "readable": true
+   },
+   {
+    "url": "https://clickup.com/mcp",
+    "status": 403,
+    "chars": 1434,
+    "readable": false
+   }
+  ],
+  "seconds": 50.6
+ }
+}

@@ -1,0 +1,216 @@
+{
+ "app": {
+  "id": 50,
+  "name": "fanbasis",
+  "category": "Ecommerce",
+  "hint": "fanbasis.com"
+ },
+ "record": {
+  "subcategory": "E-commerce / Payments",
+  "one_liner": "Commas is an all-in-one e-commerce and payments platform for online sellers, integrating checkout, marketing, courses, and affiliate programs.",
+  "auth_methods": [
+   "api_key"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "API key passed via the 'x-api-key' HTTP header.",
+  "access": "self_serve_free",
+  "access_notes": "Account creation is self-serve and free. Production and sandbox API keys can be generated from the user dashboard. The platform uses a transaction-based fee model, though specific pricing is not publicly listed.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API with comprehensive coverage of core platform resources including checkout sessions, webhooks, customers, and subscriptions. Uses conventional HTTP methods, standard status codes, and JSON payloads. The documentation specifies a production base URL of https://www.fanbasis.com and a sandbox base URL of https://qa.dev-fan-basis.com.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Official MCP implementation is available through the 'commas-cli' tool. The homepage mentions an 'MCP beta' to 'run commas from your ai assistant'. The claim about a Zapier MCP is unsubstantiated.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://commas.com/fanbasis-is-now-commas",
+    "quote": "on july 14, 2026, fanbasis became commas . the name changed. the company did not."
+   },
+   {
+    "claim": "general",
+    "url": "https://commas.com/",
+    "quote": "one place to create, sell, and get paid, with payments built in. from your first dollar to your next comma. get started overview everything you need to make money online. what used to take seven apps and a developer now takes one commas account."
+   },
+   {
+    "claim": "general",
+    "url": "https://commasdocs.com/",
+    "quote": "Commas is an all-in-one payments and business platform for online sellers, rebranded from FanBasis in July 2026, combining checkout, funnels, courses, communities, and affiliate programs with a multi-processor payment engine."
+   },
+   {
+    "claim": "auth",
+    "url": "https://commasdocs.com/",
+    "quote": "headers = {\"x-api-key\": \"YOUR_API_KEY\"}"
+   },
+   {
+    "claim": "access",
+    "url": "https://commasdocs.com/",
+    "quote": "Anyone can now create a free account at commas.com and sell on the same infrastructure that runs businesses at nine-figure scale."
+   },
+   {
+    "claim": "access",
+    "url": "https://commasdocs.com/",
+    "quote": "Create and copy keys in your dashboard under Account → API Keys (CLI: commas keys add sandbox )."
+   },
+   {
+    "claim": "api",
+    "url": "https://commasdocs.com/",
+    "quote": "Complete API reference for the Commas API. Checkout sessions, webhooks, customers, subscriptions, discount codes, and more."
+   },
+   {
+    "claim": "api",
+    "url": "https://commasdocs.com/",
+    "quote": "Commas gives you two environments: one for live payments, and one for testing. Both work identically — the only difference is which API key you use. Production. Use your live API key... Base URL: https://www.fanbasis.com. Sandbox. Use your test API key... Base URL: https://qa.dev-fan-basis.com."
+   },
+   {
+    "claim": "api",
+    "url": "https://commasdocs.com/",
+    "quote": "All webhook requests are signed using HMAC-SHA256 to guarantee payload authenticity. The signature is sent in the x-webhook-signature header, computed from your webhook secret key and the raw request body."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://commas.com/",
+    "quote": "mcp beta run commas from your ai assistant. create checkout links, issue refunds and pull your numbers in plain english."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://commasdocs.com/",
+    "quote": "Commas CLI — run your Commas (formerly FanBasis) business from the terminal, powered by the Commas MCP server."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://commasdocs.com/",
+    "quote": "Add the Commas MCP server to Cursor in one click. Cursor's AI can then list your products, search customers, pull transactions, and manage subscriptions right from the editor."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://commasdocs.com/",
+    "quote": "Anyone can now create a free account at commas.com and sell on the same infrastructure that runs businesses at nine-figure scale."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://commasdocs.com/",
+    "quote": "Create and copy keys in your dashboard under Account → API Keys (CLI: commas keys add sandbox )."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://commasdocs.com/",
+    "quote": "Commas gives you two environments: one for live payments, and one for testing. Both work identically — the only difference is which API key you use. Production. Use your live API key... Base URL: https://www.fanbasis.com. Sandbox. Use your test API key... Base URL: https://qa.dev-fan-basis.com."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "access_notes",
+    "old": "Account creation is self-serve and free. Production and sandbox API keys can be generated instantly from the user dashboard. No fixed subscription fee for API access; transaction-based fee model.",
+    "new": "Account creation is self-serve and free. Production and sandbox API keys can be generated from the user dashboard. The platform uses a transaction-based fee model, though specific pricing is not publicly listed.",
+    "reason": "The original note's claim about pricing being transaction-based is consistent with the platform's model, but the specific quote 'Commas does not publish pricing but told us they will match or beat your current rate' was not found and appears speculative. The updated note removes this speculative quote and clarifies the pricing model based on available information.",
+    "url": "https://commasdocs.com/"
+   },
+   {
+    "field": "api_notes",
+    "old": "REST API with comprehensive coverage of core platform resources including checkout sessions, webhooks, customers, subscriptions, discount codes, products, invoices, and transactions. Uses conventional HTTP methods, standard status codes, and JSON payloads.",
+    "new": "REST API with comprehensive coverage of core platform resources including checkout sessions, webhooks, customers, and subscriptions. Uses conventional HTTP methods, standard status codes, and JSON payloads. The documentation specifies a production base URL of https://www.fanbasis.com and a sandbox base URL of https://qa.dev-fan-basis.com.",
+    "reason": "The original record's quote about the base URLs was accurate. The API reference for Commas still lists the production base URL as https://www.fanbasis.com and the sandbox URL as https://qa.dev-fan-basis.com, indicating that the backend infrastructure may not have been fully migrated to the new domain name. This information is important for API usage.",
+    "url": "https://commasdocs.com/"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "Official MCP implementation integrated into 'commas-cli' and available via Zapier MCP.",
+    "new": "Official MCP implementation is available through the 'commas-cli' tool. The homepage mentions an 'MCP beta' to 'run commas from your ai assistant'. The claim about a Zapier MCP is unsubstantiated.",
+    "reason": "The `commas-cli` is documented as the method for terminal-based AI agents to operate a Commas account. The homepage confirms the existence of an MCP beta. However, the first-pass record's quote about a 'Zapier Commas MCP' was fabricated; the cited Zapier page is a generic marketing page for Zapier's own MCP product and does not mention Commas.",
+    "url": "https://commas.com/"
+   }
+  ],
+  "needs_human": true,
+  "needs_human_reason": "The `openapi_spec` field is uncertain as no public OpenAPI spec was found for the e-commerce product, but other products with similar names might have them. The exact pricing model in `access_notes` remains unconfirmed, with the transaction-based fee model being likely but not explicitly stated in available documentation."
+ },
+ "notes": "### Adversarial Fact-Checker Report: Commas (formerly Fanbasis)\n\nHere is the verification of the first-pass research record for \"Commas\".\n\n---\n\n### Verification Notes\n\n*   **`subcategory`**: **CONFIRMED**\n    *   **Correct Value**: `E-commerce / Payments`\n    *   **Reasoning**: The API documentation and homepage describe the product as a platform for payments, subscriptions, and selling digital content. The API reference states it is for everything you need to \"collect payments, manage subscriptions, reward customers, and automate your business with Commas\". The homepage also describes it as \"One place to create, sell, and get paid, with payments built in\".\n\n*   **`one_liner`**: **CONFIRMED**\n    *   **Correct Value**: \"Commas is an all-in-one e-commerce and payments platform for online sellers, integrating checkout, marketing, courses, and affiliate programs.\"\n    *   **Reasoning**: A press release from July 2026 states, \"On Commas, one account carries all of it (checkout, funnels, courses, communities, webinars, and affiliates)\". The homepage echoes this, describing it as the \"one place to create, sell, and get paid\".\n\n*   **`auth_methods`**: **CONFIRMED**\n    *   **Correct Value**: `['api_key']`\n    *   **Reasoning**: The API reference documentation explicitly shows examples using an API key passed in the `x-api-key` header. The documentation states, \"... x-api-key: YOUR_API_KEY\".\n\n*   **`primary_auth`**: **CONFIRirmed**\n    *   **Correct Value**: `api_key`\n    *   **Reasoning**: The API documentation confirms that the primary and only documented method of authentication is via an API key.\n\n*   **`auth_notes`**: **CONFIRMED**\n    *   **Correct Value**: \"API key passed via the 'x-api-key' HTTP header.\"\n    *   **Reasoning**: The API reference includes a direct code example showing this header: `... x-api-key: YOUR_API_KEY`.\n\n*   **`access`**: **CONFIRMED**\n    *   **Correct Value**: `self_serve_free`\n    *   **Reasoning**: A press release from the company states, \"Anyone can now create a free account at commas.com and sell on the same infrastructure that runs businesses at nine-figure scale.\" This confirms that account creation is free and self-serve, providing access to the platform's capabilities.\n\n*   **`access_notes`**: **PARTIALLY WRONG**\n    *   **Correct Value**: \"Account creation is self-serve and free. Production and sandbox API keys can be generated from the user dashboard. The platform uses a transaction-based fee model, though specific pricing is not publicly listed.\"\n    *   **Reasoning**: The claim that an account is self-serve and free is confirmed by a press release. A third-party integration guide for the previous brand name, FanBasis, mentions creating an API key under \"Account > API Keys,\" which supports the claim of self-serve key generation. The original note's claim about pricing being transaction-based is consistent with the platform's model, but the specific quote \"Commas does not publish pricing but told us they will match or beat your current rate\" was not found and appears speculative.\n\n*   **`api_styles`**: **CONFIRMED**\n    *   **Correct Value**: `['rest']`\n    *   **Reasoning**: The company's website explicitly mentions a \"REST API\" for its engineering team features.\n\n*   **`api_breadth`**: **CONFIRMED**\n    *   **Correct Value**: `broad`\n    *   **Reasoning**: The API reference lists a wide range of resources, including checkout sessions, subscriptions, customers, webhooks, discounts, and more, which supports the \"broad\" classification.\n\n*   **`api_notes`**: **PARTIALLY WRONG**\n    *   **Correct Value**: \"REST API with comprehensive coverage of core platform resources including checkout sessions, webhooks, customers, and subscriptions. Uses conventional HTTP methods, standard status codes, and JSON payloads. The documentation specifies a production base URL of `https://www.fanbasis.com` and a sandbox base URL of `https://qa.dev-fan-basis.com`.\"\n    *   **Reasoning**: The description of the API's breadth and style is correct. However, the original record's quote about the base URLs was accurate. The API reference for Commas still lists the production base URL as `https://www.fanbasis.com` and the sandbox URL as `https://qa.dev-fan-basis.com`, indicating that the backend infrastructure may not have been fully migrated to the new domain name.\n\n*   **`openapi_spec`**: **UNCERTAIN**\n    *   **Correct Value**: `false`\n    *   **Reasoning**: While the primary API documentation found does not mention an OpenAPI specification, a separate search result for \"Comma Compliance API\" (which appears to be a different product by a similarly named company) does mention an OpenAPI spec URL. For the e-commerce product (formerly Fanbasis), no public OpenAPI spec was found. The initial assessment of `false` is likely correct but not definitively proven absent.\n\n*   **`webhooks`**: **CONFIRMED**\n    *   **Correct Value**: `true`\n    *   **Reasoning**: The API reference documentation includes a section for managing webhooks and describes a flow where a server receives a `payment.succeeded` event, which is a typical webhook pattern.\n\n*   **`sandbox`**: **CONFIRMED**\n    *   **Correct Value**: `true`\n    *   **Reasoning**: The API documentation explicitly mentions and provides a base URL for a sandbox environment. The main product page also mentions \"a full sandbox\" as a feature for engineering teams.\n\n*   **`mcp`**: **CONFIRMED**\n    *   **Correct Value**: `official`\n    *   **Reasoning**: The main Commas homepage features an \"MCP beta\" section. The API documentation also references a `commas-cli` tool and its ability to be used by AI agents, which is characteristic of an MCP implementation.\n\n*   **`mcp_notes`**: **PARTIALLY WRONG**\n    *   **Correct Value**: \"Official MCP implementation is available through the 'commas-cli' tool. The homepage mentions an 'MCP beta' to 'run commas from your ai assistant'. The claim about a Zapier MCP is unsubstantiated.\"\n    *   **Reasoning**: The `commas-cli` is documented as the method for terminal-based AI agents to operate a Commas account. The homepage confirms the existence of an MCP beta. However, the first-pass record's quote about a \"Zapier Commas MCP\" was fabricated; the cited Zapier page is a generic marketing page for Zapier's own MCP product and does not mention Commas.\n\n*   **`verdict`**: **CONFIRMED**\n    *   **Correct Value**: `ready_now`\n    *   **Reasoning**: Access is `self_serve_free`, allowing any developer to sign up for a free account and generate API keys. The API is publicly documented. This meets the criteria for `ready_now`.\n\n*   **`blocker`**: **CONFIRMED**\n    *   **Correct Value**: `none`\n    *   **Reasoning**: As the verdict is `ready_now`, there are no blockers.\n\n*   **`blocker_notes`**: **CONFIRMED**\n    *   **Correct Value**: \"None.\"\n    *   **Reasoning**: No blockers were identified.\n\n---\n\n### Uncertain Fields\n\n*   **`openapi_spec`**: While no specification was found for the core e-commerce API, other products with similar names or from the same potential parent company do have them. It's possible one exists but is not publicly linked from the main documentation.\n*   **`access_notes`**: The exact pricing model remains unconfirmed. The first-pass note claimed a \"transaction-based fee model,\" which is likely but not explicitly stated in the available documentation. The quote about matching or beating rates was not found.\n\n*Note: The search results contained information for multiple, distinct companies using the name \"Comma\" or \"Commas\" for different products (e.g., financial planning, commission management, compliance archiving, and automotive hardware). This report focuses strictly on the e-commerce platform formerly known as Fanbasis.*",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "commas.com api documentation",
+   "commasdocs.com",
+   "commas.com pricing",
+   "commas.com MCP",
+   "commas.com authentication \"x-api-key\"",
+   "commas.com sandbox",
+   "fanbasis api"
+  ],
+  "search_sources": [
+   {
+    "title": "commasdocs.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGl0t7_DS2ijYlnmMX0SkHJX7cFlfz8JyFS5-5nT_b1HMT61MwHgxl3KbcO99lk6aehsgR61WuoCXRui5RVr-I5LAFPHqWJEGtUkVJ9YToWy57K"
+   },
+   {
+    "title": "commas.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENOKosKhbJrrC2flMFZibvziJq2agmhfaSfEqGjJvhUgAjDZTpVqeMPMJoFzFp-ySGws53wY2JumdrdXMigSJzWr0EtSNo13BariieFGw="
+   },
+   {
+    "title": "prnewswire.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdNMaofBGWGmxxPcxOI5KDG0NhROmTB7tw4-xpU-TKwjGWWXMw-CU-3CueIYnS6k6p3KQGPeNTGVUwVKaLmEiEXvJNWtnRYpZZMmSen9PwOj15tyeW6zyqXqCv9_sK7URGXZkbF9byo-8UZWzDHyL-XiI4KckvzxKOJjY7QjrRZR1_SxwCWOPlNG9Ewfe6W1WgVPvD20BOXozUGgpcARNxjplnejjAS0j5oKlcJyGfxfueLIccrqssx_QaXLozd1W8Vav0xQgVnCr6_2LghstQliEAPiQi1VQYFFI9iI_QDbpu5mX62SYz"
+   },
+   {
+    "title": "tarvent.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqFCSh3MmH-7GqdODwiBKS-73k2DYCccHyLqYZgCWxg21yl6t4H-9_RlQjGX0Qqnp8EsoP2KzFsq2F_wY4P1LaVlAtLxq4osy0H51GFBy3e1mlzphjsHQeQIAecscTOIJdS8BNFAUbqQ=="
+   },
+   {
+    "title": "commas.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdxpLXECKkgD-hNKMFFzj0BD4sNsQ4s6dQfLzQNZBkpfo5YPgpoRMcxlFFgFFIOFXkvfYbkHErSy842tUUC8jq__Hqo7WEJAktpTgWNwka2_QNrFDshA=="
+   },
+   {
+    "title": "commacompliance.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFe9JWD2nwv_PEr1b_gXvrNqhRRQyRioJ0jOChMhuow482WBLXxfAalDcmA5hh1uAtxHC-UmzmWDUbe0hJtHN3DBUiY6mszO6zBVEJNDye2DDpyoXWKgdrdj_Ex9M3Mlbo="
+   },
+   {
+    "title": "usecommas.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvq-kmKF-ou6Qv_-rk_ZZkiTpEAgSv7OrceY_TxmdxadY7rA67vx1UlKzNeR-xxIg11MKU8FAyiQX87P_8WtW8AVZ6mNwMkTDwUM4cOT5WdguEoHWnr8XNdUI="
+   },
+   {
+    "title": "trycommas.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwM87OdMs4DC-OTjIeUy36F3ktzkJAd5Dpw3t0N8Tdb3_UdPOa4py_ZuRr4UN1FaQ4xm4-2QUoGGBAeh2cwOIety67sMxc1mfskqPxXQlQQpa4hLEX"
+   },
+   {
+    "title": "comma.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEr72wPuBsuOq5OSjwoMxtg-vDb7LFmJAklMRiFsC4qvCb_Mi7e_bk47PyiY3EGYBF4o0ZhywXxns_1dSqZHJNwl1wQ1d3CHy_v7fgIm2KvBw=="
+   }
+  ],
+  "tokens": 9162,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://commas.com/fanbasis-is-now-commas",
+    "status": 200,
+    "chars": 4314,
+    "readable": true
+   },
+   {
+    "url": "https://commas.com/",
+    "status": 200,
+    "chars": 6559,
+    "readable": true
+   },
+   {
+    "url": "https://commasdocs.com/",
+    "status": 200,
+    "chars": 35,
+    "readable": false
+   },
+   {
+    "url": "https://zapier.com/mcp",
+    "status": 200,
+    "chars": 10287,
+    "readable": true
+   }
+  ],
+  "seconds": 80.3
+ }
+}

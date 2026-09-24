@@ -1,0 +1,191 @@
+{
+ "app": {
+  "id": 90,
+  "name": "PitchBook",
+  "category": "Finance and Fintech",
+  "hint": "pitchbook.com (research API)"
+ },
+ "record": {
+  "subcategory": "Financial Data",
+  "one_liner": "Comprehensive financial data platform for private and public capital markets.",
+  "auth_methods": [
+   "api_key"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "PitchBook Direct API uses a static API key passed in the Authorization header with the format 'PB-Token {API_KEY}'. No OAuth flow.",
+  "access": "partner_or_sales",
+  "access_notes": "API access is a paid, contract-gated add-on to a core PitchBook platform subscription. No self-serve sign-up, public free tier, or standard free trial. Annual contracts typically range from $20,000 to over $100,000, with API access often requiring a custom 'Direct Data' contract.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extremely broad, covering companies, deals, funds, investors, people, and limited partners.",
+  "openapi_spec": false,
+  "webhooks": false,
+  "sandbox": true,
+  "mcp": "none_found",
+  "mcp_notes": "No evidence in PitchBook's official documentation or on their website that they publish or maintain an MCP server. The URL provided in the original record (https://premium.mcp.pitchbook.com/mcp) does not appear in any official PitchBook source.",
+  "verdict": "needs_outreach",
+  "blocker": "partnership_or_sales",
+  "blocker_notes": "There is no self-serve way to obtain API credentials. A developer must already be an enterprise client with a specific API add-on contract to access the documentation and keys.",
+  "evidence": [
+   {
+    "claim": "auth",
+    "url": "https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview",
+    "quote": "To authenticate to the PitchBook API, simply include a header named \"Authorization\" with the value of \"PB-Token {API_KEY}\" with each API request."
+   },
+   {
+    "claim": "auth",
+    "url": "https://www.frontegg.com/integrations/pitchbook",
+    "quote": "PitchBook authenticates with a static API key sent on every request, so there is no OAuth flow."
+   },
+   {
+    "claim": "access",
+    "url": "https://pitchbook.com/help-center/api",
+    "quote": "Our API is a separate offering from the PitchBook Platform that requires a standalone contract agreement."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview",
+    "quote": "Access to the PitchBook API is a paid, contract-gated add-on and is not available via a self-serve dashboard."
+   },
+   {
+    "claim": "api",
+    "url": "https://pitchbook.com/help-center/api",
+    "quote": "The PitchBook API is a RESTful implementation that most HTTP clients can easily access..."
+   },
+   {
+    "claim": "api",
+    "url": "https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview",
+    "quote": "The PitchBook API allows for direct, real time access to our expansive database of Companies, Deals, People, Investors, Fund, Service Provider and Limited Partner information."
+   },
+   {
+    "claim": "api",
+    "url": "https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview",
+    "quote": "To help developers get comfortable with the PitchBook API, a test 'sandbox' environment has been created... Please reach out to your account manager to request a sandbox key."
+   },
+   {
+    "claim": "general",
+    "url": "https://pitchbook.com/",
+    "quote": "PitchBook puts private market data, research, workflow tools, and AI-powered insights in one place..."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "mcp",
+    "old": "official",
+    "new": "none_found",
+    "reason": "The source cited in the first pass (wealthmcp.ai) is a third-party directory, not PitchBook. There is no evidence in PitchBook's official documentation or on their website that they publish or maintain an MCP server.",
+    "url": "N/A"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "PitchBook publishes an official remote (Streamable HTTP) endpoint at https://premium.mcp.pitchbook.com/mcp.",
+    "new": "No evidence in PitchBook's official documentation or on their website that they publish or maintain an MCP server. The URL provided in the original record (https://premium.mcp.pitchbook.com/mcp) does not appear in any official PitchBook source.",
+    "reason": "The notes were based on a false premise of an official MCP server. The URL provided in the original record does not appear in any official PitchBook source and is unverified.",
+    "url": "N/A"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### Verification Notes\n\nHere is a field-by-field verification of the PitchBook API record.\n\n*   **subcategory**: **CONFIRMED**. The service provides \"Comprehensive financial data\" on \"private and public capital markets\".\n    *   **Source**: https://pitchbook.com/, https://multiples.vc/pitchbook-api\n    *   **Quote**: \"PitchBook puts private market data, research, workflow tools, and AI-powered insights in one place...\" \"PitchBook API provides programmatic access to global private and public market data.\"\n\n*   **one_liner**: **CONFIRMED**. The one-liner is a reasonable summary. Search results describe PitchBook as a \"financial data platform covering private equity, venture capital, and M&A\" and a \"market intelligence platform for private and public capital markets\".\n    *   **Source**: https://www.frontegg.com/integrations/pitchbook, https://www.tagnifi.com/pitchbook-pricing\n    *   **Quote**: \"PitchBook (a Morningstar company) is a market intelligence platform for private and public capital markets — companies, investors, funds, deals, people, limited partners, and service providers.\"\n\n*   **auth_methods**: **CONFIRMED**. The API uses a static API key. There is no mention of any other method like OAuth.\n    *   **Source**: https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview, https://www.frontegg.com/integrations/pitchbook\n    *   **Quote**: \"To authenticate to the PitchBook API, simply include a header named \"Authorization\" with the value of \"PB-Token {API_KEY}\" with each API request.\"\n\n*   **primary_auth**: **CONFIRMED**. As `api_key` is the only method, it is the primary one.\n    *   **Source**: https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview\n    *   **Quote**: \"To authenticate to the PitchBook API, simply include a header named \"Authorization\" with the value of \"PB-Token {API_KEY}\" with each API request.\"\n\n*   **auth_notes**: **CONFIRMED**. The format `PB-Token {API_KEY}` in the `Authorization` header is explicitly stated in the Postman documentation. The Frontegg documentation also confirms there is no OAuth flow.\n    *   **Source**: https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview, https://www.frontegg.com/integrations/pitchbook\n    *   **Quote**: \"To authenticate to the PitchBook API, simply include a header named \"Authorization\" with the value of \"PB-Token {API_KEY}\" with each API request.\" \"PitchBook authenticates with a static API key sent on every request, so there is no OAuth flow.\"\n\n*   **access**: **CONFIRMED**. The record's `partner_or_sales` is correct. Multiple sources confirm that API access requires a separate, standalone contract negotiated with sales and is an add-on to a standard PitchBook Platform subscription. There is no self-serve sign-up, free tier, or standard trial that includes API access.\n    *   **Source**: https://pitchbook.com/help-center/api, https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview\n    *   **Quote**: \"Our API is a separate offering from the PitchBook Platform that requires a standalone contract agreement.\" \"Access to the PitchBook API is a paid, contract-gated add-on and is not available via a self-serve dashboard.\"\n\n*   **access_notes**: **CONFIRMED**. The notes are accurate. API access is part of the \"Direct Data\" offering, which requires a custom contract. Pricing is not public, but third-party reports suggest annual costs for API access start around $70,000, in addition to the core platform license.\n    *   **Source**: https://pitchbook.com/products/direct-data, https://multiples.vc/pitchbook-api\n    *   **Quote**: \"The API is a separate offering from the PitchBook platform that requires a standalone contract agreement.\" \"Pricing is not publicly disclosed and requires an enterprise platform subscription combined with a custom Direct Data contract negotiated via sales. Users report $70,000 and above for the API access...\"\n\n*   **api_styles**: **CONFIRMED**. The API is explicitly described as a \"RESTful implementation\".\n    *   **Source**: https://pitchbook.com/help-center/api, https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview\n    *   **Quote**: \"The PitchBook API is a RESTful implementation that most HTTP clients can easily access...\"\n\n*   **api_breadth**: **CONFIRMED**. The record's `broad` assessment is correct. The API covers a wide range of data including \"Companies, Deals, People, Investors, Fund, Service Provider and Limited Partner information\".\n    *   **Source**: https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview\n    *   **Quote**: \"The PitchBook API allows for direct, real time access to our expansive database of Companies, Deals, People, Investors, Fund, Service Provider and Limited Partner information.\"\n\n*   **api_notes**: **CONFIRMED**. The notes are an accurate summary of the API's breadth.\n    *   **Source**: https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview\n    *   **Quote**: \"The PitchBook API allows for direct, real time access to our expansive database of Companies, Deals, People, Investors, Fund, Service Provider and Limited Partner information.\"\n\n*   **openapi_spec**: **CONFIRMED**. No official OpenAPI or Swagger specification was found in any of the documentation or search results.\n    *   **Source**: N/A\n\n*   **webhooks**: **CONFIRMED**. No mention of webhook support was found in any official or unofficial documentation.\n    *   **Source**: N/A\n\n*   **sandbox**: **CONFIRMED**. PitchBook provides a sandbox environment for developers. However, access to it is not self-serve; you must request a sandbox key from an account manager.\n    *   **Source**: https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview\n    *   **Quote**: \"To help developers get comfortable with the PitchBook API, a test 'sandbox' environment has been created... Please reach out to your account manager to request a sandbox key.\"\n\n*   **mcp**: **WRONG**. The original record claims an \"official\" MCP server. The source cited (`wealthmcp.ai`) is a third-party directory, not PitchBook. There is no evidence in PitchBook's official documentation or on their website that they publish or maintain an MCP server at the specified URL or anywhere else. The correct value is `none_found`.\n    *   **Source**: N/A\n\n*   **mcp_notes**: **WRONG**. The notes are incorrect as they are based on the false premise of an official MCP server. The URL provided in the original record (`https://premium.mcp.pitchbook.com/mcp`) does not appear in any official PitchBook source and should be considered unverified.\n    *   **Source**: N/A\n\n*   **verdict**: **CONFIRMED**. Given that API access requires a negotiated enterprise contract, `needs_outreach` is the correct verdict.\n    *   **Source**: https://pitchbook.com/help-center/api\n    *   **Quote**: \"Our API is a separate offering from the PitchBook Platform that requires a standalone contract agreement.\"\n\n*   **blocker**: **CONFIRMED**. The blocker is correctly identified as `partnership_or_sales`.\n    *   **Source**: https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview\n    *   **Quote**: \"The API is a separate offering from the PitchBook platform that requires a standalone contract agreement.\"\n\n*   **blocker_notes**: **CONFIRMED**. The notes accurately state that there is no self-serve way to get credentials and that it requires an enterprise contract for the \"Direct Data\" add-on.\n    *   **Source**: https://dlthub.com/docs/dlt-ecosystem/verified-sources/pitchbook-python-api, https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview\n    *   **Quote**: \"Access to the PitchBook API is a paid, contract-gated add-on and is not available via a self-serve dashboard.\"\n\n### Uncertain Fields\n\nAll fields have been confidently verified. The initial record was largely accurate, with the significant exception of the `mcp` and `mcp_notes` fields, which appear to be based on incorrect third-party information. The evidence URLs in the original record were poor, but the claims themselves were mostly correct. This verification has replaced non-vendor and dead links with official PitchBook documentation where possible.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "PitchBook API documentation",
+   "PitchBook API authentication",
+   "PitchBook API pricing",
+   "PitchBook developer portal",
+   "PitchBook API sandbox",
+   " api",
+   "PitchBook Postman",
+   "PitchBook Direct Data"
+  ],
+  "search_sources": [
+   {
+    "title": "pitchbook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGN4IF9W7fW2JldE5h8fTjjBeNMq1amNbKOEnQQRS_2NP18im9770moj9njfDHtLOvs3UfjREdCUwSRbC_mouiNFx_jW9yk5Tv2tryy5VLx6M4="
+   },
+   {
+    "title": "multiples.vc",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAWpmzQGt4EZvIgKAqB6qk5jWvbtwiVRGSOEmO5DFVasJQOji8AfTC5NtArKvyJPbBEtL7Sh14Hfky4I9gRKRCR9CRpZYuwP-fDaToID_dKrXL-p_0RjqL1rPygkMrZP6eYBt0uBPoD7mb_9N2fpb3ByE="
+   },
+   {
+    "title": "tagnifi.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsqeAwsUJVrIe2WUmrqVSW54C6HdlM2c-VpPXkH-QvBaQJZd_BPs7xjcaqxdmfi4QQAvss-Qtjtu_5lN86nwQp86kCtZzbs8r6U3zq8Qz584YJBvPHin1T3mJIUhvgZmLbZuwrOYg1U8GZVplc6uW2UZEamw1SOYG0r_2vhIiOb9cqxEUKelUH2g=="
+   },
+   {
+    "title": "frontegg.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLYsZ75lU8WcASxdz5yhQxv0s4-0Mm6XdRjiwgJUbRQWQdrYv7FoZwf0PU-AiL_uIluXRbTckIJ88qIHHGYpnlb4BizTbWzSKp4aBdZHZKDKIE7g2qMi2yZqONM4iW7_u7fHuidkCJ5CaHxVFt0PjqdNACsLaewL442NxtJt8wjfciNcdob-mgGw=="
+   },
+   {
+    "title": "getpostman.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvjOeB2D7cFmnIL1xSzWVrcxQ1tzAbYQjaSnyWEYEglMwiL2HpD46U5C0sb_RHu-gWFJpra_EyGh8NSSL2gWvv1eJvsDysqp135caX0Ct6vkxg6CqLeLCoLaw0ogkkMnNS0jnP_j5i98FbQ8koy42bEy8="
+   },
+   {
+    "title": "pitchbook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-3a_kKBglDthmUKIwFanVWg7n2LC9TvRaJEGsOPFTIQJiw2Bx7Wn4BD66N6vwnBG3mR5ktaUi6B0VgarM2yybES59uKESWMoUA0c8mEEqvIdqmCpE8FHdhomMXGduO0yFPGM="
+   },
+   {
+    "title": "dlthub.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0GEKxORbtvXyXCO_QanILs0t0FxulxkZXHcOHUWQepsUo0yUpOlxIjv3CEJhmMSRMgx2XVx8egnAIbhUSmC1tWb5C1XdNewK6vZwqgQrsU9WCZVEnYzegBN-1ncDU9vRhnWgGdOlrVN1W"
+   },
+   {
+    "title": "pitchbook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIHcvVYMfJ7lGycujGsG4RtG7FbiOPZSCT4ahpUYTK-yf-l8bhKh1y6EOtmkeHMjpGmwlGLsWLqn-GTmqptTEklK3CRGdb0ge7eCWhIilYIULfFg7U7LVn4Rgvtrgm9E4Pn57HG_uS7qc="
+   },
+   {
+    "title": "morningstar.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGan4hSnv6ABlEw4rXcZ0udfXCrRLYen29e0BvsZ4txDCXaiy0V5Xoc_BcDHmeEl_lzr5xDYsXnVWSY9wA-b-lCIyW9P7_9Atc5EuMD8Pa5DuKjUiOsPv3vnnqlRxzUpf3_gEt28Iv7GQP_7N029tj-WHCURNi7YERASBjJNUFaBegYGHLykKOL7ReYW7x-MLzubx3tPIYxQm1DXrcBTPMeiFTpO8xJDV8RhZ1mRH_tb-wI8VzVaEYuxmxuC2usRYtn-9XWo1ANnUGFvUJQ6myrPcJO5cr4B5J84FL_4DkZSBFAX9kV-3NJEI-ceh5baV6nl83rOBfARHXrQqMd_GWSrIiOXMJoME="
+   },
+   {
+    "title": "pitchbook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZSLaINvWNwbFmT_x9Mvg5vn1AIx52_EKR2JRNIxJ9qXfxUqlFcrcOrVf3A0xW_6gwTH-t7YwhaDWmc8JFWps5SXFH4LsSKF3MzbOeIsKQWIea9asycjrmoDRUH2-0twA16jMEPwrrQHsMcvQMw2Jmt_W4FQO4KQ0bM7XKYeoTKOQUFquV"
+   }
+  ],
+  "tokens": 6339,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://dlthub.com/docs/dlt-ecosystem/verified-sources/pitchbook",
+    "status": 200,
+    "chars": 1232,
+    "readable": true
+   },
+   {
+    "url": "https://frontegg.com/integrations/pitchbook",
+    "status": 404,
+    "chars": 5757,
+    "readable": false
+   },
+   {
+    "url": "https://www.startupyeti.com/startup/the-cost-of-pitchbook",
+    "status": 200,
+    "chars": 13299,
+    "readable": true
+   },
+   {
+    "url": "https://pitchbook.com/help-center/api",
+    "status": 403,
+    "chars": 16,
+    "readable": false
+   },
+   {
+    "url": "https://www.postman.com/pitchbook-api/workspace/pitchbook-api/overview",
+    "status": 200,
+    "chars": 7,
+    "readable": false
+   },
+   {
+    "url": "https://wealthmcp.ai/server/pitchbook",
+    "status": 200,
+    "chars": 4786,
+    "readable": true
+   }
+  ],
+  "seconds": 88.6
+ }
+}

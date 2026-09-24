@@ -1,0 +1,161 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://vercel.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.58
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://vercel.com/docs/rest-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://vercel.com/docs/rest-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.68
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://vercel.com/docs/sign-in-with-vercel",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.85
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.06
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://vercel.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.73
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://vercel.com/docs/rest-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://vercel.com/docs/sign-in-with-vercel",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://vercel.com/docs/rest-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://vercel.com/docs/rest-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.8
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://vercel.com/docs/rest-api/getting-started",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.08
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://vercel.com/docs/rest-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://vercel.com/docs/rest-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  }
+ ],
+ "auth_support": {
+  "bearer_token": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://vercel.com/docs/rest-api', 'https://vercel.com/docs/integrations/create-integration/vercel-api-integrations', 'https://vercel.com/docs/sign-in-with-vercel', 'https://vercel.com/docs/rest-api/getting-started', 'https://vercel.com/docs/integrations/create-integration/vercel-api-integrations', 'https://vercel.com/docs/rest-api', 'https://vercel.com/docs/rest-api']",
+ "metrics": {
+  "n_evidence": 14,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 1.0,
+  "readable": 14,
+  "quote_supported_rate": 0.5,
+  "lint_issues": 0,
+  "flag_count": 1
+ }
+}

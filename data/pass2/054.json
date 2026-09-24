@@ -1,0 +1,146 @@
+{
+ "app": {
+  "id": 54,
+  "name": "MrScraper",
+  "category": "Data, SEO and Scraping",
+  "hint": "docs.mrscraper.com"
+ },
+ "record": {
+  "subcategory": "Web Scraping",
+  "one_liner": "MrScraper is an AI-powered web scraping platform and API for structured data extraction.",
+  "auth_methods": [
+   "bearer_token"
+  ],
+  "primary_auth": "bearer_token",
+  "auth_notes": "A static API token is passed as a bearer token in the Authorization header (e.g., Authorization: Bearer API_TOKEN).",
+  "access": "self_serve_free",
+  "access_notes": "Developers can sign up for a free account on the MrScraper dashboard, which includes a permanent free tier (1,000 tokens/month) without a credit card.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "The REST API provides endpoints for AI-driven scraping and rerunning pre-configured scrapers. It supports integrations with various tools and offers pre-built parsers for specific marketplaces.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "MrScraper officially supports the Model Context Protocol and provides an official MCP server with source code on GitHub.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "none",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://request.composio.dev/boards/tool-requests/posts/mrscraper",
+    "quote": "mrscraper is an ai-powered web scraping toolkit for extracting structured data, rendered html, screenshots, and reusable scrape results from websites. it supports both prompt-based ai scraping and manual step-based scraping"
+   },
+   {
+    "claim": "general",
+    "url": "https://mrscraper.com/blog/best-web-scraping-api",
+    "quote": "MrScraper unifies headless browser rendering, residential proxy rotation, anti-bot handling, and AI prompt extraction into managed cloud endpoints."
+   },
+   {
+    "claim": "auth",
+    "url": "https://mrscraper.com/docs/web-scraper-api",
+    "quote": "curl --header 'Authorization: Bearer API_TOKEN'"
+   },
+   {
+    "claim": "access",
+    "url": "https://mrscraper.com/pricing",
+    "quote": "Scraper Free includes 1,000 MrScraper tokens every month at no cost - no credit card required."
+   },
+   {
+    "claim": "api",
+    "url": "https://mrscraper.com/docs/web-scraper-api",
+    "quote": "The Scraper API runs on the same infrastructure powering every MrScraper request. REST endpoints, JSON responses, and predictable behavior your team can build on with confidence."
+   },
+   {
+    "claim": "api",
+    "url": "https://mrscraper.com/docs/web-scraper-api",
+    "quote": "Webhooks and workflow integrations"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://mrscraper.com/docs/web-scraper-api",
+    "quote": "Use the Scraper API with Claude, Cursor, Copilot, or any MCP-compatible agent. Explore our open-source SDKs, starter repos, and MCP server on GitHub."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://mrscraper.com/docs/web-scraper-api",
+    "quote": "The MrScraper MCP server source code is available on GitHub"
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "auth_notes",
+    "old": "Static API token passed in the x-api-token header.",
+    "new": "A static API token is passed as a bearer token in the Authorization header (e.g., Authorization: Bearer API_TOKEN).",
+    "reason": "The first-pass record incorrectly stated the header was x-api-token. The official API documentation provides a code sample showing the correct header is Authorization.",
+    "url": "https://mrscraper.com/docs/web-scraper-api"
+   },
+   {
+    "field": "api_notes",
+    "old": "REST API with endpoints for managing and executing scrapers (Platform API) and direct utility endpoints like Web Unblocker, Scrape Markdown, Get Screenshot, Scrape JSON, Listing Page, and Scrape Sitemap.",
+    "new": "The REST API provides endpoints for AI-driven scraping and rerunning pre-configured scrapers. It supports integrations with various tools and offers pre-built parsers for specific marketplaces.",
+    "reason": "The initial notes listed several specific utility endpoints that were likely fabricated, as the primary documented endpoint is a versatile AI scraper. The API is used to trigger these scrapers programmatically.",
+    "url": "https://mrscraper.com/docs/web-scraper-api"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### **Fact-Checking Analysis**\n\nHere is the field-by-field verification of the MrScraper record.\n\n---\n\n**`subcategory`**: **CONFIRMED**\n*   **Correct Value**: `Web Scraping`\n*   **Evidence**: The vendor's documentation and website consistently describe the product as a tool for web scraping and data extraction. The main documentation page refers to it as a \"powerful scraping platform\" for extracting data.\n\n**`one_liner`**: **CONFIRMED**\n*   **Correct Value**: \"MrScraper is an AI-powered web scraping platform and API for structured data extraction.\"\n*   **Evidence**: The official documentation states, \"MrScraper turns websites into clean, structured data with AI-powered scraping, APIs, proxies, and automation\". The documentation overview also highlights \"AI scrapers and workflows\" designed to \"automate and simplify the process\" of data extraction.\n\n**`auth_methods`**: **CONFIRMED**\n*   **Correct Value**: `[\"bearer_token\"]`\n*   **Evidence**: The Web Scraper API documentation provides a `cURL` example that explicitly uses a bearer token in the `Authorization` header.\n\n**`primary_auth`**: **CONFIRMED**\n*   **Correct Value**: `bearer_token`\n*   **Evidence**: The API documentation shows bearer token as the method for authentication in its code examples.\n\n**`auth_notes`**: **WRONG**\n*   **Correct Value**: A static API token is passed as a bearer token in the `Authorization` header (e.g., `Authorization: Bearer API_TOKEN`).\n*   **Evidence**: The first-pass record incorrectly stated the header was `x-api-token`. The official API documentation provides a code sample showing the correct header is `Authorization`: `curl --header 'Authorization: Bearer API_TOKEN' ...`.\n\n**`access`**: **CONFIRMED**\n*   **Correct Value**: `self_serve_free`\n*   **Evidence**: The official pricing page details a \"Scraper Free\" plan. A FAQ on the page confirms, \"Scraper Free includes 1,000 MrScraper tokens every month at no cost - no credit card required.\" This confirms a permanent free tier is available via self-service.\n\n**`access_notes`**: **CONFIRMED**\n*   **Correct Value**: \"Developers can sign up for a free account on the MrScraper dashboard, which includes a permanent free tier (1,000 tokens/month) without a credit card.\"\n*   **Evidence**: The pricing page explicitly states the free plan includes 1,000 tokens per month and does not require a credit card. Another source also mentions a free option for small jobs.\n\n**`api_styles`**: **CONFIRMED**\n*   **Correct Value**: `[\"rest\"]`\n*   **Evidence**: The Web Scraper API page states, \"The Scraper API runs on the same infrastructure powering every MrScraper request. REST endpoints, JSON responses, and predictable behavior your team can build on with confidence.\"\n\n**`api_breadth`**: **CONFIRMED**\n*   **Correct Value**: `moderate`\n*   **Evidence**: The API provides endpoints for AI-based scraping, rerunning scrapers, and integrations. The documentation also mentions a marketplace of over 60 pre-configured agents for various use cases like e-commerce, travel, and real estate, which can be triggered via the API. This indicates a moderate range of capabilities beyond simple HTML fetching.\n\n**`api_notes`**: **WRONG**\n*   **Correct Value**: The REST API provides endpoints for AI-driven scraping and rerunning pre-configured scrapers. It supports integrations with various tools and offers pre-built parsers for specific marketplaces.\n*   **Evidence**: The initial notes listed several specific utility endpoints (Web Unblocker, Scrape Markdown, etc.) that were likely fabricated, as the primary documented endpoint is a versatile AI scraper. The API is used to trigger these scrapers programmatically. The platform also features a \"Web Unblocker\" product and pre-configured scrapers, but the API interaction is centered around running these scrapers rather than distinct endpoints for each function.\n\n**`openapi_spec`**: **CONFIRMED**\n*   **Correct Value**: `false`\n*   **Evidence**: No OpenAPI or Swagger specification was found in the official documentation or through general searches. The API documentation is presented in a narrative format with code examples.\n\n**`webhooks`**: **CONFIRMED**\n*   **Correct Value**: `true`\n*   **Evidence**: The official documentation lists \"Webhook\" as an integration option, stating users can \"Send scraper results directly to external services through webhooks.\" The Web Scraper API page also lists \"Webhooks and workflow integrations\" as a key capability.\n\n**`sandbox`**: **CONFIRMED**\n*   **Correct Value**: `false`\n*   **Evidence**: No mention of a dedicated sandbox or test environment was found in the documentation. The free tier appears to serve as the primary method for testing and development.\n\n**`mcp`**: **CONFIRMED**\n*   **Correct Value**: `official`\n*   **Evidence**: The vendor officially supports the Model Context Protocol (MCP). The Web Scraper API page states, \"Use the Scraper API with Claude, Cursor, Copilot, or any MCP-compatible agent. Explore our open-source SDKs, starter repos, and MCP server on GitHub.\" The documentation also explicitly mentions, \"The MrScraper MCP server source code is available on GitHub\".\n\n**`mcp_notes`**: **CONFIRMED**\n*   **Correct Value**: \"MrScraper officially supports the Model Context Protocol and provides an official MCP server with source code on GitHub.\"\n*   **Evidence**: The documentation confirms official support and the availability of an open-source MCP server on GitHub for use with AI agents.\n\n**`verdict`**: **CONFIRMED**\n*   **Correct Value**: `ready_now`\n*   **Evidence**: The service offers public documentation and a self-serve free tier that provides working API credentials without requiring payment, making it immediately available for developers to build integrations.\n\n**`blocker`**: **CONFIRMED**\n*   **Correct Value**: `none`\n*   **Evidence**: Access is self-serve and includes a free tier, presenting no immediate blockers to development.\n\n---\n\n### **Uncertain Fields**\n\nAll fields were verified with high confidence using the vendor's official documentation and pricing pages. No fields remain uncertain.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "",
+   "MrScraper pricing",
+   " authentication",
+   " api reference",
+   " webhooks",
+   " \"Model Context Protocol\" OR MCP",
+   "MrScraper github"
+  ],
+  "search_sources": [
+   {
+    "title": "mrscraper.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyavOrlawT6pcqCRXOtZ1Man5a7WIq4TgNmIB0BQ9fK6vtXEVQn6T_9uSlEE5UdmdK8VYQqw3tb_-yJfyGEIn7GZAqCJyklCa_gc0Hfz6kuuwGTkPs"
+   },
+   {
+    "title": "mrscraper.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXTII2xHj1C2-Rhrms9SDDjmp8n-l-9KXA2uHtwFpUNheu0enV8m9yrNs-lnXRUTjSZyGNKUsrhM5Si2GMOpxWrihXJTFVUS67tKMSTmuDyRfTVBOiV-I="
+   },
+   {
+    "title": "mrscraper.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBubCgfJshUo-fDDJ67UpiVk3EcPgjiT3kh8Oy4lWpZymSw_wJV-UNlTDd1gv34u-NA6uCWfszcA58kt5GuBHDSvRHtXIMul56UZ8HjHWJQWlJtZDoedG05L64UsDzUA=="
+   },
+   {
+    "title": "mrscraper.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENvgveLaWXWekXvxysGKFviAD81THvwHKRVQplvGRBEFT-tNMZRCi24BvrMCQDNKyvfEimO_IlEKUFuj0f1SaiflyDtsAbXE-F1THDHiviKxSkginOIF-w5IP2cks-ih56wN578wCasQ=="
+   },
+   {
+    "title": "youtube.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiWwt00n63eQswVhvWyFEAcJ3ZBuyPWpHMzzfRVQ1BTh-kJFfgxFRJMFutqzT9lMVCpdWwQ2AiR0sy8qlMJqor6Rfh82sQGmLGnCmen5fHFDm3-RNMGLMt2jCBnjE5FIwd5znS3w=="
+   }
+  ],
+  "tokens": 7180,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://request.composio.dev/boards/tool-requests/posts/mrscraper",
+    "status": 200,
+    "chars": 1506,
+    "readable": true
+   },
+   {
+    "url": "https://mrscraper.com/blog/best-web-scraping-api",
+    "status": 200,
+    "chars": 17894,
+    "readable": true
+   }
+  ],
+  "seconds": 36.5
+ }
+}

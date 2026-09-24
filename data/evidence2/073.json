@@ -1,0 +1,141 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://linear.app/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://linear.app/developers",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://linear.app/developers",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE33ynblH0WcbwasQXctFplgBJcayOahhuWQVcg5QzC3JMkCpdz6tYJyu-tHOR3g8GQ_z9Yejz5lve875Dc6gBsvVOEO1bqFz5RUXnQ7s3ZwcSSEO90Xlo575O5M0zcv6yO0jIU2ViZLNJ_1zXHceFUrCJCXWP6HynpkAfJa-jxRL0I2BPvNQngo1PLf5M=",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://linear.app/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.5
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://linear.app/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-VtlBmBOvgjRHB582AM7jRWXzVXE9FEiX-OxVY_QLQPndrxRw7FV5TiWRzkxlTf4Wv27ZEnIsfsI-94f4fsTqu2YRrD4dKAdOQaQzZ-1WW-T280u7UY2mu2Wn7TnR6ah2EpX81KyLn9hTQ2NgjClQemdGS3uFuQlfGyYkK_C1WpVUzS6Slepmx8YjbHlVMn3iFvFsEYqv",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://linear.app/developers",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://linear.app/developers",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://linear.app/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://linear.app/docs/mcp",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkkw2MlwfJYjXmHIqdf7TvVj0kboEBDK8TgPYREPKH5dB9xF6Y4dLzWNnWOYjBsuWPPpwNt3GEMvhgJKkxASudCmlu2amj4Klt1m2TvFyjv-6Tcegjrnr9Abkg3Qrk0QupSDKsBMz3fw==",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "api_key": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE33ynblH0WcbwasQXctFplgBJcayOahhuWQVcg5QzC3JMkCpdz6tYJyu-tHOR3g8GQ_z9Yejz5lve875Dc6gBsvVOEO1bqFz5RUXnQ7s3ZwcSSEO90Xlo575O5M0zcv6yO0jIU2ViZLNJ_1zXHceFUrCJCXWP6HynpkAfJa-jxRL0I2BPvNQngo1PLf5M=', 'https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-VtlBmBOvgjRHB582AM7jRWXzVXE9FEiX-OxVY_QLQPndrxRw7FV5TiWRzkxlTf4Wv27ZEnIsfsI-94f4fsTqu2YRrD4dKAdOQaQzZ-1WW-T280u7UY2mu2Wn7TnR6ah2EpX81KyLn9hTQ2NgjClQemdGS3uFuQlfGyYkK_C1WpVUzS6Slepmx8YjbHlVMn3iFvFsEYqv', 'https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkkw2MlwfJYjXmHIqdf7TvVj0kboEBDK8TgPYREPKH5dB9xF6Y4dLzWNnWOYjBsuWPPpwNt3GEMvhgJKkxASudCmlu2amj4Klt1m2TvFyjv-6Tcegjrnr9Abkg3Qrk0QupSDKsBMz3fw==']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://linear.app/pricing']",
+ "metrics": {
+  "n_evidence": 12,
+  "alive_rate": 0.75,
+  "dead_rate": 0.25,
+  "blocked_rate": 0.0,
+  "official_rate": 0.75,
+  "readable": 9,
+  "quote_supported_rate": 0.8888888888888888,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

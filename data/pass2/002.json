@@ -1,0 +1,223 @@
+{
+ "app": {
+  "id": 2,
+  "name": "HubSpot",
+  "category": "CRM and Sales",
+  "hint": "hubspot.com"
+ },
+ "record": {
+  "subcategory": "CRM / Customer Platform",
+  "one_liner": "An all-in-one customer platform that unifies marketing, sales, customer service, content management, data management, and operations software.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 for public apps and multi-tenant integrations; private app access tokens and service keys for single-account integrations.",
+  "access": "self_serve_free",
+  "access_notes": "Any user can sign up for a free standard HubSpot account, which includes access to developer tools. From the account dashboard, developers can create free \"Developer test accounts\" which provide a 90-day renewable trial of enterprise features for building and testing integrations.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST APIs with date-based versioning (e.g., /crm/2026-09/resource). Covers CRM objects, marketing, sales, service, content, data, and revenue hubs.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "HubSpot MCP Server (Remote) at https://mcp.hubspot.com and Developer MCP Server (Local)",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. HubSpot provides self-serve free developer accounts, comprehensive REST APIs, official OpenAPI 3.0 specifications, robust testing sandboxes, and a publicly hosted official MCP server endpoint.",
+  "evidence": [
+   {
+    "claim": "auth",
+    "url": "https://developers.hubspot.com/docs/apps/legacy-apps/authentication/working-with-oauth",
+    "quote": "oauth is a secure means of authentication for your app. it uses authorization tokens rather than a password"
+   },
+   {
+    "claim": "access",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYGo-0kMQ0VAqnScJqpNqc_bfkwOajxPRe0zY0mzWtkv2C7cHZEJE_KS6q5n1KNIw7agPkoLgwRGO7gsXnFZl-BvVECTjQCq4TS_M6ABR1780utJRbVunBnGhlg=",
+    "quote": "Get started with a free account."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.hubspot.com/docs/api-reference/latest/overview",
+    "quote": "the 2026-09 apis use a date-based versioning scheme (e.g., /crm/2026-09/ ) that follows the previous 2026-03 api version . all endpoints in this section follow the pattern: /api-name/2026-09/resource"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFY5VvmCWN6JumoAhXPAs5psAidTygHL6iAgb0RRdwCcm8ZiDGJovPywkl35-o_QMN6hmuyB4uOf2MyL5Vs4lMPu_19npICC_N-AS8UOyAsCe605O4zDizTLTz_gNAKHDf4XhJH2mAKiFeSS2HN_xbEB3_87Ehg74W4OqnDn0g=",
+    "quote": "Enter the HubSpot MCP server URL provided by HubSpot ( https://mcp.hubspot.com ). Authorize the connection by signing in to your HubSpot account when prompted."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "access_notes",
+    "old": "Sign up for a free developer account at developers.hubspot.com and create a public app from the dashboard to get credentials.",
+    "new": "Any user can sign up for a free standard HubSpot account, which includes access to developer tools. From the account dashboard, developers can create free \"Developer test accounts\" which provide a 90-day renewable trial of enterprise features for building and testing integrations.",
+    "reason": "The concept of a separate 'developer account' is legacy; as of March 2026, all standard HubSpot accounts include developer functionality. The process involves signing up for a standard free account and then creating a specific 'Developer test account' from within the 'Testing' section of the developer tools. The original note's URL is also outdated.",
+    "url": "https://developers.hubspot.com/docs/api/developer-test-accounts"
+   },
+   {
+    "field": "sandbox",
+    "old": "true",
+    "new": "true",
+    "reason": "The initial record is correct that sandboxes exist, but the details are more nuanced. For general development, free 'Developer test accounts' are the primary method. For customers on an Enterprise plan, more robust 'Standard Sandbox' accounts are available, which mirror the production account.",
+    "url": "https://developers.hubspot.com/docs/api/developer-test-accounts"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### HubSpot Fact-Check\n\nHere is the verification of the provided record for HubSpot.\n\n---\n\n#### **`subcategory`**\n*   **Original Value**: `CRM / Customer Platform`\n*   **Verification**: `CONFIRMED`\n*   **Correction**: None.\n*   **Notes**: HubSpot describes itself as a \"CRM platform that unifies marketing, sales, customer service, and content management in a single system\" and a \"Smart CRM platform that combines marketing, sales, service, website content, and data tools into one unified system.\". The \"Customer Platform\" language is consistent with their branding.\n\n#### **`one_liner`**\n*   **Original Value**: `An all-in-one customer platform that unifies marketing, sales, customer service, content management, data management, and operations software.`\n*   **Verification**: `CONFIRMED`\n*   **Correction**: None.\n*   **Notes**: This is an accurate summary. HubSpot is described as an \"all-in-one CRM platform that combines marketing, sales, customer service, and content management tools in a single system\" and is organized into \"six 'Hubs' ... that cover marketing, sales, customer service, content, data, and revenue.\".\n\n#### **`auth_methods`**\n*   **Original Value**: `['oauth2', 'bearer_token']`\n*   **Verification**: `CONFIRMED`\n*   **Correction**: None.\n*   **Notes**: HubSpot's developer documentation confirms two primary authentication methods: \"OAuth is required for multiple accounts, while static auth access tokens are used for installing in a single account at a time.\". These static tokens are sent as bearer tokens in the `Authorization` header. The original record correctly identifies these as `oauth2` and `bearer_token`.\n\n#### **`primary_auth`**\n*   **Original Value**: `oauth2`\n*   **Verification**: `CONFIRMED`\n*   **Correction**: None.\n*   **Notes**: For multi-tenant applications, which is the primary use case for an integration platform, HubSpot requires OAuth 2.0.\n\n#### **`auth_notes`**\n*   **Original Value**: `OAuth 2.0 for public apps and multi-tenant integrations; private app access tokens and service keys for single-account integrations.`\n*   **Verification**: `CONFIRMED`\n*   **Correction**: None.\n*   **Notes**: The notes are accurate. Documentation states, \"OAuth is required for multiple accounts\" and \"static auth access tokens are used for installing in a single account at a time.\". These static tokens are created via \"private apps\" for single-account integrations. Another source also mentions Service Keys as a type of bearer token for data-only access.\n\n#### **`access`**\n*   **Original Value**: `self_serve_free`\n*   **Verification**: `CONFIRMED`\n*   **Correction**: None.\n*   **Notes**: HubSpot allows anyone to sign up for a free standard account which provides access to developer tooling. From there, a developer can create a \"Developer test account,\" which is a free account with a 90-day trial of enterprise features, specifically for testing apps and integrations. These test accounts can be renewed by making API calls. This confirms a self-serve, free path to obtaining and using API credentials for development.\n\n#### **`access_notes`**\n*   **Original Value**: `Sign up for a free developer account at developers.hubspot.com and create a public app from the dashboard to get credentials.`\n*   **Verification**: `WRONG`\n*   **Correction**: `Any user can sign up for a free standard HubSpot account, which includes access to developer tools. From the account dashboard, developers can create free \"Developer test accounts\" which provide a 90-day renewable trial of enterprise features for building and testing integrations.`\n*   **Notes**: The concept of a separate \"developer account\" is legacy; as of March 2026, all standard HubSpot accounts include developer functionality. The process involves signing up for a standard free account and then creating a specific \"Developer test account\" from within the \"Testing\" section of the developer tools. The original note's URL is also outdated.\n\n#### **`api_styles`**\n*   **Original Value**: `['rest']`\n*   **Verification**: `CONFIRMED`\n*   **Correction**: None.\n*   **Notes**: The HubSpot API is consistently referred to as a REST API.\n\n#### **`api_breadth`**\n*   **Original Value**: `broad`\n*   **Verification**: `CONFIRMED`\n*   **Correction**: None.\n*   **Notes**: The API covers a wide range of functionalities across HubSpot's various \"Hubs,\" including CRM, marketing, sales, service, and content management, justifying the \"broad\" classification.\n\n#### **`api_notes`**\n*   **Original Value**: `REST APIs with date-based versioning (e.g., /crm/2026-09/resource). Covers CRM objects, marketing, sales, service, content, data, and revenue hubs.`\n*   **Verification**: `CONFIRMED`\n*   **Correction**: None.\n*   **Notes**: The provided evidence URL confirms the date-based versioning scheme, stating \"The 2026-09 apis use a date-based versioning scheme (e.g., /crm/2026-09/ )\". The note accurately reflects the breadth of the API coverage.\n\n#### **`openapi_spec`**\n*   **Original Value**: `true`\n*   **Verification**: `CONFIRMED`\n*   **Correction**: None.\n*   **Notes**: HubSpot makes its OpenAPI 3.0 specifications available. While direct links in the documentation can sometimes fail, the specifications are maintained in a public GitHub repository. HubSpot also announced an endpoint to access all publicly available specifications.\n\n#### **`webhooks`**\n*   **Original Value**: `true`\n*   **Verification**: `CONFIRMED`\n*   **Correction**: None.\n*   **Notes**: HubSpot provides extensive webhook support for both private and public apps, allowing subscriptions to events for CRM objects and more. There is a v3 Webhooks API and a newer v4 Webhooks Journal API in beta.\n\n#### **`sandbox`**\n*   **Original Value**: `true`\n*   **Verification**: `CONFIRMED`\n*   **Correction**: `HubSpot provides free \"Developer test accounts\" with 90-day renewable enterprise trials for development. Additionally, accounts with an Enterprise subscription can create \"Standard Sandbox\" accounts that are a direct copy of the production environment.`\n*   **Notes**: The initial record is correct that sandboxes exist, but the details are more nuanced. For general development, free \"Developer test accounts\" are the primary method. For customers on an Enterprise plan, more robust \"Standard Sandbox\" accounts are available, which mirror the production account.\n\n#### **`mcp`**\n*   **Original Value**: `official`\n*   **Verification**: `CONFIRMED`\n*   **Correction**: None.\n*   **Notes**: HubSpot provides an official, publicly hosted \"Remote HubSpot MCP Server\" at `https://mcp.hubspot.com`. [page: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFY5VvmCWN6JumoAhXPAs5psAidTygHL6iAgb0RRdwCcm8ZiDGJovPywkl35-o_QMN6hmuyB4uOf2MyL5Vs4lMPu_19npICC_N-AS8UOyAsCe605O4zDizTLTz_gNAKHDf4XhJH2mAKiFeSS2HN_xbEB3_87Ehg74W4OqnDn0g=] Multiple sources confirm it is a first-party, vendor-maintained server.\n\n#### **`mcp_notes`**\n*   **Original Value**: `HubSpot MCP Server (Remote) at https://mcp.hubspot.com and Developer MCP Server (Local)`\n*   **Verification**: `CONFIRMED`\n*   **Correction**: None.\n*   **Notes**: HubSpot documentation and secondary sources confirm the existence of two official MCP servers: a remote one for connecting AI tools to CRM data and a local, CLI-based one for agentic development against the HubSpot platform.\n\n#### **`verdict`**\n*   **Original Value**: `ready_now`\n*   **Verification**: `CONFIRMED`\n*   **Correction**: None.\n*   **Notes**: Based on the confirmation of `self_serve_free` access to API credentials via developer test accounts and comprehensive public documentation, the `ready_now` verdict is correct.\n\n#### **`blocker`**\n*   **Original Value**: `none`\n*   **Verification**: `CONFIRMED`\n*   **Correction**: None.\n*   **Notes**: There are no apparent blockers to immediate development.\n\n#### **`blocker_notes`**\n*   **Original Value**: `None. HubSpot provides self-serve free developer accounts, comprehensive REST APIs, official OpenAPI 3.0 specifications, robust testing sandboxes, and a publicly hosted official MCP server endpoint.`\n*   **Verification**: `CONFIRMED`\n*   **Correction**: None.\n*   **Notes**: This summary is accurate based on the findings.\n\n---\n\n### Uncertain Fields\n\nAll fields were verifiable through public documentation. No fields remain uncertain.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "HubSpot API authentication methods",
+   "HubSpot developer account free API access",
+   "HubSpot API pricing plans",
+   "HubSpot API sandbox account",
+   "HubSpot OpenAPI specification download",
+   "HubSpot webhooks documentation",
+   "HubSpot official MCP server",
+   "what is hubspot"
+  ],
+  "search_sources": [
+   {
+    "title": "theedigital.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmwFbCvQqOAx-5aqriX8Gv29gitl_WvKWVpP-qZpnOU0hmglayt7g89S73fAY84CY2LWVHlStGBmZow9Dmc4s5sVPpSb8BK7a40P5JGzqmCIWKrvLNauCfSrn3JdpESUayNR87n5o-hGu1AA=="
+   },
+   {
+    "title": "evenbound.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELSTHReP_abmxG_V8eNmqVR0mAywW6Q9l5XXqz3lgMDSLO8aWo6sqGqbVRClzsYuMkfJPOcdctEiG1ydWBjt1y6q-FVRvk7xyLz75iEspmDB2Yq3ZPEObyFPtSb8frsRk1vj-htA=="
+   },
+   {
+    "title": "zapier.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLL2i7Go-ELVDuvtGcTHiyEINIPzVj_XSaWL-4EoN3QeOSRyRvd4_fPDMfFdcpDBdL34dmBBPfsDPyTHI2dKMVurflu2nev0Ul50WVifzeoMWm4zqYrb1pu5_IXCAxtFiFFNc="
+   },
+   {
+    "title": "hubspot.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwjxFzHYng8wRUimb3dzHnynd2d6YpoN6WpGLWHCtQGONVVr7PhGcsUR74QnSu8kNCkwJXowPIwHsNMP8HKShIUxS5nvIC-yGaVDbc_-X6WD6eiQb-Ol_X4XONIfVdhn5hl_khEj8IUrqPaJ2L5M7DjmufHNzttsk6fNKPijqJz54NqLmuChkL5rIWv8K_TQl8uwwEAA_ME_U="
+   },
+   {
+    "title": "getknit.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUWU2p514dwYRqozvQAVxoHO1Nq8L1WVS0_6bnvaNtccRRjVbiWeqwOeqwHCxMybkbsBXd8jNi4kiAjFdLoeCK1iUPXzZznJfvyiQJ6lxfc9_3Yc5tfFc1FRWWy23fQkw="
+   },
+   {
+    "title": "reform.app",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFaTeLyx-YNgt7ds5fEeIth4oquRi9lavDeu7W1EBYal8RKW-bRe-HIWjyUJsIJl9douR1fyDwgfogHjZTK1b41leLNLlwEfajh1nEyuxxuoZ33HxLOgHLACoJHbW9kAKp1R6fSpRct_sIkXEhR7uTcU9AtY70QjEn9G8-A5FWnwaqn2PY="
+   },
+   {
+    "title": "youtube.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4eXFf_JR6PbvJnOXDPSzc5bPd123K9--QbdhqReiURAkfrEwZqYS61aN7o1yWRbsVnnLtt0bhupY4Y2T3Dn_2zdmMSdHo9WEi1PfCqnylwZ_AnTi-PdOtZNc27cMi638AEKhikHs="
+   },
+   {
+    "title": "hubspot.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlM9D1WcyAMNJ4laJHLtMW6DvbfP3kv9MTdZGvNdLMJQaRxq7R1eOA1FWWMhOkUe14ookYjrDWNAR6vJUFngoTWWNwGdb-T-8yzs3ZTeuhIsD2ajU0np_KrkCMrk_5lCfAjoTfhxUQDqC-zt1ITSRvYQO8w5FEK2KvysaY"
+   },
+   {
+    "title": "hubspot.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmkvnva9Tn-4B1FlemEt8J7Q8y2TnbhBbNFowOjauZERPYaN-DiixKtnbRTNTgvN0Mx6j2woiLEWx8GOlESuwHxInxaywCx_UjMqUh37qHxbgGu-vpBIl_8MVzzz3USboRFAaw_U8Ez0_gQil3e-m9-EXaz17qreM="
+   },
+   {
+    "title": "emailaudience.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3QxJHcYKQBZRQB20cz3kFj2BtRNM9EdOqQ0KON0VzfyOoa37U7OG6ZSnDq9GdLIxWgwBfiIcr5jTjSpPujyaNqyBwPVOISIFMc_2oV7pFTCLsV4xnFyNVHC_-nLkiRxGK1F-E1FcSYZk="
+   },
+   {
+    "title": "syncmatters.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKKPyC5C0ADX51ciW0SvckWpKZ7MI3Z4L-2BDRH4BjV2Avl3okURsLlJpQRksG_uct9Du7xE8Hp--sYdsNYnLbx8pP6QLfo2fz9-T_AyuX85EB1ozjVjFCJp1-cz2izm8wEVB9aBK_aTm7Q9dEv0TAUgHucxWUIcksNlhtJ_AIRacIj9Ip"
+   },
+   {
+    "title": "scopiousdigital.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUOoEx0I7bWpVp_028lPVYjIJebMN3LKv15fBjnWqaqsNOl-tiCOJQ1m0w3YgQ9RTcy1q_0_qzI7P-K65KICL8IT2JoWUN4p04fTyqBMOk3JRkfiInerfk8zJvUTagmRNco_Mb268IOvMGLv9EoA1g2nXLZ0jZyuaeCVsC2FpBSbLjQ0QQx7ywm_XYH5e6Rzz9LaybFCOCwzU="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJCwQCX2d1jyrfmYx7Acn72o4OI23hzbvYMBgQ2xN08vhc8ukMqYDBoVHPatl3XKgpRzZ-B_yqfNeVoHJfsSfs6Bkw36n7lRdFv46B7cOkdJWqPCBHpnPRKFvApW-oxPokHQ6YNvg7dWU4RglGpTgDeOa4hOa56Kw="
+   },
+   {
+    "title": "hubspot.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMCEdi0D-JVbXcuBCcLMpcBWwCky_hcd-6Yia8GFhCY4oDrzzXE7Z_WaW_HlsbdetmpE2Gp-al4lxdrsfCj9nnHgOh-PMTPajXQ_alTHlAz3WE8lYgsUmENPsZmnzIRWAgB9F01QisIsTsTtEqMbeiZYxeT8M2KxdbjQa27OYOnoN1UvVBn1dtrN0CeEoC49lzGuwFMTI="
+   },
+   {
+    "title": "hubspot.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElBjJi5--GMYzGXlxlB3TLvggb7jP8KXwDqUldiBJN6_JBnJQBP6lSqccHEHVFlpb3SvJ12Y4ig2P9OhQkWf17NDOg_qr-TiNP0onudQkm97STPJnK77ziTSdgsbUCh8ftlRjg6rcF5Dj6ZCyNnmHbu7szn5BW2s_joaaGDCnyhKka"
+   },
+   {
+    "title": "hubspot.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFF5qa5guXcnW1s7AnVcun9gg-HC-7imrPXPcGGmsXNvxRApCWDv8IS4nA-R1j7XONPZhMIb8qpvd64IX3acS2mtVBLyX7_U59hWEGazqKDrW8qNwnsCY9e2jfw5lx97Ev05ecNuhIXF-Bq821_q84aPAX7_0HYxkxmRDcQApbwJhT_"
+   },
+   {
+    "title": "hubspot.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE30TuTyKuqb6JftFi46mEVUp_IkcrZhmhNKj2H4YqYYoyoeCsyvowpau5blpDomWtcdz6aI6QaYyd4K-dLByy3xIB_4gS8wRiUon_m75-LfVjwxznpcGIx7FaJ9ARMB9BshNNswgX1OmgA3KO9fo4tgBOE2aLMA-MhFoDERNcl6Aj4YJH_U5ORXHfDzG8jhtwbpoLkS1w="
+   },
+   {
+    "title": "hubspot.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwqIQNPaFssebaiIZ2hBegAvIy2ymRP2zJkcT3mMeY0uQGOaN9tr_X1b5BrLdd5v3BoYgezec4qoSz6y_2ZChaz2Zh_mqnRiCScy-JVx-llZiIz3lCMdtUHToXVBiQGjI4zJISOId6x999pplzVjoSZVhDKn60hQVwsZmrlVJVNVW8_b2mF-z0sFkMCYo="
+   },
+   {
+    "title": "hubspot.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSnv3Bmp1SDcX-zureQzvUbk-EP6p1bTC7cbrTKN-ZxSTB_yC59GE1j41eDu0BFiJnqnhI4Z6tn5c-FjvOq4WrWN9Oaqua_sbv7_uDFGfgZ3ul0G1D-ykGST61JxvAB_b8FfU="
+   },
+   {
+    "title": "hubspot.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG587Rg7z3xEfZuYBwb6aKzBgxeawB5eEJQkUcBVgMZ4ZjdiM6vYlSMa9HDrxsicMLFe75rdkmZEFsIK9B_S3kUeBglgAqQZtspHZYEod75yyN3DFYWeZVslJUK-OQhXw8Kx_gcuGeMMFRtQ0N_BL2YFFCZB5jJ2ftvr-RrslsZX819ZeZar-PymDg7xkdN8Es="
+   },
+   {
+    "title": "hubspot.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYenbuQaQgnu00wiumuRaFXqCG-dUOaXIDgJ2Q0QYSLcpHl10DPeZNwYBqKsAEE5Bxukk4haA1XnJE4okyr2lpxWuohDw_5UppduX9kLFRdS-8t-FTmnDBDmanw7aaqMAbo5T3mZoE88-d7PGYUh29rDiCB9OVHrXFilWPPO6SD9SSDQA_J9zHKpliiqTq9N8K"
+   },
+   {
+    "title": "coworker.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYCGCbHx1oy4YwoJzX9W-Pt7JJCv-S-HAxsJMit1rK24mCnqjGhtiEZO3wXVgniDQ3YvB_QX-eJs_1KCFQLpkt48TFS621bJaBqctMlgVjeSuRg8mkTy1rP3ig1MEdFw=="
+   },
+   {
+    "title": "truefoundry.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwYj6hT6GucF88HnBzZ7AsoC5Fw7qlE0PDywoan6nqB4y2SENrgjJr0ubOeayCmdJv_RtTkCaZskB97VKzd0gEnKyT2UnzDGjrd6BeCY0OE9Wy5Ns6coxMNVA736iOj61UrSVpNBXF9r5bNCGV2A=="
+   },
+   {
+    "title": "hubspot.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQG92SfBR-63AOQg3GboIeHYMoUnosi-Ref02VJL3kMvJEnZ4fdSmqh6DRaMSjfGDykc5P_n02aPFWzlzVAvE4Ea0YU5VAQ8xhugGVVRjZXhU3h-RDJw36SwKO"
+   },
+   {
+    "title": "hubspot.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHt75OZ_fq_rLGnFFbRPUjmidOuiSvjPW5-meJ6chHE2HIffM0oa9jhlN4wFvJ3W2aqJ-rMHTnIoReXbcQYHZfmOWTFyVzMFoQCbTvQqxP4GE07UDJp32oI8VDIbfjfOM2w5MYaT1g="
+   }
+  ],
+  "tokens": 7918,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "pages_read": [
+   {
+    "url": "https://developers.hubspot.com/docs/apps/legacy-apps/authentication/working-with-oauth",
+    "status": 200,
+    "chars": 6541,
+    "readable": true
+   },
+   {
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYGo-0kMQ0VAqnScJqpNqc_bfkwOajxPRe0zY0mzWtkv2C7cHZEJE_KS6q5n1KNIw7agPkoLgwRGO7gsXnFZl-BvVECTjQCq4TS_M6ABR1780utJRbVunBnGhlk=",
+    "status": 404,
+    "chars": 268,
+    "readable": false
+   },
+   {
+    "url": "https://developers.hubspot.com/docs/api-reference/latest/overview",
+    "status": 200,
+    "chars": 1568,
+    "readable": true
+   },
+   {
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFY5VvmCWN6JumoAhXPAs5psAidTygHL6iAgb0RRdwCcm8ZiDGJovPywkl35-o_QMN6hmuyB4uOf2MyL5Vs4lMPu_19npICC_N-AS8UOyAsCe605O4zDizTLTz_gNAKHDf4XhJH2mAKiFeSS2HN_xbEB3_87Ehg74W4OqnDn0g=",
+    "status": 200,
+    "chars": 2917,
+    "readable": true
+   }
+  ],
+  "seconds": 163.6
+ }
+}

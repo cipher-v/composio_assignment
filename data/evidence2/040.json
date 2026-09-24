@@ -1,0 +1,200 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.postman.com",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.85
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.47
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.06
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.twilio.com/blog/sendgrid-free-trial-update",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.twilio.com/blog/sendgrid-free-trial-update",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.twilio.com/sendgrid/pricing",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.twilio.com/sendgrid/pricing",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.twilio.com/docs/sendgrid/api-reference",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.postman.com/sendgrid/workspace/sendgrid-public-api-network/overview",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/sendgrid/sendgrid-oai",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.twilio.com/docs/sendgrid/for-developers/tracking-events/event-webhook",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.twilio.com/docs/sendgrid/api-reference/mail-send-api/mail-send",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://www.usecarly.com",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/garethcull/sendgrid-mcp",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://www.twilio.com/blog/sendgrid-free-trial-update",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://www.twilio.com/blog/sendgrid-free-trial-update",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "api_key": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://www.twilio.com/blog/sendgrid-free-trial-update', 'https://www.twilio.com/blog/sendgrid-free-trial-update', 'https://www.twilio.com/sendgrid/pricing', 'https://www.twilio.com/sendgrid/pricing', 'https://github.com/sendgrid/sendgrid-oai', 'https://www.twilio.com/docs/sendgrid/for-developers/tracking-events/event-webhook', 'https://www.twilio.com/docs/sendgrid/api-reference/mail-send-api/mail-send', 'https://www.twilio.com/blog/sendgrid-free-trial-update', 'https://www.twilio.com/blog/sendgrid-free-trial-update']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://www.postman.com', 'https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication', 'https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication', 'https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication', 'https://www.usecarly.com']\n- Non-vendor sources (prefer official docs): ['https://www.postman.com', 'https://www.postman.com/sendgrid/workspace/sendgrid-public-api-network/overview', 'https://www.usecarly.com', 'https://github.com/garethcull/sendgrid-mcp']",
+ "metrics": {
+  "n_evidence": 18,
+  "alive_rate": 0.5,
+  "dead_rate": 0.5,
+  "blocked_rate": 0.0,
+  "official_rate": 0.7222222222222222,
+  "readable": 8,
+  "quote_supported_rate": 0.375,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

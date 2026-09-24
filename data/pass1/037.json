@@ -1,0 +1,218 @@
+{
+ "app": {
+  "id": 37,
+  "name": "systeme.io",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "systeme.io (funnel builder)"
+ },
+ "record": {
+  "subcategory": "Marketing Automation",
+  "one_liner": "All-in-one online marketing platform for sales funnels, email marketing, courses, and CRM.",
+  "auth_methods": [
+   "api_key"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "API key passed via X-API-Key header. OAuth2 is planned but not yet available for multi-tenant applications.",
+  "access": "self_serve_free",
+  "access_notes": "Any user can generate a public API key from their account settings. The permanent Free plan includes API access with a rate limit of 30 requests per minute.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API covering automation rules, coupons, price plans, digital products, offers, contacts, tags, custom fields, courses, modules, lectures, newsletters, and webhooks.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Official, vendor-maintained MCP server at https://mcp.systeme.io/mcp. Requires a separate MCP key (X-MCP-Key header or mcpKey parameter) which expires every 90 days and is capped at 2 per account. Community MCP servers also exist.",
+  "verdict": "ready_with_friction",
+  "blocker": "no_public_api",
+  "blocker_notes": "Multi-tenant integration platforms cannot use a centralized OAuth application flow and must rely on users manually generating and copying static API keys (X-API-Key) from their dashboard settings, which introduces security friction and manual setup overhead per customer.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://webflow.com",
+    "quote": "Systeme.io is an all-in-one online marketing platform that combines sales funnels, email marketing, online courses, affiliate management, and CRM pipelines in one account."
+   },
+   {
+    "claim": "auth",
+    "url": "https://aiskill.market",
+    "quote": "Systeme.io uses API key authentication (passed as X-API-Key header natively)"
+   },
+   {
+    "claim": "auth",
+    "url": "https://help.systeme.io",
+    "quote": "This is an initial release implementation and does not yet support the recommended authentication method (OAuth)... OAuth support is currently planned."
+   },
+   {
+    "claim": "access",
+    "url": "https://help.systeme.io/article/2323-how-to-create-a-public-api-key-on-systeme-io",
+    "quote": "Click on your profile picture and select settings (1). in the left menu, click mcp & api keys (2). scroll down to the public api keys section and click create (3)."
+   },
+   {
+    "claim": "access",
+    "url": "https://systeme.io/pricing-olddd",
+    "quote": "free $0 /month ... api requests per minute 30"
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.systeme.io/reference/api",
+    "quote": "visit https://developer.systeme.io/llms.txt for an index of all pages formatted in markdown and endpoints in openapi. ... public api systeme.io public api public api automation retrieves the collection of automationrule resources."
+   },
+   {
+    "claim": "api",
+    "url": "https://webflow.com",
+    "quote": "Register a Systeme.io webhook with POST https://api.systeme.io/api/webhooks ... Systeme.io accounts cap webhooks at 10 total"
+   },
+   {
+    "claim": "api",
+    "url": "https://schoolmaker.com",
+    "quote": "The Free plan is a great “sandbox” if you're experimenting, but you'll quickly hit its limits once you grow."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://help.systeme.io",
+    "quote": "The systeme.io MCP server allows AI applications to access specific contact-management tools within your account... For security reasons, MCP keys are valid for a maximum of 90 days. You can create a maximum of two MCP keys at a time."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://activepieces.com",
+    "quote": "Connect Systeme.io to Claude, Cursor and any MCP client. 5 tools through one open-source server that also reaches 760+ other apps."
+   }
+  ],
+  "confidence": 0.9
+ },
+ "notes": "### 1. Product Capabilities\nSysteme.io is an all-in-one online marketing platform designed to help users build sales funnels, manage email marketing campaigns, host online courses, run affiliate programs, and manage CRM pipelines.\n* **Source URL:** `https://webflow.com` (via search results)\n* **Verbatim Quote:** `\"Systeme.io is an all-in-one online marketing platform that combines sales funnels, email marketing, online courses, affiliate management, and CRM pipelines in one account.\"`\n\n### 2. Authentication Methods\nThe public API natively uses API key authentication. The key must be passed via a custom HTTP header (`X-API-Key`). There is currently no public OAuth2 support available for external multi-tenant applications, though it is on the vendor's roadmap.\n* **Primary Auth for Multi-Tenant Integration:** `api_key`\n* **Source URL:** `https://aiskill.market` (via search results)\n* **Verbatim Quote:** `\"Systeme.io uses API key authentication (passed as X-API-Key header natively)\"`\n* **Source URL:** `https://help.systeme.io` (via search results)\n* **Verbatim Quote:** `\"This is an initial release implementation and does not yet support the recommended authentication method (OAuth)... OAuth support is currently planned.\"`\n\n### 3. Credentials Acquisition & Cost\n* **Access Tier:** `self_serve_free`\n* **Acquisition Process:** Any user can generate a public API key directly from their account settings dashboard by navigating to their profile picture, selecting Settings, clicking \"MCP & API keys\", and clicking \"Create\" under the public API keys section.\n* **Cost:** Free. The permanent Free plan includes API access with a rate limit of 30 requests per minute.\n* **Source URL:** `https://help.systeme.io/article/2323-how-to-create-a-public-api-key-on-systeme-io`\n* **Verbatim Quote:** `\"Click on your profile picture and select settings (1). in the left menu, click mcp & api keys (2). scroll down to the public api keys section and click create (3).\"`\n* **Source URL:** `https://systeme.io/pricing-olddd`\n* **Verbatim Quote:** `\"free $0 /month ... api requests per minute 30\"`\n\n### 4. API Architecture & Features\n* **Style:** REST API.\n* **Breadth:** Broad. The API covers automation rules, coupons, price plans, digital products, offers, contacts, tags, custom fields, courses, modules, lectures, newsletters, and webhooks.\n* **OpenAPI Spec:** Yes, an index of endpoints formatted in OpenAPI is available via the developer portal.\n* **Webhooks:** Yes, supported. Webhooks can be registered programmatically via the API or via dashboard automation rules/workflows, but accounts are capped at 10 total webhooks.\n* **Sandbox:** No dedicated developer sandbox environment is provided; instead, the vendor's permanent Free plan serves as the testing sandbox.\n* **Source URL:** `https://developer.systeme.io/reference/api`\n* **Verbatim Quote:** `\"visit https://developer.systeme.io/llms.txt for an index of all pages formatted in markdown and endpoints in openapi. ... public api systeme.io public api public api automation retrieves the collection of automationrule resources.\"`\n* **Source URL:** `https://webflow.com` (via search results)\n* **Verbatim Quote:** `\"Register a Systeme.io webhook with POST https://api.systeme.io/api/webhooks ... Systeme.io accounts cap webhooks at 10 total\"`\n* **Source URL:** `https://schoolmaker.com` (via search results)\n* **Verbatim Quote:** `\"The Free plan is a great “sandbox” if you're experimenting, but you'll quickly hit its limits once you grow.\"`\n\n### 5. Model Context Protocol (MCP) Servers\n* **MCP Availability:** `official`\n* **Details:** Systeme.io hosts an official, vendor-maintained MCP server at `https://mcp.systeme.io/mcp`. It requires generating a separate MCP key in the dashboard, which is passed via the `X-MCP-Key` header or `mcpKey` parameter. These keys expire every 90 days and are capped at 2 per account. Additionally, community MCP servers (such as Activepieces) exist.\n* **Source URL:** `https://help.systeme.io` (via search results)\n* **Verbatim Quote:** `\"The systeme.io MCP server allows AI applications to access specific contact-management tools within your account... For security reasons, MCP keys are valid for a maximum of 90 days. You can create a maximum of two MCP keys at a time.\"`\n* **Source URL:** `https://activepieces.com` (via search results)\n* **Verbatim Quote:** `\"Connect Systeme.io to Claude, Cursor and any MCP client. 5 tools through one open-source server that also reaches 760+ other apps.\"`\n\n### 6. Buildability Verdict\n* **Verdict:** `ready_with_friction`\n* **Main Blocker:** `no_oauth2` (or `api_key_only`). Multi-tenant integration platforms cannot use a centralized OAuth application flow and must rely on users manually generating and copying static API keys (`X-API-Key`) from their dashboard settings, which introduces security friction and manual setup overhead per customer.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"systeme.io\" \"mcp\"",
+   "\"systeme.io\" webhooks",
+   "\"systeme.io\" sandbox",
+   "",
+   " authentication",
+   " openapi",
+   " webhooks",
+   "\"systeme.io\" \"api key\" header",
+   "\"api.systeme.io\" \"X-API-Key\"",
+   "\"developer.systeme.io\" \"X-API-Key\"",
+   "\"developer.systeme.io\" authentication",
+   "\"developer.systeme.io\" webhooks"
+  ],
+  "search_sources": [
+   {
+    "title": "alixixi.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFi0FQ97iZ65fVtdbIgYVqfxv03k9p6-psvGp-aD1fm1F_-zIzDqXlDjTItUzQTpl6D3FVRUk_nJVWCyCjWivJP7ssmoL7RSs9cvGZFf_txftV_bMiAzIPWMwCM5MIyVQ=="
+   },
+   {
+    "title": "aiskill.market",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF28qMjdwWlZbMB7Pk31jvXPw4iftKzreQqNMTqJ_NECog93z0KALNWXUTDMOGocJm2FVuiMCoMLBLlP7rAdnmOiHMBrvsRe0oP6yhC3V0ZJ88dLNJ87Is1_oJplFXfXluXdQ=="
+   },
+   {
+    "title": "thatmarketingbuddy.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHM3uMqt3rB133b6T0fkL3KRY1nJLIqvboWVXs4tWLPQk8003KWOWuesEswWt5H7URHowweIYMxrPz28U0y10qNHG22xIooinjlhnmML5hTNoSyPtnfUfthUS8iyKyo5QcnwUfnDQyBGg=="
+   },
+   {
+    "title": "nitrosend.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEN4oSlN61vajYjJxch5aPJUaHe9vIvxjBGPFGsKrPgV4esD7Hd1V3twrbZhZzZn-WsdD18aV1PeSkswMMPY0gMsakVMD-hFfnabqZDI7cEF5gY9nDhR7vi7dbXxuFFz5f_I0jZ6Zpe9I2Ssg=="
+   },
+   {
+    "title": "make.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1VSmyd0DmCiXaiAC4VVuVZ_I_6MHa1zzjNBF6iysCa38JQQzx_ktEN8Stiq9RoZrCpokLKlbINMh7DvDzOqXHjgfUXPEeqgKN4M4ceV3q46NN7t5cCy5P1gbdYC4swOhULpAWDHKfyZzl4RTNV1ELz0zBrr0ekFlVJJEClyfxYSDFhKtDxb2MN4MP9kWHxZZcYRjoExqMngIBlFGwQS-LAh0O3MnNXlRiIG8Om9kqF9BuT5JLtLfE5ZCLsDjNDLbrjb5HYw7Tx_agHekx01Mr8hpgiVFwww0tY3HEmkWY7UPqm8IBX2HF1jXwGjZ9MLx4A6p9PwULtUcJbb-RVvsTd8XqEPl0ynxefBVAGOkPC4VF2vq-WeJwegPghHOrbznWPMW39Sc_vhqqX5GETgekd3MIE2LLTo0l9ERTyQ4yzmMPcp1J1bugUTtbaq2VHTXrhhTgDZZqbnZQQHHrjTmwlvm6VGj_lwLgI3gBivh6iDMX6mAYoes3SQj9cjY9nFGEvj8rWmMlKeyGorNk8WKJFHSwh9-dymD1WMHD99xL9RaEs2hhwPH7b_iQtsYButU5w0mpyGNCqNfu9XcDyU6qhyKoYlnXdCmPfX8xi-0rqtsTv_blblVfH5BOZlo8ll1Br7VaJBe6Hj0mjrnOlAo35QiX2bsOydofJbfKi7wFKKZ8vLdwiP7XluijBjSl5LIQ0rrAXkJAgr1pVFkKMkuhaZbgelCopnmJfcHFaMZbyZ94wRSjEBeY6vLWYzB0Ae-ILCqRg-wvVmvqvC-Xp5kB0iynub2rzbY5qpxGjQotHbW9oJhFh8bRL7F_JA-EXFgFCPVadkSm7yp9toxWi5i6i1fRGEvbtgQftwxoEAF1L4WK5ceCnLiID6TBuAgVCP00OFi7XBZ_LRD3daFxCYT0SALlSuqeku2BO1YCZM3hZPl8hTz4r-fektfHLJljeqQoRTUtGWRcVyWIgool-XZMGkL0098kgcJaskxhPwTG8MnVMaXvQoXLDFPYWK_0E5inws-CUykStgzBac_ZgUb_a5kXrhlxn6NoA3ueLHJ9zzyGgaSDC0Am_560oT1otgIhFBg7mbnCoyIWpJpFSv0EGZ76_6jAbymWQ5sEZSUtWA5rnqs0TCb1-PLG0WE01WSvqYIy9HE2SdKX5KrSigzSIq_oWsQnk29-YjJPMiTIqca9gF0XH7ibKRwB8L3q5cN88JlshT1QnNlFTyJtUI7looruRF8y-ZDCoadxyIBb-U07hCxFsQZSzPJJ06ZGu_gI0ezfAEzKwMe7uXcY2EXX75tYasZGwBj8tW4VKbQiATwfUS_c6qcyU3LJelrey4Bvi80vBE7sYx6OLYVbvDMLqWzgzvbDXm7EE0cw_X1l1wkL9tOCoEcfQmzL4WlCDD3DyEsk2vE_CL8Ehn2szhje2hw9wgBrNP6AXXXQ"
+   },
+   {
+    "title": "systeme.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsRvz9Z9zXe8Kv77PapyQ0TH2IaGK1gYtQs7Rx2ajnT651hFIGGVeTS1vT5Dc84596K-VcUbsXnrNBDK4xwa3NBfb4Xg4VVqVetML8Jsie8weHR7ZABvymLy-Q62YrGq6JFnwYYgREsFHwB8CQBkrTFmWy8o5XdoajiA=="
+   },
+   {
+    "title": "webflow.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2OAjhv1imiJg22TOrx1tr5KG1-OYBlMXb1F6VdX0SOe9CXE0NYuDUihErFQq_PV6D2I611VE0JYdvrN0ahsSpYLAkc8GP508Z5tHx5pi-YSgvIiMyjjnwhflTEnWvMdKnMMK_eDg="
+   },
+   {
+    "title": "thatmarketingbuddy.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGa679ApK2B1SEDntfpZtd3mWH3adfWTfW1S0OoejWu2I4rgQffTcY1sWqSjiPPRVTtl5MXbR_QZLzfHxkBqmQ8Z-DL8xI3z-FmrXJoTAZ8ltG44zMPq6DAwDsCfTvjv5om-eDZDzI0wQ=="
+   }
+  ],
+  "tokens": 14493,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status':"
+  ],
+  "discovery": {
+   "search_queries": [
+    "systeme.io API authentication",
+    "systeme.io API keys",
+    "systeme.io OAuth",
+    "systeme.io API getting started",
+    "systeme.io API quickstart",
+    "systeme.io API pricing",
+    "systeme.io API access plans",
+    "systeme.io developer program",
+    "systeme.io API reference",
+    "systeme.io API documentation",
+    "systeme.io MCP server"
+   ],
+   "candidates": 4,
+   "live_urls": [
+    "https://help.systeme.io/article/2323-how-to-create-a-public-api-key-on-systeme-io",
+    "https://help.systeme.io/article/2329-how-to-use-systeme-io-public-api",
+    "https://systeme.io/pricing",
+    "https://developer.systeme.io/reference/api",
+    "https://systeme.io/pricing-olddd",
+    "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api",
+    "https://bubble.io/plugin/systemeio-api-1753543931323x134025451099652100",
+    "https://landerlab.io/blog/systeme-io-pricing",
+    "https://www.youtube.com/watch?v=gV7asJnXiyk"
+   ],
+   "bad_candidates": [],
+   "pages_read": [
+    {
+     "url": "https://help.systeme.io/article/2323-how-to-create-a-public-api-key-on-systeme-io",
+     "status": 200,
+     "chars": 8592,
+     "readable": true
+    },
+    {
+     "url": "https://help.systeme.io/article/2329-how-to-use-systeme-io-public-api",
+     "status": 200,
+     "chars": 78,
+     "readable": false
+    },
+    {
+     "url": "https://systeme.io/pricing",
+     "status": 200,
+     "chars": 8193,
+     "readable": true
+    },
+    {
+     "url": "https://developer.systeme.io/reference/api",
+     "status": 200,
+     "chars": 12793,
+     "readable": true
+    },
+    {
+     "url": "https://systeme.io/pricing-olddd",
+     "status": 200,
+     "chars": 4531,
+     "readable": true
+    },
+    {
+     "url": "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api",
+     "status": 200,
+     "chars": 8592,
+     "readable": true
+    },
+    {
+     "url": "https://bubble.io/plugin/systemeio-api-1753543931323x134025451099652100",
+     "status": 200,
+     "chars": 48,
+     "readable": false
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 255.7
+ }
+}

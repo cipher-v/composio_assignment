@@ -1,0 +1,204 @@
+{
+ "app": {
+  "id": 95,
+  "name": "Reducto",
+  "category": "AI, Research and Media-native",
+  "hint": "reducto.ai (document parsing)"
+ },
+ "record": {
+  "subcategory": "Document Processing",
+  "one_liner": "Reducto is an AI-powered agentic document platform that converts unstructured documents into structured, LLM-ready JSON data.",
+  "auth_methods": [
+   "api_key"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "The public API authenticates requests using API keys passed as a Bearer token in the HTTP Authorization header. A multi-tenant integration platform would require users to provide their own API keys.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can sign up for a free account via Reducto Studio and immediately generate API keys. The Standard plan includes $150 in free usage (15,000 free credits).",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "The API exposes 17 endpoints covering document processing (Parse, Extract, Split, Classify, Edit, Pipelines), job management, and utilities.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "The Reducto MCP server connects AI agents directly to Reducto. The hosted server runs at https://mcp.reducto.ai/mcp.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. The platform provides comprehensive public documentation, an OpenAPI spec, and self-serve API keys with a generous free credit tier, allowing immediate toolkit development.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://docs.reducto.ai/agent-guide",
+    "quote": "Reducto is the agentic document platform. It provides a complete toolkit for classification, parsing, extraction, splitting, editing, and workflow orchestration across documents (PDFs, images, spreadsheets, DOCX, and 30+ other formats) via a REST API."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.reducto.ai/studio-account",
+    "quote": "api keys authenticate your requests to reducto. navigate to api keys in the sidebar to manage them."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.reducto.ai/quickstart",
+    "quote": "curl -x post \"https://platform.reducto.ai/parse\" \\ -h \"authorization: bearer $reducto_api_key \""
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.reducto.ai/quickstart",
+    "quote": "Go to studio.reducto.ai and sign up for a free account. ... In the Studio sidebar, click API Keys, then Create API Key."
+   },
+   {
+    "claim": "access",
+    "url": "https://reducto.ai/pricing",
+    "quote": "standard pay-as-you-go for early-stage teams free $150 in free usage get started"
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.reducto.ai/agent-guide",
+    "quote": "via a REST API."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.reducto.ai/agent-guide",
+    "quote": "The platform brings together parsing, extraction, splitting, classification, and editing"
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.reducto.ai/agent-guide",
+    "quote": "Full OpenAPI spec with request/response details"
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.reducto.ai/quickstart",
+    "quote": "Reducto uses Svix for signed delivery, automatic retries, and multi-endpoint routing."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.reducto.ai/studio-account",
+    "quote": "for security, create separate api keys for different environments (development, staging, production)."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.reducto.ai/mcp-server",
+    "quote": "The Reducto MCP server connects AI agents directly to Reducto."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.reducto.ai/mcp-server",
+    "quote": "Option A: Hosted server (no install). The hosted server runs at https://mcp.reducto.ai/mcp ."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### 1. What the Product Does\nReducto is an AI-powered agentic document platform that converts unstructured documents—including PDFs, images, spreadsheets, slides, and forms—into structured, LLM-ready JSON data. It provides a comprehensive suite of tools for document parsing, extraction, splitting, classification, and editing.\n* **Source:** `https://docs.reducto.ai/agent-guide`\n* **Verbatim Quote:** \"Reducto is the agentic document platform. It provides a complete toolkit for classification, parsing, extraction, splitting, editing, and workflow orchestration across documents (PDFs, images, spreadsheets, DOCX, and 30+ other formats) via a REST API.\"\n\n### 2. Every Auth Method of the Public API & Multi-Tenant Integration Choice\nThe public API authenticates requests using API keys passed as a Bearer token in the HTTP `Authorization` header. While Reducto's CLI and local MCP server utilize an OAuth device-code flow to authenticate users and save their API keys locally, there is no public OAuth application system available for third-party multi-tenant platforms. Therefore, a multi-tenant integration platform would require users to provide their own API keys.\n* **Primary Auth Method:** `api_key`\n* **Source:** `https://docs.reducto.ai/studio-account`\n* **Verbatim Quote:** \"api keys authenticate your requests to reducto. navigate to api keys in the sidebar to manage them.\"\n* **Source:** `https://docs.reducto.ai/quickstart`\n* **Verbatim Quote:** `curl -x post \"https://platform.reducto.ai/parse\" \\ -h \"authorization: bearer $reducto_api_key \"`\n\n### 3. How a Developer Gets Credentials & Cost\nDevelopers can sign up for a free account directly via Reducto Studio and immediately generate API keys. The Standard plan operates on a pay-as-you-go model and includes $150 in free usage (equivalent to 15,000 free credits), allowing developers to obtain working credentials at no cost.\n* **Access Level:** `self_serve_free`\n* **Source:** `https://docs.reducto.ai/quickstart`\n* **Verbatim Quote:** \"Go to studio.reducto.ai and sign up for a free account. ... In the Studio sidebar, click API Keys, then Create API Key.\"\n* **Source:** `https://reducto.ai/pricing`\n* **Verbatim Quote:** \"standard pay-as-you-go for early-stage teams free $150 in free usage get started\"\n\n### 4. API Style, Breadth, OpenAPI Spec, Webhooks, Sandbox\n* **API Style:** REST API.\n  * **Source:** `https://docs.reducto.ai/agent-guide`\n  * **Verbatim Quote:** \"via a REST API.\"\n* **Breadth:** The API exposes 17 endpoints covering document processing (Parse, Extract, Split, Classify, Edit, Pipelines), job management, and utilities.\n  * **Source:** `https://docs.reducto.ai/agent-guide`\n  * **Verbatim Quote:** \"The platform brings together parsing, extraction, splitting, classification, and editing\"\n* **OpenAPI Spec:** A full OpenAPI specification is available.\n  * **Source:** `https://docs.reducto.ai/agent-guide`\n  * **Verbatim Quote:** \"Full OpenAPI spec with request/response details\"\n* **Webhooks:** Reducto supports production-scale webhooks powered by Svix for asynchronous job completion.\n  * **Source:** `https://docs.reducto.ai/quickstart`\n  * **Verbatim Quote:** \"Reducto uses Svix for signed delivery, automatic retries, and multi-endpoint routing.\"\n* **Sandbox:** There is no dedicated sandbox environment. Instead, developers are advised to create separate API keys to isolate environments.\n  * **Source:** `https://docs.reducto.ai/studio-account`\n  * **Verbatim Quote:** \"for security, create separate api keys for different environments (development, staging, production).\"\n\n### 5. MCP Servers\nReducto officially publishes and hosts an MCP server. It provides both a hosted cloud option and a local option run via `uvx`.\n* **MCP Type:** `official`\n* **Source:** `https://docs.reducto.ai/mcp-server`\n* **Verbatim Quote:** \"The Reducto MCP server connects AI agents directly to Reducto.\"\n* **Source:** `https://docs.reducto.ai/mcp-server`\n* **Verbatim Quote:** \"Option A: Hosted server (no install). The hosted server runs at https://mcp.reducto.ai/mcp .\"\n\n### 6. Buildability Verdict & Main Blocker\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. The platform provides comprehensive public documentation, an OpenAPI spec, and self-serve API keys with a generous free credit tier, allowing immediate toolkit development.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"reducto.ai\" webhooks",
+   "\"reducto.ai\" openapi spec",
+   "\"reducto.ai\" mcp server",
+   "\"reducto.ai\" pricing",
+   "\"reducto.ai\" oauth",
+   "\"reducto.ai\" \"api keys\" multi-tenant",
+   " oauth"
+  ],
+  "search_sources": [
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8wAkovF4REyTifRuDu23ZcYVPrHR3B_Fe7E6udfIX3zq_CN1xYj1Fa7gKzH870z9GIV0NYCD_5CMy4_Vp7CrJxG2O9vCwRPYccGECkf5mQRzMIRi3sz_1U7iQk1ohKmlVB3YR"
+   },
+   {
+    "title": "aiflo.cyou",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBGjnNN5B9p2SzCOpjN9HpW0WL0BRjXJbY4HktvfxnbPZQGYjAi45_EoEzgW1FUmNfqb0i8B5UoJORDRgyyOr-tIwxTpQ2TbmPZeEWtbHY1WKz"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEu4xDq3L2WPovPFRkVahFu9JVNYftyBTi0SOLKkm7EYayzECZP6RYOWRPvzKaZ9XMMa-0Efts0vAxvxMnImFq13uEJWvXtlnGHCmzqXl7z8TzcWVjw6fQLev0T5uuSuTOKnBH7Dzsf2vGQsOG3-14XySJufeL57xFxuyJG4GQhM95M"
+   },
+   {
+    "title": "reducto.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENuIJL9j__UPL3n7BIlU_emkVNU4oyBnrQiupsILBm-EqJGxvVpAbBtQgi_25zBP6uBYf0VFmHjz_TBVSP7LopqQ09Y_PiKfMtFl9udzkuHibw-r0CC50OVyL7UgEep5y1tNNlhcACQPnj8mt_LEM="
+   },
+   {
+    "title": "papr.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHy6bghGTeysizRcgOFSh9sruJd5jrsuBAPSa0fYLRhvMXf3Ae2Q_9YV3cSlHWQz_WhdYtXjqRV9j9vyFCGGuZzIgxxWpHg7HnXOWJ8QrDEErSous6Lw9TktBWJEOegOnnbm7Nh-gRYGLiXoR7dMz52b_3L7kJjbp9RFvZiAdwWjsjpqoRmC4J5I1QKzBiq9zS6ZjIBcbiiYg=="
+   },
+   {
+    "title": "reducto.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrAZQjJZKNZQTSqZlSE89XQ0Rv4v0gU1tqkK5KOCvs1FTM6VXaVgFC_nfos0JIrxDeTOj-n3EGJhlJZfHwYmOOipKk3uh0AzcPO8dLHvW1b5jJrxmwciGM49t7CA=="
+   },
+   {
+    "title": "reducto.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVVYYXNrNvIo1wmgVFPGd2g8EBgdqhV0TppXWvxVlLtvX74CPuN8dOEWIf4zlq0Fko53NGdf3_vWLeHXCR0AYNRoWLCUB5pc8yqbLLP99hfFEdvas3_aHwgtGU7XDi10uE0PqyM2TSzlk="
+   },
+   {
+    "title": "reducto.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrGXS09Gxz6kr7aHVKDDUA1g576dp9_OmYknUcCheqXy_hlQPKqJ4qXfW7jP5I8x4uti7eXe9DxCVotM71TTMAEqBZG4H4Z7UXYHnNUFdsTykTF07dr8WstCE6Rvg="
+   }
+  ],
+  "tokens": 8109,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "Reducto API authentication",
+    "Reducto API keys",
+    "Reducto OAuth",
+    "Reducto API getting started",
+    "Reducto API quickstart",
+    "Reducto developer guide",
+    "Reducto API pricing",
+    "Reducto developer program",
+    "Reducto API plans",
+    "Reducto API reference",
+    "Reducto API documentation",
+    "Reducto MCP server"
+   ],
+   "candidates": 0,
+   "live_urls": [
+    "https://docs.reducto.ai/studio-account",
+    "https://docs.reducto.ai/quickstart",
+    "https://reducto.ai/pricing",
+    "https://docs.reducto.ai/mcp-server",
+    "https://docs.reducto.ai/agent-guide"
+   ],
+   "bad_candidates": [],
+   "pages_read": [
+    {
+     "url": "https://docs.reducto.ai/studio-account",
+     "status": 200,
+     "chars": 6191,
+     "readable": true
+    },
+    {
+     "url": "https://docs.reducto.ai/quickstart",
+     "status": 200,
+     "chars": 24709,
+     "readable": true
+    },
+    {
+     "url": "https://reducto.ai/pricing",
+     "status": 200,
+     "chars": 4786,
+     "readable": true
+    },
+    {
+     "url": "https://docs.reducto.ai/mcp-server",
+     "status": 200,
+     "chars": 24284,
+     "readable": true
+    },
+    {
+     "url": "https://docs.reducto.ai/agent-guide",
+     "status": 200,
+     "chars": 20612,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 51.1
+ }
+}

@@ -1,0 +1,337 @@
+{
+ "app": {
+  "id": 27,
+  "name": "Telegram",
+  "category": "Communications and Messaging",
+  "hint": "core.telegram.org"
+ },
+ "record": {
+  "subcategory": "Messaging",
+  "one_liner": "Telegram is a cloud-based instant messaging platform with robust APIs for bots and custom clients.",
+  "auth_methods": [
+   "bearer_token",
+   "oauth2",
+   "other"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Bot API Token (bearer_token) for bots; MTProto API uses api_id/api_hash with user authorization (phone number + OTP, QR codes, passkeys); Log in with Telegram uses OpenID Connect.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can obtain a Bot Token instantly via @BotFather or register an application on my.telegram.org for MTProto api_id/api_hash. Both are free and require no formal approval.",
+  "api_styles": [
+   "rest",
+   "cli_or_library"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "The Bot API is HTTP-based (REST-like), while the core Telegram API uses the custom MTProto protocol. It covers messaging, media sharing, polls, stickers, group/channel management, and reactions.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "community_only",
+  "mcp_notes": "Multiple community-built open-source MCP servers exist, such as 'telegram-mcp' (https://github.com/chigwell/telegram-mcp), that expose Telegram capabilities via MTProto or the Bot API.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "none",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://core.telegram.org/api/obtaining_api_id",
+    "quote": "telegram is a cloud-based mobile and desktop messaging app with a focus on security and speed."
+   },
+   {
+    "claim": "general",
+    "url": "https://core.telegram.org/api",
+    "quote": "The bot api allows you to easily create programs that use telegram messages for an interface. the telegram api and tdlib allow you to build your own customized telegram clients."
+   },
+   {
+    "claim": "auth",
+    "url": "https://core.telegram.org/bots/api",
+    "quote": "each bot is given a unique authentication token when it is created . the token looks something like 123456:abc-def1234ghikl-zyx57w2v1u123ew11"
+   },
+   {
+    "claim": "auth",
+    "url": "https://core.telegram.org/api/obtaining_api_id",
+    "quote": "you will get basic addresses as well as the api_id and api_hash parameters required for user authorization."
+   },
+   {
+    "claim": "auth",
+    "url": "https://core.telegram.org/api/auth",
+    "quote": "The following alternative login flows are also available to users: QR code-based login flow » . Passkey login flow » ."
+   },
+   {
+    "claim": "auth",
+    "url": "https://core.telegram.org/bots/telegram-login",
+    "quote": "alternatively, telegram supports the standard openid connect protocol. this allows you to integrate telegram authentication into your application using any oidc-compatible library or authentication platform"
+   },
+   {
+    "claim": "access",
+    "url": "https://core.telegram.org/bots/telegram-login",
+    "quote": "set up a bot to represent your application. register your allowed urls via @botfather and obtain your client id and secret."
+   },
+   {
+    "claim": "access",
+    "url": "https://core.telegram.org/api/obtaining_api_id",
+    "quote": "log in to your telegram core: https://my.telegram.org . go to \"api development tools\" and fill out the form."
+   },
+   {
+    "claim": "access",
+    "url": "https://core.telegram.org/api",
+    "quote": "you are welcome to use both apis free of charge."
+   },
+   {
+    "claim": "api",
+    "url": "https://core.telegram.org/bots/api",
+    "quote": "the bot api is an http-based interface created for developers keen on building bots for telegram."
+   },
+   {
+    "claim": "api",
+    "url": "https://core.telegram.org/mtproto/description",
+    "quote": "The protocol is designed for access to a server API from applications running on mobile devices."
+   },
+   {
+    "claim": "api",
+    "url": "https://core.telegram.org/bots/api",
+    "quote": "added the ability to see certain messages sent by other bots in groups. polls added the classes inputmediasticker , inputmedialocation , and inputmediavenue ."
+   },
+   {
+    "claim": "api",
+    "url": "https://core.telegram.org/bots/api",
+    "quote": "if you're using webhooks , you can perform a request to the bot api while sending an answer to the webhook."
+   },
+   {
+    "claim": "api",
+    "url": "https://core.telegram.org/mtproto/description",
+    "quote": "TDLib (Telegram Database Library) is a cross-platform, fully functional Telegram client. We designed it to help third-party developers create their own custom apps using the Telegram platform."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/chigwell/telegram-mcp",
+    "quote": "telegram-mcp ... Description: Full-featured Telegram MCP server that exposes nearly the entire Telegram/Telethon API as MCP tools for Claude, Augment Code or any MCP-compatible client."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://core.telegram.org/api",
+    "quote": "you are welcome to use both apis free of charge."
+   },
+   {
+    "claim": "general",
+    "url": "https://core.telegram.org/api",
+    "quote": "The Telegram Bot API is free, has no signup beyond a chat with BotFather, and gives you a messaging front-end in minutes."
+   },
+   {
+    "claim": "api",
+    "url": "https://core.telegram.org/bots/api",
+    "quote": "Setting a webhook means you supplying Telegram with a location in the form of a URL, on which your bot listens for updates."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": "[\"bearer_token\", \"other\"]",
+    "new": "[\"bearer_token\", \"oauth2\", \"other\"]",
+    "reason": "The initial record missed 'oauth2'. Telegram supports three distinct public authentication methods: Bot API (bearer_token), MTProto API (other), and Log in with Telegram (OpenID Connect, which is oauth2).",
+    "url": "https://core.telegram.org/bots/telegram-login"
+   },
+   {
+    "field": "primary_auth",
+    "old": "bearer_token",
+    "new": "oauth2",
+    "reason": "For a multi-tenant integration platform, 'Log in with Telegram' using OpenID Connect (oauth2) is the most appropriate and scalable method, allowing users to grant permissions securely.",
+    "url": "https://core.telegram.org/bots/telegram-login"
+   },
+   {
+    "field": "api_styles",
+    "old": "[\"rest\", \"websocket\", \"cli_or_library\"]",
+    "new": "[\"rest\", \"cli_or_library\"]",
+    "reason": "The Bot API is REST-like. The core MTProto API is a custom RPC protocol, typically accessed via a library (cli_or_library), not fundamentally a WebSocket API style, even if WebSockets can be a transport layer.",
+    "url": "https://core.telegram.org/mtproto/description"
+   },
+   {
+    "field": "sandbox",
+    "old": "true",
+    "new": "false",
+    "reason": "Telegram does not provide a dedicated sandbox environment for testing API calls that mimics production without affecting real data. Test accounts are for client configuration, not a general sandbox.",
+    "url": "https://core.telegram.org/api/auth"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "Here is the fact-checking report for the Telegram app.\n\n### **Field-by-Field Verification**\n\n**subcategory**: **CONFIRMED**\n-   **Correct Value**: `Messaging`\n-   **Reasoning**: Telegram is a well-known instant messaging service. The official documentation describes it as a \"cloud-based mobile and desktop messaging app\".\n-   **Evidence**: \"telegram is a cloud-based mobile and desktop messaging app with a focus on security and speed.\" (https://core.telegram.org/api/obtaining_api_id)\n\n**one_liner**: **CONFIRMED**\n-   **Correct Value**: \"Telegram is a cloud-based instant messaging platform with robust APIs for bots and custom clients.\"\n-   **Reasoning**: This accurately summarizes Telegram's offerings. The official documentation distinguishes between the Bot API and the Telegram API for building custom clients.\n-   **Evidence**: \"We offer three kinds of apis for developers. The bot api allows you to easily create programs that use telegram messages for an interface. the telegram api and tdlib allow you to build your own customized telegram clients.\" (https://core.telegram.org/api)\n\n**auth_methods**: **WRONG**\n-   **Correct Value**: `[\"bearer_token\", \"oauth2\", \"other\"]`\n-   **Reasoning**: The initial record missed `oauth2`. Telegram supports three distinct public authentication methods:\n    1.  **Bot API**: Uses a static authentication token, which is a `bearer_token`.\n    2.  **MTProto API (Core API)**: For building custom clients, this uses a combination of `api_id` and `api_hash` to identify the application, followed by user authorization via phone number, OTP, QR code, or passkeys. This falls under `other`.\n    3.  **Log in with Telegram**: This feature supports the standard OpenID Connect (OIDC) protocol, which is a form of `oauth2`.\n-   **Evidence**: \"Each bot is given a unique authentication token when it is created . the token looks something like 123456:abc-def1234ghikl-zyx57w2v1u123ew11\" (https://core.telegram.org/bots/api). \"you will get basic addresses as well as the api_id and api_hash parameters required for user authorization.\" (https://core.telegram.org/api/obtaining_api_id). \"alternatively, telegram supports the standard openid connect protocol. this allows you to integrate telegram authentication into your application using any oidc-compatible library or authentication platform\" (https://core.telegram.org/bots/telegram-login).\n\n**primary_auth**: **WRONG**\n-   **Correct Value**: `oauth2`\n-   **Reasoning**: For a multi-tenant integration platform, the \"Log in with Telegram\" feature using OpenID Connect (`oauth2`) is the most appropriate and scalable method. It allows users to grant permissions to a third-party application securely without sharing bot tokens or undergoing manual user-account authentication flows. The `bearer_token` (Bot Token) authenticates a single bot, not a user, and the MTProto API auth flow is designed for building full clients, not for simple integrations.\n-   **Evidence**: \"alternatively, telegram supports the standard openid connect protocol. this allows you to integrate telegram authentication into your application using any oidc-compatible library or authentication platform (e.g., keycloak, authentik, auth0 etc.).\" (https://core.telegram.org/bots/telegram-login).\n\n**auth_notes**: **CONFIRMED**\n-   **Correct Value**: \"Bot API Token (bearer_token) for bots; MTProto API uses api_id/api_hash with user authorization (phone number + OTP, QR codes, passkeys); Log in with Telegram uses OpenID Connect.\"\n-   **Reasoning**: The notes accurately describe the different authentication methods. The Bot API uses a token. The MTProto API uses `api_id`/`api_hash` plus a user login flow which includes QR codes and passkeys. The \"Log in with Telegram\" feature explicitly supports OIDC.\n-   **Evidence**: \"Each bot is given a unique authentication token when it is created .\" (https://core.telegram.org/bots/api). \"you will get basic addresses as well as the api_id and api_hash parameters required for user authorization.\" (https://core.telegram.org/api/obtaining_api_id). \"The following alternative login flows are also available to users: QR code-based login flow » . Passkey login flow » .\" (https://core.telegram.org/api/auth). \"alternatively, telegram supports the standard openid connect protocol.\" (https://core.telegram.org/bots/telegram-login).\n\n**access**: **CONFIRMED**\n-   **Correct Value**: `self_serve_free`\n-   **Reasoning**: Both the Bot API and the core MTProto API are free to use. Developers can obtain a Bot Token instantly from @BotFather or an `api_id`/`api_hash` from my.telegram.org through a self-service process without requiring payment or manual approval.\n-   **Evidence**: \"you are welcome to use both apis free of charge.\" (https://core.telegram.org/api). \"log in to your telegram core: https://my.telegram.org . go to \\\"api development tools\\\" and fill out the form.\" (https://core.telegram.org/api/obtaining_api_id). \"The Telegram Bot API is free, has no signup beyond a chat with BotFather, and gives you a messaging front-end in minutes.\"\n\n**access_notes**: **CONFIRMED**\n-   **Correct Value**: \"Developers can obtain a Bot Token instantly via @BotFather or register an application on my.telegram.org for MTProto api_id/api_hash. Both are free and require no formal approval.\"\n-   **Reasoning**: The documentation and search results confirm these two distinct, free, and self-serve methods for obtaining API credentials.\n-   **Evidence**: \"To learn how to create and set up a bot, please consult our introduction to bots and bot faq .\" (https://core.telegram.org/bots/api). \"in order to obtain an api id and develop your own application using the telegram api you need to do the following: sign up for telegram using an official application. log in to your telegram core: https://my.telegram.org . go to \\\"api development tools\\\" and fill out the form.\" (https://core.telegram.org/api/obtaining_api_id). \"you are welcome to use both apis free of charge.\" (https://core.telegram.org/api).\n\n**api_styles**: **WRONG**\n-   **Correct Value**: `[\"rest\", \"cli_or_library\"]`\n-   **Reasoning**: The Bot API is an HTTP-based interface that is REST-like. The core Telegram API uses the proprietary MTProto protocol, which is not REST or WebSocket-based; it is a custom RPC protocol over TCP/HTTP. Access to MTProto is typically handled via a library like TDLib, which is a `cli_or_library`. While MTProto can be transported over WebSockets (\"WSS\"), this is a transport layer detail, not the fundamental API style itself. The primary interaction styles are the HTTP-based Bot API and the library-based MTProto API.\n-   **Evidence**: \"The bot api is an http-based interface created for developers keen on building bots for telegram.\" (https://core.telegram.org/bots/api). \"TDLib (Telegram Database Library) is a cross-platform, fully functional Telegram client. We designed it to help third-party developers create their own custom apps using the Telegram platform.\" \"The protocol is subdivided into three virtually independent components: High-level component (API query language)... Cryptographic (authorization) layer... Transport component... (such as HTTP, HTTPS, WS (plain WebSockets), WSS (WebSockets over HTTPS), TCP, UDP).\" (https://core.telegram.org/mtproto/description)\n\n**api_breadth**: **CONFIRMED**\n-   **Correct Value**: `broad`\n-   **Reasoning**: The APIs cover a wide range of functionalities including messaging, media, user/group/channel management, polls, stickers, payments, and more, justifying a \"broad\" classification.\n-   **Evidence**: The Bot API changelogs show a vast array of features being added over time, such as rich messages, polls, and business bot features. (https://core.telegram.org/bots/api)\n\n**api_notes**: **CONFIRMED**\n-   **Correct Value**: \"The Bot API is HTTP-based (REST-like), while the core Telegram API uses the custom MTProto protocol. It covers messaging, media sharing, polls, stickers, group/channel management, and reactions.\"\n-   **Reasoning**: This is an accurate summary. The Bot API is HTTP-based. The core API uses MTProto. The feature list is supported by the API documentation.\n-   **Evidence**: \"the bot api is an http-based interface created for developers keen on building bots for telegram.\" (https://core.telegram.org/bots/api). \"The protocol is designed for access to a server API from applications running on mobile devices.\" (https://core.telegram.org/mtproto/description). The Bot API page lists updates for polls, reactions, and various media types. (https://core.telegram.org/bots/api)\n\n**openapi_spec**: **CONFIRMED**\n-   **Correct Value**: `false`\n-   **Reasoning**: Telegram does not officially publish an OpenAPI specification. This is a known issue in the developer community, leading to third-party efforts to create and maintain such specifications.\n-   **Evidence**: \"The official Telegram Bot API documentation at https://core.telegram.org/bots/api lacks a machine-readable schema format (OpenAPI/Swagger, JSON Schema, or similar).\" Community-maintained specs exist on GitHub, but none are official.\n\n**webhooks**: **CONFIRMED**\n-   **Correct Value**: `true`\n-   **Reasoning**: The Bot API explicitly supports webhooks as an alternative to polling with `getUpdates`.\n-   **Evidence**: \"if you're using webhooks , you can perform a request to the bot api while sending an answer to the webhook.\" (https://core.telegram.org/bots/api). \"Setting a webhook means you supplying Telegram with a location in the form of a URL, on which your bot listens for updates.\"\n\n**sandbox**: **WRONG**\n-   **Correct Value**: `false`\n-   **Reasoning**: Telegram does not provide a dedicated sandbox environment for testing API calls. The documentation mentions \"test\" accounts in the context of data centers but not a sandboxed environment that mimics production without affecting real data. The \"Gateway API\" is mentioned as \"free to test,\" but this refers to sending test messages to your own number, not a full sandbox. Developers test using real bots and API credentials, often on their own accounts.\n-   **Evidence**: The official documentation describes test and production data centers but does not mention a sandbox for general API development. The user authorization flow mentions \"Test Accounts\" but this is for client configuration, not a general-purpose sandbox. (https://core.telegram.org/api/auth). The Gateway API allows free testing by sending codes to your own number, which is not a full sandbox.\n\n**mcp**: **CONFIRMED**\n-   **Correct Value**: `community_only`\n-   **Reasoning**: Searches for an official Telegram MCP server yield no results. However, multiple community-built, open-source MCP servers exist, often built on libraries like Telethon.\n-   **Evidence**: \"Telegram does not publish one. The open-source Telegram MCP servers you will find are community projects...\" The provided evidence URL (https://github.com/chigwell/telegram-mcp) points to one such community project, and others are found in search results.\n\n**mcp_notes**: **CONFIRMED**\n-   **Correct Value**: \"Multiple community-built open-source MCP servers exist, such as 'telegram-mcp' (https://github.com/chigwell/telegram-mcp), that expose Telegram capabilities via MTProto or the Bot API.\"\n-   **Reasoning**: This is accurate. The cited GitHub repository is a valid example of a community MCP server, and search results confirm the existence of others. These servers typically use libraries that wrap the MTProto API (like Telethon) to provide extensive functionality.\n-   **Evidence**: \"Full-featured Telegram MCP server that exposes nearly the entire Telegram/Telethon API as MCP tools for Claude, Augment Code or any MCP-compatible client.\" \"Connect Large Language Models to Telegram via the Model Context Protocol (MCP). Built with Telethon, this server allows AI agents to interact with Telegram...\"\n\n**verdict**: **CONFIRMED**\n-   **Correct Value**: `ready_now`\n-   **Reasoning**: With free, self-serve API credentials available instantly for both the Bot API and the MTProto API, a developer can start building immediately. The `access` is `self_serve_free`, which maps directly to a `ready_now` verdict.\n-   **Evidence**: \"The Telegram Bot API is free, has no signup beyond a chat with BotFather, and gives you a messaging front-end in minutes.\" \"you are welcome to use both apis free of charge.\" (https://core.telegram.org/api).\n\n**blocker**: **CONFIRMED**\n-   **Correct Value**: `none`\n-   **Reasoning**: Consistent with the `ready_now` verdict, there are no significant blockers to development.\n\n**blocker_notes**: **CONFIRMED**\n-   **Correct Value**: `none`\n\n### **Uncertain Fields**\n\nAll fields were verifiable from the provided documentation and search results. There are no fields that remain uncertain.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "telegram api authentication methods",
+   "telegram bot api authentication",
+   "telegram mtproto api authentication",
+   "telegram openid connect",
+   "telegram api free access",
+   "telegram api pricing",
+   "telegram api sandbox environment",
+   "telegram mcp server official",
+   "telegram bot api openapi specification",
+   "telegram api webhooks",
+   "telegram tdlib"
+  ],
+  "search_sources": [
+   {
+    "title": "redhuntlabs.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxBt0VWhl_WHdVAL8QBvW5Iyw-98Pr0xD01Ugy5sp7M6OHLWSKa2XkAjwO1qC3FGIb_T_QGYvL5deTUS-X2uiQq1MgW6YR4jOGNc4g8j1OnV6PQu0e4-Loy2fsjoKS8ojY6cfYimhxpVlCvREdL3cwNG261XF6hwW2PrtDyPESSvaJdoIH9GwwjQ=="
+   },
+   {
+    "title": "telegram.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGN8aZdtNMZFfO-tSVSTZBGEN17zjPv0x-hXX3t922ore6S3u0i4o4vm3FDl1B3nO-eIE7ZSG-C88MuUmvRvmzHezwyRHbUM-FRZFa3k0IrXQl7evx9ceB9wjWVew=="
+   },
+   {
+    "title": "unifyport.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHQgbeYH9JtcHe2T55KTSuqDOoAlWHTQD4VkcQI0UhyANfK2eD6LAhFg0vUyU7MXx-TF0uKNDuB7qKE-n0_NoKpGBfX1t3E-3M252cUv7QJVz288lwChkLo0qG_HiSTeXKppGKb1_DzDBHCNOt8D2kV5GQNEf4F8vXlg=="
+   },
+   {
+    "title": "telegram.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECbshrOnh3la-vT-_lfyO9uwXuokR4Dw0zE0dcpjOxfri9LBDYdswN0_Ml0yDAtFcgnL-FHRdkwK0Pqllx-rHkoRGTg1LNk97cmVp1EXecM6amggeHx8LOisJb8A=="
+   },
+   {
+    "title": "telegram.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLe_R-54XItWVJoy0kwzn8k-3D2G3B0Tikzp6cpOcrfIsfCjKprJ6xyZKUd3P37eITUXaODGM1d2djSpNAqeTbH3_3WkuNIR04fOfGUfwpM_2i3vc46wuoB5JDN6uZAf0="
+   },
+   {
+    "title": "telegram.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELn0f1pGqIiq4oNkmYJyPg3nI--eQh-m3fjozfSXyCEli06Y5QzR1nneMFZTYobqzQ5TJEMiLSv0e_lSDV9VWyZ7oZS9D2-lOnyUWyx4eZhz3-m6nwONQfDTa2DicyrtOZ"
+   },
+   {
+    "title": "medium.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgv1cDl9SVWWWI0rzo7Rs2iOBUdXvoMAMqlHra2Bch_DJOClooOrUPuBb4NCk4062PmhL-yq9BAWbG7Ig6wl9bFu1592-xmh7qX7nS7CGsqxYF1orW10-Ic7_YGLmfv0MflRWz9BaYkmgXapJLX5-_86hMqSAFrAAeWSy7vtbGfnEa56erJbSzDJHMZwztE2l_woPO71UJ_Thkfsk1jA=="
+   },
+   {
+    "title": "telegram.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG64bJP_vFg2GZv_WrbruGfAFON5apgONBSRmBn0CsDJV7MW_0X90O5ixJjAfqiueTK3Xq9XWvnREAmd1LVkiDc1f1fUZrtT7-GUXaIG1UTThz5pBfKt-1H7aPNlvw6QJIFFydF5GNFbE8="
+   },
+   {
+    "title": "unipile.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqtm450e_dYrQ4et5GEOEnnUrrUUXr__IKUf6RhBqQPDrpetlKG7CrltNUpZsLA4RACIKuhT-ohwCD-BprQfiqxVCKTDfIOGG3-GA9tsMCm-LbRfXytLBENGTjPk9BWhTfbfk_OgsSkG4nSQ=="
+   },
+   {
+    "title": "telegram.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHedKaq5MukErD-NmD1VVrL-bUxyakkhaJucbN7BwqvdBlKgu9VjEXztfBssalc_LqSLAJ1FClDBPiMfZUEVHhgenQiM2UTjq1RoP8x6vcRsFTtvNU="
+   },
+   {
+    "title": "freeapihub.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiNqee3N1qCBnePz1FEXGjXrvq52TVv54hDXLWcdVTtdFgCW4OXT25ehvPwVjxkWs71Zuouf15Y--4dnui2VXGxiRxBLSWmWjLA8Ht6pHxe-W-dtOSQmgAj-2UJvR6F4qlZAY5mxI="
+   },
+   {
+    "title": "telegram.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXKGdIe4q_YhXXFoN-7fH8T9PNfSnLMrB9ejfi3rVjT6KlwEMK35y8oZI5D1bORBhAz5Uoyz8WZrcBUa5Bzs4iieMDK-HTxUdwg9aPAWGLn7o9CSD-uoPWlGLx"
+   },
+   {
+    "title": "medium.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnYkcD15WHKxCzcIVcjTs_OIH2KEDKmjE99_FfIWQSmJRMV1EqqsGw2I5Goh9qtDJPkIOKr2Lu7TW-aKpT_4vajwkd3mr-oaopwsUil1BilP4ujiBBHcqskY0NC8M77_jjZlhq4XaGmBGWrnfEnDe8_vC2XULCdW6NCqcaDmaNqt2w3iseXS0="
+   },
+   {
+    "title": "telegram.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRJTCvUfzxmk7UHDm2A8bBsHwtVm1y23cCMyDSGC_Ki1R3IMNhDxCnx6iEPuHxcSrbf8OI6JVWboj5FYE4Ks8bgDBvpG3IWzv6WMMaWJ6u0G3dhDvl0KttSQ=="
+   },
+   {
+    "title": "telegram.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHr5-7Oc8U6cFDWzK4761B2jO1aKkC2KTRYX1xqlEFjYP-Z8GxdOwhlamqYylaVHiTCfREU5nRYQrGzvbiUBt8oawZ3csOJSAq_qK2raL1RK9oRGD687rVN-g=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAejFz2jLjClmqX0cVHtJn77QxHuaTiN3vB9WZUZjeMmkJ4OXnMVX2UUQM9PLk0MI3CI-7zlyULnh1eEsMpuZNjhNX7eQybUfweYRbW_qPGRI-0AIO7xHuragYNvtBC7uDtXc="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHznd16qUJ3B3CwV-zHcvV9WAxcd5iI_iwVRNCJYBh84fDd0NnO297NKadcnSEDwlw115X0kdHJPE2lmc1FTaWVM4XKwrof3CHreGsSHNXWeoTVOCQAaQ2Vsnm4b8xp82CRTYYID7qrJkcInn1zzw=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKH7r6kiLywCDOULNuuqNS8E-mQ-Bq_CV1csMlaa2xQ1xex543xYIn_Qx5_JTd3EOm_5TdktYeUZCHWpZ66BRXaUP4bSJ9aB9XvFKIn9kZHEMrgQDfmbDFraO_n81DfnIAsPFsA4LN3fr8"
+   },
+   {
+    "title": "telegram.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPL8AoNGjut3XvlOxE5qwA2aqL8Gjf7lDzkY7qH-ylObRiVLiJkxKb5iNhELmwgqANtCSarSJuIbP4EywVVsFAjtRizcdUP2o8ZxNxv9yG_GwpJjuxC7ptKu_3lH9rFcE0"
+   },
+   {
+    "title": "airbyte.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKpBgsowOMn6PB8sHeywmk4z-j8yx_Qk98f5ZeD5uUGj21f8G89YpMVP3zvwiIWWXTpVDuyk2d2fA3eZJ2GizWrlwN8lY7JGXceuEZO4LxqWYLJhq6O0kxgF7IvyMp4Ndv8b8RR5jhk1PgrvFfNGl1YnTzmWJu-6iSBA=="
+   },
+   {
+    "title": "telegram.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtai6ViNmbhB25wyFUgsIOv5baPUFLSKy3ofydqEluLD0DtuebABHUeiusw86u2ZFffMwL12hBoobrYgGUqZMsd2ZDjXSn5CHQPxdZYNRGBLUbRuXhC8bTy1wOArsdjP91c2h95KFhRqhEQh01PUK5ZA=="
+   },
+   {
+    "title": "entergram.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgtHyIHvq2aelmlrNH6oWDOJ6yBALHmyXRCTGoKaLQGxb87wf3McSqHc_V9Mh79uhe84FaUKGuO2ibqOyYCQjv_d-LauzIotnSBBUiW0yWYB0X4LJsJPV5mfm5drMZ8rk="
+   },
+   {
+    "title": "augmentcode.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQZnM8XVhscSCVUbVf2WyuZLbgMlHTdAtV4yNEv8cq92SbBZWOBe-M_nTbDaRbXKm64WXJs03BZXSvZNE-7v7eD70wmt1Pf2Em93993vSQqZohYcTSY-OBKio19O_5o5rjp5_ua0E="
+   },
+   {
+    "title": "reddit.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3rTqf-KJzyQ3H1Uq7kl1qXgt9YyhWnmF7cb5Rt7obNg6TMhdnjQOPHoYga3uX5LUwgydoLTxiAAc6KfsVI7veD2hHnykSGjw5kKRejB5pIaO33Fwe09ktkNk9OLicwVCVo3wkQPbR3VYPSqwrKz-fZnPWVT22haMMOPhLbNHV8Eue7GQ1p9xrh2stfJpAm2YD7h6X4z8d8e5kZCLr8YHl0Bw="
+   },
+   {
+    "title": "mcpservers.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOVRJf8S2c7PfufRaRjJfV1zlbr661L30ZYbt-A0Ye-ygk-EuwkiGHVyIZcTOlaF1wx_FFovrAPcgyDZqblw_Dxe-P8J0molSCpi6tBezcxxZZ4j8NxpPOTONaUctuuelBHez3mgPZv9xdnDPgjMgxs_Gp"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIJN70w0c-YIkCzLOz6y_PF4SmoIXr0rSmiT9bqTNaYnGzV0Se-TtsjVoBuEqD5DkYMTSCIBFpqUu-7JPAwPdCbrjfB8Jy55QAar9Oml8Xt7UrJa0RpHLJKN3nfy5x4eQ="
+   }
+  ],
+  "tokens": 12678,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://core.telegram.org/api/obtaining_api_id",
+    "status": 200,
+    "chars": 2646,
+    "readable": true
+   },
+   {
+    "url": "https://core.telegram.org/api",
+    "status": 200,
+    "chars": 18818,
+    "readable": true
+   },
+   {
+    "url": "https://core.telegram.org/bots/api",
+    "status": 200,
+    "chars": 400000,
+    "readable": true
+   },
+   {
+    "url": "https://core.telegram.org/api/auth",
+    "status": 200,
+    "chars": 25532,
+    "readable": true
+   },
+   {
+    "url": "https://core.telegram.org/bots/telegram-login",
+    "status": 200,
+    "chars": 10561,
+    "readable": true
+   },
+   {
+    "url": "https://composio.dev/",
+    "status": 200,
+    "chars": 13723,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/",
+    "status": 200,
+    "chars": 7657,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/chigwell/telegram-mcp",
+    "status": 200,
+    "chars": 37718,
+    "readable": true
+   }
+  ],
+  "seconds": 104.4
+ }
+}

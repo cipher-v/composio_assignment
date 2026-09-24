@@ -1,0 +1,111 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://marketplace.gohighlevel.com/docs/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.79
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyJy6g-9Zfq2ghnbBq0YfM3Xkhd4MSpFbIa_Ien4y_M2JKegZ8rmIkcfoGtjHB0wodvDp2Wus2dcoZCSDPT0VPnk_mVsnJrVRe3wOcsztL7niyAansLRuxtPCjCeihVtR6zWRUJTGDn9YccSzS8NAezw==",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.37
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://marketplace.gohighlevel.com/docs/oauth-20",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://marketplace.gohighlevel.com/docs/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZuq3NMJxZn0O2DqTJO1M_HYUkFT9JQ45voHbJwN_KiWdb9nO8aLWmXMpe380_NwJju4n2ibxt7Pufot1PG8GX01cQ2DgE77xH13kP9FWjckIY_BBRI3i7lteSr1h631fxWzMgwhdGtM3iJTqcF_OjjhGcuMv4T5-JCrior6_EqFFxpTiwXjOSnuhZHLk=",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyJy6g-9Zfq2ghnbBq0YfM3Xkhd4MSpFbIa_Ien4y_M2JKegZ8rmIkcfoGtjHB0wodvDp2Wus2dcoZCSDPT0VPnk_mVsnJrVRe3wOcsztL7niyAansLRuxtPCjCeihVtR6zWRUJTGDn9YccSzS8NAezw==",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.5
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://marketplace.gohighlevel.com/docs/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.67
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/GoHighLevel/highlevel-api-docs",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.7
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHc90fT9Hrg5fwDYmvBQrv-9F1o2fjbGviQNJ3ljiviFiueoulr88WuteY1XYvKXAbnI1e6aKqpDkzwq4W96o8RGnserytrz7xkcKfse9lnvaSqZhgR_2N9BzXz8OMZyQb_1eRprPArpGve8XGJ0w==",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.87
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "bearer_token": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZuq3NMJxZn0O2DqTJO1M_HYUkFT9JQ45voHbJwN_KiWdb9nO8aLWmXMpe380_NwJju4n2ibxt7Pufot1PG8GX01cQ2DgE77xH13kP9FWjckIY_BBRI3i7lteSr1h631fxWzMgwhdGtM3iJTqcF_OjjhGcuMv4T5-JCrior6_EqFFxpTiwXjOSnuhZHLk=']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyJy6g-9Zfq2ghnbBq0YfM3Xkhd4MSpFbIa_Ien4y_M2JKegZ8rmIkcfoGtjHB0wodvDp2Wus2dcoZCSDPT0VPnk_mVsnJrVRe3wOcsztL7niyAansLRuxtPCjCeihVtR6zWRUJTGDn9YccSzS8NAezw==', 'https://marketplace.gohighlevel.com/docs/']\n- Non-vendor sources (prefer official docs): ['https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyJy6g-9Zfq2ghnbBq0YfM3Xkhd4MSpFbIa_Ien4y_M2JKegZ8rmIkcfoGtjHB0wodvDp2Wus2dcoZCSDPT0VPnk_mVsnJrVRe3wOcsztL7niyAansLRuxtPCjCeihVtR6zWRUJTGDn9YccSzS8NAezw==', 'https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyJy6g-9Zfq2ghnbBq0YfM3Xkhd4MSpFbIa_Ien4y_M2JKegZ8rmIkcfoGtjHB0wodvDp2Wus2dcoZCSDPT0VPnk_mVsnJrVRe3wOcsztL7niyAansLRuxtPCjCeihVtR6zWRUJTGDn9YccSzS8NAezw==', 'https://github.com/GoHighLevel/highlevel-api-docs', 'https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHc90fT9Hrg5fwDYmvBQrv-9F1o2fjbGviQNJ3ljiviFiueoulr88WuteY1XYvKXAbnI1e6aKqpDkzwq4W96o8RGnserytrz7xkcKfse9lnvaSqZhgR_2N9BzXz8OMZyQb_1eRprPArpGve8XGJ0w==']",
+ "metrics": {
+  "n_evidence": 9,
+  "alive_rate": 0.8888888888888888,
+  "dead_rate": 0.1111111111111111,
+  "blocked_rate": 0.0,
+  "official_rate": 0.4444444444444444,
+  "readable": 7,
+  "quote_supported_rate": 0.7142857142857143,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

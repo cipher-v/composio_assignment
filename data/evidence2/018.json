@@ -1,0 +1,181 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.gorgias.com/blog/helpscout-pricing",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developer.helpscout.com/mailbox-api/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.65
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.clonepartner.com/blog/helpscout-vs-podium",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developer.helpscout.com/docs-api/#!/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.59
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://helpscout.com/docs/mcp-connector",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.tidio.com/blog/helpscout-pricing/",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://github.com/drewburchfield/help-scout-mcp-server",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.69
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developer.helpscout.com/docs-api/#!/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.6
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.helpscout.com/mailbox-api/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.97
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.helpscout.com/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.8
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.intercom.com/blog/helpscout-vs-intercom",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://helpscout.com/docs/mcp-connector",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://usecarly.com/chatgpt-helpscout-integration/",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://helpscout.com/docs/mcp-connector",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://developer.helpscout.com/mailbox-api/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.65
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://developer.helpscout.com/docs-api/#!/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.59
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "basic": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://www.gorgias.com/blog/helpscout-pricing', 'https://www.clonepartner.com/blog/helpscout-vs-podium', 'https://helpscout.com/docs/mcp-connector', 'https://www.tidio.com/blog/helpscout-pricing/', 'https://www.intercom.com/blog/helpscout-vs-intercom', 'https://helpscout.com/docs/mcp-connector', 'https://usecarly.com/chatgpt-helpscout-integration/', 'https://helpscout.com/docs/mcp-connector']\n- Non-vendor sources (prefer official docs): ['https://github.com/drewburchfield/help-scout-mcp-server']",
+ "metrics": {
+  "n_evidence": 16,
+  "alive_rate": 0.5,
+  "dead_rate": 0.5,
+  "blocked_rate": 0.0,
+  "official_rate": 0.625,
+  "readable": 8,
+  "quote_supported_rate": 1.0,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

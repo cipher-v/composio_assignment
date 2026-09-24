@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Can it be an agent toolkit? Researching 100 apps with an agent - Composio Product Ops case study</title>
+<meta name="description" content="An agent researched auth, access gating, API surface and MCP availability for 100 apps; findings clustered into patterns and verified by a second model, a citation crawler and a human spot-check.">
+<link rel="alternate" type="application/json" href="data/apps.json" title="Per-app research records">
+<style>
+:root{
+  --page:#f9f9f7;--surface:#fcfcfb;--card:#ffffff;--ink:#0b0b0b;--ink2:#52514e;--muted:#898781;--grid:#e1e0d9;--axis:#c3c2b7;
+  --border:rgba(11,11,11,.10);--s1:#2a78d6;--s2:#eb6834;
+  --good:#0ca30c;--warning:#fab219;--serious:#ec835a;--critical:#d03b3b;
+  --a1:#104281;--a2:#1c5cab;--a3:#2a78d6;--a4:#5598e7;--a5:#86b6ef;--a6:#c3c2b7;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:#1c5cab}
+nav{position:sticky;top:0;z-index:5;background:rgba(249,249,247,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--grid)}
+nav .in{max-width:1180px;margin:0 auto;padding:8px 24px;display:flex;gap:18px;flex-wrap:wrap;font-size:13px}
+nav a{color:var(--ink2);text-decoration:none} nav a:hover{color:var(--ink)} nav b{margin-right:auto}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header.hero{padding:36px 0 8px}
+.kicker{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
+h1{font-size:32px;line-height:1.2;margin:6px 0 10px;max-width:900px}
+h2{font-size:22px;margin:0 0 4px} h3{font-size:15px;margin:0 0 8px}
+.lede{color:var(--ink2);max-width:860px;margin:0}
+section{padding:28px 0;border-top:1px solid var(--grid)}
+section>.sub{color:var(--ink2);margin:0 0 16px;max-width:880px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:22px 0 6px}
+.tile{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+.tile .v{font-size:30px;font-weight:650;line-height:1.1}
+.tile .l{font-size:13px;color:var(--ink2);margin-top:4px}
+.headlines{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.headlines li{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--s1);border-radius:8px;padding:12px 14px;font-size:16px}
+.headlines li b{font-weight:650}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:900px){.grid2,.grid3{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px}
+.card .note{font-size:12px;color:var(--muted);margin-top:8px}
+/* charts */
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--ink2);margin:0 0 10px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.srow{display:grid;grid-template-columns:200px 1fr 34px;gap:10px;align-items:center;margin:5px 0;font-size:13px}
+.srow .lab{color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.srow .n{color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
+.stack{display:flex;gap:2px;height:18px}
+.stack span{display:block;height:100%;min-width:3px}
+.stack span:first-child{border-radius:4px 0 0 4px}.stack span:last-child{border-radius:0 4px 4px 0}
+.stack span:only-child{border-radius:4px}
+.brow{display:grid;grid-template-columns:170px 1fr;gap:10px;align-items:center;margin:6px 0;font-size:13px}
+.brow .lab{color:var(--ink2)}
+.bar{display:flex;align-items:center;gap:6px}
+.bar span{display:block;height:16px;background:var(--s1);border-radius:0 4px 4px 0}
+.bar em{font-style:normal;color:var(--ink2);font-variant-numeric:tabular-nums;font-size:12px}
+#tip{position:fixed;pointer-events:none;background:#0b0b0b;color:#fff;font-size:12px;padding:6px 8px;border-radius:6px;opacity:0;transition:opacity .08s;z-index:10;max-width:280px}
+[data-tip]{cursor:default}
+/* lists */
+.lists .card ul{margin:0;padding-left:0;list-style:none;font-size:13px;max-height:360px;overflow:auto}
+.lists .card li{padding:5px 0;border-bottom:1px solid #f0efec}
+.lists .card li small{color:var(--ink2);display:block}
+.pill{display:inline-block;font-size:11px;padding:1px 7px;border-radius:999px;border:1px solid var(--border);color:var(--ink2);white-space:nowrap;background:#fff}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;vertical-align:0}
+/* table */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px;align-items:center}
+.filters select,.filters input{font:inherit;font-size:13px;padding:6px 8px;border:1px solid var(--axis);border-radius:6px;background:#fff}
+.filters input{min-width:220px}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.tbl th{background:#f4f3ef;text-align:left;font-weight:600;color:var(--ink2);font-size:12px;padding:8px;border-bottom:1px solid var(--grid);cursor:pointer;white-space:nowrap}
+.tbl td{padding:7px 8px;border-bottom:1px solid #f0efec;vertical-align:top}
+.tbl tr.main:hover{background:#f7f6f2;cursor:pointer}
+.tbl tr.detail td{background:#fbfaf7;padding:12px 16px}
+.detail .dgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px 24px}
+.detail p{margin:0 0 6px} .detail .k{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+.ev{font-size:12px;margin:3px 0;word-break:break-all}
+.chg{font-size:12px;background:#fff4e0;border-radius:6px;padding:4px 8px;margin:3px 0}
+.fix{color:#8a4b00;font-weight:600}
+/* pipeline */
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;counter-reset:s}
+@media (max-width:900px){.flow{grid-template-columns:1fr 1fr}}
+.step{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px;position:relative;font-size:13px}
+.step h4{margin:0 0 4px;font-size:14px}
+.step .who{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink2)}
+.step.human{border:2px solid var(--s2)} .step.human .who{color:#b3470f}
+.step p{margin:6px 0 0;color:var(--ink2)}
+.num{font-variant-numeric:tabular-nums}
+pre{background:#0b0b0b;color:#e8e8e3;padding:14px 16px;border-radius:10px;overflow:auto;font-size:13px;line-height:1.45}
+.pair{display:grid;grid-template-columns:190px 1fr;gap:10px;align-items:center;margin:8px 0;font-size:13px}
+.pair .bars div{display:flex;align-items:center;gap:6px;margin:2px 0}
+.pair .bars span{display:block;height:12px;border-radius:0 3px 3px 0}
+.pair .bars em{font-style:normal;font-size:12px;color:var(--ink2);font-variant-numeric:tabular-nums}
+.ok{color:#006300;font-weight:600}.bad{color:#b02a2a;font-weight:600}
+.defs dt{font-weight:600;font-size:13px;margin-top:6px}.defs dd{margin:0 0 4px 0;color:var(--ink2);font-size:13px}
+footer{padding:30px 0 60px;color:var(--muted);font-size:13px}
+.pending{border:1px dashed var(--axis);border-radius:10px;padding:16px;color:var(--ink2);background:#fff}
+</style>
+</head>
+<body>
+<div id="tip"></div>
+<nav><div class="in"><b>100-app toolkit research</b>
+<a href="#patterns">Patterns</a><a href="#act">Where to act</a><a href="#table">All 100 apps</a><a href="#agent">The agent</a><a href="#verify">Verification</a><a href="#run">Run it</a><a href="data/apps.json">JSON</a></div></nav>
+
+<div class="wrap">
+<header class="hero">
+  <div class="kicker">Composio &middot; AI Product Ops take-home</div>
+  <h1>Which of these 100 apps could become an agent toolkit today, and what's blocking the rest?</h1>
+  <p class="lede">A research agent (Gemini on Vertex AI plus Google Search and a crawler) checked each app's auth, credential gating, API surface and MCP availability, citing the source for every claim. A second model then fact-checked every record, a crawler checked every cited URL, and a different model family (Claude) re-researched a random 20-app sample blind to measure accuracy. <b>Patterns first, table below.</b></p>
+  <div class="tiles" id="tiles"></div>
+</header>
+
+<section id="patterns">
+  <h2>The patterns</h2>
+  <p class="sub">What the 100 rows say when clustered. Every number is computed from <a href="data/apps.json">apps.json</a>.</p>
+  <ul class="headlines" id="headlines"></ul>
+  <div class="grid2" style="margin-top:18px">
+    <div class="card"><h3>Buildability verdict by category</h3><div class="legend" id="lg-verdict"></div><div id="ch-verdict"></div>
+      <div class="note">Sorted by share ready today. Hover a segment for the apps in it.</div></div>
+    <div class="card"><h3>How a developer gets credentials, by category</h3><div class="legend" id="lg-access"></div><div id="ch-access"></div>
+      <div class="note">Darker = more open. Grey = no public API.</div></div>
+  </div>
+  <div class="grid3" style="margin-top:16px">
+    <div class="card"><h3>Primary auth (what an integration would use)</h3><div id="ch-auth"></div><div class="note" id="auth-note"></div></div>
+    <div class="card"><h3>Main blocker (apps not ready today)</h3><div id="ch-block"></div></div>
+    <div class="card"><h3>MCP server availability</h3><div id="ch-mcp"></div><div class="note" id="mcp-note"></div></div>
+  </div>
+</section>
+
+<section id="act" class="lists">
+  <h2>Where to act</h2>
+  <p class="sub">The same 100 apps, split into what to do next.</p>
+  <div class="grid3">
+    <div class="card"><h3><span class="dot" style="background:var(--good)"></span>Easy wins: build now <span class="pill" id="n-easy"></span></h3><ul id="l-easy"></ul></div>
+    <div class="card"><h3><span class="dot" style="background:var(--warning)"></span>Buildable with friction <span class="pill" id="n-fric"></span></h3><ul id="l-fric"></ul></div>
+    <div class="card"><h3><span class="dot" style="background:var(--serious)"></span>Needs outreach / not feasible <span class="pill" id="n-out"></span></h3><ul id="l-out"></ul></div>
+  </div>
+</section>
+
+<section id="table">
+  <h2>All 100 apps</h2>
+  <p class="sub">Click a row for the notes, evidence links with quotes, and what the verifier changed. <span class="fix">&#9998;</span> = a field changed by the verifier or corrected by the cross-check.</p>
+  <div class="filters">
+    <input id="q" placeholder="Search app, note, URL...">
+    <select id="f-cat"><option value="">All categories</option></select>
+    <select id="f-verdict"><option value="">All verdicts</option></select>
+    <select id="f-access"><option value="">All access types</option></select>
+    <select id="f-auth"><option value="">Any primary auth</option></select>
+    <select id="f-mcp"><option value="">Any MCP status</option></select>
+    <span id="count" style="color:var(--ink2);font-size:13px"></span>
+  </div>
+  <table class="tbl"><thead><tr>
+    <th data-k="id">#</th><th data-k="name">App</th><th data-k="category">Category</th><th data-k="primary_auth">Primary auth</th><th>All auth</th>
+    <th data-k="access">Access</th><th>API</th><th data-k="mcp">MCP</th><th data-k="verdict">Verdict</th><th data-k="blocker">Blocker</th><th>Sources</th>
+  </tr></thead><tbody id="tb"></tbody></table>
+  <details style="margin-top:14px"><summary style="cursor:pointer;color:var(--ink2)">Definitions used by the agent (the same rubric was given to researcher and verifier)</summary>
+  <dl class="defs card" style="margin-top:8px">
+    <dt>Access</dt>
+    <dd><b>self-serve free</b>: anyone can sign up and get working API credentials for free (free tier, dev account, sandbox or open-source). <b>self-serve trial</b>: only during a time-limited trial. <b>paid plan</b>: API needs a paid subscription. <b>approval required</b>: free to start, but production needs app review, a developer-token approval or admin approval. <b>partner / sales</b>: partner program, enterprise contract or contact-sales. <b>no public API</b>.</dd>
+    <dt>Verdict</dt>
+    <dd><b>ready now</b>: public docs plus self-serve creds, buildable this week. <b>friction</b>: buildable with a hurdle (paid plan, trial, app review, narrow API, or an open-source CLI that must be sandboxed). <b>needs outreach</b>: blocked on a partnership or sales deal. <b>not feasible</b>: nothing callable.</dd>
+    <dt>MCP</dt><dd><b>official</b>: published or hosted by the vendor. <b>community only</b>: third-party servers only.</dd>
+  </dl></details>
+</section>
+
+<section id="agent">
+  <h2>The agent: what it does, and where a human was needed</h2>
+  <p class="sub">A Python pipeline (<code>run.py</code>) runs each stage over all 100 apps in parallel and caches per-app JSON, so any stage can be re-run on its own. Models: Gemini 3 Flash does the research; Gemini 2.5 Pro, a different model, acts as the adversarial verifier. Both run on Vertex AI with Google Search grounding.</p>
+  <div class="flow">
+    <div class="step"><div class="who">agent &middot; Flash + Search</div><h4>1. Discover</h4><p>Searches for the vendor's auth, pricing, API-reference and MCP pages.</p></div>
+    <div class="step"><div class="who">code</div><h4>2. Validate URLs</h4><p>An HTTP check on every candidate. Invented paths (404) are dropped before the agent reads anything.</p></div>
+    <div class="step"><div class="who">code + agent</div><h4>3. Read &amp; research</h4><p>The crawler fetches the live pages; the agent writes notes where every claim has a URL and a verbatim quote.</p></div>
+    <div class="step"><div class="who">agent &middot; schema</div><h4>4. Extract</h4><p>Notes become a strict JSON schema with fixed enums, so the rows can be clustered.</p></div>
+    <div class="step"><div class="who">code, then Pro + Search</div><h4>5. Verify</h4><p>The crawler re-fetches every cited URL (alive? official? is the quote really on the page?) and lints for contradictions. Then Pro re-derives every field, using those flags.</p></div>
+    <div class="step human"><div class="who">independent model</div><h4>6. Spot-check</h4><p>A random sample of 20 apps (2 per category) is re-researched <i>blind</i> by a different model family (Claude) from the live docs. Every disagreement with Gemini is re-checked against the vendor page and decided with a cited quote.</p></div>
+  </div>
+  <div class="grid2" style="margin-top:16px">
+    <div class="card"><h3>By the numbers</h3><div id="agent-stats"></div></div>
+    <div class="card"><h3>Where a human was needed</h3><ul id="human-needed" style="margin:0;padding-left:18px;font-size:14px"></ul></div>
+  </div>
+</section>
+
+<section id="verify">
+  <h2>Verification: how we know it's right</h2>
+  <p class="sub">Three independent loops, and each catches a different kind of error. Hits and misses are shown as they are.</p>
+  <div class="grid2">
+    <div class="card"><h3>Loop 3: blind independent check on a 20-app sample</h3><div id="acc"></div></div>
+    <div class="card"><h3>Loop 1: citation crawler (all 100 apps)</h3>
+      <div class="legend"><span><i style="background:var(--axis)"></i>first pass</span><span><i style="background:var(--s1)"></i>after verifier</span></div>
+      <div id="cite"></div><div class="note">The crawler fetches every cited URL itself. "Quote found" = at least half of the quote's 4-word phrases appear on the page (readable pages only; JavaScript-rendered or bot-walled pages can't be checked this way).</div></div>
+  </div>
+  <div class="grid2" style="margin-top:16px">
+    <div class="card"><h3>Loop 2: what the verifier changed</h3><div id="chg-fields"></div><div class="note" id="chg-note"></div></div>
+    <div class="card"><h3>Hits and misses (20-app sample)</h3><div id="misses" style="font-size:13px;max-height:380px;overflow:auto"></div></div>
+  </div>
+  <div class="card" style="margin-top:16px"><h3>Known limits</h3><ul id="limits" style="margin:0;padding-left:18px;font-size:14px;color:var(--ink2)"></ul></div>
+</section>
+
+<section id="run">
+  <h2>Run it</h2>
+  <p class="sub">Source repo: <a id="repo" href="https://github.com/cipher-v/composio_assignment">github.com/cipher-v/composio_assignment</a>. Needs Python 3.12, a GCP project with Vertex AI enabled, and <code>gcloud auth application-default login</code>.</p>
+<pre>uv venv &amp;&amp; uv pip install -r requirements.txt
+export COMPOSIO_RESEARCH_GCP_PROJECT=your-project
+python run.py research --ids 4,31   # pass 1 on two apps (Attio, Google Ads)
+python run.py all                   # full pipeline for all 100: research, crawl-check, verify, re-check, merge, analyze, page
+python run.py review                # build the human spot-check sheet, then export human_labels.json
+python run.py merge &amp;&amp; python run.py score &amp;&amp; python run.py analyze &amp;&amp; python run.py page</pre>
+  <p class="sub">For agents: <a href="data/apps.json">data/apps.json</a> (per-app records with evidence), <a href="data/patterns.json">data/patterns.json</a>, <a href="data/accuracy.json">data/accuracy.json</a>, <a href="llms.txt">llms.txt</a>.</p>
+</section>
+<footer id="foot"></footer>
+</div>
+
+<script>
+const D=/*__DATA__*/null;
+const F=D.final.filter(r=>!r.missing), P=D.patterns, S=D.stats||{}, A=D.accuracy, C=D.citations||{};
+const L={ready_now:"Ready now",ready_with_friction:"Friction",needs_outreach:"Needs outreach",not_feasible:"Not feasible",
+ self_serve_free:"Self-serve free",self_serve_trial:"Self-serve trial",paid_plan:"Paid plan",approval_required:"Approval required",partner_or_sales:"Partner / sales",no_public_api:"No public API",
+ oauth2:"OAuth2",api_key:"API key",bearer_token:"Bearer token",basic:"Basic",jwt:"JWT",signature_hmac:"HMAC signature",other:"Other",none:"None",
+ official:"Official",community_only:"Community only",none_found:"None found",
+ paid_plan_b:"Paid plan",app_review_or_approval:"App review / approval",partnership_or_sales:"Partnership / sales",enterprise_only:"Enterprise only",local_cli_only:"Local CLI only (wrap)",tos_or_rate_limits:"ToS / rate limits",unclear_or_sparse_docs:"Unclear / sparse docs",
+ rest:"REST",graphql:"GraphQL",soap:"SOAP",grpc:"gRPC",websocket:"WebSocket",cli_or_library:"CLI / library"};
+const lab=k=>L[k]||k;
+const VC={ready_now:"var(--good)",ready_with_friction:"var(--warning)",needs_outreach:"var(--serious)",not_feasible:"var(--critical)"};
+const AC={self_serve_free:"var(--a1)",self_serve_trial:"var(--a2)",paid_plan:"var(--a3)",approval_required:"var(--a4)",partner_or_sales:"var(--a5)",no_public_api:"var(--a6)"};
+const VO=Object.keys(VC), AO=Object.keys(AC);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const pct=(a,b)=>b?Math.round(100*a/b):0;
+const $=id=>document.getElementById(id);
+
+// tooltip
+const tip=$("tip");
+document.addEventListener("mousemove",e=>{const t=e.target.closest("[data-tip]");if(!t){tip.style.opacity=0;return}
+ tip.innerHTML=t.dataset.tip;tip.style.opacity=1;const x=Math.min(e.clientX+14,innerWidth-300);tip.style.left=x+"px";tip.style.top=(e.clientY+14)+"px"});
+
+// tiles
+const n=F.length, cnt=(k,v)=>F.filter(r=>r[k]===v).length;
+const selfServe=F.filter(r=>r.access.startsWith("self_serve")).length;
+const tiles=[
+ [n,"apps researched with cited sources"],
+ [pct(cnt("verdict","ready_now"),n)+"%","could ship as a toolkit today"],
+ [pct(selfServe,n)+"%","self-serve credentials (free or trial)"],
+ [pct(cnt("primary_auth","oauth2"),n)+"%","use OAuth2 as primary auth"],
+ [pct(cnt("mcp","official"),n)+"%","already have an official MCP server"],
+];
+if(A&&A.pass1_acc!=null) tiles.push([`${Math.round(A.pass1_acc*100)}% &rarr; ${Math.round(A.pass2_acc*100)}%`,`field accuracy, first pass &rarr; verified (blind cross-check, ${A.n_apps} apps)`]);
+$("tiles").innerHTML=tiles.map(([v,l])=>`<div class="tile"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("");
+$("headlines").innerHTML=(P.headlines||[]).map(h=>`<li>${esc(h).replace(/(\d+%)/g,"<b>$1</b>")}</li>`).join("");
+
+// stacked bars by category
+function stacked(el,lg,field,order,colors){
+ const cats=P.category_order||[...new Set(F.map(r=>r.category))];
+ const rows=cats.map(c=>{const rs=F.filter(r=>r.category===c);return {c,rs,share:rs.filter(r=>r.verdict==="ready_now").length/rs.length,self:rs.filter(r=>r.access.startsWith("self_serve")).length/rs.length}});
+ rows.sort((a,b)=>field==="verdict"?b.share-a.share:b.self-a.self);
+ $(lg).innerHTML=order.map(k=>`<span><i style="background:${colors[k]}"></i>${lab(k)}</span>`).join("");
+ $(el).innerHTML=rows.map(({c,rs})=>{const segs=order.map(k=>{const g=rs.filter(r=>r[field]===k);if(!g.length)return"";
+   return `<span style="flex:${g.length};background:${colors[k]}" data-tip="<b>${esc(c)}</b><br>${lab(k)}: ${g.length}/${rs.length}<br>${g.map(r=>esc(r.name)).join(", ")}"></span>`}).join("");
+  return `<div class="srow"><div class="lab" title="${esc(c)}">${esc(c)}</div><div class="stack">${segs}</div><div class="n">${rs.length}</div></div>`}).join("");
+}
+stacked("ch-verdict","lg-verdict","verdict",VO,VC);
+stacked("ch-access","lg-access","access",AO,AC);
+
+function bars(el,pairs,total,labeler){const max=Math.max(...pairs.map(p=>p[1]),1);
+ $(el).innerHTML=pairs.map(([k,v,names])=>`<div class="brow"><div class="lab">${esc(labeler?labeler(k):lab(k))}</div><div class="bar" data-tip="${esc(labeler?labeler(k):lab(k))}: ${v}${names?"<br>"+esc(names):""}"><span style="width:${Math.max(2,82*v/max)}%"></span><em>${v}${total?` &middot; ${pct(v,total)}%`:""}</em></div></div>`).join("")}
+const namesBy=(k,v)=>F.filter(r=>r[k]===v).map(r=>r.name).join(", ");
+bars("ch-auth",(P.primary_auth||[]).map(([k,v])=>[k,v,namesBy("primary_auth",k)]),n);
+const anyA=Object.fromEntries(P.any_auth||[]);
+$("auth-note").innerHTML=`Supported at all: OAuth2 ${anyA.oauth2||0}, API key ${anyA.api_key||0}, bearer token ${anyA.bearer_token||0}, Basic ${anyA.basic||0}. ${P.oauth_and_key||0} apps offer both OAuth2 and a static key or token.`;
+bars("ch-block",(P.blockers||[]).map(([k,v])=>[k,v,namesBy("blocker",k)]),0,k=>L[k==="paid_plan"?"paid_plan_b":k]||k);
+bars("ch-mcp",(P.mcp||[]).map(([k,v])=>[k,v,namesBy("mcp",k)]),n);
+const mv=P.mcp_by_verdict||{};const offReady=(mv.ready_now||{}).official||0, readyN=Object.values(mv.ready_now||{}).reduce((a,b)=>a+b,0);
+const gatedN=["needs_outreach","not_feasible"].reduce((a,k)=>a+Object.values(mv[k]||{}).reduce((x,y)=>x+y,0),0), offGated=["needs_outreach","not_feasible"].reduce((a,k)=>a+((mv[k]||{}).official||0),0);
+$("mcp-note").innerHTML=`Official MCP: ${pct(offReady,readyN)}% of "ready now" apps vs ${pct(offGated,gatedN)}% of outreach / not-feasible apps.`;
+
+// lists
+const item=r=>`<li><b>${esc(r.name)}</b> <span class="pill">${lab(r.primary_auth)}</span> ${r.mcp==="official"?'<span class="pill">MCP</span>':""}<small>${esc(r.category)}${r.blocker&&r.blocker!=="none"?" &middot; "+lab(r.blocker==="paid_plan"?"paid_plan_b":r.blocker):""}</small></li>`;
+const easy=F.filter(r=>r.verdict==="ready_now"), fric=F.filter(r=>r.verdict==="ready_with_friction"), out=F.filter(r=>["needs_outreach","not_feasible"].includes(r.verdict));
+$("l-easy").innerHTML=easy.map(item).join("");$("n-easy").textContent=easy.length;
+$("l-fric").innerHTML=fric.map(item).join("");$("n-fric").textContent=fric.length;
+$("l-out").innerHTML=out.map(r=>item(r).replace("<small>",`<small>${lab(r.verdict)} &middot; `)).join("");$("n-out").textContent=out.length;
+
+// table
+const fill=(id,vals)=>{$(id).innerHTML+=vals.map(v=>`<option value="${v}">${esc(lab(v))}</option>`).join("")};
+fill("f-cat",[...new Set(F.map(r=>r.category))]);fill("f-verdict",VO);fill("f-access",AO);
+fill("f-auth",[...new Set(F.map(r=>r.primary_auth))]);fill("f-mcp",["official","community_only","none_found"]);
+let sortK="id",sortD=1;const open=new Set();
+const fixed=(r,f)=>{const p=(r.provenance||{})[f]||"";return p.startsWith("verifier_fixed")||p.includes("_fixed")?`<span class="fix" data-tip="${p.startsWith("checker")?"Corrected by the blind cross-check":p.startsWith("human")?"Corrected by human":"Changed by verifier"}; first pass said: ${esc([].concat(r.pass1[f]).map(lab).join(", "))}">&#9998;</span>`:""};
+function detail(r){
+ const ev=r.evidence.map(e=>`<div class="ev"><span class="pill">${e.claim}</span> <a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.url)}</a><br><i style="color:var(--ink2)">"${esc(e.quote)}"</i></div>`).join("");
+ const ch=(r.verifier_changes||[]).map(c=>`<div class="chg"><b>${esc(c.field)}</b>: ${esc(c.old)} &rarr; ${esc(c.new)}. ${esc(c.reason)} ${c.url?`<a href="${esc(c.url)}" target="_blank">source</a>`:""}</div>`).join("")||'<div class="ev" style="color:var(--muted)">No changes: verifier confirmed the first pass.</div>';
+ return `<div class="dgrid"><div>
+ <p><span class="k">What it is</span><br>${esc(r.one_liner)}</p>
+ <p><span class="k">Auth</span><br>${esc(r.auth_notes)}</p>
+ <p><span class="k">Getting credentials</span><br>${esc(r.access_notes)}</p>
+ <p><span class="k">API surface</span><br>${esc(r.api_notes)} <br><span class="pill">breadth: ${r.api_breadth}</span> <span class="pill">OpenAPI/schema: ${r.openapi_spec?"yes":"no"}</span> <span class="pill">webhooks: ${r.webhooks?"yes":"no"}</span> <span class="pill">sandbox: ${r.sandbox?"yes":"no"}</span></p>
+ <p><span class="k">MCP</span><br>${esc(r.mcp_notes)}</p>
+ <p><span class="k">Verdict</span><br>${esc(r.blocker_notes)}</p>
+ ${r.human_note?`<p><span class="k">Human reviewer note</span><br>${esc(r.human_note)}</p>`:""}
+ </div><div><p><span class="k">Evidence (${r.evidence.length})</span></p>${ev}<p style="margin-top:10px"><span class="k">Verifier changes</span></p>${ch}
+ ${r.needs_human?`<p class="ev"><b>Flagged for human:</b> ${esc(r.needs_human_reason)}</p>`:""}
+ <p class="ev" style="color:var(--muted)">confidence ${r.confidence} &middot; ${r.human_reviewed?"human-reviewed &middot; ":""}models: ${esc(r.models.research)} &rarr; ${esc(r.models.verify)}</p></div></div>`}
+function renderTable(){
+ const q=$("q").value.toLowerCase(), fc=$("f-cat").value,fv=$("f-verdict").value,fa=$("f-access").value,fu=$("f-auth").value,fm=$("f-mcp").value;
+ let rs=F.filter(r=>(!fc||r.category===fc)&&(!fv||r.verdict===fv)&&(!fa||r.access===fa)&&(!fu||r.primary_auth===fu)&&(!fm||r.mcp===fm)&&(!q||JSON.stringify(r).toLowerCase().includes(q)));
+ rs.sort((a,b)=>(a[sortK]>b[sortK]?1:a[sortK]<b[sortK]?-1:0)*sortD);
+ $("count").textContent=`${rs.length} of ${F.length}`;
+ $("tb").innerHTML=rs.map(r=>`<tr class="main" data-id="${r.id}"><td class="num">${r.id}</td><td><b>${esc(r.name)}</b>${r.human_reviewed?' <span class="pill" data-tip="In the 20-app verification sample">spot-checked</span>':""}</td><td style="color:var(--ink2)">${esc(r.category)}</td>
+ <td>${lab(r.primary_auth)} ${fixed(r,"primary_auth")}</td><td style="color:var(--ink2)">${r.auth_methods.map(lab).join(", ")} ${fixed(r,"auth_methods")}</td>
+ <td><span class="dot" style="background:${AC[r.access]}"></span>${lab(r.access)} ${fixed(r,"access")}</td><td>${r.api_styles.map(lab).join(", ")}</td>
+ <td>${lab(r.mcp)} ${fixed(r,"mcp")}</td><td><span class="dot" style="background:${VC[r.verdict]}"></span>${lab(r.verdict)} ${fixed(r,"verdict")}</td>
+ <td style="color:var(--ink2)">${r.blocker==="none"?"-":lab(r.blocker==="paid_plan"?"paid_plan_b":r.blocker)}</td><td class="num">${r.evidence.length}</td></tr>`+
+ (open.has(r.id)?`<tr class="detail"><td colspan="11">${detail(r)}</td></tr>`:"")).join("");
+}
+["q","f-cat","f-verdict","f-access","f-auth","f-mcp"].forEach(id=>$(id).addEventListener("input",renderTable));
+$("tb").addEventListener("click",e=>{if(e.target.closest("a"))return;const tr=e.target.closest("tr.main");if(!tr)return;const id=+tr.dataset.id;open.has(id)?open.delete(id):open.add(id);renderTable()});
+document.querySelectorAll("th[data-k]").forEach(th=>th.addEventListener("click",()=>{const k=th.dataset.k;sortD=sortK===k?-sortD:1;sortK=k;renderTable()}));
+renderTable();
+
+// agent stats
+const st=[
+ ["Web searches issued by the agent",S.search_queries],["Candidate doc URLs proposed",S.candidate_urls],
+ ["...of which dead (404/410), dropped before reading",S.bad_404],["...bot-walled (401/403/429)",S.bad_blocked],
+ ["Doc pages actually read by the crawler",S.pages_read],["Records re-checked by the verifier",S.verified],
+ ["Records the verifier changed",S.apps_changed],["Records the verifier flagged for a human",S.needs_human],
+ ["Avg wall time per app: research / verify",`${Math.round((S.pass1_seconds||0)/(S.apps||1))}s / ${Math.round((S.pass2_seconds||0)/(S.verified||1))}s`],
+];
+$("agent-stats").innerHTML=st.map(([k,v])=>`<div class="brow" style="grid-template-columns:1fr auto"><div class="lab">${k}</div><b class="num">${v??"-"}</b></div>`).join("");
+$("human-needed").innerHTML=[
+ "<b>Defining the rubric.</b> What counts as self-serve vs gated, and when a CLI tool is still buildable. The agent follows the definitions; a human wrote them.",
+ "<b>Fixing the rubric when the verifier over-corrected.</b> In a 5-app test the verifier downgraded Attio to 'approval required' only because an optional marketplace listing needs review. A human clarified the definition (only mandatory approval before other customers' accounts can connect counts) before the full verification run.",
+ `<b>Resolving flagged records.</b> ${S.needs_human||0} apps where the verifier reported conflicting sources or login-walled docs.`,
+ "<b>Pricing and partner pages.</b> Plan-gated API access is often only on sales pages or behind a login, which makes access tier the field the agent is least sure about.",
+ "<b>Verification design, not verification labor.</b> A human chose the sample, the rubric and the three-way check. The disputes themselves were decided by Claude against vendor pages, because there wasn't time for a manual pass. Every decision has its quote in <a href='data/dispute_decisions.json'>dispute_decisions.json</a>, and a human could audit it in about 15 minutes.",
+ "<b>Pipeline debugging.</b> Choosing models, finding that Gemini skips tools in JSON mode (so research runs in text mode and extraction is a separate step), and that the URL-context tool was about 10x slower than our own crawler.",
+].map(x=>`<li style="margin:0 0 6px">${x}</li>`).join("");
+
+// citations
+const c1=C.evidence1||{},c2=C.evidence2||{};
+const pairRows=[["URL alive (HTTP < 400)","alive_pct"],["Dead link (404 etc.)","dead_pct"],["On the vendor's own domain","official_pct"],["Quote found on cited page","quote_supported_pct"]];
+$("cite").innerHTML=pairRows.map(([l,k])=>`<div class="pair"><div class="lab" style="color:var(--ink2)">${l}</div><div class="bars">
+ <div data-tip="First pass: ${c1[k]??"-"}%"><span style="width:${(c1[k]||0)*0.8}%;background:var(--axis)"></span><em>${c1[k]??"-"}%</em></div>
+ <div data-tip="After verifier: ${c2[k]??"-"}%"><span style="width:${(c2[k]||0)*0.8}%;background:var(--s1)"></span><em>${c2[k]??"-"}%</em></div></div></div>`).join("")+
+ `<div class="note">Evidence URLs checked: ${c1.evidence_urls||0} (first pass) and ${c2.evidence_urls||0} (verified). Consistency-lint issues: ${c1.lint_issues??"-"} &rarr; ${c2.lint_issues??"-"}.</div>`;
+
+// verifier changes
+const cf=D.change_fields||[];
+if(cf.length){const tot=cf.reduce((a,[,v])=>a+v,0);
+ bars("chg-fields",cf.map(([k,v])=>[k,v]),0,k=>k);
+ $("chg-note").innerHTML=`${tot} field-level corrections across ${S.apps_changed||0} apps. These are changes, not necessarily fixes: the human sample measures whether the verifier was right.`;
+}else $("chg-fields").innerHTML='<div class="pending">Verifier pass not run yet.</div>';
+
+// accuracy
+if(A&&A.n_fields){
+ const pf=A.per_field, ts=A.truth_sources||{};
+ $("acc").innerHTML=`<div class="legend"><span><i style="background:var(--axis)"></i>first pass (Gemini Flash)</span><span><i style="background:var(--s1)"></i>after verifier loops</span></div>`+
+ `<div class="pair"><div><b>All fields</b></div><div class="bars"><div><span style="width:${A.pass1_acc*80}%;background:var(--axis)"></span><em><b>${Math.round(A.pass1_acc*100)}%</b></em></div><div><span style="width:${A.pass2_acc*80}%;background:var(--s1)"></span><em><b>${Math.round(A.pass2_acc*100)}%</b></em></div></div></div>`+
+ Object.entries(pf).filter(([,v])=>v.n).map(([k,v])=>`<div class="pair"><div class="lab" style="color:var(--ink2)">${k} <small>(n=${v.n})</small></div><div class="bars">
+ <div><span style="width:${v.pass1_acc*80}%;background:var(--axis)"></span><em>${Math.round(v.pass1_acc*100)}%</em></div>
+ <div><span style="width:${v.pass2_acc*80}%;background:var(--s1)"></span><em>${Math.round(v.pass2_acc*100)}%</em></div></div></div>`).join("")+
+ `<div class="note">${A.n_apps} apps sampled at random, stratified by category (fixed seed), ${A.n_fields} field judgements. Ground truth: ${ts.agreed||0} answers where the blind checker and both Gemini passes agreed, plus ${(ts.human||0)+(ts.adjudicated||0)} disputes decided against the vendor's own pages (${ts.human?ts.human+" by a human, ":""}${ts.adjudicated||0} by Claude)${ts.claude_unresolved?`, ${ts.claude_unresolved} unresolved`:""}. Apps with all 4 fields correct: ${A.apps_all_correct_pass1} &rarr; ${A.apps_all_correct_pass2} of ${A.n_apps}. These decisions are applied to the final data.</div>`;
+ const rows=[];A.rows.forEach(r=>Object.entries(r.fields).forEach(([f,x])=>{if(!x.ok1||!x.ok2)rows.push({r,f,x})}));
+ const nFix=rows.filter(o=>!o.x.ok1&&o.x.ok2).length, nBreak=rows.filter(o=>o.x.ok1&&!o.x.ok2).length, nBoth=rows.filter(o=>!o.x.ok1&&!o.x.ok2).length;
+ $("acc").innerHTML+=`<div class="pending" style="margin-top:10px"><b>Honest result: the verifier loop did not raise accuracy.</b> On the sample it fixed ${nFix} wrong answers but broke ${nBreak} correct ones (${nBoth} were wrong both times). It over-corrects: it flipped Vercel to "paid plan" and removed Twilio's official MCP, for example. What <i>did</i> work: the URL validator dropped ${S.bad_404||0} invented doc URLs before research, and the blind cross-check found every error listed on the right. Those corrections are applied to the final data for the sampled apps. <b>Next step (built and tested on 3 apps, not yet run on all 100):</b> an evidence judge that decides pass-1 vs verifier disagreements with the burden of proof on the change.</div>`;
+ $("misses").innerHTML=rows.length?rows.map(({r,f,x})=>`<div class="ev" style="padding:5px 0;border-bottom:1px solid #f0efec"><b>${esc(r.name)}</b> &middot; ${f}: truth <b>${esc([].concat(x.truth).join(", "))}</b><br>
+ first pass ${x.ok1?'<span class="ok">&#10003;</span>':'<span class="bad">&#10007;</span>'} ${esc([].concat(x.pass1).join(", "))} &middot; verified ${x.ok2?'<span class="ok">&#10003;</span>':'<span class="bad">&#10007;</span>'} ${esc([].concat(x.pass2).join(", "))}${r.note?`<br><i style="color:var(--ink2)">${esc(r.note)}</i>`:""}</div>`).join(""):"No misses in the sample.";
+}else{
+ $("acc").innerHTML='<div class="pending"><b>Human spot-check pending.</b> Run <code>python run.py review</code>, check the sample in review/review.html, export human_labels.json, then <code>python run.py score</code>.</div>';
+ $("misses").innerHTML='<div class="pending">Shown after the human spot-check.</div>';
+}
+$("limits").innerHTML=[
+ "Access tier is the hardest field: vendors often hide API plan-gating on sales pages, behind a login, or change it without versioned docs. Verdicts that depend on it carry the most uncertainty.",
+ "MCP status moves fast. \"Official\" means the vendor publishes it; community servers were not audited for quality.",
+ "The citation crawler can't read JavaScript-rendered or bot-walled docs; for those pages quote-support is unmeasured, not failed.",
+ "The sample is small (20 apps, 80 judgements). It shows the direction and the kinds of errors, not a tight confidence interval. Where all three model passes agree, they could still share the same mistake. No human has yet read the individual decisions; the ground truth comes from a model family independent of the researcher, with sources.",
+ "The research is a snapshot of public docs as of the run date; nothing required paid accounts.",
+ "Composio's own SDK/MCP is not used yet: search and page-fetching are custom (Google Search grounding plus our crawler). Next step: swap that tool layer (two functions in agent/research.py) for Composio's search/fetch toolkits over MCP, so the pipeline itself runs on Composio.",
+ "5 apps (Google Ads, LinkedIn Ads, Salesforce Commerce Cloud, MongoDB Atlas, iPayX) have no verifier pass: the verifier's output failed schema validation or timed out on retries. Their rows show first-pass values.",
+ "For the 80 apps outside the sample, the final values are the verifier's. The sample says that is about 85% accurate per field, with access tier and verdict the weakest.",
+].map(x=>`<li style="margin:0 0 6px">${x}</li>`).join("");
+$("foot").innerHTML=`Generated by <code>run.py page</code> from the agent's outputs. ${n} apps &middot; research: ${esc((F[0]||{}).models?.research||"")} &middot; verifier: ${esc((F[0]||{}).models?.verify||"")}.`;
+</script>
+</body>
+</html>

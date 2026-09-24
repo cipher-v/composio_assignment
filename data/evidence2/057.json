@@ -1,0 +1,190 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://docs.brightdata.com/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.44
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://github.com/brightdata/brightdata-mcp",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.56
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://brightdata.com/api-reference/authentication",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://brightdata.com/api-reference/authentication",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://brightdata.com/api-reference/authentication",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://brightdata.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.1
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://brightdata.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://brightdata.com/api-reference/authentication",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://brightdata.com/api-reference/web-unlocker-api",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://brightdata.com/api-reference/serp-api",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://brightdata.com/api-reference/web-unlocker-api",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://brightdata.com/api-reference/web-unlocker-api",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://brightdata.com/api-reference/web-unlocker-api",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://docs.brightdata.com/products/mcp-server/overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.74
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://docs.brightdata.com/products/mcp-server/overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.07
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://brightdata.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.1
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://brightdata.com/api-reference/authentication",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "api_key": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://brightdata.com/api-reference/authentication', 'https://brightdata.com/api-reference/authentication', 'https://brightdata.com/api-reference/authentication', 'https://brightdata.com/api-reference/authentication', 'https://brightdata.com/api-reference/web-unlocker-api', 'https://brightdata.com/api-reference/serp-api', 'https://brightdata.com/api-reference/web-unlocker-api', 'https://brightdata.com/api-reference/web-unlocker-api', 'https://brightdata.com/api-reference/web-unlocker-api', 'https://brightdata.com/api-reference/authentication']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://docs.brightdata.com/introduction', 'https://brightdata.com/pricing', 'https://brightdata.com/pricing', 'https://docs.brightdata.com/products/mcp-server/overview', 'https://brightdata.com/pricing']\n- Non-vendor sources (prefer official docs): ['https://github.com/brightdata/brightdata-mcp']",
+ "metrics": {
+  "n_evidence": 17,
+  "alive_rate": 0.4117647058823529,
+  "dead_rate": 0.5882352941176471,
+  "blocked_rate": 0.0,
+  "official_rate": 0.9411764705882353,
+  "readable": 7,
+  "quote_supported_rate": 0.2857142857142857,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

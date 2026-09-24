@@ -1,0 +1,141 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.notion.so/help/what-is-notion",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.notion.com/docs/authorization",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.07
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.notion.com/docs/authorization",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.09
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.notion.so/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.17
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developers.notion.com/docs/authorization",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.notion.so/help/notion-api-faq",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.notion.com/docs/reference/about-the-api",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.notion.com/docs/reference/about-the-api",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.latenode.com/library/notion-api-openapi-spec",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.notion.com/docs/webhooks",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://developers.notion.com/docs/notion-mcp",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://developers.notion.com/docs/notion-mcp",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "bearer_token": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://www.notion.so/help/what-is-notion', 'https://www.notion.so/help/notion-api-faq', 'https://developers.notion.com/docs/reference/about-the-api', 'https://developers.notion.com/docs/reference/about-the-api', 'https://www.latenode.com/library/notion-api-openapi-spec', 'https://developers.notion.com/docs/webhooks', 'https://developers.notion.com/docs/notion-mcp', 'https://developers.notion.com/docs/notion-mcp']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://developers.notion.com/docs/authorization', 'https://developers.notion.com/docs/authorization', 'https://www.notion.so/pricing', 'https://developers.notion.com/docs/authorization']",
+ "metrics": {
+  "n_evidence": 12,
+  "alive_rate": 0.3333333333333333,
+  "dead_rate": 0.6666666666666666,
+  "blocked_rate": 0.0,
+  "official_rate": 0.9166666666666666,
+  "readable": 4,
+  "quote_supported_rate": 0.0,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

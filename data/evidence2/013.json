@@ -1,0 +1,151 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.freshworks.com/freshdesk/pricing/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.5
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://community.freshworks.dev/t/how-to-use-oauth-authentication-mechanism-for-freshdesk-api/1691",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://support.freshdesk.com/support/solutions/articles/18000039918-how-to-find-your-api-key/",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://support.freshdesk.com/en/support/solutions/articles/227138-restricting-the-visibility-of-solution-articles-by-authenticating-users-into-the-help-widget",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.freshworks.com/freshdesk/help/do-we-have-api-and-integration-capabilities-in-the-free-sprout-plan/",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://support.freshdesk.com/en/support/solutions/articles/50000003 Freshdesk-pricing-plans-and-subscription-management-an-overview",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.freshdesk.com/api/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.9
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvWuGlqA0awaBFVJrJ16KObNCUDrYGFyqNQhi5ChDWkW5ChDWkW5cN19hfKzuGZc3GjDUfp_8boS0br-gYfwHDGPv4GfoYYO2_-uWa8ws_l3r-rIona8OFjq8d03rr7-TRtAxVOMUqpUD1L2uTQAR5B2zRf0QrScoThNcoZJNBRTvWdlqEwuU4fXvzXPCfiQIql9u2cr6U-fqcBUYIU3X",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://support.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk-eap-",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.75
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.freshdesk.com/api/#authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.freshdesk.com/api/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.freshworks.com/freshdesk/pricing/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://support.freshdesk.com/en/support/solutions/articles/211200-set-up-your-sandbox-account",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "api_key": true,
+  "jwt": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://support.freshdesk.com/support/solutions/articles/18000039918-how-to-find-your-api-key/', 'https://support.freshdesk.com/en/support/solutions/articles/227138-restricting-the-visibility-of-solution-articles-by-authenticating-users-into-the-help-widget', 'https://www.freshworks.com/freshdesk/help/do-we-have-api-and-integration-capabilities-in-the-free-sprout-plan/', 'https://support.freshdesk.com/en/support/solutions/articles/50000003 Freshdesk-pricing-plans-and-subscription-management-an-overview', 'https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvWuGlqA0awaBFVJrJ16KObNCUDrYGFyqNQhi5ChDWkW5ChDWkW5cN19hfKzuGZc3GjDUfp_8boS0br-gYfwHDGPv4GfoYYO2_-uWa8ws_l3r-rIona8OFjq8d03rr7-TRtAxVOMUqpUD1L2uTQAR5B2zRf0QrScoThNcoZJNBRTvWdlqEwuU4fXvzXPCfiQIql9u2cr6U-fqcBUYIU3X', 'https://support.freshdesk.com/en/support/solutions/articles/211200-set-up-your-sandbox-account']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://developers.freshdesk.com/api/#authentication', 'https://developers.freshdesk.com/api/', 'https://www.freshworks.com/freshdesk/pricing/']\n- Non-vendor sources (prefer official docs): ['https://www.freshworks.com/freshdesk/pricing/', 'https://community.freshworks.dev/t/how-to-use-oauth-authentication-mechanism-for-freshdesk-api/1691', 'https://www.freshworks.com/freshdesk/pricing/']",
+ "metrics": {
+  "n_evidence": 13,
+  "alive_rate": 0.5384615384615384,
+  "dead_rate": 0.46153846153846156,
+  "blocked_rate": 0.0,
+  "official_rate": 0.6153846153846154,
+  "readable": 6,
+  "quote_supported_rate": 0.5,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

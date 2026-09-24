@@ -1,0 +1,212 @@
+{
+ "app": {
+  "id": 16,
+  "name": "LiveAgent",
+  "category": "Support and Helpdesk",
+  "hint": "liveagent.com"
+ },
+ "record": {
+  "subcategory": "Helpdesk / ticketing",
+  "one_liner": "An all-in-one customer support and helpdesk platform unifying email ticketing, live chat, voice call center, and social media.",
+  "auth_methods": [
+   "api_key",
+   "bearer_token"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "API v3 uses an apikey header, while API v1 uses an apikey query parameter. There is no public OAuth2 application registration for multi-tenant integrations.",
+  "access": "self_serve_trial",
+  "access_notes": "Anyone can sign up for a 30-day free trial without a credit card to get API credentials. After expiration, a paid plan starting at $15/agent/month is required.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Broad coverage across core helpdesk objects including agents, tickets, conversations, companies, departments, and knowledge base articles via API v1 and v3.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "LiveAgent features a built-in native MCP server that supports authentication via profile-generated bearer tokens.",
+  "verdict": "ready_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "Requires a paid plan after the 30-day free trial expires, and lacks a public OAuth2 framework for multi-tenant apps, requiring manual per-customer API key configuration.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://support.liveagent.com/741982-API-key",
+    "quote": "liveagent is an integrated customer support software , ticketing system , live chat , social helpdesk and voice helpdesk ."
+   },
+   {
+    "claim": "auth",
+    "url": "https://support.liveagent.com/741982-API-key",
+    "quote": "api v3 use your api key has to be set in header of your requests: curl --location --request get 'https://your.ladesk.com/api/v3/tickets' \\ --header 'apikey: 0865evv883j6auflvlt7zrwgqn32qo74'"
+   },
+   {
+    "claim": "auth",
+    "url": "https://support.liveagent.com/840770-Complete-API-reference",
+    "quote": "curl_setopt ( $ch , curlopt_url , \"http :// example . com / api / agents /[ agentidentifier ]? &apikey = value\" ) ;"
+   },
+   {
+    "claim": "access",
+    "url": "https://support.liveagent.com/567924-Documentation?r=1",
+    "quote": "consider registering a new free trial account for testing purposes, before using api with your live account."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.liveagent.com/",
+    "quote": "LiveAgent comes with a 30‑day free trial that requires no credit card, letting you test all features before committing to a paid plan. How much does LiveAgent cost? LiveAgent pricing starts at $15 per agent/month (billed annually)"
+   },
+   {
+    "claim": "access",
+    "url": "https://support.liveagent.com/741982-API-key",
+    "quote": "while logged in as an admin navigate to configuration> system> api which loads the api v3 section where you find existing api keys or add a new one."
+   },
+   {
+    "claim": "api",
+    "url": "https://support.liveagent.com/741982-API-key",
+    "quote": "home > technical support > liveagent api > rest api > api key"
+   },
+   {
+    "claim": "api",
+    "url": "https://support.liveagent.com/567924-Documentation?r=1",
+    "quote": "choose the object (agents, tickets, .) & method (get, post, delete)"
+   },
+   {
+    "claim": "api",
+    "url": "https://support.liveagent.com/567924-Documentation?r=1",
+    "quote": "swagger api descriptor"
+   },
+   {
+    "claim": "api",
+    "url": "https://www.liveagent.com/",
+    "quote": "In LiveAgent, you can create a webhook to receive notifications on your channel by either building a custom integration using the API or by setting up an automation rule with the \"HTTP request\" action."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://support.liveagent.com/647358-MCP-Integration-for-Agents",
+    "quote": "liveagent exposes a built-in mcp server (model context protocol) that lets you connect external ai tools — such as claude desktop, cursor, claude.ai, flowhunt , or any other mcp-compatible client — directly to your liveagent account."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://support.liveagent.com/647358-MCP-Integration-for-Agents",
+    "quote": "There are two ways to authenticate your MCP client: - Bearer token — generate an MCP access token in your profile"
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": "[\"api_key\"]",
+    "new": "[\"api_key\", \"bearer_token\"]",
+    "reason": "The MCP server integration uses a bearer_token in addition to the api_key for the REST API.",
+    "url": "https://support.liveagent.com/647358-MCP-Integration-for-Agents"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "LiveAgent features a built-in native MCP server that supports profile-generated bearer tokens or an OAuth 2.1 authorization flow. Documentation at https://support.liveagent.com/647358-MCP-Integration-for-Agents",
+    "new": "LiveAgent features a built-in native MCP server that supports authentication via profile-generated bearer tokens.",
+    "reason": "The claim about OAuth 2.1 authorization flow was not found on the cited page and appears to be a fabrication. Only bearer tokens are confirmed for MCP authentication.",
+    "url": "https://support.liveagent.com/647358-MCP-Integration-for-Agents"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### Record Verification\n\nHere is the field-by-field verification of the LiveAgent record.\n\n- **subcategory**: **CONFIRMED**. The record lists \"Helpdesk / ticketing\". LiveAgent describes itself as \"an integrated customer support software , ticketing system , live chat , social helpdesk and voice helpdesk\" (from the provided page `https://support.liveagent.com/741982-API-key`) and supports numerous channels including email, live chat, and a call center. This confirms the subcategory is accurate.\n\n- **one_liner**: **CONFIRMED**. The original one-liner is \"An all-in-one customer support and helpdesk platform unifying email ticketing, live chat, voice call center, and social media.\" This is supported by LiveAgent's self-description as an \"omnichannel customer service hub\" that supports email, live chat, phone, and social media.\n\n- **auth_methods**: **WRONG**. The original record lists only `api_key`. While this is the primary method for the REST API, the MCP server integration uses a `bearer_token`. The correct value should include both.\n    - **Source**: \"There are two ways to authenticate your mcp client: - Bearer token — generate an MCP access token in your profile\" (`https://support.liveagent.com/647358-MCP-Integration-for-Agents`).\n    - **Correct Value**: `[\"api_key\", \"bearer_token\"]`\n\n- **primary_auth**: **CONFIRMED**. The record lists `api_key`. For a multi-tenant integration platform connecting to the core REST API, API keys are the documented method. There is no evidence of a public OAuth2 flow for third-party apps.\n\n- **auth_notes**: **CONFIRMED**. The notes are accurate. API v3 uses an `apikey` header, and API v1 uses an `apikey` query parameter. No public OAuth2 application registration is mentioned in the documentation.\n    - **Source (v3)**: \"api v3 use your api key has to be set in header of your requests: curl --location --request get 'https://your.ladesk.com/api/v3/tickets' \\ --header 'apikey: 0865evv883j6auflvlt7zrwgqn32qo74'\" (`https://support.liveagent.com/741982-API-key`).\n    - **Source (v1)**: `curl_setopt ( $ch , curlopt_url , \"http :// example . com / api / agents /[ agentidentifier ]? &apikey = value\" ) ;` (`https://support.liveagent.com/840770-Complete-API-reference`).\n\n- **access**: **CONFIRMED**. The record lists `self_serve_trial`. LiveAgent offers a 30-day free trial that allows access to all features, and API access requires a paid plan thereafter. While some sources mention a 14-day trial, the official website and most recent articles confirm 30 days. There is no mention of a free-forever tier that includes API access.\n\n- **access_notes**: **CONFIRMED**. The notes state, \"Anyone can sign up for a 30-day free trial without a credit card to get API credentials. After expiration, a paid plan starting at $15/agent/month is required.\" This is fully supported by search results.\n    - **Source**: \"Yes — LiveAgent comes with a 30‑day free trial that requires no credit card, letting you test all features before committing to a paid plan.\"\n    - **Source**: \"LiveAgent pricing starts at $15 per agent/month (billed annually)\".\n    - **Source**: \"Consider registering a new free Trial account for testing purposes, before using API with your live account.\"\n\n- **api_styles**: **CONFIRMED**. The record lists `rest`. The documentation for both v1 and v3 refers to them as \"REST API\".\n    - **Source**: \"home > technical support > liveagent api > rest api > api key\" (`https://support.liveagent.com/741982-API-key`).\n\n- **api_breadth**: **CONFIRMED**. The record states \"broad\". The API documentation lists a wide range of objects, including tickets, conversations, agents, companies, departments, and knowledge base articles, supporting this assessment.\n\n- **api_notes**: **CONFIRMED**. The notes are accurate, mentioning broad coverage across core helpdesk objects via API v1 and v3. This is consistent with the API documentation.\n\n- **openapi_spec**: **CONFIRMED**. The record states `true`. LiveAgent provides a Swagger (OpenAPI) descriptor for its v3 API.\n    - **Source**: \"If you need to generate LiveAgent's API library / SDK for your preferred programming language (like for example C#) you can use the swagger (OpenAPI) API descriptor which can be found at the very top of the API v3 documentation\".\n\n- **webhooks**: **CONFIRMED**. The record states `true`. LiveAgent supports creating webhooks either through custom API integration or via an automation rule using an \"HTTP request\" action.\n    - **Source**: \"In LiveAgent, you can create a webhook to receive notifications on your channel by either building a custom integration using the [API](https://support.liveagent.com/docs/api/v3/#/) or by setting up an automation rule with the \\\"HTTP request\\\" action.\"\n\n- **sandbox**: **WRONG**. The record states `false`, which is correct, but the initial reasoning could be more precise. LiveAgent explicitly confirms it does not offer a sandbox environment and recommends using a free trial account for testing instead.\n    - **Source**: \"No, LiveAgent does not offer a sandbox environment. You can use the preview and test section to test new widgets before integrating them into your website. Alternatively, you can set up a new free trial for testing purposes.\"\n    - **Correct Value**: `false`\n\n- **mcp**: **CONFIRMED**. The record lists `official`. LiveAgent documentation confirms it provides a built-in, vendor-maintained MCP server.\n    - **Source**: \"LiveAgent exposes a built-in MCP server (Model Context Protocol) that lets you connect external AI tools\".\n\n- **mcp_notes**: **WRONG**. The notes claim the MCP server supports \"profile-generated bearer tokens or an OAuth 2.1 authorization flow.\" The provided excerpts and search results only confirm bearer tokens. The quote about OAuth 2.1 was not found on the cited page and appears to be a fabrication.\n    - **Source**: \"There are two ways to authenticate your mcp client: - Bearer token — generate an MCP access token in your profile\" (`https://support.liveagent.com/647358-MCP-Integration-for-Agents`). The second method is not specified in the provided text, and no evidence for OAuth 2.1 was found.\n    - **Correct Value**: LiveAgent features a built-in native MCP server that supports authentication via profile-generated bearer tokens.\n\n- **verdict**: **CONFIRMED**. The record lists `ready_with_friction`. This is accurate because while a developer can get started immediately with a trial, API access is blocked after the trial without a paid plan.\n\n- **blocker**: **CONFIRMED**. The record lists `paid_plan`. This is the primary friction point, as continued API access requires a paid subscription after the 30-day trial.\n\n- **blocker_notes**: **CONFIRMED**. The notes accurately state that a paid plan is required after the trial and that the lack of a public OAuth2 framework necessitates manual API key configuration for each customer.\n\n### Uncertain Fields\n\nNone. The available documentation and search results were sufficient to verify all fields.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "LiveAgent pricing",
+   "LiveAgent free trial length",
+   "LiveAgent API documentation OAuth",
+   "LiveAgent webhooks",
+   "LiveAgent developer sandbox",
+   "LiveAgent MCP Integration for Agents"
+  ],
+  "search_sources": [
+   {
+    "title": "liveagent.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJaG2pw0gN2ZlKYebKfxkmnP7pTj5st583URivvOgcjFqrU-GY8YMu7eJ8OQm-ERcsaJQdkigVelj52jK4CZheBtvh2aVpJN8meu1RAYGDIVtDiRnd"
+   },
+   {
+    "title": "liveagent.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHltxYca-rvrjbwUmv_01c7Pc8Pq_AAou3YqtLEZ7uo-Y-1NFjilyCNNF24iYxhTY0qwVGyAUTuzPKvIuEKwWlUhaV0eVm1FowNLe5C6RcsMTJunrq4UZMeCnut54I="
+   },
+   {
+    "title": "liveagent.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_B6cOQocx3CQWYqH6f-rhmjCPUwbCV-sOJ1rTiDdWqSY-vmLB2EdAzBtsMOwwp0x3COMIPk_LPnVUfvCmB1Ao-m_lOYG73bxuKPlWgZcWfGNdUGsErQF7awKRDFnCokGhrfB6h3t1XLQX1OVz6e_p85NCRiot1sQuNQ=="
+   },
+   {
+    "title": "saasrat.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkUVBqsQKiZy_JLm03cOyd3EwN1iAM82vKrC_xCF6nwDtqdHruPzMV3fm6olBbQt4bjqmp_-Ng-iasuGoNHE-6CT3v-gfJUnhC4Dk6jmqqSFZ9gZtXAjXDSNp2fw-PrhRj"
+   },
+   {
+    "title": "capterra.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpGDPJoye8DD4Ms89dxxacMSDAnrhNcV8uu606gWL8wbkPfBKYszsA2B3DXVmfOLFqA767XYc-spxNhsajKM9RsJQZIyRf9UtaPqNpGp6hOaB1FNE8jjAEKEea7G0uOISxfZOKCkUnNcVpIs7Nttg="
+   },
+   {
+    "title": "liveagent.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgTLRsF7APUGgbspD19QEHbM4D7IhJCanFbw5sd_jkot3Idrwxa-Zo6_KHx6uGg8KS1cgxub0SBwbKV4gGSF5Ei6_7nF4iGXd23T36FATmj2u0DmeGN1GHDBwfhdyuHrXqq82Q8I6zFqTYyqBq"
+   },
+   {
+    "title": "liveagent.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmR7hmI-LDy34Ry26637ThZEDPX6kdaVRRnD-Yyfgl2NOGdCyN_ARaTkXrD94Qma4EqNciYC7-q6N7k_siMPYKFGlpJiLAsnznnuhx7qRy_E0ylYuy1XBVMU1VIGao5ucm5Q=="
+   },
+   {
+    "title": "liveagent.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEODRxmbF8ZJ7BDU2ULiGk6rfSK9yfJGNmO048fq2w3iHTu38yM8fRUbWDXSHh2GKRO_Oa_NGivT0ZjBNDte2tqA9sNvrTbojorxeD--z62A-GEMenEIyvijxsBvRHMi29grU45FAtsHW_c_orD6wPqxr7y8e7M"
+   },
+   {
+    "title": "liveagent.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQwWct7o4VxKTH55hVgR-EOzApmUpNqnM8D5zD7AjoohkXieELT53hJFnGkXepr4jOTu0xr_vZ_kh5XoXrOT7J8McVQ4zIqz8iwlN7OjdEOnQgbgTkkU4BM2zHCgNi4fkaQR93TDw="
+   },
+   {
+    "title": "liveagent.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRq3DsFFQR3V8UPLMEZERWEvwVuKZTKEqrjvAyrONMMg2hRbwkCj0lWq0bKsiqdRsL2uTX5vfup6u6EzIBXjkhSZf9riXg4djPYJSrGPVK0uwmljQHidTLf7dNazE-F36Ok68="
+   },
+   {
+    "title": "liveagent.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOogQEbXy4XxOlwhcVl1qtN_QPR2y0pz4NJaKcFdpfYju_Lx-hc0wtntgr9aa8vFa3Q4TK0NXY_GMGyItZS-wM4G2b9EfVO6CYq8Y3VGCnU4eWRTCGSghTaXj2eblXGIesRuaqshBktg8FHAfsF2hWBydcsNwW25zLU-cE8kn-eoOAuuTbssz4IJeQUVOgNx4="
+   },
+   {
+    "title": "liveagent.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1qLkEWsL6yayIpyzx7ffXIbENe2ADC25TWRhMvkRz7XNbVqu9seDKOyBiRP1dEPHjouI-A4px6AHNDhImHCI50osDOb8ybCT7__6gnetAK8Kz8JR7HPqh-0S1tsMfAPxmaHGOg0U_gpy6Bw=="
+   }
+  ],
+  "tokens": 8523,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://support.liveagent.com/741982-API-key",
+    "status": 200,
+    "chars": 3080,
+    "readable": true
+   },
+   {
+    "url": "https://support.liveagent.com/840770-Complete-API-reference",
+    "status": 200,
+    "chars": 130186,
+    "readable": true
+   },
+   {
+    "url": "https://support.liveagent.com/567924-Documentation?r=1",
+    "status": 200,
+    "chars": 2833,
+    "readable": true
+   },
+   {
+    "url": "https://www.liveagent.com/",
+    "status": 200,
+    "chars": 14465,
+    "readable": true
+   },
+   {
+    "url": "https://support.liveagent.com/647358-MCP-Integration-for-Agents",
+    "status": 200,
+    "chars": 6924,
+    "readable": true
+   }
+  ],
+  "seconds": 44.3
+ }
+}

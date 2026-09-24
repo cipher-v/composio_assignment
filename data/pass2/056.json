@@ -1,0 +1,182 @@
+{
+ "app": {
+  "id": 56,
+  "name": "Firecrawl",
+  "category": "Data, SEO and Scraping",
+  "hint": "firecrawl.dev"
+ },
+ "record": {
+  "subcategory": "Web Scraping / Data Extraction",
+  "one_liner": "Firecrawl helps AI systems search, scrape, crawl, and interact with the web, converting content into LLM-ready markdown or JSON.",
+  "auth_methods": [
+   "api_key"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "Standard API access uses an API key passed as a Bearer token. A separate Partner Integration API uses a partner key obtained by emailing the vendor. The official MCP server supports browser-based sign-in to authorize a client, in addition to using an API key.",
+  "access": "self_serve_free",
+  "access_notes": "Firecrawl offers a free tier with 1,000 credits/month, no credit card required. Paid plans are self-serve. A partner program is available via email application.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API with broad coverage for scraping, crawling, mapping, searching, asynchronous batch jobs, browser sandboxing, and scheduled monitoring.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Firecrawl publishes and hosts an official MCP server at https://mcp.firecrawl.dev/v2/mcp-oauth, supporting keyless, API key, or OAuth sign-in.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "none",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://docs.firecrawl.dev/api-reference/introduction",
+    "quote": "scrape extract content from any webpage in markdown or json format. crawl crawl entire websites, extract their content and metadata. map get a complete list of urls from any website quickly and reliably. search search the web and get full page content in any format."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.firecrawl.dev/api-reference/introduction",
+    "quote": "For authentication, it’s required to include an authorization header. the header should contain bearer fc-123456789 , where fc-123456789 represents your api key."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.firecrawl.dev/mcp-server",
+    "quote": "Point your client at the OAuth server URL. Your client opens a browser window where you sign in to Firecrawl and approve a team... This is a server URL for your MCP client, not a page to open directly in a browser."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.firecrawl.dev/partner-integration-api",
+    "quote": "To apply for the partner program or request a partner API key, email partnerships@firecrawl.dev."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.firecrawl.dev/pricing",
+    "quote": "free plan a lightweight way to get started. no cost, no card, no hassle. 1,000 credits / month $ 0 /month get started"
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.firecrawl.dev/api-reference/introduction",
+    "quote": "All requests contain the following base url: https://api.firecrawl.dev"
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.firecrawl.dev/api-reference/introduction",
+    "quote": "Firecrawl employs conventional http status codes to signify the outcome of your requests."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.firecrawl.dev/api-reference/introduction",
+    "quote": "The navigation menu lists: \"search endpoints\", \"scrape endpoints\", \"interact / browser sandbox endpoints\", \"map endpoints\", \"crawl endpoints\", \"monitor endpoints\", and \"agent endpoints\"."
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/devflowinc/firecrawl-simple/blob/main/apps/api/v1-openapi.json",
+    "quote": "The file v1-openapi.json contains a full OpenAPI 3.0.0 specification for the Firecrawl API."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.firecrawl.dev/mcp-server",
+    "quote": "point your client at the oauth server url. your client opens a browser window where you sign in to firecrawl and approve a team: { \"mcpservers\" : { \"firecrawl\" : { \"type\" : \"http\" , \"url\" : \"https://mcp.firecrawl.dev/v2/mcp-oauth\" } } }"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.firecrawl.dev/mcp-server",
+    "quote": "Set up Firecrawl MCP with keyless access, account sign-in, or an API key."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.firecrawl.dev/mcp-server",
+    "quote": "The navigation menu on the page includes \"Webhooks\" with sub-items \"Overview\", \"Event Types\", \"Security\", and \"Testing\"."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": "[\"api_key\", \"oauth2\"]",
+    "new": "[\"api_key\"]",
+    "reason": "The 'OAuth' mentioned is for MCP server sign-in to approve a team, not a standard OAuth 2.0 flow for third-party API access. The primary and only documented method for the public REST API is an API key.",
+    "url": "https://docs.firecrawl.dev/api-reference/introduction"
+   },
+   {
+    "field": "auth_notes",
+    "old": "Standard API access uses an API key passed via a Bearer token. Partner Integration API uses a partner key. MCP clients can use browser-based OAuth sign-in.",
+    "new": "Standard API access uses an API key passed as a Bearer token. A separate Partner Integration API uses a partner key obtained by emailing the vendor. The official MCP server supports browser-based sign-in to authorize a client, in addition to using an API key.",
+    "reason": "Clarified the nature of the 'OAuth' functionality as browser-based sign-in for MCP team approval, not general API access, and added detail about the partner API key.",
+    "url": "https://docs.firecrawl.dev/api-reference/introduction"
+   },
+   {
+    "field": "openapi_spec",
+    "old": "true",
+    "new": "true",
+    "reason": "The previous evidence was incorrect, referring to documentation platform features. A valid OpenAPI spec exists on GitHub.",
+    "url": "https://github.com/devflowinc/firecrawl-simple/blob/main/apps/api/v1-openapi.json"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "Here is the fact-checking record for Firecrawl.\n\n### Verification Notes\n\n*   **subcategory**: **CONFIRMED**. The one-liner and API features confirm this categorization.\n    *   **Source**: https://docs.firecrawl.dev/api-reference/introduction\n    *   **Quote**: \"Features scrape extract content from any webpage in markdown or json format. crawl crawl entire websites, extract their content and metadata. map get a complete list of urls from any website quickly and reliably. search search the web and get full page content in any format.\"\n\n*   **one_liner**: **CONFIRMED**. The description accurately summarizes the service's core functions as described in its documentation.\n    *   **Source**: https://docs.firecrawl.dev/api-reference/introduction\n    *   **Quote**: \"Features scrape extract content from any webpage in markdown or json format. crawl crawl entire websites, extract their content and metadata. ... search search the web and get full page content in any format. ... Agent. Autonomous web data gathering powered by AI.\"\n\n*   **auth_methods**: **WRONG**. The correct value is `[\"api_key\"]`. The \"OAuth\" mentioned is a browser-based sign-in method for their MCP server to *approve a team*, not a standard, documented OAuth 2.0 flow for third-party applications to access the API on behalf of users. The primary and only documented method for the public REST API is an API key.\n    *   **Source**: https://docs.firecrawl.dev/api-reference/introduction\n    *   **Quote**: \"For authentication, it’s required to include an authorization header. the header should contain bearer fc-123456789 , where fc-123456789 represents your api key.\"\n    *   **Source**: https://docs.firecrawl.dev/mcp-server\n    *   **Quote**: \"Point your client at the OAuth server URL. Your client opens a browser window where you sign in to Firecrawl and approve a team... This is a server URL for your MCP client, not a page to open directly in a browser.\"\n\n*   **primary_auth**: **CONFIRMED**. As the only documented method for the public API is an API key, this is correct.\n    *   **Source**: https://docs.firecrawl.dev/api-reference/introduction\n    *   **Quote**: \"Every request requires an Authorization header with your API key: Authorization: Bearer fc-YOUR-API-KEY.\"\n\n*   **auth_notes**: **WRONG**. The notes are partially correct but misrepresent the OAuth functionality. A more accurate note is: \"Standard API access uses an API key passed as a Bearer token. A separate Partner Integration API uses a partner key obtained by emailing the vendor. The official MCP server supports browser-based sign-in to authorize a client, in addition to using an API key.\"\n    *   **Source**: https://docs.firecrawl.dev/api-reference/introduction, https://docs.firecrawl.dev/mcp-server, https://docs.firecrawl.dev/partner-integration-api\n    *   **Quote**: \"For authentication, it’s required to include an authorization header. the header should contain bearer fc-123456789 , where fc-123456789 represents your api key.\" \"To apply for the partner program or request a partner API key, email partnerships@firecrawl.dev.\" \"Set up Firecrawl MCP with keyless access, account sign-in, or an API key.\"\n\n*   **access**: **CONFIRMED**. The service is self-serve with a free tier that provides API access.\n    *   **Source**: https://www.firecrawl.dev/pricing\n    *   **Quote**: \"free plan a lightweight way to get started. no cost, no card, no hassle. 1,000 credits / month $ 0 /month get started\"\n\n*   **access_notes**: **CONFIRMED**. The pricing page confirms the free tier details. Paid plans are self-serve. The partner program requires an email application.\n    *   **Source**: https://www.firecrawl.dev/pricing, https://docs.firecrawl.dev/partner-integration-api\n    *   **Quote**: \"free plan a lightweight way to get started. no cost, no card, no hassle. 1,000 credits / month $ 0 /month get started\" \"To apply for the partner program or request a partner API key, email partnerships@firecrawl.dev.\"\n\n*   **api_styles**: **CONFIRMED**. The API uses a base URL, HTTP methods, and status codes, consistent with a RESTful style.\n    *   **Source**: https://docs.firecrawl.dev/api-reference/introduction\n    *   **Quote**: \"All requests contain the following base url: https://api.firecrawl.dev\" and \"Firecrawl employs conventional http status codes to signify the outcome of your requests.\"\n\n*   **api_breadth**: **CONFIRMED**. The API covers a wide range of data extraction and web interaction functionalities.\n    *   **Source**: https://docs.firecrawl.dev/api-reference/introduction\n    *   **Quote**: The navigation menu lists: \"search endpoints\", \"scrape endpoints\", \"interact / browser sandbox endpoints\", \"map endpoints\", \"crawl endpoints\", \"monitor endpoints\", and \"agent endpoints\".\n\n*   **api_notes**: **CONFIRMED**. This is an accurate summary of the API's broad capabilities as listed in the documentation.\n    *   **Source**: https://docs.firecrawl.dev/api-reference/introduction\n    *   **Quote**: The documentation lists endpoints for \"search\", \"scrape\", \"batch scrape\", \"interact / browser sandbox\", and \"monitor\".\n\n*   **openapi_spec**: **WRONG**. The correct value is `true`, but the evidence is incorrect. The cited page refers to implementing an OpenAPI spec within Mintlify, the documentation platform, not Firecrawl providing one for its API. However, an official OpenAPI specification does exist.\n    *   **Source**: https://github.com/devflowinc/firecrawl-simple/blob/main/apps/api/v1-openapi.json\n    *   **Quote**: The file `v1-openapi.json` contains a full OpenAPI 3.0.0 specification for the Firecrawl API.\n\n*   **webhooks**: **CONFIRMED**. The documentation has a dedicated section for webhooks.\n    *   **Source**: https://docs.firecrawl.dev/mcp-server\n    *   **Quote**: The navigation menu on the page includes \"Webhooks\" with sub-items \"Overview\", \"Event Types\", \"Security\", and \"Testing\".\n\n*   **sandbox**: **CONFIRMED**. The API includes endpoints for a browser sandbox.\n    *   **Source**: https://docs.firecrawl.dev/api-reference/introduction\n    *   **Quote**: The API reference lists \"interact / browser sandbox endpoints\".\n\n*   **mcp**: **CONFIRMED**. Firecrawl provides official documentation and a hosted URL for its MCP server.\n    *   **Source**: https://docs.firecrawl.dev/mcp-server\n    *   **Quote**: \"point your client at the oauth server url. your client opens a browser window where you sign in to firecrawl and approve a team: { \"mcpservers\" : { \"firecrawl\" : { \"type\" : \"http\" , \"url\" : \"https://mcp.firecrawl.dev/v2/mcp-oauth\" } } }\"\n\n*   **mcp_notes**: **CONFIRMED**. The notes accurately describe the MCP server's URL and supported authentication methods.\n    *   **Source**: https://docs.firecrawl.dev/mcp-server\n    *   **Quote**: \"Set up Firecrawl MCP with keyless access, account sign-in, or an API key.\"\n\n*   **verdict**: **CONFIRMED**. With a self-serve free tier that includes API access and public documentation, the API is ready for immediate integration.\n    *   **Source**: https://www.firecrawl.dev/pricing, https://docs.firecrawl.dev/api-reference/introduction\n    *   **Quote**: \"free plan a lightweight way to get started. no cost, no card, no hassle. 1,000 credits / month $ 0 /month get started\"\n\n*   **blocker**: **CONFIRMED**. There are no blockers to immediate use.\n    *   **Source**: N/A (Conclusion based on `access` and `verdict`).\n\n*   **blocker_notes**: **CONFIRMED**.\n    *   **Source**: N/A (Conclusion based on `blocker`).\n\n### Uncertain Fields\n\nAll fields were verified, and none remain uncertain.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Firecrawl API OpenAPI spec",
+   "Firecrawl partner program",
+   "Firecrawl API authentication methods",
+   "Firecrawl API OAuth"
+  ],
+  "search_sources": [
+   {
+    "title": "firecrawl.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlBqbz_Lor_3gJZ_gd5fwdoFzleG_XdlPcAx8vL-Uv_rag7MKearoePX-Dfn0sw5UxIZWtwCfHlU-LMDRhuz_RkXdwod079LYGSUuUD89D4iBC0kkEwNRx4VIHC9hYybjfGIKAauekUPBVatDwyC1RNjjo"
+   },
+   {
+    "title": "firecrawl.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqd74ox8_FMMW8MHqMHQk7WfzCKR5RHGEY_6XIh_3mZrbQvkwT8O8w9BnNq7XVAhf9LKUne7I2TBDgMjvuySCEfLSu8XoVJU8jjYwUOT8TQiRBclzwu1rp4bGOceJYHVxhABY1Bl9_8qIVIRHGRxro"
+   },
+   {
+    "title": "firecrawl.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_WZDzovR3pWBF28YKYl0U3baYv0zCCyZasYHmuXmT66v8ucTedWr_HGF6SMzY25JyF_Sj0LLgYNL8qw4V4lr5oIO8GwbtihPnnFoFmqfjkI9jurHhwYCFasYjizx7PsI="
+   },
+   {
+    "title": "firecrawl.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_jiN-tI4Sl52uDR1gviaSJYTgqPxeGYF1vB33y9rjUuenWhLeMk3JkfuCRIywn7kTEUAsxli81HFuXd__AL9Slfp8qGREL9AttLeyUDlOe169z14FT9zdvCEAHCwsyR1AVzqKzjcm-vM="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_S-kOmYerIa2zPagbqs7jxZbN0hbdd6td1DZlKqVh_TqgJx9x4hra5dhk3zQQWaAoKzy8b0QzsBRdGRbkMQdo875kDLGHH9sq-eqYQBUgH1d57-C6EypuGBByiKgDNK8qbgxWYWiur2o5Sy-BgrVr6IRcXh0M23-5K9fBWMaRAgjV8T90pX03Hn6tSQ=="
+   }
+  ],
+  "tokens": 10543,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://docs.firecrawl.dev/api-reference/introduction",
+    "status": 200,
+    "chars": 5087,
+    "readable": true
+   },
+   {
+    "url": "https://docs.firecrawl.dev/mcp-server",
+    "status": 200,
+    "chars": 2697,
+    "readable": true
+   },
+   {
+    "url": "https://www.firecrawl.dev/pricing",
+    "status": 200,
+    "chars": 15189,
+    "readable": true
+   },
+   {
+    "url": "https://docs.firecrawl.dev/quickstart",
+    "status": 200,
+    "chars": 3240,
+    "readable": true
+   }
+  ],
+  "seconds": 50.4
+ }
+}

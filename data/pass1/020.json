@@ -1,0 +1,217 @@
+{
+ "app": {
+  "id": 20,
+  "name": "Gladly",
+  "category": "Support and Helpdesk",
+  "hint": "gladly.com"
+ },
+ "record": {
+  "subcategory": "Helpdesk / customer service",
+  "one_liner": "Consolidates customer interactions across channels into a single lifelong customer profile and continuous conversation timeline.",
+  "auth_methods": [
+   "basic"
+  ],
+  "primary_auth": "basic",
+  "auth_notes": "Gladly API uses token-based Basic Authentication where the username is the agent's login email address and the password is a generated API token.",
+  "access": "partner_or_sales",
+  "access_notes": "Gladly does not offer a free tier or public trial. Access requires engaging with sales, signing an annual contract, or joining their partner program. Once an account is active, an administrator must grant the 'API User' permission to generate tokens.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API accessed via the organization's custom domain. It covers over 65 distinct actions across agents, answers, conversations, customers, inboxes, tasks, teams, and topics.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "community_only",
+  "mcp_notes": "Gladly does not publish an official MCP server, but third-party integration platforms like StackOne and Truto provide community/vendor-hosted MCP servers.",
+  "verdict": "needs_outreach",
+  "blocker": "partnership_or_sales",
+  "blocker_notes": "There is no self-serve path for developers to obtain credentials or test accounts independently; access requires contacting sales or joining the partner program.",
+  "evidence": [
+   {
+    "claim": "auth",
+    "url": "https://developer.gladly.com/rest/#section/Authentication",
+    "quote": "Gladly API uses token-based Basic Authentication. API tokens are associated with designated Gladly users. To create and use an API token, your user must have the API User permission... user name, password. agent email, API token. The credentials must be passed via an Authorization HTTP header."
+   },
+   {
+    "claim": "access",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2NySJpw3zUziEULVfsf1BMho4yOa_Y-n-Yh0YJx5wJQcKXE3yCgUT9BVBEUbRSLIzIQcIVsCGhcFM7ESj27v-Jzz7oYNBKV_StC0NsYGrWY9MRLOjFBsB1WmWjyNmlAX-",
+    "quote": "Gladly does not offer a free plan, and free trials are not publicly available. Access is usually provided through sales-led demos... Gladly requires an annual contract and often enforces minimum agent count."
+   },
+   {
+    "claim": "api",
+    "url": "https://developer.gladly.com/rest/",
+    "quote": "Clients can access the REST API via HTTPS at your organization's Gladly domain (e.g. https://{organization}.gladly.com ). Resources follow REST semantics and utilize industry-standard HTTP verbs, response codes, and authentication schemes."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://www.stackone.com/connectors/gladly/",
+    "quote": "Connect your AI agent to 65 Gladly actions via MCP, A2A, or SDK... Gladly MCP Server."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Product Research Notes: Gladly\n\n#### 1. What the Product Does\nGladly is a people-centric customer service and helpdesk platform designed for mid-market and enterprise retail and e-commerce brands. Instead of traditional ticket-based tracking, Gladly consolidates all customer interactions across voice, chat, SMS, email, and social channels into a single lifelong customer profile and continuous conversation timeline.\n*   **Source URL:** `https://www.stacksync.com/connectors/gladly/`\n    *   **Verbatim Quote:** *\"Gladly is bought by CX and support leadership at mid-market and enterprise retail and ecommerce brands. Its model is people-centric: a single lifelong customer profile with conversations that persist across voice, chat, SMS, email, and social, instead of per-issue tickets.\"*\n*   **Source URL:** `https://developer.gladly.com/rest/`\n    *   **Verbatim Quote:** *\"Gladly resolves routine customer questions automatically across every channel, while Gladly Team gives support teams the full customer context in one place.\"*\n\n#### 2. API Authentication Methods & Multi-Tenant Usage\n*   **Authentication Methods:** The Gladly REST API relies exclusively on token-based HTTP Basic Authentication. Requests require an `Authorization` header where the username is the agent's login email address and the password is a generated API token.\n*   **Multi-Tenant Integration Platform Usage:** Gladly does not support a public, multi-tenant OAuth2 application flow for external integrations. A multi-tenant platform must collect the customer's custom organization domain, the agent's email address, and their generated API token to authenticate requests via HTTP Basic Auth.\n*   **Primary Auth Type:** `basic`\n*   **Source URL:** `https://developer.gladly.com/rest/#section/Authentication`\n    *   **Verbatim Quote:** *\"Gladly API uses token-based Basic Authentication. API tokens are associated with designated Gladly users. To create and use an API token, your user must have the API User permission... user name, password. agent email, API token. The credentials must be passed via an Authorization HTTP header.\"*\n\n#### 3. Credential Acquisition & Cost\n*   **Access Classification:** `partner_or_sales`\n*   **Cost & Availability:** Gladly does not offer a free tier, free developer account, or publicly available free trial. Access to the platform requires engaging with sales, signing an annual contract, or joining their partner program.\n*   **How to Get Credentials:** Once an organization has a paid account, an administrator must explicitly grant a user profile the \"API User\" permission. The user can then navigate to the settings dashboard under \"App Developer Tools\" to generate an API token.\n*   **Source URL:** `https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2NySJpw3zUziEULVfsf1BMho4yOa_Y-n-Yh0YJx5wJQcKXE3yCgUT9BVBEUbRSLIzIQcIVsCGhcFM7ESj27v-Jzz7oYNBKV_StC0NsYGrWY9MRLOjFBsB1WmWjyNmlAX-` (HiverHQ)\n    *   **Verbatim Quote:** *\"Gladly does not offer a free plan, and free trials are not publicly available. Access is usually provided through sales-led demos... Gladly requires an annual contract and often enforces minimum agent count.\"*\n*   **Source URL:** `https://developer.gladly.com/rest/#section/Authentication`\n    *   **Verbatim Quote:** *\"To allow a user to create API tokens and access the API: Log in to your Gladly instance. Open the menu on the top left-hand corner of the page. Navigate to Settings > *Users. Search and click the user profile you wish to give access to. You'll see a permission called API User. Select it... Navigate to Settings. Under the 'App Developer Tools' category, click 'API tokens'. Click 'Create Token'.\"*\n\n#### 4. API Style, Breadth, OpenAPI Spec, Webhooks, & Sandbox\n*   **API Style:** REST API.\n*   **Breadth:** Broad and comprehensive coverage of helpdesk resources, supporting over 65 distinct actions across agents, answers, conversations, customers, inboxes, tasks, teams, and topics.\n*   **OpenAPI Spec:** Yes, Gladly provides a downloadable OpenAPI specification directly on their developer portal.\n*   **Webhooks:** Yes, Gladly supports webhooks for real-time event notifications.\n*   **Sandbox:** Yes, Gladly provides separate sandbox environments for testing, but they are not self-serve and must be enabled by Gladly for the organization.\n*   **Source URL:** `https://developer.gladly.com/rest/`\n    *   **Verbatim Quote:** *\"Clients can access the REST API via HTTPS at your organization's Gladly domain (e.g. https://{organization}.gladly.com ). Resources follow REST semantics and utilize industry-standard HTTP verbs, response codes, and authentication schemes.\"*\n    *   **Verbatim Quote:** *\"gladly api ( 1.0 ) download openapi specification: download\"*\n    *   **Verbatim Quote:** *\"webhooks post create webhook get list webhooks patch update webhook del delete webhook get get webhook\"*\n    *   **Verbatim Quote:** *\"Testing. Test the myriad possibilities of the Gladly API in a safe, secure space. We'll enable the Gladly API in a separate sandbox environment\"*\n*   **Source URL:** `https://www.stackone.com/connectors/gladly/`\n    *   **Verbatim Quote:** *\"Connect your AI agent to 65 Gladly actions via MCP, A2A, or SDK, with agent authentication, tool-calling execution, and security built-in.\"*\n\n#### 5. Model Context Protocol (MCP) Servers\n*   **MCP Status:** `community_only`\n*   **Details:** Gladly does not publish or host an official MCP server. However, multiple third-party integration platforms (such as StackOne, Truto, and Unified.to) provide community/vendor-hosted MCP servers that wrap Gladly's REST API for AI agents.\n*   **Source URL:** `https://www.stackone.com/connectors/gladly/`\n    *   **Verbatim Quote:** *\"Connect your AI agent to 65 Gladly actions via MCP, A2A, or SDK... Gladly MCP Server.\"*\n*   **Source URL:** `https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsGQBMz2qrAupV2IeOn2Cgcf2fRw1uF2UI6VgYaJp9KMXBQkNie85FTPSKnHkezgXKYiW5iPg6bLqlaJR_EGtX0NHw-N-EkI0sbZMU34dLQEl1bZPE40tLTQExW-Zb-Vu8egYGO8jqog==` (Truto)\n    *   **Verbatim Quote:** *\"Why use Truto's MCP server for Gladly. Other MCP servers give you a static tool list for one app. Truto gives you a managed, multi-tenant MCP infrastructure across 750+ integrations.\"*\n\n#### 6. Buildability Verdict\n*   **Verdict:** `needs_outreach`\n*   **Main Blocker:** There is no self-serve path for developers to obtain credentials or test accounts. A developer cannot sign up for a free tier or a trial account independently; building a native integration requires contacting Gladly's sales team, signing an enterprise contract, or formally joining their partner program.\n*   **Source URL:** `https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2NySJpw3zUziEULVfsf1BMho4yOa_Y-n-Yh0YJx5wJQcKXE3yCgUT9BVBEUbRSLIzIQcIVsCGhcFM7ESj27v-Jzz7oYNBKV_StC0NsYGrWY9MRLOjFBsB1WmWjyNmlAX-` (HiverHQ)\n    *   **Verbatim Quote:** *\"Gladly does not offer a free plan, and free trials are not publicly available. Access is usually provided through sales-led demos.\"*",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"gladly\" api authentication token basic bearer oauth",
+   " \"Authentication\"",
+   " \"Getting Started\"",
+   "gladly api pricing free trial sandbox",
+   " \"Authentication\" OR \"creating api tokens\" OR \"api tokens\"",
+   "\"gladly\" \"api tokens\" \"basic\" OR \"bearer\" OR \"email\"",
+   " \"OpenAPI\" OR \"swagger\"",
+   "\"gladly\" mcp server",
+   "\"Gladly\" \"official\" \"MCP server\"",
+   " \"MCP\" OR \"Model Context Protocol\"",
+   " \"gladly\" mcp server"
+  ],
+  "search_sources": [
+   {
+    "title": "unified.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzU-bBumrXwFD4RNrEekOMJbxdSFqVbWVjgzfhyNaOwuS3ksx2tJw40wTO3LpiK6VqH3RFXSHLUYlZb-82VCZ8km3xjpRUzunkprlypDdwrZgPwtd2lkAa_nutM_tCEspnXr-q3uY1RaIADM35WhVCxL2D4GVbg-a_2xM8jH4J"
+   },
+   {
+    "title": "dlthub.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEC7XKwI2lvbwhnC5vHB7OFtCJFZHL1XS_vzK9wlggCPzeYc8vzQIDqw3gMOWDJkK3qALeZCey3i4oHCvBNxAyp7JGyuCj7DC57vgkvS3x_3NUexjJeBPUHoAr0tYTjrwLwGjAT_oppqZ2U3sSfc8="
+   },
+   {
+    "title": "dlthub.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtb9EoXBVP70mPIMgvAatm7HWnrgLNsZrgzOW60DgBd_8hBgMC9ukwzpVwwwq7Reyt8gXaxUiqL1w1gdVhnRPpS_p_yONgWpd7h-3DHp0O661PAw3-tGRSf8X-pfQo-7LSiZtFE9ji22Ls87nsSP8="
+   },
+   {
+    "title": "clonepartner.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7kpb47199eOIkCWfW6XhS9NWXgDHz--8svonoqlkMQ4WpwbYn4CP3sC12vOrVLcn5iqqSfJBVoK746ugz-kOWSaXE7Li5cgmb9-sLiyhcL8AEu86KGV78WN2679EgMP7ooiq1FkyzYUUREoIMGbqHqkOydoDuude3dNN3h5LEyqBRvASBVw_ONIpn_dy29YKUwg=="
+   },
+   {
+    "title": "rudderstack.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOkBI18VKYuZ9f3QDJbHf7n-NOvuzqHbroBc-ooJushw51DFSGitW6ZwEQO0PvrPqOauZKYeRF1TcINjREtgUiXj0N-cfLiFTBjKChYD_lepOPedHcM_OZujCwS67kK9Mnyl4-c8I_XvMbj9EAkmR4VqFDEkioJelAhE-fW8RLfraszUGUgmI="
+   },
+   {
+    "title": "truto.one",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsGQBMz2qrAupV2IeOn2Cgcf2fRw1uF2UI6VgYaJp9KMXBQkNie85FTPSKnHkezgXKYiW5iPg6bLqlaJR_EGtX0NHw-N-EkI0sbZMU34dLQEl1bZPE40tLTQExW-Zb-Vu8egYGO8jqog=="
+   },
+   {
+    "title": "databricks.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJfS4y6g9rJf-2YgOUDTjsCRrmeam1EsnGKWy9cJPYTlS4e52s-9D-VRMUsDvitgpAbXFjFKbEAQZX9EDOMC2Q1kwgtXM0bBMQxXh8tz49q-xtzQQwAPkZ8YAwPj_Ww6IM1bUpJayCPFFHa6SVJmucyM2UKXqStirs"
+   },
+   {
+    "title": "facebook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9XD4FnKPzZmu6a4S1j0v_7GJCptBd5eJA9Ym09l232aZ97a7I1C_dyAk7ePgKRo2IYf2gLGH-p5-Zh8ce3HhBu-KvUj9Hg0SwHbfDq8_j14llWQdcTOtrKStcNY8saRDEZsMUHkEWP4eO_W3kzeQ81Xsiep2YYceRcrLBYfD2fbBk"
+   },
+   {
+    "title": "modelcontextprotocol.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFe_JXdS18FrMbJM9A9okkeCz6ZZNfQP0QovzcTUqy9a_SH3Z_qJAA6_gQ_EMuL0KxqpDT0zObp1UCARFUhgD25Zafew1yF5GrgkPpnbsVWi64slVM3N--2POdtPhjwP-OwmSYONCFzPK3ZuhlT_yJ3OBoj55uQE1wJma28jRVZaA=="
+   },
+   {
+    "title": "google.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmS9IZGXsk87MfJNJuAR70JrMrn5BVclBXRhWLJTVOioTUzKojNATp8KyHnIIzBl20sHoUC7nqcbnVpXJOkkAXRU9Q9Y7vBejUV52iSHDPpDWNFp2S5UNyPsnsCgV25958biH35QhQ5IY4tZYibw3Idsaq8M0oJzt2bUE="
+   },
+   {
+    "title": "wikipedia.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8gsZKHGstK3xEVc6jJnHfsm8BpjIdIMLZdH7ZDsvLxjJwVTUAKS38JldDUeEbgG90dApmmXn5FVeVNTEXwxWX_vGRENd0-QnBgHLN_x_KKAeb2-097M2mthA6mjeqrdZZFkC3ybzJ145-UgYb1B8="
+   },
+   {
+    "title": "gladly.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFe77mZtBcEPlQmbQVVsZfPd9hNogDvE08yq72NfNd9zZCicRAIacTeahKUaVVYgoeJLBOQGQH6cSI6WWnDA1IxFxTuh7B2w5xvaubKTYfU2k6kboMPvuheEQmSl9w085Pfsu_wv4e2wtykoRUGP5cet1OgY9WC_A=="
+   },
+   {
+    "title": "europa.eu",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6o2TvHj8-qbsfSJl5dcfgIPBFGvYhHUXG1SPBRIxdhYoMKFPcjX0tCI_qiP172JpHA1cWtOG3wS12t2b6wGfO0ZyP5PUSIRmoavAF72NQOaHXvV1hJ5JGpVwmUu3yKBp7RikuzoWVcpYRYnZwrDasPljYqavv99vMOntazSU="
+   },
+   {
+    "title": "entergram.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHawADW1EnjAsfU-PEPQY3eTvtkRcO178RZ2aoTiKgN5toM1xJAOpToBcCI2WbiH98sdo24cbquZrOZo656JInIi0jnyG2JUQUtAkWbcUZ7VhE6lrQUnr6TkMOeaLYjbQwp"
+   }
+  ],
+  "tokens": 9301,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Gladly developer documentation API authentication keys OAuth",
+    "Gladly developer documentation getting started quickstart",
+    "Gladly pricing API access plans developer program",
+    "Gladly API reference index",
+    "Gladly MCP server official community",
+    "Gladly official pricing page API access",
+    "Gladly partner program developer program",
+    "Gladly MCP server GitHub official community",
+    "Gladly REST API reference index URL",
+    "Gladly API authentication documentation URL",
+    " \"Gladly\" MCP server",
+    "\"Gladly\" Model Context Protocol server",
+    "\"Gladly\" MCP server official community"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://developer.gladly.com/rest/#section/Authentication",
+    "https://developer.gladly.com/rest/#section/Getting-Started",
+    "https://www.gladly.ai/partner/",
+    "https://developer.gladly.com/rest/",
+    "https://developer.gladly.com/tutorials/",
+    "https://www.stackone.com/connectors/gladly/"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://truto.one/mcp/gladly",
+     "status": 404
+    },
+    {
+     "url": "https://developer.gladly.com/lookup-adaptor/authentication/",
+     "status": 404
+    },
+    {
+     "url": "https://apps.shopify.com/gladly",
+     "status": 0
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://developer.gladly.com/rest/#section/Authentication",
+     "status": 200,
+     "chars": 140576,
+     "readable": true
+    },
+    {
+     "url": "https://developer.gladly.com/rest/#section/Getting-Started",
+     "status": 200,
+     "chars": 140576,
+     "readable": true
+    },
+    {
+     "url": "https://www.gladly.ai/partner/",
+     "status": 200,
+     "chars": 2678,
+     "readable": true
+    },
+    {
+     "url": "https://developer.gladly.com/rest/",
+     "status": 200,
+     "chars": 140576,
+     "readable": true
+    },
+    {
+     "url": "https://developer.gladly.com/tutorials/",
+     "status": 200,
+     "chars": 0,
+     "readable": false
+    },
+    {
+     "url": "https://www.stackone.com/connectors/gladly/",
+     "status": 200,
+     "chars": 11980,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 250.5
+ }
+}

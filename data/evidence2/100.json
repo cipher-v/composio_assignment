@@ -1,0 +1,130 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://coldiq.com/tools/grain",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.56
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://grain.com/app/settings/integrations?tab=api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://grain.com/app/settings/integrations?tab=api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://grain.com/help/article/what-is-included-in-the-free-plan-167890",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://grain.com/help/article/what-is-included-in-the-starter-plan-167891",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://semarize.com/resources/get-your-data/grain",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://grain.com/app/settings/integrations?tab=api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": true,
+   "claim": "api",
+   "url": "https://developers.grain.com/docs/api-reference/2026-10-01/release-notes",
+   "status": 403,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://grain.com/app/settings/integrations?tab=api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://grain.com/help/article/what-is-included-in-the-business-plan-167893",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://grain.com/release-note/06-18-2025",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.29
+  }
+ ],
+ "auth_support": {
+  "bearer_token": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://grain.com/help/article/what-is-included-in-the-free-plan-167890', 'https://grain.com/help/article/what-is-included-in-the-starter-plan-167891', 'https://grain.com/help/article/what-is-included-in-the-business-plan-167893']\n- Bot-walled / login pages our crawler could not read (verify via search): ['https://developers.grain.com/docs/api-reference/2026-10-01/release-notes']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://grain.com/release-note/06-18-2025']\n- Non-vendor sources (prefer official docs): ['https://coldiq.com/tools/grain', 'https://semarize.com/resources/get-your-data/grain']",
+ "metrics": {
+  "n_evidence": 11,
+  "alive_rate": 0.6363636363636364,
+  "dead_rate": 0.2727272727272727,
+  "blocked_rate": 0.09090909090909091,
+  "official_rate": 0.8181818181818182,
+  "readable": 3,
+  "quote_supported_rate": 0.6666666666666666,
+  "lint_issues": 0,
+  "flag_count": 4
+ }
+}

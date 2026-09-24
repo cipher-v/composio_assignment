@@ -1,0 +1,194 @@
+{
+ "app": {
+  "id": 99,
+  "name": "YouTube Transcript",
+  "category": "AI, Research and Media-native",
+  "hint": "transcriptapi.com"
+ },
+ "record": {
+  "subcategory": "Video Transcripts",
+  "one_liner": "YouTube Transcript extracts YouTube video transcripts and metadata at scale via REST API or YouTube MCP.",
+  "auth_methods": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "API Key for direct REST API requests (Bearer token in Authorization header). OAuth 2.1 for MCP server, supporting Dynamic Client Registration (Claude) and Static Client Registration (ChatGPT).",
+  "access": "self_serve_free",
+  "access_notes": "Instant signup without credit card. API keys (sk_ prefix) available on dashboard. OAuth Client ID/Secret generated from MCP Integration dashboard. Free tier: 100 credits, no time limit, no credit card. Paid plans available.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "Base URL: https://transcriptapi.com/api/v2. Approximately 12 endpoints covering transcripts, video metadata, channel profiles, paginated channel feeds, playlists, community posts, and search filters. Requires User-Agent header.",
+  "openapi_spec": true,
+  "webhooks": false,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Official remote MCP server hosted at https://transcriptapi.com/mcp. Exposes full suite of YouTube tools to AI agents.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "none",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://transcriptapi.com/",
+    "quote": "Stop fighting YouTube blocks. Get transcripts, search videos, browse channels, and extract playlists via REST API or YouTube MCP — at scale."
+   },
+   {
+    "claim": "api",
+    "url": "https://transcriptapi.com/docs/api-reference",
+    "quote": "TranscriptAPI is a managed REST API built specifically for YouTube data extraction. It handles transcripts, but it also covers search, channel listing, and playlist extraction in a single API."
+   },
+   {
+    "claim": "auth",
+    "url": "https://transcriptapi.com/docs/api-reference",
+    "quote": "curl -s \"https://transcriptapi.com/api/v2/youtube/transcript... -H \"Authorization: Bearer YOUR_API_KEY\""
+   },
+   {
+    "claim": "auth",
+    "url": "https://transcriptapi.com/docs/mcp/",
+    "quote": "OAuth Authentication. ... OAuth provides automatic, secure authentication without manual key management. Supported by: Claude (Dynamic Client Registration - optional credentials) ChatGPT (Static Client Registration - requires Client ID/Secret) Any MCP client supporting OAuth 2.1."
+   },
+   {
+    "claim": "access",
+    "url": "https://transcriptapi.com/blog/youtube-transcript-api-complete-developer-guide",
+    "quote": "Free tier: 100 credits to start. No credit card required. No time limit. Monthly plan: $5/month for 1,000 credits. Top-up at $2.50 per 1,000 extra credits. ... Annual plan: $54/year for 1,000 credits/month. Top-up at $1.50 per 1,000 extra credits."
+   },
+   {
+    "claim": "access",
+    "url": "https://transcriptapi.com/docs/mcp/chatgpt/",
+    "quote": "Get your credentials from the MCP Integration dashboard. Select “OAuth (Recommended)” and click “Generate Credentials” ... Copy both the Client ID and Client Secret from the TranscriptAPI dashboard."
+   },
+   {
+    "claim": "access",
+    "url": "https://transcriptapi.com/docs/api-reference",
+    "quote": "With TranscriptAPI, 1 credit equals 1 successful request and failed requests are never charged."
+   },
+   {
+    "claim": "api",
+    "url": "https://transcriptapi.com/docs/api-reference",
+    "quote": "Full OpenAPI spec: transcriptapi.com/openapi.json — consult this for the latest parameters and schemas."
+   },
+   {
+    "claim": "api",
+    "url": "https://transcriptapi.com/docs/api-reference",
+    "quote": "Every request needs two headers: - Authorization: Bearer $TRANSCRIPT_API_KEY - User-Agent: your agent's name and version if known ... Do not omit this header or send a bare default — Cloudflare will return a 403 (error code 1010) and block the request."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://transcriptapi.com/docs/mcp/",
+    "quote": "Server Name, Transcript API. Server URL, https://transcriptapi.com/mcp. Description, Use TranscriptAPI to fetch YouTube video transcript automatically."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Product Overview\nYouTube Transcript (`transcriptapi.com`) is a managed data extraction service built specifically for retrieving YouTube video transcripts and metadata at scale without encountering Google API quota limits or scraping blocks. It extracts both manually uploaded and auto-generated captions, returning them as structured JSON or plain text. Beyond transcripts, it provides a comprehensive toolkit for searching videos, browsing channels, extracting playlist contents, and tracking channel uploads.\n\n* **Source URL:** `https://transcriptapi.com/`\n* **Verbatim Quote:** *\"Stop fighting YouTube blocks. Get transcripts, search videos, browse channels, and extract playlists via REST API or YouTube MCP — at scale.\"*\n* **Source URL:** `https://transcriptapi.com/docs/api-reference`\n* **Verbatim Quote:** *\"TranscriptAPI is a managed REST API built specifically for YouTube data extraction. It handles transcripts, but it also covers search, channel listing, and playlist extraction in a single API.\"*\n\n---\n\n### Authentication Methods\nThe platform supports two primary authentication methods depending on the integration type:\n1. **API Key (`api_key`):** Used for direct REST API requests and basic MCP configurations. The key is passed as a static token in the standard HTTP `Authorization` header.\n2. **OAuth 2.1 (`oauth2`):** Supported natively by the hosted MCP server. It allows for both Dynamic Client Registration (DCR) for clients like Claude and Static Client Registration (Client ID/Secret) for clients like ChatGPT.\n\n#### Multi-Tenant Integration Choice\nFor a multi-tenant integration platform like Composio, **`oauth2`** is the primary choice. The platform provides public OAuth endpoints that allow end-users to securely authorize access to their accounts and credit balances without manually copying and exposing secret API keys.\n\n* **Source URL:** `https://transcriptapi.com/docs/api-reference`\n* **Verbatim Quote:** *`curl -s \"https://transcriptapi.com/api/v2/youtube/transcript... -H \"Authorization: Bearer YOUR_API_KEY\"`*\n* **Source URL:** `https://transcriptapi.com/docs/mcp/`\n* **Verbatim Quote:** *\"OAuth Authentication. ... OAuth provides automatic, secure authentication without manual key management. Supported by: Claude (Dynamic Client Registration - optional credentials) ChatGPT (Static Client Registration - requires Client ID/Secret) Any MCP client supporting OAuth 2.1.\"*\n\n---\n\n### Credential Acquisition & Cost\n* **Access Level:** `self_serve_free`\n* **Credential Acquisition:** Developers can instantly sign up for an account on the website without a credit card. API keys (prefixed with `sk_`) are immediately available on the dashboard. For OAuth setups, developers can navigate to the MCP Integration dashboard, select \"OAuth\", and click \"Generate Credentials\" to obtain a `Client ID` and `Client Secret`.\n* **Cost Structure:**\n  * **Free Tier:** 100 credits upon signup with no time limit and no credit card required.\n  * **Paid Plans:** \n    * *Monthly Plan:* $5/month for 1,000 credits. Additional top-up credits cost $2.50 per 1,000.\n    * *Annual Plan:* $54/year ($4.50/month equivalent) for 1,000 credits/month. Additional top-up credits cost $1.50 per 1,000.\n  * **Billing Mechanics:** Most operations cost 1 credit per successful request. Failed requests (e.g., 429 rate limits or 500 errors) are never charged. Certain utility endpoints, such as resolving channel handles or fetching the latest 15 videos via RSS, are completely free (0 credits).\n\n* **Source URL:** `https://transcriptapi.com/blog/youtube-transcript-api-complete-developer-guide`\n* **Verbatim Quote:** *\"Free tier: 100 credits to start. No credit card required. No time limit. Monthly plan: $5/month for 1,000 credits. Top-up at $2.50 per 1,000 extra credits. ... Annual plan: $54/year for 1,000 credits/month. Top-up at $1.50 per 1,000 extra credits.\"*\n* **Source URL:** `https://transcriptapi.com/docs/mcp/chatgpt/`\n* **Verbatim Quote:** *\"Get your credentials from the MCP Integration dashboard. Select “OAuth (Recommended)” and click “Generate Credentials” ... Copy both the Client ID and Client Secret from the TranscriptAPI dashboard.\"*\n* **Source URL:** `https://transcriptapi.com/docs/api-reference`\n* **Verbatim Quote:** *\"With TranscriptAPI, 1 credit equals 1 successful request and failed requests are never charged.\"*\n\n---\n\n### API Technical Profile\n* **API Style:** REST API (Base URL: `https://transcriptapi.com/api/v2`).\n* **API Breadth:** Moderate (approximately 12 endpoints covering YouTube transcripts, video metadata, channel profiles, paginated channel feeds, playlists, community posts, and search filters).\n* **OpenAPI Spec:** Fully available and hosted at `transcriptapi.com/openapi.json`.\n* **Webhooks:** None found or documented.\n* **Sandbox:** No dedicated sandbox environment is provided; the 100 free credits on the live production environment serve as the testing ground.\n* **Critical Implementation Note:** The API strictly enforces a `User-Agent` header check. Requests with missing or default client headers are blocked by Cloudflare with a 403 error.\n\n* **Source URL:** `https://transcriptapi.com/docs/api-reference`\n* **Verbatim Quote:** *\"Full OpenAPI spec: transcriptapi.com/openapi.json — consult this for the latest parameters and schemas.\"*\n* **Source URL:** `https://transcriptapi.com/docs/api-reference`\n* **Verbatim Quote:** *\"Every request needs two headers: - Authorization: Bearer $TRANSCRIPT_API_KEY - User-Agent: your agent's name and version if known ... Do not omit this header or send a bare default — Cloudflare will return a 403 (error code 1010) and block the request.\"*\n\n---\n\n### MCP Server Support\n* **MCP Support:** `official`\n* **Details:** The vendor hosts and maintains an official remote Model Context Protocol (MCP) server. It exposes the full suite of YouTube tools (transcripts, search, channel browsing, playlist extraction) directly to AI agents without requiring local package installations.\n\n* **Source URL:** `https://transcriptapi.com/docs/mcp/`\n* **Verbatim Quote:** *\"Server Name, Transcript API. Server URL, https://transcriptapi.com/mcp. Description, Use TranscriptAPI to fetch YouTube video transcript automatically.\"*\n\n---\n\n### Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** None.\n* **Justification:** The product provides comprehensive public documentation, a hosted OpenAPI specification (`transcriptapi.com/openapi.json`), an official remote MCP server (`https://transcriptapi.com/mcp`), and instant self-serve credentials with a free tier that requires no credit card. Furthermore, its native support for OAuth 2.1 makes it perfectly suited for a secure, multi-tenant integration platform. A developer could easily ship a fully functional agent toolkit for this app within a week.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "",
+   "\"transcriptapi.com\" pricing",
+   "\"transcriptapi.com\" docs",
+   "\"transcriptapi.com\" mcp",
+   "\"transcriptapi.com\" swagger",
+   "\"transcriptapi.com\" openapi",
+   "\"transcriptapi.com\" oauth",
+   "\"transcriptapi.com\" \"api/v2\"",
+   " \"Authentication\"",
+   " \"webhooks\"",
+   " \"sandbox\"",
+   " \"OpenAPI\"",
+   " \"spec\""
+  ],
+  "search_sources": [],
+  "tokens": 7935,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "YouTube Transcript official developer documentation",
+    "transcriptapi.com developer documentation",
+    "transcriptapi.com API authentication API keys OAuth",
+    "transcriptapi.com API getting started quickstart",
+    "transcriptapi.com API pricing plans developer program",
+    "transcriptapi.com API reference index",
+    "YouTube Transcript MCP server",
+    "transcriptapi.com MCP server"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://transcriptapi.com/login",
+    "https://transcriptapi.com/getting-started",
+    "https://transcriptapi.com/pricing",
+    "https://transcriptapi.com/docs/api-reference",
+    "https://transcriptapi.com/docs/billing",
+    "https://transcriptapi.com/docs/api/transcript",
+    "https://transcriptapi.com/blog/youtube-transcript-api-complete-developer-guide",
+    "https://transcriptapi.com/docs/api/",
+    "https://transcriptapi.io/docs",
+    "https://transcriptapi.com/docs/mcp/chatgpt/",
+    "https://transcriptapi.com/docs/getting-started/",
+    "https://transcriptapi.com/docs/",
+    "https://transcriptapi.com/docs/mcp/claude/",
+    "https://mcpservers.org/servers/zeropointrepo/youtube-skills"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://transcriptapi.com/mcp",
+     "status": 401
+    },
+    {
+     "url": "https://transcriptapi.com/blog/youtube-transcript-api-developer-guide",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://transcriptapi.com/login",
+     "status": 200,
+     "chars": 251,
+     "readable": false
+    },
+    {
+     "url": "https://transcriptapi.com/getting-started",
+     "status": 200,
+     "chars": 15,
+     "readable": false
+    },
+    {
+     "url": "https://transcriptapi.com/pricing",
+     "status": 200,
+     "chars": 15,
+     "readable": false
+    },
+    {
+     "url": "https://transcriptapi.com/docs/api-reference",
+     "status": 200,
+     "chars": 521,
+     "readable": true
+    },
+    {
+     "url": "https://transcriptapi.com/docs/billing",
+     "status": 200,
+     "chars": 521,
+     "readable": true
+    },
+    {
+     "url": "https://transcriptapi.com/docs/api/transcript",
+     "status": 200,
+     "chars": 521,
+     "readable": true
+    },
+    {
+     "url": "https://transcriptapi.com/blog/youtube-transcript-api-complete-developer-guide",
+     "status": 200,
+     "chars": 26922,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 62.8
+ }
+}

@@ -1,0 +1,210 @@
+{
+ "app": {
+  "id": 72,
+  "name": "Airtable",
+  "category": "Productivity and Project Management",
+  "hint": "airtable.com/developers"
+ },
+ "record": {
+  "subcategory": "Database / Spreadsheet",
+  "one_liner": "Airtable is a cloud-based database platform combining spreadsheet interface with relational database power.",
+  "auth_methods": [
+   "bearer_token",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Personal Access Tokens (PATs) for scoped access; OAuth 2.0 for multi-tenant integrations. Legacy API keys deprecated Feb 1, 2024.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can sign up for a free account, create Personal Access Tokens, or register OAuth integrations to get client_id/client_secret. No manual approval or sales contact needed. Free tier includes full API access.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "RESTful API with comprehensive record-level CRUD operations, schema/metadata retrieval, and webhook management. Webhooks use a 'thin ping' architecture and expire after 7 days.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Airtable officially publishes and maintains an MCP server and CLI tool. Source: https://airtable.com/developers/agents, quote: \"install the plugin to get airtable mcp & full skills library... install via npm. npm install -g @airtable/mcp-cli\"",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. API is self-serve, free, and supports standard OAuth 2.0. Minor hurdles include lack of official OpenAPI spec and webhook expiration, but these don't block toolkit deployment.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://airtable.com/developers/agents",
+    "quote": "Airtable's structured field types, relational links, and built-in automations make it a rich data layer for ai agents."
+   },
+   {
+    "claim": "auth",
+    "url": "https://sfailabs.com/guides/how-to-get-airtable-api-key",
+    "quote": "airtable deprecated legacy api keys on february 1, 2024. the replacement is a personal access token (pat), which you create at airtable.com/create/tokens ."
+   },
+   {
+    "claim": "auth",
+    "url": "https://github.com/Airtable/oauth-example",
+    "quote": "Example code for authorizing a user an Airtable OAuth integration."
+   },
+   {
+    "claim": "access",
+    "url": "https://airtable.com/pricing",
+    "quote": "Our Free plan is available at no cost for users just getting started."
+   },
+   {
+    "claim": "access",
+    "url": "https://github.com/Airtable/oauth-example",
+    "quote": "Go to https://airtable.com/create/oauth and register a new integration."
+   },
+   {
+    "claim": "api",
+    "url": "https://dev.to",
+    "quote": "While Airtable doesn't provide an official OpenAPI specification, developers can generate OpenAPI specifications from their databases to aid integration."
+   },
+   {
+    "claim": "api",
+    "url": "https://hookdeck.com",
+    "quote": "The ping contains only base.id , webhook.id , and a timestamp , so it tells you that something changed, not what. To get the changes you call the list-payloads endpoint with a cursor"
+   },
+   {
+    "claim": "api",
+    "url": "https://simplified-webhooks.com",
+    "quote": "Airtable's native webhooks expire after 7 days and must be refreshed, or they silently stop firing."
+   },
+   {
+    "claim": "api",
+    "url": "https://airtable.com",
+    "quote": "App Sandbox is available to all Airtable users on Business and Enterprise Scale plans."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://airtable.com/developers/agents",
+    "quote": "install the plugin to get airtable mcp & full skills library... install via npm. npm install -g @airtable/mcp-cli"
+   }
+  ],
+  "confidence": 0.9
+ },
+ "notes": "### 1. Product Overview\nAirtable is a cloud-based database platform that combines the user-friendly interface of a spreadsheet with the power and relational capabilities of a traditional database. It allows teams to build custom business applications, manage projects, and orchestrate complex workflows.\n* **Source:** `https://airtable.com/developers/agents`\n* **Verbatim Quote:** \"Airtable's structured field types, relational links, and built-in automations make it a rich data layer for ai agents.\"\n\n### 2. Authentication Methods & Multi-Tenant Integration\nAirtable supports two primary authentication methods for its public API:\n* **Personal Access Tokens (PATs):** Static tokens used for personal or scoped access (`bearer_token`).\n* **OAuth 2.0:** Standard authorization flow used for multi-tenant integrations (`oauth2`).\n* *Note:* Legacy static API keys were fully deprecated and disabled on February 1, 2024.\n\nFor a multi-tenant integration platform like Composio, the primary authentication method is **`oauth2`**.\n* **Source:** `https://sfailabs.com/guides/how-to-get-airtable-api-key`\n* **Verbatim Quote:** \"airtable deprecated legacy api keys on february 1, 2024. the replacement is a personal access token (pat), which you create at airtable.com/create/tokens .\"\n* **Source:** `https://github.com/Airtable/oauth-example`\n* **Verbatim Quote:** \"Example code for authorizing a user an Airtable OAuth integration.\"\n\n### 3. Developer Credentials Acquisition & Cost\n* **Access Level:** `self_serve_free`\n* **Process:** Any developer can sign up for a free account, navigate to the Developer Hub via their profile settings, and instantly create Personal Access Tokens or register a new OAuth integration to obtain a `client_id` and `client_secret`. No manual app review, partner program application, or sales contact is required to get credentials.\n* **Cost / Plans:** Airtable offers a robust Free tier ($0) that includes full API access. Paid tiers include the Team plan ($20–$24/user/month) and the Business plan ($45–$54/user/month).\n* **Source:** `https://airtable.com/pricing`\n* **Verbatim Quote:** \"Our Free plan is available at no cost for users just getting started.\"\n* **Source:** `https://github.com/Airtable/oauth-example`\n* **Verbatim Quote:** \"Go to https://airtable.com/create/oauth and register a new integration.\"\n\n### 4. API Technical Details\n* **API Style:** RESTful API.\n* **Breadth:** Comprehensive record-level CRUD operations (list, create, update, delete records), schema/metadata retrieval (bases, tables, fields), and webhook management.\n* **OpenAPI Spec:** Not officially published by Airtable. Developers must rely on community-generated specs or build their own.\n* **Webhooks:** Supported, but uses a \"thin ping\" architecture. The webhook sends a lightweight notification containing only IDs and timestamps; the application must then call a separate payloads API using a cursor to fetch the actual data changes. Additionally, native webhooks expire after 7 days and require programmatic refresh logic.\n* **Sandbox:** Airtable provides an \"App Sandbox\" feature resembling Git branches, but it is restricted to the high-tier Business and Enterprise Scale plans. Free tier developers typically test by manually duplicating bases.\n* **Source (OpenAPI Spec):** `https://dev.to` (via search results)\n* **Verbatim Quote:** \"While Airtable doesn't provide an official OpenAPI specification, developers can generate OpenAPI specifications from their databases to aid integration.\"\n* **Source (Webhooks):** `https://hookdeck.com` (via search results)\n* **Verbatim Quote:** \"The ping contains only base.id , webhook.id , and a timestamp , so it tells you that something changed, not what. To get the changes you call the list-payloads endpoint with a cursor\"\n* **Source (Webhook Expiry):** `https://simplified-webhooks.com` (via search results)\n* **Verbatim Quote:** \"Airtable's native webhooks expire after 7 days and must be refreshed, or they silently stop firing.\"\n* **Source (Sandbox):** `https://airtable.com` (via search results)\n* **Verbatim Quote:** \"App Sandbox is available to all Airtable users on Business and Enterprise Scale plans.\"\n\n### 5. Model Context Protocol (MCP) Support\n* **MCP Availability:** `official`\n* **Details:** Airtable officially publishes and maintains an MCP server and CLI tool that allows AI agents to inspect base structures, query data, and perform record updates.\n* **Source:** `https://airtable.com/developers/agents`\n* **Verbatim Quote:** \"install the plugin to get airtable mcp & full skills library... install via npm. npm install -g @airtable/mcp-cli\"\n\n### 6. Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. The API is fully self-serve, free to access, and supports standard OAuth 2.0. The only minor hurdles are the lack of an official OpenAPI spec and the 7-day expiration lifecycle on webhooks, but these do not block immediate toolkit deployment.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"airtable\" openapi spec",
+   "airtable webhooks api documentation",
+   "airtable sandbox environment developer",
+   "airtable oauth app creation pricing",
+   " \"oauth\" register app",
+   "airtable developer hub oauth app creation"
+  ],
+  "search_sources": [
+   {
+    "title": "tinycommand.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-2f6kPE1DECLK_DMkPXdMS4UVbsxIOWDLHF3X98s3pzVv9NHOVOJwvHR2n50huhO8pi75eOzRM-PKrh5Dq42SWfcBR2KMdVR2eZFqDmbuqQ0rhvus1lGorob2rYbfbueFOizqgTIKlI_JY-ib_IZUZGwK"
+   },
+   {
+    "title": "airtable.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXNhsJUxAjVCCoACIM9dX31WI7t5_qNr-_3Ny4MQCImv8_0mgT-X5ct34j_3Ooh-jJgh1EKGzIu3oSgWzPbAuVaowfQJ4IVFfXdXDqnBn1RvDtJxFOBDs="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEX8odefFkhEEs58xIkKBW6AzBJkWjAt2Yt3qxD-5XVEEVzfqMybpzYRwzZMC7ooCx0Fe4wDvvkk3GT9Retv7A6YwgbZwAT89Xcf8CLi_YMCsK6K6NtKjhe48wOKoVIL4p17goU"
+   }
+  ],
+  "tokens": 9566,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Airtable API authentication URL",
+    "Airtable OAuth URL",
+    "Airtable API keys URL",
+    "Airtable API getting started URL",
+    "Airtable API quickstart URL",
+    "Airtable API pricing URL",
+    "Airtable API access plans URL",
+    "Airtable developer program URL",
+    "Airtable API reference index URL",
+    "Airtable API documentation URL",
+    "Airtable MCP server"
+   ],
+   "candidates": 7,
+   "live_urls": [
+    "https://airtable.com/developers/web",
+    "https://airtable.com/pricing",
+    "https://airtable.com/developers/agents",
+    "https://airtable.com/developers/web/api/list-records",
+    "https://www.airtable.com/guides/scale/using-airtable-api",
+    "https://sfailabs.com/guides/how-to-get-airtable-api-key",
+    "https://www.youtube.com/watch?v=ncuVAqfNvAM",
+    "https://unified.to/blog/how_to_get_your_airtable_api_key_personal_access_tokens_in_2026",
+    "https://www.youtube.com/watch?v=B74HpJcQFC4",
+    "https://www.youtube.com/watch?v=-ievSZSWGzQ",
+    "https://github.com/Airtable/oauth-example",
+    "https://nocodeapi.com/marketplace/airtable/"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://airtable.com/create/tokens",
+     "status": 403
+    },
+    {
+     "url": "https://mcp.airtable.com",
+     "status": 404
+    },
+    {
+     "url": "https://airtable.com/create/oauth",
+     "status": 403
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://airtable.com/developers/web",
+     "status": 200,
+     "chars": 17,
+     "readable": false
+    },
+    {
+     "url": "https://airtable.com/pricing",
+     "status": 200,
+     "chars": 8908,
+     "readable": true
+    },
+    {
+     "url": "https://airtable.com/developers/agents",
+     "status": 200,
+     "chars": 4095,
+     "readable": true
+    },
+    {
+     "url": "https://airtable.com/developers/web/api/list-records",
+     "status": 200,
+     "chars": 17,
+     "readable": false
+    },
+    {
+     "url": "https://www.airtable.com/guides/scale/using-airtable-api",
+     "status": 200,
+     "chars": 9282,
+     "readable": true
+    },
+    {
+     "url": "https://sfailabs.com/guides/how-to-get-airtable-api-key",
+     "status": 200,
+     "chars": 13952,
+     "readable": true
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=ncuVAqfNvAM",
+     "status": 200,
+     "chars": 193,
+     "readable": false
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 124.1
+ }
+}

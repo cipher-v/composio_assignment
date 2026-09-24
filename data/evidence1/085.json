@@ -1,0 +1,100 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.licium.ai/directory/mcp-ipayx-ai-mcp~aHR0cHM6Ly9tY3AuaXBheXguYWkvbWNw",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.55
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.ipayx.ai/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.claudemcp.org/mcp/registry/io-github-ipayx-technologies-mcp-fx-audit-c685dd880c90.html",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.ipayx.ai/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.ipayx.ai/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://mcp.ipayx.ai/mcp",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://www.licium.ai/directory/mcp-ipayx-ai-mcp~aHR0cHM6Ly9tY3AuaXBheXguYWkvbWNw",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.57
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://www.ipayx.ai/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "api_key": false
+ },
+ "lint": [],
+ "summary_for_verifier": "- Non-vendor sources (prefer official docs): ['https://www.licium.ai/directory/mcp-ipayx-ai-mcp~aHR0cHM6Ly9tY3AuaXBheXguYWkvbWNw', 'https://www.claudemcp.org/mcp/registry/io-github-ipayx-technologies-mcp-fx-audit-c685dd880c90.html', 'https://www.licium.ai/directory/mcp-ipayx-ai-mcp~aHR0cHM6Ly9tY3AuaXBheXguYWkvbWNw']\n- Auth methods not mentioned on any cited page: ['api_key']",
+ "metrics": {
+  "n_evidence": 8,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.625,
+  "readable": 4,
+  "quote_supported_rate": 1.0,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

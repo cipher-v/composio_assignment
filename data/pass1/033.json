@@ -1,0 +1,251 @@
+{
+ "app": {
+  "id": 33,
+  "name": "LinkedIn Ads",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "learn.microsoft.com/linkedin/marketing"
+ },
+ "record": {
+  "subcategory": "Ads",
+  "one_liner": "LinkedIn Ads API enables programmatic management of marketing campaigns, performance reporting, lead management, and company page growth.",
+  "auth_methods": [
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 for user authorization and API authentication, supporting both 3-legged (member authentication) and 2-legged (application authentication) flows. For multi-tenant, 3-legged OAuth 2.0 is used.",
+  "access": "approval_required",
+  "access_notes": "Access is free but requires creating an application in the LinkedIn Developer Portal, navigating to the 'Products' tab, and adding the 'Advertising API' product by submitting an access form for review. There are two tiers: Development (up to 5 ad accounts) and Standard (unlimited ad accounts, requires additional review).",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Versioned REST API. Requests are sent to https://api.linkedin.com/rest/ and require a mandatory 'LinkedIn-Version: YYYYMM' header. Covers campaign management, marketing analytics/reporting, lead sync, audience targeting, and conversions.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "community_only",
+  "mcp_notes": "No official MCP server. Third-party implementations exist, e.g., Modiva (https://modiva.ai) and MCPBundles (https://mcpbundles.com).",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "Access to the LinkedIn Ads API (Advertising API product) requires explicit application review and approval from LinkedIn, even for the initial Development tier. There is no official sandbox environment, and requests require a strict versioning header.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://learn.microsoft.com/en-us/linkedin/marketing/?view=li-lms-2026-09",
+    "quote": "the linkedin marketing platform helps businesses grow by building technology to reach, engage, and convert professional audiences at scale. the platform offers apis to create linkedin marketing campaigns, to report campaign performance, to manage leads, and to grow a company page."
+   },
+   {
+    "claim": "auth",
+    "url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "quote": "the linkedin api uses oauth 2.0 for user authorization and api authentication. applications must be authorized and authenticated before they can fetch data from linkedin or get access to member data. this page summarizes the available permissions and partner programs available for accessing linkedin apis. most permissions and partner programs require explicit approval from linkedin. open permissions are the only permissions that are available to all developers without special approval. all permissions listed below are used in either member authentication flow (3-legged) or application authentication flow (2-legged)."
+   },
+   {
+    "claim": "auth",
+    "url": "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started?view=li-lms-2026-09#using-oauth-20",
+    "quote": "once you have a developer application that has been given access to the linkedin marketing api program, you're ready to start generating oauth access tokens to make api calls on behalf of authenticated members."
+   },
+   {
+    "claim": "access",
+    "url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "quote": "marketing developers seeking to build a marketing related integration using advertising api permissions must be approved. you can apply for access through the developer portal . to do this, select your app from my apps , navigate to the products tab, and add the advertising api product."
+   },
+   {
+    "claim": "access",
+    "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers?view=li-lms-2026-08",
+    "quote": "linkedin has two tiers of access to our advertising api: development and standard. the tier assigned to your app defines how many ad accounts you can manage through the apis."
+   },
+   {
+    "claim": "access",
+    "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers?view=li-lms-2026-08",
+    "quote": "this tier enables you to post for up to 5 ad accounts and get for an unlimited number of accounts."
+   },
+   {
+    "claim": "api",
+    "url": "https://blotato.com",
+    "quote": "Marketing endpoints use the Versioned REST API. Marketing API requests go to https://api.linkedin.com/rest/ and require a LinkedIn-Version: YYYYMM header on every call."
+   },
+   {
+    "claim": "api",
+    "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-integrations-overview?view=li-lms-2026-09",
+    "quote": "the platform offers apis to create linkedin marketing campaigns, to report campaign performance, to manage leads, and to grow a company page."
+   },
+   {
+    "claim": "api",
+    "url": "https://microsoft.com",
+    "quote": "leadNotifications - Create webhook subscriptions to be notified of Lead Form responses."
+   },
+   {
+    "claim": "api",
+    "url": "https://microsoft.com",
+    "quote": "Lead Sync API is a separate program, and access to the Advertising API does not automatically grant access. You must apply separately to be considered for Lead Sync API access."
+   },
+   {
+    "claim": "api",
+    "url": "https://stitchflow.com",
+    "quote": "LinkedIn Marketing APIs do not offer native webhook support for ad account user events as of the current documentation. Alternative event strategy: Poll the adAccountUsers endpoint periodically to detect changes in user membership or roles."
+   },
+   {
+    "claim": "api",
+    "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers?view=li-lms-2026-08",
+    "quote": "please note that all api calls at all access levels are made on production data."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://modiva.ai",
+    "quote": "Integrate the LinkedIn Ads API through Modiva's unified REST API and hosted MCP server."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://mcpbundles.com",
+    "quote": "MCPBundles ships two LinkedIn MCP servers that work the way LinkedIn allows you to work... uses LinkedIn's official Marketing and Community Management APIs"
+   }
+  ],
+  "confidence": 0.9
+ },
+ "notes": "### Product Overview\nLinkedIn Ads (part of the LinkedIn Marketing Developer Platform) enables businesses to programmatically build technology to reach, engage, and convert professional audiences at scale. The platform provides APIs to create and manage marketing campaigns, report campaign performance, manage leads, and grow company pages.\n- **Source URL:** `https://learn.microsoft.com/en-us/linkedin/marketing/?view=li-lms-2026-09`\n- **Verbatim Quote:** `\"the linkedin marketing platform helps businesses grow by building technology to reach, engage, and convert professional audiences at scale. the platform offers apis to create linkedin marketing campaigns, to report campaign performance, to manage leads, and to grow a company page.\"`\n\n---\n\n### Authentication Methods & Multi-Tenant Strategy\nThe LinkedIn API uses OAuth 2.0 for user authorization and API authentication, supporting both 3-legged (member authentication) and 2-legged (application authentication) flows.\n- **Source URL:** `https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access`\n- **Verbatim Quote:** `\"the linkedin api uses oauth 2.0 for user authorization and api authentication. applications must be authorized and authenticated before they can fetch data from linkedin or get access to member data. this page summarizes the available permissions and partner programs available for accessing linkedin apis. most permissions and partner programs require explicit approval from linkedin. open permissions are the only permissions that are available to all developers without special approval. all permissions listed below are used in either member authentication flow (3-legged) or application authentication flow (2-legged).\"`\n\nFor a multi-tenant integration platform, **OAuth 2.0 (3-legged)** is the primary authentication method used to make API calls on behalf of authenticated members.\n- **Source URL:** `https://learn.microsoft.com/en-us/linkedin/marketing/getting-started?view=li-lms-2026-09#using-oauth-20`\n- **Verbatim Quote:** `\"once you have a developer application that has been given access to the linkedin marketing api program, you're ready to start generating oauth access tokens to make api calls on behalf of authenticated members.\"`\n\n---\n\n### Credential Acquisition & Cost\nTo obtain credentials, a developer must create an application in the LinkedIn Developer Portal, navigate to the \"Products\" tab, and add the \"Advertising API\" product by submitting an access form for review. \n\nAccess to the API is free but strictly gated by LinkedIn's application review process. The platform operates under two access tiers: **Development** (allows managing up to 5 ad accounts for testing and building) and **Standard** (unlimited ad accounts, requires meeting additional requirements and further review).\n- **Source URL:** `https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access`\n- **Verbatim Quote:** `\"marketing developers seeking to build a marketing related integration using advertising api permissions must be approved. you can apply for access through the developer portal . to do this, select your app from my apps , navigate to the products tab, and add the advertising api product.\"`\n- **Source URL:** `https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers?view=li-lms-2026-08`\n- **Verbatim Quote:** `\"linkedin has two tiers of access to our advertising api: development and standard. the tier assigned to your app defines how many ad accounts you can manage through the apis.\"` and `\"this tier enables you to post for up to 5 ad accounts and get for an unlimited number of accounts.\"`\n\n---\n\n### API Architecture & Technical Details\n- **API Style:** Versioned REST API. Requests are sent to `https://api.linkedin.com/rest/` and require a mandatory `LinkedIn-Version: YYYYMM` header on every call.\n  - **Source URL:** `https://blotato.com`\n  - **Verbatim Quote:** `\"Marketing endpoints use the Versioned REST API. Marketing API requests go to https://api.linkedin.com/rest/ and require a LinkedIn-Version: YYYYMM header on every call.\"`\n- **Breadth:** Covers campaign management (ad accounts, campaign groups, campaigns, creatives), marketing analytics/reporting, lead sync, audience targeting (matched audiences, audience insights), and conversions.\n  - **Source URL:** `https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-integrations-overview?view=li-lms-2026-09`\n  - **Verbatim Quote:** `\"the platform offers apis to create linkedin marketing campaigns, to report campaign performance, to manage leads, and to grow a company page.\"`\n- **OpenAPI Spec:** No official public OpenAPI spec is provided by LinkedIn.\n- **Webhooks:** Native webhook support is available specifically for lead generation form responses via the Lead Sync API (`leadNotifications`), which requires a separate application and approval process. Other events (such as ad account user updates) do not support webhooks and require polling.\n  - **Source URL:** `https://microsoft.com`\n  - **Verbatim Quote:** `\"leadNotifications - Create webhook subscriptions to be notified of Lead Form responses.\"` and `\"Lead Sync API is a separate program, and access to the Advertising API does not automatically grant access. You must apply separately to be considered for Lead Sync API access.\"`\n  - **Source URL:** `https://stitchflow.com`\n  - **Verbatim Quote:** `\"LinkedIn Marketing APIs do not offer native webhook support for ad account user events as of the current documentation. Alternative event strategy: Poll the adAccountUsers endpoint periodically to detect changes in user membership or roles.\"`\n- **Sandbox:** There is no official sandbox environment; all API calls at all access levels are executed on production data.\n  - **Source URL:** `https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers?view=li-lms-2026-08`\n  - **Verbatim Quote:** `\"please note that all api calls at all access levels are made on production data.\"`\n\n---\n\n### Model Context Protocol (MCP) Servers\nNo official MCP server is published by LinkedIn. However, multiple third-party community implementations exist (e.g., Modiva, Glama, MCPBundles).\n- **Source URL:** `https://modiva.ai`\n- **Verbatim Quote:** `\"Integrate the LinkedIn Ads API through Modiva's unified REST API and hosted MCP server.\"`\n- **Source URL:** `https://mcpbundles.com`\n- **Verbatim Quote:** `\"MCPBundles ships two LinkedIn MCP servers that work the way LinkedIn allows you to work... uses LinkedIn's official Marketing and Community Management APIs\"`\n\n---\n\n### Buildability Verdict\n\n| Criteria | Definition |\n| :--- | :--- |\n| **Access** | `approval_required` |\n| **Primary Auth** | `oauth2` |\n| **MCP** | `community_only` |\n| **Verdict** | `ready_with_friction` |\n\n#### Main Blocker\nAccess to the LinkedIn Ads API (Advertising API product) requires explicit application review and approval from LinkedIn, even for the initial Development tier. Additionally, there is no official sandbox environment (all testing and development happen on production data), and requests require a strict versioning header (`LinkedIn-Version: YYYYMM`).",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"LinkedIn Marketing API\" \"OpenAPI\" spec",
+   "\"LinkedIn Ads API\" webhooks",
+   "\"LinkedIn Marketing API\" sandbox",
+   "\"LinkedIn Ads API\" MCP server",
+   "\"LinkedIn Marketing API\" \"OpenAPI\"",
+   "\"LinkedIn\" \"Lead Sync API\" webhooks",
+   "\"LinkedIn\" \"webhooks\" marketing"
+  ],
+  "search_sources": [
+   {
+    "title": "hookdeck.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFsNKzIyeLAKDP5K3k8sOD_zauISSYP9mdiJ4cE5V2Ea-ga-n8MXQ6VsAxYiWmvjhUhVcdeuWHCY8OPONZr54KGzCFlGF0PmCqEYW8ZkNVeDFY1YXQqhJN-QRc8RwheGG61Ep8YKxivZSoDYTJq5WuljUyh8Pmbpbpve0I0U6xjNbYE1DoVB6kod1lxxSB6799k0EMoQ2qfA=="
+   },
+   {
+    "title": "blotato.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxMC0o2usj4wkinB-ugRZkN9jcFHBvX8MjB1TNJ4OkoVC_549L8XGdR9eoQlqtPgjs4PCg-aPUmiaR8BdRQorM5FlAF24oNaUIZ_mpOVctuh9Ns-w6EeaDc_yAV3hN5q7TKnbo2qtjQhhUBQo="
+   },
+   {
+    "title": "unified.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEI7rHXoDFd2BpSxscx9T6uLsdb_cKfxAilIqsdWvg_dSN9ZGXuX3a5_pVQRd5M8oI6cc4ZHGSYVu9CJtv1JFnaUFkzzh8lpuRz2RqKU1n1EP8gGzJdUUgsNvuDYDK_rfUQFDk25ld1HhQF8X_z-XuSW9s5NqxqoszT5g_N7-M="
+   },
+   {
+    "title": "linkedin.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGeBE1cQwsLXFDR6amaDvrZJeKiIH8JeEH69ygUfDik15odjXZE2bUIaneGRYRxW-T5K2b4LNP2U3LwJdFzaWUr_csRDoztXTCYPP2Zh5yki42EkfeUJ5-na7COCid-ar0mxShwwB76gmGhSmBT2S0j469ZLJKndf_cWA_dguDF11rxw=="
+   },
+   {
+    "title": "microsoft.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9jmzrXnFmKAOMDxtkLaPRUgMwC4GbOPvGx9LAfG8198JvKpiRdp7_DDBhRRGke4x87fmqIW0D6z87PDknEgoyfiLuf6KKXGoFAdWlwaawwavl27_bqPgyPJOEX-8PBQkRfyLd1ndzunEpHtZwDar8CUkjSlRttAG1mC2N5WUwmcmnAFYG-vu8Qf5bk6EnxLxPrhoCvw=="
+   },
+   {
+    "title": "n8n.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHP78XW7ngD7wCHuKbf09ibkzgs1Y7sEM8iYeaYUGIkJiekcu4RfJnrEHHGY5pJQkWuO5cojQ0JawXnQWN3XewVJOllLw5VG2_1yz7q0m8fQHP6pOOzcRbGyacCaKh-KLUEJ5q_6Mqi0LYFg08rZ-ELwAV81hE3-Q=="
+   },
+   {
+    "title": "microsoft.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZYAlsBzsmcjvrQtUZe1lTQb8nkpdVT1yxPLHL62p7HZJA6Bus1IegcfYVqtSufZtAdGnj3Tq1tZM6VqDZ8TO1I5GXARxV15BI1ocbNNIFKlnqn64dYWsWlSNw-q4Phr6sCZiWPoDPqTGEavhtuqW5FxpZH7wb_HmDs0qqZGcvqwo3-Jehx5rJmWubmKKkIr4ona2dKNUO6kjIqf6sQVFCQhjwWIIFHNCSig=="
+   },
+   {
+    "title": "blotato.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvHw0c7aPZhnLSIPjoQQlVvxaBuBf8y2GBvjhBD90Nuhk2S7sBXNb3Wsk1gmerYre_1SE7xdTJHq21R9PI66CkH34VAwjCYtb1Qzs4zTUu-wLUDQnFEnz-_fcAbksmwhJfOWJ9vB7GMLjf8Q=="
+   },
+   {
+    "title": "closelyhq.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiSB1NjeLLOI4gQshuZfASfkI1xXc4TfhwHx03eEhotvsc_DMoEMDH8OgRVxA3X5vWKnfiIs9oln4QHn51z06GnSFls2IP12HdzM6YiDjqyFW1MB0EJSb4n1qUjweQwrLCuIX7t2SIZFnPHJXroW8SfZ0HSIewWAqKY8f0JK4tqKfOAQX1Gom4"
+   }
+  ],
+  "tokens": 12662,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "LinkedIn Ads API authentication learn.microsoft.com/linkedin/marketing",
+    "LinkedIn Ads API OAuth learn.microsoft.com/linkedin/marketing",
+    "LinkedIn Ads API keys learn.microsoft.com/linkedin/marketing",
+    "LinkedIn Ads API getting started learn.microsoft.com/linkedin/marketing",
+    "LinkedIn Ads API quickstart learn.microsoft.com/linkedin/marketing",
+    "LinkedIn Ads API pricing learn.microsoft.com/linkedin/marketing",
+    "LinkedIn Ads API plans learn.microsoft.com/linkedin/marketing",
+    "LinkedIn Ads developer program learn.microsoft.com/linkedin/marketing",
+    "LinkedIn Ads API reference learn.microsoft.com/linkedin/marketing",
+    "LinkedIn Marketing API reference learn.microsoft.com/linkedin/marketing",
+    "LinkedIn Ads MCP server"
+   ],
+   "candidates": 7,
+   "live_urls": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/?view=li-lms-2026-09",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started?view=li-lms-2026-09#using-oauth-20",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started?view=li-lms-2026-09",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-integrations-overview?view=li-lms-2026-09",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers?view=li-lms-2026-08",
+    "https://learn.microsoft.com/el-gr/linkedin/marketing/overview?view=li-lms-2026-09",
+    "https://business.linkedin.com/advertise/ads/pricing",
+    "https://learn.microsoft.com/de-at/linkedin/marketing/integrations/marketing-integrations-overview?view=li-lms-2026-05",
+    "https://apis.io/providers/linkedin/"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://learn.microsoft.com/linkedin/marketing/authentication",
+     "status": 404
+    },
+    {
+     "url": "https://learn.microsoft.com/linkedin/marketing/quickstart",
+     "status": 404
+    },
+    {
+     "url": "https://learn.microsoft.com/linkedin/marketing/marketing-api-program-access-tiers",
+     "status": 404
+    },
+    {
+     "url": "https://learn.microsoft.com/linkedin/marketing/getting-access-to-linkedin-apis",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://learn.microsoft.com/en-us/linkedin/marketing/?view=li-lms-2026-09",
+     "status": 200,
+     "chars": 4097,
+     "readable": true
+    },
+    {
+     "url": "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started?view=li-lms-2026-09#using-oauth-20",
+     "status": 200,
+     "chars": 10235,
+     "readable": true
+    },
+    {
+     "url": "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started?view=li-lms-2026-09",
+     "status": 200,
+     "chars": 10235,
+     "readable": true
+    },
+    {
+     "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-integrations-overview?view=li-lms-2026-09",
+     "status": 200,
+     "chars": 1652,
+     "readable": true
+    },
+    {
+     "url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+     "status": 200,
+     "chars": 5046,
+     "readable": true
+    },
+    {
+     "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers?view=li-lms-2026-08",
+     "status": 200,
+     "chars": 4353,
+     "readable": true
+    },
+    {
+     "url": "https://learn.microsoft.com/el-gr/linkedin/marketing/overview?view=li-lms-2026-09",
+     "status": 200,
+     "chars": 7608,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 50.1
+ }
+}

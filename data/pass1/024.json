@@ -1,0 +1,210 @@
+{
+ "app": {
+  "id": 24,
+  "name": "Lark (Larksuite)",
+  "category": "Communications and Messaging",
+  "hint": "open.larksuite.com"
+ },
+ "record": {
+  "subcategory": "Collaboration / Productivity Suite",
+  "one_liner": "Lark is an all-in-one collaboration and productivity suite integrating messaging, video, storage, and project management.",
+  "auth_methods": [
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Multi-tenant integrations would use OAuth 2.0 to obtain a `user_access_token` to act on behalf of a user.",
+  "access": "approval_required",
+  "access_notes": "Developers can sign up for free to create 'Custom Apps'. For multi-tenant 'Store Apps' in the Lark App Directory, ISV (Independent Software Vendor) qualification and a formal review process by the Lark Open Platform team are required.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Lark provides a broad range of server-side REST APIs covering Messenger, Calendar, Docs, Bitable (Base), Tasks, Contacts, and Wiki.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Official MCP server: https://github.com/larksuite/lark-openapi-mcp",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "While development can start immediately with 'Custom Apps', a multi-tenant integration requires ISV qualification and a formal App Store review process for distribution to other Lark customers.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.larksuite.com/en_us/plans",
+    "quote": "Lark presents itself as an all-in-one collaboration platform that will streamline communication, boost productivity, and bring together a number of workplace tools into a single solution."
+   },
+   {
+    "claim": "auth",
+    "url": "https://open.larksuite.com/document/server-docs/authentication-management/access-token/obtain-access-tokens",
+    "quote": "User access token: Represents the identity of a user... suitable for scenarios where the app needs to act on behalf of a user."
+   },
+   {
+    "claim": "access",
+    "url": "https://open.larksuite.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM",
+    "quote": "We do not currently charge for use of our APIs; however, we reserve the right to do so in the future."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.chanty.com/blog/lark-pricing/",
+    "quote": "Starter users get 10,000 API calls per month... Core features including Authentication and Authorization... are free to use, regardless of your Lark plan."
+   },
+   {
+    "claim": "api",
+    "url": "https://open.larksuite.com/document/server-docs/api-access-management/api-list",
+    "quote": "Lark provides a wealth of server-side APIs... based on the HTTP protocol."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/larksuite/lark-openapi-mcp",
+    "quote": "This is the Feishu/Lark official OpenAPI MCP (Model Context Protocol) tool designed to help users quickly connect to the Feishu/Lark platform."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://open.larksuite.com/document/home/introduction-to-scope-and-authorization/overview",
+    "quote": "Only users with ISV qualifications can create store apps... The permissions will take effect only after the app review is approved."
+   }
+  ],
+  "confidence": 0.9
+ },
+ "notes": "### Research Notes: Lark (Larksuite)\n\n#### **What the product does**\nLark is an all-in-one collaboration and productivity suite that integrates messaging, video conferencing, cloud storage, project management (Lark Base), and document collaboration into a single platform.\n*   **Source:** [larksuite.com](https://www.larksuite.com/en_us/plans) - \"Lark presents itself as an all-in-one collaboration platform that will streamline communication, boost productivity, and bring together a number of workplace tools into a single solution.\"\n\n#### **Authentication Methods**\nLark provides several access token types depending on the application's needs:\n*   **`tenant_access_token`**: Used for internal \"Custom Apps\" to access tenant-level data.\n*   **`app_access_token`**: Used for app-level operations (e.g., bot identity).\n*   **`user_access_token` (OAuth 2.0)**: Represents a specific user's identity and permissions.\n*   **Multi-tenant Integration Choice**: A multi-tenant platform like Composio would use **`oauth2`** to obtain a `user_access_token`.\n*   **Source:** [Lark Open Platform Docs](https://open.larksuite.com/document/server-docs/authentication-management/access-token/obtain-access-tokens) - \"User access token: Represents the identity of a user... suitable for scenarios where the app needs to act on behalf of a user.\"\n\n#### **Credential Acquisition & Cost**\n*   **Access Level**: `self_serve_free` (for development/internal apps) / `approval_required` (for multi-tenant Store Apps).\n*   **Developer Sign-up**: Any user can log into the [Lark Developer Console](https://open.larksuite.com/app) for free to create \"Custom Apps.\"\n*   **Multi-tenant (Store App)**: To build a multi-tenant integration for the Lark App Directory, developers must apply for **ISV (Independent Software Vendor) qualification**.\n*   **Cost**: Lark offers a free \"Starter\" plan that includes API access.\n    *   **Source:** [Lark Developer Policy](https://open.larksuite.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM) - \"We do not currently charge for use of our APIs; however, we reserve the right to do so in the future.\"\n    *   **Source:** [Chanty (Review)](https://www.chanty.com/blog/lark-pricing/) - \"Starter users get 10,000 API calls per month... Core features including Authentication and Authorization... are free to use, regardless of your Lark plan.\"\n*   **Approval**: Store apps require a formal review process by the Lark Open Platform team before they can be installed by other tenants.\n\n#### **API Style & Details**\n*   **Style**: **REST**\n*   **Breadth**: Extremely broad, covering Messenger (IM), Calendar, Docs, Bitable (Base), Tasks, Contacts, and Wiki.\n*   **OpenAPI Spec**: Lark provides an official API Explorer and uses OpenAPI definitions for its official MCP server.\n*   **Webhooks**: Supported via \"Event Subscriptions\" (e.g., message received, department changed).\n*   **Sandbox**: Developers can create a \"Test Enterprise\" within the Developer Console to debug apps without affecting production data.\n*   **Source:** [Lark API List](https://open.larksuite.com/document/server-docs/api-access-management/api-list) - \"Lark provides a wealth of server-side APIs... based on the HTTP protocol.\"\n\n#### **MCP Servers**\n*   **Official**: Yes, Lark maintains an official MCP server.\n    *   **Source:** [GitHub - larksuite/lark-openapi-mcp](https://github.com/larksuite/lark-openapi-mcp) - \"This is the Feishu/Lark official OpenAPI MCP (Model Context Protocol) tool designed to help users quickly connect to the Feishu/Lark platform.\"\n*   **Community**: Several community versions exist (e.g., `lorrylockie/lark-mcp`).\n\n#### **Buildability Verdict**\n**Verdict**: `ready_with_friction`\n*   **Main Blocker**: While a developer can start building immediately with a \"Custom App,\" a multi-tenant integration requires **ISV qualification and a formal App Store review process** to be distributed to other Lark customers.\n*   **Source:** [Lark Docs](https://open.larksuite.com/document/home/introduction-to-scope-and-authorization/overview) - \"Only users with ISV qualifications can create store apps... The permissions will take effect only after the app review is approved.\"",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "Larksuite API free tier access developer account cost",
+   "Larksuite API OpenAPI spec download",
+   "Larksuite MCP server official community",
+   "Larksuite partner program API access requirements"
+  ],
+  "search_sources": [
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFM0TAa2R2HPH0ikvVHqKn4UIcqJiJ37JU_8CeiOyY_Kb-GMfShzitE2r5N0gsavBt17Qo19LBE6QUCdY_jNhSSV5lLN604eAO3v3dXajwSIs4f6rndvRDUmF5XHPhVtR3AhvJN58bSkksArxNnALkoXQMfISYcOBMzNDoxFb8="
+   },
+   {
+    "title": "larksuite.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfYIfRG9JqZewW-jUD45iChEeLoyVEINNtC1PUrXnqs00-XR2v-wRXKku1AUbITt4KMZU_IerG-YXv4yN33E6dKR5QrqGrs19Av2tTGzitMJ98YsidA9dqt48veh8zkM-0ruc-_kd1y9jBg_-Mwj2jQQG0e_y1EdeCAUv-dK0hcIXHMuLvC_oC"
+   },
+   {
+    "title": "chanty.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEe4KP6F13TuunfzveRYSUJH9NgKvUs73Kk76SdnA7KlfmIFe5HLxPusX8xMhhLXaBQ9vLr5FVhQgylSqnk8f0-HPt0aWwJo9BhC6FjAQHNAswsfk3Om1HtCV90HWS7qoV3txOu"
+   },
+   {
+    "title": "larksuite.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvMyvZeeXs6lNz_ajZk3LKXOYjsBBRruQwZFJaSrdKDDmNGKToV3ZmnzZHose8nGj1tW2uv5a116XFWwL-P5oTMaQDDA78uiBTgPLge9l0wF8_0mO_R6jBhyTZdHMhZ7bqZGEjW2mWEZUpEMM5t7U0S1GXrdwnr0HEDNyl6tYRjhnxX-GEE0xNz5T-gcuqHpsbE7uXqg=="
+   },
+   {
+    "title": "larksuite.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpSVEwgVyjxpn3YRz6XJ0rvHQ0KJQhLmhs8gENaBy6gKF3DQu7hb_ODHJqNqKx4g0uHcxEWM7iotLkmWEMjUiN4JwiNVG56VjUiK1HpWLZST-G5YcSVbHDhbaDroVf-V9cL6Y_hSTeHCq6S4JtIhj1P2F8GHyHB4-ombaG-G3zlhjhALxXxDk55sPx-gWHJfqRp8NEmzo="
+   },
+   {
+    "title": "larksuite.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVE3L7e20k4dy6iFQOC5uO3xg3lmM0iCUr6NGew0W6hEOth6BVhLmFom9TCDZzBwj2oPQw3JSfoNjDsdTBlYXvP229DRv-FPHvMm7pXl5BhbBMSQkWBXaTWgAvvBCPpMID5ZKGfPlYTjTBXiDmhaO04h4sk2dJg5ZHvw3rPsWhprrT5Z-NZxUgWdtaITwgTWjg2zY6oDRlbFQ="
+   },
+   {
+    "title": "larksuite.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFf62tzg9fd6B7oV0fF80_roiQvarICF32Ko0I8MIjMcZm78UzDexr0Bdvxvvh27Fl93nKhQGtdfOXs8eortqrYCGqpGVUE0ZRDxz-8pIKy4vyzuK0ubiwVSCcpFi5TQVAUSRL6aBrBLvEg50j73RAfb2JjJJ2W1WeUJBMe1S8DAFPjqafhCVoseYCCDtY="
+   },
+   {
+    "title": "larksuite.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEv1Bi1iCEeZ_4HW1D8b53TIXE08wT57lyX75ChVQ2DDvT2a5iOI1HqurIhwih9LL_DjD5-_bJSpcEvCrpHaSVYbh7qSQmXxLJ1FCqBs9wdHS9ej_-0l037lyYxYaRhwfzM3dXgTLofFRVmW0QpGH2zOKRps-4n_VUs_2tAJDnyLfHsFtq_QDu0RrAUuqPL81-Vt2s="
+   },
+   {
+    "title": "larksuite.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2KuaPN-C2GzMTozk-HQwmR96MNIu5tQvCPEyfIKqH71SBFYy6ZfSRY7Dbmem5_txKz744tQzpFnAi5koXTVaOBnu6ykxxwheZZKb61OuzGUaZMQTNkXqnEJBF9u2vCIyiZy4WZuPRcJO6pFjYZMbmpII2B1zKCHJJIUs-iaHGElbY9gDWCflrO7J-EYku9aZhYWfO"
+   },
+   {
+    "title": "explainx.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExHCXusRkv2__63rIfmx9Y0EpSkx1xLvPOnX_YuecE_CJFty3hZR0Eor1502wV1L7M9GjBsS7GO0UGLkn2K5BfTVEMYNN0vu-rUyGHvwUQbl1J_iWvd21vQFy_loZwEw=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGT4_WNDeLJXn-W2Crrz6t68H_ZsAtIzgdERhYZqZOKczZbZKBA6e-GzcZhckyf5q7KlELPqgBmmR5ADt-KtQKK8WBt-UPsIW3GRpit6LAGtx1HZhURRv2reQRe11pqfTuRoMLphroP7w=="
+   }
+  ],
+  "tokens": 4137,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "Larksuite developer authentication open.larksuite.com",
+    "Larksuite API keys open.larksuite.com",
+    "Larksuite OAuth open.larksuite.com",
+    "Larksuite developer getting started open.larksuite.com",
+    "Larksuite API quickstart open.larksuite.com",
+    "Larksuite API pricing open.larksuite.com",
+    "Larksuite developer program open.larksuite.com",
+    "Larksuite plans API access open.larksuite.com",
+    "Larksuite API reference index open.larksuite.com",
+    "Larksuite API documentation index open.larksuite.com",
+    "Lark (Larksuite) MCP server"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://open.larksuite.com/document/server-docs/authentication-management/access-token/obtain-access-tokens",
+    "https://open.larksuite.com/document/developer-docs/tutorials/quick-start",
+    "https://www.larksuite.com/en_us/plans",
+    "https://open.larksuite.com/document/server-docs/api-access-management/api-list",
+    "https://open.larksuite.com/document/home/",
+    "https://open.larksuite.com/document/server-docs/messenger-v4/overview",
+    "https://open.larksuite.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM",
+    "https://open.larksuite.com/document/home/introduction-to-scope-and-authorization/overview",
+    "https://open.larksuite.com/document/common-capabilities/sso/web-application-sso/web-app-overview?lang=en-US",
+    "https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/mobile-app/mobile-app-overview",
+    "https://open.larksuite.com/document/common-capabilities/sso/api/obtain-oauth-code",
+    "https://open.larksuite.com/document/common-capabilities/sso/api/get-access_token",
+    "https://www.larksuite.com/en_us/topics/cybersecurity-glossary/oauth",
+    "https://open.larksuite.com/document/client-docs/block/quick-start",
+    "https://github.com/junyuan-qi/lark-mcp-server",
+    "https://github.com/larksuite/cli"
+   ],
+   "bad_candidates": [],
+   "pages_read": [
+    {
+     "url": "https://open.larksuite.com/document/server-docs/authentication-management/access-token/obtain-access-tokens",
+     "status": 200,
+     "chars": 16,
+     "readable": false
+    },
+    {
+     "url": "https://open.larksuite.com/document/developer-docs/tutorials/quick-start",
+     "status": 200,
+     "chars": 16,
+     "readable": false
+    },
+    {
+     "url": "https://www.larksuite.com/en_us/plans",
+     "status": 200,
+     "chars": 56,
+     "readable": false
+    },
+    {
+     "url": "https://open.larksuite.com/document/server-docs/api-access-management/api-list",
+     "status": 200,
+     "chars": 16,
+     "readable": false
+    },
+    {
+     "url": "https://open.larksuite.com/document/home/",
+     "status": 200,
+     "chars": 16,
+     "readable": false
+    },
+    {
+     "url": "https://open.larksuite.com/document/server-docs/messenger-v4/overview",
+     "status": 200,
+     "chars": 16,
+     "readable": false
+    },
+    {
+     "url": "https://open.larksuite.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM",
+     "status": 200,
+     "chars": 16,
+     "readable": false
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 51.0
+ }
+}

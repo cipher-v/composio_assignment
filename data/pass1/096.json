@@ -1,0 +1,200 @@
+{
+ "app": {
+  "id": 96,
+  "name": "Devin",
+  "category": "AI, Research and Media-native",
+  "hint": "docs.devin.ai (MCP)"
+ },
+ "record": {
+  "subcategory": "AI Software Engineer",
+  "one_liner": "Devin is an autonomous AI software engineer that plans, writes, tests, and ships production code end-to-end.",
+  "auth_methods": [
+   "bearer_token"
+  ],
+  "primary_auth": "bearer_token",
+  "auth_notes": "Static tokens (Service User API Key or Personal Access Token) with a 'cog_' prefix passed via the 'Authorization: Bearer' header. No public OAuth2 application flow.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up for a free Devin account and generate working API keys from account settings. A permanently free tier with limited usage is available.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "The API is split into Organization API (managing sessions, knowledge bases, playbooks, secrets) and Enterprise API (cross-organization management, analytics, audit logs).",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Cognition hosts an official authenticated MCP server at https://mcp.devin.ai/ for programmatic access to Devin's platform capabilities.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "none",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://docs.devin.ai/cli",
+    "quote": "\"Devin is our cloud-based ai software engineer that runs in a virtual machine. it includes features like playbooks, secrets, knowledge, and other capabilities\""
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.devin.ai/api-reference/overview",
+    "quote": "\"The Devin API enables you to integrate Devin into your applications, automate workflows, and build powerful tools.\""
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.devin.ai/api-reference/authentication",
+    "quote": "\"The Devin API uses a principal + token model. A principal is who you are (your identity), and a token is how you prove it (your credential)... All API credentials use the cog_ prefix format. Include your token in the Authorization header of every request: curl -X GET \"https://api.devin.ai/v3/organizations/$DEVIN_ORG_ID/sessions\" -H \"Authorization: Bearer cog_your_token_here\"."
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.devin.ai/admin/billing",
+    "quote": "\"devin has two pricing models: self-serve : free, pro, max, and teams plans you can sign up for directly at app.devin.ai .\""
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.devin.ai/admin/billing",
+    "quote": "\"The Free plan lets you try Devin with limited usage. It includes: Limited Devin usage; Access to Devin Review; Access to DeepWiki. Free users can upgrade to any paid plan at any time from Settings > Plans.\""
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.devin.ai/work-with-devin/devin-mcp",
+    "quote": "\"To use the Devin MCP server, you need a Devin API key: Sign up for a Devin account at Devin.ai; Generate an API key from your account settings\""
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.devin.ai/api-reference/overview",
+    "quote": "\"Learn how to programmatically interact with Devin using our REST APIs... Organization API. Base URL: https://api.devin.ai/v3/organizations/* For managing resources within a single organization — sessions, knowledge, playbooks, secrets, and more.\""
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.devin.ai/api-reference/overview",
+    "quote": "\"Webhook triggers let you connect any external system to Devin via a unique HTTPS endpoint... When the trigger fires, Devin starts a new session with your prompt.\""
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.devin.ai/work-with-devin/devin-mcp",
+    "quote": "\"The Devin MCP server provides programmatic access to Devin's platform capabilities for both private and public repositories. Beyond repository documentation and search, it gives any MCP-compatible AI agent or IDE full access to session management, playbooks, knowledge, and scheduling... Base Server URL: https://mcp.devin.ai/.\""
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Product Research Notes: Devin\n\n#### 1. What the Product Does\nDevin is an autonomous AI software engineer developed by Cognition. It can programmatically plan, write, test, and ship production code end-to-end within an isolated environment. It offers multiple interfaces including a web application, an agentic IDE (Devin Desktop), a local terminal agent (Devin CLI), and a public REST API for automation and integration into external workflows.\n* **Source URL:** `https://docs.devin.ai/cli`\n* **Verbatim Quote:** `\"Devin is our cloud-based ai software engineer that runs in a virtual machine. it includes features like playbooks, secrets, knowledge, and other capabilities\"`\n* **Source URL:** `https://docs.devin.ai/api-reference/overview`\n* **Verbatim Quote:** `\"The Devin API enables you to integrate Devin into your applications, automate workflows, and build powerful tools.\"`\n\n#### 2. Authentication Methods & Multi-Tenant Integration\nThe Devin API utilizes a static token-based authentication system based on a principal and token model. All credentials use a predictable format and are passed via the standard HTTP Authorization header.\n* **Available Methods:**\n  * **Service User API Key:** A non-human identity key designed for automated pipelines, CI/CD, and backend integrations.\n  * **Personal Access Token (PAT):** A token tied directly to an individual human user's identity and permissions, intended for personal scripts and local tooling.\n* **Multi-Tenant Choice:** A multi-tenant integration platform would use `bearer_token` (specifically the customer's **Service User API Key** or **Personal Access Token** provided during setup). There is no public OAuth2 application flow available for third-party platforms to dynamically request access.\n* **Source URL:** `https://docs.devin.ai/api-reference/authentication`\n* **Verbatim Quote:** `\"The Devin API uses a principal + token model. A principal is who you are (your identity), and a token is how you prove it (your credential)... All API credentials use the cog_ prefix format. Include your token in the Authorization header of every request: curl -X GET \"https://api.devin.ai/v3/organizations/$DEVIN_ORG_ID/sessions\" \\ -H \"Authorization: Bearer cog_your_token_here\".\"`\n\n#### 3. Credential Acquisition & Cost\n* **How to get credentials:** Any developer can sign up for a Devin account directly via the web application. Once registered, API keys can be generated from the account or team settings dashboard.\n* **Pricing & Cost:** Devin offers a self-serve tier structure including a permanently free tier with limited usage, alongside paid individual plans (Pro, Max) and team plans. Because working API credentials can be obtained on the free tier without upfront payment, the access classification is `self_serve_free`.\n* **Source URL:** `https://docs.devin.ai/admin/billing`\n* **Verbatim Quote:** `\"devin has two pricing models: self-serve : free, pro, max, and teams plans you can sign up for directly at app.devin.ai .\"`\n* **Source URL:** `https://docs.devin.ai/admin/billing` (Plan Details Section)\n* **Verbatim Quote:** `\"The Free plan lets you try Devin with limited usage. It includes: Limited Devin usage; Access to Devin Review; Access to DeepWiki. Free users can upgrade to any paid plan at any time from Settings > Plans.\"`\n* **Source URL:** `https://docs.devin.ai/work-with-devin/devin-mcp`\n* **Verbatim Quote:** `\"To use the Devin MCP server, you need a Devin API key: Sign up for a Devin account at Devin.ai; Generate an API key from your account settings\"`\n\n#### 4. API Style & Technical Breadth\n* **API Style:** REST\n* **Breadth:** The API is split into two primary scopes: the **Organization API** (for managing sessions, knowledge bases, playbooks, and secrets within a single organization) and the **Enterprise API** (for cross-organization management, analytics, audit logs, and infrastructure controls).\n* **OpenAPI Spec:** No official public OpenAPI specification URL is published in the vendor's documentation.\n* **Webhooks:** Devin supports event-driven inbound webhooks to trigger automations and spin up new sessions automatically from external systems (e.g., Sentry, PagerDuty, or custom tools). Outbound webhooks tracking session completion are not natively documented; session status must be polled or tracked via integrations.\n* **Sandbox:** Devin natively executes all cloud sessions inside isolated virtual machines.\n* **Source URL:** `https://docs.devin.ai/api-reference/overview`\n* **Verbatim Quote:** `\"Learn how to programmatically interact with Devin using our REST APIs... Organization API. Base URL: https://api.devin.ai/v3/organizations/* For managing resources within a single organization — sessions, knowledge, playbooks, secrets, and more.\"`\n* **Source URL:** `https://docs.devin.ai/api-reference/overview` (Automations/Webhooks Section)\n* **Verbatim Quote:** `\"Webhook triggers let you connect any external system to Devin via a unique HTTPS endpoint... When the trigger fires, Devin starts a new session with your prompt.\"`\n\n#### 5. Model Context Protocol (MCP) Servers\nCognition officially supports and hosts Model Context Protocol (MCP) servers. The official Devin MCP server allows external AI agents or IDEs to programmatically interact with Devin's platform capabilities, including session management, playbooks, and knowledge bases.\n* **MCP Classification:** `official`\n* **Source URL:** `https://docs.devin.ai/work-with-devin/devin-mcp`\n* **Verbatim Quote:** `\"The Devin MCP server provides programmatic access to Devin's platform capabilities for both private and public repositories. Beyond repository documentation and search, it gives any MCP-compatible AI agent or IDE full access to session management, playbooks, knowledge, and scheduling... Base Server URL: https://mcp.devin.ai/.\"`\n\n#### 6. Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** `none`\n* **Notes:** Comprehensive public REST documentation is available, and developers can immediately sign up, obtain credentials on the free tier, and programmatically interact with the API or connect via the official hosted MCP server.\n\n---\n\n### Strictly Applied Definitions Summary\n* **access:** `self_serve_free` (Free tier accounts can generate working `cog_` API keys directly from settings).\n* **primary_auth:** `bearer_token` (Static tokens with a `cog_` prefix passed via the `Authorization: Bearer` header).\n* **verdict:** `ready_now` (Public REST docs and self-serve credentials mean an agent toolkit can be built immediately).\n* **mcp:** `official` (The vendor hosts an official authenticated MCP server at `https://mcp.devin.ai/`).",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   " \"api-reference\"",
+   " \"authentication\" api",
+   " \"self-serve plans\" pricing",
+   " \"mcp\" server",
+   "",
+   "\"docs.devin.ai\" \"api-reference\"",
+   "\"docs.devin.ai\" \"authentication\"",
+   "\"docs.devin.ai\" \"mcp\"",
+   "\"docs.devin.ai\" \"provision-service-key\"",
+   "\"docs.devin.ai\" webhooks",
+   "\"docs.devin.ai\" openapi",
+   "\"docs.devin.ai\" sandbox",
+   "\"docs.devin.ai\" \"partner\"",
+   "\"Free plan\" \"service user\"",
+   "\"API\" \"Free plan\"",
+   "\"service user\" \"Pro\"",
+   "\"service user\" \"Teams\"",
+   "\"service user\"",
+   "\"Personal Access Token\""
+  ],
+  "search_sources": [
+   {
+    "title": "rewritingsocialcare.blog",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxYq1VtbK5_agYZAFZtXVT4lERMqJvcB8yLIjWuOEG2mdjSUcYmpqUmdicEePL4VHGecEYYNj9FdxWcIsX1yF0UABjy0qS2MOTXpJ7jjDnztgXlMVN_qi_P1mtK5Y0XVixph1jAKYkuvT9Qdad-KQFyVcCjg=="
+   }
+  ],
+  "tokens": 9832,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    " Devin API authentication",
+    " Devin API keys",
+    " Devin OAuth",
+    " Devin API authentication",
+    " Devin API keys",
+    " Devin OAuth",
+    " Devin getting started",
+    " Devin quickstart",
+    " Devin getting started",
+    " Devin quickstart",
+    " Devin API pricing",
+    " Devin developer program",
+    " Devin plans API access",
+    " Devin API pricing",
+    " Devin developer program",
+    " Devin plans API access",
+    " Devin API reference",
+    " Devin API documentation",
+    " Devin API reference",
+    " Devin API documentation",
+    "Devin MCP server",
+    "Devin AI MCP server"
+   ],
+   "candidates": 0,
+   "live_urls": [
+    "https://docs.devin.ai/admin/billing",
+    "https://docs.devin.ai/api-reference/overview",
+    "https://docs.devin.ai/product-guides/oidc",
+    "https://docs.devin.ai/api-reference/v2/api-keys/provision-service-key",
+    "https://docs.devin.ai/api-reference/authentication",
+    "https://docs.devin.ai/cli",
+    "https://docs.devin.ai/federal/getting-started",
+    "https://brightscholarship.com/devin-ai-ambassador-program/"
+   ],
+   "bad_candidates": [],
+   "pages_read": [
+    {
+     "url": "https://docs.devin.ai/admin/billing",
+     "status": 200,
+     "chars": 2559,
+     "readable": true
+    },
+    {
+     "url": "https://docs.devin.ai/api-reference/overview",
+     "status": 200,
+     "chars": 6234,
+     "readable": true
+    },
+    {
+     "url": "https://docs.devin.ai/product-guides/oidc",
+     "status": 200,
+     "chars": 6743,
+     "readable": true
+    },
+    {
+     "url": "https://docs.devin.ai/api-reference/v2/api-keys/provision-service-key",
+     "status": 200,
+     "chars": 8457,
+     "readable": true
+    },
+    {
+     "url": "https://docs.devin.ai/api-reference/authentication",
+     "status": 200,
+     "chars": 10311,
+     "readable": true
+    },
+    {
+     "url": "https://docs.devin.ai/cli",
+     "status": 200,
+     "chars": 4089,
+     "readable": true
+    },
+    {
+     "url": "https://docs.devin.ai/federal/getting-started",
+     "status": 200,
+     "chars": 3470,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 80.2
+ }
+}

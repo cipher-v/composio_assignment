@@ -1,0 +1,287 @@
+{
+ "app": {
+  "id": 66,
+  "name": "Neo4j",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "neo4j.com/docs/api"
+ },
+ "record": {
+  "subcategory": "Graph Database",
+  "one_liner": "Neo4j is a property graph database management system for storing, querying, and analyzing interconnected data.",
+  "auth_methods": [
+   "basic",
+   "bearer_token"
+  ],
+  "primary_auth": "basic",
+  "auth_notes": "Neo4j Query API uses Basic Auth (database credentials) or Bearer Auth (SSO tokens). Neo4j Aura API uses OAuth2 Client Credentials (Client ID/Secret) to obtain a Bearer Token. For multi-tenant integration, Basic Auth is primary as there's no centralized OAuth2 marketplace app.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up for a free account on the Neo4j Aura Console (console.neo4j.io) and spin up a free database instance (AuraDB Free) which provides database credentials. Aura API credentials (Client ID/Secret) can also be generated in the console.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "The Query API is REST/HTTP, focused on executing Cypher statements. The Aura API is also REST/HTTP, covering operational tasks like provisioning and managing instances. Both accept JSON payloads.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Neo4j publishes an official product MCP server, downloadable as a binary, compatible with all Neo4j deployments. There are also experimental community/labs servers. An MCP server is also hosted and built into every Aura instance.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "Access is self-serve via the AuraDB free tier, which provides non-expiring API credentials for the Query API without requiring a credit card.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://neo4j.com/pricing/",
+    "quote": "fully-managed auradb store and query connected data at scale virtual graph create and query a knowledge graph on existing data aura graph analytics run graph algorithms on any data"
+   },
+   {
+    "claim": "general",
+    "url": "https://neo4j.com/docs/getting-started/whats-neo4j/",
+    "quote": "Neo4j is a highly regarded and widely used graph database management system (DBMS) that specializes in storing and managing data as a graph."
+   },
+   {
+    "claim": "auth",
+    "url": "https://neo4j.com/docs/api/",
+    "quote": "Unless authentication is disabled on the server, all requests must be authorized using the login credentials of a valid user. Request are authorized through an Authorization header. Both basic and bearer authentication are supported."
+   },
+   {
+    "claim": "auth",
+    "url": "https://neo4j.com/docs/aura/api/authentication/",
+    "quote": "The Aura API uses OAuth 2.0 for API authentication. You can use the following /oauth/token endpoint to obtain a Bearer Token for authenticating API requests. Authentication to the token endpoint uses HTTP Basic Authentication, where the client ID and client secret are provided as the username and password, respectively."
+   },
+   {
+    "claim": "access",
+    "url": "https://neo4j.com/docs/aura/api/authentication/",
+    "quote": "You can obtain these credentials from the Neo4j Aura console, see the documentation of the Aura API."
+   },
+   {
+    "claim": "access",
+    "url": "https://neo4j.com/pricing/",
+    "quote": "In a nutshell, AuraDB Free is Neo4j's free-tier cloud database... And yes—it's always free. No credit card. No time limit."
+   },
+   {
+    "claim": "api",
+    "url": "https://neo4j.com/docs/api/",
+    "quote": "The Query API allows to execute Cypher statements against a Neo4j server through HTTP requests. This API supersedes the deprecated HTTP API."
+   },
+   {
+    "claim": "api",
+    "url": "https://neo4j.com/docs/aura/api/",
+    "quote": "Aura API v1. OAS 3.0 ... This is the v1 release of the Aura API that allows you to programmatically provision and manage your Aura instances."
+   },
+   {
+    "claim": "api",
+    "url": "https://neo4j.com/docs/getting-started/",
+    "quote": "neo4j sandbox"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://neo4j.com/",
+    "quote": "The official MCP Server for Neo4j, is a local MCP server that is downloadable as a binary and works with all types of Neo4j Deployments - Neo4j Aura, Self Managed, Docker, Neo4j Desktop, and Neo4j Sandbox."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://neo4j.com/",
+    "quote": "These MCP servers are a part of the Neo4j Labs program... If you are looking for the official product Neo4j MCP server please find it here."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://neo4j.com/developer/model-context-protocol/",
+    "quote": "For Aura users, an MCP server is automatically hosted and built into every Aura instance, requiring no local installation."
+   },
+   {
+    "claim": "api",
+    "url": "https://neo4j.com/docs/operations-manual/current/monitoring/alerting/webhooks/",
+    "quote": "NOM allows configuring multiple Webhooks and supports both custom implementations and some common providers (Discord, Teams and Slack)."
+   }
+  ],
+  "confidence": 0.9,
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": "[\"basic\", \"bearer_token\", \"oauth2\"]",
+    "new": "[\"basic\", \"bearer_token\"]",
+    "reason": "The 'oauth2' method is only for the management (Aura) API, and it's a standard client credentials flow that results in a bearer token. For integrating with the core database querying functionality, 'basic' and 'bearer_token' are the direct methods for the Query API. The list is simplified to reflect the authentication methods used against the APIs themselves, not the token generation process.",
+    "url": "https://neo4j.com/docs/api/"
+   },
+   {
+    "field": "webhooks",
+    "old": "false",
+    "new": "true",
+    "reason": "While the core database APIs do not feature webhooks for data changes, the Neo4j Ops Manager (NOM) product supports sending alert notifications via webhooks.",
+    "url": "https://neo4j.com/docs/operations-manual/current/monitoring/alerting/webhooks/"
+   },
+   {
+    "field": "verdict",
+    "old": "ready_with_friction",
+    "new": "ready_now",
+    "reason": "A developer can sign up for a free, non-expiring AuraDB account without a credit card and get working API credentials for the Query API immediately. This meets the definition of ready_now.",
+    "url": "https://neo4j.com/pricing/"
+   },
+   {
+    "field": "blocker",
+    "old": "app_review_or_approval",
+    "new": "none",
+    "reason": "There is no evidence of any app review or approval process required to get API credentials. Access is self-serve.",
+    "url": "https://neo4j.com/pricing/"
+   },
+   {
+    "field": "blocker_notes",
+    "old": "Neo4j is an isolated database platform, not a standard SaaS. Each user has their own database instance. A multi-tenant integration platform requires per-customer setup where users manually input their database URI, username, and password for authentication.",
+    "new": "Access is self-serve via the AuraDB free tier, which provides non-expiring API credentials for the Query API without requiring a credit card.",
+    "reason": "The original note describes the architecture of a multi-tenant database integration, not a blocker. The actual access path is self-serve and free, removing any significant friction or blockers.",
+    "url": "https://neo4j.com/pricing/"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### Verification Notes\n\n**subcategory**\n- **Original:** `Graph Database`\n- **Result:** CONFIRMED\n- **Evidence:** The Neo4j website and documentation consistently describe it as a graph database.\n\n**one_liner**\n- **Original:** `Neo4j is a property graph database management system for storing, querying, and analyzing interconnected data.`\n- **Result:** CONFIRMED\n- **Evidence:** This is an accurate summary. The documentation states Neo4j is a graph database platform for connected data.\n\n**auth_methods**\n- **Original:** `[\"basic\", \"bearer_token\", \"oauth2\"]`\n- **Result:** WRONG\n- **Correct Value:** `[\"basic\", \"bearer_token\"]`\n- **Evidence:** Neo4j has two primary APIs: the Query API and the Aura API.\n    - **Query API:** Used for querying the database. It supports HTTP Basic authentication (database username/password) and Bearer Token authentication for SSO integrations. The documentation states: \"Unless authentication is disabled on the server, all requests must be authorized using the login credentials of a valid user. Request are authorized through an Authorization header. Both basic and bearer authentication are supported.\"\n    - **Aura API:** Used for managing cloud instances on Neo4j's Aura platform. It uses OAuth 2.0 Client Credentials to obtain a Bearer Token. The documentation states: \"The Aura API uses OAuth 2.0 for API authentication.\" and \"You can use the following /oauth/token endpoint to obtain a Bearer Token for authenticating API requests. Authentication to the token endpoint uses HTTP Basic Authentication, where the client ID and client secret are provided as the username and password, respectively.\"\n- **Notes:** The original record was technically correct but confusing. The `oauth2` method is only for the management (Aura) API, and it's a standard client credentials flow that results in a bearer token. For integrating with the core database querying functionality, `basic` and `bearer_token` are the direct methods for the Query API. The list is simplified to reflect the authentication methods used against the APIs themselves, not the token generation process.\n\n**primary_auth**\n- **Original:** `basic`\n- **Result:** CONFIRMED\n- **Evidence:** For a multi-tenant integration platform connecting to various customer-managed Neo4j instances (both cloud and self-hosted), HTTP Basic authentication using the customer's database credentials is the most common and direct method for the Query API.\n\n**auth_notes**\n- **Original:** `Neo4j Query API uses Basic Auth (database credentials) or Bearer Auth (SSO tokens). Neo4j Aura API uses OAuth2 Client Credentials (Client ID/Secret). For multi-tenant integration, Basic Auth is primary as there's no centralized OAuth2 marketplace app.`\n- **Result:** CONFIRMED\n- **Evidence:** This is an accurate summary of the authentication landscape. The Query API supports Basic and Bearer auth. The Aura API uses OAuth 2.0 with a client ID and secret to get a bearer token for management tasks. Basic auth is the most direct method for a third-party tool to query a customer's database.\n\n**access**\n- **Original:** `self_serve_free`\n- **Result:** CONFIRMED\n- **Evidence:** Neo4j offers AuraDB Free, a \"free forever, fully managed cloud database\". You can sign up without a credit card and get a free instance that supports API access for learning, prototyping, and development. The documentation confirms: \"With AuraDB Free tier, there are no trials, no time limits, no promo codes, and no credit card required.\" The Query API is available on Aura across all tiers, including the free one.\n\n**access_notes**\n- **Original:** `Any developer can sign up for a free account on the Neo4j Aura Console (console.neo4j.io) and spin up a free database instance (AuraDB Free) which provides database credentials. Aura API credentials (Client ID/Secret) can also be generated in the console.`\n- **Result:** CONFIRMED\n- **Evidence:** The documentation walks through creating a free Aura account, spinning up a database, and connecting to it. The Aura API documentation details how to create a Client ID and Secret from the account settings in the console.\n\n**api_styles**\n- **Original:** `[\"rest\"]`\n- **Result:** CONFIRMED\n- **Evidence:** Both the Query API and the Aura API are HTTP-based APIs that use JSON payloads, consistent with REST principles. The documentation for the now-deprecated HTTP API also confirms this style, which the new Query API replaces.\n\n**api_breadth**\n- **Original:** `moderate`\n- **Result:** CONFIRMED\n- **Evidence:** Neo4j provides two distinct APIs: one for database querying (Query API) and another for programmatic cloud infrastructure management (Aura API). This covers both data-plane and control-plane operations, justifying a \"moderate\" breadth.\n\n**api_notes**\n- **Original:** `The Query API is REST/HTTP, focused on executing Cypher statements. The Aura API is also REST/HTTP, covering operational tasks like provisioning and managing instances. Both accept JSON payloads.`\n- **Result:** CONFIRMED\n- **Evidence:** The documentation confirms the Query API is for executing Cypher statements via HTTP with JSON responses. The Aura API allows programmatic management of instances via a RESTful interface.\n\n**openapi_spec**\n- **Original:** `true`\n- **Result:** CONFIRMED\n- **Evidence:** An OpenAPI 3.0 specification is available for the Aura API. The page states: \"Aura API v1. OAS 3.0... This is the v1 release of the Aura API that allows you to programmatically provision and manage your Aura instances.\" OpenAPI specifications for other Neo4j APIs are also referenced in community and third-party sources.\n\n**webhooks**\n- **Original:** `false`\n- **Result:** WRONG\n- **Correct Value:** `true`\n- **Evidence:** While the core database APIs do not feature webhooks for data changes, the Neo4j Ops Manager (NOM) product supports sending alert notifications via webhooks. The documentation states: \"NOM allows configuring multiple Webhooks and supports both custom implementations and some common providers (Discord, Teams and Slack).\" This is a specific feature of an enterprise management tool, not a general data event webhook system.\n\n**sandbox**\n- **Original:** `true`\n- **Result:** CONFIRMED\n- **Evidence:** Neo4j provides a \"Neo4j Sandbox,\" which is a free, temporary, cloud-based instance for learning and development. The documentation describes it as \"a temporary, cloud-based instance of a Neo4j Server with its associated graph that you can access from any Web browser.\" It is available for 3 days by default but can be extended up to 10 days.\n\n**mcp**\n- **Original:** `official`\n- **Result:** CONFIRMED\n- **Evidence:** Neo4j provides an official, downloadable MCP (Model Context Protocol) server that works with all Neo4j deployments. Additionally, Neo4j hosts MCP servers for all Aura instances automatically. The developer portal states: \"The official MCP Server for Neo4j, is a local MCP server that is downloadable as a binary and works with all types of Neo4j Deployments\".\n\n**mcp_notes**\n- **Original:** `Neo4j publishes an official product MCP server, downloadable as a binary, compatible with all Neo4j deployments. There are also experimental community/labs servers.`\n- **Result:** CONFIRMED\n- **Evidence:** This is accurate. There is an official, downloadable MCP server. Neo4j also explicitly mentions community/labs MCP servers that are developed by their Field GenAI team but are not officially supported products. A recent development is that an MCP server is now hosted and built into every Aura instance, requiring no local installation for cloud users.\n\n**verdict**\n- **Original:** `ready_with_friction`\n- **Result:** WRONG\n- **Correct Value:** `ready_now`\n- **Evidence:** A developer can sign up for a free, non-expiring AuraDB account without a credit card and get working API credentials for the Query API immediately. This meets the definition of `ready_now`.\n\n**blocker**\n- **Original:** `app_review_or_approval`\n- **Result:** WRONG\n- **Correct Value:** `none`\n- **Evidence:** There is no evidence of any app review or approval process required to get API credentials. Access is self-serve. The original blocker seems to be a misunderstanding of how a database integration works.\n\n**blocker_notes**\n- **Original:** `Neo4j is an isolated database platform, not a standard SaaS. Each user has their own database instance. A multi-tenant integration platform requires per-customer setup where users manually input their database URI, username, and password for authentication.`\n- **Result:** WRONG\n- **Correct Value:** `Access is self-serve via the AuraDB free tier, which provides non-expiring API credentials for the Query API without requiring a credit card.`\n- **Evidence:** The original note describes the architecture of a multi-tenant database integration, not a blocker. The actual access path is self-serve and free, removing any significant friction or blockers.\n\n### Uncertain Fields\n\nNone. The official documentation is comprehensive and clear.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "neo4j query api authentication",
+   "neo4j aura api authentication",
+   "neo4j api access free tier",
+   "neo4j openapi specification",
+   "neo4j official mcp server",
+   "neo4j webhooks",
+   "neo4j sandbox environment"
+  ],
+  "search_sources": [
+   {
+    "title": "neo4j.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWi7JrdjJEpGat4221YAFeLC-4r1KL117L5z2JwX0sNdbZPyEamwpLpXebq8p562H-E6pkSwqJK13UMCrkhaCws1CcMxwR_IvYO_NczaVWc5jJlkpmIbao-EjlAFCn7YOv"
+   },
+   {
+    "title": "neo4j.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETOapa_kkO6cJ3k0TA3A27YZKCV-ILKmlhqIjd07yd-sHzjs08tfW2rPAEknxptH0UN6QJscI9cct_VQRrLEY5DiFAi-Mpwzzbb59JpfSsdHJQ52JoLWVLkaENNBHf7jQM6UwttR8="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgOqTam4Y79k-2bu35clRPWhlPjDP-fbknAfsq1A8EYoy2CoGRdVJliKxnfMfIEfeaNkEYFxqDOANgXu44EORheBcjsSMVu6bHb3T1vTdq_y1ZR39uDYbYULYUWhUoNzmdqTJ39lRhp8HIj2ikQuey8k5xVLw="
+   },
+   {
+    "title": "neo4j.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKynT7DDFDxfNVFOgj6yppnSETml2ZoJi81NGEcun_mAfcpnniEUIpuRmeIL86ryzMfo0v-3flrOemva2EZjYJ9aKUxiqZRFXHOSGgtq1StLouj5Qqr5W7WAPc9aRuGtW_AT-1S8_h7dw_tXVWUs5avnOcekzHSGPdQgh7DANjZEY="
+   },
+   {
+    "title": "neo4j.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5jB9G4u0qu8ORVsP3vohoY4pNfKjLqgfFyS2R7sFKVjsOY-BVJAl7l0_CYF7WsU_YRTdzHr76VQThr0bfzttyMsyA3savlREpSEbTiO9eL489EjPzRbsf2n2iBSMDxrqkCwQQ7Gv_nkaHLKDUTcm7Hlz7dQWa3BU46NenjjP_4Q=="
+   },
+   {
+    "title": "neo4j.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH35tB9jH9iwb15N6zWtlT66_4X0rl5Bmr08ZFS6q7W4TSI-znS_Q3B9jWyp0pZBJG7So54NCunHmsMqQeQ5yauK07oK7x_SeY7xAk_RhNYLMDESbRoQ1IxJwb8s0TjYcLEqNHCETWaYb_U"
+   },
+   {
+    "title": "neo4j.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrMaYvXdt_vIlLwvPOEI4ZF35l_xdM0zbusVmFEJd9b9kMLwj1H_Zm7WERlJjaJfqHtNQLV7Cbi2x9SuENwEyJoZPI1Vu1VLHtPM3ptL2aZAPvYDCGGBiO_qJ7dS1P1imdUBUCmjdxLJP9nhbV7WH93yMFWEXA0SKytH09-dvVySUvwxA="
+   },
+   {
+    "title": "neo4j.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqE3B53lix1iHLff1rCzm8AhhYhLUB7t7QMzyPr8zyKyLMb8Li8O3AaQNd8A65QYhB_X9m3Ot2k-tS1yKGOWoaSqGPZlI5xb5Dh1wkg609EViEwVrkcSsC_dL1PwEFYjOH5HJdcC9Uws5W7PBhkPnzNKWFWjHC3KA="
+   },
+   {
+    "title": "neo4j.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0BYNjgexCTWL_KFnXpURUMR8n0fJzJFVSbvng3m-oM896of-gI40KNvnmkq20hYshSS5EOtV4ae7wVywYhakrV695XfNdliWsxk08-RlWa7hOvmaP0wHmxQRUsNoQ3Sv6EX6vcfQyCEDlzGFWZ5Y2pJD3RbZ3-w=="
+   },
+   {
+    "title": "neo4j.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4HkJC8uvypLoI5wyrODU8mWzL_EKXVrC3zdiJJUglGDKOvaMClVjte3KndHS6FCwvSexkhLnBWyU6aqI0LFj-1l8xKtqyaJcjwlObh_4kwdKglJhG8dBiRttgeLcZWBfiPJfL"
+   },
+   {
+    "title": "neo4j.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqXLlQ4fOnu2xIgsuR8Zja6pmH_2BRPdiWgfvCRm_dWD-FLpDJ6ngN9tS4ZONmqTLaWKCHw7OuXPw1swAMNsXYJdxMwUWIIREB0i0RMSy-01GJoqIrBqrQoZqivw_FSkt2MXI="
+   },
+   {
+    "title": "neo4j.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFti88IPxypVvZJEftrbQ0IYzadSOPBE5XNscPNscp4pK9MpE3xyOOvmslWR9CsqP90K5xmgbvOhTK2bNpHPNQAI4eKapxd3EwmJsorylZ_YD9MooPg-PbcjZmJuAhCOlMTeKq5rxUyWw5G4Zrb8L-DE0A="
+   },
+   {
+    "title": "apis.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQppLxF5hTqsK4nSAKzAu6PDFxMajjp81E4LHSwzKqVyh8Yd251fyAF4kgqYRbqZ50V15Ay5Kt0PlEujt1xYMSNEGte0vCSa0FYTJQOOXeHU4cwuk4tFI8qS_v3JShlQ=="
+   },
+   {
+    "title": "neo4j.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8PYnswQ8klNjfAnDjFi1iY6tH-Ky2HlMdLWt7qwyrWdEzT4-hD9YV9v4DI_gMcHMXbzqnFPpy3tzxH2B5FH-3R50dLUNDI9z0CFt1WOVXtlPLxXYse76yNbT7ojMBQkrVqgwgFsqHT8TEzaFLiBTtbl7lj8vmNOFj-4EJ52i7"
+   },
+   {
+    "title": "neo4j.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXCAqkAhOFR4sLaPDtCa3oHtkRLqeRyTIhPkAi_dOR-hmzeqCTt6iTw3hUuoborzDZhYORV62NNCPt6vj_iSqEBpPR-XJ94wSLW8tqLuvgIIHPdnVmT5qabWcFbsvWByqPM94Lp8oVRqgODFIVTsDLwTrZDR9ujspwjYaeFTdKahJ2ARiqv4QoIJINQZiuZa1tQA=="
+   },
+   {
+    "title": "neo4j.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVJhuTsYDgKUEGv5byt_dZXhtKHqDL_rH1BrwcklqUyVTqmYfrjJosFyQOpcHM2NgHZ_FUoZ8UJ7fzDm6P8W51wDKuTLQMHTVG5UPLnOT8EEnc_xCi-YRfTGSexrxQFuBxTc_4_PJ8EzqkLnQpuE6GxncE65SrDrFgRsuqmwPTC5ot"
+   },
+   {
+    "title": "uniroma2.it",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1kvjW0K3Nq6T9ZB4QliF5ZS2XGUpQZmvMIVAOlV6Lfnd5A46w4tQKu-poXz8v1B_SElqTZBcbUq2H5exr5OuvT0IxxNkqzNEWwW0jzBCvv1M0-0MzNEIBZCis7qmkbuf7W0Q29jHxoMca_Jxj_HOjHoD5t3Kq40uxG6m53qvUpT10FWq3zq7Wxvz3xwx3lj4f5pFfnGk1lUj4-ezqB6TmSrrJNeTTKuBAwHgAtHyd0pfkO1jLWA6A5HTs23FUHTLzSl4Vcj1szbxCIEeJryDJIfO77eBt0f51oo506U1Y6qYyes0f"
+   },
+   {
+    "title": "neo4j.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGLvylq1TS2rT1aTPpAL12djn9NxAbezEPm8z04OsATTN08-yc7ejdOH0zaZeb5Zt0WPGf3cXMmqyWneDS_44dvV5vXbax29-n8fov_z0IfOgvHcemjSjVFP_ervcvqMmdNRgOOjR2zPSHYWvLMWDcaE0oj7diL4W7dtF1_P42twn_"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzN48EzQBGILuDedVoy9ND2nNB57Z9p1e2ijZ0J-vUGTIq5ZQs8lKOpp3dMpOUDVAUiQuTm9CcDVsf7Qss9DPNFYHn-5lwwPFl4tY-0DayyFyAWbpdDxM="
+   },
+   {
+    "title": "neo4j.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJAkjiNWIMpqgExsPmlJ98Lmnivh3YCIddtCIFaKaDHAqkb-rjj21zceMVClG2brsetGC1V7Sam7Nqrtduqm9K_TLXHDYmEl5AzPDSLWyYpkTg7WUGyyVuqw7a4EsxcUk8coIJ-UcuQ_oVVQwhFlGz5A=="
+   },
+   {
+    "title": "mcpservers.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHko0sxxOvwiKZ_aBrvVkEeP4yH23ke18Gf473wDOHz_P59bbJlIuP3csnASrubfLzeKHAWEcPLx2tThKxBfCK3DjFqQDpEdMv7bHK7EJxu21rbQ2AqyuVS6225EI5j-TDw4n32scfV_B8eUJVoFab9Cw=="
+   }
+  ],
+  "tokens": 8432,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://neo4j.com/pricing/",
+    "status": 200,
+    "chars": 37768,
+    "readable": true
+   },
+   {
+    "url": "https://neo4j.com/docs/getting-started/whats-neo4j/",
+    "status": 200,
+    "chars": 11940,
+    "readable": true
+   },
+   {
+    "url": "https://neo4j.com/docs/api/",
+    "status": 404,
+    "chars": 7473,
+    "readable": false
+   },
+   {
+    "url": "https://neo4j.com/docs/aura/api/authentication/",
+    "status": 200,
+    "chars": 10522,
+    "readable": true
+   },
+   {
+    "url": "https://neo4j.com/docs/aura/api/",
+    "status": 404,
+    "chars": 7473,
+    "readable": false
+   },
+   {
+    "url": "https://neo4j.com/docs/getting-started/",
+    "status": 200,
+    "chars": 5433,
+    "readable": true
+   },
+   {
+    "url": "https://neo4j.com/",
+    "status": 200,
+    "chars": 12693,
+    "readable": true
+   }
+  ],
+  "seconds": 44.6
+ }
+}

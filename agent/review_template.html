@@ -1,0 +1,76 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Spot-check: was the agent right?</title>
+<style>
+body{font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;margin:0;background:#f9f9f7;color:#0b0b0b}
+header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e1e0d9;padding:10px 20px;display:flex;gap:16px;align-items:center;z-index:2}
+main{padding:16px 20px;max-width:980px;margin:0 auto}
+.intro{background:#fff;border:1px solid #e1e0d9;border-radius:10px;padding:14px 18px;margin-bottom:16px}
+.intro ol{margin:6px 0 0;padding-left:20px}
+.app{background:#fff;border:1px solid #e1e0d9;border-radius:10px;margin:0 0 14px;padding:14px 18px}
+.app.done{border-color:#0ca30c;box-shadow:0 0 0 1px #0ca30c}
+h2{margin:0;font-size:18px} .muted{color:#52514e;font-size:13px}
+.q{display:grid;grid-template-columns:130px 1fr 230px;gap:12px;align-items:start;padding:10px 0;border-top:1px solid #f0efec}
+.q:first-of-type{border-top:0}
+.fld{font-weight:600} .fld small{display:block;font-weight:400;color:#898781;font-size:12px}
+.ans{font-size:15px} .ans b{background:#eef4fc;padding:1px 8px;border-radius:6px}
+.why{font-size:12px;color:#52514e;margin-top:3px}
+.why a{color:#1c5cab;word-break:break-all}
+.btns{display:flex;gap:6px;flex-wrap:wrap}
+button{font:inherit;font-size:14px;padding:5px 12px;border-radius:6px;border:1px solid #c3c2b7;background:#fff;cursor:pointer}
+button.yes.on{background:#0ca30c;border-color:#0ca30c;color:#fff}
+button.no.on{background:#d03b3b;border-color:#d03b3b;color:#fff}
+button.primary{background:#2a78d6;color:#fff;border-color:#2a78d6}
+select{font:inherit;font-size:14px;margin-top:6px;width:100%}
+textarea{width:100%;font:inherit;font-size:13px;min-height:30px;margin-top:8px;box-sizing:border-box}
+details{font-size:13px;margin-top:4px}
+dl{margin:6px 0 0;font-size:13px} dt{font-weight:600;margin-top:4px} dd{margin:0;color:#52514e}
+</style></head><body>
+<header><b>Spot-check: was the agent right?</b><span id="prog" class="muted"></span><span style="margin-left:auto"></span>
+<button class="primary" onclick="exportLabels()">Export human_labels.json</button></header>
+<main>
+<div class="intro">
+<b>What this is:</b> 20 apps picked at random (2 per category). For each one the agent made 4 claims. You check them against the vendor's docs, and the result becomes the accuracy score on the case-study page.
+<ol>
+<li>Read the agent's answer. The links under it are the pages the agent cited, so open one if you're unsure.</li>
+<li>Click <b>&#10003; Right</b> or <b>&#10007; Wrong</b>. If it's wrong, choose the correct value from the dropdown.</li>
+<li>Optional: a short note on what was wrong. When you're done, click <b>Export</b> and save the file into the <code>review</code> folder.</li>
+</ol>
+<details><summary>What the answers mean</summary><dl>
+<dt>Access</dt><dd><b>self_serve_free</b>: anyone can get API credentials for free &middot; <b>self_serve_trial</b>: only during a free trial &middot; <b>paid_plan</b>: API needs a paid plan &middot; <b>approval_required</b>: vendor must approve you first (e.g. Google Ads developer token, Meta app review) &middot; <b>partner_or_sales</b>: partnership or talk to sales &middot; <b>no_public_api</b></dd>
+<dt>MCP</dt><dd><b>official</b>: the vendor itself publishes an MCP server &middot; <b>community_only</b>: only third-party servers &middot; <b>none_found</b></dd>
+<dt>Verdict</dt><dd><b>ready_now</b>: public docs + self-serve credentials &middot; <b>ready_with_friction</b>: buildable, but with a paid plan, app review, trial, or it's a CLI to wrap &middot; <b>needs_outreach</b>: needs a partner/sales deal &middot; <b>not_feasible</b>: nothing callable</dd>
+<dt>Primary auth</dt><dd>What an integration platform would use: <b>oauth2</b> if the vendor offers OAuth apps; otherwise <b>api_key</b>, <b>bearer_token</b>, <b>basic</b>, and so on.</dd>
+</dl></details>
+</div>
+<div id="m"></div>
+</main>
+<script>
+const ITEMS=__ITEMS__, ENUMS=__ENUMS__;
+const NAMES={primary_auth:["Primary auth","how an integration logs in"],access:["Access","can a developer get credentials?"],mcp:["MCP server","official / community / none"],verdict:["Verdict","could it be a toolkit today?"]};
+const CLAIM={primary_auth:"auth",access:"access",mcp:"mcp",verdict:"verdict"};
+const KEY="toolkit-review-v2"; const state=JSON.parse(localStorage.getItem(KEY)||"{}");
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function st(id){return state[id]=state[id]||{truth:{},verdicts:{},note:""}}
+function save(){localStorage.setItem(KEY,JSON.stringify(state));prog()}
+function isDone(it){const s=state[it.id];return s&&Object.keys(NAMES).every(f=>s.truth[f])}
+function prog(){const d=ITEMS.filter(isDone).length;document.getElementById("prog").textContent=`${d} / ${ITEMS.length} apps done`;
+ ITEMS.forEach(it=>document.getElementById("app"+it.id).classList.toggle("done",isDone(it)))}
+function right(id,f){const it=ITEMS.find(x=>x.id==id),s=st(id);s.verdicts[f]="right";s.truth[f]=it.pass1[f];save();render(it)}
+function wrong(id,f){const it=ITEMS.find(x=>x.id==id),s=st(id);s.verdicts[f]="wrong";if(s.truth[f]===it.pass1[f])delete s.truth[f];save();render(it)}
+function pick(id,f,v){const s=st(id);s.truth[f]=v||undefined;save();prog()}
+function render(it){
+ const s=state[it.id]||{truth:{},verdicts:{},note:""};
+ const qs=Object.keys(NAMES).map(f=>{
+  const v=s.verdicts[f], seen=new Set(), ev=it.evidence.filter(e=>e.claim===CLAIM[f]&&!seen.has(e.url)&&seen.add(e.url)).slice(0,2);
+  const links=ev.map(e=>`<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.url.replace(/^https?:\/\//,"").slice(0,70))}</a>`).join("<br>")||"<i>no link cited for this claim</i>";
+  const dd=v==="wrong"?`<select onchange="pick(${it.id},'${f}',this.value)"><option value="">correct value is...</option>${ENUMS[f].filter(o=>o!==it.pass1[f]).map(o=>`<option ${s.truth[f]===o?"selected":""}>${o}</option>`).join("")}</select>`:"";
+  return `<div class="q"><div class="fld">${NAMES[f][0]}<small>${NAMES[f][1]}</small></div>
+   <div><div class="ans">Agent says: <b>${esc(it.pass1[f])}</b></div><div class="why">${esc((it.notes||{})[f]||"").slice(0,220)}</div><div class="why">${links}</div></div>
+   <div><div class="btns"><button class="yes ${v==="right"?"on":""}" onclick="right(${it.id},'${f}')">&#10003; Right</button><button class="no ${v==="wrong"?"on":""}" onclick="wrong(${it.id},'${f}')">&#10007; Wrong</button></div>${dd}</div></div>`}).join("");
+ document.getElementById("app"+it.id).innerHTML=`<h2>${it.name}</h2><div class="muted">${esc(it.category)} &middot; ${esc(it.hint)}</div>${qs}
+  <textarea placeholder="Optional note: what was wrong / which page you checked" onchange="st(${it.id}).note=this.value;save()">${esc(s.note||"")}</textarea>`;
+ prog()}
+function exportLabels(){const labels={};ITEMS.forEach(it=>{const s=state[it.id];if(s&&Object.keys(s.truth).length)labels[it.id]={truth:s.truth,note:s.note||""}});
+ const blob=new Blob([JSON.stringify({exported:new Date().toISOString(),labels},null,1)],{type:"application/json"});
+ const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="human_labels.json";a.click()}
+document.getElementById("m").innerHTML=ITEMS.map(it=>`<div class="app" id="app${it.id}"></div>`).join("");ITEMS.forEach(render);
+</script></body></html>

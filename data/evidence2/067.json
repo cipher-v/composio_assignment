@@ -1,0 +1,112 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.snowflake.com/en/pricing-options/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.9
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.66
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.snowflake.com/en/user-guide/oauth-intro",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.snowflake.com/en/user-guide-getting-started",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.snowflake.com/en/user-guide/oauth-intro",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.06
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.14
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.snowflake.com/en/user-guide/api-authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://docs.snowflake.com/en/developer-guide/snowflake-ml/quickstart",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "jwt": true,
+  "bearer_token": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://docs.snowflake.com/en/user-guide/oauth-intro', 'https://docs.snowflake.com/en/user-guide-getting-started', 'https://docs.snowflake.com/en/user-guide/oauth-intro', 'https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication', 'https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication', 'https://docs.snowflake.com/en/user-guide/api-authentication', 'https://docs.snowflake.com/en/developer-guide/snowflake-ml/quickstart']",
+ "metrics": {
+  "n_evidence": 9,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 1.0,
+  "readable": 9,
+  "quote_supported_rate": 0.2222222222222222,
+  "lint_issues": 0,
+  "flag_count": 1
+ }
+}

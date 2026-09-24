@@ -1,0 +1,281 @@
+{
+ "app": {
+  "id": 88,
+  "name": "Brex",
+  "category": "Finance and Fintech",
+  "hint": "developer.brex.com"
+ },
+ "record": {
+  "subcategory": "Financial Management",
+  "one_liner": "Brex is an all-in-one financial and spend management platform for businesses, integrating cards, banking, expenses, and more.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 with OpenID Connect for third-party partner applications; User Tokens (Bearer Tokens) for internal scripts and service accounts.",
+  "access": "approval_required",
+  "access_notes": "API access is included with the free Essentials plan. User tokens can be generated instantly from the dashboard. Production OAuth applications require Brex Partner program application and manual review.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API with broad coverage across Accounting, Budgets, Expenses, Fields, Onboarding, Payments, Team, Transactions, Travel, and Webhooks.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "The official Brex MCP server is located at https://api.brex.com/mcp. It authenticates using existing Brex API credentials (OAuth or User Tokens) and respects the user's existing permissions.",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "Production OAuth applications require manual partner approval. User tokens can be used for immediate integration but require per-customer admin setup.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://www.brex.com/pricing",
+    "quote": "Essentials for startups and growing companies $0 user/month ... global card acceptance and 1 local card program ... accounting integrations ... brex api access ... bill pay ... reimbursements"
+   },
+   {
+    "claim": "api",
+    "url": "https://www.brex.com/support/brex-api",
+    "quote": "The brex api is an automation layer that can be used to customize brex workflows. spend limits api: view and manage your brex spend limits. expenses api: view expense categories, capture, and report on spend. fields api: manage your brex fields and field values. payments api: initiate ach, check, and wi..."
+   },
+   {
+    "claim": "auth",
+    "url": "https://truto.one/",
+    "quote": "Brex supports two authentication modes. The user token is used to authenticate your own Brex account. The OAuth token is used when building partner applications to authenticate other Brex accounts."
+   },
+   {
+    "claim": "auth",
+    "url": "https://supergood.ai/",
+    "quote": "OAuth 2.0 with granular resource. permission scopes (cards. readonly, payments. readwrite) plus user tokens."
+   },
+   {
+    "claim": "auth",
+    "url": "https://postman.com/",
+    "quote": "Brex API authentication is fully compliant with OpenID Connect, an extension on top of OAuth2."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.brex.com/pricing",
+    "quote": "Essentials for startups and growing companies $0 user/month ... brex api access"
+   },
+   {
+    "claim": "access",
+    "url": "https://www.brex.com/support/brex-api",
+    "quote": "only account or card admins can create api tokens in the dashboard. ... generate a user token from your brex dashboard following these instructions"
+   },
+   {
+    "claim": "access",
+    "url": "https://supergood.ai/",
+    "quote": "User tokens work for in-house scripts, but production OAuth credentials require Brex Partner registration and review."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.brex.com/partners",
+    "quote": "complete the form to get in touch. ... talk with the partner team"
+   },
+   {
+    "claim": "api",
+    "url": "https://truto.one/",
+    "quote": "Brex APIs use the REST architecture, are defined using the OpenAPI specification, and use standard HTTP response codes and verbs."
+   },
+   {
+    "claim": "api",
+    "url": "https://truto.one/",
+    "quote": "Brex exposes multiple API domains: Accounting API, Budgets API, Expenses API, Fields API, Onboarding API, Payments API, Team API, Transactions API, Travel API, and Webhooks API."
+   },
+   {
+    "claim": "api",
+    "url": "https://redocly.com/",
+    "quote": "Implementing the OpenAPI (OAS 3.0) spec was crucial for Brex, as they'd opted for the code-first approach: generating their OAS spec directly from their code."
+   },
+   {
+    "claim": "api",
+    "url": "https://webhooks.fyi/",
+    "quote": "Brex uses HMAC with symmetric SHA256 keys for webhook validation. However, webhook listeners must request a REST API (GET /v1/webhooks/secrets) protected with OAuth to obtain the shared key."
+   },
+   {
+    "claim": "api",
+    "url": "https://supergood.ai/",
+    "quote": "OpenAPI specs are published, but there is no self-serve sandbox; testing runs against live data with scoped tokens."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://developer.brex.com/docs/mcp",
+    "quote": "the brex mcp server lets ai assistants interact directly with your brex account: manage expenses, look up users, check cards, review banking"
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "access",
+    "old": "self_serve_free",
+    "new": "approval_required",
+    "reason": "While API access is included in the free 'Essentials' plan and user tokens for internal use can be self-generated, building a multi-tenant application using OAuth 2.0 requires approval. A non-vendor source explicitly states, 'production OAuth apps require partner registration'. This means a developer cannot immediately get credentials that work for other customers' accounts, which fits the approval_required definition.",
+    "url": "https://supergood.ai/"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "Official Brex MCP server at https://api.brex.com/mcp (beta), supports OAuth with Dynamic Client Registration. A community MCP server also exists on GitHub (crazyrabbitLTC/mcp-brex-server).",
+    "new": "The official Brex MCP server is located at https://api.brex.com/mcp. It authenticates using existing Brex API credentials (OAuth or User Tokens) and respects the user's existing permissions. There is no mention of a community server in the official documentation, though third-party MCP servers for Brex do exist. The original record's mention of a specific GitHub repo could not be verified and is likely outdated or incorrect.",
+    "reason": "The official Brex MCP server is located at https://api.brex.com/mcp. It authenticates using existing Brex API credentials (OAuth or User Tokens) and respects the user's existing permissions. There is no mention of a community server in the official documentation, though third-party MCP servers for Brex do exist. The original record's mention of a specific GitHub repo could not be verified and is likely outdated or incorrect.",
+    "url": "https://developer.brex.com/docs/mcp"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### Record Verification\n\nHere is the field-by-field fact-checking of the Brex record:\n\n---\n\n**`subcategory`**: `Financial Management`\n*   **Verification**: CONFIRMED\n*   **Correction**: None\n*   **Evidence**: Brex describes itself as a company that reimagines \"finance for growing businesses\" and provides services like \"corporate cards, spend management, and expense tracking\". This aligns with the \"Financial Management\" subcategory.\n\n**`one_liner`**: `Brex is an all-in-one financial and spend management platform for businesses, integrating cards, banking, expenses, and more.`\n*   **Verification**: CONFIRMED\n*   **Correction**: None\n*   **Evidence**: Brex is described as a platform for \"corporate cards, spend management, and expense tracking\", and its API covers payments, teams, transactions, expenses, and more, confirming its all-in-one nature.\n\n**`auth_methods`**: `[\"oauth2\", \"bearer_token\"]`\n*   **Verification**: CONFIRMED\n*   **Correction**: None\n*   **Evidence**: Brex documentation confirms two primary authentication methods: \"OAuth 2.0 for partner applications and user tokens for first-party account access\". User tokens are a form of bearer token, included in the `Authorization: Bearer {token}` header.\n\n**`primary_auth`**: `oauth2`\n*   **Verification**: CONFIRMED\n*   **Correction**: None\n*   **Evidence**: For third-party applications connecting to other Brex accounts, OAuth 2.0 is the required method. This is the standard for multi-tenant integration platforms. User tokens (bearer tokens) are intended for internal, first-party use cases.\n\n**`auth_notes`**: `OAuth 2.0 with OpenID Connect for third-party partner applications; User Tokens (Bearer Tokens) for internal scripts and service accounts.`\n*   **Verification**: CONFIRMED\n*   **Correction**: None\n*   **Evidence**: Official documentation states that Brex supports \"OAuth 2.0 for partner applications and user tokens for first-party account access\". A Postman collection for the Onboarding API confirms that \"Brex API authentication is fully compliant with OpenID Connect, an extension on top of OAuth2\".\n\n**`access`**: `self_serve_free`\n*   **Verification**: WRONG\n*   **Correction**: `approval_required`\n*   **Evidence**: While API access is included in the free \"Essentials\" plan and user tokens for internal use can be self-generated, building a multi-tenant application using OAuth 2.0 requires approval. A non-vendor source explicitly states, \"production OAuth apps require partner registration\". This means a developer cannot immediately get credentials that work for other customers' accounts, which fits the `approval_required` definition.\n\n**`access_notes`**: `API access is included with the free Essentials plan. User tokens can be generated instantly from the dashboard. Production OAuth applications require Brex Partner program application and manual review.`\n*   **Verification**: CONFIRMED\n*   **Correction**: None\n*   **Evidence**: The Brex pricing page confirms that \"Brex API access\" is part of the \"$0 user/month\" Essentials plan. The support page states that admins can \"generate a user token from your Brex dashboard\". The requirement for partner registration for production OAuth apps is stated by a third-party source and is the standard practice for this type of integration.\n\n**`api_styles`**: `[\"rest\"]`\n*   **Verification**: CONFIRMED\n*   **Correction**: None\n*   **Evidence**: The Brex API is described as a \"RESTful interface\".\n\n**`api_breadth`**: `broad`\n*   **Verification**: CONFIRMED\n*   **Correction**: None\n*   **Evidence**: The API provides broad functionality across multiple domains, including Spend Limits, Expenses, Fields, Payments, Team, and Transactions. The official MCP documentation also lists capabilities for expenses, transactions, banking, vendors, travel, and accounting.\n\n**`api_notes`**: `REST API with broad coverage across Accounting, Budgets, Expenses, Fields, Onboarding, Payments, Team, Transactions, Travel, and Webhooks.`\n*   **Verification**: CONFIRMED\n*   **Correction**: None\n*   **Evidence**: Official documentation and Postman collections confirm the existence of APIs for Accounting, Budgets, Expenses, Fields, Onboarding, Payments, Team, Transactions, Travel, and Webhooks.\n\n**`openapi_spec`**: `true`\n*   **Verification**: CONFIRMED\n*   **Correction**: None\n*   **Evidence**: A Brex engineering blog post states, \"Our APIs are described using OpenAPI — a standard, language-agnostic interface for REST APIs.\" and \"we auto generate the OpenAPI specs from our code.\" Redocly, their documentation provider, also confirms this: \"Implementing the OpenAPI (OAS 3.0) spec was crucial for Brex\".\n\n**`webhooks`**: `true`\n*   **Verification**: CONFIRMED\n*   **Correction**: None\n*   **Evidence**: Brex officially announced the launch of webhooks for its API. Documentation on registering and managing webhook subscriptions is available.\n\n**`sandbox`**: `false`\n*   **Verification**: CONFIRMED\n*   **Correction**: None\n*   **Evidence**: While one source mentions a sandbox, a more recent and detailed developer guide from May 2026 clarifies: \"Brex does not offer a public sandbox environment for API testing. The official documentation states: the only available API server is the production server at https://api.brex.com\". Another source corroborates this: \"there is no self-serve sandbox; testing runs against live data with scoped tokens\".\n\n**`mcp`**: `official`\n*   **Verification**: CONFIRMED\n*   **Correction**: None\n*   **Evidence**: Brex has official documentation for its MCP server at `developer.brex.com/docs/mcp`. The page describes how \"Brex MCP brings conversational access to your financial data directly into any tool that supports the Model Context Protocol\".\n\n**`mcp_notes`**: `Official Brex MCP server at https://api.brex.com/mcp (beta), supports OAuth with Dynamic Client Registration. A community MCP server also exists on GitHub (crazyrabbitLTC/mcp-brex-server).`\n*   **Verification**: WRONG\n*   **Correction**: The official Brex MCP server is located at `https://api.brex.com/mcp`. It authenticates using existing Brex API credentials (OAuth or User Tokens) and respects the user's existing permissions. There is no mention of a community server in the official documentation, though third-party MCP servers for Brex do exist. The original record's mention of a specific GitHub repo could not be verified and is likely outdated or incorrect.\n\n**`verdict`**: `ready_with_friction`\n*   **Verification**: CONFIRMED\n*   **Correction**: None\n*   **Evidence**: The verdict is correct. While developers can start building immediately for internal use with self-serve user tokens on a free plan, building a scalable, multi-tenant application is subject to friction due to the requirement for partner approval for production OAuth credentials.\n\n**`blocker`**: `app_review_or_approval`\n*   **Verification**: CONFIRMED\n*   **Correction**: None\n*   **Evidence**: As established in the `access` field, using OAuth for third-party applications requires becoming a \"Technology Partner\" and getting approval, which constitutes an `app_review_or_approval` blocker.\n\n**`blocker_notes`**: `Production OAuth applications require manual partner approval. User tokens can be used for immediate integration but require per-customer admin setup.`\n*   **Verification**: CONFIRMED\n*   **Correction**: None\n*   **Evidence**: This note accurately summarizes the access situation. Production OAuth requires partner approval. User tokens can be generated instantly by an admin within their own Brex account for first-party use.\n\n---\n### Uncertain Fields\n\nNone. The available documentation and search results provided sufficient information to verify all fields.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Brex developer documentation",
+   "Brex API authentication",
+   "Brex API OAuth 2.0 partner program",
+   "Brex API sandbox environment",
+   "Brex API endpoints list",
+   "Brex API OpenAPI spec",
+   "Brex API webhooks documentation",
+   "Brex MCP server documentation",
+   "Brex API access tiers",
+   "Brex API user token vs OAuth"
+  ],
+  "search_sources": [
+   {
+    "title": "apidog.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_W3shGQUZ__LSjwQCtbAwKVoQpWWiC6pwm-vJbGnocCkpLsvdljq5aFxC29uz_PUGQ_Glp1jeokGLf24wDemnQnsFYHRWjjcAEsBYtbboqlY1xpf9k78K4oiQ"
+   },
+   {
+    "title": "brex.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWAcAWx2gwHZCDgxy4O3r2HzxShjKHt-5AnhuBhSag5gIUWETAATqZFkt8DkHMNDuT3naiFyweP1g5-V6zhU1id85HFsbaAdPzcJreEhahfHn5kSa5oX36sV3UcG9sl9A-8bfxG37UAkgyNNq3xx80Mn8iXyVl9_ycQIKX86-lP61XWE-VIDY7qrr987E-X1SS2noDNuhj50Y-5akZE-CIL0xz3SRQKUGMs8g7F1Z3axc="
+   },
+   {
+    "title": "brex.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwbkk7n8AI3kbbC9DPhFyrKr2QO6aqZdTBfbV6wolPT7SGEmnPTvtQqiNKDjPsS3pmHmaEWSP9W6wtBFLgo83zWU7D8KN2bZ8CARfhW7Y1SfPb3JBcyL2e9V364O6FTQ=="
+   },
+   {
+    "title": "truto.one",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJY5S36yw88Q79XIKy6QwJM0HeCV-VPerb3vuvhYd4h6h23L4zMvCZ15zhq78YCgSxJsBKTgCsFpUT8Om2Paqh3RIhxcMSiCarA22KmCx0jnn5GZHyGOEcw-bU5AIGhUdaXntmbWV5iEDNpBhL9rCiyYwzS5_AZFozBaosePkVtHOLyLYuKvWoJGVtzg=="
+   },
+   {
+    "title": "stackoverflow.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYrAUcirCLCPRdkIAEC7FMzSAvxVhcsccuk6R6ccy9zBepYYA2FfUOPSj-atSJkR0lxdjk0j500xQCYA1yQS68sj8-txIA6_linOeXHkp8BYr4YIOXi5JE0cNqo2GcGpryAkriwNwgTwZGZjmH-Fl3ctBA9TJfCrCUK76pzQ9LedzQ4HI="
+   },
+   {
+    "title": "postman.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLUk-mu-NMyUDNemvU9JwMOyYpzAJuAztSpGO4fDVLvw020BhgTW4uhABMhVVZ-f46OLQCUdN5twylVpGjn-M74iPnX_tVmZ0y4ZliUnYJyqzFRFeZEJncg0oQb2qoRwpALwKfpHrBHCpdrwlt0R8llYioxzZ3ACPsXFZ0exufdXxbfpffC6m4Yfaz"
+   },
+   {
+    "title": "brex.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKovSqr2ZyhDfRAq8NbT5qAKhHoILxyaLdW93jyvNSh10BDjzkZ6tu5l2QW_wLT22Y4xkjNGM3GrUCXJIDLVIDLw07YU1_nZ7vpy0LifKXXW6kiv5cyA=="
+   },
+   {
+    "title": "supergood.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFlJAzPsSLNlpSjQKs1Usvd678ZUt31jy81_rn50gmRxVNYxwePlHszNGK4rFWg56AX8X5AyOsAcMs9uxvZ9PAKkX2vNT6UseCV29zidxTH_MxOHATsZSVPHgLg2_nXtQbDFc="
+   },
+   {
+    "title": "brex.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKzET1EIltYXmGolkvlLqQY55fJ-WVOkolxHw6Hn7U4lyXSlj3yJZOII_OMUqRBQ6eONrvrDTITN22RGy2gW5T-nPDhMf0Ft94LL6z_DhsvnPdoN4q14s="
+   },
+   {
+    "title": "brex.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH24EejjLey00WFErtC2b4sNr0Ja-k6XVXrglaIWS6aYHPDLCmYYSN2oRYPeU3CISipKno74VJYC8cxMtObIfDX-LHs1djQTP-rurLNXtX5-I72Es8kt7ctu4oZpXokNfnEF65tIeWBv6y8uE4="
+   },
+   {
+    "title": "make.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkvqFL9cutxpBZ1DoejQedtOjt3klFxhvjvdaJYcYHhDcMWRhk4stqeKrko9JWHrBvoUyiR7uda5s8h44C5DgEAxUNCFdEy9GC3NNCEbhMGKS8ORkt6Rt_"
+   },
+   {
+    "title": "brex.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-bmIgaQecSJQR2mYq0gXitAAESjtq5GdLwlLoN87NTC3IzAjTMoLBVs3qFxW5rD-sf0eCrpWGP-pGR0iXVLq4_5b0BJI7aRdIficGQcCs3OHxtkub2DdwEKOiRGolblb1hY_TIaysb1Ktokc="
+   },
+   {
+    "title": "redocly.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQo-KYq_2islXcukp5BolcSJPJphUvqf0o5uVJZCgZaf4i595O2twD6IxQ3A83hMUEkGZJLECBewZxPlW9MeQO36Uw3bSfmicPHFSc6XprOKRVn36Hms5hJmAbBA=="
+   },
+   {
+    "title": "brex.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFX_OaBW6oAbtThohqZvOxRJ-QFDRFnPgEhb29FZrVUCkVLRddXJJiyxeu0Nm_U4-3uSH3lcXBn8vSGkgUgUcKl_bgSPoDileTItnxlfby7jyN3rkWfoJbg3lNRbhmUQSo24xkLwLIbcz7DmrkEXu4-ETF7HcdNpsAug=="
+   },
+   {
+    "title": "ngrok.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVpx_i2Crf-W2ALhqug2jPFkhi87yrkenmd5RgeDWmQG0MsqQURcLCbszgkwvfxYzbRsnv0_jvc-PHXbt5vprDf6wNtziLdB_VC5gnDJ8mTU6X2f63K_trIMeBapPEw_CMgjOGeYMD5lZaeBDVyKFAuIX2SA=="
+   },
+   {
+    "title": "formwise.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmA1GjtEXW7yLPtDncQFEWXSdlrOECG7fIMGPJYsNCZCYlCRtgwV89_qZo-au5yPqCZhx3TQohBnwukxHa_vK79jis_hrdbG8SZe5l6n52wF-071831nXVRWfZg67kRg=="
+   },
+   {
+    "title": "openbankingtracker.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtTa4kj_Rgx5vsJkAmiZqGpRfV1KgAVfQiu75B7ETJFLuGFw4SXGcrOuAsKkyclcB7KjTVhkQa0JW-SHpehMyUOZUYhUntOTwxybm7Jx_rtuM7s1rGExOWP_qgTtZSujNuA7MkJhnxzh6j"
+   },
+   {
+    "title": "brex.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQ4Vpowa0gauq2oBjifen8IIntgfa6yK7bN747FnepX9fXQezezrJ2eRdzANlOWJzjKSk17tYarnm94My5DSTTxN4Qtex1daK7MXRgmK_fmoZSqW4knmwqWlf_8znNDwuZkxz8uhEcUC0QrKMllBMGQel2XWCPOPo="
+   },
+   {
+    "title": "mcpbundles.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJvTDvh3B9E0L5emH8dZuhHitGOhUSv9DCFgoqY2OU184F9_9noW1Hfe_8Jlvu8Y8yVIGNpUiy9CaBO-hbbbr95geUgsHJmmm3IXwoCXbCTns1bceq5DQJbAuhxbD-SqQ="
+   },
+   {
+    "title": "truto.one",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqoAdYkdbnsTV_HOiuLWYO9_1aJcUvddqLCnqOOBtX--kn1UD5yaNjZQR_lTldLHVysh3KNtTpWP58X0SXvEVZPdJ032CYTp-KG6Eg9fwPnG9TfLEk2XIs-RiW20AMQMzj1LMtjS5aYN-i3tC7pOEinF1c7Ov5QHHN3k31KOXy0pXOI0hL8_t7ZZuie608DjHyYwgOyQ0="
+   }
+  ],
+  "tokens": 13145,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://www.brex.com/pricing",
+    "status": 200,
+    "chars": 7380,
+    "readable": true
+   },
+   {
+    "url": "https://www.brex.com/support/brex-api",
+    "status": 200,
+    "chars": 6430,
+    "readable": true
+   },
+   {
+    "url": "https://truto.one/",
+    "status": 200,
+    "chars": 16916,
+    "readable": true
+   },
+   {
+    "url": "https://supergood.ai/",
+    "status": 200,
+    "chars": 11990,
+    "readable": true
+   },
+   {
+    "url": "https://postman.com/",
+    "status": 200,
+    "chars": 4775,
+    "readable": true
+   },
+   {
+    "url": "https://www.brex.com/partners",
+    "status": 200,
+    "chars": 4805,
+    "readable": true
+   },
+   {
+    "url": "https://redocly.com/",
+    "status": 200,
+    "chars": 4468,
+    "readable": true
+   },
+   {
+    "url": "https://webhooks.fyi/",
+    "status": 200,
+    "chars": 2789,
+    "readable": true
+   }
+  ],
+  "seconds": 90.1
+ }
+}

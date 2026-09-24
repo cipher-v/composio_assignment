@@ -1,0 +1,120 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://docs.consensus.app/api-get-started",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.51
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.consensus.app/api-get-started",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.31
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.consensus.app/consensus-mcp",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.consensus.app/api-get-started",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.consensus.app/api-get-started",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://consensus.app/pricing/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.consensus.app/api-get-started",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.69
+  },
+  {
+   "blocked": true,
+   "claim": "api",
+   "url": "https://api.consensus.app/v1/search",
+   "status": 401,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": true,
+   "claim": "api",
+   "url": "https://api.consensus.app/v1/search",
+   "status": 401,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://docs.consensus.app/consensus-mcp",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.54
+  }
+ ],
+ "auth_support": {
+  "api_key": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Bot-walled / login pages our crawler could not read (verify via search): ['https://api.consensus.app/v1/search', 'https://api.consensus.app/v1/search']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://docs.consensus.app/api-get-started', 'https://docs.consensus.app/consensus-mcp', 'https://docs.consensus.app/api-get-started', 'https://docs.consensus.app/api-get-started', 'https://consensus.app/pricing/']",
+ "metrics": {
+  "n_evidence": 10,
+  "alive_rate": 0.8,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.2,
+  "official_rate": 1.0,
+  "readable": 8,
+  "quote_supported_rate": 0.375,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

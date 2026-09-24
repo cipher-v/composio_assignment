@@ -1,0 +1,131 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.atlassian.com/software/free",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.5
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developer.atlassian.com/cloud/oauth/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developer.atlassian.com/cloud/oauth/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developer.atlassian.com/platform/marketplace/getting-started",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.92
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://support.atlassian.com/organization-administration/docs/manage-product-sandboxes",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developer.atlassian.com/cloud/jira/platform/rate-limiting/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.57
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/atlassian/atlassian-mcp-server",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.5
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://developer.atlassian.com/cloud/oauth/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "basic": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://developer.atlassian.com/cloud/oauth/', 'https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/', 'https://developer.atlassian.com/cloud/oauth/', 'https://developer.atlassian.com/cloud/jira/platform/rest/v3/', 'https://developer.atlassian.com/cloud/jira/platform/rest/v3/', 'https://support.atlassian.com/organization-administration/docs/manage-product-sandboxes', 'https://developer.atlassian.com/cloud/oauth/']\n- Non-vendor sources (prefer official docs): ['https://github.com/atlassian/atlassian-mcp-server']",
+ "metrics": {
+  "n_evidence": 11,
+  "alive_rate": 1.0,
+  "dead_rate": 0.0,
+  "blocked_rate": 0.0,
+  "official_rate": 0.9090909090909091,
+  "readable": 11,
+  "quote_supported_rate": 0.36363636363636365,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

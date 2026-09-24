@@ -1,0 +1,199 @@
+{
+ "app": {
+  "id": 73,
+  "name": "Linear",
+  "category": "Productivity and Project Management",
+  "hint": "developers.linear.app"
+ },
+ "record": {
+  "subcategory": "Issue Tracking / Project Management",
+  "one_liner": "Linear is an issue tracking and project management platform for software and product development teams.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 for multi-tenant integrations; Personal API keys (bearer tokens) also supported.",
+  "access": "self_serve_free",
+  "access_notes": "Free account provides immediate API credentials and allows creation of public OAuth applications without vendor approval.",
+  "api_styles": [
+   "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive GraphQL API covering all core resources.",
+  "openapi_spec": false,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Linear's official Model Context Protocol (MCP) server: https://linear.app/docs/mcp",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. Excellent developer documentation, self-serve free tier with API access, public OAuth 2.0, and official remote MCP server.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://linear.app/pricing",
+    "quote": "Issues, projects, cycles, initiatives"
+   },
+   {
+    "claim": "general",
+    "url": "https://linear.app/developers",
+    "quote": "learn about building apps and integrations for linear using the graphql api and typescript sdk."
+   },
+   {
+    "claim": "auth",
+    "url": "https://linear.app/developers",
+    "quote": "authentication use oauth 2.0 or personal api keys to authenticate your requests to the linear api"
+   },
+   {
+    "claim": "auth",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE33ynblH0WcbwasQXctFplgBJcayOahhuWQVcg5QzC3JMkCpdz6tYJyu-tHOR3g8GQ_z9Yejz5lve875Dc6gBsvVOEO1bqFz5RUXnQ7s3ZwcSSEO90Xlo575O5M0zcv6yO0jIU2ViZLNJ_1zXHceFUrCJCXWP6HynpkAfJa-jxRL0I2BPvNQngo1PLf5M=",
+    "quote": "Linear supports 2 authentication methods: OAuth - Create your own Linear OAuth application with custom scopes. Every user connects with their Linear account... API Key - Use a personal API key for all users."
+   },
+   {
+    "claim": "access",
+    "url": "https://linear.app/pricing",
+    "quote": "Free $0 free for everyone"
+   },
+   {
+    "claim": "access",
+    "url": "https://linear.app/pricing",
+    "quote": "API and webhook access"
+   },
+   {
+    "claim": "access",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-VtlBmBOvgjRHB582AM7jRWXzVXE9FEiX-OxVY_QLQPndrxRw7FV5TiWRzkxlTf4Wv27ZEnIsfsI-94f4fsTqu2YRrD4dKAdOQaQzZ-1WW-T280u7UY2mu2Wn7TnR6ah2EpX81KyLn9hTQ2NgjClQemdGS3uFuQlfGyYkK_C1WpVUzS6Slepmx8YjbHlVMk3iFvFsEYqv",
+    "quote": "Under your specific workspace, navigate to Settings > API > OAuth applications. Click the + icon... toggle the Public switch to allow installation in other workspaces."
+   },
+   {
+    "claim": "api",
+    "url": "https://linear.app/developers",
+    "quote": "graphql schema ↗"
+   },
+   {
+    "claim": "api",
+    "url": "https://linear.app/developers",
+    "quote": "learn about building apps and integrations for linear using the graphql api and typescript sdk."
+   },
+   {
+    "claim": "api",
+    "url": "https://linear.app/pricing",
+    "quote": "API and webhook access"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://linear.app/docs/mcp",
+    "quote": "Linear's MCP server follows the authenticated remote MCP spec."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkkw2MlwfJYjXmHIqdf7TvVj0kboEBDK8TgPYREPKH5dB9xF6Y4dLzWNnWOYjBsuPWPpwNt3GEMvhgJKkxASudCmlu2amj4Klt1m2TvFyjv-6Tcegjrnr9Abkg3Qrk0QupSDKsBMz3fw==",
+    "quote": "The Linear MCP server is Linear's official Model Context Protocol integration that gives AI coding tools direct, live access to your Linear workspace."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### What the Product Does\nLinear is an issue tracking and project management platform designed specifically for software and product development teams to plan, organize, and track their work.\n* **Source:** `https://linear.app/pricing`\n* **Quote:** \"Issues, projects, cycles, initiatives\"\n* **Source:** `https://linear.app/developers`\n* **Quote:** \"learn about building apps and integrations for linear using the graphql api and typescript sdk.\"\n\n### Authentication Methods\nLinear supports two authentication methods for its public API: OAuth 2.0 and Personal API keys (bearer tokens). For a multi-tenant integration platform, OAuth 2.0 is the standard choice.\n* **Primary Auth:** `oauth2`\n* **Source:** `https://linear.app/developers`\n* **Quote:** \"authentication use oauth 2.0 or personal api keys to authenticate your requests to the linear api\"\n* **Source:** `https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE33ynblH0WcbwasQXctFplgBJcayOahhuWQVcg5QzC3JMkCpdz6tYJyu-tHOR3g8GQ_z9Yejz5lve875Dc6gBsvVOEO1bqFz5RUXnQ7s3ZwcDSEO90Xlo575O5M0zcv6yO0jIU2ViZLNJ_1zXHceFUrCJCXWP6HynpkAfJa-jxRL0I2BPvNQngo1PLf5M=`\n* **Quote:** \"Linear supports 2 authentication methods: OAuth - Create your own Linear OAuth application with custom scopes. Every user connects with their Linear account... API Key - Use a personal API key for all users.\"\n\n### Developer Credentials & Cost\nAny developer can sign up for a free account and immediately obtain API credentials or create a public OAuth application. No vendor approval, partner program, or sales interaction is required to connect other users' accounts.\n* **Access Tier:** `self_serve_free`\n* **Source:** `https://linear.app/pricing`\n* **Quote:** \"Free $0 free for everyone\" and \"API and webhook access\"\n* **Source:** `https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-VtlBmBOvgjRHB582AM7jRWXzVXE9FEiX-OxVY_QLQPndrxRw7FV5TiWRzkxlTf4Wv27ZEnIsfsI-94f4fsTqu2YRrD4dKAdOQaQzZ-1WW-T280u7UY2mu2Wn7TnR6ah2EpX81KyLn9hTQ2NgjClQemdGS3uFuQlfGyYkK_C1WpVUzS6Slepmx8YjbHlVMk3iFvFsEYqv`\n* **Quote:** \"Under your specific workspace, navigate to Settings > API > OAuth applications. Click the + icon... toggle the Public switch to allow installation in other workspaces.\"\n\n### API Style & Technical Details\nLinear provides a comprehensive GraphQL API that covers all core resources, along with webhook support. It does not use an OpenAPI specification since it relies on a GraphQL schema. No dedicated sandbox environment is provided, but developers can create free workspaces for testing.\n* **API Style:** GraphQL\n* **Source:** `https://linear.app/developers`\n* **Quote:** \"graphql schema ↗\" and \"learn about building apps and integrations for linear using the graphql api and typescript sdk.\"\n* **Source:** `https://linear.app/pricing`\n* **Quote:** \"API and webhook access\"\n\n### MCP Servers\nLinear provides an official Model Context Protocol (MCP) server that allows AI agents and coding tools to interact directly with a Linear workspace.\n* **MCP Status:** `official`\n* **Source:** `https://linear.app/docs/mcp`\n* **Quote:** \"Linear's MCP server follows the authenticated remote MCP spec.\"\n* **Source:** `https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkkw2MlwfJYjXmHIqdf7TvVj0kboEBDK8TgPYREPKH5dB9xF6Y4dLzWNnWOYjBsuPWPpwNt3GEMvhgJKkxASudCmlu2amj4Klt1m2TvFyjv-6Tcegjrnr9Abkg3Qrk0QupSDKsBMz3fw==`\n* **Quote:** \"The Linear MCP server is Linear's official Model Context Protocol integration that gives AI coding tools direct, live access to your Linear workspace.\"\n\n### Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. Linear provides excellent developer documentation, a self-serve free tier with API access, public OAuth 2.0 capabilities, and an official remote MCP server.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"api and webhook access\" linear pricing",
+   "linear oauth documentation create application",
+   "linear mcp server",
+   "\"linear\" api \"rest\" vs \"graphql\"",
+   " \"openapi\""
+  ],
+  "search_sources": [
+   {
+    "title": "dev.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxDMpF5in6nPpUxiP0XcEOtbbxnjFyn_MyZkV9mMyP6srbL-aRMUDd8-aEFQWeD8jr_OgxC0WQsixQX-C_iChbfyKkILLxpPktDyKbRi4pKze6vwR9TGBvs9darI9kcLyfNmEoO_OWDbVnYhvQ47UaAKhiTDOwziwYgjD4Pi-XYZ_E33EWkAMAg4VBkSr7smc-qNxa_d4="
+   },
+   {
+    "title": "nocodb.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGm906QGk27vnHKQ_5FYHyWAg3vk5wdj-xj4jeheHu2RyrLjRNTOb-7Sfy4fe_I8EqMySn1q4oSoogcQQm0rn0iJHq1mkQsdh9sXCGSbi7-WzByk_idOtmiTy4lANV67QYNjvwmetYiih5zn8qQ3mrQTpVFucAi7e5gp4nQ6wEKtg=="
+   },
+   {
+    "title": "clerk.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1Ze7RMTXF1SrsJ9iciivPxbrYZYYilPgPgUp5cOS4WKUWiGqIzjK5vLEMz8m7eer4U_G9NZfxMbzKw3Ir_QaggRE2I2QazHKATP02Ey4cYyxutvx6Cuw_jzKgi9-hX1ozcF1nqQZzXL67GNTtRtzlzNpP21Z3HGt7gmsBTLB_55lNCijFrwzAKBrhTA=="
+   }
+  ],
+  "tokens": 7133,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status':",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status':"
+  ],
+  "discovery": {
+   "search_queries": [
+    "Linear API authentication developers.linear.app",
+    "Linear OAuth developers.linear.app",
+    "Linear API keys developers.linear.app",
+    "Linear API getting started developers.linear.app",
+    "Linear API quickstart developers.linear.app",
+    "Linear developer guide developers.linear.app",
+    "Linear API pricing developers.linear.app",
+    "Linear API plans developers.linear.app",
+    "Linear developer program developers.linear.app",
+    "Linear partner program developers.linear.app",
+    "Linear API reference developers.linear.app",
+    "Linear API documentation developers.linear.app",
+    "Linear MCP server",
+    "Linear GraphQL Schema documentation URL developers.linear.app",
+    "Linear MCP server documentation URL developers.linear.app",
+    "Linear MCP server documentation URL linear.app",
+    " \"MCP server\" documentation",
+    " \"MCP server\" documentation"
+   ],
+   "candidates": 6,
+   "live_urls": [
+    "https://linear.app/developers",
+    "https://linear.app/pricing",
+    "https://linear.app/developers/graphql",
+    "https://linear.app/docs/mcp"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://mcp.linear.app/mcp",
+     "status": 401
+    },
+    {
+     "url": "https://mcp.linear.app/mcp/readonly",
+     "status": 401
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://linear.app/developers",
+     "status": 200,
+     "chars": 1602,
+     "readable": true
+    },
+    {
+     "url": "https://linear.app/pricing",
+     "status": 200,
+     "chars": 2852,
+     "readable": true
+    },
+    {
+     "url": "https://linear.app/developers/graphql",
+     "status": 200,
+     "chars": 10966,
+     "readable": true
+    },
+    {
+     "url": "https://linear.app/docs/mcp",
+     "status": 200,
+     "chars": 15120,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 555.8
+ }
+}

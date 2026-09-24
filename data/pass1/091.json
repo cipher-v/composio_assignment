@@ -1,0 +1,236 @@
+{
+ "app": {
+  "id": 91,
+  "name": "NotebookLM",
+  "category": "AI, Research and Media-native",
+  "hint": "cloud.google.com/gemini (Enterprise API)"
+ },
+ "record": {
+  "subcategory": "AI Assistant",
+  "one_liner": "AI-powered research and writing assistant that generates summaries and insights from uploaded documents.",
+  "auth_methods": [
+   "oauth2",
+   "api_key"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "Google Cloud authentication mechanisms: Application Default Credentials (ADC), Service Account Credentials (JSON keys), OAuth 2.0 Access Tokens (via user accounts or gcloud CLI).",
+  "access": "self_serve_trial",
+  "access_notes": "Free trial (14 or 30 days) available. After trial, paid tier costs $9 USD per license per month with a minimum of 15 licenses ($135/month minimum). Requires Google Cloud Console setup, Discovery Engine API enablement, IdP configuration, and IAM roles (Cloud NotebookLM Admin, Cloud NotebookLM User).",
+  "api_styles": [
+   "rest",
+   "grpc"
+  ],
+  "api_breadth": "narrow",
+  "api_notes": "API is limited to administrative and management tasks: notebook management (create, get, batchDelete, listRecentlyViewed, share), source management (batchCreate, batchDelete, get), and audio overview management (create, delete). No endpoint to programmatically query or chat with the notebook's RAG index.",
+  "openapi_spec": false,
+  "webhooks": false,
+  "sandbox": true,
+  "mcp": "community_only",
+  "mcp_notes": "No official MCP server. Community MCP servers exist (e.g., moodRobotics/notebooklm-mcp-server) but rely on browser automation and session cookie extraction due to the official API's lack of a query/chat endpoint.",
+  "verdict": "ready_with_friction",
+  "blocker": "unclear_or_sparse_docs",
+  "blocker_notes": "The primary blocker is the extremely narrow scope of the official API, specifically the complete absence of a query or chat endpoint. An AI agent cannot programmatically query or converse with the notebook's RAG index using official enterprise credentials. Additional friction includes complex per-customer Google Cloud project setup and high minimum subscription cost.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+    "quote": "Gemini Notebook Enterprise is a powerful tool for generating insights and summaries from your documents."
+   },
+   {
+    "claim": "general",
+    "url": "https://github.com/moodRobotics/notebooklm-mcp-server",
+    "quote": "Google's Gemini Notebook (renamed from NotebookLM in July 2026) is the best grounded-answer engine on the market: it only answers from the sources you give it, with citations."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.cloud.google.com/gemini/enterprise/docs/authentication",
+    "quote": "To authenticate calls to Google Cloud APIs, client libraries support Application Default Credentials (ADC)... You can authenticate to the Gemini Enterprise API by using your gcloud CLI credentials or by using Application Default Credentials."
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-notebooklm",
+    "quote": "As the project owner, you need to assign the Cloud NotebookLM Admin role to any users who you want to be able to administer Gemini Notebook Enterprise in this project... The project owner or a user who has the Cloud NotebookLM Admin role can set up the IdP."
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-licensing",
+    "quote": "The free-trial tier: With this tier, you get a full-featured, 14-day trial subscription of 5000 licenses. The paid tier: You can buy a monthly subscription or a year-long subscription."
+   },
+   {
+    "claim": "access",
+    "url": "https://cloud.google.com/gemini-enterprise/gemini-notebook",
+    "quote": "30-day trial then $9 USD per license per month (minimum 15 licenses)"
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+    "quote": "GET https://discoveryengine.googleapis.com/v1alpha/{parent=projects/*/locations/*}/notebooks:listRecentlyViewed. The URL uses gRPC Transcoding syntax."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+    "quote": "This page describes the APIs that let you perform the following notebook management tasks programmatically: Create a notebook. Retrieve a notebook."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/google/mcp/issues/19",
+    "quote": "Official NotebookLM MCP Server #19... I would like to suggest the development of an official Model Context Protocol (MCP) server for NotebookLM."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/moodRobotics/notebooklm-mcp-server",
+    "quote": "When the notebook list appears, the session cookies (including Google's rotating __Secure-1PSIDTS token) are captured and saved to ~/.notebooklm-mcp/auth.json ."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+    "quote": "This page describes the APIs that let you perform the following notebook management tasks programmatically: Create a notebook. Retrieve a notebook."
+   }
+  ],
+  "confidence": 0.9
+ },
+ "notes": "### 1. Product Overview\n**Gemini Notebook Enterprise** (formerly known as **NotebookLM**, officially renamed by Google in July 2026) is an AI-powered research and writing assistant. It allows users to upload dense and complex source materials—such as PDFs, Google Docs, Google Slides, and website URLs—into a \"notebook.\" The underlying AI model then generates summaries, insights, and answers grounded strictly in those provided documents, complete with citations. The enterprise version adds enterprise-grade security, compliance, and administrative controls within a Google Cloud environment, and it supports generating \"Audio Overviews\" (audio summaries).\n\n* **Source URL:** `https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks`\n  * **Verbatim Quote:** `\"Gemini Notebook Enterprise is a powerful tool for generating insights and summaries from your documents.\"`\n* **Source URL:** `https://github.com/moodRobotics/notebooklm-mcp-server`\n  * **Verbatim Quote:** `\"Google's Gemini Notebook (renamed from NotebookLM in July 2026) is the best grounded-answer engine on the market: it only answers from the sources you give it, with citations.\"`\n\n---\n\n### 2. Authentication Methods & Multi-Tenant Integration\nThe Gemini Enterprise API utilizes standard Google Cloud authentication mechanisms. Programmatic access supports:\n1. **Application Default Credentials (ADC):** Automatically looks for credentials in the environment.\n2. **Service Account Credentials:** Using attached service accounts on Google Cloud compute resources or via downloaded Service Account JSON keys.\n3. **OAuth 2.0 Access Tokens:** Generated via user accounts or the gcloud CLI.\n\n* **Source URL:** `https://docs.cloud.google.com/gemini/enterprise/docs/authentication`\n  * **Verbatim Quote:** `\"To authenticate calls to Google Cloud APIs, client libraries support Application Default Credentials (ADC)... You can authenticate to the Gemini Enterprise API by using your gcloud CLI credentials or by using Application Default Credentials.\"`\n\n* **Primary Auth for Multi-Tenant Integration:** `oauth2`\n  * *Reasoning:* A multi-tenant integration platform like Composio would typically use standard Google OAuth 2.0 to obtain user-delegated access tokens to interact with the customer's Google Cloud resources, or alternatively allow enterprise customers to provide a Service Account JSON key.\n\n---\n\n### 3. Developer Credentials Acquisition & Cost\n* **How to get credentials:** A developer must log into the Google Cloud Console, select or create a project, enable the Discovery Engine API (which hosts the Gemini Notebook Enterprise endpoints), configure the Identity Provider (IdP) settings for the project, assign the required Identity and Access Management (IAM) roles (`Cloud NotebookLM Admin` and `Cloud NotebookLM User`), and purchase a subscription.\n* **Source URL:** `https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-notebooklm`\n  * **Verbatim Quote:** `\"As the project owner, you need to assign the Cloud NotebookLM Admin role to any users who you want to be able to administer Gemini Notebook Enterprise in this project... The project owner or a user who has the Cloud NotebookLM Admin role can set up the IdP.\"`\n* **Cost & Plans:** Google provides a time-limited free trial tier (14-day or 30-day depending on the console setup). After the trial expires, the paid tier costs $9 USD per license per month, with a strict minimum requirement of 15 licenses ($135/month minimum).\n* **Source URL:** `https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-licensing`\n  * **Verbatim Quote:** `\"The free-trial tier: With this tier, you get a full-featured, 14-day trial subscription of 5000 licenses. The paid tier: You can buy a monthly subscription or a year-long subscription.\"`\n* **Source URL:** `https://cloud.google.com/gemini-enterprise/gemini-notebook`\n  * **Verbatim Quote:** `\"30-day trial then $9 USD per license per month (minimum 15 licenses)\"`\n\n* **Access Definition:** `self_serve_trial`\n\n---\n\n### 4. API Style & Technical Details\n* **API Style:** REST (exposed via gRPC Transcoding syntax) and RPC/gRPC.\n* **Source URL:** `https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks`\n  * **Verbatim Quote:** `\"GET https://discoveryengine.googleapis.com/v1alpha/{parent=projects/*/locations/*}/notebooks:listRecentlyViewed. The URL uses gRPC Transcoding syntax.\"`\n* **API Breadth:** **Narrow**. The official API surface is strictly limited to administrative and management tasks. It includes notebook management (`create`, `get`, `batchDelete`, `listRecentlyViewed`, `share`), source management (`batchCreate`, `batchDelete`, `get`), and audio overview management (`create`, `delete`). Crucially, **there is no endpoint to programmatically query or chat with the notebook's RAG index** via the official Enterprise API.\n* **Source URL:** `https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks`\n  * **Verbatim Quote:** `\"This page describes the APIs that let you perform the following notebook management tasks programmatically: Create a notebook. Retrieve a notebook.\"`\n* **OpenAPI Spec:** None officially published (Google uses its proprietary Discovery Document format).\n* **Webhooks:** None found.\n* **Sandbox:** No dedicated sandbox environment is provided, but developers can isolate testing within a separate Google Cloud project using the free trial tier.\n\n---\n\n### 5. MCP Server Status\n* **MCP Status:** `community_only`\n* **Official MCP Server:** None exists. There is an active, open feature request on the official Google MCP repository requesting an official implementation.\n* **Source URL:** `https://github.com/google/mcp/issues/19`\n  * **Verbatim Quote:** `\"Official NotebookLM MCP Server #19... I would like to suggest the development of an official Model Context Protocol (MCP) server for NotebookLM.\"`\n* **Community MCP Servers:** Available (e.g., `moodRobotics/notebooklm-mcp-server`). However, because the official Enterprise API lacks a query/chat endpoint, these community servers rely on browser automation and session cookie extraction (`__Secure-1PSIDTS` token) to scrape the consumer/personal version of NotebookLM.\n* **Source URL:** `https://github.com/moodRobotics/notebooklm-mcp-server`\n  * **Verbatim Quote:** `\"When the notebook list appears, the session cookies (including Google's rotating __Secure-1PSIDTS token) are captured and saved to ~/.notebooklm-mcp/auth.json .\"`\n\n---\n\n### 6. Buildability Verdict & Main Blocker\n* **Verdict:** `ready_with_friction`\n* **Main Blocker:** The primary blocker is the **extremely narrow scope of the official API (`narrow_api`)**, specifically the complete absence of a query or chat endpoint. While an agent toolkit can be built to automate the *creation* of notebooks, the *uploading* of sources, and the *generation* of audio overviews, an AI agent cannot actually query or converse with the notebook's RAG index programmatically using official enterprise credentials. \n\nAdditional friction points include the complex per-customer Google Cloud project setup (requiring IAM role mapping and Identity Provider configuration) and the high cost barrier ($135/month minimum subscription fee after the trial period expires).",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks\"",
+   "\"docs.cloud.google.com/gemini/enterprise/docs/authentication\"",
+   "\"cloud.google.com/gemini-enterprise/gemini-notebook\"",
+   "\"github.com/moodRobotics/notebooklm-mcp-server\"",
+   "\"docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/\"",
+   "\"projects.locations.notebooks\" \"gemini\"",
+   "\"notebooklm-mcp-server\" moodRobotics",
+   "\"github.com/google/mcp/issues/19\"",
+   "\"projects.locations.notebooks\"",
+   "\"notebooks.share\" gemini enterprise api"
+  ],
+  "search_sources": [
+   {
+    "title": "google.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBHwbizE8wBui3YKNNAe2ciahTn44neXy629DF2AGp6_v1fIMCAuT8jQa5FdbCAz8XakfyI28x4jaKU46EDPRxvKRF2sFdRuySgHApSbwamn927wqd7SrXJV-GuZXotjbGhM5qY39pFfsMljCtkr8L-oV7p9ag68ImSq9aUttKua34bMcSoizwzMpuPb7C"
+   },
+   {
+    "title": "google.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3irrzMcwSr4uhvjffMpa1k_kuQxL7TNEpN-h-mC1sacl7HjzCn5NQnVl6rHGTBUG-jZMpqFpE4VUBIVIrJNm3k7XjJiYVuoN_PAA6cF73f5ouePr_XykcaiGrNp4R9I3EAx3z_slLcWmOX_b4s-EZ-L1AhjoYlsdlLlkc8JczFK0laqfKkIJ6Q7OXR5N5aeWIBry7xxxZrSgL4DePRRsmBfdEnQS2IwGb9saiZ2ZeMw3gZ4yWJOfrxS87jj4pbQ=="
+   },
+   {
+    "title": "google-cloud-radar.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESIkYj2_vAyEGCijqOs5RJyVrs_Z4M77DVBbhNpJby2IINWDqtqUom8a7L07cry4wfwB12rnldKQFVy0V5HiWNmmZGSUz3u1jiHFbobv8P4WbVyyk6I7B3HH3RA3CblYm7WtHWEvXI0K99wBY8ansLiZoLJRJ_bgBlPg=="
+   },
+   {
+    "title": "google.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2q1Wz8iZgfvODaApXSPXfa0O5vq_3W9H8gKL-OX46rKUUyCsIdKT1nlVYePBpNl9Xt-9dnrJiaBsm9ErCMXw0M4dtwe8SFKd-fF7NIiv9pYR4b54A1GnZW4hHJ7UswDoHb9KQnu7NWnSJQU2TnPyPLXLK6NN_0xldhtTwdUIn7gEfutTQ8CwK3bNNlzYKqwhGxiiZs5rn_u4-hmhq8yOZWAGrdNdeGA3lLg=="
+   }
+  ],
+  "tokens": 12251,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "NotebookLM API authentication",
+    "NotebookLM API keys",
+    "NotebookLM OAuth",
+    "NotebookLM API getting started",
+    "NotebookLM API quickstart",
+    "NotebookLM API pricing",
+    "NotebookLM developer program",
+    "NotebookLM API plans",
+    "NotebookLM API reference",
+    "NotebookLM API documentation",
+    "NotebookLM MCP server",
+    "Gemini Notebook Enterprise API authentication",
+    "Gemini Notebook Enterprise API getting started",
+    "Gemini Notebook Enterprise API pricing",
+    "Gemini Notebook Enterprise API reference",
+    "NotebookLM MCP server github"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://cloud.google.com/gemini-enterprise",
+    "https://cloud.google.com/agent-platform/docs/reference/rest/v2/projects.locations.notebooks",
+    "https://docs.cloud.google.com/gemini/enterprise/docs/authentication",
+    "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-notebooklm",
+    "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+    "https://cloud.google.com/gemini-enterprise/gemini-notebook",
+    "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-licensing",
+    "https://docs.cloud.google.com/gemini/enterprise/docs/apis",
+    "https://docs.cloud.google.com/gemini-enterprise-agent-platform/notebooks/workbench/reference/rpc",
+    "https://github.com/moodRobotics/notebooklm-mcp-server",
+    "https://github.com/google/mcp/issues/19"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://cloud.google.com/gemini/docs/enterprise/authenticate",
+     "status": 404
+    },
+    {
+     "url": "https://cloud.google.com/gemini/docs/enterprise/setup",
+     "status": 404
+    },
+    {
+     "url": "https://cloud.google.com/gemini/docs/enterprise/reference",
+     "status": 404
+    },
+    {
+     "url": "https://cloud.google.com/gemini/docs/enterprise/notebooks/create-manage",
+     "status": 404
+    },
+    {
+     "url": "https://cloud.google.com/gemini/docs/enterprise/licenses",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://cloud.google.com/gemini-enterprise",
+     "status": 200,
+     "chars": 47972,
+     "readable": true
+    },
+    {
+     "url": "https://cloud.google.com/agent-platform/docs/reference/rest/v2/projects.locations.notebooks",
+     "status": 200,
+     "chars": 190,
+     "readable": false
+    },
+    {
+     "url": "https://docs.cloud.google.com/gemini/enterprise/docs/authentication",
+     "status": 200,
+     "chars": 40258,
+     "readable": true
+    },
+    {
+     "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-notebooklm",
+     "status": 200,
+     "chars": 13794,
+     "readable": true
+    },
+    {
+     "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+     "status": 200,
+     "chars": 13799,
+     "readable": true
+    },
+    {
+     "url": "https://cloud.google.com/gemini-enterprise/gemini-notebook",
+     "status": 200,
+     "chars": 33165,
+     "readable": true
+    },
+    {
+     "url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-licensing",
+     "status": 200,
+     "chars": 9939,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 161.3
+ }
+}

@@ -1,0 +1,232 @@
+{
+ "app": {
+  "id": 16,
+  "name": "LiveAgent",
+  "category": "Support and Helpdesk",
+  "hint": "liveagent.com"
+ },
+ "record": {
+  "subcategory": "Helpdesk / ticketing",
+  "one_liner": "An all-in-one customer support and helpdesk platform unifying email ticketing, live chat, voice call center, and social media.",
+  "auth_methods": [
+   "api_key"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "API v3 uses an apikey header, while API v1 uses an apikey query parameter. There is no public OAuth2 application registration for multi-tenant integrations.",
+  "access": "self_serve_trial",
+  "access_notes": "Anyone can sign up for a 30-day free trial without a credit card to get API credentials. After expiration, a paid plan starting at $15/agent/month is required.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Broad coverage across core helpdesk objects including agents, tickets, conversations, companies, departments, and knowledge base articles via API v1 and v3.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "LiveAgent features a built-in native MCP server that supports profile-generated bearer tokens or an OAuth 2.1 authorization flow. Documentation at https://support.liveagent.com/647358-MCP-Integration-for-Agents",
+  "verdict": "ready_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "Requires a paid plan after the 30-day free trial expires, and lacks a public OAuth2 framework for multi-tenant apps, requiring manual per-customer API key configuration.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://support.liveagent.com/741982-API-key",
+    "quote": "liveagent is an integrated customer support software , ticketing system , live chat , social helpdesk and voice helpdesk ."
+   },
+   {
+    "claim": "auth",
+    "url": "https://support.liveagent.com/741982-API-key",
+    "quote": "api v3 use your api key has to be set in header of your requests: curl --location --request get 'https://your.ladesk.com/api/v3/tickets' \\ --header 'apikey: 0865evv883j6auflvlt7zrwgqn32qo74'"
+   },
+   {
+    "claim": "auth",
+    "url": "https://support.liveagent.com/840770-Complete-API-reference",
+    "quote": "curl_setopt ( $ch , curlopt_url , \"http :// example . com / api / agents /[ agentidentifier ]? &apikey = value\" ) ;"
+   },
+   {
+    "claim": "access",
+    "url": "https://support.liveagent.com/567924-Documentation?r=1",
+    "quote": "consider registering a new free trial account for testing purposes, before using api with your live account."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.liveagent.com/",
+    "quote": "LiveAgent comes with a 30‑day free trial that requires no credit card, letting you test all features before committing to a paid plan. How much does LiveAgent cost? LiveAgent pricing starts at $15 per agent/month (billed annually)"
+   },
+   {
+    "claim": "access",
+    "url": "https://support.liveagent.com/741982-API-key",
+    "quote": "while logged in as an admin navigate to configuration> system> api which loads the api v3 section where you find existing api keys or add a new one."
+   },
+   {
+    "claim": "api",
+    "url": "https://support.liveagent.com/741982-API-key",
+    "quote": "home > technical support > liveagent api > rest api > api key"
+   },
+   {
+    "claim": "api",
+    "url": "https://support.liveagent.com/567924-Documentation?r=1",
+    "quote": "choose the object (agents, tickets, .) & method (get, post, delete)"
+   },
+   {
+    "claim": "api",
+    "url": "https://support.liveagent.com/567924-Documentation?r=1",
+    "quote": "swagger api descriptor"
+   },
+   {
+    "claim": "api",
+    "url": "https://www.liveagent.com/",
+    "quote": "In LiveAgent, you can create a webhook to receive notifications on your channel by either building a custom integration using the API or by setting up an automation rule with the \"HTTP request\" action."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://support.liveagent.com/647358-MCP-Integration-for-Agents",
+    "quote": "liveagent exposes a built-in mcp server (model context protocol) that lets you connect external ai tools — such as claude desktop, cursor, claude.ai, flowhunt , or any other mcp-compatible client — directly to your liveagent account."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://support.liveagent.com/647358-MCP-Integration-for-Agents",
+    "quote": "There are two ways to authenticate your MCP client: - Bearer token — generate an MCP access token in your profile"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://www.liveagent.com/",
+    "quote": "Connecting an AI client isn't a one-click, all-access step. It runs through an OAuth 2.1 authorization flow with a consent screen, so you approve exactly which account it acts as."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### 1. Product Overview\nLiveAgent is an all-in-one customer support and helpdesk platform that unifies multiple communication channels—including email ticketing, live chat, a built-in voice call center, and social media helpdesk—into a single centralized agent dashboard.\n* **Source URL:** `https://support.liveagent.com/741982-API-key`\n* **Verbatim Quote:** `\"liveagent is an integrated customer support software , ticketing system , live chat , social helpdesk and voice helpdesk .\"`\n\n### 2. Authentication Methods & Multi-Tenant Integration\nLiveAgent provides two main versions of its public API (v1 and v3), both of which rely on static API keys.\n* **API v3 Authentication:** Uses an API key passed via the request headers.\n  * **Source URL:** `https://support.liveagent.com/741982-API-key`\n  * **Verbatim Quote:** `\"api v3 use your api key has to be set in header of your requests: curl --location --request get 'https://your.ladesk.com/api/v3/tickets' \\ --header 'apikey: 0865evv883j6auflvlt7zrwgqn32qo74'\"`\n* **API v1 Authentication:** Uses an API key passed as a query parameter.\n  * **Source URL:** `https://support.liveagent.com/840770-Complete-API-reference`\n  * **Verbatim Quote:** `\"curl_setopt ( $ch , curlopt_url , \"http :// example . com / api / agents /[ agentidentifier ]? &apikey = value\" ) ;\"`\n\n* **Primary Auth for Multi-Tenant Integration:** `api_key`\nLiveAgent does not provide a public OAuth2 application registration system for third-party multi-tenant integration platforms to dynamically authenticate end-users via a centralized marketplace app. Instead, multi-tenant platforms must prompt each customer to manually generate and provide their own account-specific API key.\n\n### 3. Credential Acquisition & Cost\n* **Access Level:** `self_serve_trial`\n* **Cost & Acquisition:** Anyone can sign up for a 30-day free trial without a credit card to obtain working API credentials. After the trial expires, a paid subscription is required (starting at $15/agent/month for the Small plan).\n  * **Source URL:** `https://support.liveagent.com/567924-Documentation?r=1`\n  * **Verbatim Quote:** `\"consider registering a new free trial account for testing purposes, before using api with your live account.\"`\n  * **Source URL:** `https://www.liveagent.com/`\n  * **Verbatim Quote:** `\"LiveAgent comes with a 30‑day free trial that requires no credit card, letting you test all features before committing to a paid plan. How much does LiveAgent cost? LiveAgent pricing starts at $15 per agent/month (billed annually)\"`\n* **How to get credentials:** An administrator can generate an API key directly from the agent panel.\n  * **Source URL:** `https://support.liveagent.com/741982-API-key`\n  * **Verbatim Quote:** `\"while logged in as an admin navigate to configuration> system> api which loads the api v3 section where you find existing api keys or add a new one.\"`\n\n### 4. API Style & Technical Details\n* **API Style:** REST API.\n  * **Source URL:** `https://support.liveagent.com/741982-API-key`\n  * **Verbatim Quote:** `\"home > technical support > liveagent api > rest api > api key\"`\n* **Breadth:** Broad coverage across core helpdesk objects including agents, tickets, conversations, companies, departments, and knowledge base articles.\n  * **Source URL:** `https://support.liveagent.com/567924-Documentation?r=1`\n  * **Verbatim Quote:** `\"choose the object (agents, tickets, .) & method (get, post, delete)\"`\n* **OpenAPI Spec:** LiveAgent provides a Swagger descriptor for its API v3.\n  * **Source URL:** `https://support.liveagent.com/567924-Documentation?r=1`\n  * **Verbatim Quote:** `\"swagger api descriptor\"`\n* **Webhooks:** LiveAgent does not feature a traditional dedicated webhooks management portal. Instead, real-time event forwarding is handled natively via automation rules configured with an \"HTTP request\" action.\n  * **Source URL:** `https://www.liveagent.com/`\n  * **Verbatim Quote:** `\"In LiveAgent, you can create a webhook to receive notifications on your channel by either building a custom integration using the API or by setting up an automation rule with the \"HTTP request\" action.\"`\n* **Sandbox:** No permanent free developer sandbox is available; developers are directed to use a free trial account for testing.\n  * **Source URL:** `https://support.liveagent.com/567924-Documentation?r=1`\n  * **Verbatim Quote:** `\"consider registering a new free trial account for testing purposes, before using api with your live account.\"`\n\n### 5. Model Context Protocol (MCP) Servers\n* **MCP Type:** `official`\n* **Details:** LiveAgent features a built-in, native MCP server that allows external AI tools to connect directly to an account to read ticket data and perform actions within the agent's permission scope.\n  * **Source URL:** `https://support.liveagent.com/647358-MCP-Integration-for-Agents`\n  * **Verbatim Quote:** `\"liveagent exposes a built-in mcp server (model context protocol) that lets you connect external ai tools — such as claude desktop, cursor, claude.ai, flowhunt , or any other mcp-compatible client — directly to your liveagent account.\"`\n* **MCP Authentication:** Supports both profile-generated bearer tokens and an OAuth 2.1 authorization flow with a consent screen.\n  - **Source URL:** `https://support.liveagent.com/647358-MCP-Integration-for-Agents`\n  - **Verbatim Quote:** `\"There are two ways to authenticate your MCP client: - Bearer token — generate an MCP access token in your profile\"`\n  - **Source URL:** `https://www.liveagent.com/`\n  - **Verbatim Quote:** `\"Connecting an AI client isn't a one-click, all-access step. It runs through an OAuth 2.1 authorization flow with a consent screen, so you approve exactly which account it acts as.\"`\n\n### 6. Buildability Verdict\n* **Verdict:** `ready_with_friction`\n* **Main Blocker:** `paid_plan` / `trial_expiry`\n* **Explanation:** A developer can immediately build an integration using the 30-day free trial account (`self_serve_trial`). However, long-term maintenance or production multi-tenant use introduces friction because there is no permanent free developer tier or sandbox, meaning a paid plan is required after trial expiration. Furthermore, the lack of a public OAuth2 application framework forces a per-customer manual setup where each user must generate and copy an `api_key` into the integration platform.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"LiveAgent\" pricing api access free tier",
+   "\"LiveAgent\" \"MCP Integration for Agents\"",
+   "\"LiveAgent\" webhooks oauth",
+   "\"LiveAgent\" partner program developer account",
+   " \"free plan\" OR \"free tier\"",
+   " \"Free\"",
+   " webhooks",
+   "\"LiveAgent\" webhooks api v3",
+   "\"LiveAgent\" \"MCP\" server authentication bearer token",
+   " \"MCP Integration for Agents\""
+  ],
+  "search_sources": [
+   {
+    "title": "liveagent.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfwj0Vw-mNsaMaE6gk6dRmtsFNtBF_lOtZhIbIKYDepVZsc7dCDXSrl-a56giRKao_zvelaLfDeO3DII7y8J07n73ZlQBHzqM2Hihmj3fOeWyyzS8H"
+   },
+   {
+    "title": "comm100.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEh9MEI7JIiQ0t_51FvnHQEydTaZIcB9mZgipN9lQ7lxsZ70wqgIxipfiIcvZHexJTvqNS1wJSjS36MOydU9KfQnpdwIpjoQMg69tdID90m_BLy9uZ8VIfoq1HwIgecRuwGHuAJYJ5kr5s9JN0MkbQ="
+   },
+   {
+    "title": "strategy.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGohks6P0wcEyPAlA4ti5qiYLA5Nw4ZCF7WJQmSCdn52CaOWgx-F8dEYFL2ycy8Ei_wvZn_OcknDZlcEDx6pEf4lbwLu2baigwLs6hn4D2evNrGuXsAB9Ki8lKGfcqtaQJiBCPbDS9SEluwfmJUL2ivFepi7v_BgRvObsXBNSzqDjl78B15HLh5WYSK95lAOzstQXVc"
+   },
+   {
+    "title": "liveagent.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH10zcy2W_6aqB1yiAbHhvc_kSHsIHCg-aVQzUpKitNSinXWmAnth4zmoNvXwmmQcldtuxciDTNMRGLYKJhW1p5uLBOoSkkeDY_d0krK30GP1-JZ29scDNPmvz7XlUddCfXeaKd7B43uaP_Pw=="
+   },
+   {
+    "title": "appian.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLxwqxSjfNFkrSwQKH0O_ocbC8QzlQAHdi8rvFKbezIQV3NxlhMOtzh2re5YK4Bj7ZNKPXqvmeDPSwkT0M2ccTwXQ8pAEGdMhPz9wWBYj_4BEZ8Q_lXZwuIFxQMYFy3mjuK2u3UMZQoPCgUHAAuBVli1TOeAMGkRXf8ZZ2o25Ws99ZODeeetsZ_RABtFPApcrXTufp63oBfxMpllZQsQJEyYUGjYUUmHhwKw0Q1B_upnkvOPPE"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEICfa_Hx9usKpi1jL4wfg0DFsRyi_YRe7ZpOrmEbfRZuqd0y-9fix5QSpmh3dGegTgGoR_9DO6BATEGndZALapFBLOr-0YxWsl-Hmt8X_ZT2dhlTVG8ksbqQsm8iO0FVEpTWQ="
+   },
+   {
+    "title": "liveagent.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECiFWtXOxf1Tnk1oor9N6ln4H7M7L1b7uiLP3twHA_XhdZfHBix86CtIYLY_FfpmvzNgV2Uriubix2jerPt4Y_n6Z1nGfnRjz_23UgZHt26F4Upuf_WZpdO3skI2Svj9po4C2EbCS3kcg="
+   }
+  ],
+  "tokens": 12421,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "LiveAgent developer documentation authentication API keys OAuth",
+    "LiveAgent API getting started quickstart",
+    "LiveAgent pricing API access plans developer program",
+    "LiveAgent API reference index",
+    "LiveAgent MCP server official community",
+    "LiveAgent official pricing page API access",
+    "LiveAgent developer getting started guide",
+    "LiveAgent API v3 documentation index URL",
+    "LiveAgent official MCP server documentation"
+   ],
+   "candidates": 8,
+   "live_urls": [
+    "https://support.liveagent.com/741982-API-key",
+    "https://www.liveagent.com/pricing/",
+    "https://support.liveagent.com/567924-Documentation?r=1",
+    "https://support.liveagent.com/647358-MCP-Integration-for-Agents",
+    "https://www.liveagent.com/features/api/",
+    "https://support.liveagent.com/840770-Complete-API-reference",
+    "https://support.liveagent.com/911737-API-v3",
+    "https://www.flowhunt.io/hosted-mcp-servers/liveagent/"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://support.liveagent.com/276539-Getting-Started",
+     "status": 404
+    },
+    {
+     "url": "https://support.liveagent.com/174956-MCP-tools-reference",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://support.liveagent.com/741982-API-key",
+     "status": 200,
+     "chars": 3080,
+     "readable": true
+    },
+    {
+     "url": "https://www.liveagent.com/pricing/",
+     "status": 200,
+     "chars": 22982,
+     "readable": true
+    },
+    {
+     "url": "https://support.liveagent.com/567924-Documentation?r=1",
+     "status": 200,
+     "chars": 2833,
+     "readable": true
+    },
+    {
+     "url": "https://support.liveagent.com/647358-MCP-Integration-for-Agents",
+     "status": 200,
+     "chars": 6924,
+     "readable": true
+    },
+    {
+     "url": "https://www.liveagent.com/features/api/",
+     "status": 200,
+     "chars": 8433,
+     "readable": true
+    },
+    {
+     "url": "https://support.liveagent.com/840770-Complete-API-reference",
+     "status": 200,
+     "chars": 130186,
+     "readable": true
+    },
+    {
+     "url": "https://support.liveagent.com/911737-API-v3",
+     "status": 200,
+     "chars": 4304,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 221.5
+ }
+}

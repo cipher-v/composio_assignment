@@ -1,0 +1,61 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.hubspot.com/docs/apps/legacy-apps/authentication/working-with-oauth",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.8
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYGo-0kMQ0VAqnScJqpNqc_bfkwOajxPRe0zY0mzWtkv2C7cHZEJE_KS6q5n1KNIw7agPkoLgwRGO7gsXnFZl-BvVECTjQCq4TS_M6ABR1780utJRbVunBnGhlg=",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.hubspot.com/docs/api-reference/latest/overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.58
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFY5VvmCWN6JumoAhXPAs5psAidTygHL6iAgb0RRdwCcm8ZiDGJovPywkl35-o_QMN6hmuyB4uOf2MyL5Vs4lMPu_19npICC_N-AS8UOyAsCe605O4zDizTLTz_gNAKHDf4XhJH2mAKiFeSS2HN_xbEB3_87Ehg74W4OqnDn0g=",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.73
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "bearer_token": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYGo-0kMQ0VAqnScJqpNqc_bfkwOajxPRe0zY0mzWtkv2C7cHZEJE_KS6q5n1KNIw7agPkoLgwRGO7gsXnFZl-BvVECTjQCq4TS_M6ABR1780utJRbVunBnGhlg=']\n- Non-vendor sources (prefer official docs): ['https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFY5VvmCWN6JumoAhXPAs5psAidTygHL6iAgb0RRdwCcm8ZiDGJovPywkl35-o_QMN6hmuyB4uOf2MyL5Vs4lMPu_19npICC_N-AS8UOyAsCe605O4zDizTLTz_gNAKHDf4XhJH2mAKiFeSS2HN_xbEB3_87Ehg74W4OqnDn0g=']",
+ "metrics": {
+  "n_evidence": 4,
+  "alive_rate": 0.75,
+  "dead_rate": 0.25,
+  "blocked_rate": 0.0,
+  "official_rate": 0.5,
+  "readable": 3,
+  "quote_supported_rate": 1.0,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

@@ -1,0 +1,130 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://seranking.com/api/data/getting-started/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.96
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://seranking.com/api/project/getting-started/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.79
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://seranking.com/api/data/getting-started/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.52
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://help.seranking.com/hc/en-us/articles/21487397355420-API-pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.59
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://seranking.com/api/data/getting-started/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.61
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/seranking/openapi",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://github.com/seranking/n8n-nodes-seranking",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.4
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://plainenglish.io/blog/best-seo-api",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://seranking.com/api/data/getting-started/",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.91
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/seranking/seo-skills",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.06
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://help.seranking.com/hc/en-us/articles/21487397355420-API-pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.84
+  }
+ ],
+ "auth_support": {
+  "api_key": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://plainenglish.io/blog/best-seo-api']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://github.com/seranking/n8n-nodes-seranking', 'https://github.com/seranking/seo-skills']\n- Non-vendor sources (prefer official docs): ['https://github.com/seranking/openapi', 'https://github.com/seranking/n8n-nodes-seranking', 'https://github.com/seranking/seo-skills']",
+ "metrics": {
+  "n_evidence": 11,
+  "alive_rate": 0.9090909090909091,
+  "dead_rate": 0.09090909090909091,
+  "blocked_rate": 0.0,
+  "official_rate": 0.6363636363636364,
+  "readable": 10,
+  "quote_supported_rate": 0.8,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

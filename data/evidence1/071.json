@@ -1,0 +1,141 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "apis.io",
+   "status": 0,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.notion.com/reference/authentication",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.71
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://developers.notion.com/reference/intro",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.68
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.notion.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.17
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://developers.notion.com/reference/intro",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.notion.com/reference/intro",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.62
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.notion.com/reference/intro",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.73
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "latenode.com",
+   "status": 0,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "notion.com",
+   "status": 0,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://developers.notion.com/reference/intro",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "growthmethod.com",
+   "status": 0,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "github.com/makenotion/notion-mcp-server",
+   "status": 0,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "bearer_token": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['apis.io', 'latenode.com', 'notion.com', 'growthmethod.com', 'github.com/makenotion/notion-mcp-server']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://www.notion.com/pricing']",
+ "metrics": {
+  "n_evidence": 12,
+  "alive_rate": 0.5833333333333334,
+  "dead_rate": 0.4166666666666667,
+  "blocked_rate": 0.0,
+  "official_rate": 0.5833333333333334,
+  "readable": 7,
+  "quote_supported_rate": 0.8571428571428571,
+  "lint_issues": 0,
+  "flag_count": 2
+ }
+}

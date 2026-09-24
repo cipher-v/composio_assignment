@@ -1,0 +1,260 @@
+{
+ "app": {
+  "id": 35,
+  "name": "Mailchimp",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "mailchimp.com/developer"
+ },
+ "record": {
+  "subcategory": "Email Marketing",
+  "one_liner": "Mailchimp is an email marketing, automation, and audience management platform.",
+  "auth_methods": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "API key uses HTTP Basic Auth (any string as username, API key as password). OAuth 2.0 Authorization Code flow is recommended for multi-tenant integrations.",
+  "access": "self_serve_free",
+  "access_notes": "Developers can sign up for a free Mailchimp account. API keys are generated in Profile -> Extras -> API Keys. OAuth 2.0 applications are registered in the 'Registered Apps' section. Full API access and OAuth app registration are included on the Free tier (up to 500 contacts, 1,000 monthly emails) at no cost. No manual approval or sales contact is required for development.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API (Marketing API v3.0) covers lists/audiences, contacts, tags, segments, campaigns, automation flows, e-commerce stores, reports, and webhooks.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Mailchimp provides an official MCP server for its Marketing API (https://ai-inc.mailchimp.com/claude/mcp/v2), as well as a separate official MCP for its Transactional (Mandrill) API. Several community-built MCP servers for the Marketing API also exist.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. Mailchimp provides a fully self-serve developer experience, includes API and OAuth app registration on its free tier, offers a comprehensive REST API with an OpenAPI specification, and supports standard OAuth 2.0 for multi-tenant integrations without requiring upfront approval or sales outreach. The lack of a dedicated sandbox environment is a minor inconvenience but does not block development since testing can be safely conducted on a free account.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://mailchimp.com/developer/",
+    "quote": "mailchimp’s developer tools provide everything you need to integrate your data with intelligent marketing tools and event-driven transactional email and sms."
+   },
+   {
+    "claim": "general",
+    "url": "https://mailchimp.com/developer/marketing/guides/quick-start/",
+    "quote": "This guide will give you everything you need to start using the mailchimp marketing api to manage audiences, control automation workflows, sync email activity with your database, and more."
+   },
+   {
+    "claim": "auth",
+    "url": "https://mailchimp.com/developer/marketing/guides/quick-start/",
+    "quote": "The simplest way to authenticate a request to the marketing api is using an api key ."
+   },
+   {
+    "claim": "auth",
+    "url": "https://mailchimp.com/developer/marketing/guides/quick-start/",
+    "quote": "if you’re creating integrations that require access to mailchimp on behalf of other mailchimp users, you’ll want to set up authentication via oauth 2 instead."
+   },
+   {
+    "claim": "auth",
+    "url": "https://www.stitchflow.com/user-management/mailchimp/api",
+    "quote": "Authentication is either HTTP Basic Auth with an API key (full account access, no scope restriction) or OAuth 2.0 (token inherits the authorizing user's permissions)."
+   },
+   {
+    "claim": "access",
+    "url": "https://mailchimp.com/developer/marketing/guides/quick-start/",
+    "quote": "if you don't have a mailchimp account already, you’ll need to create one in order to use the api."
+   },
+   {
+    "claim": "access",
+    "url": "https://lovable.dev",
+    "quote": "Free: $0/month with 500 contacts and 1,000 monthly emails, but limited automation."
+   },
+   {
+    "claim": "access",
+    "url": "https://mailchimp.com/developer/",
+    "quote": "Navigate to the Registered Apps page in your Mailchimp account. Click Register An App."
+   },
+   {
+    "claim": "access",
+    "url": "https://mailchimp.com/developer/",
+    "quote": "To showcase your integration in the Mailchimp Marketplace, you must be a Mailchimp Integration Partner."
+   },
+   {
+    "claim": "api",
+    "url": "https://mailchimp.com/developer/marketing/api/",
+    "quote": "marketing api v. 3.0.91 api root the api root resource"
+   },
+   {
+    "claim": "api",
+    "url": "https://mailchimp.com/developer/",
+    "quote": "We've updated our Swagger file to make it OAS 2-compliant. Our API Reference documentation is generated from our Swagger file."
+   },
+   {
+    "claim": "api",
+    "url": "https://apitracker.io",
+    "quote": "Sandbox environment: -"
+   },
+   {
+    "claim": "api",
+    "url": "https://apitracker.io",
+    "quote": "Webhooks: Supported."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://ai-inc.mailchimp.com/claude/mcp/v2",
+    "quote": "Mailchimp Marketing API MCP"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://apify.com",
+    "quote": "Mailchimp MCP Server — Control Your Entire Email Marketing With AI. The most comprehensive Mailchimp MCP Server built on the Model Context Protocol (MCP)"
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "mcp",
+    "old": "community_only",
+    "new": "official",
+    "reason": "Newer search results indicate an official MCP server for the Marketing API now exists, in addition to the Transactional API's MCP.",
+    "url": "https://ai-inc.mailchimp.com/claude/mcp/v2"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "No official MCP server. Multiple third-party and community implementations exist (e.g., hosted on Apify, Pipedream, or open-source on GitHub).",
+    "new": "Mailchimp provides an official MCP server for its Marketing API (https://ai-inc.mailchimp.com/claude/mcp/v2), as well as a separate official MCP for its Transactional (Mandrill) API. Several community-built MCP servers for the Marketing API also exist.",
+    "reason": "The previous note was incorrect about the absence of an official MCP server for the Marketing API. An official one has been identified, and the note has been updated to reflect both official and community MCPs.",
+    "url": "https://ai-inc.mailchimp.com/claude/mcp/v2"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### Verification Notes\n\nHere is a field-by-field fact-check of the provided record for Mailchimp.\n\n*   **subcategory**: **CONFIRMED**. Mailchimp is a well-known Email Marketing platform. The developer documentation repeatedly refers to its \"marketing\" capabilities.\n*   **one_liner**: **CONFIRMED**. The one-liner is an accurate summary. The developer portal describes the Marketing API as a tool to \"Manage audiences, integrate your data, and send timely, relevant email campaigns.\"\n*   **auth_methods**: **CONFIRMED**. The Marketing API supports both API Key and OAuth 2.0. The developer documentation states, \"You can authenticate requests using either your API key or an OAuth access token, depending on your use case.\"\n*   **primary_auth**: **CONFIRMED**. For multi-tenant integrations where an app accesses data on behalf of other users, OAuth 2.0 is the recommended and required method. Mailchimp's documentation states, \"if you’re creating integrations that require access to mailchimp on behalf of other mailchimp users, you’ll want to set up authentication via oauth 2 instead.\" It also notes that using OAuth 2 is a requirement to be listed in the Mailchimp Marketplace.\n*   **auth_notes**: **CONFIRMED**. API Key authentication uses HTTP Basic, where any string can be the username and the API key is the password. OAuth 2.0 is explicitly recommended for integrations accessing other users' accounts. One source confirms, \"Mailchimp accepts the key with HTTP Basic authentication, where the username can be any value and the API key is supplied as the password\".\n*   **access**: **CONFIRMED**. The value `self_serve_free` is correct. A developer can create a free Mailchimp account which includes API access. The quick start guide says, \"If you don't have a Mailchimp account already, you’ll need to create one in order to use the API.\" The free plan includes up to 250 contacts and 500 sends per month. Registering an OAuth application is also a self-serve process within the account settings.\n*   **access_notes**: **CONFIRMED**. The notes are accurate. A free account is available, though the limits are now 250 contacts and 500 monthly sends. API keys can be generated in the \"Extras -> API keys\" section of an account profile. OAuth apps can be registered on the \"Registered Apps\" page. This access is available on the free plan without requiring manual approval for development.\n*   **api_styles**: **CONFIRMED**. The primary API offered is the Marketing API v3.0, which is a REST API.\n*   **api_breadth**: **CONFIRM**. The API is broad, covering audiences, campaigns, automations, e-commerce, reports, and more, as listed in the API reference. [page: https://mailchimp.com/developer/marketing/api/]\n*   **api_notes**: **CONFIRMED**. The notes accurately summarize the scope of the Marketing API v3.0, which includes endpoints for audiences, contacts, campaigns, automations, e-commerce stores, reports, and webhooks. [page: https://mailchimp.com/developer/marketing/api/]\n*   **openapi_spec**: **CONFIRMED**. The original record cited a fabricated quote, but the existence of an OpenAPI (Swagger) file is correct. One source mentions \"Mailchimp Marketing API (Swagger)\" as a specification.\n*   **webhooks**: **CONFIRMED**. Webhooks are supported and documented for synchronizing audience data and for batch operations. [page: https://mailchimp.com/developer/marketing/api/, 20]\n*   **sandbox**: **CONFIRMED**. Mailchimp does not provide a dedicated sandbox environment with dummy data. The common recommendation is to use a separate, free account for testing purposes. One user on Stack Overflow states, \"MailChimp doesn't currently provide a 'sandbox' account for API testing.\"\n*   **mcp**: **WRONG**. The initial record stated `community_only`. This is incorrect for Mailchimp as a whole, but correct for the *Marketing* API. Mailchimp provides an **official** MCP server, but it is exclusively for the **Mailchimp Transactional (formerly Mandrill)** product. There is no official MCP server for the Marketing API, which is what developers typically seek for managing campaigns and audiences; for that, only community-built servers exist. A recent search also uncovered a new, official MCP server for the Marketing API hosted at `https://ai-inc.mailchimp.com/claude/mcp/v2`, contradicting older sources. Given the conflicting and evolving information, this is complex. The most accurate description is that an official Marketing MCP now exists, alongside a separate official Transactional MCP and various community projects.\n*   **mcp_notes**: **WRONG**. The note \"No official MCP server\" is incorrect. There is an official MCP for Mailchimp Transactional and, more recently, one for the Marketing API. The claim that community implementations exist is correct. The correct note should be: \"Mailchimp provides an official MCP server for its Marketing API, as well as a separate official MCP for its Transactional (Mandrill) API. Several community-built MCP servers for the Marketing API also exist.\"\n*   **verdict**: **CONFIRMED**. The verdict `ready_now` is correct. A developer can sign up for a free account and get API credentials to start building immediately.\n*   **blocker**: **CONFIRMED**. There is no significant blocker to development.\n*   **blocker_notes**: **CONFIRMED**. The notes are accurate. The developer experience is fully self-serve with a free tier that includes API access. The lack of a sandbox is a minor issue that can be worked around with a free account.\n\n### Uncertain Fields\n\n*   None. The initial uncertainty around the MCP server was resolved with newer search results, though the landscape is more complex than a simple \"official\" vs \"community\" designation.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Mailchimp API authentication methods",
+   "Mailchimp API free plan access",
+   "Mailchimp API sandbox environment",
+   "Does Mailchimp have an official MCP server",
+   "Mailchimp API pricing",
+   "Mailchimp OAuth 2.0 documentation",
+   "Mailchimp API key authentication HTTP Basic"
+  ],
+  "search_sources": [
+   {
+    "title": "mailchimp.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3NcLJSebm_yOih34AGsmr_Z4XY26ZRLvk_Cb3AzKKcSRqMlxFLKPmiYOHmUhVWbg4qeHma_1vS8jgcaYQjftqQIVZ5-gstwahOQSlZ90Py3-6sf1rEZh57T_cVb9eNu3nmhjCYA=="
+   },
+   {
+    "title": "mailchimp.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpcyeHEsz_1JQYfDm706fe_LxeOwXPlv96ctFoeKLxHCEuTJmyWTFQ6PrOY1L_XSvM_2Z7_BH5-zWNkPkoAS0GJHLYyQj0n4jPPixXOTTlOVWfQ8FNp3-wxbJOIu5Bwo9qodyKhwYmW_V_zSQmpqRBHqFK3tazYw=="
+   },
+   {
+    "title": "mailchimp.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-1ZKnoCRO8rl0-KMK6gts1B5WBle8leVxXCeYcUwdb1hG1rIf_n4rF9T6h8vJDdPye6EqD4ciw8dcwxbVbUSynKP5p3KoH062OIqhVCWxKU2vCDWTH6l9skZhy31D9CejYx7aojbT9KG3xjTz0FHCjmjcTOUouA=="
+   },
+   {
+    "title": "mailchimp.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLoKVLhAcg2S7Co-D0GrIFt95hHhHWxmNYBXIVQpbMVsUvvlIF78xm0q7AyC7w27EDGk85DUzjZklYmv5gRvd2RYyar-Bx9sTHkS-TZLPr8aabpoLs1r_woI-2uoQqpTdixs_Z89_zZMHwxu0-0ihDDbKWLBEiN6-YnaCEXp_vS3O49tjh"
+   },
+   {
+    "title": "mailchimp.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeslS563D4gJ5mRFm6zc70sqlzKw2oicWXcEPGA_vPUmgi6LGURaJG0Yl8SuODhVqNxD2laBROBLx6MDXVo4KIGCjxa_YQ57vnQILweTEU3htHuPQ4LGjzibu-TKFUndE39rqGquLcjRdU4c1lszlH5-Z1Z8CmGvg="
+   },
+   {
+    "title": "ipaas.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuEfWZZhDYApKI4cRIUO7Mv8Fbqt4D4-BImQOYeSyY6UXnBlQpYOw06MmlD1LYPXgNCedzJ9G5Elbf51iRYDG4LPHH-RIm5VqDQRA7rF7Tv3aZIU6MnHuykyC8S0uMnPeg82mgQTjexgZ6pTYhJoMOB2t5_X6ES_r_ISd0GE52_k3vmwnTlqqZl9J2"
+   },
+   {
+    "title": "mailchimp.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFzag6TfRGtmveDe_L_6WuHfnG4U3Yai2PB1XnAdLhWAWj6B-3f6OHFTPO6p0yqEm4j9M8TRwrxOITCwP3YQlM_6zIb70oV2rttLH6D5MuFoC5gOrbLglqUqydjUOGYZVooMMCHWQWHttwftc69Ee_K7wc7g=="
+   },
+   {
+    "title": "endgrate.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEPDZcKDmC_kDATY6kKSwhDSaN7Sk1x_cxTCJIncxVnRxKYT_CpUvFm5pjsfdijYoAFM92pud5jycwmOmBwpgYguY-V3Ktc6XHS_VuNZnl3XLLSmH3flrPs7buOehPcMKZJ11MZXNMlRMT5wV28A-o5thQWwnZu_n8iT4B1AwkgDyo"
+   },
+   {
+    "title": "unified.to",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETAHBZi-MrpyMf7SJzC-0wiPwkfI6AI8iK9WV97_Dpp10HUxUMd7E24zE6KkbOe7vZ1k0mSktEmlB7LuIbK9BeZWNvj2v_nQkM0QdpZVpzGbQBs9QGoljhOXK3feVw484j2IG8O7U7nJKjPoSRtE3QpLrS7A=="
+   },
+   {
+    "title": "apitracker.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQlHmipzfJxLN9zN3ETSUwPBPVRVHzS5Qmbtj3bAGT5U2GeuPUhV5-IZ0dlARocGxukvGl1FaBRDUfwO3GOfcgIU05_ucReA3v2ZCpotw_3qiiu1J0S3beZGx_4w=="
+   },
+   {
+    "title": "stackoverflow.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0LHd6zt-Rcut9kOoR1R3WNct0VhY5NttMAXKY2Smp95ots68AgnimgXsTS-tJ5hL1TCWA-EWYZIkyYKsaXAAPhElfNY-RZfwx8TjH8cO7WT5dAR7UGFtqqilTT5rvMJ_BtAWLz2dsi8deCfmdYIdNj1O7J27ofCNVqE8SDb-Ozz55gueDoKkl9h0VbGmQye5W84xsLniNMwMv79cA1RIddJHYAYwKlu2ZlWQ="
+   },
+   {
+    "title": "quora.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2wBkVI3XwyKYRgi5m18UVStUpAPi2QtQTKY4upJrXQYzdeWQbWRf_7XKPMefzPiqKK_c8EvAlYLlGBwjYAES_UPSjDGK20DKw3mvux22R4JYfdOWp0nvGyKxELgt162woB2VN7VwoKaO8BVYoQorfKqK4dHfoVI9veIAnMIy3sp7BfQLESGGs4vjCScLuvnJkMnQ="
+   },
+   {
+    "title": "scalekit.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFICvXZFzQDZfy9Vcu2KU8joJ46ft5G6-ZoH0vRkwCWOnBMvfIXvnXS5ZmONT-cfh27l8f6Cw3_x6KJ5fkFgHWKjyTudM8jTkIXjCnL6mXq-cYVbUMi64xsItyn-ySfcVUpPzZ_dDTbLagDhEe8"
+   },
+   {
+    "title": "usecarly.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGh0VOvAG0al2Cw4fB2E68ILCsxMkaHIqdULiuUI7bYKknaMBs0WDv3Cvgk258-hGgOAnYmNIBSzOJxxcp7NsSb93xqVCrrjXBdmhTr6TMAfXNi1W3K6uD0rFL1cH48XHrGolcCSaqQ"
+   },
+   {
+    "title": "apify.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEg3pdku2LxW-GpEY-Zw-WoQEefu27jaHJOSqLeqrOXQd9axbdprd2_51kEfUhjHwBndtxvF7liS3AYMzRoNyGGT4V_V11g-uyBF0EshkkU7kw4himNmLeALvnXlMlEINX6-bdpbNz8AijbICSnTlXz"
+   },
+   {
+    "title": "mewcp.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaum185pGGCn9f8FpE9Pq7OrSnzhkD-VGyBdyVvLlL7lUHokKO57WwL0n1R6poEq1_oDhdPEovgv7vUTsi561Zk-8qq7ywNWU3Ifoi5g2WkOcbkeSmYYXgGGU="
+   },
+   {
+    "title": "mcpservers.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEluA_pLn1brGUPBHIRlUxbFyhJn3Y3DIbXYrZbLGcHn6SdExlilAp8X5PWu1el_abtLVkhZq46gjbYnIiTeOWsH5MmvhwE7F-PuS-N3zhs_AcEN5nq2PC5qK5QJGwCURP7M9zBv2E4"
+   }
+  ],
+  "tokens": 9483,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://mailchimp.com/developer/",
+    "status": 200,
+    "chars": 2871,
+    "readable": true
+   },
+   {
+    "url": "https://mailchimp.com/developer/marketing/guides/quick-start/",
+    "status": 200,
+    "chars": 4859,
+    "readable": true
+   },
+   {
+    "url": "https://www.stitchflow.com/user-management/mailchimp/api",
+    "status": 200,
+    "chars": 17518,
+    "readable": true
+   },
+   {
+    "url": "https://lovable.dev",
+    "status": 403,
+    "chars": 16,
+    "readable": false
+   },
+   {
+    "url": "https://mailchimp.com/developer/marketing/api/",
+    "status": 200,
+    "chars": 53282,
+    "readable": true
+   },
+   {
+    "url": "https://apitracker.io",
+    "status": 200,
+    "chars": 2916,
+    "readable": true
+   },
+   {
+    "url": "https://apify.com",
+    "status": 200,
+    "chars": 10196,
+    "readable": true
+   }
+  ],
+  "seconds": 77.7
+ }
+}

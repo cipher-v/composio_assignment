@@ -1,0 +1,161 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://docs.brightdata.com/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.44
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://github.com/brightdata/brightdata-mcp",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.56
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://brightdata.com/api-reference/authentication",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://brightdata.com/api-reference/authentication",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://brightdata.com/api-reference/authentication",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://docs.brightdata.com/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.45
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://brightdata.com/api-reference/authentication",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://brightdata.com/api-reference/authentication",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://brightdata.com/api-reference/authentication",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://brightdata.com/api-reference/authentication",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://brightdata.com/api-reference/authentication",
+   "status": 404,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/brightdata/brightdata-mcp",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.41
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://docs.brightdata.com/products/mcp-server/overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.74
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://docs.brightdata.com/introduction",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.45
+  }
+ ],
+ "auth_support": {
+  "api_key": true,
+  "basic": false
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://brightdata.com/api-reference/authentication', 'https://brightdata.com/api-reference/authentication', 'https://brightdata.com/api-reference/authentication', 'https://brightdata.com/api-reference/authentication', 'https://brightdata.com/api-reference/authentication', 'https://brightdata.com/api-reference/authentication', 'https://brightdata.com/api-reference/authentication', 'https://brightdata.com/api-reference/authentication']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://docs.brightdata.com/introduction', 'https://docs.brightdata.com/introduction', 'https://github.com/brightdata/brightdata-mcp', 'https://docs.brightdata.com/introduction']\n- Non-vendor sources (prefer official docs): ['https://github.com/brightdata/brightdata-mcp', 'https://github.com/brightdata/brightdata-mcp']\n- Auth methods not mentioned on any cited page: ['basic']",
+ "metrics": {
+  "n_evidence": 14,
+  "alive_rate": 0.42857142857142855,
+  "dead_rate": 0.5714285714285714,
+  "blocked_rate": 0.0,
+  "official_rate": 0.8571428571428571,
+  "readable": 6,
+  "quote_supported_rate": 0.3333333333333333,
+  "lint_issues": 0,
+  "flag_count": 4
+ }
+}

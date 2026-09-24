@@ -1,0 +1,180 @@
+{
+ "app": {
+  "id": 59,
+  "name": "Waterfall.io",
+  "category": "Data, SEO and Scraping",
+  "hint": "waterfall.io (contact/company intel)"
+ },
+ "record": {
+  "subcategory": "Data Enrichment",
+  "one_liner": "Aggregates 30+ data vendors for contact/company enrichment, prospecting, and email verification.",
+  "auth_methods": [
+   "api_key"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "API keys are passed via a custom 'X-API-KEY' HTTP header; no public OAuth2 support.",
+  "access": "partner_or_sales",
+  "access_notes": "API credentials require booking a demo and coordinating with sales/engineering teams; no self-serve free tier or trial.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API with standard HTTP methods and JSON payloads. Covers Prospector, Contact/Company Search/Enrichment, Job Change Detection, Email Verification, Webhooks, and API Key Management.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "none_found",
+  "mcp_notes": "No official or community-maintained Model Context Protocol (MCP) servers found.",
+  "verdict": "needs_outreach",
+  "blocker": "partnership_or_sales",
+  "blocker_notes": "API access is entirely gated behind a sales-led onboarding process; developers cannot self-serve sign up or instantly obtain credentials.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://docs.waterfall.io/v1/introduction",
+    "quote": "complete api reference for waterfall — find and enrich contacts, prospect by title and company, verify emails, and more."
+   },
+   {
+    "claim": "general",
+    "url": "https://www.waterfall.io/",
+    "quote": "Waterfall™ aggregates 30+ different data vendors so that you can maximize contact, email and mobile number coverage without signing multiple data vendors or long-term contracts."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.waterfall.io/v1/introduction",
+    "quote": "all requests require an api key in the x-api-key header."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.waterfall.io/book-a-call",
+    "quote": "From first call to live integration in 1 day 1 book a call - today 2 talk to our team - today or tomorrow 3 run data quality / coverage tests - same day via csv, s3 or api 4 sign, integrate and go-live - as early as tomorrow"
+   },
+   {
+    "claim": "access",
+    "url": "https://www.waterfall.io/book-a-call",
+    "quote": "we offer a prepaid model, where you can top up your waterfall account, and each successful match reduces your balance."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.waterfall.io/v1/introduction",
+    "quote": "prospector async find contacts at a target com ... sync get all active job titles at a company by domain or linkedin... job change detection sync check if a contact is still at a given company... email verification sync verify an email address and return deliverability status."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.waterfall.io/v1/introduction",
+    "quote": "open api specification get api & sales support"
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/Waterfall-io/webhook-verification-kit",
+    "quote": "Each delivery carries a compact Ed25519-signed JWT in X-Webhook-Signature . The webhook body is not modified; authentication metadata lives in headers so payload shape stays the same."
+   }
+  ],
+  "confidence": 0.9
+ },
+ "notes": "### Research Notes: Waterfall.io\n\n#### 1. What the Product Does\nWaterfall.io is a B2B data intelligence SaaS and orchestration layer that aggregates data from over 30 different data vendors. It provides unified access to contact and company enrichment, prospecting by title/company, email verification, job change tracking, and mobile/phone number discovery without requiring long-term contracts or multiple vendor lock-ins.\n*   **Source:** `https://docs.waterfall.io/v1/introduction`\n    *   **Quote:** \"complete api reference for waterfall — find and enrich contacts, prospect by title and company, verify emails, and more.\"\n*   **Source:** `https://www.waterfall.io/`\n    *   **Quote:** \"Waterfall™ aggregates 30+ different data vendors so that you can maximize contact, email and mobile number coverage without signing multiple data vendors or long-term contracts.\"\n\n#### 2. Authentication Methods\nThe public API relies entirely on static API keys passed via a custom HTTP header. There is no support for public OAuth2 applications. A multi-tenant integration platform would collect and use the end-user's personal Waterfall API key.\n*   **Primary Auth:** `api_key`\n*   **Source:** `https://docs.waterfall.io/v1/introduction`\n    *   **Quote:** \"all requests require an api key in the x-api-key header.\"\n\n#### 3. Credential Acquisition & Cost\nWaterfall.io does not offer a self-serve free tier, free trial, or public developer signup console. To obtain API credentials, developers must book a demo and coordinate directly with the sales and engineering teams. The pricing model is usage-based/prepaid (or monthly invoicing for high volumes), but getting an account set up requires direct sales interaction.\n*   **Access Category:** `partner_or_sales`\n*   **Source:** `https://www.waterfall.io/book-a-call`\n    *   **Quote:** \"From first call to live integration in 1 day 1 book a call - today 2 talk to our team - today or tomorrow 3 run data quality / coverage tests - same day via csv, s3 or api 4 sign, integrate and go-live - as early as tomorrow\"\n    *   **Quote:** \"we offer a prepaid model, where you can top up your waterfall account, and each successful match reduces your balance.\"\n\n#### 4. API Style & Technical Details\n*   **API Style:** REST API (utilizes standard HTTP methods like `POST`, `GET`, `PUT`, custom headers, and JSON payloads).\n*   **Breadth:** The API surface covers Prospector (Launcher/Finder), Search Contact, Search Company, Contact Enrichment, Company Enrichment, Job Change Detection, Company Reveal, Company Titles, Email Verification, Webhooks, Account Reporting, and API Keys Management.\n    *   **Source:** `https://docs.waterfall.io/v1/introduction`\n        *   **Quote:** \"prospector async find contacts at a target com ... sync get all active job titles at a company by domain or linkedin... job change detection sync check if a contact is still at a given company... email verification sync verify an email address and return deliverability status.\"\n*   **OpenAPI Spec:** Yes, an OpenAPI specification is available directly within the developer documentation.\n    *   **Source:** `https://docs.waterfall.io/v1/introduction`\n        *   **Quote:** \"open api specification get api & sales support\"\n*   **Webhooks:** Supported. Asynchronous endpoints utilize webhooks for job callbacks. Deliveries are securely signed using an Ed25519-signed JWT.\n    *   **Source:** `https://github.com/Waterfall-io/webhook-verification-kit`\n        *   **Quote:** \"Each delivery carries a compact Ed25519-signed JWT in X-Webhook-Signature . The webhook body is not modified; authentication metadata lives in headers so payload shape stays the same.\"\n*   **Sandbox:** No official hosted sandbox or test environment is available for public self-serve use.\n\n#### 5. MCP Servers\n*   **MCP Category:** `none_found`\n*   No official or community-maintained Model Context Protocol (MCP) servers exist for Waterfall.io. *(Note: `getwaterfall.org` is a completely separate open-source/hosted LLM gateway product and should not be confused with the B2B data tool `waterfall.io`).*\n\n#### 6. Buildability Verdict\n*   **Verdict:** `needs_outreach`\n*   **Main Blocker:** API access is entirely gated behind a sales-led onboarding process (`partner_or_sales`). A developer cannot self-serve sign up or instantly obtain credentials to build or test an integration without booking a call and talking to the vendor's team.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"waterfall.io\" pricing",
+   "\"waterfall.io\" signup",
+   "\"waterfall.io\" api key",
+   "\"waterfall.io\" mcp server",
+   " \"authentication\"",
+   " \"open api specification\"",
+   "\"waterfall.io\" openapi spec url",
+   "\"waterfall.io\" webhooks",
+   " \"console\"",
+   " \"dashboard\"",
+   "\"waterfall.io\" create account"
+  ],
+  "search_sources": [
+   {
+    "title": "waterfall.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgT6Yv2yHAjEv_vbfW8BAllZB1s-rjh1f32ff5YqW8UkfV3lcRXYISqP_4a0O9WdcuN9UBCxTkgl_Ff8XeLLcc_w6z_DAbIdly4NbxvOfXkC1UC6nv8raqEWIGJJM="
+   },
+   {
+    "title": "waterfall.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2abi11UBI6BvkCyygRhQ63dKVyV8FGA8ockkI3gNVYRPjJHrlhgUbekG4NDM1rMN0AiOe3wu91IqDkN15I3a_E0yA05wB_dVX6MsWaPeHWQAO0lk="
+   },
+   {
+    "title": "waterfall.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDxmWIz80ERE0vdR35-SJ3AShnPVrTnD-74sHIyb0-eb-xxCsJXp5fxilJ1n09G6prgDnL7J69WSwr8BbcHjc6hSba5sLWryGlPUIS9zkJwMwlhvTZT7wpS63obZZ1hQ=="
+   },
+   {
+    "title": "waterfall.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJO_F3ypl-9NbZiSDnotPQJoE2M3IQHM8Qmi2SixQcjBHPUpCWdKufvLc3g60e_mdHa_8inDUl0oW_UL-OCDTM3fqeoRksNQrmfpQmDE4ssoXwoAMw35HcsYV8AmnDM8DnI-D0"
+   },
+   {
+    "title": "facebook.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGR5ETsYm1kAYXdK6O2n7LsMS6GbYiR_9XICH0Ap7tAxXtan1-1pOX_9W8JB6KfeDUxiz36-_7U7mU-PUKjv0fVZUUWswN_6wXSzeHJ9vIuNXipyhGQOdGX_w9isqhMZPVI"
+   }
+  ],
+  "tokens": 8907,
+  "retries": [
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to ",
+   "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to "
+  ],
+  "discovery": {
+   "search_queries": [
+    "Waterfall.io authentication API keys OAuth",
+    "Waterfall.io getting started quickstart API",
+    "Waterfall.io pricing API access developer program",
+    "Waterfall.io API reference index documentation",
+    "Waterfall.io MCP server official community"
+   ],
+   "candidates": 0,
+   "live_urls": [
+    "https://docs.waterfall.io/v1/introduction",
+    "https://getwaterfall.org/docs/",
+    "https://docs.waterfall.io/v1/api-keys-create",
+    "https://www.waterfall.io/",
+    "https://getwaterfall.org/pricing/",
+    "https://www.waterfall.io/book-a-call"
+   ],
+   "bad_candidates": [],
+   "pages_read": [
+    {
+     "url": "https://docs.waterfall.io/v1/introduction",
+     "status": 200,
+     "chars": 3521,
+     "readable": true
+    },
+    {
+     "url": "https://getwaterfall.org/docs/",
+     "status": 200,
+     "chars": 5638,
+     "readable": true
+    },
+    {
+     "url": "https://docs.waterfall.io/v1/api-keys-create",
+     "status": 200,
+     "chars": 11173,
+     "readable": true
+    },
+    {
+     "url": "https://www.waterfall.io/",
+     "status": 200,
+     "chars": 8330,
+     "readable": true
+    },
+    {
+     "url": "https://getwaterfall.org/pricing/",
+     "status": 200,
+     "chars": 4133,
+     "readable": true
+    },
+    {
+     "url": "https://www.waterfall.io/book-a-call",
+     "status": 200,
+     "chars": 2823,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 106.4
+ }
+}

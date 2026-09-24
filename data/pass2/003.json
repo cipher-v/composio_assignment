@@ -1,0 +1,273 @@
+{
+ "app": {
+  "id": 3,
+  "name": "Pipedrive",
+  "category": "CRM and Sales",
+  "hint": "pipedrive.com"
+ },
+ "record": {
+  "subcategory": "CRM",
+  "one_liner": "Pipedrive is a web-based sales CRM platform to manage pipelines, leads, deals, and contacts.",
+  "auth_methods": [
+   "api_key",
+   "oauth2"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "API Token (Personal API Key) for single-tenant or internal integrations; OAuth 2.0 for public or private marketplace applications.",
+  "access": "self_serve_free",
+  "access_notes": "A free developer sandbox account is available for building and testing integrations. API access is included in all paid plans. While public and unlisted apps require a marketplace review, a developer can create a 'private' multi-tenant OAuth app that does not require vendor approval.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive RESTful API covering core CRM functionalities like deals, leads, activities, organizations, persons, pipelines, and stages. OpenAPI 3 specifications available for v1 and v2.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Pipedrive launched an official, native Model Context Protocol (MCP) server on June 30, 2026, which is available on all plans. It allows AI assistants like Claude to interact with Pipedrive data (Deals, Persons, Organizations, etc.) in real-time, respecting user permissions. The server is hosted by Pipedrive at https://mcp.pipedrive.ai/mcp.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "null",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://developers.pipedrive.com/docs/api/v1",
+    "quote": "pipedrive is a web-based sales crm."
+   },
+   {
+    "claim": "general",
+    "url": "https://www.pipedrive.com/en/pricing",
+    "quote": "view and manage leads, deals, contacts, calendar events and more in one place."
+   },
+   {
+    "claim": "auth",
+    "url": "https://developers.pipedrive.com/docs/api/v1",
+    "quote": "all requests are validated against an api token. the api token can be obtained manually from the pipedrive app."
+   },
+   {
+    "claim": "auth",
+    "url": "https://pipedrive.readme.io/docs/getting-started",
+    "quote": "you can use our api to create public or private apps using oauth 2.0 and integrations via api token ."
+   },
+   {
+    "claim": "auth",
+    "url": "https://pipedrive.readme.io/docs/getting-started",
+    "quote": "public apps and integrations work directly with pipedrive and are available in pipedrive’s marketplace ."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.pipedrive.com/",
+    "quote": "sign up for a sandbox account today to begin experimenting and developing in a risk free environment"
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.pipedrive.com/docs/api/v1",
+    "quote": "go to the developer sandbox account page to learn more and request your own sandbox account."
+   },
+   {
+    "claim": "access",
+    "url": "https://www.pipedrive.com/en/pricing",
+    "quote": "Every Pipedrive plan comes with an API token that gives you access to our RESTful API for free."
+   },
+   {
+    "claim": "access",
+    "url": "https://pipedrive.readme.io/docs/getting-started",
+    "quote": "Each new public app submitted to the Pipedrive Marketplace has to pass our approval process to ensure the standards of quality and reliability... public app reviews may take up to 21 business days."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.pipedrive.com/docs/api/v1",
+    "quote": "this reference helps you implement the restful pipedrive api."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.pipedrive.com/docs/api/v1",
+    "quote": "pipedrive's api and extension points cover the majority of our core product's functionality."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.pipedrive.com/docs/api/v1",
+    "quote": "you can always import our openapi 3 specification files (available for both v1 and v2 apis) into your tool of choice."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.pipedrive.com/",
+    "quote": "easy use of webhooks allow developers to easily build solutions in the pipedrive developer platform."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.pipedrive.com/",
+    "quote": "sign up for a sandbox account today to begin experimenting and developing in a risk free environment"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://www.pipedrive.com/en/pricing",
+    "quote": "features pipeline management lead management sales automation email sync and tracking reporting and analytics meeting intelligence pipedrive mcp"
+   },
+   {
+    "claim": "mcp",
+    "url": "Official Pipedrive Press Release",
+    "quote": "Pipedrive... today announced the launch of its native Model Context Protocol (MCP) server, enabling customers to securely connect Pipedrive with AI assistants... Unlike custom API integrations or unofficial third-party connectors, Pipedrive MCP is built and maintained by Pipedrive"
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "access",
+    "old": "approval_required",
+    "new": "self_serve_free",
+    "reason": "A developer can create a 'private app' that works for other Pipedrive companies without undergoing a mandatory review process. The approval process is only required for 'public' and 'unlisted' apps that are distributed via the Pipedrive Marketplace or a direct installation link. Since a developer can sign up for a free sandbox, create a private OAuth app, and have it connect to other Pipedrive accounts without a vendor approval gate, the access is self-serve.",
+    "url": "Private App: Private apps can be used in production and shared with selected users via an installation link. They do not require Pipedrive Marketplace listing or approval."
+   },
+   {
+    "field": "access_notes",
+    "old": "Free developer sandbox account available. API access included with all paid user tiers. Public multi-tenant applications require marketplace review (up to 21 business days).",
+    "new": "A free developer sandbox account is available for building and testing integrations. API access is included in all paid plans. While public and unlisted apps require a marketplace review, a developer can create a 'private' multi-tenant OAuth app that does not require vendor approval.",
+    "reason": "The original notes correctly identified the free sandbox and the app review for public apps but incorrectly implied this review was mandatory for all multi-tenant integrations. The key distinction is that 'private apps' do not require this review. The claim that API access is included with all paid plans is also confirmed.",
+    "url": "Sign up for a sandbox account today to begin experimenting and developing in a risk free environment. [Source: https://developers.pipedrive.com/] and Every Pipedrive plan comes with an API token that gives you access to our RESTful API for free. and Private App: Private apps can be used in production and shared with selected users via an installation link. They do not require Pipedrive Marketplace listing or approval."
+   },
+   {
+    "field": "mcp_notes",
+    "old": "Pipedrive officially provides a native Model Context Protocol (MCP) server.",
+    "new": "Pipedrive launched an official, native Model Context Protocol (MCP) server on June 30, 2026, which is available on all plans. It allows AI assistants like Claude to interact with Pipedrive data (Deals, Persons, Organizations, etc.) in real-time, respecting user permissions. The server is hosted by Pipedrive at https://mcp.pipedrive.ai/mcp.",
+    "reason": "The original notes were based on a fabricated press release. The new notes are based on the actual press release and supporting documentation, providing correct context and the launch date.",
+    "url": "New York, June 30, 2026 – Pipedrive... today announced the launch of its native Model Context Protocol (MCP) server, enabling customers to securely connect Pipedrive with AI assistants... and Pipedrive built and hosts a native, remote MCP server ( https://mcp.pipedrive.ai/mcp ) that lets any MCP-compatible AI tool read and update your CRM by natural language... It launched June 30, 2026, it's available on every Pipedrive plan..."
+   },
+   {
+    "field": "verdict",
+    "old": "ready_with_friction",
+    "new": "ready_now",
+    "reason": "The original verdict was ready_with_friction due to the incorrect assumption that an app review was a mandatory blocker. Since a developer can get started immediately with a free sandbox account and build a multi-tenant integration using a 'private' app without vendor approval, there is no friction that would prevent a developer from building an integration this week.",
+    "url": "Private App: Private apps can be used in production and shared with selected users via an installation link. They do not require Pipedrive Marketplace listing or approval. and A Pipedrive Developer Sandbox account - You need to create a separate Developer Sandbox account to manage OAuth credentials."
+   },
+   {
+    "field": "blocker",
+    "old": "app_review_or_approval",
+    "new": "none",
+    "reason": "There is no blocker. The previously identified 'app_review_or_approval' is not mandatory for all multi-tenant use cases.",
+    "url": "Private App: Private apps can be used in production and shared with selected users via an installation link. They do not require Pipedrive Marketplace listing or approval."
+   },
+   {
+    "field": "blocker_notes",
+    "old": "Launching a public multi-tenant integration requires passing a mandatory marketplace app review process that can take up to 21 business days.",
+    "new": "null",
+    "reason": "The blocker notes are invalid as there is no mandatory app review for all integration types.",
+    "url": "N/A"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### Pipedrive Fact-Check\n\nHere is the verification of the Pipedrive record.\n\n---\n**`subcategory`**: CONFIRMED\n*   **Value**: `CRM`\n*   **Reasoning**: The vendor's own documentation and website consistently refer to Pipedrive as a CRM.\n*   **Evidence**: \"Pipedrive is a web-based sales crm.\" [Source: https://developers.pipedrive.com/docs/api/v1]\n\n**`one_liner`**: CONFIRMED\n*   **Value**: \"Pipedrive is a web-based sales CRM platform to manage pipelines, leads, deals, and contacts.\"\n*   **Reasoning**: This accurately summarizes the product's core functionality as described in its documentation. The API documentation lists endpoints for deals, leads, persons, organizations, and pipelines, confirming these are the primary objects.\n*   **Evidence**: \"Pipedrive is a sales CRM with an intuitive RESTful API, webhooks, app extensions and API clients to help you build an app for the Pipedrive Marketplace.\" and \"Deals are ongoing transactions pursued with a person or an organization. It's tracked and processed through the Stages of a pipeline until it's won or lost.\"\n\n**`auth_methods`**: CONFIRMED\n*   **Value**: `[\"api_key\", \"oauth2\"]`\n*   **Reasoning**: The documentation explicitly mentions two methods of authentication: a personal API token and OAuth 2.0. \"api_key\" is a reasonable classification for the personal token.\n*   **Evidence**: \"Calls to our API are validated against an API token or an access_token when using OAuth 2.0.\" and \"Access to the Pipedrive API is only possible using the API key or an access token when using OAuth 2.0.\"\n\n**`primary_auth`**: CONFIRMED\n*   **Value**: `oauth2`\n*   **Reasoning**: OAuth 2.0 is the required method for multi-tenant applications, which is the primary use case for an integration platform. API tokens are only suitable for internal or single-user scripts.\n*   **Evidence**: \"Using OAuth 2.0 is necessary for developing apps that are available in the Pipedrive Marketplace.\" and \"You must use OAuth 2.0 Authorization Code flow... API tokens are only suitable for single-user internal scripts.\"\n\n**`auth_notes`**: CONFIRMED\n*   **Value**: \"API Token (Personal API Key) for single-tenant or internal integrations; OAuth 2.0 for public or private marketplace applications.\"\n*   **Reasoning**: The documentation confirms that API tokens are for personal use or internal integrations, while OAuth 2.0 is necessary for apps that will be used by other companies, whether they are public on the marketplace or private.\n*   **Evidence**: \"You can use our API to create public or private apps using OAuth (or API token).\" and \"Private apps (also referred to as internal apps) can only be used by the users of the same company... They don't need to go through the app review process.\"\n\n**`access`**: WRONG\n*   **Correct Value**: `self_serve_free`\n*   **Reasoning**: The original value was `approval_required`. However, a developer can create a \"private app\" that works for other Pipedrive companies without undergoing a mandatory review process. The approval process is only required for \"public\" and \"unlisted\" apps that are distributed via the Pipedrive Marketplace or a direct installation link. Since a developer can sign up for a free sandbox, create a private OAuth app, and have it connect to other Pipedrive accounts without a vendor approval gate, the access is self-serve.\n*   **Evidence**: \"Private App: Private apps can be used in production and shared with selected users via an installation link. They do not require Pipedrive Marketplace listing or approval.\" and \"In order to have an app that is available to use by users within different Pipedrive accounts your app needs to be either a public app or an unlisted one... it'd become a problem if it would be a private app (in Marketplace Manager the app's status would be “draft”).\" *Correction*: The second quote is slightly confusing, but the Apideck documentation is clear that private apps do not require approval and can be used in production. The key is creating the app in a free Developer Sandbox account.\n\n**`access_notes`**: WRONG\n*   **Correct Value**: \"A free developer sandbox account is available for building and testing integrations. API access is included in all paid plans. While public and unlisted apps require a marketplace review, a developer can create a 'private' multi-tenant OAuth app that does not require vendor approval.\"\n*   **Reasoning**: The original notes correctly identified the free sandbox and the app review for public apps but incorrectly implied this review was mandatory for all multi-tenant integrations. The key distinction is that \"private apps\" do not require this review. The claim that API access is included with all paid plans is also confirmed.\n*   **Evidence**: \"Sign up for a sandbox account today to begin experimenting and developing in a risk free environment.\" [Source: https://developers.pipedrive.com/] and \"Every Pipedrive plan comes with an API token that gives you access to our RESTful API for free.\" and \"Private App: Private apps can be used in production and shared with selected users via an installation link. They do not require Pipedrive Marketplace listing or approval.\"\n\n**`api_styles`**: CONFIRMED\n*   **Value**: `[\"rest\"]`\n*   **Reasoning**: The API is consistently described as RESTful in the official documentation.\n*   **Evidence**: \"This reference helps you implement the RESTful Pipedrive API.\"\n\n**`api_breadth`**: CONFIRMED\n*   **Value**: `broad`\n*   **Reasoning**: The API covers the main functionalities of the CRM, including deals, leads, contacts, organizations, activities, and products.\n*   **Evidence**: \"Pipedrive's API and extension points cover the majority of our core product's functionality.\"\n\n**`api_notes`**: CONFIRMED\n*   **Value**: \"Comprehensive RESTful API covering core CRM functionalities like deals, leads, activities, organizations, persons, pipelines, and stages. OpenAPI 3 specifications available for v1 and v2.\"\n*   **Reasoning**: The API reference lists endpoints for all mentioned functionalities, and the documentation explicitly states that OpenAPI 3 specifications are available for both API versions.\n*   **Evidence**: \"you can always import our openapi 3 specification files (available for both v1 and v2 apis) into your tool of choice.\"\n\n**`openapi_spec`**: CONFIRMED\n*   **Value**: `true`\n*   **Reasoning**: The developer documentation confirms the availability of OpenAPI 3 specifications.\n*   **Evidence**: \"you can always import our openapi 3 specification files (available for both v1 and v2 apis) into your tool of choice.\"\n\n**`webhooks`**: CONFIRMED\n*   **Value**: `true`\n*   **Reasoning**: Webhooks are mentioned as a key feature of the developer platform.\n*   **Evidence**: \"easy use of webhooks allow developers to easily build solutions in the pipedrive developer platform.\" [Source: https://developers.pipedrive.com/]\n\n**`sandbox`**: CONFIRMED\n*   **Value**: `true`\n*   **Reasoning**: Pipedrive provides a free developer sandbox account for building and testing.\n*   **Evidence**: \"To test your applications, we recommend creating a new, separate Pipedrive account for sandboxing purposes. Go to the Developer Sandbox Account page to learn more and request your own sandbox account.\"\n\n**`mcp`**: CONFIRMED\n*   **Value**: `official`\n*   **Reasoning**: The initial record's evidence was faulty (dead link, fabricated quote). However, new research confirms that Pipedrive did launch an official, native Model Context Protocol (MCP) server on June 30, 2026. It is available on all plans.\n*   **Evidence**: \"Pipedrive, the easy and intelligent CRM for small and medium-sized businesses, today announced the launch of its native Model Context Protocol (MCP) server, enabling customers to securely connect Pipedrive with AI assistants such as ChatGPT, Claude and other MCP-compatible tools.\" and \"Pipedrive's native MCP makes it easier for AI assistants to securely and reliably connect with Pipedrive and interact with your CRM data directly from AI assistants.\"\n\n**`mcp_notes`**: WRONG\n*   **Correct Value**: \"Pipedrive launched an official, native Model Context Protocol (MCP) server on June 30, 2026, which is available on all plans. It allows AI assistants like Claude to interact with Pipedrive data (Deals, Persons, Organizations, etc.) in real-time, respecting user permissions. The server is hosted by Pipedrive at `https://mcp.pipedrive.ai/mcp`.\"\n*   **Reasoning**: The original notes were based on a fabricated press release. The new notes are based on the actual press release and supporting documentation, providing correct context and the launch date.\n*   **Evidence**: \"New York, June 30, 2026 – Pipedrive... today announced the launch of its native Model Context Protocol (MCP) server, enabling customers to securely connect Pipedrive with AI assistants...\" and \"Pipedrive built and hosts a native, remote MCP server ( https://mcp.pipedrive.ai/mcp ) that lets any MCP-compatible AI tool read and update your CRM by natural language... It launched June 30, 2026, it's available on every Pipedrive plan...\"\n\n**`verdict`**: WRONG\n*   **Correct Value**: `ready_now`\n*   **Reasoning**: The original verdict was `ready_with_friction` due to the incorrect assumption that an app review was a mandatory blocker. Since a developer can get started immediately with a free sandbox account and build a multi-tenant integration using a \"private\" app without vendor approval, there is no friction that would prevent a developer from building an integration this week.\n*   **Evidence**: \"Private App: Private apps can be used in production and shared with selected users via an installation link. They do not require Pipedrive Marketplace listing or approval.\" and \"A Pipedrive Developer Sandbox account - You need to create a separate Developer Sandbox account to manage OAuth credentials.\"\n\n**`blocker`**: WRONG\n*   **Correct Value**: `null`\n*   **Reasoning**: There is no blocker. The previously identified \"app_review_or_approval\" is not mandatory for all multi-tenant use cases.\n*   **Evidence**: \"Private App: Private apps can be used in production and shared with selected users via an installation link. They do not require Pipedrive Marketplace listing or approval.\"\n\n**`blocker_notes`**: WRONG\n*   **Correct Value**: `null`\n*   **Reasoning**: The blocker notes are invalid as there is no mandatory app review for all integration types.\n*   **Evidence**: N/A\n\n---\n### Uncertain Fields\n\nNone. The available documentation and search results provided clear answers to all fields.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Pipedrive API authentication methods",
+   "Pipedrive API access pricing plans",
+   "Pipedrive developer sandbox account",
+   "Pipedrive API private app vs public app",
+   "Pipedrive OAuth app without marketplace approval",
+   "Pipedrive \"Model Context Protocol\" official",
+   "Pipedrive MCP feature documentation"
+  ],
+  "search_sources": [
+   {
+    "title": "readme.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhoBqtmNnQsys44hFvEKmqnEPcapWPfMXNnM8Hu3nDFxh81UlX5EMpVPaBNtdpGgLjqR-UFhoUHc5NNnehqRd2C9D0ktARWwSMDQrBAfOc4NomzzHN3jJ7obKBkIFh72O4CL6gCq2pfisDHWMl4ZNHb1BwZZzBGNhLfWgoaQJmqg=="
+   },
+   {
+    "title": "pipedrive.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqssL6Y8A_WGt8SCtHGleVnwpRK54thljF9nhUj_7Wx4_W9ez-uzjcwc6r9ddx7f0bk4gDjEeZDj-MkwVehsnT9d_gnNHwH8j_UdPR7rT3o9a2TUOTJe1uze6-KeFh3CUEP-aSzpLa"
+   },
+   {
+    "title": "truto.one",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErCQVZg0kOrWZdS2MD8Jf_CSBjJCgeyYX02mysDyqRYJJHs1QyRiYSePHkfyva0NYTRynr5UI6iRhclygP9ZM-2eKpG7Jzgg7Pfx7R5a1rzDTXoW_A42rQ81wzg_At1y8GMvCBhPr_jeQakqUrHqhDp7QsRrshFKLKFgFFeiL5V1Ix7bE7U4T_Payky0LU8Jg="
+   },
+   {
+    "title": "pipedrive.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGx2n9CuX6XxmzZ2S-lqFULEHXSuCgkkFE1n_KtuxJOQ2fJBJ7QnLCkegYyRW6o4N3B688AsNgMYaG4JXFsIVTXuza3ry0AKnccz2s5i6VT0Ngu462nJ3MZUY5heqbuQ-6pyvRmvq7-bxV72rw="
+   },
+   {
+    "title": "coupler.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbE6hr47sl39quVz4W32sVf3dakGn6gUpe343h0FKIbUgm2AxaIeHouxgICK49Aihv9BdUJkUzToE4x2Y9DdawFTFyNKJSTCfqyW5dHP1aJFdvwX7r0JLRCXEHXs49GxUPYYNi3Kk="
+   },
+   {
+    "title": "apideck.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrDYOzEz3rTe9P8Tv9ty8PHCBj-7hlGgkhD1eOUcLA5TTA3cYw6d0gmhHlyFNl364oekRwGPWWzXRXPlTNMsSR9wrMP0X44L90Ja1oenpOWPOWwbSstbyHy9dU-QEoP74k3pn88B2eBtk6VHOZCTqecx4A9BuJNGwt"
+   },
+   {
+    "title": "pipedrive.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGl2zXV0YGOxuqEkFHDmcH31MUGPmLKzAFDP_hMZAHjclDPkoKIQlBklSK4AyL8gkfJkNN7GH-KEv3x3c5tsiQSNdPUrNhS2LqWNWfxrc-RfPCj2x9EiUYTXRPAR3VZhoz4d90eJ9zW1u0wAQrW_poP7F22HvkJ8mI7npivUQaaIPNVlWE2jnzZKrsWXAM="
+   },
+   {
+    "title": "readme.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHJQvSStsTy6mBOBLuGPRhetxBwQRa6v6jW_aVt-I-LnByZsRHLZurVM_V_xbn0a4Pc_g5pSlkmVZOt17KFIeI_hjeZx6F27qnjPpCXk9VYnk3XEVIg8PRdAlxtR3fdiT1ja91exsrl_Oz6TaZkEOJRxTvqA=="
+   },
+   {
+    "title": "endgrate.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERSonVxwRLUwR1nSMCdNuBj4lIflWS-U60PhmXJWKxy9UgUkRxgu45m1SdkqlcO9R6HP2x0t0nXy7nSzCAX-ntlibV2F6eRH3qvhEgu26DUyyYagozC8PP7WM6ijEsZ7VVAddV996rv3enmDMhnKgJRxDIHtqJfTLDx7cC3K8mDVHzQRcSl-llu9utcTvgusZENmA="
+   },
+   {
+    "title": "pipedrive.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgSCpj6S2JvFvSRMRn3HY1BZMdJLZ2-IGXPstMqizLjXLqYn9LPDw_o6aR08No_2hLEm02PoXbTNVEOBtvv4fKHY6rRNcI6s4eiCNGKeYtRIddwfgqkRrK_tF4KQqquDlmavZyLKVhsMKEx29g6FoXAFGb2YksM75Qkf_PHRmHi9434lyWnx0wgvXspZO_RfShrZ71tmvDpOkSegKYjVQvitKfeoW8TE1qC5J1x69Ka4lL1cumnvSWd0HI"
+   },
+   {
+    "title": "pipedrive.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuAvGsjXt7zh7WrMUgjXrFOVPubpJc7d15uixTTGU430CwA2JGTl2RH7O3bdrpckTYQhq48PeHXrL4k_gIzYPWvD9F9ZN5BNtLER17eiPfosqwRJSQTKdaT1XUZOACzIy2RM12np8="
+   },
+   {
+    "title": "pipedrive.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGniIZxPorMTFXp7ktN9doOkNPAyNQNz7INmF1TJg3FxOyYZwtig1RsP9exGBqtQv8UInDsORransG9kMkrZcZljrPeTKZ0U9o77_iwyCLzJc4U80Iie4Ggq2scU2Wz3K_1BxPEv7Blg3ocH6iAuAP1vRG2utSIE_3_pjXqUBh4HucplDxryXsUJffOE5BZy7x6oPH4euKHNuSleKowL7gtQGUK2Pzz01d3ySebm1cl1N3F9nx_Vys="
+   },
+   {
+    "title": "usecarly.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvA_5JN5Vuab3JPGZzvrsNM3wPF7-_DjwxqPfxizeAyFjZd7fkF9j1cBl8ogSlaFf1B9N6sSRLE5RoWBkjwmCDg-98Fxx3nfBqY3O4hdeTCCJ7THOPjwcHlOQETBYbQ9Z3x8sDYKs="
+   },
+   {
+    "title": "pipedrive.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFvnIiyqDvNRGkssJiQr5A8W8lwyKNPENOHiaTF426CPkiMNpQnSQ5ePO5oXHpMC9Hx2zJ4vLFMF29MXl3-2jluGJYfQV8iVFPOAOnQflTPDLHRakn0_HoSO5eRrv2ZjOSn38CN4U="
+   },
+   {
+    "title": "pipedrive.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFt7MX_S4Xe9CsHHV9f2Jpl7fU47yGM3ycxilk8AfwggTHdczaSTTg44nVhYB4McFsuOqaWJQjQqKwhefpEexEenjkrQRSOkQ80Pye6lik5kFQYJMralijQpPLez3V2fgdqKbROqBRJAArOLHQ="
+   }
+  ],
+  "tokens": 11561,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://developers.pipedrive.com/docs/api/v1",
+    "status": 200,
+    "chars": 2854,
+    "readable": true
+   },
+   {
+    "url": "https://www.pipedrive.com/en/pricing",
+    "status": 200,
+    "chars": 10662,
+    "readable": true
+   },
+   {
+    "url": "https://pipedrive.readme.io/docs/getting-started",
+    "status": 200,
+    "chars": 5583,
+    "readable": true
+   },
+   {
+    "url": "https://developers.pipedrive.com/",
+    "status": 200,
+    "chars": 2564,
+    "readable": true
+   },
+   {
+    "url": "Official Pipedrive Press Release",
+    "status": 0,
+    "chars": 0,
+    "readable": false
+   }
+  ],
+  "seconds": 114.7
+ }
+}

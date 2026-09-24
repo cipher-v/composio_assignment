@@ -1,0 +1,171 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://gumroad.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.66
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://apis.io/api/v1/providers/gumroad",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.55
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://rollout.com/integration-guides/gumroad/api-essentials",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://rollout.com/integration-guides/gumroad/api-essentials",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.69
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://gumroad.com/pricing",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://nocodeapi.com/marketplace/gumroad/",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.69
+  },
+  {
+   "blocked": true,
+   "claim": "access",
+   "url": "https://make.com/en/help/apps/commerce/gumroad",
+   "status": 403,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://rollout.com/integration-guides/gumroad/api-essentials",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.5
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://apis.io/api/v1/providers/gumroad",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.21
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://stackademic.com/blog/gumroad-api-limitations",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://stackademic.com/blog/gumroad-api-limitations",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://alexplescan.com/blog/gumroad-integration",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://rollout.com/integration-guides/gumroad/api-essentials",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.55
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://alexplescan.com/blog/gumroad-integration",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://skillselion.com/mcp/gumroad-mcp",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "oauth2": true,
+  "bearer_token": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://stackademic.com/blog/gumroad-api-limitations', 'https://stackademic.com/blog/gumroad-api-limitations', 'https://alexplescan.com/blog/gumroad-integration', 'https://alexplescan.com/blog/gumroad-integration', 'https://skillselion.com/mcp/gumroad-mcp']\n- Bot-walled / login pages our crawler could not read (verify via search): ['https://make.com/en/help/apps/commerce/gumroad']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://gumroad.com/pricing', 'https://apis.io/api/v1/providers/gumroad']\n- Non-vendor sources (prefer official docs): ['https://apis.io/api/v1/providers/gumroad', 'https://rollout.com/integration-guides/gumroad/api-essentials', 'https://rollout.com/integration-guides/gumroad/api-essentials', 'https://nocodeapi.com/marketplace/gumroad/', 'https://rollout.com/integration-guides/gumroad/api-essentials', 'https://apis.io/api/v1/providers/gumroad', 'https://rollout.com/integration-guides/gumroad/api-essentials']",
+ "metrics": {
+  "n_evidence": 15,
+  "alive_rate": 0.6,
+  "dead_rate": 0.3333333333333333,
+  "blocked_rate": 0.06666666666666667,
+  "official_rate": 0.13333333333333333,
+  "readable": 9,
+  "quote_supported_rate": 0.7777777777777778,
+  "lint_issues": 0,
+  "flag_count": 4
+ }
+}

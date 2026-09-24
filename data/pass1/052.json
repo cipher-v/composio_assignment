@@ -1,0 +1,245 @@
+{
+ "app": {
+  "id": 52,
+  "name": "SE Ranking",
+  "category": "Data, SEO and Scraping",
+  "hint": "seranking.com/api"
+ },
+ "record": {
+  "subcategory": "SEO",
+  "one_liner": "SE Ranking is an all-in-one SEO and AI search visibility platform for agencies, enterprises, and SMBs.",
+  "auth_methods": [
+   "api_key"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "API key can be passed via Authorization HTTP header (Token scheme) or as a URL query parameter (apikey or token). One key authorizes all endpoints.",
+  "access": "self_serve_trial",
+  "access_notes": "Credentials are self-serve. A 14-day free trial includes 100,000 free API credits. After the trial, a paid platform plan (Core, Growth, Enterprise) or a standalone API package is required.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API with a credit-based Data API (for raw database lookups) and a Project API (for managing rank tracking, audits, sub-accounts). Covers over 190+ operations across 21+ resources.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Official, vendor-maintained MCP server at https://seranking.com/api/integrations/mcp/ with 160+ tools for AI assistants.",
+  "verdict": "ready_with_friction",
+  "blocker": "paid_plan",
+  "blocker_notes": "Lack of a permanent free tier. While a 14-day free trial is available, ongoing access and production usage require a paid subscription or standalone API package.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://seranking.com/api/data/getting-started/",
+    "quote": "...core seo tools ai search tools other seo tools agency pack content marketing local marketing software integrations see product tour rank tracker keyword research on-page seo checker website audit competitor analysis tool backlink checker ai search toolkit ai overviews tracker ai mode tracker chatgpt tracker gemini ... perplexity tracker chatgpt ads tracker ai mode ads tracker serp tracker insights keyword grouper seo dashboard agency pack seo report generator lead generator white label content marketing tool content editor ai writer"
+   },
+   {
+    "claim": "auth",
+    "url": "https://seranking.com/api/project/getting-started/",
+    "quote": "In order to use the API, it is necessary to have an API key from the SE Ranking user account. The API key must be transferred via the token parameter for each invoked method or via the Authorization HTTP header... One key for both APIs. A single API key authorizes every endpoint across the Project API and the Data API."
+   },
+   {
+    "claim": "auth",
+    "url": "https://seranking.com/api/data/getting-started/",
+    "quote": "Method 1: Authorization header (recommended). Include an Authorization header in your request, with the value Token YOUR_API_KEY . ... Method 2: Query parameter. Alternatively, you can pass the key as a URL query parameter named apikey ."
+   },
+   {
+    "claim": "access",
+    "url": "https://help.seranking.com/hc/en-us/articles/21487397355420-API-pricing",
+    "quote": "the api package is available as a standalone product — no active se ranking subscription is required. start with a 14-day trial that includes 100,000 free api credits . paid plans include monthly data api credits for testing: core (25,000/month), growth & enterprise (100,000/month)."
+   },
+   {
+    "claim": "access",
+    "url": "https://seranking.com/api/data/getting-started/",
+    "quote": "First, you'll need to generate a unique API key from your account dashboard. 1. Navigate to the API Dashboard... click the + CREATE API KEY button"
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/seranking/openapi",
+    "quote": "OpenAPI specification for the SE Ranking API"
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/seranking/n8n-nodes-seranking",
+    "quote": "✓ 192 Operations - Comprehensive coverage across 21 resources (unified API). ✓ Pingback Webhooks - Event-driven notifications for SERP task completion."
+   },
+   {
+    "claim": "api",
+    "url": "https://plainenglish.io/blog/best-seo-api",
+    "quote": "The sandbox environment lets developers test request formats and response structures before production deployment — a small feature that saves real integration time."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://seranking.com/api/data/getting-started/",
+    "quote": "api plans api & mcp api mcp our data api pricing see product tour api keyword research api backlinks api domain analysis api mcp seo skills for claude marketing skills for claude content skills for claude"
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/seranking/seo-skills",
+    "quote": "Yes — an official, vendor-maintained server at https://seranking.com/api/integrations/mcp/. ... SE Ranking ships an official MCP server with one of the most aggressive feature counts in the SEO space, with 160+ tools spanning keyword research, rank tracking, backlinks, domain analysis, site audits, AI search visibility, SERP analysis, and project management."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://help.seranking.com/hc/en-us/articles/21487397355420-API-pricing",
+    "quote": "start with a 14-day trial that includes 100,000 free api credits . paid plans include monthly data api credits for testing..."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### Product Research Notes: SE Ranking\n\n#### 1. What the Product Does\nSE Ranking is an all-in-one SEO and AI search visibility platform designed for agencies, enterprises, and SMBs. It provides comprehensive tools for tracking keyword rankings, monitoring backlinks, performing technical website audits, conducting competitor research, and tracking brand visibility across traditional search engines and AI answer engines (such as ChatGPT, Gemini, and Perplexity). \n* **Source URL:** `https://seranking.com/api/data/getting-started/`\n* **Verbatim Quote:** \"...core seo tools ai search tools other seo tools agency pack content marketing local marketing software integrations see product tour rank tracker keyword research on-page seo checker website audit competitor analysis tool backlink checker ai search toolkit ai overviews tracker ai mode tracker chatgpt tracker gemini ... perplexity tracker chatgpt ads tracker ai mode ads tracker serp tracker insights keyword grouper seo dashboard agency pack seo report generator lead generator white label content marketing tool content editor ai writer\"\n\n#### 2. Public API Authentication Methods & Multi-Tenant Integration Choice\nThe SE Ranking public API relies on static API keys for authentication. The platform unifies its endpoints under a single key that can be passed in two ways:\n1. **Authorization Header (Recommended):** Passed using the `Token` scheme.\n2. **URL Query Parameter:** Passed via the `apikey` or `token` query parameters.\n\nFor a multi-tenant integration platform like Composio, the primary authentication method used would be `api_key` passed via the HTTP Authorization header.\n* **Source URL:** `https://seranking.com/api/project/getting-started/`\n* **Verbatim Quote:** \"In order to use the API, it is necessary to have an API key from the SE Ranking user account. The API key must be transferred via the token parameter for each invoked method or via the Authorization HTTP header... One key for both APIs. A single API key authorizes every endpoint across the Project API and the Data API.\"\n* **Source URL:** `https://seranking.com/api/data/getting-started/`\n* **Verbatim Quote:** \"Method 1: Authorization header (recommended). Include an Authorization header in your request, with the value Token YOUR_API_KEY . ... Method 2: Query parameter. Alternatively, you can pass the key as a URL query parameter named apikey .\"\n\n#### 3. Credentials Acquisition & Cost Assessment\n* **Acquisition Process:** Credentials are completely self-serve. Any developer can sign up for an account and generate unique API keys directly from the user account dashboard without requiring manual approval or sales interaction.\n* **Pricing Structure:** SE Ranking provides a time-limited 14-day free trial that includes 100,000 free API credits. After the trial expires, developers must subscribe to a paid platform plan (Core, Growth, or Enterprise) or purchase the API package as a standalone product.\n* **Access Classification:** `self_serve_trial`\n* **Source URL:** `https://help.seranking.com/hc/en-us/articles/21487397355420-API-pricing`\n* **Verbatim Quote:** \"the api package is available as a standalone product — no active se ranking subscription is required. start with a 14-day trial that includes 100,000 free api credits . paid plans include monthly data api credits for testing: core (25,000/month), growth & enterprise (100,000/month).\"\n* **Source URL:** `https://seranking.com/api/data/getting-started/`\n* **Verbatim Quote:** \"First, you'll need to generate a unique API key from your account dashboard. 1. Navigate to the API Dashboard... click the + CREATE API KEY button\"\n\n#### 4. API Style, Breadth, Specs, Webhooks, and Sandbox\n* **API Style:** REST API.\n* **Breadth:** Extremely broad. The platform splits its capabilities into a credit-based **Data API** (for raw database lookups like keyword research and backlink analysis) and a **Project API** (for managing rank tracking, audits, and sub-accounts). It covers over 190+ distinct operations across 21+ resources.\n* **OpenAPI Spec:** Yes, SE Ranking maintains an official public OpenAPI specification repository on GitHub.\n* **Webhooks:** Yes, the API supports event-driven pingback webhooks to notify external systems when asynchronous tasks (such as SERP data collection) are completed.\n* **Sandbox:** Yes, a sandbox testing environment is available to validate request formats and response structures.\n* **Source URL:** `https://github.com/seranking/openapi`\n* **Verbatim Quote:** \"OpenAPI specification for the SE Ranking API\"\n* **Source URL:** `https://github.com/seranking/n8n-nodes-seranking`\n* **Verbatim Quote:** \"✓ 192 Operations - Comprehensive coverage across 21 resources (unified API). ✓ Pingback Webhooks - Event-driven notifications for SERP task completion.\"\n* **Source URL:** `https://plainenglish.io/blog/best-seo-api`\n* **Verbatim Quote:** \"The sandbox environment lets developers test request formats and response structures before production deployment — a small feature that saves real integration time.\"\n\n#### 5. Model Context Protocol (MCP) Servers\n* **Availability:** `official`\n* **Details:** SE Ranking hosts and maintains an official, vendor-supported remote MCP server. It exposes over 160+ tools natively to AI assistants (such as Claude and ChatGPT), allowing agents to perform keyword clustering, backlink audits, and technical SEO tasks using plain-language prompts.\n* **Source URL:** `https://seranking.com/api/data/getting-started/`\n* **Verbatim Quote:** \"api plans api & mcp api mcp our data api pricing see product tour api keyword research api backlinks api domain analysis api mcp seo skills for claude marketing skills for claude content skills for claude\"\n* **Source URL:** `https://github.com/seranking/seo-skills`\n* **Verbatim Quote:** \"Yes — an official, vendor-maintained server at https://seranking.com/api/integrations/mcp/. ... SE Ranking ships an official MCP server with one of the most aggressive feature counts in the SEO space, with 160+ tools spanning keyword research, rank tracking, backlinks, domain analysis, site audits, AI search visibility, SERP analysis, and project management.\"\n\n#### 6. Buildability Verdict & Main Blocker\n* **Verdict:** `ready_with_friction`\n* **Main Blocker:** The primary hurdle is the lack of a permanent free tier. While developers can easily sign up and build an integration using the self-serve 14-day free trial, ongoing access and production usage require a paid subscription plan or a standalone paid API package.\n* **Source URL:** `https://help.seranking.com/hc/en-us/articles/21487397355420-API-pricing`\n* **Verbatim Quote:** \"start with a 14-day trial that includes 100,000 free api credits . paid plans include monthly data api credits for testing...\"",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "\"SE Ranking\" API authentication token key",
+   "\"SE Ranking\" API reference openapi swagger",
+   "\"SE Ranking\" API webhooks sandbox",
+   "\"SE Ranking\" MCP server",
+   "\"SE Ranking\"",
+   "\"SE Ranking\" API \"webhooks\"",
+   "\"SE Ranking\" API \"sandbox\"",
+   "\"SE Ranking\" \"OpenAPI\" spec url",
+   "\"SE Ranking\" API OAuth2",
+   "\"SE Ranking\" \"OAuth\" app developer"
+  ],
+  "search_sources": [
+   {
+    "title": "seranking.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzR2lwZlAP6Q2r_iNKMTkUKZw7FOIijIBj-JTiJr3DU5oniBEUpM9ltKEiu8cPLWi41z6wLgA57iAP3xF_Knd3rAiygigk_SDp_ldooMaOqpFox6NCsN7UO6GyO1LYlwno7PwCpVA="
+   },
+   {
+    "title": "insites.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5wpCz4rN-A0GkHflOfPHBXEHy9pX9rO73mDeeeqNkrLHELG9UErDTtUKemvHj0mGdB0En9aWHeni52Jr1j0RrXbOs9rx-NO1u8Jy46U_hSTIK3-WjO6SzD8L-wKPZn4neWa_kphM="
+   },
+   {
+    "title": "wordpress.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETit9Dqk6l9ymoLbrYqwspOq4glvnvQoPpMs3s77J8ZmRZTMJfLsIBLMVsHBbwYtgW1vk_a-4FRDzIzskKr17RmxOtC7W5cw9y26tTbzeZI0Qv9ffOx-bf6xdjhrMFjkDfdGyEpkk56RJNZw=="
+   },
+   {
+    "title": "seranking.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKhoG0lURSr87ReCHaelqy244a8ankv8X3YofrdVidWBytg9OQv9ZrbWhM1eBRH-HYxLT9xmy0b_Zu1LzOBCJWuCzRBkphvoAJyjZyyBDm8GLEZcD8V9KEsUPez8QSGCuPaBf3jpIpYyP4HaoHkA=="
+   },
+   {
+    "title": "seoprofy.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHL3a8dHlho8BuUAg2zu48Fco7yE5iy5MEB1XLnEdrEQt9_AIXXw33qBQuZkdPpIj-4hi-rBA7qwlO0FtNMlOQLrnJRM9xRsqHU3cFAYnD2jeyC9xoiMB8zxkx_o35pZIbG7g=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHp6qfEaaB5xpgycf6mV4Ok4w7xTzwLzjYRWKUSI--u1ttGX6OW0Xcb3Pa1gOTgwlB4cdj4HJFA7Y0V9UIB-s-Vs_znJr4AoeMjiDBajR-JBf1OT2v9hFFejs5xz2A6dYPFHda5Di5z"
+   },
+   {
+    "title": "wpbrigade.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVIIvJ61IgFphIXHYQHRT7wcwJnQcbGXfgsbEzqkuiEqvrnjZRP8nV7I8CRmURFb9wCIngafNQdkrW9dUBwdQxmaCHudx5-fCYeBO6G9wodH3h0xvLVA2R3CQ="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8UuzdtcKpt6_7hv5vRkz9bfU3V1e8KJZozmTIiiViA-mdVVnCIGrmNtNuvDqW_JavGVx4-TAaVglYaSQ6c-AzgUXzLwVmj51-NLQ4Y3s6_PDWWr-JG_UgDA1H7sgKwVOTlO71DhG64Kun1A=="
+   },
+   {
+    "title": "medium.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4RkD71T6kxP_eT0LW0EX3qIIeMR4huESPItSZbKFxLyA1LclelWchKYPP3vP_8Jbl-ymC2OdmkjVkXmazbuZjwm0P9wVf-GlArtVSnKpKhwc7d2VxNyrpt4cF5-KVlFjkz2h4dj1dMiCVUdspaw_w0Ae1p13VDEaXDoxCeMeE3-rJxAleiGghVuJ4c5tye6Nm7Kjthh9AiWBoZ0lzel753zcYzepqyL40313IGwhcla6pFb0="
+   },
+   {
+    "title": "serpstat.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMUgdfPuZTnjvQGfXY7blB19nbrKXJKBWL8-pCmm0cfGjKShmNtdus0BlQUX5ZsMdGe3H_ZvM0kQopP1T9IbVKs41g-J9RYSY5fzV2kzUUoBEX1g6PQmzAFJjsk5Hj42abV3_oDzfJvMQ6mhm7cyWMLICUaEA="
+   }
+  ],
+  "tokens": 11574,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "SE Ranking API authentication",
+    "SE Ranking API keys",
+    "SE Ranking OAuth",
+    "SE Ranking API getting started",
+    "SE Ranking API quickstart",
+    "SE Ranking API pricing",
+    "SE Ranking API access plans",
+    "SE Ranking developer program",
+    "SE Ranking API reference",
+    "SE Ranking API documentation",
+    "SE Ranking MCP server"
+   ],
+   "candidates": 7,
+   "live_urls": [
+    "https://seranking.com/api/data/getting-started/",
+    "https://seranking.com/api/project/getting-started/",
+    "https://help.seranking.com/hc/en-us/articles/22447958135068-Getting-Started-with-SE-Ranking-s-API",
+    "https://seranking.com/api/data/quickstarts/",
+    "https://seranking.com/api-pricing.html",
+    "https://help.seranking.com/hc/en-us/articles/21487397355420-API-pricing",
+    "https://seranking.com/api/how-to-get-api/",
+    "https://seranking.com/api/data/reference/"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://seranking.com/help/getting-started-with-api.html",
+     "status": 404
+    },
+    {
+     "url": "https://seranking.com/api/pricing.html",
+     "status": 0
+    },
+    {
+     "url": "https://seranking.com/api/reference.html",
+     "status": 0
+    },
+    {
+     "url": "api.seranking.com/mcp",
+     "status": 0
+    },
+    {
+     "url": "https://seranking.com/api/data/quickstart",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://seranking.com/api/data/getting-started/",
+     "status": 200,
+     "chars": 16669,
+     "readable": true
+    },
+    {
+     "url": "https://seranking.com/api/project/getting-started/",
+     "status": 200,
+     "chars": 12894,
+     "readable": true
+    },
+    {
+     "url": "https://help.seranking.com/hc/en-us/articles/22447958135068-Getting-Started-with-SE-Ranking-s-API",
+     "status": 200,
+     "chars": 5229,
+     "readable": true
+    },
+    {
+     "url": "https://seranking.com/api/data/quickstarts/",
+     "status": 200,
+     "chars": 11677,
+     "readable": true
+    },
+    {
+     "url": "https://seranking.com/api-pricing.html",
+     "status": 200,
+     "chars": 9874,
+     "readable": true
+    },
+    {
+     "url": "https://help.seranking.com/hc/en-us/articles/21487397355420-API-pricing",
+     "status": 200,
+     "chars": 2502,
+     "readable": true
+    },
+    {
+     "url": "https://seranking.com/api/how-to-get-api/",
+     "status": 200,
+     "chars": 14105,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 58.8
+ }
+}

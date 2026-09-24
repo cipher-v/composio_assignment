@@ -1,0 +1,229 @@
+{
+ "app": {
+  "id": 55,
+  "name": "Apify",
+  "category": "Data, SEO and Scraping",
+  "hint": "docs.apify.com"
+ },
+ "record": {
+  "subcategory": "Web Scraping / Automation",
+  "one_liner": "Apify is a cloud platform for web scraping, data extraction, and automation using serverless programs.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth 2.0 for secure delegated access; API tokens (bearer_token) for direct access.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up for a free account without a credit card and generate API tokens. A permanent free tier provides $5 in platform usage credits monthly.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "The API is REST-based, uses predictable resource-oriented URLs, returns JSON, and provides comprehensive control over all platform resources (Actors, tasks, datasets, schedules, webhooks).",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Official Apify MCP server hosted at mcp.apify.com, maintained on GitHub.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. Public documentation, self-serve credentials, free tier, complete OpenAPI spec, webhooks, and official MCP server make it ready.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://docs.apify.com/get-started",
+    "quote": "Apify is a cloud platform for web scraping, data extraction, and automation. everything on it revolves around actors - serverless programs that run in the cloud."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.apify.com/api",
+    "quote": "Apify supports two main authentication methods for secure API access. OAuth 2.0 - Use OAuth 2.0 to allow users to authorize your integration without sharing their credentials. API token - Apify user generates personal API token from Apify account settings page."
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.apify.com/api",
+    "quote": "Add the token to your request's Authorization header as Bearer <token>."
+   },
+   {
+    "claim": "access",
+    "url": "https://docs.apify.com/api",
+    "quote": "You can find your API token on the Integrations page in the Apify Console."
+   },
+   {
+    "claim": "access",
+    "url": "https://apify.com/pricing",
+    "quote": "Free. $0. $5 to spend in Apify Store or on your own Actors."
+   },
+   {
+    "claim": "access",
+    "url": "https://apify.com/pricing",
+    "quote": "Starter. $19. / month + pay as you go. $19 to spend in Apify Store or on your own Actors."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.apify.com/api",
+    "quote": "The Apify API is built around HTTP REST, uses predictable resource-oriented URLs, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.apify.com/api",
+    "quote": "You can download the complete OpenAPI schema of the Apify API in the YAML or JSON formats."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.apify.com/api",
+    "quote": "All aspects of the Apify platform can be controlled via a REST API, which is described in detail in the API Reference."
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.apify.com/api",
+    "quote": "Webhooks allow you to configure the Apify platform to perform an action when a certain system event occurs. For example, you can use them to start another Actor when the current run finishes or fails."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.apify.com/api",
+    "quote": "The Apify's MCP server (mcp.apify.com) allows AI applications and agents to interact with the Apify platform using Model Context Protocol (MCP)."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/apify/apify-mcp-server",
+    "quote": "The Apify MCP server is an open-source project. Report bugs, suggest features, or ask questions in the GitHub repository."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://docs.apify.com/api",
+    "quote": "The Apify API is built around HTTP REST, uses predictable resource-oriented URLs, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs."
+   }
+  ],
+  "confidence": 1.0
+ },
+ "notes": "### 1. Product Overview\nApify is a cloud-based platform designed for web scraping, data extraction, and automation. The core building blocks of the platform are \"Actors,\" which function as serverless programs running in the cloud to perform tasks like browser automation or data processing.\n\n* **Source URL:** `https://docs.apify.com/get-started`\n* **Verbatim Quote:** *\"Apify is a cloud platform for web scraping, data extraction, and automation. everything on it revolves around actors - serverless programs that run in the cloud.\"*\n\n---\n\n### 2. Authentication Methods & Multi-Tenant Integration\nApify supports two primary authentication methods for interacting with its public API:\n1. **OAuth 2.0 (`oauth2`)**: Allows external platforms to securely request delegated access to a user's account without exposing raw credentials.\n2. **API Token (`bearer_token`)**: A static personal access token generated by the user and passed via the standard HTTP `Authorization` header.\n\nFor a multi-tenant integration platform, **OAuth 2.0** is the primary choice to ensure secure, credential-free user authorization. **API Tokens** serve as a direct alternative for headless or single-tenant setups.\n\n* **Source URL:** `https://docs.apify.com/api` (via search results)\n* **Verbatim Quote:** *\"Apify supports two main authentication methods for secure API access. OAuth 2.0 - Use OAuth 2.0 to allow users to authorize your integration without sharing their credentials. API token - Apify user generates personal API token from Apify account settings page.\"*\n* **Source URL:** `https://docs.apify.com/api`\n* **Verbatim Quote:** *\"Add the token to your request's Authorization header as Bearer <token>.\"*\n\n---\n\n### 3. Credential Acquisition & Cost\n* **Access Level:** `self_serve_free`\n* **Credential Acquisition:** Any developer can sign up for an account instantly without a credit card and generate API tokens directly from the console settings.\n* **Cost:** Apify provides a permanent free tier that grants $5 in platform usage credits every billing cycle. Paid plans scale up starting at $19/month for the Starter plan.\n\n* **Source URL:** `https://docs.apify.com/api`\n* **Verbatim Quote:** *\"You can find your API token on the Integrations page in the Apify Console.\"*\n* **Source URL:** `https://apify.com/pricing`\n* **Verbatim Quote:** *\"Free. $0. $5 to spend in Apify Store or on your own Actors.\"*\n* **Source URL:** `https://apify.com/pricing`\n* **Verbatim Quote:** *\"Starter. $19. / month + pay as you go. $19 to spend in Apify Store or on your own Actors.\"*\n\n---\n\n### 4. API Style & Technical Characteristics\n* **API Style:** REST\n* **Breadth:** The API provides comprehensive coverage, allowing complete programmatic control over all platform resources (Actors, tasks, datasets, schedules, and webhooks).\n* **OpenAPI Spec:** Yes, fully available in JSON and YAML formats.\n* **Webhooks:** Yes, supported for system events (e.g., when an Actor run finishes or fails) to trigger external HTTP POST requests.\n* **Sandbox:** None found for the platform API itself. Developers use the permanent free tier credits on the live production platform for testing. *(Note: Apify offers an \"AI Code Sandbox\" Actor, but this is a product feature for executing arbitrary code, not a platform API testing sandbox).*\n\n* **Source URL:** `https://docs.apify.com/api`\n* **Verbatim Quote:** *\"The Apify API is built around HTTP REST, uses predictable resource-oriented URLs, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.\"*\n* **Source URL:** `https://docs.apify.com/api`\n* **Verbatim Quote:** *\"You can download the complete OpenAPI schema of the Apify API in the YAML or JSON formats.\"*\n* **Source URL:** `https://docs.apify.com/api` (via search results)\n* **Verbatim Quote:** *\"All aspects of the Apify platform can be controlled via a REST API, which is described in detail in the API Reference.\"*\n* **Source URL:** `https://docs.apify.com/api` (via search results)\n* **Verbatim Quote:** *\"Webhooks allow you to configure the Apify platform to perform an action when a certain system event occurs. For example, you can use them to start another Actor when the current run finishes or fails.\"*\n\n---\n\n### 5. Model Context Protocol (MCP) Servers\n* **MCP Availability:** `official`\nApify provides an official, open-source MCP server hosted at `mcp.apify.com` and maintained on GitHub. It allows AI agents to discover and execute Actors, read datasets, and search documentation natively.\n\n* **Source URL:** `https://docs.apify.com/api` (via search results)\n* **Verbatim Quote:** *\"The Apify's MCP server (mcp.apify.com) allows AI applications and agents to interact with the Apify platform using Model Context Protocol (MCP).\"*\n* **Source URL:** `https://github.com/apify/apify-mcp-server` (via search results)\n* **Verbatim Quote:** *\"The Apify MCP server is an open-source project. Report bugs, suggest features, or ask questions in the GitHub repository.\"*\n\n---\n\n### 6. Buildability Verdict\n* **Verdict:** `ready_now`\n* **Main Blocker:** None. Apify provides public documentation, self-serve credentials via a permanent free tier, a complete OpenAPI spec, webhook support, and an official hosted MCP server, making it fully ready for immediate toolkit deployment.",
+ "meta": {
+  "model": "gemini-3-flash-preview",
+  "opened_urls": [],
+  "search_queries": [
+   "apify api authentication oauth",
+   "apify free tier pricing api access",
+   "apify mcp server github",
+   "apify webhooks sandbox",
+   "\"Apify supports two main authentication methods for secure API access\"",
+   "apify oauth 2.0 documentation developer app",
+   "apify \"oauth\" client id client secret",
+   "apify \"oauth\" \"client_id\" register",
+   "apify create oauth app integration",
+   "apify \"x-apify-integration-platform\"",
+   "apify \"agentic payments\" x402",
+   "\"OAuth 2.0 - Use OAuth 2.0 to allow users to authorize your integration\"",
+   " oauth authorization",
+   "apify \"oauth\" client_id client_secret authorize",
+   "apify \"bearer_token\" vs \"api_key\"",
+   " sandbox",
+   "apify api sandbox environment"
+  ],
+  "search_sources": [
+   {
+    "title": "apify.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEdHseoya-wIuUFlaXH1bQksPxAZSvaseWBZmlnK0w8-DlsdsEKkKfw603T5o4LfWAbYtBbHjpRqCdi1jJRZ4xZOhIRSOVOWNd9M7Bd4rxMW3DzKXJXduvRa6jK9K-Ujfwy49Tp9DewKo_E9x_"
+   },
+   {
+    "title": "composio.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFx8hZcKr7P5nQx0-WLoPi_XT2A_wDPZeeHe4kL-tmbtzGwS5KNvLMe4yD0bEa9gQc0x9oQ9Bv91aW1u_H3Iw-o1LvWwBf2kmO5axPhps5mN_hbtivGj3JET5BI1DpUjQ5QCH67E6CvBw=="
+   },
+   {
+    "title": "socialcrawl.dev",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrnOoaCQE8SVhKi2cbTHkSb1QgGzMi-R9J6NKyGp9edG__nZ-NLu01CSCc0MCdnjFWWzts30g9OGvkwsWj3y0v-V8quln4xQ7REeGPQ9XjP5pvyIEb38QAh_UhhcFyg6LeFBwe3LaZTrvHSJAKzQ=="
+   },
+   {
+    "title": "truto.one",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4Tj4xB-s4AKANZuQqgpuQY5fOkQtwzBJzHJ-as2n1KlTdL0LkVbsiFmwgwkJHrKQLNgRjwhyDekW3MiBYqnYbFLoEc9mhiOijbDQ-WoCtE7KNN4bPth2V4ISpV4HbgpqVTno3HchOd9AYm_ZDNIzoq_aIXfIApH_k5L_shcxP_hiPvR4="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXiUbGR-J6TRpxWKd3ZxUMvqoRhJoQ3nNYyA__36RoOnS3w0-zJ07RJAy8wSPMLiFCrGmNel3XFFk-Tp61d72FdwneoP1pVUf2UWP6D3E_CkCI0XRaogLNnnhvTwwKt8-NjKhgVbiEiw=="
+   }
+  ],
+  "tokens": 11602,
+  "retries": [],
+  "discovery": {
+   "search_queries": [
+    "Apify authentication API keys",
+    "Apify OAuth documentation",
+    "Apify API tokens",
+    "Apify getting started",
+    "Apify quickstart guide",
+    "Apify pricing API access",
+    "Apify developer program",
+    "Apify plans API",
+    "Apify API reference",
+    "Apify API documentation index",
+    "Apify MCP server"
+   ],
+   "candidates": 6,
+   "live_urls": [
+    "https://docs.apify.com/get-started",
+    "https://apify.com/pricing",
+    "https://docs.apify.com/api",
+    "https://apify.com/partners",
+    "https://docs.apify.com/account/settings",
+    "https://use-apify.com/docs/what-is-apify/apify-pricing",
+    "https://apify.com/partners/join",
+    "https://github.com/apify/apify-mcp-server",
+    "https://www.salesforge.ai/directory/sales-tools/apify",
+    "https://scrapegraphai.com/blog/apify-pricing"
+   ],
+   "bad_candidates": [
+    {
+     "url": "https://docs.apify.com/platform/account-settings",
+     "status": 404
+    }
+   ],
+   "pages_read": [
+    {
+     "url": "https://docs.apify.com/get-started",
+     "status": 200,
+     "chars": 3087,
+     "readable": true
+    },
+    {
+     "url": "https://apify.com/pricing",
+     "status": 200,
+     "chars": 12653,
+     "readable": true
+    },
+    {
+     "url": "https://docs.apify.com/api",
+     "status": 200,
+     "chars": 3455,
+     "readable": true
+    },
+    {
+     "url": "https://apify.com/partners",
+     "status": 200,
+     "chars": 3343,
+     "readable": true
+    },
+    {
+     "url": "https://docs.apify.com/account/settings",
+     "status": 200,
+     "chars": 6071,
+     "readable": true
+    },
+    {
+     "url": "https://use-apify.com/docs/what-is-apify/apify-pricing",
+     "status": 200,
+     "chars": 18899,
+     "readable": true
+    },
+    {
+     "url": "https://apify.com/partners/join",
+     "status": 200,
+     "chars": 7403,
+     "readable": true
+    }
+   ],
+   "retries": []
+  },
+  "seconds": 75.3
+ }
+}

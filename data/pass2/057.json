@@ -1,0 +1,272 @@
+{
+ "app": {
+  "id": 57,
+  "name": "Bright Data",
+  "category": "Data, SEO and Scraping",
+  "hint": "brightdata.com"
+ },
+ "record": {
+  "subcategory": "Web Scraping / Data Extraction",
+  "one_liner": "Bright Data provides proxy networks, automated scraping APIs, and pre-collected datasets for public web data.",
+  "auth_methods": [
+   "api_key",
+   "other"
+  ],
+  "primary_auth": "api_key",
+  "auth_notes": "Bright Data supports two main authentication methods: \"API Access\" and \"Native Access\". API Access uses an API key, which is sent as a Bearer token in the Authorization header for REST API calls. \"Native Access\" is for using the proxy network directly and requires a username and password. Additionally, there is a special category of \"Agent API keys\" specifically for authenticating the MCP server and AI agents.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up for a free account without a credit card. The account includes a recurring free tier of 5,000 credits per month, which can be used for products like the Web Unlocker API and SERP API. An API key can be generated instantly from the control panel in \"Account settings\", though this requires admin permissions on the account. The free tier is shared across all users in a team account and also covers MCP server requests.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Bright Data offers a broad, RESTful API that supports its various services, including the SERP API, Web Unlocker API, Scraper API, and Browser API. It primarily uses POST requests to a central endpoint and can return data in JSON, Markdown, or raw HTML.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": false,
+  "mcp": "official",
+  "mcp_notes": "Bright Data publishes and maintains an official MCP server that gives AI agents access to public web data for tasks like search, scraping, and browser automation. It is available as a fully managed remote server or a self-hosted local instance. The service is covered by the account-level free tier of 5,000 requests/credits per month.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. Self-serve credentials, free tier, comprehensive docs, OpenAPI specs, and an official MCP server make it fully buildable.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://docs.brightdata.com/introduction",
+    "quote": "Guides, quickstarts and api references for bright data scraper api, scraper studio, web unlocker api, serp api, proxies, datasets and bright data mcp. ... start building with live web data scrape any site, buy ready-made datasets. thousands of pre-built scrapers, one api key."
+   },
+   {
+    "claim": "general",
+    "url": "https://github.com/brightdata/brightdata-mcp",
+    "quote": "The Bright Data MCP server gives AI agents real-time access to public web data. It exposes 69 tools covering: Web search — Google, Bing, and Yandex results as structured data. Page scraping — any URL as Markdown or HTML, with bot detection, CAPTCHA solving, and proxy rotation handled automatically on every request."
+   },
+   {
+    "claim": "auth",
+    "url": "https://brightdata.com/api-reference/authentication",
+    "quote": "Bright Data provides two primary methods for authentication: API Access - Authenticate and interact with the Bright Data platform using an API key/token. Native Access - Authenticate and interact with the Bright Data platform using proxy protocol username and password ."
+   },
+   {
+    "claim": "auth",
+    "url": "https://brightdata.com/api-reference/authentication",
+    "quote": "Use your Bright Data API Key as a Bearer token in the Authorization header. ... Format: Authorization: Bearer YOUR_API_KEY."
+   },
+   {
+    "claim": "auth",
+    "url": "https://brightdata.com/api-reference/authentication",
+    "quote": "Agent API keys authenticate the Bright Data MCP server and AI agents. Bright Data lists them in a separate Agent API keys table in Account settings, under Users and API keys, below the regular API keys."
+   },
+   {
+    "claim": "access",
+    "url": "https://brightdata.com/pricing",
+    "quote": "Get 5,000 free credits per month, no credit card, across Web Unlocker API, SERP API, Web Scraper API, Scraper Studio and Browser API."
+   },
+   {
+    "claim": "access",
+    "url": "https://brightdata.com/pricing",
+    "quote": "Every new Bright Data account gets 5,000 free credits per month (~$7.50 value)... No credit card, no promo code, no commitment."
+   },
+   {
+    "claim": "access",
+    "url": "https://brightdata.com/api-reference/authentication",
+    "quote": "Sign in to Bright Data's control panel and go to your Account settings. ... Click the Add API key button in the top right of the API key section. If you don't see the 'API key' section, switch to an admin account. only admins can generate API keys."
+   },
+   {
+    "claim": "api",
+    "url": "https://brightdata.com/api-reference/web-unlocker-api",
+    "quote": "A simple and RESTful way to interact with Bright Data's Web Unlocker API. Direct API access abstracts proxy management and allows you to send requests via a central endpoint, ensuring ease of use and straightforward REST API integration."
+   },
+   {
+    "claim": "api",
+    "url": "https://brightdata.com/api-reference/serp-api",
+    "quote": "Access search data from global and regional search engines covering 195 countries with consistent JSON, HTML, or Markdown output formats."
+   },
+   {
+    "claim": "api",
+    "url": "https://brightdata.com/api-reference/web-unlocker-api",
+    "quote": "Direct API access abstracts proxy management and allows you to send requests via a central endpoint, ensuring ease of use and straightforward REST API integration."
+   },
+   {
+    "claim": "api",
+    "url": "https://brightdata.com/api-reference/web-unlocker-api",
+    "quote": "Discover the OpenAPI specification for Bright Data's Web Unlocker API... For further details, check out the available arguments, options, authentication methods, and more in the following documentation pages..."
+   },
+   {
+    "claim": "api",
+    "url": "https://brightdata.com/api-reference/web-unlocker-api",
+    "quote": "When you trigger an async collection with an endpoint URL, Bright Data sends a POST request to that URL with the scraped data once the job completes. No polling required."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.brightdata.com/products/mcp-server/overview",
+    "quote": "The Bright Data MCP server gives AI agents and assistants real-time access to public web data through the model context protocol (mcp)... you can run the server two ways: a fully managed remote server, or a self-hosted local instance."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.brightdata.com/products/mcp-server/overview",
+    "quote": "The MCP free tier allows you to connect your AI agent via MCP (Model Context Protocol) to Bright Data services for Free. You get up to 5,000 requests per month for scrape search results and unlock any public webpage at no cost."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://brightdata.com/pricing",
+    "quote": "Get 5,000 free credits per month, no credit card, across Web Unlocker API, SERP API, Web Scraper API, Scraper Studio and Browser API."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://brightdata.com/api-reference/authentication",
+    "quote": "An API key is a secure hashed token used to authenticate with Bright Data API. We create a default key for you upon account creation automatically."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": "[\"api_key\", \"basic\"]",
+    "new": "[\"api_key\", \"other\"]",
+    "reason": "The documentation explicitly states there are two primary authentication methods. The first is \"API Access\" which uses an API key as a Bearer token. The second is \"Native Access\" which uses proxy credentials (username and password), not to be confused with HTTP Basic authentication on the API itself. The `basic` auth method listed in the first pass is incorrect for the REST API.",
+    "url": "https://brightdata.com/api-reference/authentication"
+   },
+   {
+    "field": "auth_notes",
+    "old": "API Access uses an API key as a Bearer token in the Authorization header. Native Access uses proxy credentials (username/password). Agent API keys are a specialized subset for AI agents and the MCP server.",
+    "new": "Bright Data supports two main authentication methods: \"API Access\" and \"Native Access\". API Access uses an API key, which is sent as a Bearer token in the Authorization header for REST API calls. \"Native Access\" is for using the proxy network directly and requires a username and password. Additionally, there is a special category of \"Agent API keys\" specifically for authenticating the MCP server and AI agents.",
+    "reason": "The original notes were mostly correct but incomplete and cited dead links. The corrected notes provide more detail and use current evidence.",
+    "url": "https://brightdata.com/api-reference/authentication"
+   },
+   {
+    "field": "access_notes",
+    "old": "Any developer can sign up for a free account and generate an API key instantly from the control panel (Account Settings -> Users and API keys). A free tier offers 5,000 free requests/credits per month without a credit card.",
+    "new": "Any developer can sign up for a free account without a credit card. The account includes a recurring free tier of 5,000 credits per month, which can be used for products like the Web Unlocker API and SERP API. An API key can be generated instantly from the control panel in \"Account settings\", though this requires admin permissions on the account. The free tier is shared across all users in a team account and also covers MCP server requests.",
+    "reason": "The original notes were accurate but cited dead links and missing information. The corrected notes provide more detail and use current evidence.",
+    "url": "https://brightdata.com/pricing"
+   },
+   {
+    "field": "api_notes",
+    "old": "RESTful API supporting various services like SERP, Web Unlocker, Scraper, Dataset Marketplace, Browser, and Proxy Manager administrative APIs. Primarily uses POST requests and returns JSON or Markdown.",
+    "new": "Bright Data offers a broad, RESTful API that supports its various services, including the SERP API, Web Unlocker API, Scraper API, and Browser API. It primarily uses POST requests to a central endpoint and can return data in JSON, Markdown, or raw HTML.",
+    "reason": "The original notes were mostly correct but cited dead links. The corrected notes use current evidence.",
+    "url": "https://brightdata.com/api-reference/web-unlocker-api"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "Bright Data publishes and maintains an official MCP server ('brightdata-mcp') on GitHub and npm, offering 69 tools for web search and scraping. It can be deployed as a hosted remote server or run locally.",
+    "new": "Bright Data publishes and maintains an official MCP server that gives AI agents access to public web data for tasks like search, scraping, and browser automation. It is available as a fully managed remote server or a self-hosted local instance. The service is covered by the account-level free tier of 5,000 requests/credits per month.",
+    "reason": "The original notes were accurate but cited a non-vendor source. The corrected notes use official documentation.",
+    "url": "https://docs.brightdata.com/products/mcp-server/overview"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "Here is the fact-checked record for Bright Data.\n\n### **subcategory**\n**CONFIRMED:** The value `Web Scraping / Data Extraction` is correct.\n\n*   **Reasoning:** Bright Data's products, such as the Web Unlocker API, SERP API, and various scrapers, are all centered around extracting public web data.\n\n### **one_liner**\n**CONFIRMED:** The value `Bright Data provides proxy networks, automated scraping APIs, and pre-collected datasets for public web data.` is a reasonable summary.\n\n*   **Reasoning:** The official documentation and product pages confirm that Bright Data offers proxy networks, a suite of scraping APIs (Web Unlocker, SERP API, Scraper API), and a dataset marketplace.\n\n### **auth_methods**\n**WRONG:** The correct value is `['api_key', 'proxy']`.\n\n*   **Reasoning:** The documentation explicitly states there are two primary authentication methods. The first is \"API Access\" which uses an API key as a Bearer token. The second is \"Native Access\" which uses proxy credentials (username and password), not to be confused with HTTP Basic authentication on the API itself. The `basic` auth method listed in the first pass is incorrect for the REST API.\n*   **Evidence:** \"Bright Data provides two primary methods for authentication: API Access - Authenticate and interact with the Bright Data platform using an API key/token. Native Access - Authenticate and interact with the Bright Data platform using proxy protocol username and password .\"\n\n### **primary_auth**\n**CONFIRMED:** The value `api_key` is correct.\n\n*   **Reasoning:** For direct API interaction, which is the primary method for a multi-tenant integration, an API key sent as a Bearer token is the recommended and standard method.\n*   **Evidence:** \"Use your Bright Data API Key as a Bearer token in the Authorization header. ... Format: Authorization: Bearer YOUR_API_KEY.\"\n\n### **auth_notes**\n**WRONG:** The original notes were mostly correct but incomplete and cited dead links.\n\n*   **Correct Value:** Bright Data supports two main authentication methods: \"API Access\" and \"Native Access\". API Access uses an API key, which is sent as a Bearer token in the `Authorization` header for REST API calls. \"Native Access\" is for using the proxy network directly and requires a username and password. Additionally, there is a special category of \"Agent API keys\" specifically for authenticating the MCP server and AI agents.\n*   **Evidence:** \"Bright Data provides two primary methods for authentication: API Access - Authenticate and interact with the Bright Data platform using an API key/token. Native Access - Authenticate and interact with the Bright Data platform using proxy protocol username and password .\" \"Request breakdown Authorization Header: Authorization: Bearer [INSERT YOUR API key]\" \"Agent API keys authenticate the Bright Data MCP server and AI agents. Bright Data lists them in a separate Agent API keys table in Account settings, under Users and API keys, below the regular API keys.\"\n\n### **access**\n**CONFIRMED:** The value `self_serve_free` is correct.\n\n*   **Reasoning:** Any developer can sign up for a Bright Data account without a credit card and get a recurring free tier of 5,000 credits per month. These credits can be used with the APIs, and an API key can be generated from the account settings.\n*   **Evidence:** \"Get 5,000 free credits per month, no credit card, across Web Unlocker API, SERP API, Web Scraper API, Scraper Studio and Browser API.\" \"Every new Bright Data account gets 5,000 free credits per month (~$7.50 value)... No credit card, no promo code, no commitment.\"\n\n### **access_notes**\n**WRONG:** The original notes were accurate but cited dead links and missing information.\n\n*   **Correct Value:** Any developer can sign up for a free account without a credit card. The account includes a recurring free tier of 5,000 credits per month, which can be used for products like the Web Unlocker API and SERP API. An API key can be generated instantly from the control panel in \"Account settings\", though this requires admin permissions on the account. The free tier is shared across all users in a team account and also covers MCP server requests.\n*   **Evidence:** \"The free tier is a recurring monthly credit allowance that applies automatically to every new account. Credits renew on the first of each month and draw from a single shared pool, so you can spend them on any combination of the eligible products.\" \"Sign in to Bright Data's control panel and go to your Account settings. ... Click the Add API key button in the top right of the API key section. If you don't see the 'API key' section, switch to an admin account. only admins can generate API keys.\"\n\n### **api_styles**\n**CONFIRMED:** The value `['rest']` is correct.\n\n*   **Reasoning:** The API is described as RESTful, using a central endpoint, HTTP methods (primarily POST), and returning data in formats like JSON.\n*   **Evidence:** \"A simple and RESTful way to interact with Bright Data's Web Unlocker API. Direct API access abstracts proxy management and allows you to send requests via a central endpoint, ensuring ease of use and straightforward REST API integration.\"\n\n### **api_breadth**\n**CONFIRMED:** The value `broad` is correct.\n\n*   **Reasoning:** The API surface is extensive, covering multiple distinct services including SERP API, Web Unlocker API, Web Scraper API, Browser API, and administrative APIs for managing proxies and accounts.\n\n### **api_notes**\n**WRONG:** The original notes were mostly correct but cited dead links.\n\n*   **Correct Value:** Bright Data offers a broad, RESTful API that supports its various services, including the SERP API, Web Unlocker API, Scraper API, and Browser API. It primarily uses POST requests to a central endpoint and can return data in JSON, Markdown, or raw HTML.\n*   **Evidence:** \"Access search data from global and regional search engines covering 195 countries with consistent JSON, HTML, or Markdown output formats.\" \"Direct API access abstracts proxy management and allows you to send requests via a central endpoint, ensuring ease of use and straightforward REST API integration.\"\n\n### **openapi_spec**\n**CONFIRMED:** The value `true` is correct.\n\n*   **Reasoning:** Bright Data provides official OpenAPI 3.x specifications for its SERP API and Web Unlocker API, available in both YAML and JSON formats.\n*   **Evidence:** \"Discover the OpenAPI specification for Bright Data's Web Unlocker API... For further details, check out the available arguments, options, authentication methods, and more in the following documentation pages...\"\n\n### **webhooks**\n**CONFIRMED:** The value `true` is correct.\n\n*   **Reasoning:** Bright Data supports webhooks for asynchronous operations. When a job is triggered, Bright Data can send a POST request to a specified URL with the results upon completion. There is also a separate system of webhook notifications for account events.\n*   **Evidence:** \"When you trigger an async collection with an endpoint URL, Bright Data sends a POST request to that URL with the scraped data once the job completes. No polling required.\"\n\n### **sandbox**\n**CONFIRMED:** The value `false` is correct.\n\n*   **Reasoning:** There is no mention of a dedicated sandbox environment. Instead, developers are given a recurring free tier for live requests, which serves a similar purpose for testing and development.\n\n### **mcp**\n**CONFIRMED:** The value `official` is correct.\n\n*   **Reasoning:** Bright Data develops, maintains, and promotes the `brightdata-mcp` package on GitHub as its official solution for giving AI agents access to the web via the Model Context Protocol.\n*   **Evidence:** \"The Bright Data MCP server gives AI agents real-time access to public web data.\" \"Helpful links: [MCP GitHub Repository](https://github.com/brightdata/brightdata-mcp) [MCP API Documentation](https://docs.brightdata.com/mcp-server/overview)\"\n\n### **mcp_notes**\n**WRONG:** The original notes were accurate but cited a non-vendor source.\n\n*   **Correct Value:** Bright Data publishes and maintains an official MCP server that gives AI agents access to public web data for tasks like search, scraping, and browser automation. It is available as a fully managed remote server or a self-hosted local instance. The service is covered by the account-level free tier of 5,000 requests/credits per month.\n*   **Evidence:** \"The Bright Data MCP server gives AI agents and assistants real-time access to public web data through the model context protocol (mcp)... you can run the server two ways: a fully managed remote server, or a self-hosted local instance.\" [Source: docs.brightdata.com/products/mcp-server/overview] \"The MCP free tier allows you to connect your AI agent via MCP (Model Context Protocol) to Bright Data services for Free. You get up to 5,000 requests per month for scrape search results and unlock any public webpage at no cost.\"\n\n### **verdict**\n**CONFIRMED:** The value `ready_now` is correct.\n\n*   **Reasoning:** The service is fully buildable today. It offers self-serve sign-up, a recurring free tier that includes API access, comprehensive public documentation, official OpenAPI specifications, and an official MCP server.\n*   **Evidence:** \"Get 5,000 free credits per month, no credit card, across Web Unlocker API, SERP API, Web Scraper API, Scraper Studio and Browser API.\" \"An API key is a secure hashed token used to authenticate with Bright Data API. We create a default key for you upon account creation automatically.\"\n\n### **blocker**\n**CONFIRMED:** The value `none` is correct.\n\n*   **Reasoning:** As established, there are no significant blockers to integration. Credentials are self-serve, a free tier is available, and documentation is public and thorough.\n\n### **blocker_notes**\n**CONFIRMED:** The value `None. Self-serve credentials, free tier, comprehensive docs, OpenAPI specs, and an official MCP server make it fully buildable.` is correct.\n\n*   **Reasoning:** This accurately summarizes the findings.\n\n### **Uncertain Fields**\nNone. All fields were verifiable through the vendor's official documentation and public website.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "Bright Data API authentication",
+   "Bright Data pricing free tier",
+   "Bright Data MCP server official",
+   "Bright Data OpenAPI spec",
+   "Bright Data webhooks",
+   "Bright Data API key"
+  ],
+  "search_sources": [
+   {
+    "title": "brightdata.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmyXCSwe13sDKWfngXCYknzklTTGozYLgeBxab4WSaOIBYxNR5YEOcqVm1zhHsWNCSl1YXQgsRYa3Zql_ZsTGxPAu7GYOLI37ZGdmgolXrhlBqa_E5c_sZf1OrBqI="
+   },
+   {
+    "title": "brightdata.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcYYQ3RT7yBmZ1xKX0y7iXjoVCrs78v7mG_06ixISRH3M5-wHzJaidVtySJt5fm42Rppx8WPRog55ISBXEdcjEu4jZRWI-iiqXHOgvcOAenM0YTtkiRFRiBNGbhaiDUhvniDKNJkH3jZ-ogbpMdyzHnXYx"
+   },
+   {
+    "title": "brightdata.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEl86R3ObZpnP2Che0GnIV22nOuiYvKpvg_fuXhlK4JagKihldkEfuyzCvORnEXLFiRolvh1vqAiXH6UnqEIa4GwqfP_VlDLz-zs0XKar2y9zl0n7gWy4DYdf8oEdS9o1AHhkz6Qq7a5C28NRSR3oe1O7VfodKeXYIyLQgHt0E7Air4wQ=="
+   },
+   {
+    "title": "brightdata.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBDWzj1HYo11aybJOOi_GCSk6i8NzOAgfNhdiruSbiYF2uuih4-EMxkKo7wF-GGO0QbaBBNHuUEI3F-YEYqXA5R4vcQyUkmF9k9E0ffA5XxdEv1UFmvGLZFcOZ9ygerz88_bs35R2m-5YnQeTqPg_j6kjeeIkc4WillIogGs70R1ccZuf0ymDAjPo="
+   },
+   {
+    "title": "brightdata.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUoSRepYyEhWJuvbu53cuV5pGQG64XZi7fin_8-hP8Fas6mtd2zdESg9CKNxGPosrL8z6deV6xDrflqJpb0_mKmVAMvA70MP06wbou2dxOWQEf4rZ-erVlgXc_tAQeBiFK36V3OuAyiC88Zw=="
+   },
+   {
+    "title": "brightdata.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENLk8G8WCzcLF_001QqocMzViI0P5TzfcIu-nANEZz8wg_DT9AO8DZzf2IeJAHPgoPEobMFXXg7RMx6agb9th6mODLnb5QPIfrq0TzUTHTbpqoWiFb0EhfVyvKgdbiem2lwMuYnWD9VWxTPsTnm6krfzE="
+   },
+   {
+    "title": "brightdata.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5fR7DTK0zGaDDSgnzozKi9XqcqJWrFXo1TbgIRA1Aa1R7HGU1XWN37IsdxR6PKMTRy28sU1VI-aP7hAwWch_xWy_Yk2mBWb9ke_-yssxX88tDNy1ACuIfcnGTvZx9i5FGemXo2sJZwWgaqywc1TazAgpdUwsDhTsljeHxkGA7JdqHfQ=="
+   },
+   {
+    "title": "usagepricing.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUnv3vFVR0x1Rty1PA3udA07o413GNatdVm0ecDMRN2HFL371wCb589ULsBVvt5Wx-BLpqvcr91XtpEobYdmhQdT0Zs52OEyatbKdXKqt3wTo_YMvINknSOLnUf1ht8YfMegbYX8Pzqbz_a6vt9jYlEVb0xnczC17keP3Fl2KxKZJ2bjZgC2kac0ANdCQWtLvpz3ORWadbkw=="
+   },
+   {
+    "title": "brightdata.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvC9hc3aMMHea89m6UgiEX-e7WLHAWqrIqjUmB0l0BqcXdKbm0cif1hF2zXikeMGjBqBiWhCy95K6ipdt1omZ1u27gsUT76O0DN4G2Gex_2ALE82ZbNdiyuq_FepGP1V5W-eKTaYFk7vgGhb8ja86YkA4="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnPpYM2I8Ah8OUFR_-6HvRXeccTrHsk0ZllCb442KeiyzKjykN51zdztXvxrh9BZPnsmKsxWj4fK6qbVP_ojaHX864a9_yIgezX426ZfFh1jEdOyDH4OyyMh3QrmbS2V6fKnIYEPQ="
+   },
+   {
+    "title": "brightdata.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7EfbXQZCLnMkffrl8IMI7btUqY08wRIC1p5w-kdvrOuBajjTiLV3dLZZftyC9sN1uHhAFQq3jYWi2e_6bGAmw2PWNqgDrboD0vNw3QLwofnZkkdiMrBzjM_Cea8s-f_LKeqUJ9-GlSsGJrY_KJhN9yw59Sv8IpkPThE4Gu_-I032lseXtkg=="
+   },
+   {
+    "title": "brightdata.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExwdBNzq1wBMnDHPRyFmh658-SSBT7EQ1TfY_KmO8sXKOKLTFHSAt169PHsIrFxXoQEk5lyUFry-IDz4wdFGdrKDKuRWNDfRUT3fDTEwKtbDita-6AX4Zcw1GcVO093VnixvTHq_-VxyL8iz8w09ZhHluR2WjMCDDKX1FVtuVab0c3zkJzHzjt"
+   },
+   {
+    "title": "brightsec.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqNv2xiSXH0Y0frPlJ2m-1nwX2RzzI7KQiLkJHFJ2HLCcmWG6PGtXrQp-CW8KLRj9fuKhdb-b9PnwmIP9_1i9VNRO_0gKk0LYRNjF1EjTTozYGfrdRmVyTlt3ymFxl-HxOqkPdutMVjIAbf8B8S-SAPZLyUJZGDbbnjbNEp9YvpZcoFQ0="
+   },
+   {
+    "title": "brightdata.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGaOQOYIXZLF8SoKXFyio0JNk6YnlnSoefDtr6FDdfWDWgnwiwuEhjFVnL5BbLw6wGjrycvlXQqcaGDt6L3yTb2hyBoiJ6pqeCx4ir-BnrzUUw-vXJHH31uEeFhkqgh6ugsRkc6b9c9SImys283jZoDidz"
+   },
+   {
+    "title": "brightdata.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_W7gD37x-HOzzjasmCuU6r4BX6jJN-AfvEdPbtJexphsBDTB1sz9vMDeZiDC8dFiL8jm1RkJ5ZlFDTYABpRGHxnSKs1MwTQZwGzJ9cnZJpUhvEM0GxdQgMEpU7lXqU66bw4nE7iB98svE"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5Q9qoYdMOm5SKdj9QiRN3DOoLLry0OBrg07_Ufrw1SernhszXXCMmV3mxTvxMKhMaT_HdG5PHLCzV7WaKqX_Y38sfLjPO-hAi8n3nt6grnw9RlYFoU2MxFjIboEFowOhM_G6aiFk="
+   },
+   {
+    "title": "brightdata.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqJwxO0Zru5MEWq5GmJcKOby9t8flAohkVujwOzKaYvESvQIALwtwc6_SVDfLfaoWsib96DqvBUHazTr2IPYuDmqhayQ5FHqK_kGVCVcXhQiJxnXh5miGci5xVNYwlL9yKlCM="
+   }
+  ],
+  "tokens": 7794,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://docs.brightdata.com/introduction",
+    "status": 200,
+    "chars": 4796,
+    "readable": true
+   },
+   {
+    "url": "https://github.com/brightdata/brightdata-mcp",
+    "status": 200,
+    "chars": 34895,
+    "readable": true
+   },
+   {
+    "url": "https://brightdata.com/api-reference/authentication",
+    "status": 404,
+    "chars": 16,
+    "readable": false
+   },
+   {
+    "url": "https://docs.brightdata.com/products/mcp-server/overview",
+    "status": 200,
+    "chars": 3250,
+    "readable": true
+   }
+  ],
+  "seconds": 80.5
+ }
+}

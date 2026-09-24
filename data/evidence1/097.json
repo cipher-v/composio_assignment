@@ -1,0 +1,150 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://docs.higgsfield.ai/docs",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.67
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.39
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://docs.higgsfield.ai/docs",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.25
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYHc1C619B2jG-mOsGk5n8fcBZRxQhzbtSsEuccoesI73MI_IdnLVV1xnsG1I6Ryq8r2Sd8n2xTNRveu55qd4Aj4VktF78NG8RoSiDSbxNxRzMoyuh5qydNIZVTh_9HFMfhAHI7luj_KpfRVUghwaMbWlf0mbJmZJr-XG2qRJNRlSyQ0zT5QCZexOQ62JFv1nS4VFIu26v",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.7
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.67
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHg5xksIkYZiGa4kqmKCz_ZjsE46LCVy1nBxt8yieu8kO5S7HFdjlveEUIJqZqfOIyklHDMD_NkDRU9GVDk5RNKTnLSyEKB1wesknDsJqBvw-4fVjPd18kuniDZ-ubB8RXxJB8fiFHY4coUW6ZUBHuifH9EP5ISgH_WLKlDGphAaCfHOerLih210vNwKrn46guRowiFkvQrfWHodoUSk1emAv-r8q4IQQwwWuFfwpK94baAuovS0QKjSESWPrt_VhVHxkJLNg==",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.higgsfield.ai/docs/api-reference/overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.56
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.higgsfield.ai/docs/api-reference/overview",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://docs.higgsfield.ai/docs",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.81
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDh1Hzrzj8Bjm9eq16mek-iFUPGG25Jv64-TuReiiZBVgfAeHVQHt7-f1DNIPlthAlpCBAYeFh_ryx_IKmM7_i4ay9OuETYjr0AhF2Y-miynoYo5rdgZ4l62KxNIeJcy8oGA_QogdM8kvVWSy60vetbDV57KdwDXWOMta_SxoqefNr6KXXW5gLUOBL0pbBPkCVG4OuY5E=",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.67
+  }
+ ],
+ "auth_support": {
+  "api_key": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYHc1C619B2jG-mOsGk5n8fcBZRxQhzbtSsEuccoesI73MI_IdnLVV1xnsG1I6Ryq8r2Sd8n2xTNRveu55qd4Aj4VktF78NG8RoSiDSbxNxRzMoyuh5qydNIZVTh_9HFMfhAHI7luj_KpfRVUghwaMbWlf0mbJmZJr-XG2qRJNRlSyQ0zT5QCZexOQ62JFv1nS4VFIu26v', 'https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDh1Hzrzj8Bjm9eq16mek-iFUPGG25Jv64-TuReiiZBVgfAeHVQHt7-f1DNIPlthAlpCBAYeFh_ryx_IKmM7_i4ay9OuETYjr0AhF2Y-miynoYo5rdgZ4l62KxNIeJcy8oGA_QogdM8kvVWSy60vetbDV57KdwDXWOMta_SxoqefNr6KXXW5gLUOBL0pbBPkCVG4OuY5E=']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api', 'https://docs.higgsfield.ai/docs', 'https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHg5xksIkYZiGa4kqmKCz_ZjsE46LCVy1nBxt8yieu8kO5S7HFdjlveEUIJqZqfOIyklHDMD_NkDRU9GVDk5RNKTnLSyEKB1wesknDsJqBvw-4fVjPd18kuniDZ-ubB8RXxJB8fiFHY4coUW6ZUBHuifH9EP5ISgH_WLKlDGphAaCfHOerLih210vNwKrn46guRowiFkvQrfWHodoUSk1emAv-r8q4IQQwwWuFfwpK94baAuovS0QKjSESWPrt_VhVHxkJLNg==']\n- Non-vendor sources (prefer official docs): ['https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHg5xksIkYZiGa4kqmKCz_ZjsE46LCVy1nBxt8yieu8kO5S7HFdjlveEUIJqZqfOIyklHDMD_NkDRU9GVDk5RNKTnLSyEKB1wesknDsJqBvw-4fVjPd18kuniDZ-ubB8RXxJB8fiFHY4coUW6ZUBHuifH9EP5ISgH_WLKlDGphAaCfHOerLih210vNwKrn46guRowiFkvQrfWHodoUSk1emAv-r8q4IQQwwWuFfwpK94baAuovS0QKjSESWPrt_VhVHxkJLNg==']",
+ "metrics": {
+  "n_evidence": 13,
+  "alive_rate": 0.8461538461538461,
+  "dead_rate": 0.15384615384615385,
+  "blocked_rate": 0.0,
+  "official_rate": 0.7692307692307693,
+  "readable": 11,
+  "quote_supported_rate": 0.7272727272727273,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

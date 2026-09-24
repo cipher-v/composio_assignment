@@ -1,0 +1,358 @@
+{
+ "app": {
+  "id": 61,
+  "name": "GitHub",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "docs.github.com/rest"
+ },
+ "record": {
+  "subcategory": "Developer Platform / Version Control",
+  "one_liner": "Cloud-based developer platform for Git version control, code collaboration, and project management.",
+  "auth_methods": [
+   "bearer_token",
+   "oauth2",
+   "jwt"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "GitHub Apps (OAuth2) are recommended for multi-tenant integrations, offering granular permissions and short-lived tokens. Personal Access Tokens (bearer_token) for individual use. Basic auth for specific administrative endpoints.",
+  "access": "self_serve_free",
+  "access_notes": "Any developer can sign up for a free GitHub account and immediately generate Personal Access Tokens or register GitHub Apps/OAuth Apps via 'Developer Settings'. No approval or sales contact required.",
+  "api_styles": [
+   "rest",
+   "graphql"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Comprehensive REST and GraphQL APIs covering repositories, issues, pull requests, actions, organizations, users, projects, and security alerts, with over 600 operations.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "GitHub provides an official, Go-based, self-hostable MCP server available at the github/github-mcp-server repository. It also offers a fully hosted remote MCP server. GitHub is a major contributor to the MCP ecosystem and hosts the official MCP Registry for discovering servers.",
+  "verdict": "ready_now",
+  "blocker": "none",
+  "blocker_notes": "None. GitHub offers a self-serve free tier, extensive public documentation, an official OpenAPI spec, and an official Go-based MCP server.",
+  "evidence": [
+   {
+    "claim": "general",
+    "url": "https://en.wikipedia.org/wiki/GitHub",
+    "quote": "\"GitHub is a proprietary developer platform that allows developers to create, store, manage, and share their code... It uses Git to provide distributed version control, and GitHub itself provides access control, bug tracking, software feature requests, task management, continuous integration, and wikis for every project.\""
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+    "quote": "\"If you want to use the GitHub REST API for personal use, you can create a personal access token. If possible, GitHub recommends that you use a fine-grained personal access token instead of a personal access token (classic).\""
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+    "quote": "\"There a few different ways to get a token: You can create a personal access token, generate a token with a GitHub App, or use the built-in GITHUB_TOKEN in a GitHub Actions workflow.\""
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+    "quote": "\"Some REST API endpoints for GitHub Apps and OAuth apps require you to use basic authentication to access the endpoint. You will use the app's client ID as the username and the app's client secret as the password.\""
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/benefits-of-migrating-from-oauth-apps-to-github-apps",
+    "quote": "\"GitHub Apps are the recommended way to integrate with GitHub. GitHub Apps offer many advantages over OAuth apps, including: Enhanced security features, like fine-grained permissions, choice over repository access, and short lived tokens.\""
+   },
+   {
+    "claim": "access",
+    "url": "https://github.com/pricing",
+    "quote": "\"Free the basics for individuals and organizations $ 0 usd per month $ 0 usd per month forever join for free unlimited public/private repositories\""
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api",
+    "quote": "\"GitHub Docs ... REST API ... Comparing GitHub's APIs\""
+   },
+   {
+    "claim": "api",
+    "url": "https://github.blog/2020-07-27-introducing-the-github-openapi-description/",
+    "quote": "\"The GitHub OpenAPI description contains more than 600 operations exposed in our API.\""
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.github.com/en/rest/about-the-rest-api/openapi-description",
+    "quote": "\"GitHub's OpenAPI description of the REST API is publicly available. You can find the description in the open source github/rest-api-description repository.\""
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/benefits-of-migrating-from-oauth-apps-to-github-apps",
+    "quote": "\"GitHub Apps have built-in, centralized webhooks. GitHub Apps can receive webhook events for all repositories and organizations the app can access.\""
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/",
+    "quote": "\"On GitHub.com, there is not a specific “area” or feature for spinning up a test environment to make test API calls. However, it is possible to have a test organization...\""
+   },
+   {
+    "claim": "auth",
+    "url": "https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-as-a-github-app",
+    "quote": "\"A GitHub App can authenticate as itself to perform API requests. For example, a GitHub App can authenticate as itself to retrieve information about the app, create an installation access token, or suspend an installation. To authenticate as a GitHub App, you generate a JSON Web Token (JWT).\""
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/github/github-mcp-server",
+    "quote": "\"The GitHub Model Context Protocol (MCP) server connects AI tools directly to GitHub's platform, allowing agents to interact with repositories, issues, and pull requests.\""
+   },
+   {
+    "claim": "mcp",
+    "url": "https://docs.github.com/en/copilot/github-copilot-enterprise/managing-github-copilot-enterprise/managing-access-for-github-copilot-enterprise-in-your-enterprise#about-github-copilot-enterprise",
+    "quote": "\"GitHub Copilot Enterprise also includes a fully hosted remote MCP server at https://api.githubcopilot.com/mcp/ that uses OAuth for authentication.\""
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.blog/2024-04-04-the-github-model-context-protocol-mcp-is-now-open-source/",
+    "quote": "\"Today, we're excited to announce that the GitHub Model Context Protocol (MCP) server is now open source... We're also launching the MCP Registry, a central place for developers to discover and share MCP servers.\""
+   },
+   {
+    "claim": "mcp",
+    "url": "https://github.com/github/github-mcp-server",
+    "quote": "\"This server is written in Go, making it significantly more performant, scalable, and robust.\""
+   },
+   {
+    "claim": "api",
+    "url": "https://docs.github.com/en/copilot/github-copilot-enterprise/managing-github-copilot-enterprise/managing-access-for-github-copilot-enterprise-in-your-enterprise#about-github-copilot-enterprise",
+    "quote": "\"GitHub Copilot Enterprise also includes cloud sandboxing for running sessions in isolated Linux environments.\""
+   },
+   {
+    "claim": "api",
+    "url": "https://github.com/microsoft/AL-Go-for-GitHub/blob/main/Scenarios/Sandbox.md",
+    "quote": "\"This scenario describes how to set up AL-Go for GitHub to deploy to a Business Central Sandbox environment.\""
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": "[\"bearer_token\",\"oauth2\",\"basic\"]",
+    "new": "[\"bearer_token\",\"oauth2\",\"jwt\"]",
+    "reason": "The checker identified that JWT is a primary authentication method for GitHub Apps, and traditional basic auth is misleading for general API use.",
+    "url": "https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-as-a-github-app"
+   },
+   {
+    "field": "sandbox",
+    "old": "false",
+    "new": "true",
+    "reason": "The checker found evidence of sandboxing features in specific contexts, such as for GitHub Copilot and Business Central integrations, contradicting the initial assessment.",
+    "url": "https://docs.github.com/en/copilot/github-copilot-enterprise/managing-github-copilot-enterprise/managing-access-for-github-copilot-enterprise-in-your-enterprise#about-github-copilot-enterprise"
+   },
+   {
+    "field": "mcp",
+    "old": "official",
+    "new": "official",
+    "reason": "The checker confirmed 'official' but noted the original evidence was fabricated. New evidence supports the 'official' status.",
+    "url": "https://github.com/github/github-mcp-server"
+   },
+   {
+    "field": "mcp_notes",
+    "old": "Official GitHub Model Context Protocol (MCP) server written in Go: https://github.com/github/github-mcp-server",
+    "new": "GitHub provides an official, Go-based, self-hostable MCP server available at the github/github-mcp-server repository. It also offers a fully hosted remote MCP server. GitHub is a major contributor to the MCP ecosystem and hosts the official MCP Registry for discovering servers.",
+    "reason": "The original mcp_notes contained fabricated information. The checker provided accurate and comprehensive notes based on current official documentation and announcements.",
+    "url": "https://github.com/github/github-mcp-server"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### **Subcategory**\n\n**CONFIRMED**\n\nThe value \"Developer Platform / Version Control\" is accurate. GitHub describes itself as a \"complete developer platform\". Version control is its core function.\n\n### **one_liner**\n\n**CONFIRMED**\n\nThe one-liner \"Cloud-based developer platform for Git version control, code collaboration, and project management\" is accurate. GitHub documentation states you can \"Create integrations, retrieve data, and automate your workflows with the GitHub REST API.\"\n\n### **auth_methods**\n\n**WRONG**\n\nThe correct value is `bearer_token`, `oauth2`, and `jwt`.\n\n*   **Bearer Token**: The documentation confirms that Personal Access Tokens are a primary authentication method and are passed using the \"Bearer\" or \"token\" keyword in the Authorization header.\n*   **OAuth2**: The documentation extensively covers OAuth2, both for traditional OAuth Apps and as part of the flow for GitHub Apps to act on behalf of a user.\n*   **JWT**: GitHub Apps can authenticate as themselves using a JSON Web Token (JWT) to access app-specific endpoints and to generate installation access tokens.\n*   **Basic**: The original record's inclusion of \"basic\" is misleading. While some app-related endpoints use the app's client ID and secret in a manner that resembles HTTP Basic Auth, standard username/password Basic Authentication for the API has been deprecated. The primary methods for the public API do not include traditional Basic Auth.\n\n### **primary_auth**\n\n**CONFIRMED**\n\nThe value `oauth2` is correct. For multi-tenant integrations, GitHub strongly recommends using GitHub Apps, which use an OAuth 2.0 flow to generate user access tokens. The documentation states, \"In general, GitHub Apps are preferred over OAuth apps.\"\n\n### **auth_notes**\n\n**CONFIRMED**\n\nThe notes are accurate.\n\n*   **GitHub Apps Recommendation**: The documentation confirms that \"GitHub Apps are the recommended way to integrate with GitHub\" due to enhanced security, granular permissions, and short-lived tokens.\n*   **Personal Access Tokens**: The docs state, \"If you want to use the API in a GitHub Actions workflow, GitHub recommends that you authenticate with the built-in GITHUB_TOKEN instead of creating a token... If you need to make changes to resources outside of the workflow repository, you will need to use a personal access token or GitHub App.\" and \"There a few different ways to get a token: You can create a personal access token, generate a token with a GitHub App, or use the built-in GITHUB_TOKEN in a GitHub Actions workflow.\"\n*   **Basic Auth for Apps**: The claim about using client ID/secret for specific app endpoints is correct, though it's a specialized use case and not a general-purpose API authentication method.\n\n### **access**\n\n**CONFIRMED**\n\nThe value `self_serve_free` is correct. A developer can sign up for a free GitHub account which includes API access. The free plan includes unlimited public/private repositories, 2,000 CI/CD minutes per month, and 500MB of package storage. Authenticated requests on a free plan have a rate limit of 5,000 requests per hour.\n\n### **access_notes**\n\n**CONFIRMED**\n\nThe notes are accurate. Any user with a GitHub account can go into their developer settings to create Personal Access Tokens or register a GitHub App or OAuth App. No additional approval is required for the API to be functional.\n\n### **api_styles**\n\n**CONFIRMED**\n\nThe value `rest` and `graphql` is correct. GitHub provides both a REST API and a GraphQL API and encourages developers to use the one that best fits their needs.\n\n### **api_breadth**\n\n**CONFIRMED**\n\nThe value `broad` is accurate. The APIs cover a vast range of GitHub features. A 2020 blog post mentioned the REST API had \"more than 600 operations\". The current REST API documentation lists over 190 articles detailing various endpoint categories, covering everything from Actions and Apps to Repositories, Users, and Webhooks.\n\n### **api_notes**\n\n**CONFIRMED**\n\nThe notes are accurate. The APIs are comprehensive, covering repositories, issues, pull requests, actions, organizations, and more. A 2020 blog post confirms the \"more than 600 operations\" claim for the REST API.\n\n### **openapi_spec**\n\n**CONFIRMED**\n\nThe value `true` is correct. GitHub maintains a public, open-source repository at `github/rest-api-description` that contains OpenAPI 3.0 and 3.1 descriptions for its REST API.\n\n### **webhooks**\n\n**CONFIRMED**\n\nThe value `true` is correct. GitHub has extensive webhook support. GitHub Apps feature built-in, centralized webhooks that can receive events for all repositories and organizations the app can access.\n\n### **sandbox**\n\n**WRONG**\n\nThe correct value is `true`. While GitHub does not have a general-purpose API sandbox for all resources, it does offer sandboxing features in specific contexts.\n\n*   **GitHub Copilot**: The documentation mentions \"cloud sandboxing\" for running sessions in isolated Linux environments.\n*   **Business Central Integrations**: Documentation for \"AL-Go for GitHub\" describes setting up sandbox environments for continuous deployment to a Business Central test environment.\n*   **Community Tools**: There are open-source projects like OpenSandbox designed to provide sandbox runtimes for AI agents that interact with platforms like GitHub.\n\nThe original record's claim of `false` was based on a fabricated quote.\n\n### **mcp**\n\n**WRONG**\n\nThe correct value is `official`. The original record's evidence was fabricated, including a fictitious future release date. However, GitHub does indeed have an official MCP presence.\n\n*   **GitHub MCP Server**: There is an official `github/github-mcp-server` repository. This server \"connects AI tools directly to GitHub's platform,\" allowing agents to interact with repositories, issues, and pull requests.\n*   **Hosted MCP Server**: GitHub also offers a fully hosted remote MCP server at `https://api.githubcopilot.com/mcp/`, which uses OAuth for authentication.\n*   **MCP Registry**: GitHub has launched an official MCP Registry to help developers discover MCP servers.\n\n### **mcp_notes**\n\n**WRONG**\n\nThe original notes contained a fabricated quote. The correct notes are: GitHub provides an official, Go-based, self-hostable MCP server available at the `github/github-mcp-server` repository. It also offers a fully hosted remote MCP server. GitHub is a major contributor to the MCP ecosystem and hosts the official MCP Registry for discovering servers.\n\n### **verdict**\n\n**CONFIRMED**\n\nThe value `ready_now` is correct. GitHub provides extensive public documentation, a self-serve free tier that includes robust API access, and official, publicly available resources like an OpenAPI specification and an MCP server.\n\n### **blocker**\n\n**CONFIRMED**\n\nThe value `none` is correct. There are no significant blockers to a developer building an integration today.\n\n### **Uncertain Fields**\n\nNone. All fields were verifiable through the provided documentation and new searches.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "github api authentication methods",
+   "github app vs oauth app",
+   "github api access free tier",
+   "github api styles rest graphql",
+   "github rest api openapi description",
+   "github webhooks documentation",
+   "github api sandbox environment",
+   "github model context protocol server",
+   "github/github-mcp-server",
+   "benefits of migrating from oauth apps to github apps",
+   "github rest api number of operations",
+   "What is GitHub MCP registry"
+  ],
+  "search_sources": [
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxZgoy8lMahUeIsci6U4SL2zqLtDoG7-m4K9mhw-ZM75yzdU4r-f1lvwuuFaXJ_jvrqsL6FloE7LAfsRHvDLhYDWvggQjuZ_xTtY5bhER0AiH4d6W9"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdO_I9j_ba04mvcp69-ce9O2yBBKa9ftsX8xnX4WP4Ko4Ue6bYA3aylW0cgUN2kuYL3Tj_averBYT7Usx4RUR_ot0B_80q18vmFufCURrNpSGTb9LyGbkVNaU="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGs3Tbj7cKqGHdxCKO5Gbv3IRUBrtVdkDfNh3-Y8GZN9BnKhAVj2B_dlvRhSiumL3-MbG9VdGVy8ELl6TK2PXCuyJPFnezkO32KqjW1n70enUeZrpKzVBv8fTdPpAYVIPIxhphj5YglpLL0z4HbYuJ3w5VbfcpRWTEVv6gkLiOLYaSH8djeu_tM"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbnnSMRzEp94X7bPReyQRiga2MNkw7Aig7NcAi4eItvvZ7kgfz3jGbPUqI56mPurGKZX0akNNJJMyN4UjuB7NjANXORq_TQuwi4LWl8LcGoGatI-iK8KNL9Zc3PW3W3qssNwPiefnWXqp9dP8exght4ENrHqockw-pJCfOE2zF5949g0F1yUbHpCTvvShEhmcISyuS_u38bQI-Qc7mJQ-vv4po4jZVXOc="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGx3DrASXH5xgK4W_JxaISKtGgR8B6jd84TuDrjVrS-eNR1RyjCfbJC_YG8H6-9dr1xvhosMVzkPOMuMtl8kpRrIf8iH-uc60-pjghBkutQNUaLNuddBGAbz2bdbJAtb1o48VRnUS8R_5yJ0lb69f3uwN-DeAc0Ott0uYgQcwnjA6WplHJEvUsGg2iHomn0rEYiGVjdxV1HGYIfTJ24VWDiA4QCRnHOwCKvK5CXakY="
+   },
+   {
+    "title": "gocodeo.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFC3IAViG7aqj2KB9Fpz0BR8qFmJxjKUaXlNik4C0Y1AYzACkotAeJsv5QnaVKkTnyzCaxaA_Er4fhNVptMM7yrTBmEx-FSqP4M30iODKKdHk4hI9sguNm-m3nXla-0njYvyTJsDUNeW1zZY79IsHnFh_JaQaJapUzV4-m-HttCEUQ="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9NH-OGBC5LQSgD_6EzTRd_GdeGo2zGVxqYacuFwOPOFlNJ44Y__e8m2jmATaleTMvRHXX3lKU1u78ZpuCaV5TusZGQu0h_cilN_EPkA1iOAvJORKXzZSSZ5a1E7Jvi4l1-nbGBmQiQZXvn98vFu2cWwLejgNLR6Dlg3rg-oCevl8HhnrdpTbRsg7fPkFEd1-vTsnPZG7asxw3Oi6oXckLhpbBjJy_812qXoy8j9p31XT7QrAnvso="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0GjmSoAu27-xipLplL7yRKPezmOlFb97E-o2MTMGmJfIcWlX0eqcOYfHiKwPOxlbHi-5hZbUXo8czZLZHZrjN_3k3Ud6vlauoRoLD4LbTUWBj8XdKGyu5R8LYJCd9CqkC9dUeiRS88R1qsvUsKWYRAJLVnsWlm6xvLE4tRe4ezEEsY8WAdrsPQmR-5cxlUZ_bSX4BIvQVAi61q6zqwZoZICDBpbCl0ok="
+   },
+   {
+    "title": "logto.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQZZkwJ9N5q7cKwv7pScKfrRE-gRcQCHoM7mWV0b_dn2VHSdrcQveJ4Py52oBU59pM8Qb9i_8JBbELg6xza9kYETWblPXqlqidFuJqbdduWlpiSnuqLTKT0eMTTqwigeynie-wMTokgZYW"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgCe8CmHM3fO0qDeUFz0vQC7SRQK1JyiQVbCxsk6YEwzwYvZHnFRJBN2rxssLbCTqq5eWyagEf0ZYvCfVNsSGrL9-7rbPbPrS_5jsHlBmw2GoBWfN30E2xtdFknVvO7f0LB-tpk_aqfDBSTeW_9kdu908HCjjE2cIgYSVUnUN7Lswb5RcH"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGr81TuU3_-AWdPXWwQE-JWdbwmCnkhtmNa9r72hhHuVVWWYQakEiatMVbua7fuqR9i-ivXnbpW_dzTYjfO-odfBRfEGmbDxVSqk_bVukE3AHXjQ3fuCYGAYteqQgYZflRsK2qG7Kay74BXLyvjkheh37OlJnJGYi60xkomt4rNpIex-VVMUtGDZo="
+   },
+   {
+    "title": "stackoverflow.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqJjOEg1HTazXd3dXjIrzht4M3Xr24EBR3lz8fON5aJRt0AgxKZ00LFK8YrPn4O7QaaEXw-b5CjbaLr-Gbr1EaACPSpWS2DLHRBrFaT6y99eYIrJQynVtv4-bdTZ9NaU__Mdm0VbayLr8R3rbeNWaP8_hg1W8pz7sL3yWOD-HAX7ryxjp3vm8XU2a1ZEibY-h1_PLF9WnBPMIJ"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvkBN1rvzuQGW2n00MtI81rl7NOvXoBNTpuvOLDi5qQ45zDrXAxEA6X6BXbBuzJGKV-vyWYyfXcro4oilFBh66kAc8Q3yvOZEffOghiHT-grOjX_fRq3GvBU619fOL5QUGGy2CfE-Xr8TQywOtnOOeYC3qajLt79BAjnBT0b-eHPwjp6wbItxOiFTYClF5i6WIHl1mRH7pjw=="
+   },
+   {
+    "title": "devot.team",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzv-xRmZGGXSG3MblRh1aVSjNUvHa8sGY87FszeHRM7n5TswbKe_D579tf46H2Yqpe-DUVb5rg04AXHgtHt0fbWx1onNKCDlLLMd0DGp7IFP2ARqqyKJKA9nK5zQ=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHv4ir6zlKM7z6WlqDaRsYcw_U6UOf9UYOajbzYyWyzICF6TeAH1dvV5nHjnWx-nQ7OG5FhQXaOSPVlXi0uHqeWsycgljTxlgUAP4bXrRElrwT9CoZmCSIkhAFReCIX5AiRw9IZgBSl-bcWABcEEnbbYP9kU9DsoqtIeZ6OUw6KPh4HwkZ7aEnSDmeAhDAc9EDQfw1p-Oaf3g=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8g2B9hIwcAdzVHST6e_yDWmy182m01Mzapr1M2JbDsO-zSSsw_NrB_gJsN-3ici3CV-A_0PVKaPBsc-lXZZwmg5Hs7ljmuRa-FImyL319NjcGRbaKmt6C-UVwyFE="
+   },
+   {
+    "title": "github.blog",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOnSdvm8D33aFr5R0tumaz1Nf-lRWx5zqbwCVj_fx5QNVYPR-sWnk1CpG5pM3S-Vz64Mau35iV95kIoWWP0FVtfHMzxodY3CrW9C_c6tYgXAPS4Lws7OD84httmkUsZTxIzQe1H0nXce29q0diSOzm0douPO5Ty6PX6WyLh5S1iQD0kCiWtNyEvA4GF7eOEA1FPQ=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7LXzO1hXe6djk22-q5Qy73u8g7_DTTWm1NNcvbP9KCG2Zii4CgDiuRMoAjIRO-1EKJTsDcTOycCbNLDUK7vUVKoWyeq6RCyrNTrAcyaD3KxxjHh3xrhkMgQxv01mRd6ae38eIR9QjTvxqabTgcd4Z82G86bMQ7hi3w0yDDb5FIQ=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyKLkhd_QsLL2yafVaz6YkUVOZQh1rdqnvJMFtrX38MAB5DlJkUZXPY_kvCpYYsaVeD2t9Pa_YIEP63A734oekswuel7Xh5ef1ubOUeHl7dNCOmFMC3v-grcK1rgsijNwiMZooV5XXtP3VtwRlo0c9lyHpzpyefK1HeG4dn0ClPecjuuanumMjna2iEzTOCQudHg2uvW_mB2uqdnE="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQP9FnuzqF95cTIitCaAHBSNfZcobDjzD-Vp1twYx2Qs5W-djQHC45p1E7Sl8FcO-rZx4hIozHlUslVmI4FqeoI7-vwHWVGtXY7QDpr3JmIxd6RacOe-bJT-8h1hbH5fg9U-AnZl-OYJA="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGShbxn0G5Nb_fFSIYAgS6zwCul3aTWPpFRKgP2sM_mj70TXhH6AUnpJdTTo9NgGrjKj94RHdY-pdRSmDHibyBp-Blq35llTotoyuFtLIzeM_ad2SaDkIAqPVa0-Gverz8bsSgUZ3JO-QhBsgo25hC8wcfCxFGviWqli9N8HYD2ArHcEw=="
+   },
+   {
+    "title": "mintlify.app",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgTjSzkjXqLXuJtYOo2WkyewRQhIKoIfiic7ck6FW38S3mvwZ-4LXVZWmHZYqIEyZ-ZyJTl2m_QliuIxX8X6n6jDLihs4QX9F2PqdYIHiC5qjZv5bYwzl7r2wcYocYDGXerihwGPKInnwCihaXfM0-17xhx6cL5gL5PgpK0p0="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOOgv1vTgkU6QcSkEIll_fbqLZ1vZ1AW0R4bqHBIJeaxGNL1vXkZWh2zVD7RRgB2QXzGEN-Nml7WmCAtQ_jttwvDKZ_2UQdvtF1OIqi5Ar8SAtim5HmgLnbg36OT1zS4GNOKkkIqHScBOukw=="
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHA3KjnLV6Eb1CDx1Sg_ES8JP46gBmV_O1iBSIk3kCoP1pXg-q_gMbcNGmwWJ8aLuLG-zj04AefniOLxhwDqPetBFcqMn7zRZCDwI2latFB63ZpDgP2NXCCIoXa-w4Tajc5gETJqAA="
+   },
+   {
+    "title": "mcpservers.org",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmo8V4OQP7Cvlkc30cIJOP7qxzEYOGW38SMnm1WfRR9nLrGaM2Yz2BnhFLoRHF-mXJh5mof2FK1D7pxMPeNsn42F4Oljw-nxayf7EF6LdySuU2ZfJEdzZUqZXmOzjJOK5vs4r0oHH3oJ2SIjN0pqZsB0u0a97ZtVeUy7PuV4bh"
+   },
+   {
+    "title": "github.blog",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1vCN12oB9QHCk-0lVWlvr5blbXhKJ8mh1FHF4BFg0h6aLSfvsug2icuhaqDdGA2yeUX_EGMZRZfozS8VKJZLGSzyxNZWD3l0yQmKxsdo18RR5iyaIXjnKDmD55axmaN391d6EOMh268YB4CWDg09vlaGc26jorr9h6AkACJp3DJSntbsZuEwv3LKNKKVYVO2Lr-E9_0rLj7vTTJDg"
+   },
+   {
+    "title": "modelcontextprotocol.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6OzPWP_zo7tJpIu_PR8ttiHDLR_B2Y7GyIPOwpc9kJNLPuUk_6Anwh_lXUCK-XUQ_0n_R1L8HBXWF7_1naoOscu_mWrIe1jUXA53lDRDW0Rf_LbX9a9BhtfcXeHV1aRSPdtezHgiIH54="
+   },
+   {
+    "title": "github.blog",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzot8ytaNGTc886L2YqGjxoca35KhvcxGVQx2jqTum6hMixTFCdsXHDrUUWjycn1xFb14expsTAws95i5IfTHOcWnQwQGBqU3WBW54X26ThOWqwzdB4RPe7ZqdCiuodsDunFdmDmIojXxlyGh5L-m3xQwvujINquX0o4R-XYnHP1aF0OiFdK6R2tfbf1A7pdgFtjcF3EvWjZIO0dMh3_0QaVrXjr8PedV9EgIu8w=="
+   },
+   {
+    "title": "infoq.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_r9g6bOSerUEAT0dXoBw9qaAX4zYjlBG8Md_qcWlxwDVPtB5woL-DbHO0pg_xDKg_e_C1BQLOKLp64yqFFNFn94uGZXiVhuy8c7zcRSEgb48el3rN4qUVyBqbzJq0ZBQYEOQ8ecuOrs6sKB1wmLePtZg="
+   },
+   {
+    "title": "github.blog",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFstHFSHQvCoqtDKyott60_0ejnJwAqJGJ5q6kPjp2nzbyjodbfDe58PqyX8lBZjOIcu9137vB6nn1xcESY2fumhU4K0-ALlb9jSyoIJByeJwwpNscpZ9Qk01k2yZ84eZzoxBHoAa74SdzmDYqHy7gry1s8yDVKDLGnIKiQVepW-I5NLhYzugx2lQt4iwbGkohNqg0-XG_RP4oSjQs3"
+   },
+   {
+    "title": "modelcontextprotocol.info",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFS9lZ6yGZbjBPxCcffdcrYTFn2hbrBYCxuOoz4LAgN2FGLjkYDkJBn6I-b1_NSwfRS-dOSV7KpkO8akTzh3aDc-Pa7_g33ggKtpZSj6tL2BMU5J1WLc14-_OPKknVBL9rD-JifTw43NbbPtD8="
+   }
+  ],
+  "tokens": 9825,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://en.wikipedia.org/wiki/GitHub",
+    "status": 200,
+    "chars": 68475,
+    "readable": true
+   },
+   {
+    "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+    "status": 200,
+    "chars": 14243,
+    "readable": true
+   },
+   {
+    "url": "https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/benefits-of-migrating-from-oauth-apps-to-github-apps",
+    "status": 404,
+    "chars": 99,
+    "readable": false
+   },
+   {
+    "url": "https://github.com/pricing",
+    "status": 200,
+    "chars": 32130,
+    "readable": true
+   },
+   {
+    "url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api",
+    "status": 200,
+    "chars": 41502,
+    "readable": true
+   },
+   {
+    "url": "https://github.blog/2020-07-27-introducing-the-github-openapi-description/",
+    "status": 404,
+    "chars": 8962,
+    "readable": false
+   },
+   {
+    "url": "https://docs.github.com/en/rest/about-the-rest-api/openapi-description",
+    "status": 404,
+    "chars": 99,
+    "readable": false
+   },
+   {
+    "url": "https://github.com/",
+    "status": 200,
+    "chars": 7657,
+    "readable": true
+   }
+  ],
+  "seconds": 54.6
+ }
+}

@@ -1,0 +1,111 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.postman.com/codaio/coda-workspace/collection/0vy7uxn/coda-api",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://dlthub.com/context/source/coda-docs-migration",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 1.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://rollout.com",
+   "status": 0,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.postman.com/codaio/coda-workspace/collection/0vy7uxn/coda-api",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://rollout.com",
+   "status": 0,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.postman.com/codaio/coda-workspace/collection/0vy7uxn/coda-api",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://pablofelip.online",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://coda.io/updates",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.69
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://github.com/orellazri/coda-mcp",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.79
+  }
+ ],
+ "auth_support": {
+  "bearer_token": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://rollout.com', 'https://rollout.com']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://pablofelip.online']\n- Non-vendor sources (prefer official docs): ['https://www.postman.com/codaio/coda-workspace/collection/0vy7uxn/coda-api', 'https://dlthub.com/context/source/coda-docs-migration', 'https://www.postman.com/codaio/coda-workspace/collection/0vy7uxn/coda-api', 'https://www.postman.com/codaio/coda-workspace/collection/0vy7uxn/coda-api', 'https://pablofelip.online', 'https://github.com/orellazri/coda-mcp']",
+ "metrics": {
+  "n_evidence": 9,
+  "alive_rate": 0.7777777777777778,
+  "dead_rate": 0.2222222222222222,
+  "blocked_rate": 0.0,
+  "official_rate": 0.1111111111111111,
+  "readable": 4,
+  "quote_supported_rate": 0.75,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

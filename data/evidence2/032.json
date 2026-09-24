@@ -1,0 +1,150 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://www.adstellar.ai/blog/meta-ads-api-integration-pricing",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.03
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://github.com/attainmentlabs/meta-ads-mcp",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://www.adstellar.ai/blog/meta-ads-api-integration-pricing",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://nango.dev",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.adstellar.ai/blog/meta-ads-api-integration-pricing",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.67
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://get-ryze.ai",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://admanage.ai",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.03
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://adlibrary.com",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://windsor.ai",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://adamigo.ai",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://cometly.com",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://mcp.facebook.com/ads",
+   "status": 405,
+   "alive": false,
+   "official": true,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "verdict",
+   "url": "https://admanage.ai",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.03
+  }
+ ],
+ "auth_support": {
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://mcp.facebook.com/ads']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://www.adstellar.ai/blog/meta-ads-api-integration-pricing', 'https://github.com/attainmentlabs/meta-ads-mcp', 'https://www.adstellar.ai/blog/meta-ads-api-integration-pricing', 'https://nango.dev', 'https://get-ryze.ai', 'https://admanage.ai', 'https://adlibrary.com', 'https://windsor.ai', 'https://adamigo.ai', 'https://cometly.com', 'https://admanage.ai']\n- Non-vendor sources (prefer official docs): ['https://www.adstellar.ai/blog/meta-ads-api-integration-pricing', 'https://github.com/attainmentlabs/meta-ads-mcp', 'https://www.adstellar.ai/blog/meta-ads-api-integration-pricing', 'https://nango.dev', 'https://www.adstellar.ai/blog/meta-ads-api-integration-pricing', 'https://get-ryze.ai', 'https://admanage.ai', 'https://adlibrary.com', 'https://windsor.ai', 'https://adamigo.ai', 'https://cometly.com', 'https://admanage.ai']",
+ "metrics": {
+  "n_evidence": 13,
+  "alive_rate": 0.9230769230769231,
+  "dead_rate": 0.07692307692307693,
+  "blocked_rate": 0.0,
+  "official_rate": 0.07692307692307693,
+  "readable": 12,
+  "quote_supported_rate": 0.08333333333333333,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

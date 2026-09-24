@@ -1,0 +1,101 @@
+{
+ "items": [
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://rollout.com/blog/how-to-build-a-public-coda-integration-building-the-auth-flow",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "auth",
+   "url": "https://nexla.com/docs/coda",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": true,
+   "quote_match": 0.0
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://www.postman.com/codaio/coda-workspace/collection/0vy7uxn/coda-api",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "access",
+   "url": "https://rollout.com/blog/how-to-build-a-public-coda-integration-building-the-auth-flow",
+   "status": 404,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.postman.com/codaio/coda-workspace/collection/0vy7uxn/coda-api",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "api",
+   "url": "https://www.postman.com/codaio/coda-workspace/collection/0vy7uxn/coda-api",
+   "status": 200,
+   "alive": true,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  },
+  {
+   "blocked": false,
+   "claim": "mcp",
+   "url": "https://coda.io/updates",
+   "status": 200,
+   "alive": true,
+   "official": true,
+   "readable": true,
+   "quote_match": 0.69
+  },
+  {
+   "blocked": false,
+   "claim": "general",
+   "url": "https://pablofelip.online/posts/2022-06-15-coda-webhooks-google-apps-script/",
+   "status": 0,
+   "alive": false,
+   "official": false,
+   "readable": false,
+   "quote_match": null
+  }
+ ],
+ "auth_support": {
+  "bearer_token": true,
+  "oauth2": true
+ },
+ "lint": [],
+ "summary_for_verifier": "- Dead / unreachable evidence URLs: ['https://rollout.com/blog/how-to-build-a-public-coda-integration-building-the-auth-flow', 'https://rollout.com/blog/how-to-build-a-public-coda-integration-building-the-auth-flow', 'https://pablofelip.online/posts/2022-06-15-coda-webhooks-google-apps-script/']\n- Quotes NOT found on the cited page (possible fabrication or wrong page): ['https://nexla.com/docs/coda']\n- Non-vendor sources (prefer official docs): ['https://nexla.com/docs/coda', 'https://www.postman.com/codaio/coda-workspace/collection/0vy7uxn/coda-api', 'https://www.postman.com/codaio/coda-workspace/collection/0vy7uxn/coda-api', 'https://www.postman.com/codaio/coda-workspace/collection/0vy7uxn/coda-api']",
+ "metrics": {
+  "n_evidence": 8,
+  "alive_rate": 0.625,
+  "dead_rate": 0.375,
+  "blocked_rate": 0.0,
+  "official_rate": 0.125,
+  "readable": 2,
+  "quote_supported_rate": 0.5,
+  "lint_issues": 0,
+  "flag_count": 3
+ }
+}

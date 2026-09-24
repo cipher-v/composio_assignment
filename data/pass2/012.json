@@ -1,0 +1,212 @@
+{
+ "app": {
+  "id": 12,
+  "name": "Intercom",
+  "category": "Support and Helpdesk",
+  "hint": "intercom.com"
+ },
+ "record": {
+  "subcategory": "Helpdesk / ticketing",
+  "one_liner": "Intercom is a customer support platform for messaging, automation, and managing customer interactions via tickets and help centers.",
+  "auth_methods": [
+   "oauth2",
+   "bearer_token"
+  ],
+  "primary_auth": "oauth2",
+  "auth_notes": "OAuth2 is required for public multi-tenant apps; Access Tokens (bearer) are used for private workspace integrations.",
+  "access": "approval_required",
+  "access_notes": "Developers can sign up for a free, but limited, development workspace to build and test applications. These workspaces are only available in the US region, are capped at 20 users/leads, and cannot be converted to production workspaces. Public apps built using these workspaces must be submitted for a mandatory review before they can be installed by other customers. Production use of the API on a live workspace requires a paid plan.",
+  "api_styles": [
+   "rest"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API version 2.16 covers conversations, tickets, contacts, companies, articles, admins, events, and macros.",
+  "openapi_spec": true,
+  "webhooks": true,
+  "sandbox": true,
+  "mcp": "official",
+  "mcp_notes": "Intercom hosts official remote MCP servers at mcp.intercom.com/mcp (US) and mcp.eu.intercom.com/mcp (EU).",
+  "verdict": "ready_with_friction",
+  "blocker": "app_review_or_approval",
+  "blocker_notes": "Public integrations require a mandatory manual app review and approval process; production use requires a paid plan.",
+  "evidence": [
+   {
+    "claim": "auth",
+    "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+    "quote": "An Access Token is for if you're using the API to access data in your own Intercom workspace, in other words, building a private app. OAuth is for if you're building a public app that accesses other people's Intercom data."
+   },
+   {
+    "claim": "access",
+    "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth",
+    "quote": "Each development workspace automatically gives you the option to use OAuth. To start, tick the Use OAuth option on your Authentication page in the Developer Hub."
+   },
+   {
+    "claim": "api",
+    "url": "https://developers.intercom.com/docs/references/introduction",
+    "quote": "this is documentation for version 2.16 of the rest api. ... this api reference is auto-generated from an openapi specification ."
+   },
+   {
+    "claim": "mcp",
+    "url": "https://growthmethod.com/intercom-mcp-server/",
+    "quote": "Yes - Intercom runs a remote MCP server at mcp.intercom.com , giving MCP-compatible AI clients secure, permission-aware access to conversations, contacts, companies and Help Center articles."
+   },
+   {
+    "claim": "verdict",
+    "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/oauth-scopes",
+    "quote": "...when you configure oauth you will need to define the oauth scopes, and these will be reviewed when you submit your app for approval ."
+   }
+  ],
+  "confidence": 1.0,
+  "changes": [
+   {
+    "field": "access",
+    "old": "self_serve_free",
+    "new": "approval_required",
+    "reason": "While a developer can create a free, non-expiring 'development workspace' to build and test an app, this workspace has significant limitations. To connect to other users' accounts (i.e., for a public app), the app must use OAuth and undergo a mandatory review. Because any multi-tenant use requires this manual approval, the access model is approval_required.",
+    "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/oauth-scopes"
+   },
+   {
+    "field": "access_notes",
+    "old": "Developers can sign up for a free developer account and create a non-expiring development workspace via the Developer Hub.",
+    "new": "Developers can sign up for a free, but limited, development workspace to build and test applications. These workspaces are only available in the US region, are capped at 20 users/leads, and cannot be converted to production workspaces. Public apps built using these workspaces must be submitted for a mandatory review before they can be installed by other customers. Production use of the API on a live workspace requires a paid plan.",
+    "reason": "The original notes did not fully capture the limitations of the free development workspace and the mandatory review for public apps, which impacts the access model.",
+    "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/oauth-scopes"
+   }
+  ],
+  "needs_human": false,
+  "needs_human_reason": ""
+ },
+ "notes": "### Adversarial Fact-Checking Report: Intercom\n\nHere is the verification of the first-pass research record for \"Intercom\".\n\n---\n\n### **`subcategory`**\n\n*   **Original Value:** `Helpdesk / ticketing`\n*   **Verification:** **CONFIRMED**\n*   **Evidence:** Intercom is described as a \"customer messaging platform that facilitates direct communication between companies and their customers through various tools like live chat, automated messaging, and support ticketing.\" This aligns with the \"Helpdesk / ticketing\" subcategory.\n\n### **`one_liner`**\n\n*   **Original Value:** `Intercom is a customer support platform for messaging, automation, and managing customer interactions via tickets and help centers.`\n*   **Verification:** **CONFIRMED**\n*   **Evidence:** Intercom's features include a shared inbox, ticketing system, help center, and automation. It is described as a \"customer messaging platform designed to facilitate seamless communication between companies and their customers.\"\n\n### **`auth_methods`**\n\n*   **Original Value:** `[\"oauth2\", \"bearer_token\"]`\n*   **Verification:** **CONFIRMED**\n*   **Evidence:** The official documentation states, \"To access the Intercom API, you have two authentication options depending on whether you app is public or private. An Access Token is for if you're using the API to access data in your own Intercom workspace... OAuth is for if you're building a public app that accesses other people's Intercom data.\" The documentation further clarifies how to use the token: \"simply provide it as an Authorization:Bearer header in your requests\". This confirms that the Access Token is a bearer token. The documentation also mentions JWTs for securing the Messenger (the chat widget), but this is for client-side user authentication, not for server-to-server API access.\n\n### **`primary_auth`**\n\n*   **Original Value:** `oauth2`\n*   **Verification:** **CONFIRMED**\n*   **Evidence:** For public, multi-tenant applications, OAuth is the required method. The documentation states, \"You should use OAuth if: You are requesting access to other people's Intercom accounts/data (for example, through an integration you've built)\". It also notes, \"If you're building public integrations, OAuth is mandatory.\"\n\n### **`auth_notes`**\n\n*   **Original Value:** `OAuth2 is required for public multi-tenant apps; Access Tokens (bearer) are used for private workspace integrations.`\n*   **Verification:** **CONFIRMED**\n*   **Evidence:** This is a direct summary of the official documentation: \"An Access Token is for if you're using the API to access data in your own Intercom workspace, in other words, building a private app. OAuth is for if you're building a public app that accesses other people's Intercom data.\"\n\n### **`access`**\n\n*   **Original Value:** `self_serve_free`\n*   **Verification:** **WRONG**\n*   **Correct Value:** `approval_required`\n*   **Evidence:** While a developer can create a free, non-expiring \"development workspace\" to build and test an app, this workspace has significant limitations. To connect to other users' accounts (i.e., for a public app), the app must use OAuth and undergo a mandatory review. The documentation states, \"Every public app will need to be reviewed by the Intercom team.\" and \"This means that the Intercom team must review and approve your app before it is available to install. Private apps that only access your own paid workspace data do not require a review.\" Because any multi-tenant use requires this manual approval, the access model is `approval_required`.\n\n### **`access_notes`**\n\n*   **Original Value:** `Developers can sign up for a free developer account and create a non-expiring development workspace via the Developer Hub.`\n*   **Verification:** **WRONG**\n*   **Correct Value:** Developers can sign up for a free, but limited, development workspace to build and test applications. These workspaces are only available in the US region, are capped at 20 users/leads, and cannot be converted to production workspaces. Public apps built using these workspaces must be submitted for a mandatory review before they can be installed by other customers. Production use of the API on a live workspace requires a paid plan.\n\n### **`api_styles`**\n\n*   **Original Value:** `[\"rest\"]`\n*   **Verification:** **CONFIRMED**\n*   **Evidence:** The official documentation explicitly refers to its API as a \"REST API\". The documentation details the use of standard HTTP methods and JSON-encoded data, consistent with REST principles.\n\n### **`api_breadth`**\n\n*   **Original Value:** `broad`\n*   **Verification:** **CONFIRMED**\n*   **Evidence:** The API reference covers a wide range of Intercom objects, including contacts, companies, conversations, tickets, articles, help center collections, admins, teams, events, and more, indicating a broad scope of functionality.\n\n### **`api_notes`**\n\n*   **Original Value:** `REST API version 2.16 covers conversations, tickets, contacts, companies, articles, admins, events, and macros.`\n*   **Verification:** **CONFIRMED**\n*   **Evidence:** The cited API reference page is for version 2.16. [Original evidence] The list of API endpoints in the documentation confirms that it covers conversations, tickets, contacts, companies, articles, admins, and events.\n\n### **`openapi_spec`**\n\n*   **Original Value:** `true`\n*   **Verification:** **CONFIRMED**\n*   **Evidence:** The API reference introduction states, \"This API reference is auto-generated from an OpenAPI specification.\" [Original evidence] A GitHub repository also contains OpenAPI specifications for the Intercom API.\n\n### **`webhooks`**\n\n*   **Original Value:** `true`\n*   **Verification:** **CONFIRMED**\n*   **Evidence:** Intercom provides extensive documentation on webhooks, which \"allow you to subscribe to real-time notifications of events happening in Intercom\". A wide variety of webhook topics are available.\n\n### **`sandbox`**\n\n*   **Original Value:** `true`\n*   **Verification:** **CONFIRMED**\n*   **Evidence:** Intercom offers two forms of testing environments. First, a free \"development workspace\" can be created for building apps, though it has limitations (US-only, 20-user cap, cannot become a production workspace). Second, for customers on paid plans, a \"test workspace\" can be enabled, which is a separate workspace with separate data that inherits the messaging capabilities of the main production workspace.\n\n### **`mcp`**\n\n*   **Original Value:** `official`\n*   **Verification:** **CONFIRMED**\n*   **Evidence:** The non-vendor source was correct. Official Intercom developer documentation confirms that \"Intercom hosts a remote MCP server\". A GitHub page managed by Intercom also provides documentation for the official Intercom MCP Server.\n\n### **`mcp_notes`**\n\n*   **Original Value:** `Intercom hosts official remote MCP servers at mcp.intercom.com/mcp (US) and mcp.eu.intercom.com/mcp (EU).`\n*   **Verification:** **CONFIRMED**\n*   **Evidence:** Official Intercom documentation confirms the connection URLs for their hosted MCP server: \"US, https://mcp.intercom.com/mcp\" and \"EU, https://mcp.eu.intercom.com/mcp\".\n\n### **`verdict`**\n\n*   **Original Value:** `ready_with_friction`\n*   **Verification:** **CONFIRMED**\n*   **Evidence:** The primary friction is the mandatory app review process for any public, multi-tenant application. Additionally, while a developer workspace is free for building, using the API in a live production environment requires a paid Intercom plan, which start at \"$29 per seat/month (if billed annually)\". These factors constitute significant friction.\n\n### **`blocker`**\n\n*   **Original Value:** `app_review_or_approval`\n*   **Verification:** **CONFIRMED**\n*   **Evidence:** The documentation for building public apps is clear: \"Every public app will need to be reviewed by the Intercom team.\" and \"Both unlisted and listed apps must be submitted for review.\" This is a mandatory step before an app can be installed by other workspaces.\n\n### **`blocker_notes`**\n\n*   **Original Value:** `Public integrations require a mandatory manual app review and approval process; production use requires a paid plan.`\n*   **Verification:** **CONFIRMED**\n*   **Evidence:** The mandatory review process is confirmed by multiple sources. The need for a paid plan for production use is also confirmed; Intercom retired its free plan, and the cheapest entry point is the \"Essential\" plan. Development workspaces are free but have significant limitations and cannot be converted to production workspaces.\n\n---\n\n### Uncertain Fields\n\nAll fields were verifiable from the provided documentation and search results. There are no uncertain fields.",
+ "meta": {
+  "model": "gemini-2.5-pro",
+  "opened_urls": [],
+  "search_queries": [
+   "intercom what is",
+   "Intercom API authentication methods",
+   "Intercom developer account free tier",
+   "Intercom API pricing",
+   "Intercom Model Context Protocol (MCP) official documentation",
+   "Intercom webhooks documentation",
+   "Intercom API sandbox environment",
+   "Intercom app review process",
+   "Intercom API production use requirements"
+  ],
+  "search_sources": [
+   {
+    "title": "dimensionlabs.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHE-qYHUfYTA85M2g0rlcreIcY0MTcd0beLaMIwv2tLn75aWB_4MngXWuzhi8zRukYg6YbkmW6lvluX25Bs-stUozKujtPgbAaV5Va6PdTa7Xkzvskayqq3F0R5Bg5z6_-eTHOKFXLSmtDpkGA9liFPp2C4Li-9cC_SxfgvspoK6ZYULkF5h5Isi4UFA3CWtzQGFnQVi0N6PS1BeRHDIvcisw=="
+   },
+   {
+    "title": "voiceflow.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_Bj8gdFjyKrFsFhRBmPFdZHyd7phNp23VxozAO6CaNP6l2avpVzFBez_fKfUnkcCJXSOq1NeByk_mUNmAtz-rFMKj5Op5BKqX2T14xYVPHSIY43aGCh4_05Dvfi4dnKx3pAGRBjQ9pCQA"
+   },
+   {
+    "title": "helpcrunch.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0grE2hhwLuQxz0fKGBCTpG6Aa0a81Slfc2kGmfcFFHQayS6I3i4hxh_xVGdo-4YTZ9wVThd0rECBZlrm0hJtGG-9gcKHmM57aMsDwXDnF-WGqPBTC9gkXDQ8KJKBlomiWigKksqqekQ=="
+   },
+   {
+    "title": "intercom.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGY2l18uyhdx30rH2jqfiOCxuWb096N9bVauwNdppXm8bNFIiLtSR2jJ7Xb3h6hghvDMIDi2PbACnbSKugrv39iXedQqUR-77xWc6lVk1IXo59lvaHAdMEinB1-A8I1qLsWhoIiLQcNZWyDg19sAvlPTHbS-ot2GDqMTKEEyulD98CkW8K2kAzd7HcNBt88"
+   },
+   {
+    "title": "intercom.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8mN-HlM8VxPkb8GD54QvGIxNMFQpx-29TknZFO5JP3rAKQ39_Zb7b_H09QZVNlKDt_PKytR0oDXapLobZVBrH-wjtP_nSi9Q1u-6F8ogjP6RTneSlJ1gylnojXtEs0lnpbeP2to-_icHGVg3K4qqjF05dVg4q3wqB508vPHYFJvZBwl0oB1Qq"
+   },
+   {
+    "title": "klamp.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiery6ESDRt0kiR3dCVlW18qPScYv_TPAuPWdT20_fX_QJ-Hudh28m7QFVz3bQztlblu8Hte1J15zeiZC5eaSpBG74TwPsxOx6rxjSlYx-G4qj1eyrLVCgJEb4MKU="
+   },
+   {
+    "title": "intercom.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-qyPNQj6vu0k6y8ksr9aWBzfQcwEfseNCkZQCs_HxU1gSEL295ro9nDvka2URri1F3rZapG0MPprYkNDuMPl5o13KiIOaYuZSX_-OAYxzSNu1GRZ-iGGzZCFaGKaOilUgyIQv4U8gCrPZCdA-5AJCTh1hkTmShQhs-6Yx8K04CCQM4Vg="
+   },
+   {
+    "title": "intercom.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtvEgI-4i6MzzSv9ypPSOgWz2x_bJUBBD1YHyfXg_rWeCBZQ0Hc_5vPx7CzeC3JxxHdblsL5MxImBbDwjVZyzuGb9P7bLUJZN7H6eCgiQwScNZKLX7RQOQuMD8MDfNug=="
+   },
+   {
+    "title": "intercom.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZA7kdRslEwbW0j-hZCXGWKQ_NjL1kPAqy6_89kHkBXHSVV80gzM-_pe5ueZXUyjGzTUhxZyZHffqob5FSGq8HahwNxX9YF42MLj_2b583tmSN47lNJDHzKrjl7Ey96aZCGZTt3yXbR4cPdQ8_HqZ-w61BkdE2ldNgmm2MgW639OMwHsDj8tDgZtGq5BX7WfQ="
+   },
+   {
+    "title": "intercom.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGX-MBivhxipslJM4ieOITlE1Ip0A_HXVMKuzBZOQoAXUzq8qAmKUAuJymIBxeMbMb3lLTZotTbUUCWEn5NbmMCP_v9nSpOzX9fiKdsW1ZW7g2kUAKc5pYbJL-q424Y9ZrcerTabofv3yXzU0MZyGEsDjoiGOGNdpaJ4ptDtUG0zM8ukPdbskbEcCPbTLRwxYABF4Pd-U8wfg=="
+   },
+   {
+    "title": "intercom.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlnr3-h-AIUKGUrYbfIqH7PfKJ7kzxHnZ55b7Yp7HJ6xWW6bNC10ODwUKJDyG8DxeGdCUa6DrrI1g5rDTuaYvXHGHUlqVU6T1T1cNA5JyUXqdokGGneKPgfg-5mY6u_VCwaA_uG9bmwwXPWtynML5ZLDUDqMukZVqCrNasRQEew_V5HrKxN5MRhQ=="
+   },
+   {
+    "title": "tray.ai",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGk_BP9GlZRRIe_TEYwgNgMVYcfLMzgQbB3MDznBiPkGND-fAARuPnThpKszAyujbnRHCRG-gmZaJEUbXKdDej8mRZ8JlHWGQnWs-B5W5khcqho385_-H8tkFoflKOzEQ3l"
+   },
+   {
+    "title": "apitracker.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3vaGB3QdobDSYauAEe9mGI9VA0txZfmyqEad8a5nY9z7I9NdiJpyAyz6n_eSt0A8-T2jy_JnTH_6mKxUg3B-KRnIa3SE3nJcF4y-SNhR7C5MEa1rpYQllR-5u"
+   },
+   {
+    "title": "intercom.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQHLdBwgPkSvTEKY6uIsXmXgWGaxxTPtFQeR7s91fIKeTGlvSCTaqLRVTLY4J3KnYFm4vezkDV1JEpbSonq1qBUf_fUnqwx7K7RqOQ1aiSlOgTmHsHku-Tp2LcRnTGcp1tsPIv3Qu_L6RSCXvmufTNvxRQqueXBszXrg41"
+   },
+   {
+    "title": "intercom.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTiInG-DZ9jwx1podxBXl7KFMF2dOo0inmhA__YIJ3tGB1XMQpmitUiXBH_1b68HpoFz1wwa4FQiHB6r-BpkrgrGVTwHY6WzbJlTflyKSwV7-P0fpPRUWANefBBIbw9oEGW6Jqmtpt9g=="
+   },
+   {
+    "title": "intercom.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFm-hiWuocJlABReDBY421BezUH0XNDkeprlmYJLcmB1p0TR5ZCkFsAkqmrotzul0I72n9fRcX8hkSnHxK-u26Ra5YyHf6Yc7EUokLs68sSvogmQbdM-noOJqkK5k42dzlI9InOWccrpbhLvBOiRWi46GvoB3osVcMYLp7rvYZqQ2Y3LHGA_n_rj5adwesKA=="
+   },
+   {
+    "title": "intercom.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGe9HgQC6AM4vjboc4uR6AVYwJJo7-7WAxBnl88VIe056_OAahthy39eRY2dzJ_6UMwgQRsedcvkxOPx2UanOmMYBw2M7z7Ycjf1AntDbLvINFcxrVV0WoTX6bvYWL5XDGR92uAMoC0FN_fnXAAAwglhwsk3TwThhhPdJ6SAvjLaB8IyOevwZ0E7RgAcA=="
+   },
+   {
+    "title": "intercom.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQAsb9ARuY2Ng8ljQ3d7UujDt0pCyyO5bHhpOJjXlC6HsTgPVkPTZqbTssZxJkt_ehFC6klJeNy0Ds-jLZXwDFW4DqXUZHkEzzMwat0JwE0L1B-qV8x-2kry8wQP_OqKpT0A0cKZDS_EEx"
+   },
+   {
+    "title": "github.com",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtjO-hi0aRy1cvoQiN73uQzi6ULerXn7o-M-BrLRDFtcCPJlOvuCSDw-Imd0kzNgTMISq7fAq6QUattfNsDxpnpM8Gb4DRahI6M3itQ7J4-tTHw-VIFq5GpZ-NPmslAqG1_lT7YUb0MSxe"
+   },
+   {
+    "title": "customerly.io",
+    "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdf1oKmH0tZ3K8Px1yYqVJxbd1QP4-uMeMxJuiTGWDnBWUqktHrSbGfKXqxNY3d6aw7wP35FnteuRLm3TdmPBOTFYrOWGerHo0qgh2popTnS2NVJ1iD4uXyddeXS3SA-YyYsl5dURAN9OT2Q=="
+   }
+  ],
+  "tokens": 9000,
+  "retries": [],
+  "pages_read": [
+   {
+    "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+    "status": 200,
+    "chars": 3893,
+    "readable": true
+   },
+   {
+    "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth",
+    "status": 200,
+    "chars": 17512,
+    "readable": true
+   },
+   {
+    "url": "https://developers.intercom.com/docs/references/introduction",
+    "status": 200,
+    "chars": 3169,
+    "readable": true
+   },
+   {
+    "url": "https://growthmethod.com/intercom-mcp-server/",
+    "status": 200,
+    "chars": 11202,
+    "readable": true
+   },
+   {
+    "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/oauth-scopes",
+    "status": 200,
+    "chars": 5498,
+    "readable": true
+   }
+  ],
+  "seconds": 89.6
+ }
+}
